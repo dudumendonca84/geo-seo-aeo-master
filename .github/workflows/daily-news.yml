@@ -1,10 +1,14 @@
 name: Daily GEO/SEO/AEO news
 
-on:
+"on":
   schedule:
     # 07:00 UTC = 08:00 Lisboa (verão) / 07:00 Lisboa (inverno)
     - cron: '0 7 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-news.yml'
 
 permissions:
   contents: write
@@ -46,4 +50,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-
