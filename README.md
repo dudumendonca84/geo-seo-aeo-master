@@ -1,35 +1,40 @@
 # geo-seo-aeo-master
 
-Canonical skill for **destaque.ai** — the single source of truth for GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) and classical SEO, focused on B2B SaaS in Portugal.
+Canonical **plugin marketplace** for **destaque.ai** — single source of truth for GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) and classical SEO, focused on B2B SaaS in Portugal.
 
 ## What it is
 
-Five reference documents plus a self-updating news feed, designed to make any operator (human or Claude agent) capable of producing a 3HASH-grade technical audit.
+A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that exposes a skill calibrated to support 3HASH-grade technical audits.
 
 ```
-SKILL.md                       Identity, principles, audit workflow
+.claude-plugin/
+  marketplace.json             Plugin marketplace manifest
+  plugin.json                  Plugin manifest
 README.md                      This file
-references/
-  frameworks.md                llms.txt, AI crawler matrix, Schema.org for AI,
+skills/
+  geo-seo-aeo-master/
+    SKILL.md                   Identity, principles, audit workflow
+    references/
+      frameworks.md            llms.txt, AI crawler matrix, Schema.org for AI,
                                E-E-A-T, RAG mechanics by engine, Princeton GEO,
                                entity-based optimization, PT-PT, adversarial
-  tools.md                     Profound · Peec AI · Otterly · Goodie · Daydream
+      tools.md                 Profound · Peec AI · Otterly · Goodie · Daydream
                                Surfer · Ahrefs Brand Radar · Semrush AI Toolkit
-  metrics.md                   Citation rate, SoV, AI-attributed traffic,
-                               PAWC; GSC/GA4/Bing Webmaster Tools current state
-  benchmarks.md                Public studies with hard numbers (Pew, Ahrefs,
+      metrics.md               Citation rate, SoV, AI-attributed traffic, PAWC;
+                               GSC/GA4/Bing Webmaster Tools current state
+      benchmarks.md            Public studies with hard numbers (Pew, Ahrefs,
                                BrightEdge, Semrush, Similarweb, NetElixir,
                                Aggarwal et al., Seer); flagged stats NOT to cite
-daily-agent/
-  daily-prompt.md              Instructions for the daily research agent
-  news-feed.md                 Auto-updated by Claude Code Web Routine, 08:00 Lisboa
-  execution-log.md             Run log
-  drafts/                      Weekly drafts (Fridays only)
+    daily-agent/
+      daily-prompt.md          Instructions for the daily research agent
+      news-feed.md             Auto-updated by Claude Code Web Routine, 08:00 Lisboa
+      execution-log.md         Run log
+      drafts/                  Weekly drafts (Fridays only)
 ```
 
 ## Editorial bar
 
-The skill is calibrated to produce work of the calibre of the **3HASH technical audit** (Eduardo's other brand, FortuneWeek — Unipessoal Lda). Sober, primary-source-anchored, numbers over adjectives, no hype, honest about uncertainty. See `SKILL.md` for the full audit template and editorial voice.
+The skill is calibrated to produce work of the calibre of the **3HASH technical audit** (Eduardo's other brand, FortuneWeek — Unipessoal Lda). Sober, primary-source-anchored, numbers over adjectives, no hype, honest about uncertainty. See `skills/geo-seo-aeo-master/SKILL.md` for the full audit template and editorial voice.
 
 Anti-patterns explicitly prohibited:
 - Citing vendor blogs as if they were studies.
@@ -38,17 +43,40 @@ Anti-patterns explicitly prohibited:
 - Confusing "mention" with "citation".
 - Top-10 listicle energy.
 
+## Install
+
+### Claude Desktop / Claude Code
+
+```shell
+/plugin marketplace add dudumendonca84/geo-seo-aeo-master
+/plugin install geo-seo-aeo-master@destaque-ai
+```
+
+After install, restart Claude or run `/reload-plugins`. The skill is then available — Claude auto-loads `SKILL.md` and pulls references on demand.
+
+**Auto-sync.** Third-party marketplaces have auto-update **disabled by default**. Enable in `/plugin` → **Marketplaces** → select `destaque-ai` → **Enable auto-update**. With auto-update on, every Claude Code start refreshes the marketplace and applies updates.
+
+### Claude.ai (web) — fallback as Skill
+
+The web UI does not support marketplace install. To use the skill in Claude.ai:
+
+1. Download repo as zip: https://github.com/dudumendonca84/geo-seo-aeo-master/archive/refs/heads/main.zip
+2. Claude.ai → **Customize** → **Habilidades** → **+** → **Fazer upload de uma habilidade**
+3. Upload the `skills/geo-seo-aeo-master/` directory from the zip
+
+Note: Claude.ai web does not auto-sync uploaded skills. Re-upload to refresh.
+
 ## Daily research agent — Claude Code Web Routine
 
 A **Claude Code Web Routine** named `geo-seo-news-daily` runs every day at **08:00 Lisboa** on Anthropic's infrastructure. It:
 
-1. Reads `daily-agent/daily-prompt.md` from this repo.
+1. Reads `skills/geo-seo-aeo-master/daily-agent/daily-prompt.md` from this repo.
 2. Researches news from the last 24-48h on AI search and SEO (Tier 1 primary sources: Google Search Blog, OpenAI, Anthropic, DeepMind, Bing, Perplexity).
 3. Filters for announcements + studies with hard data + confirmed algorithmic changes + academic papers; rejects opinion, listicles, hype, prediction posts.
-4. Prepends a dated entry to `daily-agent/news-feed.md`.
-5. Logs the run in `daily-agent/execution-log.md`.
-6. **Only on Fridays:** generates three drafts in `daily-agent/drafts/YYYY-MM-DD-weekly.md` — LinkedIn (~200 words), blog (~1500 words), Twitter thread (~10 tweets).
-7. Commits and pushes the changes directly to `main`.
+4. Prepends a dated entry to `skills/geo-seo-aeo-master/daily-agent/news-feed.md`.
+5. Logs the run in `skills/geo-seo-aeo-master/daily-agent/execution-log.md`.
+6. **Only on Fridays:** generates three drafts in `skills/geo-seo-aeo-master/daily-agent/drafts/YYYY-MM-DD-weekly.md` — LinkedIn (~200 words), blog (~1500 words), Twitter thread (~10 tweets).
+7. Commits and pushes the changes directly to `main`. The next time Claude Code starts (with auto-update on), the marketplace pulls the new news entry into installed skill.
 
 ### Routine setup
 
@@ -59,47 +87,17 @@ In Claude Code Web → Routines → New routine:
 - **Repo:** `dudumendonca84/geo-seo-aeo-master` (branch `main`)
 - **Prompt:**
   ```
-  Lê o ficheiro daily-agent/daily-prompt.md deste repo e segue todas as instruções nele descritas. Substitui {{TODAY}} pela data de hoje (YYYY-MM-DD, timezone Europe/Lisbon). No fim, commit + push directo a main com mensagem "daily: YYYY-MM-DD news update".
+  Lê o ficheiro skills/geo-seo-aeo-master/daily-agent/daily-prompt.md deste repo e segue todas as instruções nele descritas. Substitui {{TODAY}} pela data de hoje (YYYY-MM-DD, timezone Europe/Lisbon). No fim, commit + push directo a main com mensagem "daily: YYYY-MM-DD news update".
   ```
 
-### Why Routines instead of GitHub Actions
+## Use in conversations
 
-The original plan was a GitHub Action calling `anthropics/claude-code-action@v1`. The action was abandoned because:
-
-- It does not accept `push` as a trigger event (only `schedule`, `workflow_dispatch`, PR/issue/comment events).
-- OAuth token setup requires Claude Code CLI locally, an awkward dependency for Desktop-only users.
-- The action's OIDC + workflow validation flow is brittle for new repos.
-
-Claude Code Web Routines run on Anthropic's infrastructure with auth and repo access already configured — no GitHub secrets, no OIDC, no CLI dependency. The user's existing routines (`changelog-daily`, `audit-onepagers-daily`, etc.) use the same mechanism.
-
-## Install in Claude Desktop
-
-1. Claude Desktop → **Customize** → **Skills**
-2. **+ Personal plugins**
-3. Paste this repo URL: `https://github.com/dudumendonca84/geo-seo-aeo-master`
-4. **Sync**
-
-The skill appears as `geo-seo-aeo-master`. Claude loads `SKILL.md` automatically and pulls references on demand.
-
-**Re-sync to pull updates** (Claude Desktop does not auto-refresh Personal Plugins, [#52967](https://github.com/anthropics/claude-code/issues/52967)):
-- Weekly re-sync is enough for the `references/` (they only change on substantive field updates).
-- For real-time news, paste the raw URL into the conversation:
-  `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/daily-agent/news-feed.md`
-
-## Use in claude.ai conversations
-
-Reference the skill by name, or paste the relevant section URL. Examples that should trigger correct skill use:
+Examples that should trigger correct skill use:
 
 - "How do I rank in Google AI Overviews?" → loads `frameworks.md` (RAG mechanics) + `benchmarks.md` (BrightEdge top-10 finding).
 - "Which AI visibility tool should I buy for a Portuguese B2B SaaS?" → loads `tools.md`.
 - "Audit destaque.ai's website" → uses the audit workflow in `SKILL.md`.
 - "What changed in AI search this week?" → loads `daily-agent/news-feed.md`.
-
-## Consumption by other systems
-
-- **Claude Desktop.** Via Personal Plugins → Sync (above).
-- **claude.ai conversations.** Manual reference or skill load.
-- **Deck Builder** (planned). Will fetch `references/*.md` directly via raw GitHub URLs. The flat markdown structure is designed to be parsed without extra tooling.
 
 ## Why this exists
 
@@ -122,7 +120,7 @@ That synthesis is the destaque.ai role. This skill encodes the knowledge that ma
 
 ## Maintenance
 
-- `daily-agent/news-feed.md` updates daily (automatic, via Routine).
+- `skills/geo-seo-aeo-master/daily-agent/news-feed.md` updates daily (automatic, via Routine).
 - `references/` files updated on substantive change to the field — see "Maintenance" section at the bottom of each file. Last full refresh: 23 May 2026.
 
 ## License
