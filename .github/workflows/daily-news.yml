@@ -12,6 +12,9 @@ name: Daily GEO/SEO/AEO news
 
 permissions:
   contents: write
+  id-token: write
+  issues: write
+  pull-requests: write
 
 jobs:
   daily-news:
@@ -20,24 +23,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Render daily prompt (substitui {{TODAY}})
+      - name: Render daily prompt and load into env
         run: |
           TODAY=$(TZ=Europe/Lisbon date +%Y-%m-%d)
-          mkdir -p /tmp/agent
-          sed "s/{{TODAY}}/$TODAY/g" daily-agent/daily-prompt.md > /tmp/agent/prompt.md
+          sed "s/{{TODAY}}/$TODAY/g" daily-agent/daily-prompt.md > /tmp/prompt.md
+          {
+            echo 'DAILY_PROMPT<<__EOF__'
+            cat /tmp/prompt.md
+            echo '__EOF__'
+          } >> "$GITHUB_ENV"
           echo "Rendered prompt for $TODAY"
 
       - name: Run daily research agent
         uses: anthropics/claude-code-action@v1
         with:
-          prompt_file: /tmp/agent/prompt.md
+          prompt: ${{ env.DAILY_PROMPT }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           claude_args: |
             {
               "allowedTools": ["Read", "Write", "Edit", "Bash", "WebFetch", "WebSearch"],
               "max_turns": 30
             }
-        env:
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
       - name: Commit and push changes
         run: |
