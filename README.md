@@ -1,5 +1,7 @@
 # geo-seo-aeo-master
 
+> **Para Claude Code sessions trabalhando neste repo ou em `destaque-ai-deck-builder`:** lê primeiro [`INTERFACES.md`](./INTERFACES.md) para entender os contratos cross-repo.
+
 ## 📦 Quick upload (Claude.ai sem Cowork)
 
 **Click aqui para baixar o zip pronto a upload:**
