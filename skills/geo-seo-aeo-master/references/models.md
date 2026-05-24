@@ -259,12 +259,32 @@ DeepSeek V4 (open weights, ~$0.10 per million tokens vs $5 for GPT-5) for bulk e
 
 ---
 
+## Vendor behavior changes (not just model releases)
+
+This file tracks **how each vendor works right now**, not only which model they ship. Behavior changes matter as much as model releases — sometimes more, because they directly affect citation outcomes without any new model being announced.
+
+Examples of behavior changes that warrant updating this file (and `frameworks.md` §5):
+
+- **Citation mechanics**: vendor changes how citations are surfaced (inline → footnote, density, source caps).
+- **Crawler compliance**: new bot user-agent, change in `robots.txt` compliance posture, alleged stealth crawling reports (e.g., Cloudflare on Perplexity Aug 2025).
+- **Query mechanics**: Google adding/removing query fan-out, reformulation logic, sub-query weighting in AI Mode.
+- **Source weighting**: sudden shift in domain preferences (e.g., Perplexity boosting Reddit, ChatGPT increasing Wikipedia share).
+- **Web search defaults**: vendor turning web search on/off by default per tier (ChatGPT free vs paid, Claude Pro vs API).
+- **Index behavior**: Bing reindex frequency, Google AIO trigger threshold changes, what proportion of queries actually invoke web search.
+- **API surface changes** affecting AI search products (e.g., schema requirement changes, prompt format updates).
+- **Pricing/access changes** that bottleneck citations (rate limits, country restrictions).
+
+When the daily agent detects such a change in primary sources (Tier 1 in `daily-agent/daily-prompt.md`), it updates the relevant vendor section here, not just the news-feed entry. The news-feed records the announcement; this file records the new state of the world.
+
+---
+
 ## Maintenance
 
 Update this file when:
 - A major vendor releases a new flagship (any of the 8 above).
 - A vendor changes the default model in one of its key products (especially AI Overviews / ChatGPT Search / Copilot — these affect GEO observations).
 - A model's web-search / citation behavior changes materially.
+- A vendor changes how its AI search product works in any of the dimensions listed in "Vendor behavior changes" above.
 
 The `daily-agent/news-feed.md` carries the running record between refreshes — consult both when answering "what's current?" questions.
 

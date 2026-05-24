@@ -8,6 +8,7 @@ Hoje é {{TODAY}}.
 - SEO clássico: core updates, mudanças algorítmicas confirmadas
 - Schema.org evolution, llms.txt adoption, crawlers IA
 - **Novos modelos LLM** (OpenAI, Anthropic, Google, Meta, xAI, DeepSeek, Mistral) — releases, capacidades, qual produto AI search passa a usar o novo modelo, deprecation de versões antigas. Se houver release material, **também actualiza `references/models.md`** (não apenas o news-feed).
+- **Mudanças no funcionamento dos vendors** — citation mechanics, crawler behavior (novos user-agents, mudanças de compliance com robots.txt), query mechanics (fan-out, reformulação), source weighting (boost a Reddit/YouTube/Wikipedia), default web-search on/off por tier, mudanças no índice (Bing reindex, Google AIO trigger threshold). Se houver mudança documentada: actualiza `references/frameworks.md` §5 (RAG mechanics) e/ou `references/models.md` na secção do vendor afectado, **além** de registar no news-feed.
 
 ## Fontes prioritárias (por tier)
 
