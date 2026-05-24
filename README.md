@@ -37,6 +37,9 @@ skills/
       benchmarks.md            Public studies with hard numbers (Pew, Ahrefs,
                                BrightEdge, Semrush, Similarweb, NetElixir,
                                Aggarwal et al., Seer); flagged stats NOT to cite
+      models.md                LLM models tracker per vendor (OpenAI, Anthropic,
+                               Google, Microsoft, Perplexity, Meta, xAI, DeepSeek,
+                               Mistral) + vendor behavior changes
     daily-agent/
       daily-prompt.md          Instructions for the daily research agent
       news-feed.md             Auto-updated by Claude Code Web Routine, 08:00 Lisboa
