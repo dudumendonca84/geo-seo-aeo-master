@@ -4,16 +4,23 @@
 
 ## O que vai aqui
 
-Auditoria técnica ao destaque.ai (https://destaque.ai) seguindo a **metodologia destaque.ai** definida em `../SKILL.md` § Methodology. A metodologia é própria, sintetizada a partir de fontes top-tier (academic research, industry primary research, vendor primary docs, practical audit traditions). Inclui:
+Auditoria holística ao destaque.ai (https://destaque.ai) seguindo a **metodologia destaque.ai** definida em `../SKILL.md` § Methodology. A metodologia é própria, sintetizada de fontes top-tier (academic research, industry primary research, vendor primary docs, practical audit traditions). Cobre as 8 dimensões da metodologia + scorecard de 12 categorias + plano de acção em 4 horizontes. Inclui:
 
-1. **Sumário executivo** — Score global /100, scorecard por categoria (SEO Técnico, Conteúdo & E-E-A-T, SEO On-Page, Schema, Performance/CWV, Optimização de imagens, Preparação para IA/GEO), top 3-4 findings ponderados.
+1. **Sumário executivo** — Score global /100, scorecard de 12 categorias (SEO Técnico, Performance/CWV, SEO On-Page, Schema, Optimização de imagens, GEO técnica, Conteúdo & topical authority, Entidade & brand foundation, Autoridade & digital PR, Sinais sociais & community, E-E-A-T & on-site authority, Medição & feedback loop), top 3-4 findings ponderados **across all dimensions**.
 2. **Contexto de negócio** — Identidade, oferta, diferenciadores visíveis do site, presença social declarada.
 3. **Análise de plataforma** — Hosting, build (SSG/SSR/CSR), platform ceiling, custo estimado actual.
 4. **Performance** — TTFB (mediana de 5 corridas curl de PT), HTML weight, compression, LCP/INP/CLS se disponíveis.
 5. **SEO on-page** — Title, meta description, heading hierarchy, alt coverage, bilingual copy hygiene.
 6. **SEO technical** — sitemap, robots.txt (matrix de crawlers IA), hreflang, JSON-LD schema, security headers, cache.
-7. **AI / LLM visibility (GEO)** — `llms.txt` + `llms-full.txt` presence, robots permission posture, server-rendered HTML, manual prompt test results (ChatGPT, Claude, Perplexity).
-8. **Plano de acção em 4 horizontes** — Horizonte 1 (semana 1-2, critical quick-wins), 2 (semana 3-6, optimização do existente), 3 (semana 7-12, reforço estratégico), 4 (90+ dias, posicionamento longo prazo).
+7. **AI / LLM visibility (GEO técnica)** — `llms.txt` + `llms-full.txt`, robots permission posture, server-rendered HTML, manual prompt test em ChatGPT / Claude / Perplexity / Google AI Mode.
+8. **Content strategy & topical authority** — topics owned, original statistics, content cadence, distribution channels, gap analysis vs competitors.
+9. **Entity & brand foundation** — Wikidata QID, Knowledge Panel, `sameAs` depth, NAP consistency.
+10. **Authority & digital PR** — Tier-1 PT media coverage, industry-publication mentions, link graph, branded anchor text.
+11. **Social & community signals** — LinkedIn / GitHub / Reddit / HN / X presence.
+12. **E-E-A-T & on-site authority** — named authors, credentials, case studies, certifications.
+13. **Measurement & feedback loop** — GSC, GA4 AI channel, BWT AI Performance, monitoring tool, manual prompt audit schedule.
+14. **Strategic positioning & competitive intel** — named competitor set, share-of-voice trend, "no-click" strategy, pipeline-stage mapping.
+15. **Plano de acção em 4 horizontes** — Horizonte 1 (semana 1-2, critical quick-wins **across dimensions**), 2 (semana 3-6, optimização do existente), 3 (semana 7-12, reforço estratégico), 4 (90+ dias, posicionamento longo prazo).
 
 ## Manutenção
 

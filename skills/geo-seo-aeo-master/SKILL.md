@@ -101,6 +101,30 @@ The destaque.ai methodology is the synthesis below. It is **owned**, **evolves**
 - **News-feed → references absorption protocol.** Daily-agent (`daily-agent/daily-prompt.md`) doesn't just log news — it absorbs durable findings into references/ before truncation, so the methodology gets smarter over time.
 - **Methodology evolution protocol.** The methodology itself is not static — it evolves as new model behaviors, new vendor mechanics, new academic findings and new audit dynamics emerge. See § Methodology evolution below.
 
+### Scope of the methodology — holistic, not just technical
+
+The destaque.ai methodology covers **everything that contributes to ranking #1 or being cited in AI search**, not only the technical layer. Technical hygiene is necessary but never sufficient. The methodology integrates **eight dimensions**:
+
+1. **Technical foundation** — TTFB, compression, security headers, schema, robots.txt for AI crawlers, llms.txt, hreflang, server-rendered HTML, platform ceilings. This is where most audit work *starts*, but it is one of eight dimensions, not the whole.
+
+2. **Content strategy and topical authority** — which topics the brand owns, content cluster architecture, cadence, depth, unique data and original statistics (Aggarwal et al. KDD 2024 — statistics addition is the strongest single citation lift). Editorial calendar discipline, content gap analysis vs competitors, distribution channels.
+
+3. **Entity and brand foundation** — Wikidata item completeness, Wikipedia eligibility/coverage, Google Knowledge Panel presence, `Organization.sameAs` depth, NAP consistency across web (Google Business, LinkedIn, Crunchbase, Bloomberg), brand-as-entity disambiguation. See `references/frameworks.md` §7. Brand search volume correlates with citation at r≈0.33 (Profound).
+
+4. **Authority and digital PR** — Tier-1 media coverage (for PT-PT clients: Observador, ECO, Público, Expresso, Dinheiro Vivo, Jornal de Negócios), industry-publication mentions, podcast appearances, conference speaking, third-party case studies, link graph quality. Branded anchor text correlates with AI Overview presence at r=0.527 (Ahrefs 75k-brand analysis) — outperforming domain rating.
+
+5. **Social and community signals** — LinkedIn presence (named authors, posts that get re-cited), GitHub presence for technical brands, Reddit / Hacker News / Stack Overflow visibility, X presence. These platforms are themselves frequently cited by AI engines (Reddit ~47% of Perplexity top citations; YouTube ~14%; Wikipedia heavy across all engines).
+
+6. **Authority signals on site** — declared authors with `Person` schema and `sameAs` to LinkedIn / ORCID, named experience and credentials (E-E-A-T's "Experience" leg), case studies with verifiable client outcomes, certifications, awards. The September 2025 Search Quality Rater Guidelines formally added evaluation of AI Overviews to the rater workflow.
+
+7. **Measurement and feedback loop** — GSC for organic baseline (with the May 2025 – April 2026 over-reporting caveat), GA4 with custom "AI" channel group for AI-attributed traffic (lower bound), Bing Webmaster Tools AI Performance for first-party Copilot citation telemetry (public preview 9 Feb 2026), one monitoring tool for citation rate / SoV across engines, monthly manual prompt audits, Wikidata / Knowledge Panel quarterly checks.
+
+8. **Strategic positioning and competitive intel** — explicit positioning against named competitors in the AI-search context, share-of-voice trend tracking, pricing/pitch alignment with how the category is described by LLMs, "what gets cited when someone asks about us / them?", action-query strategy for no-click world (Pew Jul 2025: 8% vs 15% CTR with/without AIO; **only 1% click sources inside AIO**), pipeline-stage mapping to search surface.
+
+**Implication for audit workflow.** The audit format below does cover all eight dimensions, weighted appropriately. A technical audit that scores 100/100 on the first dimension and ignores the other seven is a partial deliverable. The destaque.ai house format is the full picture.
+
+**Implication for client work.** Audit findings drive an integrated 4-horizon plan that mixes technical fixes (compression, schema), content actions (new statistics-dense pages, named-author bylines), entity work (Wikidata population, NAP cleanup), digital PR (target Tier-1 media coverage), measurement instrumentation (BWT AI Performance setup) and strategic positioning (which categories to own). Selling only the technical layer is leaving most of the lift on the table.
+
 ### Methodology evolution
 
 The methodology has to **adapt to a moving field**. What worked in 2024 (schema-heavy audits, low-AIO landscape) is not what works in 2026 (schema null result on established sites, AIO at 50%+ of queries). Static methodologies become wrong methodologies.
@@ -136,8 +160,20 @@ When asked to audit a site, produce a document with the structure below. Tone is
 
 ### 1. Executive summary
 - Overall score /100 with qualitative band (Critical / Needs Improvement / Good / Excellent).
-- 7-category scorecard (SEO Técnico, Conteúdo & E-E-A-T, SEO On-Page, Schema / dados estruturados, Performance / CWV, Optimização de imagens, Preparação para IA / GEO).
-- Top 3-4 weighted findings.
+- 12-category scorecard:
+  1. SEO Técnico
+  2. Performance / CWV
+  3. SEO On-Page
+  4. Schema / dados estruturados
+  5. Optimização de imagens
+  6. Preparação para IA / GEO técnica (llms.txt, robots, server-rendering)
+  7. Conteúdo & topical authority (estatísticas originais, depth, content clusters)
+  8. Entidade / brand foundation (Wikidata, Knowledge Panel, sameAs, NAP)
+  9. Autoridade & digital PR (Tier-1 media coverage, link graph, backlinks)
+  10. Sinais sociais & community (LinkedIn, GitHub, Reddit/HN, X)
+  11. E-E-A-T & authority on-site (named authors, credentials, case studies)
+  12. Medição & feedback loop (GSC, GA4 AI channel, BWT AI Performance, monitoring tool, manual prompt audits)
+- Top 3-4 weighted findings across all 12 categories — not only technical.
 - One paragraph of what is already strong (so the client knows they are not buying remediation panic).
 
 ### 2. Business context
@@ -175,20 +211,72 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Security headers (HSTS, X-Content-Type-Options, CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy).
 - Compression and cache headers.
 
-### 7. AI / LLM visibility (the GEO section)
+### 7. AI / LLM visibility (technical GEO)
 - `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap?
 - Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent.
 - Is HTML server-rendered (LLMs read it without JS)?
 - Recommend a practical test: ask ChatGPT, Claude, Perplexity a category-defining query; document who appears and who does not; repeat after fixes.
 
-### 8. Four-horizon action plan
-- Horizonte 1 (semana 1-2): critical quick-wins. Effort + approval column.
-- Horizonte 2 (semana 3-6): optimisation of existing.
-- Horizonte 3 (semana 7-12): strategic reinforcement.
-- Horizonte 4 (90+ dias): long-term positioning.
+### 8. Content strategy and topical authority
+- Topics owned (clusters mapped, depth per cluster). Are there clusters that should exist for the category but the brand doesn't cover them?
+- Original statistics and proprietary data published on the site. Aggarwal et al. KDD 2024 — Statistics Addition is the strongest single citation lift (up to +40.6% PAWC on GEO-bench).
+- Content cadence and freshness signals (`dateModified`).
+- Distribution channels — own newsletter / RSS, syndication partnerships, content cross-posting.
+- Editorial calendar discipline and competitive content gap analysis.
 
-### 9. Closing note
-- Honest commercial posture. If the site does not need intervention, say so. Do not invent urgency.
+### 9. Entity and brand foundation
+- Wikidata item: exists? populated (instance of, country, headquarters, industry, founder, inception date, official website, social IDs, ORCID for execs)?
+- Wikipedia eligibility evaluated honestly — most B2B SaaS doesn't meet notability; if not, is the brand mentioned in adjacent Wikipedia articles (industry overviews, product-category pages)?
+- Google Knowledge Panel: does it render for the brand name query?
+- `Organization.sameAs` depth — LinkedIn, GitHub, X, Crunchbase, Wikidata, Bloomberg if listed.
+- NAP consistency across the open web (Google Business, LinkedIn company page, Crunchbase, registry entries).
+- Brand-as-entity disambiguation if the name is ambiguous.
+
+### 10. Authority and digital PR
+- Tier-1 PT media coverage (Observador, ECO, Público, Expresso, Dinheiro Vivo, Jornal de Negócios). Number of pieces / 12 months, with URLs.
+- Industry-publication coverage (Search Engine Land, SEJ, vertical-specific outlets).
+- Conference speaking, podcast appearances, third-party case studies, awards.
+- Link graph quality — branded anchor text, referring domains, contextual placement.
+- Reference: Ahrefs 75k-brand analysis — branded search volume r=0.334, branded anchor text r=0.527 with AIO presence, outperforming domain rating.
+
+### 11. Social and community signals
+- LinkedIn — company page activity, named-employee thought leadership, post engagement.
+- GitHub presence (for technical brands) — repositories, contributions, organisational profile.
+- Reddit / Hacker News / Stack Overflow / industry forums — brand mentions, authentic participation (not spam).
+- X presence — voice, engagement, citation by industry voices.
+- Reminder: Reddit ~47% of Perplexity top citations; YouTube ~14% across engines; Wikipedia heavy across all engines.
+
+### 12. E-E-A-T and on-site authority
+- Named authors with `Person` schema and `sameAs` to LinkedIn / ORCID / Google Scholar.
+- Author bios with credentials, declared experience, links to external authoritative profiles.
+- Case studies with verifiable client outcomes (named clients, dates, measured results).
+- Certifications, awards, accreditations rendered in dedicated trust pages.
+- E-E-A-T mapping per Google Search Quality Rater Guidelines Sept 2025 revision.
+
+### 13. Measurement and feedback loop
+- Google Search Console — connected? Annotations for the May 2025 – April 2026 over-reporting window?
+- GA4 — custom "AI" channel group configured (regex covering chatgpt.com, perplexity.ai, claude.ai, gemini.google.com, copilot.microsoft.com, etc.)?
+- Bing Webmaster Tools AI Performance dashboard — enabled (public preview 9 Feb 2026)?
+- Monitoring tool (Peec AI / Profound / Otterly / Semrush AI Toolkit / Ahrefs Brand Radar) — configured with category-relevant prompt set?
+- Manual prompt audit schedule — monthly minimum, weekly for high-profile clients.
+- Wikidata / Knowledge Panel quarterly check.
+
+### 14. Strategic positioning and competitive intel
+- Named competitor set in the AI-search context. Who else is cited when the category question is asked?
+- Share-of-voice trend (own tooling — see § 13).
+- Pricing / pitch alignment with how the category is described by LLMs (does the LLM's category framing match the brand's pitch, or is there a gap?).
+- "No-click" reality strategy. Pew Jul 2025: 8% vs 15% CTR with/without AIO; only 1% click sources inside AIO. Strategy: optimise for being **named** in answers; capture action queries (signup, pricing, demo, integration-specific config) where clicks survive.
+- Pipeline-stage mapping to search surface — informational queries (AIO present, optimise for citation), commercial queries (mixed, optimise for both), transactional queries (classic SERP still dominates for many verticals).
+
+### 15. Four-horizon action plan
+- Horizonte 1 (semana 1-2): critical quick-wins. Mixed dimensions — não só técnicas. Effort + approval column.
+- Horizonte 2 (semana 3-6): optimisation of existing — incluir content, entity work, medição se aplicável.
+- Horizonte 3 (semana 7-12): strategic reinforcement — content clusters, digital PR campaigns, entity build-out.
+- Horizonte 4 (90+ dias): long-term positioning — thought leadership, conference presence, partnerships, knowledge graph dominance.
+
+### 16. Closing note
+- Honest commercial posture. If the site does not need intervention in a given dimension, say so. Do not invent urgency.
+- If only 2-3 of the 12 categories need work, be explicit that the others are already strong — clients value honesty about scope.
 
 ## Editorial voice
 
