@@ -51,8 +51,8 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/
 
 **Estrutura consumida:**
 - **§ 1 Princípios** — meta-rules para escrever prompts (persona, contexto, intent, etc.)
-- **§ 2 Categorias canónicas** — 5 categorias: `generic_category`, `direct_comparison`, `local_recommendation`, `feature_specific`, `price_comparison`
-- **§ 3 Distribuição por tier** — tabela markdown com distribuição de prompts por audit tier (free: 5, diagnostic: 30)
+- **§ 2 Categorias canónicas** — 5 categorias: `generic_category`, `direct_comparison`, `local_recommendation`, `feature_specific`, `price_comparison`. **Hardcoded** no enum `PromptCategory` do Deck Builder — adicionar/remover categoria requer code change coordenado, não basta mudar este ficheiro.
+- **§ 3 Distribuição por tier** — tabela markdown com distribuição de prompts por audit tier (free: 5, diagnostic: 30). **Entra no slice como contexto verbatim mas NÃO é parseada estruturalmente.** O Deck Builder hardcoda actualmente: `free` 1/1/1/1/1, `diagnostic` 8/8/6/4/4 (ordem: generic / direct_comp / local / feature / price). Se a tabela mudar aqui, o Deck Builder ignora silenciosamente — abrir issue ou coordenar code change. Parser dinâmico para § 3 é integração futura possível.
 
 **Estrutura interna (não para Deck Builder):**
 - § 4 Catálogo destaque.ai — prompts específicos do segmento (usado só pelo self-audit da skill, não exportado)
@@ -81,18 +81,30 @@ Bloco `## Deck Builder API mappings` no fim do ficheiro. Tabela com header:
 | Deck engine | Vendor | production | cost_optimized |
 ```
 
-Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copilot`, `mistral`, `grok`, `deepseek`, `meta`.
+Engines actualmente listados nesta tabela: `chatgpt`, `claude`, `gemini`, `perplexity`, `copilot`, `mistral`, `grok`, `deepseek`, `meta`.
+
+**Engines efectivamente consumidos pelo Deck Builder** (tuple `ENGINES` hardcoded em código, conforme PR #2 / commit `3a2d534`): `chatgpt`, `claude`, `gemini`, `perplexity`, `mistral`, `grok`, `deepseek` — **7 dos 9**. `copilot` e `meta` ficam listados aqui para future-proofing e são **silenciosamente ignorados** pelo parser. Adicionar engine ao tuple do Deck Builder requer code change coordenado (migration ao CHECK constraint dos engines + wrapper API + env var de chave).
 
 **Parsing contract para Deck Builder:**
 1. Fetch a URL acima
 2. Localizar a secção `## Deck Builder API mappings`
-3. Parse da tabela com o header exacto acima
-4. Strip dos backticks nas cells (cada cell contém `id-do-modelo` em backticks)
-5. Map por audit tier:
+3. Parse da tabela com o header exacto acima (ordem das colunas não importa — match por nome)
+4. Strip dos backticks nas cells (cada cell contém `id-do-modelo` em backticks ou raw)
+5. Engines fora do tuple consumido são ignorados silenciosamente
+6. Map por audit tier:
    - `free` → coluna `cost_optimized`
    - `diagnostic` → coluna `production`
    - `premium` (futuro) → coluna `production`
-6. Se fetch ≠ 200 OU parse falhar → usar fallback hardcoded em código
+7. Se fetch ≠ 200 OU parse falhar → usar fallback hardcoded em código
+
+**Fragilidades conhecidas (model IDs a vigiar)** — flagged pela sessão do Deck Builder em 2026-05-24:
+
+- `deepseek-v4` (production) — não 100% confirmado como ID válido na DeepSeek API; alternativa possível `deepseek-v4-pro`. Validar com e2e test.
+- `claude-haiku-4-5-20251001` (cost_optimized) — date-stamped; vai stale na próxima release de Haiku.
+- `grok-4` (production) — deprecated com migration deadline 15 Ago 2026.
+- `mistral-small-latest` (cost_optimized) — confirmar que existe como ID; alternativa `mistral-medium-latest`.
+
+Daily-agent (`daily-agent/daily-prompt.md`) tem instrução explícita para verificar estes 4 a cada release que toque os vendors respectivos.
 
 ---
 
@@ -148,5 +160,6 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
 | Data | Mudança | Impacto |
 |---|---|---|
 | 2026-05-23 | Inicialização — prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
+| 2026-05-24 | Clarificação de contrato face a Deck Builder PR #2 (`3a2d534`): (a) § 3 distribuição entra como contexto verbatim mas é hardcoded no Deck Builder (free 1/1/1/1/1, diag 8/8/6/4/4) — não há parser estrutural; (b) 5 categorias canónicas são hardcoded no enum `PromptCategory`; (c) 7 engines efectivamente consumidos (`chatgpt, claude, gemini, perplexity, mistral, grok, deepseek`); `copilot` e `meta` listados mas silenciosamente ignorados; (d) lista de fragilidades de model IDs a vigiar (deepseek-v4, claude-haiku date-stamped, grok-4 deprecation Ago 2026, mistral-small-latest). | Sem mudança real ao contrato — só registo do que já é a realidade do PR #2. Daily-agent actualizado para verificar as 4 fragilidades. |
 
 Adicionar entry sempre que algum contrato mudar.

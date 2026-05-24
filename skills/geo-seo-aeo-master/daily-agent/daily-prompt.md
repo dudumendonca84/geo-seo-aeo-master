@@ -8,6 +8,14 @@ Hoje é {{TODAY}}.
 - SEO clássico: core updates, mudanças algorítmicas confirmadas
 - Schema.org evolution, llms.txt adoption, crawlers IA
 - **Novos modelos LLM** (OpenAI, Anthropic, Google, Meta, xAI, DeepSeek, Mistral) — releases, capacidades, qual produto AI search passa a usar o novo modelo, deprecation de versões antigas. Se houver release material, **também actualiza `references/models.md`** (não apenas o news-feed): tanto as tabelas humano-friendly por vendor **como o bloco § Deck Builder API mappings no fim do ficheiro** (machine-readable contract — actualiza colunas `production` e/ou `cost_optimized` da row do engine afectado).
+
+  **Fragilidades de model IDs a verificar a cada run que toque o vendor respectivo** (flagged pela sessão do Deck Builder em 2026-05-24, ver `INTERFACES.md` § Contrato 2):
+  - `deepseek-v4` (DeepSeek, production): confirmar ainda é o ID correcto via [api-docs.deepseek.com](https://api-docs.deepseek.com); alternativa possível `deepseek-v4-pro`. Se houver e2e test report a falhar com 400, propor a troca.
+  - `claude-haiku-4-5-20251001` (Anthropic, cost_optimized): date-stamped; à próxima release de Haiku, actualizar ID no bloco mappings e adicionar entry em `methodology-changelog.md`.
+  - `grok-4` (xAI, production): deprecation deadline **15 Ago 2026**. Verificar status no [docs.x.ai](https://docs.x.ai/docs/models) a cada run; quando houver successor confirmado, propor swap antes do prazo.
+  - `mistral-small-latest` (Mistral, cost_optimized): confirmar via [docs.mistral.ai](https://docs.mistral.ai/getting-started/models/models_overview/) que ainda existe; alternativa `mistral-medium-latest`.
+
+  Para qualquer destes, se houver evidência de invalidade ou deprecation iminente, actualizar `models.md` directamente (bloco Deck Builder API mappings) e registar no news-feed do dia. Para mudanças "default flipped" (ex: ChatGPT passa de GPT-5 para GPT-5.5 como default), também adicionar entry em `methodology-changelog.md`.
 - **Mudanças no funcionamento dos vendors** — citation mechanics, crawler behavior (novos user-agents, mudanças de compliance com robots.txt), query mechanics (fan-out, reformulação), source weighting (boost a Reddit/YouTube/Wikipedia), default web-search on/off por tier, mudanças no índice (Bing reindex, Google AIO trigger threshold). Se houver mudança documentada: actualiza `references/frameworks.md` §5 (RAG mechanics) e/ou `references/models.md` na secção do vendor afectado, **além** de registar no news-feed.
 - **Prompt patterns do segmento** — research publicado sobre quais prompts B2B SaaS / consultoria / agências GEO recebem (Profound, Peec, Otterly publicam ocasionalmente; AnswerThePublic; Reddit r/SEO threads sobre o tema; sales call patterns). Se descobrires novos prompts canónicos do segmento destaque.ai ou shifts em prompts existentes: actualiza `references/prompts.md` adicionando entry com `[YYYY-MM-DD added]` ou ajustando o tier de um prompt existente.
 
