@@ -1,6 +1,14 @@
 # LLM models tracker — May 2026
 
-Reference for `geo-seo-aeo-master`. Tracks current LLM model versions, capabilities and defaults across the major vendors. Critical for GEO work because **which model a given AI product uses determines its citation behavior, recency window and grounding mechanism**.
+> **Consumidores:**
+> 1. **Skill** (audit workflow §7 — prompt test multi-engine) — usa coluna "Default in" para saber qual modelo testar em cada engine.
+> 2. **Deck Builder** (`destaque-ai-deck-builder`) — fetch via raw URL antes de cada audit para garantir que testa o modelo currently default de cada engine.
+> 3. **Routine self-audit semanal** — refresh deste ficheiro se >7 dias desde Last refresh, antes de prosseguir.
+>
+> **Raw URL para Deck Builder:**
+> `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/models.md`
+
+Tracks current LLM model versions, capabilities and defaults across the major vendors. Critical for GEO work because **which model a given AI product uses determines its citation behavior, recency window and grounding mechanism**.
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
