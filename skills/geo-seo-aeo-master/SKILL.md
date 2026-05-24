@@ -16,7 +16,8 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `references/tools.md` | Vendor landscape (Profound, Peec AI, Otterly, Goodie, Daydream, Surfer, Ahrefs Brand Radar, Semrush AI Toolkit) with honest gaps. |
 | `references/metrics.md` | Citation rate, brand mention rate, SoV, AI-attributed traffic, Princeton PAWC; GSC / GA4 / Bing Webmaster Tools current state. |
 | `references/benchmarks.md` | Public studies with hard numbers (Pew, Ahrefs, BrightEdge, Semrush, Similarweb, NetElixir, Aggarwal et al., Seer). Flagged stats *not* to cite. |
-| `daily-agent/news-feed.md` | Auto-updated 07:00 UTC. "What changed in the last 24-48h" entries. |
+| `references/models.md` | Current LLM models tracker — versions, defaults per AI product, web search/RAG support, GEO-relevant notes per vendor. Refreshed when material releases happen. |
+| `daily-agent/news-feed.md` | Auto-updated daily 08:00 Lisboa. "What changed in the last 24-48h" entries (model releases, AIO mechanic changes, studies, papers). |
 
 Load only what you need. Don't pre-load everything.
 

@@ -7,6 +7,7 @@ Hoje é {{TODAY}}.
 - AI search: ChatGPT/SearchGPT, Claude, Gemini, Perplexity, Google AI Mode, Bing Copilot, You.com
 - SEO clássico: core updates, mudanças algorítmicas confirmadas
 - Schema.org evolution, llms.txt adoption, crawlers IA
+- **Novos modelos LLM** (OpenAI, Anthropic, Google, Meta, xAI, DeepSeek, Mistral) — releases, capacidades, qual produto AI search passa a usar o novo modelo, deprecation de versões antigas. Se houver release material, **também actualiza `references/models.md`** (não apenas o news-feed).
 
 ## Fontes prioritárias (por tier)
 
