@@ -9,6 +9,7 @@ Hoje é {{TODAY}}.
 - Schema.org evolution, llms.txt adoption, crawlers IA
 - **Novos modelos LLM** (OpenAI, Anthropic, Google, Meta, xAI, DeepSeek, Mistral) — releases, capacidades, qual produto AI search passa a usar o novo modelo, deprecation de versões antigas. Se houver release material, **também actualiza `references/models.md`** (não apenas o news-feed).
 - **Mudanças no funcionamento dos vendors** — citation mechanics, crawler behavior (novos user-agents, mudanças de compliance com robots.txt), query mechanics (fan-out, reformulação), source weighting (boost a Reddit/YouTube/Wikipedia), default web-search on/off por tier, mudanças no índice (Bing reindex, Google AIO trigger threshold). Se houver mudança documentada: actualiza `references/frameworks.md` §5 (RAG mechanics) e/ou `references/models.md` na secção do vendor afectado, **além** de registar no news-feed.
+- **Prompt patterns do segmento** — research publicado sobre quais prompts B2B SaaS / consultoria / agências GEO recebem (Profound, Peec, Otterly publicam ocasionalmente; AnswerThePublic; Reddit r/SEO threads sobre o tema; sales call patterns). Se descobrires novos prompts canónicos do segmento destaque.ai ou shifts em prompts existentes: actualiza `references/prompts.md` adicionando entry com `[YYYY-MM-DD added]` ou ajustando o tier de um prompt existente.
 
 ## Fontes prioritárias (por tier)
 
@@ -112,6 +113,7 @@ Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
    | Lançamento ou mudança de modelo LLM | `models.md` — secção do vendor |
    | Mudança de comportamento de vendor (citation mechanics, crawler compliance, etc.) | `models.md` (secção vendor) + `frameworks.md` §5 (se afecta RAG) |
    | Mudança em Schema.org, llms.txt, E-E-A-T, robots.txt directives | `frameworks.md` — secção respectiva |
+   | Novo prompt canónico do segmento ou shift em existente | `prompts.md` — Tier apropriado com `[YYYY-MM-DD added]` |
    | Caso B2B documentado com dados reais | `benchmarks.md` — secção de case studies |
    | **Mudança que altera a forma de auditar (peso de schema mudou, novo signal canónico, novo vendor crawler, AIO mechanic mudou)** | **`SKILL.md` § Audit workflow + entry em `methodology-changelog.md`** |
 

@@ -17,6 +17,7 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `references/metrics.md` | Citation rate, brand mention rate, SoV, AI-attributed traffic, Princeton PAWC; GSC / GA4 / Bing Webmaster Tools current state. |
 | `references/benchmarks.md` | Public studies with hard numbers (Pew, Ahrefs, BrightEdge, Semrush, Similarweb, NetElixir, Aggarwal et al., Seer). Flagged stats *not* to cite. |
 | `references/models.md` | Current LLM models tracker — versions, defaults per AI product, web search/RAG support, GEO-relevant notes per vendor. Refreshed when material releases happen. |
+| `references/prompts.md` | Prompt intelligence for the destaque.ai segment — canonical landscape of prompts used by B2B SaaS PT prospects when consulting LLMs about GEO/SEO/AEO. Gold-standard test suite for self-audit and prospect audits. |
 | `daily-agent/news-feed.md` | Auto-updated daily 08:00 Lisboa. "What changed in the last 24-48h" entries (model releases, AIO mechanic changes, studies, papers). |
 | `destaque-ai-self/audit-baseline.md` | Auto-updated weekly Mondays 09:00. Current technical audit of destaque.ai itself in the destaque.ai house style (eating own dog food). |
 | `destaque-ai-self/improvements-backlog.md` | Auto-updated weekly. Prioritized list of improvements to destaque.ai, with status, effort, origin (audit / news / external request). |

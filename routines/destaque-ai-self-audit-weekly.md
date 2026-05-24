@@ -27,7 +27,10 @@ Hoje é {{TODAY}}. Vais fazer uma self-audit semanal ao site destaque.ai (https:
    - Sinais sociais: LinkedIn, GitHub, Reddit/HN, X
    - E-E-A-T on-site: named authors, credentials, case studies, certifications
    - Medição: GSC, GA4 AI channel, BWT AI Performance, monitoring tool, conversion attribution funnel
-4. Prompt-test multi-engine (mandatory: ChatGPT, Perplexity, Google AI Mode, Claude, Bing Copilot) com query "consultoria GEO SEO AEO Portugal" e variantes. Usa os modelos default de cada engine per models.md. Para cada engine documenta: query, data+hora, modelo activo (versão exacta), full answer ou screenshot, citations, ranking, mention vs citation, sentiment, competitors.
+4. Prompt-test multi-engine. Abre skills/geo-seo-aeo-master/references/prompts.md e usa o test suite:
+   - **Sempre**: todos os prompts Tier 1 (Discovery, D1-D10), todos os Tier 4 (Problem-stated, P1-P9), todos os Tier 7 (B2B SaaS PT, V1-V5)
+   - **Rotativo**: 10 prompts diferentes por semana escolhidos de Tier 2 (Comparison), Tier 3 (Evaluation), Tier 5 (Pricing), Tier 6 (Technical) — alternar para não saturar tokens
+   Engines mandatory: ChatGPT, Perplexity, Google AI Mode, Claude, Bing Copilot. Usa os modelos default de cada engine per models.md. Para cada prompt × engine documenta: query exacta, data+hora, modelo activo (versão exacta), full answer ou screenshot, citations, ranking de destaque.ai, mention vs citation, sentiment, competitors citados.
 5. Lê audit-baseline.md anterior (se existir) para comparar.
 6. Lê daily-agent/news-feed.md das últimas 7 entradas para identificar mudanças no mercado que abrem novas oportunidades ou criam urgência para destaque.ai.
 7. Actualiza:

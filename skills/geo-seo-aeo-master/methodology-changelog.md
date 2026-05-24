@@ -8,6 +8,25 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-05-23 — SINAL v1.4 — Prompt intelligence layer added
+
+**Trigger.** Founder direction: skill deve evoluir também nos prompts — saber quais prompts canónicos o segmento usa, não só fixar uma query intuição-based no audit.
+
+**Source.** Internal product direction.
+
+**Changes:**
+- New file `references/prompts.md` — prompt intelligence canonical landscape para o segmento destaque.ai (B2B SaaS PT). 7 tiers de prompts (Discovery, Comparison, Evaluation, Problem-stated, Pricing, Technical, Vertical SaaS PT). 30+ prompts seed com tier classification.
+- `daily-agent/daily-prompt.md`:
+  - Nova bullet de monitoring para prompt patterns research (Profound, Peec, Otterly publications; AnswerThePublic; Reddit r/SEO threads; sales call patterns)
+  - Matriz de absorção expandida com row para "Novo prompt canónico do segmento ou shift em existente → prompts.md Tier apropriado"
+- `routines/destaque-ai-self-audit-weekly.md` actualizado para usar prompts.md como test suite em vez de query hard-coded. Rotação Tier 2/3/5/6 (10 prompts/semana) + Tier 1/4/7 (mandatory cada semana).
+- `SKILL.md` file index actualizado com prompts.md.
+- `README.md` file tree actualizado.
+
+**Effect.** O self-audit semanal passa a medir share-of-voice real do destaque.ai contra um conjunto representativo de prompts (não só uma intuição-based). Permite tracking longitudinal de SoV per prompt tier. Informa content strategy: cada prompt em prompts.md vira candidato a "resposta que destaque.ai deve owned".
+
+---
+
 ## 2026-05-23 — SINAL v1.3 — Gaps fechados + acronym formalisation
 
 **Trigger.** Founder direction: ensure methodology is best-in-class and most recent; name the model.

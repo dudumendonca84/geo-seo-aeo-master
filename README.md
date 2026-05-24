@@ -42,6 +42,9 @@ skills/
       models.md                LLM models tracker per vendor (OpenAI, Anthropic,
                                Google, Microsoft, Perplexity, Meta, xAI, DeepSeek,
                                Mistral) + vendor behavior changes
+      prompts.md               Prompt intelligence for the destaque.ai segment
+                               (canonical landscape of prompts B2B SaaS PT
+                               prospects use; gold-standard test suite for audits)
     daily-agent/
       daily-prompt.md          Instructions for the daily research agent
       news-feed.md             Auto-updated by Claude Code Web Routine, 08:00 Lisboa
