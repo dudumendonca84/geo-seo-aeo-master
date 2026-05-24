@@ -8,6 +8,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-05-24
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic + KPMG — aliança global (19 mai)** — [anthropic.com](https://www.anthropic.com/news/anthropic-kpmg). 276.000+ colaboradores KPMG em 138 países terão acesso a Claude. Complementa parceria PwC de 14 maio em que Claude Code se estende à força de trabalho global da firma.
+
+- **OpenAI — proveniência de conteúdo com SynthID + C2PA (19 mai)** — [openai.com](https://www.openai.com/index/advancing-content-provenance/). Imagens geradas via ChatGPT, Codex e API passam a incorporar watermark invisível SynthID (Google DeepMind) e metadados C2PA. Ferramenta de verificação pública disponível em openai.com/verify.
+
+### 📊 Estudos & dados
+
+- **llms.txt: 500M visitas de AI bots, 408 ao ficheiro** — estudo empírico (maio 2026) via [seoscore.tools](https://seoscore.tools/blog/llms-txt-guide/). Num período de 90 dias, GPTBot, ClaudeBot e PerplexityBot ignoram o ficheiro llms.txt na quase totalidade das visitas e crawlam HTML diretamente. Adoção funcional confirmada apenas em developer tools (Cursor, Aider) e frameworks RAG.
+
+- **Structured data → AI Overviews: fator 2,3x** — dados compilados de múltiplas fontes de análise (2026). Páginas com structured data válido têm 2,3x mais probabilidade de aparecer em Google AI Overviews; conteúdo com sinais estruturais claros apresentou até 40% mais visibilidade em respostas generativas.
+
+### 📄 Research académico
+
+- **"Why Retrieval-Augmented Generation Fails: A Graph Perspective"** — arXiv:[2605.14192](https://arxiv.org/abs/2605.14192) (13 mai 2026). Usa circuit tracing e attribution graphs para mapear como evidência recuperada influencia (ou não) a geração de resposta; conclui que nem toda citação aparentemente relevante contribui positivamente para a resposta final.
+
+- **"Towards Dependable RAG Using Factual Confidence Prediction"** — arXiv:[2605.05244](https://arxiv.org/html/2605.05244v1) (4 mai 2026). Propõe métricas de confiança factual para avaliar se contexto recuperado suporta ou confunde o modelo gerador; relevante para sistemas RAG em contexto empresarial.
+
+### 💡 Implicações para destaque.ai
+
+- **KPMG + PwC a adotar Claude em escala global** indica que consultoras de gestão presentes em Portugal já operam com AI. O pitch a clientes B2B PT pode referir que a consultora de estratégia já usa Claude — o que está a fazer a destaque.ai pela sua visibilidade em AI search?
+- **llms.txt não é ranking signal em AI search**: dados empíricos confirmam que implementar llms.txt para aparecer em ChatGPT ou Perplexity é ineficaz. Reposicionar como ferramenta para agentes e developer tools, não como tática GEO de curto prazo.
+- **SynthID/C2PA em conteúdo gerado por AI**: sinal de que proveniência de conteúdo será auditável — awareness para clientes que usam AI content em escala; transparência pode tornar-se requisito editorial a curto prazo.
+
 ## 2026-05-23
 
 ### 🔵 Anúncios oficiais
