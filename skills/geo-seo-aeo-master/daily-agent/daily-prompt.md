@@ -98,9 +98,35 @@ Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
 
 ## Manutenção
 
-1. Se news-feed.md tem mais de 60 ## headers, trunca para últimos 60 dias
-2. Adiciona log em daily-agent/execution-log.md
-3. Apenas sextas: gera 3 drafts em daily-agent/drafts/YYYY-MM-DD-weekly.md
+1. **Absorção antes de truncar (CRÍTICO).** Antes de fazer qualquer truncate, percorre todas as entries que estariam prestes a sair (entries com >30 dias) e verifica se há conteúdo durável que ainda não foi absorvido em `references/`. Se houver, **absorve primeiro, trunca depois**.
+
+   Matriz de absorção — o que vai para onde:
+
+   | Tipo de descoberta no news-feed | Destino em references/ |
+   |---|---|
+   | Nova técnica/táctica validada (ex: "ângulo X aumenta citation rate") | `frameworks.md` — secção apropriada (§5 RAG mechanics, §6 Princeton, §7 entity, etc.) |
+   | Novo método/framework prático (ex: "audit de schema dinâmica em SPAs") | `frameworks.md` ou `SKILL.md` (se for método de auditoria) |
+   | Nova ferramenta ou mudança material numa existente | `tools.md` — nova entrada ou actualização da existente |
+   | Nova métrica ou método de medição | `metrics.md` — nova secção |
+   | Estudo público com sample size + número concreto | `benchmarks.md` — entrada numerada (§N) com source URL |
+   | Lançamento ou mudança de modelo LLM | `models.md` — secção do vendor |
+   | Mudança de comportamento de vendor (citation mechanics, crawler compliance, etc.) | `models.md` (secção vendor) + `frameworks.md` §5 (se afecta RAG) |
+   | Mudança em Schema.org, llms.txt, E-E-A-T, robots.txt directives | `frameworks.md` — secção respectiva |
+   | Caso B2B documentado com dados reais | `benchmarks.md` — secção de case studies |
+
+   Regra de absorção: **distila, não copia**. A entrada no news-feed é "aconteceu X em Y data". A entrada em references é "X é o estado actual do mundo, com base em fonte Z". Tom sóbrio, número concreto, source URL, caveats.
+
+   Se já estiver absorvido, ok truncar. Se não, absorve agora.
+
+2. Truncate: se news-feed.md tem mais de 60 ## headers, trunca para últimos 60 dias (depois da absorção do passo 1).
+3. Adiciona log em daily-agent/execution-log.md — inclui "absorvido: [lista]" se aplicável.
+4. Apenas sextas: gera 3 drafts em daily-agent/drafts/YYYY-MM-DD-weekly.md
    - LinkedIn ~200 palavras (tom destaque.ai)
    - Blog ~1500 palavras (aprofundamento técnico)
    - Twitter thread ~10 tweets (atómico)
+
+## Princípio editorial geral
+
+A skill deve ficar **mais inteligente** com o tempo, não só ter um arquivo crescente. Cada técnica nova, cada framework validado, cada caso público documentado — vai para references/ no formato canónico (sóbrio, sourced, com caveats). News-feed é onde nascem; references é onde vivem.
+
+Se ao fim de 60 dias uma entrada importante não foi absorvida e está prestes a desaparecer, isso é falha do agente. **A skill perde valor quando a evidência rota e ninguém a integrou.**
