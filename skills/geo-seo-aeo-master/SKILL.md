@@ -5,7 +5,7 @@ description: Canonical destaque.ai knowledge base for GEO (Generative Engine Opt
 
 # geo-seo-aeo-master
 
-Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who scopes, runs and writes technical audits using the **destaque.ai methodology** — a synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. See § Methodology below.
+Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who scopes, runs and writes audits using the **SINAL method** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs*. SINAL is a proprietary synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. See § Methodology — SINAL below.
 
 ## Files
 
@@ -57,9 +57,13 @@ A senior practitioner who:
 - "Run an audit on site X" → use the audit workflow below.
 - "Is llms.txt worth doing?" → `frameworks.md` (short version: publish it, do not promise it influences inference).
 
-## Methodology — destaque.ai house style
+## Methodology — SINAL
 
-The destaque.ai methodology is the synthesis below. It is **owned**, **evolves** with the field, and is **applied** to B2B SaaS in Portugal with PT-PT contextual relevance. It is not a clone of any single external framework — it draws from world-class sources and integrates them into one coherent practitioner workflow.
+**SINAL** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.*
+
+SINAL is the destaque.ai proprietary methodology. It is **owned** (not licensed from a vendor), **evolves** with the field (`methodology-changelog.md` is the audit trail), and is **applied** to B2B SaaS in Portugal with PT-PT contextual relevance. It is not a clone of any single external framework — it draws from world-class sources and integrates them into one coherent practitioner workflow.
+
+When a client asks "what methodology do you use?", the answer is: *"SINAL — Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs. Synthesises academic research (Princeton GEO, follow-up arXiv), industry primary research (BrightEdge, Ahrefs, Profound, Semrush, Similarweb, Pew, Seer, NetElixir), vendor primary documentation (Google, OpenAI, Anthropic, Perplexity, Microsoft, Schema.org) and practical audit tradition (3HASH, Schema App, WordLift, Kalicube). 8 dimensions, 12 scorecard categories, 16-section audit, 4-horizon action plan. Evolves on material field shifts."*
 
 ### Sources synthesised (top-tier, world-class)
 
@@ -154,7 +158,7 @@ The methodology has to **adapt to a moving field**. What worked in 2024 (schema-
 
 **Cadence reality:** methodology rarely changes monthly. Maybe 2-4 times per year — when something material happens. Resist the urge to "evolve" on every news entry. Most news is content for the references, not a methodology shift.
 
-### Audit workflow (destaque.ai house format)
+### SINAL audit workflow
 
 When asked to audit a site, produce a document with the structure below. Tone is sober, Economist-style. Numbers over adjectives. Source URL for every non-trivial claim. Honest about platform ceiling and what is/isn't fixable.
 
@@ -215,7 +219,8 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap?
 - Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent.
 - Is HTML server-rendered (LLMs read it without JS)?
-- Recommend a practical test: ask ChatGPT, Claude, Perplexity a category-defining query; document who appears and who does not; repeat after fixes.
+- **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images — image SEO is now a citation surface.
+- Recommend a practical test: ask ChatGPT, Claude, Perplexity, Google AI Mode a category-defining query (text AND image upload if multimodal); document who appears, what visual sources are cited, and ranking position. Repeat after fixes.
 
 ### 8. Content strategy and topical authority
 - Topics owned (clusters mapped, depth per cluster). Are there clusters that should exist for the category but the brand doesn't cover them?
@@ -230,6 +235,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Google Knowledge Panel: does it render for the brand name query?
 - `Organization.sameAs` depth — LinkedIn, GitHub, X, Crunchbase, Wikidata, Bloomberg if listed.
 - NAP consistency across the open web (Google Business, LinkedIn company page, Crunchbase, registry entries).
+- **Local presence (when relevant)** — Google Business Profile completeness, photos, reviews, posts; Bing Places; Apple Maps; consistency of physical address, opening hours, phone across local directories (Yelp, Yellow Pages PT equivalents: Páginas Amarelas / pai.pt; OpenStreetMap). Critical for B2B SaaS with on-site client meetings, training centres, or PT-region targeting.
 - Brand-as-entity disambiguation if the name is ambiguous.
 
 ### 10. Authority and digital PR
@@ -260,6 +266,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Monitoring tool (Peec AI / Profound / Otterly / Semrush AI Toolkit / Ahrefs Brand Radar) — configured with category-relevant prompt set?
 - Manual prompt audit schedule — monthly minimum, weekly for high-profile clients.
 - Wikidata / Knowledge Panel quarterly check.
+- **Conversion attribution beyond rankings** — for a SaaS client, what does increased citation actually drive? GA4 funnel from AI-channel sessions to signup / demo / paid conversion. Cohort analysis: does the AI-referred cohort convert worse, same, or better than organic? NetElixir holiday 2025 data suggests AI-referred visitors convert ~1.2× higher than organic, but that's mid-market retail — verify per client vertical.
 
 ### 14. Strategic positioning and competitive intel
 - Named competitor set in the AI-search context. Who else is cited when the category question is asked?
@@ -267,6 +274,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Pricing / pitch alignment with how the category is described by LLMs (does the LLM's category framing match the brand's pitch, or is there a gap?).
 - "No-click" reality strategy. Pew Jul 2025: 8% vs 15% CTR with/without AIO; only 1% click sources inside AIO. Strategy: optimise for being **named** in answers; capture action queries (signup, pricing, demo, integration-specific config) where clicks survive.
 - Pipeline-stage mapping to search surface — informational queries (AIO present, optimise for citation), commercial queries (mixed, optimise for both), transactional queries (classic SERP still dominates for many verticals).
+- **Crisis-response protocol**. When a negative or hallucinated brand mention surfaces in an LLM output: (1) document with screenshot + URL + date + exact prompt used; (2) determine if grounded (LLM cites a real source) or hallucinated (LLM invented the association); (3) if grounded — engage with the source publisher; (4) if hallucinated — submit vendor feedback (Google AI Overview "report", OpenAI feedback, Perplexity "report this source"), and publish a strong canonical statement on owned domain that the model can corroborate against. See `references/frameworks.md` §9 for the precedent litigation context (Lidsky & Daves, *LTL LED v. Google*).
 
 ### 15. Four-horizon action plan
 - Horizonte 1 (semana 1-2): critical quick-wins. Mixed dimensions — não só técnicas. Effort + approval column.

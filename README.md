@@ -16,7 +16,9 @@ Canonical **plugin marketplace** for **destaque.ai** — single source of truth 
 
 ## What it is
 
-A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that exposes a skill encoding the **destaque.ai methodology** for GEO/AEO/SEO — a proprietary synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. The methodology is owned and evolves with the field; see `skills/geo-seo-aeo-master/SKILL.md` § Methodology for the full source synthesis.
+A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that encodes **SINAL** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs*. SINAL is the destaque.ai proprietary methodology for GEO/AEO/SEO: a synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. The methodology is owned and evolves with the field; see `skills/geo-seo-aeo-master/SKILL.md` § Methodology — SINAL for the full source synthesis.
+
+**Tagline:** *Notabilidade em AI search. Método SINAL — destaque.ai.*
 
 ```
 .claude-plugin/

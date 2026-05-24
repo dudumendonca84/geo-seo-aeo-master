@@ -4,7 +4,7 @@
 
 ## O que vai aqui
 
-Auditoria holística ao destaque.ai (https://destaque.ai) seguindo a **metodologia destaque.ai** definida em `../SKILL.md` § Methodology. A metodologia é própria, sintetizada de fontes top-tier (academic research, industry primary research, vendor primary docs, practical audit traditions). Cobre as 8 dimensões da metodologia + scorecard de 12 categorias + plano de acção em 4 horizontes. Inclui:
+Auditoria holística ao destaque.ai (https://destaque.ai) seguindo o **método SINAL** (Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs) definido em `../SKILL.md` § Methodology — SINAL. Método próprio, sintetizado de fontes top-tier (academic research, industry primary research, vendor primary docs, practical audit traditions). Cobre as 8 dimensões + scorecard de 12 categorias + 16-section audit workflow + plano de acção em 4 horizontes. Inclui:
 
 1. **Sumário executivo** — Score global /100, scorecard de 12 categorias (SEO Técnico, Performance/CWV, SEO On-Page, Schema, Optimização de imagens, GEO técnica, Conteúdo & topical authority, Entidade & brand foundation, Autoridade & digital PR, Sinais sociais & community, E-E-A-T & on-site authority, Medição & feedback loop), top 3-4 findings ponderados **across all dimensions**.
 2. **Contexto de negócio** — Identidade, oferta, diferenciadores visíveis do site, presença social declarada.
