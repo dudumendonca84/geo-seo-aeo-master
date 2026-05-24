@@ -8,6 +8,30 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-05-24 — Deck Builder API mappings — 3 model ID corrections
+
+**Trigger.** Verificação dos 4 model IDs fragilidades sinalizados pela sessão do Deck Builder, contra vendor docs.
+
+**Source.** DeepSeek API docs ([api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing)), Anthropic docs ([docs.anthropic.com](https://docs.anthropic.com/en/docs/about-claude/models/overview)), xAI docs ([docs.x.ai](https://docs.x.ai/developers/models) + [retirement notice](https://docs.x.ai/developers/migration/may-15-retirement)), Mistral docs ([docs.mistral.ai](https://docs.mistral.ai/models/overview)).
+
+**Changes:**
+
+- `references/models.md` § Deck Builder API mappings:
+  - `deepseek` production: `deepseek-v4` → **`deepseek-v4-pro`** (ID anterior era inválido na DeepSeek API; current production é V4-Pro).
+  - `claude` cost_optimized: `claude-haiku-4-5-20251001` → **`claude-haiku-4-5`** (alias durável remove fragilidade date-stamp; auto-segue próxima release Haiku).
+  - `grok` production: `grok-4` → **`grok-4.3`** (grok-4 deprecated 15 Maio 2026, retira 15 Ago 2026; grok-4.3 é o flagship cost-efficient lançado 4 Maio 2026).
+- `INTERFACES.md` § Fragilidades conhecidas — refresh com estado verificado.
+
+**Confirmados sem mudança:**
+- `mistral-small-latest` e `mistral-large-latest` — válidos.
+- `grok-4.1-fast` cost_optimized — deprecated mas funcional até 15 Ago 2026. Mantido pelo factor 6× de custo vs grok-4.3 ($0.20/M vs $1.25/M input). Daily-agent vigia successor.
+
+**Effect.** Audits Deck Builder que consumam DeepSeek/Anthropic-cost-tier/xAI passam a usar IDs verificados. Deck Builder não precisa de code change — picks up no próximo fetch ao `models.md`. Para `xAI` cost_optimized, próximo movimento metodológico é trocar `grok-4.1-fast` quando xAI publicar successor não-deprecated, antes de 15 Ago 2026.
+
+**Sem version bump SINAL.** Correcção de content em references/, não evolução de método. Versão SINAL permanece v1.4.
+
+---
+
 ## 2026-05-23 — SINAL v1.4 — Prompt intelligence layer added
 
 **Trigger.** Founder direction: skill deve evoluir também nos prompts — saber quais prompts canónicos o segmento usa, não só fixar uma query intuição-based no audit.

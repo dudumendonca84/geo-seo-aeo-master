@@ -97,14 +97,15 @@ Engines actualmente listados nesta tabela: `chatgpt`, `claude`, `gemini`, `perpl
    - `premium` (futuro) → coluna `production`
 7. Se fetch ≠ 200 OU parse falhar → usar fallback hardcoded em código
 
-**Fragilidades conhecidas (model IDs a vigiar)** — flagged pela sessão do Deck Builder em 2026-05-24:
+**Fragilidades conhecidas (model IDs a vigiar)** — verificadas contra vendor docs em 2026-05-24:
 
-- `deepseek-v4` (production) — não 100% confirmado como ID válido na DeepSeek API; alternativa possível `deepseek-v4-pro`. Validar com e2e test.
-- `claude-haiku-4-5-20251001` (cost_optimized) — date-stamped; vai stale na próxima release de Haiku.
-- `grok-4` (production) — deprecated com migration deadline 15 Ago 2026.
-- `mistral-small-latest` (cost_optimized) — confirmar que existe como ID; alternativa `mistral-medium-latest`.
+- `deepseek-v4-pro` (production) — ✅ validado em [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing). É o ID actual da DeepSeek API; o nome anterior `deepseek-v4` era inválido (corrigido neste PR). Aliases legacy `deepseek-chat` e `deepseek-reasoner` retire 2026-07-24.
+- `claude-haiku-4-5` (cost_optimized) — ✅ alias durável validado em [docs.anthropic.com](https://docs.anthropic.com/en/docs/about-claude/models/overview). Substitui o ID date-stamped `claude-haiku-4-5-20251001` (corrigido neste PR). Auto-segue próxima release de Haiku.
+- `grok-4.3` (production) — ✅ flagship cost-efficient lançado 4 Maio 2026, 1M context, $1.25/$2.50 per 1M tokens. Substitui `grok-4` que ficou deprecated 15 Maio 2026 e retira 15 Ago 2026 (corrigido neste PR).
+- `grok-4.1-fast` (cost_optimized) — ⚠️ ainda funciona ($0.20/$0.50 per 1M, 6× mais barato que grok-4.3) mas **deprecated 15 Maio 2026, retira 15 Ago 2026**. Daily-agent vigia release de successor cost-optimized para xAI antes do prazo.
+- `mistral-small-latest` (cost_optimized) — ✅ validado em [docs.mistral.ai](https://docs.mistral.ai/models/overview). Mistral Small 4 (Março 2026) é o modelo actual por trás do alias.
 
-Daily-agent (`daily-agent/daily-prompt.md`) tem instrução explícita para verificar estes 4 a cada release que toque os vendors respectivos.
+Daily-agent (`daily-agent/daily-prompt.md`) tem instrução explícita para re-verificar estes IDs a cada run que toque os vendors respectivos.
 
 ---
 
@@ -161,5 +162,6 @@ Daily-agent (`daily-agent/daily-prompt.md`) tem instrução explícita para veri
 |---|---|---|
 | 2026-05-23 | Inicialização — prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
 | 2026-05-24 | Clarificação de contrato face a Deck Builder PR #2 (`3a2d534`): (a) § 3 distribuição entra como contexto verbatim mas é hardcoded no Deck Builder (free 1/1/1/1/1, diag 8/8/6/4/4) — não há parser estrutural; (b) 5 categorias canónicas são hardcoded no enum `PromptCategory`; (c) 7 engines efectivamente consumidos (`chatgpt, claude, gemini, perplexity, mistral, grok, deepseek`); `copilot` e `meta` listados mas silenciosamente ignorados; (d) lista de fragilidades de model IDs a vigiar (deepseek-v4, claude-haiku date-stamped, grok-4 deprecation Ago 2026, mistral-small-latest). | Sem mudança real ao contrato — só registo do que já é a realidade do PR #2. Daily-agent actualizado para verificar as 4 fragilidades. |
+| 2026-05-24 | Verificação dos 4 model IDs fragilidades contra vendor docs. **3 correcções aplicadas em `models.md` § Deck Builder API mappings**: `deepseek-v4` → `deepseek-v4-pro` (ID anterior era inválido), `claude-haiku-4-5-20251001` → `claude-haiku-4-5` (alias durável remove fragilidade date-stamp), `grok-4` → `grok-4.3` (grok-4 deprecated 15 Maio, retira 15 Ago — successor é grok-4.3). `mistral-small-latest` e `grok-4.1-fast` confirmados válidos sem mudança. | Deck Builder picks up no próximo fetch (sem code change necessário). `grok-4.1-fast` é deprecated mas continua a funcionar até 15 Ago 2026 — daily-agent vigia successor cost-optimized para xAI. |
 
 Adicionar entry sempre que algum contrato mudar.
