@@ -62,9 +62,9 @@ The web UI does not support marketplace install. To use the skill in Claude.ai:
 
 1. Download repo as zip: https://github.com/dudumendonca84/geo-seo-aeo-master/archive/refs/heads/main.zip
 2. Claude.ai → **Customize** → **Habilidades** → **+** → **Fazer upload de uma habilidade**
-3. Upload the `skills/geo-seo-aeo-master/` directory from the zip
+3. Upload the full zip — Claude.ai auto-discovers `SKILL.md` nested inside `skills/geo-seo-aeo-master/`. No need to extract or repackage.
 
-Note: Claude.ai web does not auto-sync uploaded skills. Re-upload to refresh.
+Confirmed working as of May 2026. Note: Claude.ai web does not auto-sync uploaded skills. Re-upload weekly (or whenever you want fresh news) to pick up daily-agent updates from the git repo.
 
 ## Daily research agent — Claude Code Web Routine
 
