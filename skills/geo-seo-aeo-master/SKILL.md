@@ -220,7 +220,41 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent.
 - Is HTML server-rendered (LLMs read it without JS)?
 - **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images — image SEO is now a citation surface.
-- Recommend a practical test: ask ChatGPT, Claude, Perplexity, Google AI Mode a category-defining query (text AND image upload if multimodal); document who appears, what visual sources are cited, and ranking position. Repeat after fixes.
+
+**Manual prompt audit — multi-engine matrix.** Don't test 1 or 2 engines, test the full matrix that matters for the client's market. Each engine has different retrieval, different default model, different citation behavior.
+
+**CRITICAL: always use the current default model of each engine at audit time.** Models change frequently (Gemini 2.x → 3.5 Flash in May 2026 I/O; future versions inevitable). Before running the prompt test:
+
+1. Open `references/models.md` and check the **"Default in"** column for each engine — that is the model the agent must use.
+2. If `models.md` is more than 7 days old since last refresh, **refresh it first** by checking each vendor's primary docs / changelog / blog (`developers.google.com/search/blog`, `openai.com/news`, `anthropic.com/news`, `blogs.bing.com`, `deepmind.google/discover/blog`, `perplexity.ai/changelog`). Update `models.md` and add a methodology-changelog entry if a default flipped.
+3. Lock the audit to the date and model versions — write them into the audit document so the test is reproducible.
+
+Hard-coding specific model names ("GPT-5", "Gemini 3.5 Flash") in this audit step is forbidden — they will be wrong within 6-12 months. Always defer to `models.md`.
+
+| Engine | Why test | Notes |
+|---|---|---|
+| **ChatGPT Search** | Largest AI search audience (Similarweb Jan 2026: 64.6% traffic share) | Test with web search enabled + disabled — only ~34.5% of queries trigger web search (Semrush Feb 2026). Use current model per `models.md` § OpenAI. |
+| **Perplexity** | Highest citation density (~21.9 cit/answer) | Test default model AND at least one Pro model selection (per `models.md` § Perplexity for current options). |
+| **Google AI Mode** | >1B monthly users; same index as classic Search; query fan-out behavior | Test both AI Mode AND classic AI Overviews — different surfaces, same index. Current model per `models.md` § Google. |
+| **Claude** with web search | Conservative citation; Brave Search backend | Test on claude.ai with web search tool enabled. Current model per `models.md` § Anthropic. |
+| **Bing Copilot** | Bing index; first-party citation telemetry via BWT AI Performance | Test in Edge browser sidebar AND copilot.microsoft.com. Current model per `models.md` § Microsoft. |
+| **Gemini app** | Different from AI Mode in Search — Gemini app has separate prompts/responses | Test `gemini.google.com`. Current model per `models.md` § Google (Gemini app row). |
+| **Grok** | X-integrated; cited in Profound/Goodie monitoring; matters if client has X presence | Test on `grok.com`. Current model per `models.md` § xAI. |
+| **DeepSeek** | Open weights; tracked by Profound/Goodie/Semrush; China-based — relevant if client has APAC reach | Test on `chat.deepseek.com`. Current model per `models.md` § DeepSeek. |
+| **Meta AI** | Integrated in FB/IG/WhatsApp/Threads | Test if client targets Meta-platform users. Current model per `models.md` § Meta. |
+| **Mistral Le Chat** | European positioning, EU data residency | Test if client has EU compliance focus. Current model per `models.md` § Mistral. |
+| **You.com** | Multi-model selection; smaller audience | Optional unless competitor cited there. |
+
+**Tier prioritisation for typical B2B SaaS PT engagement:**
+- **Mandatory:** ChatGPT, Perplexity, Google AI Mode, Claude, Bing Copilot.
+- **Strongly recommended:** Gemini app (separate from AI Mode), Grok (if client uses X for distribution).
+- **Conditional:** DeepSeek (APAC), Meta AI (consumer-adjacent), Mistral Le Chat (EU regulated verticals), You.com (only if competitive intel says so).
+
+**For each engine tested, document:** (a) query text used, (b) date + time + timezone, (c) **exact model version active** per `models.md` at audit time, (d) full answer text or screenshot, (e) cited sources list with URLs, (f) ranking position of brand if cited, (g) brand mention without citation (yes/no), (h) sentiment, (i) competitors named.
+
+**Multimodal prompt test (if applicable):** repeat the test with an image upload that depicts the category. Verify which engines currently support multimodal grounding via `models.md` (varies by model). Document image-cited URLs.
+
+Repeat the full matrix after fixes; track the delta in `audit-history.md` (for self-audit) or in the audit deliverable (for client work).
 
 ### 8. Content strategy and topical authority
 - Topics owned (clusters mapped, depth per cluster). Are there clusters that should exist for the category but the brand doesn't cover them?

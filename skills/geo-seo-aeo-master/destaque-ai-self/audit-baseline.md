@@ -12,7 +12,7 @@ Auditoria holística ao destaque.ai (https://destaque.ai) seguindo o **método S
 4. **Performance** — TTFB (mediana de 5 corridas curl de PT), HTML weight, compression, LCP/INP/CLS se disponíveis.
 5. **SEO on-page** — Title, meta description, heading hierarchy, alt coverage, bilingual copy hygiene.
 6. **SEO technical** — sitemap, robots.txt (matrix de crawlers IA), hreflang, JSON-LD schema, security headers, cache.
-7. **AI / LLM visibility (GEO técnica)** — `llms.txt` + `llms-full.txt`, robots permission posture, server-rendered HTML, manual prompt test em ChatGPT / Claude / Perplexity / Google AI Mode.
+7. **AI / LLM visibility (GEO técnica)** — `llms.txt` + `llms-full.txt`, robots permission posture, server-rendered HTML, multimodal grounding, **manual prompt test multi-engine** (ChatGPT, Perplexity, Google AI Mode, Claude, Bing Copilot mandatórios; Gemini app, Grok recomendados; DeepSeek, Meta AI, Mistral Le Chat, You.com condicionais — ver SKILL.md §7 para matriz completa e dados a registar por engine).
 8. **Content strategy & topical authority** — topics owned, original statistics, content cadence, distribution channels, gap analysis vs competitors.
 9. **Entity & brand foundation** — Wikidata QID, Knowledge Panel, `sameAs` depth, NAP consistency.
 10. **Authority & digital PR** — Tier-1 PT media coverage, industry-publication mentions, link graph, branded anchor text.
