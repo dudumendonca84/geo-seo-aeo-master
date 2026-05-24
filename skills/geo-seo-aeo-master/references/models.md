@@ -296,4 +296,59 @@ Update this file when:
 
 The `daily-agent/news-feed.md` carries the running record between refreshes — consult both when answering "what's current?" questions.
 
+---
+
+## Deck Builder API mappings
+
+**Single source of truth for API model IDs** used programmatically by the Deck Builder (and any other consumer that needs to call vendor APIs). The per-vendor tables above are product-name-oriented (human-friendly); this table is the machine-readable contract that maps Deck Builder engine names to exact API IDs.
+
+Two columns per engine:
+- **`production`** — what real users currently encounter in default product usage (highest fidelity, highest cost). Use for **paid-tier audits** (diagnostic, premium) where credibility of the deliverable requires testing the same model real users see.
+- **`cost_optimized`** — cheaper variant from the same vendor with sufficient quality for high-volume / lead-gen contexts. Use for **free-tier audits** where unit economics matter.
+
+| Deck engine | Vendor | production | cost_optimized |
+|---|---|---|---|
+| `chatgpt` | OpenAI | `gpt-5` | `gpt-4o` |
+| `claude` | Anthropic | `claude-sonnet-4-6` | `claude-haiku-4-5-20251001` |
+| `gemini` | Google | `gemini-3.5-flash` | `gemini-2.5-flash` |
+| `perplexity` | Perplexity | `sonar-pro` | `sonar` |
+| `copilot` | Microsoft (Azure OpenAI) | `gpt-5` | `gpt-4o` |
+| `mistral` | Mistral | `mistral-large-latest` | `mistral-small-latest` |
+| `grok` | xAI | `grok-4` | `grok-4.1-fast` |
+| `deepseek` | DeepSeek | `deepseek-v4` | `deepseek-v4-flash` |
+| `meta` | Meta | `llama-3.1-405b-instruct` | `llama-3.1-70b-instruct` |
+
+### Tier assignment (Deck Builder)
+
+| Audit tier | Column to use | Rationale |
+|---|---|---|
+| `free` | `cost_optimized` | Lead-gen volume; differences in answer quality immaterial for the 5 discovery-tier prompts |
+| `diagnostic` | `production` | Paid deliverable; client pays for fidelity to what their actual prospects see |
+| `premium` (future) | `production` + multimodal | Same as diagnostic plus image/video prompt tests where applicable |
+
+### Parsing contract
+
+For automated consumers (Deck Builder generator, future MCP servers, etc.):
+
+1. Fetch this file via raw GitHub URL.
+2. Locate the section beginning with `## Deck Builder API mappings`.
+3. Parse the table under that section. Header is `| Deck engine | Vendor | production | cost_optimized |`.
+4. For each row, the cells contain markdown-backtick-quoted API IDs — strip the backticks.
+5. Map `<engine>` to `production` or `cost_optimized` depending on audit tier per the Tier assignment table above.
+
+If the table is missing or fails to parse, fall back to in-code defaults (the consumer should ship sensible defaults aligned with the most recent known state of this file).
+
+### Maintenance contract
+
+This block is updated whenever:
+- A vendor releases a new model that displaces the current `production` or `cost_optimized` for any engine.
+- An API ID changes (e.g., versioned identifier becomes available, deprecation moves the canonical pointer).
+- A new engine is added (e.g., a vendor newly material to AI search worth tracking).
+
+The daily-agent (`daily-agent/daily-prompt.md`) is instructed to update this table when a release qualifies (see § Methodology evolution in `SKILL.md`). The Deck Builder picks up changes on its next fetch — zero code change required there for routine model updates.
+
+**Last refresh of API mappings: 23 May 2026.**
+
+---
+
 Last refresh: 23 May 2026.
