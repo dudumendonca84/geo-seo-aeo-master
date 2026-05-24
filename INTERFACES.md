@@ -148,5 +148,6 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
 | Data | Mudança | Impacto |
 |---|---|---|
 | 2026-05-23 | Inicialização — prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
+| 2026-05-24 | `dudumendonca84/destaque-ai-ops` criado como **private consumer downstream** — memória operacional privada (clientes, propostas, learnings) que consome a metodologia SINAL via `skills/geo-seo-aeo-master/SKILL.md` (§ Methodology + § Audit workflow), `references/prompts.md` (catálogo segmento) e `references/models.md` (lock-in modelos por engine). Fluxo private → public mediado por camada de anonimização (`learnings/`) e futura Routine `synthesis-weekly`. Counterpart documentation: `INTERFACES.md` em `destaque-ai-ops`. | Nenhum impacto a contratos públicos existentes. Implicação para esta repo: mudanças materiais a § Audit workflow / scorecard / 4 horizontes em `SKILL.md` devem sinalizar potencial follow-up em `destaque-ai-ops/templates/` (private; sessões públicas não veem, mas registar no `methodology-changelog.md` ajuda a tracker). |
 
 Adicionar entry sempre que algum contrato mudar.
