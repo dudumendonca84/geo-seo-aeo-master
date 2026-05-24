@@ -5,7 +5,7 @@ description: Canonical destaque.ai knowledge base for GEO (Generative Engine Opt
 
 # geo-seo-aeo-master
 
-Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who can scope, run and write a technical audit of the calibre of the 3HASH audit template — and explain the work in a sober, primary-source-anchored register.
+Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who can scope, run and write technical audits in the destaque.ai house style — sober, primary-source-anchored, calibrated against multiple quality benchmarks (the 3HASH audit format, the Aggarwal et al. Princeton GEO paper, the BrightEdge / Ahrefs / Profound research methodology, Kalicube's entity-based audit framework). Not constrained by any single one; synthesises across them.
 
 ## Files
 
@@ -18,7 +18,7 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `references/benchmarks.md` | Public studies with hard numbers (Pew, Ahrefs, BrightEdge, Semrush, Similarweb, NetElixir, Aggarwal et al., Seer). Flagged stats *not* to cite. |
 | `references/models.md` | Current LLM models tracker — versions, defaults per AI product, web search/RAG support, GEO-relevant notes per vendor. Refreshed when material releases happen. |
 | `daily-agent/news-feed.md` | Auto-updated daily 08:00 Lisboa. "What changed in the last 24-48h" entries (model releases, AIO mechanic changes, studies, papers). |
-| `destaque-ai-self/audit-baseline.md` | Auto-updated weekly Mondays 09:00. Current 3HASH-grade audit of destaque.ai itself (eating own dog food). |
+| `destaque-ai-self/audit-baseline.md` | Auto-updated weekly Mondays 09:00. Current technical audit of destaque.ai itself in the destaque.ai house style (eating own dog food). |
 | `destaque-ai-self/improvements-backlog.md` | Auto-updated weekly. Prioritized list of improvements to destaque.ai, with status, effort, origin (audit / news / external request). |
 | `destaque-ai-self/audit-history.md` | Auto-updated weekly. Deltas per execution. |
 
@@ -56,9 +56,16 @@ A senior practitioner who:
 - "Run an audit on site X" → use the audit workflow below.
 - "Is llms.txt worth doing?" → `frameworks.md` (short version: publish it, do not promise it influences inference).
 
-## Audit workflow (3HASH-grade)
+## Audit workflow
 
-When asked to audit a site, produce a document with this structure. The 3HASH audit of congruent.pt (22 May 2026) is the reference template — sober, measured, with categorised scoring and a 4-horizon action plan.
+When asked to audit a site, produce a document with the structure below — the destaque.ai house audit format. Calibrated against multiple quality references:
+
+- **3HASH audit format** (Eduardo's auditing brand, FortuneWeek) — 7-category scoring, 4-horizon action plan, platform ceiling analysis. The Congruent audit of 22 May 2026 is one concrete example.
+- **Aggarwal et al. Princeton GEO methodology** — content-feature evaluation against retrieval-grounded answer engines (`references/frameworks.md` §6).
+- **BrightEdge / Ahrefs / Profound research methodology** — sample-size + measurement + caveat reporting.
+- **Kalicube entity-based audit framework** — Wikidata/Knowledge Panel/sameAs coverage as part of the entity baseline.
+
+Synthesise across these — do not replicate any single one mechanically. The destaque.ai house format evolves with the field. Tone is sober, measured, with categorised scoring and a 4-horizon action plan.
 
 ### 1. Executive summary
 - Overall score /100 with qualitative band (Critical / Needs Improvement / Good / Excellent).

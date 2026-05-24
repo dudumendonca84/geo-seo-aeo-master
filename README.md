@@ -16,7 +16,7 @@ Canonical **plugin marketplace** for **destaque.ai** — single source of truth 
 
 ## What it is
 
-A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that exposes a skill calibrated to support 3HASH-grade technical audits.
+A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that exposes a skill calibrated to produce destaque.ai-house technical audits — benchmarked against multiple quality references (3HASH audit format, Princeton GEO methodology, BrightEdge/Ahrefs/Profound research methodology, Kalicube entity audit framework). Synthesises across them; not constrained to any single source.
 
 ```
 .claude-plugin/
@@ -46,8 +46,8 @@ skills/
       execution-log.md         Run log
       drafts/                  Weekly drafts (Fridays only)
     destaque-ai-self/
-      audit-baseline.md        Current 3HASH-grade audit of destaque.ai itself
-                               (auto-updated weekly Mondays 09:00 Lisboa)
+      audit-baseline.md        Current technical audit of destaque.ai (destaque.ai
+                               house format, auto-updated weekly Mondays 09:00 Lisboa)
       improvements-backlog.md  Prioritized list of improvements, with status,
                                effort, origin (audit / news / external request)
       audit-history.md         Deltas per weekly execution
@@ -55,7 +55,14 @@ skills/
 
 ## Editorial bar
 
-The skill is calibrated to produce work of the calibre of the **3HASH technical audit** (Eduardo's other brand, FortuneWeek — Unipessoal Lda). Sober, primary-source-anchored, numbers over adjectives, no hype, honest about uncertainty. See `skills/geo-seo-aeo-master/SKILL.md` for the full audit template and editorial voice.
+The skill is calibrated against multiple quality benchmarks:
+
+- **3HASH audit format** (Eduardo's auditing brand, FortuneWeek — Unipessoal Lda) — concrete example of category scoring + 4-horizon action plan.
+- **Princeton GEO methodology** (Aggarwal et al., KDD 2024) — academic standard for evaluating content against generative engines.
+- **BrightEdge / Ahrefs / Profound research methodology** — sample-size + measurement + caveat reporting.
+- **Kalicube entity-based audit framework** — Wikidata / Knowledge Panel / sameAs as entity baseline.
+
+The skill synthesises across these; **3HASH is benchmarking, not the sole source of truth**. Sober, primary-source-anchored, numbers over adjectives, no hype, honest about uncertainty. See `skills/geo-seo-aeo-master/SKILL.md` for the full audit format and editorial voice.
 
 Anti-patterns explicitly prohibited:
 - Citing vendor blogs as if they were studies.
