@@ -45,6 +45,12 @@ skills/
       news-feed.md             Auto-updated by Claude Code Web Routine, 08:00 Lisboa
       execution-log.md         Run log
       drafts/                  Weekly drafts (Fridays only)
+    destaque-ai-self/
+      audit-baseline.md        Current 3HASH-grade audit of destaque.ai itself
+                               (auto-updated weekly Mondays 09:00 Lisboa)
+      improvements-backlog.md  Prioritized list of improvements, with status,
+                               effort, origin (audit / news / external request)
+      audit-history.md         Deltas per weekly execution
 ```
 
 ## Editorial bar

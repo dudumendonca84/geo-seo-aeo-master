@@ -18,6 +18,9 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `references/benchmarks.md` | Public studies with hard numbers (Pew, Ahrefs, BrightEdge, Semrush, Similarweb, NetElixir, Aggarwal et al., Seer). Flagged stats *not* to cite. |
 | `references/models.md` | Current LLM models tracker — versions, defaults per AI product, web search/RAG support, GEO-relevant notes per vendor. Refreshed when material releases happen. |
 | `daily-agent/news-feed.md` | Auto-updated daily 08:00 Lisboa. "What changed in the last 24-48h" entries (model releases, AIO mechanic changes, studies, papers). |
+| `destaque-ai-self/audit-baseline.md` | Auto-updated weekly Mondays 09:00. Current 3HASH-grade audit of destaque.ai itself (eating own dog food). |
+| `destaque-ai-self/improvements-backlog.md` | Auto-updated weekly. Prioritized list of improvements to destaque.ai, with status, effort, origin (audit / news / external request). |
+| `destaque-ai-self/audit-history.md` | Auto-updated weekly. Deltas per execution. |
 
 Load only what you need. Don't pre-load everything.
 
