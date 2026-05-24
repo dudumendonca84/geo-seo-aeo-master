@@ -21,6 +21,7 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `destaque-ai-self/audit-baseline.md` | Auto-updated weekly Mondays 09:00. Current technical audit of destaque.ai itself in the destaque.ai house style (eating own dog food). |
 | `destaque-ai-self/improvements-backlog.md` | Auto-updated weekly. Prioritized list of improvements to destaque.ai, with status, effort, origin (audit / news / external request). |
 | `destaque-ai-self/audit-history.md` | Auto-updated weekly. Deltas per execution. |
+| `methodology-changelog.md` | Audit trail of methodology evolution — when and why the destaque.ai methodology itself changed. Triggered by material shifts in model behavior, vendor mechanics, academic findings or audit dynamics. |
 
 Load only what you need. Don't pre-load everything.
 
@@ -98,6 +99,36 @@ The destaque.ai methodology is the synthesis below. It is **owned**, **evolves**
 - **Honest vendor flagging.** Where a finding originates from a vendor with commercial interest, it is labelled. Where a number cannot be independently verified, it is flagged "do not cite".
 - **Cross-engine portability awareness.** Only ~11% of cited domains overlap between ChatGPT and Perplexity (Profound) — budgets and pitches reflect this.
 - **News-feed → references absorption protocol.** Daily-agent (`daily-agent/daily-prompt.md`) doesn't just log news — it absorbs durable findings into references/ before truncation, so the methodology gets smarter over time.
+- **Methodology evolution protocol.** The methodology itself is not static — it evolves as new model behaviors, new vendor mechanics, new academic findings and new audit dynamics emerge. See § Methodology evolution below.
+
+### Methodology evolution
+
+The methodology has to **adapt to a moving field**. What worked in 2024 (schema-heavy audits, low-AIO landscape) is not what works in 2026 (schema null result on established sites, AIO at 50%+ of queries). Static methodologies become wrong methodologies.
+
+**Triggers that warrant methodology evolution (not just a reference update):**
+
+1. **New academic evidence overturns a previously-weighted factor.** Example: Ahrefs May 2026 schema null result (1,885 vs 4,000 controls, 4.6% AIO decline). Effect on methodology: down-weight schema for established sites, keep schema scoring for cold-start sites and Bing/Copilot eligibility.
+
+2. **A major vendor changes its retrieval/citation mechanic.** Example: Google adding query fan-out to AIO. Effect: audit weighting shifts from "rank in top-3 for primary query" to "rank in top-10 across the sub-query set".
+
+3. **A new model family enters production with materially different behavior.** Example: Gemini 3.5 Flash becoming AIO default (I/O 2026). Effect: prompt-test step in the audit must use the new model, not the previous one. Multimodal grounding (image citation) may need new audit step.
+
+4. **A new GEO-relevant primary signal becomes measurable.** Example: Bing Webmaster Tools AI Performance dashboard (9 Feb 2026, first-party citation telemetry). Effect: audit "measurement stack" recommendation now includes BWT AI Performance as a required tool, not optional.
+
+5. **A new vendor crawler family appears or compliance posture changes.** Example: hypothetical "Apple-SearchBot" or change in `Perplexity-User` robots.txt compliance. Effect: robots.txt matrix in audit updates.
+
+6. **A previously-tracked metric becomes obsolete or a new one becomes canonical.** Example: if `llms.txt` ever gets confirmed inference-path consumption by a major LLM, it moves from "publish but don't promise" to a weighted audit item.
+
+7. **The 7-category scorecard itself needs to expand or rebalance.** Example: if "Entity coverage" (Wikidata, Knowledge Panel, sameAs depth) becomes the single highest-weighted predictor of citation, it may need to be a standalone category rather than nested under "SEO Técnico" or "Conteúdo & E-E-A-T".
+
+**How methodology evolution is recorded:**
+
+- The daily-agent (`daily-agent/daily-prompt.md`) is instructed to flag potential methodology changes when major dynamics shift, not just record them in the news-feed.
+- Material changes update **this file** (`SKILL.md`) directly, in the relevant section (e.g., § Audit workflow, § Methodology evolution, scorecard, or absorption matrix).
+- Every methodology change is logged in `methodology-changelog.md` with date, trigger source URL, and the specific section(s) changed. This is the audit trail of how the destaque.ai methodology has evolved.
+- Smaller refinements (a specific finding, a corrected number) update references/ files without changing the methodology itself.
+
+**Cadence reality:** methodology rarely changes monthly. Maybe 2-4 times per year — when something material happens. Resist the urge to "evolve" on every news entry. Most news is content for the references, not a methodology shift.
 
 ### Audit workflow (destaque.ai house format)
 

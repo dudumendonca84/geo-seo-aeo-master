@@ -51,6 +51,8 @@ skills/
       improvements-backlog.md  Prioritized list of improvements, with status,
                                effort, origin (audit / news / external request)
       audit-history.md         Deltas per weekly execution
+    methodology-changelog.md   Audit trail of methodology evolution — when and why
+                               the destaque.ai methodology itself changed
 ```
 
 ## Editorial bar

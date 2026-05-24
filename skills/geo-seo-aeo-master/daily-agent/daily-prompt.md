@@ -113,6 +113,14 @@ Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
    | Mudança de comportamento de vendor (citation mechanics, crawler compliance, etc.) | `models.md` (secção vendor) + `frameworks.md` §5 (se afecta RAG) |
    | Mudança em Schema.org, llms.txt, E-E-A-T, robots.txt directives | `frameworks.md` — secção respectiva |
    | Caso B2B documentado com dados reais | `benchmarks.md` — secção de case studies |
+   | **Mudança que altera a forma de auditar (peso de schema mudou, novo signal canónico, novo vendor crawler, AIO mechanic mudou)** | **`SKILL.md` § Audit workflow + entry em `methodology-changelog.md`** |
+
+   **Sinalização de mudança metodológica.** Se algo no news-feed sugere que a forma como auditamos sites deve mudar (não só o que dizemos sobre o mundo, mas como FAZEMOS o trabalho), verifica os triggers em `SKILL.md` § Methodology evolution. Exemplos: Ahrefs publica novo estudo que altera o peso de schema; Google muda mecânica de query fan-out; novo modelo vira default num produto AI search; nova first-party telemetry fica disponível. Se houver match com algum trigger:
+   - Actualiza `SKILL.md` na secção afectada (Audit workflow / scorecard / measurement stack / etc.)
+   - Adiciona entry em `methodology-changelog.md` com data + trigger + URL fonte + secções alteradas
+   - Regista também no news-feed que houve mudança metodológica
+
+   **Resist evolution-itis.** Metodologia muda 2-4× por ano, não semanalmente. Se em dúvida, é só conteúdo para references — não muda a metodologia.
 
    Regra de absorção: **distila, não copia**. A entrada no news-feed é "aconteceu X em Y data". A entrada em references é "X é o estado actual do mundo, com base em fonte Z". Tom sóbrio, número concreto, source URL, caveats.
 
