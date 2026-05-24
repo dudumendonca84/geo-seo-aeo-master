@@ -16,7 +16,7 @@ Canonical **plugin marketplace** for **destaque.ai** — single source of truth 
 
 ## What it is
 
-A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that exposes a skill calibrated to produce destaque.ai-house technical audits — benchmarked against multiple quality references (3HASH audit format, Princeton GEO methodology, BrightEdge/Ahrefs/Profound research methodology, Kalicube entity audit framework). Synthesises across them; not constrained to any single source.
+A Claude Code plugin marketplace containing one plugin (`geo-seo-aeo-master`) that exposes a skill encoding the **destaque.ai methodology** for GEO/AEO/SEO — a proprietary synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. The methodology is owned and evolves with the field; see `skills/geo-seo-aeo-master/SKILL.md` § Methodology for the full source synthesis.
 
 ```
 .claude-plugin/
@@ -55,14 +55,16 @@ skills/
 
 ## Editorial bar
 
-The skill is calibrated against multiple quality benchmarks:
+The destaque.ai methodology is **proprietary** (owned, evolves with the field) and **informed by world-class sources** in four categories:
 
-- **3HASH audit format** (Eduardo's auditing brand, FortuneWeek — Unipessoal Lda) — concrete example of category scoring + 4-horizon action plan.
-- **Princeton GEO methodology** (Aggarwal et al., KDD 2024) — academic standard for evaluating content against generative engines.
-- **BrightEdge / Ahrefs / Profound research methodology** — sample-size + measurement + caveat reporting.
-- **Kalicube entity-based audit framework** — Wikidata / Knowledge Panel / sameAs as entity baseline.
+- **Academic research** — Aggarwal et al. KDD 2024 (Princeton GEO paper) and follow-up arXiv work in cs.IR / cs.CL.
+- **Industry primary research** — BrightEdge, Ahrefs, Profound, Semrush, Similarweb, Pew, Seer Interactive, NetElixir.
+- **Vendor primary documentation** — Google Search Central, OpenAI bots, Anthropic bots, Perplexity crawlers, Bing Webmaster Tools AI Performance, Schema.org spec.
+- **Practical audit traditions** — 3HASH technical audit format (Eduardo's auditing brand, FortuneWeek — Unipessoal Lda), Schema App / WordLift entity workflow, Kalicube entity-based audit framework.
 
-The skill synthesises across these; **3HASH is benchmarking, not the sole source of truth**. Sober, primary-source-anchored, numbers over adjectives, no hype, honest about uncertainty. See `skills/geo-seo-aeo-master/SKILL.md` for the full audit format and editorial voice.
+What destaque.ai adds on top of these sources: PT-PT contextual relevance, B2B SaaS focus, platform-aware audits (Framer/Webflow/Squarespace/etc. ceilings), honest vendor flagging, cross-engine portability awareness, news-feed → references absorption protocol.
+
+Editorial register: sober, Economist-style. Numbers over adjectives. Source URL for every non-trivial claim. Honest about uncertainty. See `skills/geo-seo-aeo-master/SKILL.md` § Methodology for the full synthesis.
 
 Anti-patterns explicitly prohibited:
 - Citing vendor blogs as if they were studies.

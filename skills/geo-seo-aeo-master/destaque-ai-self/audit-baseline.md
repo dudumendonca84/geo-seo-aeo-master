@@ -4,7 +4,7 @@
 
 ## O que vai aqui
 
-Auditoria técnica ao destaque.ai (https://destaque.ai) no formato da casa destaque.ai, seguindo o workflow definido em `../SKILL.md`. Esse workflow é calibrado contra múltiplas referências (3HASH audit format, Princeton GEO methodology, BrightEdge/Ahrefs/Profound research, Kalicube entity audit) — não copia nenhuma delas mecanicamente. Inclui:
+Auditoria técnica ao destaque.ai (https://destaque.ai) seguindo a **metodologia destaque.ai** definida em `../SKILL.md` § Methodology. A metodologia é própria, sintetizada a partir de fontes top-tier (academic research, industry primary research, vendor primary docs, practical audit traditions). Inclui:
 
 1. **Sumário executivo** — Score global /100, scorecard por categoria (SEO Técnico, Conteúdo & E-E-A-T, SEO On-Page, Schema, Performance/CWV, Optimização de imagens, Preparação para IA/GEO), top 3-4 findings ponderados.
 2. **Contexto de negócio** — Identidade, oferta, diferenciadores visíveis do site, presença social declarada.

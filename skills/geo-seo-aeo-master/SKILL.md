@@ -5,7 +5,7 @@ description: Canonical destaque.ai knowledge base for GEO (Generative Engine Opt
 
 # geo-seo-aeo-master
 
-Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who can scope, run and write technical audits in the destaque.ai house style — sober, primary-source-anchored, calibrated against multiple quality benchmarks (the 3HASH audit format, the Aggarwal et al. Princeton GEO paper, the BrightEdge / Ahrefs / Profound research methodology, Kalicube's entity-based audit framework). Not constrained by any single one; synthesises across them.
+Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who scopes, runs and writes technical audits using the **destaque.ai methodology** — a synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. See § Methodology below.
 
 ## Files
 
@@ -56,16 +56,52 @@ A senior practitioner who:
 - "Run an audit on site X" → use the audit workflow below.
 - "Is llms.txt worth doing?" → `frameworks.md` (short version: publish it, do not promise it influences inference).
 
-## Audit workflow
+## Methodology — destaque.ai house style
 
-When asked to audit a site, produce a document with the structure below — the destaque.ai house audit format. Calibrated against multiple quality references:
+The destaque.ai methodology is the synthesis below. It is **owned**, **evolves** with the field, and is **applied** to B2B SaaS in Portugal with PT-PT contextual relevance. It is not a clone of any single external framework — it draws from world-class sources and integrates them into one coherent practitioner workflow.
 
-- **3HASH audit format** (Eduardo's auditing brand, FortuneWeek) — 7-category scoring, 4-horizon action plan, platform ceiling analysis. The Congruent audit of 22 May 2026 is one concrete example.
-- **Aggarwal et al. Princeton GEO methodology** — content-feature evaluation against retrieval-grounded answer engines (`references/frameworks.md` §6).
-- **BrightEdge / Ahrefs / Profound research methodology** — sample-size + measurement + caveat reporting.
-- **Kalicube entity-based audit framework** — Wikidata/Knowledge Panel/sameAs coverage as part of the entity baseline.
+### Sources synthesised (top-tier, world-class)
 
-Synthesise across these — do not replicate any single one mechanically. The destaque.ai house format evolves with the field. Tone is sober, measured, with categorised scoring and a 4-horizon action plan.
+**Academic research**
+- Aggarwal et al., "GEO: Generative Engine Optimization", KDD 2024 (arXiv 2311.09735) — content-feature evaluation against generative engines; Position-Adjusted Word Count and Subjective Impression metrics.
+- Follow-up arXiv work: 2509.08919 (earned-media bias), 2604.25707 (citation absorption), 2510.11560 (generative ranking instability), 2507.05301 (cross-engine citation patterns), 2602.06718 (citation hallucination rates).
+- Princeton / Georgia Tech / IIT Delhi / Allen Institute publications in cs.IR and cs.CL.
+
+**Industry primary research**
+- BrightEdge Generative Parser tracking (AIO presence by vertical, source composition).
+- Ahrefs research (CTR impact, brand mention correlations, schema null result).
+- Profound 680M-citation analysis (Aug 2024 – Oct 2025).
+- Semrush ChatGPT clickstream (Oct 2024 – Feb 2026, ~80M records).
+- Similarweb AI referral tracking.
+- Pew Research browsing telemetry (Jul 2025).
+- Seer Interactive AIO CTR longitudinal study (Jan 2025 – Feb 2026, 53 brands).
+- NetElixir holiday 2025 e-commerce AI traffic data.
+
+**Vendor primary documentation**
+- Google Search Central guidance, Search Quality Rater Guidelines (Sept 2025 revision with AI Overviews chapter).
+- OpenAI bots documentation (GPTBot / OAI-SearchBot / ChatGPT-User distinction).
+- Anthropic Claude bots documentation (ClaudeBot / Claude-User / Claude-SearchBot / claude-code).
+- Perplexity crawlers documentation (PerplexityBot vs Perplexity-User compliance).
+- Microsoft Bing Webmaster Tools AI Performance dashboard (public preview 9 Feb 2026).
+- Schema.org current spec and ongoing releases.
+
+**Practical audit traditions**
+- 3HASH technical audit format (FortuneWeek — Unipessoal Lda) — 7-category scoring, 4-horizon action plan, platform ceiling analysis. The audit of congruent.pt (22 May 2026) is the in-house reference exemplar.
+- Schema App and WordLift entity-workflow tradition.
+- Kalicube entity-based audit framework (Wikidata / Knowledge Panel / sameAs as entity baseline).
+
+### What destaque.ai adds (not in any single source)
+
+- **PT-PT contextual relevance.** Most public benchmarks are US-English. The destaque.ai methodology explicitly handles bilingual sites, PT-PT vs PT-BR dialectal asymmetry, Portuguese Tier-1 media (Observador, ECO, Público, Expresso) corroboration, and the EU/.pt/.ai TLD landscape.
+- **B2B SaaS focus.** Vertical-specific findings (B2B Tech AIO presence ~82% per BrightEdge) are foregrounded over consumer-search aggregates.
+- **Platform-aware audits.** Framer, Webflow, Squarespace, Shopify, WordPress ceilings — what is fixable inside vs. requires Cloudflare in front vs. requires migration. Most external frameworks ignore this.
+- **Honest vendor flagging.** Where a finding originates from a vendor with commercial interest, it is labelled. Where a number cannot be independently verified, it is flagged "do not cite".
+- **Cross-engine portability awareness.** Only ~11% of cited domains overlap between ChatGPT and Perplexity (Profound) — budgets and pitches reflect this.
+- **News-feed → references absorption protocol.** Daily-agent (`daily-agent/daily-prompt.md`) doesn't just log news — it absorbs durable findings into references/ before truncation, so the methodology gets smarter over time.
+
+### Audit workflow (destaque.ai house format)
+
+When asked to audit a site, produce a document with the structure below. Tone is sober, Economist-style. Numbers over adjectives. Source URL for every non-trivial claim. Honest about platform ceiling and what is/isn't fixable.
 
 ### 1. Executive summary
 - Overall score /100 with qualitative band (Critical / Needs Improvement / Good / Excellent).

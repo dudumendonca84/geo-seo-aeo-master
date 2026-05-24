@@ -31,7 +31,7 @@ Companion file `llms-full.txt` concatenates actual content (not just links). Use
 
 A community-maintained convention with growing publisher adoption but **no confirmed consumption by frontier LLMs in inference paths**. Useful as documentation hygiene and for agent-tool ecosystems that explicitly fetch it (some IDE agents). Not a substitute for structured data, server-rendered HTML, and classical SEO for visibility in ChatGPT Search, Perplexity, Google AI Overviews or Copilot.
 
-Practical posture for destaque.ai clients: **publish it, do not promise inference impact.** A complete `llms.txt` plus `llms-full.txt` is a low-cost signal of technical hygiene that pays off if any inference-path consumption materialises. Make sure the URL count matches the sitemap — a `llms.txt` declaring 20 URLs while the sitemap holds 182 is worse than nothing (the 3HASH/Congruent finding).
+Practical posture for destaque.ai clients: **publish it, do not promise inference impact.** A complete `llms.txt` plus `llms-full.txt` is a low-cost signal of technical hygiene that pays off if any inference-path consumption materialises. Make sure the URL count matches the sitemap — a `llms.txt` declaring 20 URLs while the sitemap holds 182 is worse than nothing (in-house audit of congruent.pt, 22 May 2026).
 
 ---
 
@@ -107,7 +107,7 @@ Allow: /
 
 Decide deliberately on **training** crawlers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Bytespider`, `CCBot`). The training/answer distinction is the GEO-relevant decision. A B2B SaaS that wants discovery should normally allow both; a publisher that wants payment for training data should block training while allowing answer-engine real-time agents.
 
-The Congruent case (3HASH audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` — leaving silent gaps.
+The Congruent case (in-house audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` — leaving silent gaps.
 
 ---
 

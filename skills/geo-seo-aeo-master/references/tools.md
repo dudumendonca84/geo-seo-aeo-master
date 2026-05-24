@@ -121,7 +121,7 @@ Reference for `geo-seo-aeo-master`. Eight vendors covering AI visibility monitor
 
 ## What none of these tools do (the consultant gap)
 
-The 3HASH audit of congruent.pt (22 May 2026) demonstrates a category of work that **no SaaS tool in this list produces**: an integrated technical audit combining
+A destaque.ai-methodology audit (e.g. the in-house audit of congruent.pt, 22 May 2026) demonstrates a category of work that **no SaaS tool in this list produces**: an integrated technical audit combining
 
 - TTFB measured from PT (5 curl corridas).
 - HTTP `Content-Encoding` presence (Brotli/gzip).
