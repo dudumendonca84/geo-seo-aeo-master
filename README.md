@@ -1,5 +1,17 @@
 # geo-seo-aeo-master
 
+## 📦 Quick upload (Claude.ai sem Cowork)
+
+**Click aqui para baixar o zip pronto a upload:**
+
+👉 https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fdudumendonca84%2Fgeo-seo-aeo-master%2Ftree%2Fmain%2Fskills%2Fgeo-seo-aeo-master
+
+Depois: Claude → Customize → Habilidades → "⋮" no `geo-seo-aeo-master` → **Eliminar** → **+** → **Fazer upload** → escolhe o zip baixado.
+
+Re-faz isto sempre que quiseres puxar news frescas (Routine actualiza o git diariamente às 8:00 Lisboa).
+
+---
+
 Canonical **plugin marketplace** for **destaque.ai** — single source of truth for GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) and classical SEO, focused on B2B SaaS in Portugal.
 
 ## What it is
