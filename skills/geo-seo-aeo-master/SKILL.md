@@ -14,9 +14,16 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `SKILL.md` | This file. Identity, principles, workflow. |
 | `references/frameworks.md` | llms.txt spec, AI crawler matrix, Schema.org types that matter, E-E-A-T, RAG mechanics by engine, Princeton GEO paper, entity-based optimization, multilingual/PT-PT, adversarial risks. |
 | `references/tools.md` | Vendor landscape (Profound, Peec AI, Otterly, Goodie, Daydream, Surfer, Ahrefs Brand Radar, Semrush AI Toolkit) with honest gaps. |
-| `references/metrics.md` | Citation rate, brand mention rate, SoV, AI-attributed traffic, Princeton PAWC; GSC / GA4 / Bing Webmaster Tools current state. |
+| `references/metrics.md` | Citation rate, brand mention rate, SoV, AI-attributed traffic, Princeton PAWC; GSC / GA4 / Bing Webmaster Tools current state. Formulas implemented verbatim by Deck/Tracker code. |
 | `references/benchmarks.md` | Public studies with hard numbers (Pew, Ahrefs, BrightEdge, Semrush, Similarweb, NetElixir, Aggarwal et al., Seer). Flagged stats *not* to cite. |
-| `daily-agent/news-feed.md` | Auto-updated 07:00 UTC. "What changed in the last 24-48h" entries. |
+| `references/models.md` | LLM model registry by vendor + Deck Builder API mappings (production / cost_optimized per engine). Updated by the daily agent on release material. |
+| `references/prompts.md` | Prompt-generation principles, canonical categories, per-tier distribution, destaque.ai self-audit catalogue. Consumed by Deck Builder and Tracker. |
+| `references/competitor_filtering.md` | Four-question test for peer competitors + worked examples + sector heuristics. Used by Tracker to classify brand mentions. |
+| `references/alert_thresholds.md` | Severity bands and thresholds for week-over-week Tracker alerts (CR / SoV / position / sentiment / events). |
+| `references/gap_action_mapping.md` | Catalogue of recurring audit gaps mapped to actions across the 8 SINAL dimensions. Used by audit workflow §8 and Tracker narrative generation. |
+| `references/narrative_templates.md` | Editorial structures for weekly Top-3, weekly Próximas acções, monthly digest, quarterly review, proposal copy. |
+| `daily-agent/news-feed.md` | Auto-updated 07:00 UTC. "What changed in the last 24-48h" entries. Included in Tracker system prompts as editorial currency. |
+| `../../INTERFACES.md` (repo root) | Cross-repo contract: paths, parse rules, cache and fallback policy, breaking-change procedure. |
 
 Load only what you need. Don't pre-load everything.
 

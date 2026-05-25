@@ -64,7 +64,7 @@ EXCLUIR:
 
 ## Output
 
-Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
+Adiciona ao TOPO de `skills/geo-seo-aeo-master/daily-agent/news-feed.md` (após cabeçalho ---):
 
 ## YYYY-MM-DD
 
@@ -97,8 +97,19 @@ Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
 ## Manutenção
 
 1. Se news-feed.md tem mais de 60 ## headers, trunca para últimos 60 dias
-2. Adiciona log em daily-agent/execution-log.md
-3. Apenas sextas: gera 3 drafts em daily-agent/drafts/YYYY-MM-DD-weekly.md
+2. Adiciona log em `skills/geo-seo-aeo-master/daily-agent/execution-log.md`
+3. Apenas sextas: gera 3 drafts em `skills/geo-seo-aeo-master/daily-agent/drafts/YYYY-MM-DD-weekly.md`
    - LinkedIn ~200 palavras (tom destaque.ai)
    - Blog ~1500 palavras (aprofundamento técnico)
    - Twitter thread ~10 tweets (atómico)
+
+## Auto-update de referências críticas
+
+Quando a research diária revelar **release material de modelos LLM** (e.g. OpenAI lança GPT-6, Anthropic lança Claude 5, xAI lança Grok 5, etc.), actualiza AMBAS as partes de `skills/geo-seo-aeo-master/references/models.md`:
+
+1. **Tabelas humano-friendly por vendor** (secção "Default in" da tabela do vendor afectado)
+2. **Bloco máquina-legível `## Deck Builder API mappings`** no fim do ficheiro
+
+Critério de "release material": a) novo modelo se torna o default no produto do vendor (e.g. default de ChatGPT, claude.ai, Gemini app), b) deprecação/retirement explícita de um modelo actualmente listado, c) mudança de preço/janela de contexto que afecta as escolhas de tier.
+
+Não rebatizar identificadores sem fonte primária. Se o anúncio for ambíguo (vendor blog não confirma o `model_id` exposto na API), regista em news-feed.md e deixa `models.md` intocado até confirmação na docs oficial.

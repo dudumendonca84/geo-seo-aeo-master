@@ -4,29 +4,43 @@ Canonical skill for **destaque.ai** — the single source of truth for GEO (Gene
 
 ## What it is
 
-Five reference documents plus a self-updating news feed, designed to make any operator (human or Claude agent) capable of producing a 3HASH-grade technical audit.
+Eleven reference documents plus a self-updating news feed, designed to make any operator (human or Claude agent) capable of producing a 3HASH-grade technical audit **and** to power the destaque.ai Deck Builder and Visibility Tracker via raw-URL fetch.
 
 ```
-SKILL.md                       Identity, principles, audit workflow
 README.md                      This file
-references/
-  frameworks.md                llms.txt, AI crawler matrix, Schema.org for AI,
-                               E-E-A-T, RAG mechanics by engine, Princeton GEO,
-                               entity-based optimization, PT-PT, adversarial
-  tools.md                     Profound · Peec AI · Otterly · Goodie · Daydream
-                               Surfer · Ahrefs Brand Radar · Semrush AI Toolkit
-  metrics.md                   Citation rate, SoV, AI-attributed traffic,
-                               PAWC; GSC/GA4/Bing Webmaster Tools current state
-  benchmarks.md                Public studies with hard numbers (Pew, Ahrefs,
-                               BrightEdge, Semrush, Similarweb, NetElixir,
-                               Aggarwal et al., Seer); flagged stats NOT to cite
-daily-agent/
-  daily-prompt.md              Instructions for the daily research agent
-  news-feed.md                 Auto-updated 07:00 UTC daily
-  execution-log.md             Run log
-  drafts/                      Weekly drafts (Fridays only)
+INTERFACES.md                  Cross-repo contract (paths, parse rules, fallbacks)
 .github/workflows/
   daily-news.yml               Cron + workflow_dispatch
+skills/geo-seo-aeo-master/     Canonical skill root (path consumed by Deck/Tracker)
+  SKILL.md                       Identity, principles, audit workflow
+  references/
+    frameworks.md                llms.txt, AI crawler matrix, Schema.org for AI,
+                                 E-E-A-T, RAG mechanics by engine, Princeton GEO,
+                                 entity-based optimization, PT-PT, adversarial
+    tools.md                     Profound · Peec AI · Otterly · Goodie · Daydream
+                                 Surfer · Ahrefs Brand Radar · Semrush AI Toolkit
+    metrics.md                   Citation rate, SoV, AI-attributed traffic,
+                                 PAWC; GSC/GA4/Bing Webmaster Tools current state
+    benchmarks.md                Public studies with hard numbers (Pew, Ahrefs,
+                                 BrightEdge, Semrush, Similarweb, NetElixir,
+                                 Aggarwal et al., Seer); flagged stats NOT to cite
+    models.md                    LLM model registry per vendor + Deck Builder API
+                                 mappings (production / cost_optimized per engine)
+    prompts.md                   Prompt-generation principles, canonical categories,
+                                 tier distribution, destaque.ai catalogue
+    competitor_filtering.md      Rules for what counts as a peer competitor
+                                 (vs adjacent vendor, substitute, or distractor)
+    alert_thresholds.md          Δ thresholds that warrant a Tracker alert (CR,
+                                 SoV, position, sentiment, new entrant)
+    gap_action_mapping.md        Problem → action catalogue across 8 SINAL
+                                 dimensions, for audit closing plans
+    narrative_templates.md       Editorial structure for weekly Top-3 changes,
+                                 Next actions, monthly reports
+  daily-agent/
+    daily-prompt.md              Instructions for the daily research agent
+    news-feed.md                 Auto-updated 07:00 UTC daily
+    execution-log.md             Run log
+    drafts/                      Weekly drafts (Fridays only)
 ```
 
 ## Editorial bar
@@ -99,7 +113,7 @@ Confirm the run goes green and that `daily-agent/news-feed.md` has a new dated e
 3. Paste this repo URL: `https://github.com/dudumendonca84/geo-seo-aeo-master`
 4. **Sync**
 
-The skill appears as `geo-seo-aeo-master`. Claude loads `SKILL.md` automatically and pulls references on demand. Re-sync whenever you want to pull updates (or periodically — the daily agent updates `news-feed.md` every morning).
+The skill appears as `geo-seo-aeo-master`. Claude loads `skills/geo-seo-aeo-master/SKILL.md` automatically and pulls references on demand. Re-sync whenever you want to pull updates (or periodically — the daily agent updates `news-feed.md` every morning).
 
 ## Use in claude.ai conversations
 
@@ -114,8 +128,9 @@ Reference the skill by name, or paste the relevant section URL. Examples that sh
 
 - **Claude Desktop.** Via Personal Plugins → Sync (above).
 - **claude.ai conversations.** Manual reference or skill load.
-- **Deck Builder** (planned). Will fetch `references/*.md` directly via raw GitHub URLs. The flat markdown structure is designed to be parsed without extra tooling.
-- **CI / agent scripts** (planned). Can clone the repo and read references as plain markdown.
+- **Deck Builder** (`destaque-ai-deck-builder`). Fetches `skills/geo-seo-aeo-master/references/prompts.md` and `models.md` via raw GitHub URLs (cache 1h, fallback to hardcoded). Contracts in `INTERFACES.md`.
+- **Visibility Tracker** (`destaque-ai-tracker`). Fetches the same files plus `competitor_filtering.md`, `alert_thresholds.md`, `narrative_templates.md`, `gap_action_mapping.md` and `daily-agent/news-feed.md` to power weekly audits and editorial outputs. Contracts in `INTERFACES.md`.
+- **CI / agent scripts.** Can clone the repo and read references as plain markdown.
 
 ## Why this exists
 

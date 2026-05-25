@@ -20,7 +20,7 @@ jobs:
         run: |
           TODAY=$(TZ=Europe/Lisbon date +%Y-%m-%d)
           mkdir -p /tmp/agent
-          sed "s/{{TODAY}}/$TODAY/g" daily-agent/daily-prompt.md > /tmp/agent/prompt.md
+          sed "s/{{TODAY}}/$TODAY/g" skills/geo-seo-aeo-master/daily-agent/daily-prompt.md > /tmp/agent/prompt.md
           echo "Rendered prompt for $TODAY"
 
       - name: Run daily research agent
@@ -39,8 +39,8 @@ jobs:
         run: |
           git config user.name "destaque-ai-bot"
           git config user.email "bot@destaque.ai"
-          if [[ -n $(git status --porcelain daily-agent/) ]]; then
-            git add daily-agent/
+          if [[ -n $(git status --porcelain skills/geo-seo-aeo-master/daily-agent/) ]]; then
+            git add skills/geo-seo-aeo-master/daily-agent/
             git commit -m "daily: $(TZ=Europe/Lisbon date +%Y-%m-%d) news update"
             git push
           else
