@@ -77,27 +77,49 @@ curl -s "$SUPABASE_URL/rest/v1/sinal_scans?proposal_id=eq.{PROPOSAL_ID}&select=*
 
 Guarda em variáveis. Vais consultar várias vezes.
 
-### 2b. Research adicional ao vivo
+### 2b. Análise PROFUNDA das respostas raw dos motores
 
-Não confies apenas no SINAL scan automático. Faz research que enriquece:
+**Isto é a parte mais rica do audit. Não saltes.**
+
+Tens **180 respostas raw** dos 6 motores LLM em `audit_runs.response`. Cada uma é texto real do motor a recomendar (ou não) o prospect. Lê com olhos críticos:
+
+- **Para cada motor, lê pelo menos 8-10 respostas variadas** (não só onde a marca aparece — sobretudo onde NÃO aparece). Identifica:
+  - **Tom**: o motor é cauteloso? assertivo? lista 3 opções ou enumera 10?
+  - **Framing**: como descreve o tipo de serviço pedido? Que termos usa? PT-PT ou PT-BR?
+  - **Competitor clustering**: que marcas aparecem juntas? Há "set" mental do motor (ex: ChatGPT cita sempre Profound + Peec + Otterly em queries sobre vendor tracking)?
+  - **Hallucinations**: o motor inventa partnerships, certificações, preços, anos de fundação? Documenta as alucinações concretas.
+  - **Tipo de prospect assumido**: o motor assume Enterprise? PME? Startup? Que sinal envia ao prospect?
+  - **Citation source**: quando o motor cita URLs, que sites domina (Reddit, LinkedIn, blogs vendor, imprensa)?
+  - **Geographic specificity**: o motor reconhece a geografia PT do prospect? Sugere só players PT ou internacionais?
+  - **Discovery vs decision intent**: como o motor responde a "qual a melhor X?" (research) vs "X é boa para Y?" (decision)? Diferente?
+
+Padrões a procurar:
+- Motores **agrupam** prospect com competitors específicos consistentemente?
+- A marca quase aparece (referenciada mas não top) em algumas respostas? Estás no "set" mental mas no fim da lista?
+- Há motores onde a marca é INVISÍVEL (citation 0%)? Lê 5 respostas desse motor para perceber porquê — o motor sabe do segmento mas escolhe outros, ou nem sabe que o segmento existe?
+
+Estas observações alimentam o `executive_reading_md` E o `action_plan` (acções ancoradas em padrões reais, não em template).
+
+### 2c. Research adicional ao vivo (external sources)
+
+Para enriquecer o que os motores não te dizem:
 
 **Entidade:**
-- Wikidata: `curl "https://www.wikidata.org/w/api.php?action=wbsearchentities&search={BRAND}&language=en&format=json"` — confirma QID, dá-te informação adicional
+- Wikidata: `curl "https://www.wikidata.org/w/api.php?action=wbsearchentities&search={BRAND}&language=en&format=json"` — confirma QID, propriedades, sameAs
 - Wikipedia PT/EN: `curl "https://pt.wikipedia.org/api/rest_v1/page/summary/{BRAND}"` — vê se existe artigo
-- LinkedIn: `WebFetch https://www.linkedin.com/company/{slug}` — vê se há perfil, número de seguidores
+- LinkedIn: `WebFetch https://www.linkedin.com/company/{slug}` — perfil, número de seguidores, posts recentes
 - GitHub: `curl https://api.github.com/orgs/{slug}` — se aplicável
 
 **Autoridade PT:**
-- Google News PT: `WebSearch "{brand}" site:observador.pt OR site:eco.pt OR site:publico.pt OR site:expresso.pt OR site:dinheirovivo.pt OR site:jornaldenegocios.pt` — quantas menções nos últimos 12 meses?
-- Conferências: `WebSearch "{brand}" "speaker" OR "panelist" 2024 OR 2025 OR 2026`
+- Google News PT: `WebSearch "{brand}" site:observador.pt OR site:eco.pt OR site:publico.pt OR site:expresso.pt OR site:dinheirovivo.pt OR site:jornaldenegocios.pt` — menções últimos 12 meses
+- Podcasts PT: `WebSearch "{brand}" podcast OR entrevista 2024 OR 2025 OR 2026`
+- Conferências: `WebSearch "{brand}" "speaker" OR "panelist" OR "keynote" 2024 OR 2025 OR 2026`
 
-**Sobre competitors mencionados:**
-- Para os 3-5 top competitors do audit, faz mini-research: site, presença, posicionamento. Verifica se são realmente competitors directos do prospect ou só ruído.
+**Sobre competitors mencionados (top 3-5 do audit):**
+- Mini-research por cada: site, presença web, posicionamento. Verifica se são realmente competitors directos ou apenas ruído mencionado pelos motores.
+- Para cada competitor, lê 1-2 respostas onde aparecem para perceber como o motor os enquadra vs o prospect.
 
-**Sobre o segmento:**
-- Lê 2-3 das respostas raw mais interessantes (`audit_runs.response`) para perceber tom dos motores no segmento.
-
-### 2c. THINK DEEPLY
+### 2d. THINK DEEPLY
 
 Pensa 20-30 minutos. Não escrevas ainda. Considera:
 
@@ -107,7 +129,7 @@ Pensa 20-30 minutos. Não escrevas ainda. Considera:
 4. **Qual é a história?** Se tivesses 30 segundos para resumir o estado deste prospect, o que dirias?
 5. **O que é específico desta marca vs genérico do segmento?** Insights únicos ganham este audit.
 
-### 2d. Escreve o deck — markdown rico, não JSON espremido
+### 2e. Escreve o deck — markdown rico, não JSON espremido
 
 Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 
@@ -152,7 +174,7 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 
 - **self_critique_md**: **Honestidade radical**. Que parte ficou rasa? Que dimensão deveria ter mais research? Que claim é mais frágil?
 
-### 2e. AUTO-CRITICA antes de escrever
+### 2f. AUTO-CRITICA antes de escrever
 
 Antes de fazer o PATCH ao Supabase, lê o que escreveste. Pergunta:
 
@@ -165,7 +187,7 @@ Antes de fazer o PATCH ao Supabase, lê o que escreveste. Pergunta:
 
 Se algo falhar, REFINA. Não submetes mediocre.
 
-### 2f. Escreve em Supabase + limpa flag
+### 2g. Escreve em Supabase + limpa flag
 
 ```bash
 DECK_JSON=$(cat <<EOF
@@ -186,7 +208,7 @@ curl -s -X PATCH "$SUPABASE_URL/rest/v1/proposals?id=eq.{PROPOSAL_ID}" \
   -d "$DECK_JSON"
 ```
 
-### 2g. Loga
+### 2h. Loga
 
 Cada proposta:
 - `proposal_id`, brand_name, audit_tier
