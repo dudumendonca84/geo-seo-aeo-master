@@ -8,6 +8,31 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-05-25 — SINAL v1.6 — `gap_action_mapping.md` adicionado
+
+**Trigger.** Deck Builder PR #5 do roadmap (Step 12 deck-by-AI) precisa de mapping concreto entre findings de audit/scan e acções fundamentadas. Founder direction explícita: deck deve cobrir 8 dimensões SINAL, não apenas technical.
+
+**Source.** Internal product direction; SKILL.md § Methodology — SINAL § Scope (holistic).
+
+**Changes:**
+- New file `references/gap_action_mapping.md` — patterns por dimensão (8 dimensões SINAL × 1-3 patterns iniciais cada) mapeando observable signals para acção concreta com effort + impacto típico + fonte primária.
+- Cobertura inicial:
+  - Dim 1 (Technical): 3 patterns (Gemini 0%, llms.txt, performance)
+  - Dim 2 (Content): 2 patterns (original stats, comparative)
+  - Dim 3 (Entity): 4 patterns (Wikidata QID, Wikipedia, sameAs, LinkedIn/GitHub)
+  - Dim 4 (Authority): 3 patterns (Tier-1 PT, podcasts, listicles)
+  - Dim 5 (UX): 1 pattern (bounce)
+  - Dim 6 (Measurement): 2 patterns (GA4 AI channel, BWT)
+  - Dim 7 (Positioning): 2 patterns (BOFU coverage, comparison dominance)
+  - Dim 8 (Operational): 1 pattern (cadence)
+  - Cross-dimensional: 3 patterns
+
+**Effect.** Step 12 do Deck Builder pode (futuro PR) consumir este ficheiro e gerar action plan fundamentado por horizonte. Each pattern inclui fonte primária quando há evidência pública (Aggarwal et al., Ahrefs, Profound, Otterly, etc.); declara honestamente quando não há.
+
+**Maintenance.** Loop 2 (self-audit semanal) e Loop 3 (synthesis-weekly de `destaque-ai-ops/learnings/` — futuro) alimentam novos patterns à medida que destaque.ai acumula client engagements reais.
+
+---
+
 ## 2026-05-23 — SINAL v1.4 — Prompt intelligence layer added
 
 **Trigger.** Founder direction: skill deve evoluir também nos prompts — saber quais prompts canónicos o segmento usa, não só fixar uma query intuição-based no audit.
