@@ -11,7 +11,7 @@ Last full refresh: **25 May 2026**. Auto-updated by the daily research agent whe
 
 ---
 
-## 1. Tables by vendor
+## Tables by vendor
 
 Each row records the public `model_id` (the string an API expects), a one-line role, and the **Default in** column noting consumer-product defaults. Pricing is per 1M input/output tokens, USD, scraped from the vendor's own pricing page on the date noted.
 
@@ -130,7 +130,7 @@ Source: [docs.mistral.ai/getting-started/models/models_overview](https://docs.mi
 
 ---
 
-## 2. Deprecated / retired models — do not use
+## Deprecated / retired models — do not use
 
 Anything below has been retired or deprecated by the vendor. Code that still references these IDs will fail or silently fall back. Cross-check before use.
 
@@ -148,13 +148,15 @@ Anything below has been retired or deprecated by the vendor. Code that still ref
 | `llama-2-*`, `llama-3-*` (non-3.1) | Meta | Superseded | Llama 3.1 family |
 | `pplx-*-online`, `llama-3.1-sonar-*` | Perplexity | Folded into `sonar*` aliases | `sonar`, `sonar-pro`, `sonar-reasoning` |
 
-If a session encounters one of these in an existing codebase, flag and propose replacement from §1.
+If a session encounters one of these in an existing codebase, flag and propose replacement from the vendor tables above.
 
 ---
 
-## 3. Deck Builder API mappings
+## Deck Builder API mappings
 
 Single source of truth for `destaque-ai-deck-builder` and `destaque-ai-tracker`. Parsed by `src/lib/skill/models.ts` (Deck) and the Tracker's equivalent. Cache TTL 1h, fallback to hardcoded.
+
+The H2 header above is **the parse anchor** — exact string `## Deck Builder API mappings`, no numbering, no decoration. Do not rename.
 
 The `production` column reflects the model used for paid deliverables; `cost_optimized` reflects what is used for free-tier / lead-gen / bulk work.
 
@@ -190,7 +192,7 @@ Anthropic recommends pinning Haiku to a dated alias to avoid silent migrations. 
 
 ---
 
-## 4. Maintenance
+## Maintenance
 
 - The daily research agent updates both layers when there is release material. See `skills/geo-seo-aeo-master/daily-agent/daily-prompt.md` § "Auto-update de referências críticas".
 - A human reviewer must verify the daily agent's proposed updates before merge if the change is structural (new vendor, retired vendor, new tier column). Identifier renames within an existing vendor are auto-merged.
@@ -198,7 +200,7 @@ Anthropic recommends pinning Haiku to a dated alias to avoid silent migrations. 
 
 ---
 
-## 5. What this file deliberately does not include
+## Out of scope
 
 - **Benchmarks / leaderboards.** Artificial Analysis, LMArena, Vellum publish moving rankings. Consult them when choosing between two models of similar tier; do not cache their numbers here.
 - **Latency and throughput numbers.** Vary by region, deployment, hour of day. Measure per-deployment if it matters.

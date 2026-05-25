@@ -2,7 +2,7 @@
 
 Reference for `geo-seo-aeo-master`. Defines how prompts are generated, the canonical categories, the per-tier distribution consumed by `destaque-ai-deck-builder`, and the destaque.ai self-audit catalogue used by the weekly self-audit routine.
 
-The slice from `## 1. Princípios` (inclusive) to `## 4. Catálogo destaque.ai` (exclusive) is the **contract block** parsed by the Deck Builder (`src/lib/skill/prompts.ts`) and the Tracker. Anchors are stable. Do not rename headings.
+The first three H2 sections (Princípios, Categorias canónicas, Distribuição por tier) are the **contract block** parsed by the Deck Builder (`src/lib/skill/prompts.ts`) and the Tracker. Anchors are stable — see `INTERFACES.md` for exact strings. Do not rename headings.
 
 Last refresh: 25 May 2026.
 
