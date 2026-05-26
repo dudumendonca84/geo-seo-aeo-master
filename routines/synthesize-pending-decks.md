@@ -11,14 +11,15 @@ Esta Routine é o **cérebro real** do método SINAL na destaque.ai. Lê propost
 
 **Não é "sintetizar audit data em deck blocks"**. É **fazer audit profundo com a skill como brain activo**: ler skill, fazer research adicional (Wikipedia, Wikidata, web), pensar 30-40 min, escrever 2000-3000 palavras de análise sober, auto-criticar, refinar, persistir.
 
-## Env vars necessários
+## Conectores necessários
 
-Configurar na criação da Routine no Claude Code Web:
+Na criação da Routine no Claude Code Web, secção **Conectores**, garante que está activo:
 
-| Var | Valor |
+| Conector | Para quê |
 |---|---|
-| `SUPABASE_URL` | URL do projecto Supabase deck-builder |
-| `SUPABASE_SERVICE_ROLE_KEY` | Service role (server-only, full RW) |
+| **Supabase** | Acesso ao projecto deck-builder via MCP — substitui as env vars `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`. As ferramentas `mcp__supabase__execute_sql` ficam disponíveis automaticamente. Liga o conector ao projecto destaque-ai-deck-builder via OAuth quando o Claude pedir. |
+
+> **Nota**: o UI antigo tinha campo "Environment variables". A versão actual substituiu por **Conectores** — não precisas (nem deves) configurar env vars manualmente. O conector Supabase trata da autenticação por baixo.
 
 ## Prompt (copia tudo abaixo do `---`)
 
@@ -34,14 +35,16 @@ Hoje é {{TODAY}}.
 
 ## Passo 0 — Orientação (lê SEMPRE antes de qualquer audit)
 
-Carrega o cérebro:
+Carrega o cérebro. A Routine corre num container sem o repo clonado — fetch via raw GitHub:
 
-1. `cat skills/geo-seo-aeo-master/SKILL.md` — identidade, princípios, 8 dimensões, audit workflow
-2. `cat skills/geo-seo-aeo-master/references/metrics.md` — definições canónicas
-3. `cat skills/geo-seo-aeo-master/references/benchmarks.md` — números defensáveis com fonte
-4. `cat skills/geo-seo-aeo-master/references/gap_action_mapping.md` — patterns por dimensão
-5. `cat skills/geo-seo-aeo-master/references/frameworks.md` — RAG, schema, llms.txt, crawlers
-6. `cat skills/geo-seo-aeo-master/daily-agent/news-feed.md` — últimas 24-48h
+1. `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/SKILL.md` — identidade, princípios, 8 dimensões, audit workflow
+2. `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/metrics.md` — definições canónicas
+3. `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/benchmarks.md` — números defensáveis com fonte
+4. `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/gap_action_mapping.md` — patterns por dimensão
+5. `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/frameworks.md` — RAG, schema, llms.txt, crawlers
+6. `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/daily-agent/news-feed.md` — últimas 24-48h
+
+Usa **`WebFetch`** para cada um. Se algum 404 (estrutura mudou), faz fallback para `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/README.md` e ajusta o caminho a partir daí.
 
 Interioriza:
 - Tom **Economist register**, **PT-PT** body, **EN** para identifiers
@@ -52,10 +55,14 @@ Interioriza:
 
 ## Passo 1 — Busca pending
 
-```bash
-curl -s "$SUPABASE_URL/rest/v1/proposals?deck_synthesis_pending=eq.true&audit_status=eq.completed&select=id,prospect_id,custom_prompts,audit_results,audit_tier" \
-  -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-  -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"
+Usa a ferramenta **`mcp__supabase__execute_sql`** (conector Supabase) com:
+
+```sql
+SELECT id, prospect_id, custom_prompts, audit_results, audit_tier
+FROM proposals
+WHERE deck_synthesis_pending = true
+  AND audit_status = 'completed'
+ORDER BY audit_completed_at ASC;
 ```
 
 Se array vazio: encerra. Loga "no pending".
@@ -64,18 +71,32 @@ Se array vazio: encerra. Loga "no pending".
 
 ### 2a. Lê TODOS os dados relacionados
 
-```bash
-# Prospect (negócio, localização, audiência, competitors declarados)
-curl -s "$SUPABASE_URL/rest/v1/prospects?id=eq.{PROSPECT_ID}&select=*" -H "..."
+Via **`mcp__supabase__execute_sql`** (cada uma é uma chamada separada):
 
-# Audit runs: 1 row por (prompt × motor). 180 rows para diagnostic.
-curl -s "$SUPABASE_URL/rest/v1/audit_runs?proposal_id=eq.{PROPOSAL_ID}&select=*&limit=200" -H "..."
-
-# SINAL scan: findings técnicos + entity + authority
-curl -s "$SUPABASE_URL/rest/v1/sinal_scans?proposal_id=eq.{PROPOSAL_ID}&select=*" -H "..."
+```sql
+-- Prospect (negócio, website, audiência, competitors declarados)
+SELECT *
+FROM prospects
+WHERE id = '{PROSPECT_ID}';
 ```
 
-Guarda em variáveis. Vais consultar várias vezes.
+```sql
+-- Audit runs: 1 row por (prompt × motor). Até 180 rows para diagnostic.
+SELECT prompt, engine, intent_stage, response, citations_found,
+       brand_position, brand_present, competitors_mentioned, sentiment_score
+FROM audit_runs
+WHERE proposal_id = '{PROPOSAL_ID}'
+ORDER BY engine, prompt;
+```
+
+```sql
+-- SINAL scan: findings técnicos + entity + authority
+SELECT domain, score, scan_results, critical_count, unknown_count
+FROM sinal_scans
+WHERE proposal_id = '{PROPOSAL_ID}';
+```
+
+Guarda em variáveis mentais — vais consultar várias vezes ao longo do raciocínio.
 
 ### 2b. Análise PROFUNDA das respostas raw dos motores
 
@@ -189,24 +210,18 @@ Se algo falhar, REFINA. Não submetes mediocre.
 
 ### 2g. Escreve em Supabase + limpa flag
 
-```bash
-DECK_JSON=$(cat <<EOF
-{
-  "deck_blocks": { ... JSON acima ... },
-  "deck_synthesized_at": "$(date -Iseconds)",
-  "deck_synthesized_source": "claude",
-  "deck_synthesis_pending": false
-}
-EOF
-)
+Via **`mcp__supabase__execute_sql`**, com o JSON escapado correctamente:
 
-curl -s -X PATCH "$SUPABASE_URL/rest/v1/proposals?id=eq.{PROPOSAL_ID}" \
-  -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-  -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
-  -H "Content-Type: application/json" \
-  -H "Prefer: return=minimal" \
-  -d "$DECK_JSON"
+```sql
+UPDATE proposals
+SET deck_blocks            = '{ ... JSON do passo 2e ... }'::jsonb,
+    deck_synthesized_at    = now(),
+    deck_synthesized_source = 'claude',
+    deck_synthesis_pending = false
+WHERE id = '{PROPOSAL_ID}';
 ```
+
+> **Atenção ao escape**: o `deck_blocks` JSON tem markdown com aspas. Em SQL psql, dobrar plicas (`'` → `''`) é suficiente. Em alternativa, gera o JSON como Postgres `jsonb_build_object(...)` se o escape começar a ficar frágil.
 
 ### 2h. Loga
 
@@ -232,11 +247,13 @@ Quando processadas todas as pending, encerra a session. Não modifiques ficheiro
 
 ## Tratamento de erros
 
-Falha numa proposta? Loga + continua. Marca:
+Falha numa proposta? Loga + continua. Marca via **`mcp__supabase__execute_sql`**:
 
-```bash
-curl -s -X PATCH "$SUPABASE_URL/rest/v1/proposals?id=eq.{ID}" \
-  -H "..." -d '{"deck_synthesized_source": "fallback", "deck_synthesis_pending": false}'
+```sql
+UPDATE proposals
+SET deck_synthesized_source = 'fallback',
+    deck_synthesis_pending  = false
+WHERE id = '{PROPOSAL_ID}';
 ```
 
 (`source: fallback` sinaliza ao admin para re-trigger manual.)
