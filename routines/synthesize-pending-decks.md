@@ -46,6 +46,21 @@ Carrega o cérebro. A Routine corre num container sem o repo clonado — fetch v
 
 Usa **`WebFetch`** para cada um. Se algum 404 (estrutura mudou), faz fallback para `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/README.md` e ajusta o caminho a partir daí.
 
+## Passo 0.5 — Guard de projecto (NÃO SALTAR)
+
+O conector Supabase autentica via OAuth e pode estar ligado a uma conta ou organização diferente da esperada. Antes de ler ou escrever **uma única row**:
+
+1. Chama **`mcp__supabase__list_projects`**.
+2. Confirma que existe um projecto cujo nome ou ref bate com **`destaque-ai-deck-builder`** (ref esperada visível no admin URL do Supabase do operador).
+3. Confirma que a tabela `proposals` existe nesse projecto: **`mcp__supabase__list_tables`** → procura `public.proposals` com a coluna `deck_synthesis_pending`.
+
+Se algum dos dois falhar:
+- **NÃO escreves nada.**
+- Encerra a session com log: `"guard_failed: connector linked to wrong project — expected destaque-ai-deck-builder"`.
+- O operador re-liga o conector com a conta certa e a Routine corre na hora seguinte.
+
+Toda a fase 2 (SQL queries, UPDATE) assume que o guard passou. Em todas as chamadas a `execute_sql`, passa explicitamente o `project_id` do projecto identificado no passo 0.5 — não confies em "default project" do conector.
+
 Interioriza:
 - Tom **Economist register**, **PT-PT** body, **EN** para identifiers
 - **Numbers over adjectives**, source obrigatória, no fabricated benchmarks
