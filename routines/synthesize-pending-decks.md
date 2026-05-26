@@ -185,7 +185,13 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
   "projection_6m": {
     "citation_rate_baseline": 0.07,
     "citation_rate_target": 0.32,
-    "methodology_note_md": "Markdown 100-200 palavras explicando cálculo sigmoidal + caveats"
+    "methodology_note_md": "Markdown 100-200 palavras explicando cálculo sigmoidal + caveats",
+    "monthly_eur_estimate": {
+      "low": 5000,
+      "high": 25000,
+      "assumptions_md": "Markdown 80-200 palavras explicando os inputs assumidos (LTV/ACV, funnel %, TAQ queries/mês na categoria) + fontes (Crunchbase/Profound/etc.) + confidence",
+      "confidence": "low"
+    }
   },
   "faq": [
     { "q": "...", "a_md": "Markdown 100-300 palavras" }
@@ -204,7 +210,11 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 
 - **research_additional_md**: O que descobriste para além do scan automático. Wikipedia presence? Wikidata QID? Tier-1 PT media coverage real (com nomes de artigos se encontraste)? Podcasts? Conferências? Findings concretos.
 
-- **projection_6m**: baseline = citation_rate actual. Target conservador (max 0.45 OU baseline + 0.30, o menor). `methodology_note_md` explica que é sigmoidal, baseado em padrões observados (sem prometer outcome).
+- **projection_6m**:
+  - `citation_rate_baseline` = citation_rate actual (sobre runs reais, não inflado por mocks).
+  - `citation_rate_target` conservador (max 0.45 OU baseline + 0.30, o menor).
+  - `methodology_note_md` explica curva sigmoidal + caveats.
+  - `monthly_eur_estimate`: range pipeline-at-risk/mês. Sem dados do prospect, usa benchmarks industry com fontes citadas em `assumptions_md`. **Assume LTV/ACV típico do segmento** (B2B SaaS PT: €15-50k/ano; e-commerce: €200-2000/cliente; local services: €500-5000). **Assume conversion funnel** (industry avg 1-2% query→lead, 15-25% lead→customer). **Assume TAQ** (queries/mês na categoria, estima por business_type + location). `confidence` = "low" se 2+ inputs são guess, "medium" se 1, "high" se prospect deu dados — neste audit é sempre "low". Se faltarem dados completamente, omite o objecto monthly_eur_estimate (slide mostra só % delta).
 
 - **faq** (5-8 perguntas): Anticipa preço, prazo, ownership, riscos, garantias, "porque destaque.ai vs agência X", "o que se inclui no Diagnóstico". Respostas honest, 100-300 palavras.
 
