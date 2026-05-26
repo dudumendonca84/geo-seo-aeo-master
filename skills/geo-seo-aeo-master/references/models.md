@@ -315,7 +315,7 @@ Two columns per engine:
 | `copilot` | Microsoft (Azure OpenAI) | `gpt-5.5` | `gpt-5.5` |
 | `mistral` | Mistral | `mistral-large-latest` | `mistral-small-latest` |
 | `grok` | xAI | `grok-4` | `grok-4.1-fast` |
-| `deepseek` | DeepSeek | `deepseek-v4-flash` | `deepseek-v4-flash` |
+| `deepseek` | DeepSeek | `deepseek-v4-pro` | `deepseek-v4-flash` |
 | `meta` | Meta | `llama-3.1-405b-instruct` | `llama-3.1-70b-instruct` |
 
 ### Tier assignment (Deck Builder)
