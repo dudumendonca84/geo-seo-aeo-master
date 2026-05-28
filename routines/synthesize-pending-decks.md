@@ -255,7 +255,16 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
   - `methodology_note_md` explica curva sigmoidal + caveats.
   - `monthly_eur_estimate`: range pipeline-at-risk/mês. Sem dados do prospect, usa benchmarks industry com fontes citadas em `assumptions_md`. **Assume LTV/ACV típico do segmento** (B2B SaaS PT: €15-50k/ano; e-commerce: €200-2000/cliente; local services: €500-5000). **Assume conversion funnel** (industry avg 1-2% query→lead, 15-25% lead→customer). **Assume TAQ** (queries/mês na categoria, estima por business_type + location). `confidence` = "low" se 2+ inputs são guess, "medium" se 1, "high" se prospect deu dados — neste audit é sempre "low". Se faltarem dados completamente, omite o objecto monthly_eur_estimate (slide mostra só % delta).
 
-- **faq** (5-8 perguntas): Anticipa preço, prazo, ownership, riscos, garantias, "porque destaque.ai vs agência X", "o que se inclui no Diagnóstico". Respostas honest, 100-300 palavras.
+- **faq** (5-8 perguntas): **maioria sobre GEO/AEO e a metodologia, ancoradas neste audit** — não comerciais genéricas. O cliente quer perceber a disciplina e o que os números querem dizer. Mistura recomendada: **4-5 substantivas de GEO** + no máximo 1-2 de processo (prazo/ownership). Exemplos de boas perguntas GEO (adapta ao caso, não copies):
+  - "Apareço no Google mas não no ChatGPT — porquê? É o mesmo problema?"
+  - "Qual a diferença entre citação e menção num motor de IA, e qual conta?"
+  - "Os 6 motores comportam-se igual? Tenho de optimizar para cada um?"
+  - "Criar QID Wikidata / sameAs muda mesmo a citação? Em quanto tempo?"
+  - "Schema.org e llms.txt sozinhos resolvem, ou é preciso autoridade externa?"
+  - "Como se mede share-of-voice em LLMs, já que não há 'posição' como no Google?"
+  - "Isto é SEO com outro nome? O que muda de facto no trabalho?"
+  - "Se um motor inventa concorrentes que não existem, o que é que isso diz do mercado?"
+  Respostas honest, 100-300 palavras, com número/fonte quando há. Nunca nomear "3HASH".
 
 - **self_critique_md**: **Honestidade radical**. Que parte ficou rasa? Que dimensão deveria ter mais research? Que claim é mais frágil?
 
