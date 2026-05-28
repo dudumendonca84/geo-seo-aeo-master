@@ -37,6 +37,6 @@ Hoje é {{TODAY}}. Vais fazer uma self-audit semanal ao site destaque.ai (https:
    - skills/geo-seo-aeo-master/destaque-ai-self/audit-baseline.md — substitui completamente com a nova auditoria (score global /100, scorecard 12 categorias, top findings cross-dimensional, plano em 4 horizontes)
    - skills/geo-seo-aeo-master/destaque-ai-self/improvements-backlog.md — move items resolvidos para DONE, adiciona items novos, re-prioritiza (P0-P3)
    - skills/geo-seo-aeo-master/destaque-ai-self/audit-history.md — adiciona entry datada com delta vs semana anterior (score global, score por categoria, items movidos para DONE, items novos)
-8. Commit + push directo a main com mensagem: "audit: YYYY-MM-DD destaque.ai SINAL self-audit"
+8. Commit + push directo ao branch main com mensagem: "audit: YYYY-MM-DD destaque.ai SINAL self-audit". NÃO abras pull request — esta é uma routine autónoma; faz `git push` directo a `main`. Se falhar por branch protection, reporta o erro em vez de criar PR.
 
 Tom: sóbrio Economist style. Sem hype. Sem buzzwords ("game-changer", "revolutionary", "10x"). Números concretos com unidade e data. Honesto sobre o que destaque.ai ainda não tem feito — não inventar urgência. Caveats explícitos quando dados não verificáveis (ex: PageSpeed Insights rate-limited; manual prompt-test em determinado engine não accessível por geo-restriction). Crisis-response protocol (SKILL.md §14) aplica-se se for detectada menção negativa hallucinated em qualquer LLM.
