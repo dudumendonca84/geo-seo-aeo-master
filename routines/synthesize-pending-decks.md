@@ -182,6 +182,16 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
     "ongoing": [...]
   },
   "research_additional_md": "Markdown 400-800 palavras — research que fizeste (Wikipedia, Tier-1 PT media, podcasts, conferences) com findings concretos",
+  "competitor_profiles": [
+    {
+      "name": "...",
+      "classification": "peer_consultancy",
+      "positioning_md": "Markdown 1-2 frases — o que esta entidade faz e como se posiciona",
+      "mention_count": 10,
+      "real_engine_mentions": 8
+    }
+  ],
+  "competitive_landscape_md": "Markdown 200-400 palavras — leitura honesta do landscape: quem são os peers reais (se existem), quem são vendors (não concorrência), e se os motores fabricam nomes (sinal de categoria imatura)",
   "projection_6m": {
     "citation_rate_baseline": 0.07,
     "citation_rate_target": 0.32,
@@ -209,6 +219,16 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 - **action_plan** (3-7 acções por horizonte, **12-25 total**): Concretas — não "melhorar schema" mas "JSON-LD Organization com sameAs apontando para LinkedIn `{handle}`, Crunchbase, Wikidata `{QID se existe}`". Cada `why_md` tem **mecanismo + porque é específico deste prospect + fonte**. Cada `impact_md` cita estudo se há ou declara "Foundation, sem dado isolado". `source_url` quando há paper/post a citar.
 
 - **research_additional_md**: O que descobriste para além do scan automático. Wikipedia presence? Wikidata QID? Tier-1 PT media coverage real (com nomes de artigos se encontraste)? Podcasts? Conferências? Findings concretos.
+
+- **competitor_profiles** (array, todos os nomes mencionados que valem a pena, até ~12): Para CADA nome que aparece nas respostas raw, classifica honestamente em `classification`:
+  - `peer_consultancy` — concorrente DIRECTO: mesma oferta (consultoria/serviço GEO/AEO), mesma escala, mesmo mercado. SÓ estes contam como "concorrência" no deck.
+  - `vendor_platform` — tool/SaaS que o cliente *compra* (ex: Profound, AthenaHQ, Scrunch AI, Otterly, Peec). NÃO é concorrente de uma consultoria — pode ser complementar.
+  - `adjacent` — relacionado mas não directo (agência SEO tradicional, marketing generalista, freelancer individual reconhecido tipo Aleyda Solis).
+  - `hallucinated` — nome que o motor inventou e NÃO existe / não opera nesta disciplina (verifica: se não consegues confirmar a existência via research, marca como hallucinated). A presença destes é um SINAL diagnóstico forte de categoria imatura.
+  - `positioning_md`: 1-2 frases sobre o que faz e como se posiciona.
+  - `mention_count`: vezes que aparece no total; `real_engine_mentions`: só em respostas reais (não mock).
+
+- **competitive_landscape_md** (200-400 palavras): leitura honesta. Se NÃO há peer_consultancy reais (vácuo PT), diz claramente — é a oportunidade. Separa vendors de concorrência. Se os motores fabricam nomes, nomeia-os como evidência de categoria nascente. NUNCA apresentes um vendor_platform como concorrente directo.
 
 - **projection_6m**:
   - `citation_rate_baseline` = citation_rate actual (sobre runs reais, não inflado por mocks).
