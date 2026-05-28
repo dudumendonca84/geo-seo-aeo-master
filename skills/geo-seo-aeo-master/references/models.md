@@ -309,12 +309,12 @@ Two columns per engine:
 | Deck engine | Vendor | production | cost_optimized |
 |---|---|---|---|
 | `chatgpt` | OpenAI | `gpt-5.5` | `gpt-5.5` |
-| `claude` | Anthropic | `claude-sonnet-4-6` | `claude-haiku-4-5-20251001` |
+| `claude` | Anthropic | `claude-sonnet-4-6` | `claude-haiku-4-5` |
 | `gemini` | Google | `gemini-3.5-flash` | `gemini-2.5-flash` |
 | `perplexity` | Perplexity | `sonar-pro` | `sonar` |
 | `copilot` | Microsoft (Azure OpenAI) | `gpt-5.5` | `gpt-5.5` |
 | `mistral` | Mistral | `mistral-large-latest` | `mistral-small-latest` |
-| `grok` | xAI | `grok-4` | `grok-4.1-fast` |
+| `grok` | xAI | `grok-4.3` | `grok-4.1-fast` |
 | `deepseek` | DeepSeek | `deepseek-v4-flash` | `deepseek-v4-flash` |
 | `meta` | Meta | `llama-3.1-405b-instruct` | `llama-3.1-70b-instruct` |
 

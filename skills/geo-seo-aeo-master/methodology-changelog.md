@@ -8,6 +8,25 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-05-26 — Deck Builder API mappings — 2 model ID corrections (PR #4 reconciled)
+
+**Trigger.** Triagem de PRs abertos. PR #4 (base 0d3bdac, antiga) sinalizou 3 fragilidades de model IDs; 2 ainda válidas vs estado actual de main, 1 obsoleta.
+
+**Source.** Vendor docs (Anthropic, xAI) + reconciliação contra `models.md` actual.
+
+**Changes (aplicadas fresh a main, não via merge do PR #4 para evitar regressão):**
+- `claude` cost_optimized: `claude-haiku-4-5-20251001` → **`claude-haiku-4-5`** (alias durável, remove fragilidade date-stamp).
+- `grok` production: `grok-4` → **`grok-4.3`** (grok-4 deprecated, retira 15 Ago 2026; grok-4.3 é o flagship cost-efficient actual).
+
+**NÃO aplicada (obsoleta):**
+- PR #4 propunha `deepseek` production `deepseek-v4` → `deepseek-v4-pro`. Rejeitada: main já moveu deliberadamente deepseek para `deepseek-v4-flash` (commit #13 — "pro é demasiado lento"). A decisão flash de main prevalece.
+
+**PR #4 fechado** (não merged — base antiga regrediria deepseek + daily-prompt.md). Net-new válido aplicado aqui.
+
+**Sem version bump SINAL.** Correcção de content em references/, não evolução de método. Versão permanece v1.6.
+
+---
+
 ## 2026-05-25 — SINAL v1.6 — `gap_action_mapping.md` adicionado
 
 **Trigger.** Deck Builder PR #5 do roadmap (Step 12 deck-by-AI) precisa de mapping concreto entre findings de audit/scan e acções fundamentadas. Founder direction explícita: deck deve cobrir 8 dimensões SINAL, não apenas technical.
