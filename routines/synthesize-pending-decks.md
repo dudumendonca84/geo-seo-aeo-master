@@ -7,7 +7,7 @@
 
 ## Propósito
 
-Esta Routine é o **cérebro real** do método SINAL na destaque.ai. Lê propostas com `deck_synthesis_pending = true`, faz auditoria profunda dos dados (audit em 6 motores + SINAL scan + dados do prospect), e escreve análise editorial 3HASH-grade.
+Esta Routine é o **cérebro real** do método SINAL na destaque.ai. Lê propostas com `deck_synthesis_pending = true`, faz auditoria profunda dos dados (audit em 6 motores + SINAL scan + dados do prospect), e escreve análise editorial de qualidade de excelência (referência interna: nível 3HASH ou superior — mas NUNCA nomeies "3HASH" no output; é concorrente).
 
 **Não é "sintetizar audit data em deck blocks"**. É **fazer audit profundo com a skill como brain activo**: ler skill, fazer research adicional (Wikipedia, Wikidata, web), pensar 30-40 min, escrever 2000-3000 palavras de análise sober, auto-criticar, refinar, persistir.
 
@@ -173,10 +173,10 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 {
   "executive_reading_md": "Markdown 600-1000 palavras...",
   "critical_findings": [
-    { "title": "...", "why_md": "Markdown 100-200 palavras", "dimension": "...", "anchor": "..." }
+    { "title": "...", "why_md": "Markdown 100-200 palavras", "benchmark_md": "Markdown 1 frase — 'tu: X · benchmark: Y'", "dimension": "...", "anchor": "..." }
   ],
   "action_plan": {
-    "h1": [ { "title": "...", "why_md": "Markdown 200-400 palavras", "effort": "...", "impact_md": "Markdown 50-150 palavras com fonte", "dimension": "...", "anchor": "...", "source_url": "..." } ],
+    "h1": [ { "title": "...", "why_md": "Markdown 200-400 palavras", "benchmark_md": "Markdown 1 frase — target de excelência (benchmark da categoria)", "effort": "...", "impact_md": "Markdown 50-150 palavras com fonte", "dimension": "...", "anchor": "...", "source_url": "..." } ],
     "h2": [...],
     "h3": [...],
     "ongoing": [...]
@@ -214,9 +214,9 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 
 - **executive_reading_md** (600-1000 palavras): Leitura editorial sober. 3-5 parágrafos. Cita 4-6 números específicos do audit/scan/research. Não é elogio. Não é alarme. É observação. Termina com 1 frase sobre "o caminho à frente".
 
-- **critical_findings** (5-10 findings): Cross-dimensional. Each `why_md` explica mecanismo + cita finding/observação concreta + (se há) fonte académica.
+- **critical_findings** (5-10 findings): Cross-dimensional. Each `why_md` explica mecanismo + cita finding/observação concreta + (se há) fonte académica. `benchmark_md`: 1 frase comparando o estado actual com o **benchmark da categoria / best-in-class** — ex: "sameAs: tens 1; benchmark B2B SaaS tem 5-7 com Wikidata/Crunchbase/LinkedIn". Sempre números concretos, lado a lado. **NUNCA nomeies "3HASH"** — usa "benchmark", "best-in-class", "referência da categoria".
 
-- **action_plan** (3-7 acções por horizonte, **12-25 total**): Concretas — não "melhorar schema" mas "JSON-LD Organization com sameAs apontando para LinkedIn `{handle}`, Crunchbase, Wikidata `{QID se existe}`". Cada `why_md` tem **mecanismo + porque é específico deste prospect + fonte**. Cada `impact_md` cita estudo se há ou declara "Foundation, sem dado isolado". `source_url` quando há paper/post a citar.
+- **action_plan** (3-7 acções por horizonte, **12-25 total**): Concretas — não "melhorar schema" mas "JSON-LD Organization com sameAs apontando para LinkedIn `{handle}`, Crunchbase, Wikidata `{QID se existe}`". Cada `why_md` tem **mecanismo + porque é específico deste prospect + fonte**. Cada `impact_md` cita estudo se há ou declara "Foundation, sem dado isolado". `source_url` quando há paper/post a citar. `benchmark_md`: 1 frase com o **target de excelência (benchmark da categoria)** desta acção — o que "feito ao nível best-in-class" significa em número concreto (ex: "QID com 6+ claims + 5 sameAs verificados; benchmark tem entity coverage completo antes de pitch PR"). **NUNCA nomeies "3HASH"**.
 
 - **research_additional_md**: O que descobriste para além do scan automático. Wikipedia presence? Wikidata QID? Tier-1 PT media coverage real (com nomes de artigos se encontraste)? Podcasts? Conferências? Findings concretos.
 
