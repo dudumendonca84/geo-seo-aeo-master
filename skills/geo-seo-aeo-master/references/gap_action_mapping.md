@@ -7,7 +7,7 @@
 > **Raw URL para Deck Builder:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/gap_action_mapping.md`
 
-**Last refresh:** 25 May 2026 — primeira versão. Roadmap: alimentar com patterns reais dos engagements à medida que a destaque.ai acumula clientes (loop 3: `destaque-ai-ops/learnings/` → synthesis-weekly Routine → updates aqui).
+**Last refresh:** 29 May 2026 — reconciliado para a taxonomia canónica §116-130 (DIMENSÃO 5 = Social & community signals, 6 = Authority signals on site / E-E-A-T; Measurement→7, Positioning→8; cadência editorial movida para DIMENSÃO 2; UX/engagement passa a pattern transversal). Roadmap: alimentar com patterns reais dos engagements à medida que a destaque.ai acumula clientes (loop 3: `destaque-ai-ops/learnings/` → synthesis-weekly Routine → updates aqui).
 
 ---
 
@@ -121,6 +121,24 @@ Publicar páginas comparison vs top 3 alternatives. Honest assessment, não pitc
 
 #### Impacto típico
 Páginas comparison ranqueiam bem em comparison-intent queries (LLM intent stage `comparison`/`decision`). Direct surface area para citation em queries de buyer education.
+
+---
+
+### Pattern: Publicação cadence <1x/mês
+
+#### Hipóteses
+1. Sem editorial calendar.
+2. Recursos limitados.
+3. Foco em product, não em content.
+
+#### Acção
+Editorial calendar trimestral. Mínimo 2 publicações de qualidade/mês. Distribuição via LinkedIn, newsletter, podcast guesting.
+
+#### Esforço
+Setup 1-2 semanas; sustained 8-15h/semana.
+
+#### Impacto típico
+Cadência editorial é foundation — sem ela, as outras alavancas de conteúdo perdem força. Não é palanca isolada, é hygiene. (A §116-130 inclui "editorial calendar discipline" nesta dimensão.)
 
 ---
 
@@ -265,27 +283,86 @@ Top-X listicles têm presence forte em comparison-intent queries (LLM intent_sta
 
 ---
 
-## DIMENSÃO 5 — UX & engagement
+## DIMENSÃO 5 — Social & community signals
 
-### Pattern: Bounce >70%, time on site <30s
+### Pattern: Ausente das comunidades que os motores sobre-citam (Reddit, HN, Stack Overflow)
 
 #### Hipóteses
-1. Landing page não alinha com intent.
-2. Performance lenta (LCP >4s).
-3. Cookie consent invasivo.
+1. Sem estratégia de community presence.
+2. Receio de participação não-promocional.
+3. A vertical discute em plataformas que não foram identificadas.
 
 #### Acção
-A/B test landing hero copy; cookie consent compliance-minimal (banner discreto vs modal); fix LCP.
+Identificar os 2-3 subreddits / comunidades (Hacker News, Stack Overflow, Discords, fóruns PT) onde a vertical é discutida. Participação genuína — responder a perguntas, partilhar dados próprios, nunca spam. Para SaaS técnico, presença no GitHub com repos/docs públicos.
 
 #### Esforço
-2-4 semanas.
+2-4h/semana sustained.
 
 #### Impacto típico
-UX metrics não são input directo a citation. Impactam conversion uma vez chegado ao site — relevant para ROI da campanha GEO, não para citation rate em si.
+Reddit é ~47% das top citations da Perplexity; YouTube ~14% — estas plataformas são citadas directamente pelos motores. Presença genuína cria surface area citável. Sem fonte a isolar o lift por marca individual; relação correlacional.
+
+#### Fonte
+Profound citation-share analysis; breakdowns de fontes da Perplexity.
 
 ---
 
-## DIMENSÃO 6 — Measurement & feedback
+### Pattern: LinkedIn sem autores nomeados / posts que não são re-citados
+
+#### Hipóteses
+1. Conteúdo publicado pela página corporativa, não por pessoas.
+2. Sem cadência de autoria pessoal.
+
+#### Acção
+Estabelecer 1-2 autores nomeados (founder, head of X) com posts regulares de ângulo dados/opinião que outros re-partilham e citam. Ligar os perfis ao `Organization.sameAs` (ver DIMENSÃO 3).
+
+#### Esforço
+1-2h/semana por autor.
+
+#### Impacto típico
+Posts re-citados alimentam branded mentions e anchors orgânicos. Indirecto sobre citation — relacionado com o r=0.527 branded-anchor da Ahrefs (ver DIMENSÃO 4).
+
+---
+
+## DIMENSÃO 6 — Authority signals on site (E-E-A-T)
+
+### Pattern: Conteúdo sem autores declarados (sem `Person` schema)
+
+#### Hipóteses
+1. Artigos publicados sem byline.
+2. Bylines sem schema estruturado / sem `sameAs`.
+
+#### Acção
+Adicionar `Person` schema a cada autor com `name`, `jobTitle`, `sameAs` (LinkedIn, ORCID quando aplicável) e bio com credenciais e experiência nomeada (a perna "Experience" do E-E-A-T). Ligar cada artigo ao autor via `author`.
+
+#### Esforço
+2-4h setup + 10 min por artigo novo.
+
+#### Impacto típico
+As Search Quality Rater Guidelines (revisão Set 2025) avaliam E-E-A-T e passaram a incluir AI Overviews no workflow do rater. Sem lift directo isolado em citation — é sinal de qualidade, não palanca.
+
+#### Fonte
+Google Search Quality Rater Guidelines (Set 2025).
+
+---
+
+### Pattern: Sem case studies com resultados verificáveis
+
+#### Hipóteses
+1. Clientes não autorizam divulgação.
+2. Resultados não medidos / não registados.
+
+#### Acção
+Publicar case studies com cliente nomeado (ou anonimizado com métricas reais): problema → intervenção → resultado quantificado, com citação verificável do cliente sempre que possível.
+
+#### Esforço
+3-5 dias por case study (inclui aprovação do cliente).
+
+#### Impacto típico
+Casos verificáveis suportam claims em decision-stage queries e a perna "Trust" do E-E-A-T. Surface area para citation em buyer-education. Campo emergente, sem fonte a isolar o lift.
+
+---
+
+## DIMENSÃO 7 — Measurement & feedback
 
 ### Pattern: Sem GA4 AI channel tracking
 
@@ -322,7 +399,7 @@ Microsoft Bing Webmaster Tools docs.
 
 ---
 
-## DIMENSÃO 7 — Strategic positioning
+## DIMENSÃO 8 — Strategic positioning
 
 ### Pattern: Citation rate forte em awareness mas <5% em decision-stage queries
 
@@ -359,26 +436,6 @@ Comparison-intent queries são high-conversion. Sem fonte isolando o impacto.
 
 ---
 
-## DIMENSÃO 8 — Operational excellence
-
-### Pattern: Publicação cadence <1x/mês
-
-#### Hipóteses
-1. Sem editorial calendar.
-2. Recursos limitados.
-3. Foco em product, não em content.
-
-#### Acção
-Editorial calendar trimestral. Mínimo 2 publicações de qualidade/mês. Distribuição via LinkedIn, newsletter, podcast guesting.
-
-#### Esforço
-Setup 1-2 semanas; sustained 8-15h/semana.
-
-#### Impacto típico
-Cadência é foundation — sem ela, todas as outras alavancas perdem força. Não é palanca, é hygiene.
-
----
-
 ## Patterns transversais (cross-dimensional)
 
 ### Pattern: Citation rate <10% em todos os motores
@@ -397,6 +454,10 @@ Brand é citado mas em segundo plano consistente. Indica concorrente dominante. 
 
 Comum em brand com presença forte numa community específica que esse motor sobre-pondera (ex: Reddit-heavy → Perplexity boost). Não generalizável — auditar fonte específica.
 
+### Pattern: Bounce >70%, time on site <30s (UX & engagement)
+
+Não é dimensão GEO top-level — UX/engagement não é input directo a citation. Impacta a conversão depois de o utilizador chegar (ROI da campanha), não a citation rate em si. Hipóteses: landing page desalinhada com intent, LCP >4s, cookie consent invasivo. Acção: A/B test do hero, cookie consent compliance-minimal, fix LCP (ver DIMENSÃO 1). Relevante para o ROI da campanha GEO, reportar separado das métricas de citação.
+
 ---
 
 ## Manutenção
@@ -410,4 +471,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 25 May 2026.
+Last refresh: 29 May 2026.

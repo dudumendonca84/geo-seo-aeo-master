@@ -8,6 +8,26 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-05-29 — SINAL v1.7 — Taxonomia das 8 dimensões reconciliada (§116-130 canónica) + método exposto ao deck
+
+**Trigger.** Ligação dos Slides 05/06/07 do deck à skill (método deixa de ser hardcoded) expôs um drift interno: duas listas de 8 dimensões coexistiam — a detalhada e citada em `SKILL.md` § Scope (§116-130) vs a taxonomia usada no resumo, no `destaque-ai-deck-builder/CLAUDE.md` e em `gap_action_mapping.md`.
+
+**Decisão do founder.** A lista **canónica** é a detalhada §116-130:
+1. Technical foundation · 2. Content & topical authority · 3. Entity & brand foundation · 4. Authority & digital PR · 5. **Social & community signals** · 6. **Authority signals on site (E-E-A-T)** · 7. Measurement & feedback · 8. Strategic positioning.
+
+A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica deprecada como partição top-level.
+
+**Changes.**
+- `SKILL.md` § Deck Builder method: secção parseável (glossário SEO/GEO/AEO, 8 dimensões §116-130, tabela SEO vs GEO) consumida pelo deck via fetch.
+- `destaque-ai-deck-builder/CLAUDE.md` § Scope obrigatório alinhado à §116-130.
+- `references/prompts.md` §3: tabela de distribuição passa a ser parseada pelo deck (não muda conteúdo).
+
+**`gap_action_mapping.md` reconciliado** (decisão do founder "reconcilia e realoca"). DIMENSÃO 5 passou de "UX & engagement" para **Social & community signals**; nova DIMENSÃO 6 **Authority signals on site (E-E-A-T)**; Measurement → 7, Strategic positioning → 8. A cadência editorial (antiga DIMENSÃO 8 Operational excellence) foi movida para a DIMENSÃO 2 (Content, "editorial calendar discipline"); o pattern de UX/engagement passou a transversal (não-citação, ROI). Os patterns de Social e E-E-A-T foram redigidos a partir da prosa §116-130.
+
+**SINAL v1.7.** A taxonomia canónica (§116-130) não mudou — o que mudou foi o alinhamento dos ficheiros derivados a ela. Mas o `gap_action_mapping.md` foi reestruturado e ganhou patterns novos (Social, E-E-A-T): mudança a padrões existentes, logo version bump conforme a regra de manutenção do próprio ficheiro.
+
+---
+
 ## 2026-05-26 — Deck Builder API mappings — 2 model ID corrections (PR #4 reconciled)
 
 **Trigger.** Triagem de PRs abertos. PR #4 (base 0d3bdac, antiga) sinalizou 3 fragilidades de model IDs; 2 ainda válidas vs estado actual de main, 1 obsoleta.
