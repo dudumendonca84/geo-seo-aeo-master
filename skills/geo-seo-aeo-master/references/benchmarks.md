@@ -219,15 +219,16 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ## Deck Builder core stats
 
-> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) para os 3 stats do Slide 03 do deck público. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded.
+> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
 
 | key | value | caption | source | url | date |
 |---|---|---|---|---|---|
 | `b2b_ai_answer` | 82% | das pesquisas em tech B2B já acionam uma resposta de IA | BrightEdge, 2026 (36% → 82% em 12 meses) | https://www.brightedge.com/resources/weekly-ai-search-insights/ai-overviews-one-year-presence-size-citing | 2026-02-01 |
 | `aio_click_share` | ~1% | dos utilizadores clica numa fonte dentro de uma AI Overview | Pew Research, Jul 2025 (CTR 8% vs 15%) | https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/ | 2025-07-22 |
 | `cited_brand_clicks` | 35% | mais cliques orgânicos para marcas citadas em respostas de IA | Seer Interactive, 2026 (2,43 mil milhões de impressões) | https://www.seerinteractive.com/insights | 2026-01-01 |
+| `aio_top10_share` | 54% | das citações em AI Overviews vêm de URLs no top-10 orgânico | BrightEdge, 2025 (rank overlap, 16 meses) | https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio | 2025-11-01 |
 
-Cada linha cruza com a secção detalhada acima: `b2b_ai_answer` → §5 (BrightEdge presence), `aio_click_share` → §1 (Pew click behaviour), `cited_brand_clicks` → §13 (Seer CTR recovery). Não adicionar stats da §18 (não verificados).
+Cada linha cruza com a secção detalhada acima: `b2b_ai_answer` → §5 (BrightEdge presence), `aio_click_share` → §1 (Pew click behaviour), `cited_brand_clicks` → §13 (Seer CTR recovery), `aio_top10_share` → §6 (BrightEdge citation source composition). Não adicionar stats da §18 (não verificados).
 
 ---
 

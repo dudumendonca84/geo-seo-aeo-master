@@ -96,6 +96,40 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
 
 ---
 
+### Contrato 3: benchmarks (core stats do deck público)
+
+**Path no repo:** `skills/geo-seo-aeo-master/references/benchmarks.md`
+
+**Raw URL:**
+```
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/benchmarks.md
+```
+
+**Estrutura consumida:**
+
+Bloco `## Deck Builder core stats` no fim do ficheiro. Tabela com header:
+
+```
+| key | value | caption | source | url | date |
+```
+
+Keys consumidas hoje pelo Deck Builder:
+- `b2b_ai_answer`, `aio_click_share`, `cited_brand_clicks` → os 3 headline do Slide 03 (as 3 primeiras linhas, por ordem)
+- `aio_top10_share` → Slide 05 (SEO vs GEO), lookup por `key`
+- `b2b_ai_answer` → Slide 10b (custo da invisibilidade), lookup por `key`
+
+**Parsing contract para Deck Builder** (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks` / `findBenchmark`):
+1. Fetch a URL acima
+2. Localizar a secção `## Deck Builder core stats`
+3. Parse da tabela com o header exacto acima; strip de backticks nas cells
+4. Slide 03 usa as 3 primeiras linhas; outros slides procuram por `key` via `findBenchmark`
+5. Se a tabela tiver < 3 linhas válidas OU fetch ≠ 200 → fallback hardcoded em código
+6. `caption` é client-facing → PT-PT. Toda a linha tem `source` + `url` (princípio SINAL: nenhuma estatística sem fonte)
+
+**Adicionar uma linha** é seguro. **Mudar o header** parte o parser — coordenar. **Remover uma `key` consumida** esconde o número no slide respectivo (graceful, não crasha).
+
+---
+
 ## Frequência de actualização
 
 | Ficheiro | Cadência | Trigger |
@@ -150,5 +184,6 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
 | 2026-05-23 | Inicialização — prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
 | 2026-05-24 | `dudumendonca84/destaque-ai-ops` criado como **private consumer downstream** — memória operacional privada (clientes, propostas, learnings) que consome a metodologia SINAL via `skills/geo-seo-aeo-master/SKILL.md` (§ Methodology + § Audit workflow), `references/prompts.md` (catálogo segmento) e `references/models.md` (lock-in modelos por engine). Fluxo private → public mediado por camada de anonimização (`learnings/`) e futura Routine `synthesis-weekly`. Counterpart documentation: `INTERFACES.md` em `destaque-ai-ops`. | Nenhum impacto a contratos públicos existentes. Implicação para esta repo: mudanças materiais a § Audit workflow / scorecard / 4 horizontes em `SKILL.md` devem sinalizar potencial follow-up em `destaque-ai-ops/templates/` (private; sessões públicas não veem, mas registar no `methodology-changelog.md` ajuda a tracker). |
 | 2026-05-26 | **Triagem de PRs.** Correcções de model ID em `models.md` § Deck Builder API mappings: `claude` cost_optimized `claude-haiku-4-5-20251001`→`claude-haiku-4-5`; `grok` production `grok-4`→`grok-4.3` (grok-4 retira 15 Ago 2026). `deepseek` mantém-se `deepseek-v4-flash` (decisão de main, pro é lento). PRs stale fechados (#2, #5, #6), #9 merged (3 tracker references), #3 merged (este log). | Deck Builder picks up no próximo fetch — sem code change. Engines `chatgpt`/`copilot` em `gpt-5.5`. |
+| 2026-05-29 | **Contrato 3 (benchmarks) formalizado.** `## Deck Builder core stats` em `benchmarks.md` ganha a `key` `aio_top10_share` (54%, BrightEdge §6) consumida pelo Slide 05; `b2b_ai_answer` (82%) passa a alimentar também o Slide 10b. Antes destes slides hardcodavam os números. | Deck Builder picks up no próximo fetch — sem code change. Os números GEO dos Slides 03/05/10b passam a vir vivos da skill; fallback hardcoded mantém paridade se a tabela faltar. |
 
 Adicionar entry sempre que algum contrato mudar.
