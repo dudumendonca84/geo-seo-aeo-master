@@ -8,6 +8,38 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-05-29
+
+### 🔵 Anúncios oficiais
+
+- **Google I/O 2026: AI Mode ultrapassa 1 mil milhões de utilizadores mensais** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Em 19 de maio, Google anunciou que AI Mode atingiu 1B utilizadores/mês num ano de existência; AI Overviews chega a 2,5B mensais; Gemini 3.5 Flash torna-se modelo padrão global no AI Mode; novo Search box multimodal (maior redesign em 25 anos) aceita texto, imagens, ficheiros, vídeos e Chrome tabs como input combinado; Information Agents (monitorização contínua de tópicos em background) lançam para subscritores AI Pro/Ultra no verão 2026.
+
+- **Google May 2026 Core Update em rollout** — [Search Engine Land](https://searchengineland.com/google-may-2026-core-update-rolling-out-now-478430). Segundo core update do ano iniciou a 21 de maio; duração estimada 2 semanas; Google descreve-o como "update regular para melhor surfaçar conteúdo relevante e satisfatório"; timing coincide com I/O, dificultando isolamento de causas de variações de ranking.
+
+### 📊 Estudos & dados
+
+- **AI Overviews reduzem CTR em 58% para conteúdo top-ranking** — [Ahrefs via Marketing LTB](https://marketingltb.com/blog/statistics/generative-engine-optimization-statistics/). Queda de CTR de 58% onde AI Overviews aparecem (era 34,5% em 2025); amostra de 300k+ domínios.
+
+- **40–60% das fontes citadas em AI search renovam-se mês a mês** — [Conductor State of AEO/GEO 2026](https://www.conductor.com/academy/state-of-aeo-geo-report/). Google AI Mode e ChatGPT apresentam 40–60% de renovação de fontes mensalmente, tornando a visibilidade em AI search estruturalmente menos estável que rankings orgânicos.
+
+- **llms.txt: 10% de adoção em 300k domínios, AI crawlers ignoram o ficheiro** — [aeoengine.ai](https://aeoengine.ai/blog/llms-txt-zero-usage-ai-bots-ignore). 500M+ visitas de AI bots em 90 dias revelaram apenas 408 pedidos diretos a /llms.txt; GPTBot, ClaudeBot e PerplexityBot crawlam HTML diretamente e ignoram o ficheiro.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Search — Search box multimodal** — Lançado a 19 de maio em todos os países com AI Mode disponível; aceita input combinado de texto, imagens, ficheiros, vídeos e Chrome tabs; sugestões AI vão além do autocomplete clássico. [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)
+
+- **Perplexity — Computer para Mac (todos) + finance_search na Agent API** — Computer disponível para todos no Mac desde 11 de maio; finance_search tool adicionada ao Agent API com dados financeiros estruturados (quotes, financials, earnings, analyst estimates) para empresas públicas. [perplexity.ai/changelog](https://www.perplexity.ai/changelog)
+
+### 📄 Research académico
+
+- **"Why Retrieval-Augmented Generation Fails: A Graph Perspective"** — Arxiv, submetido 13 maio 2026. [arxiv.org/abs/2605.14192](https://arxiv.org/abs/2605.14192). Usa circuit tracing para modelar como evidência recuperada influencia geração de respostas em transformers — insight prático: a estrutura e autoridade semântica do documento afetam se é incorporado ou descartado pelo modelo.
+
+### 💡 Implicações para destaque.ai
+
+- Google I/O 2026 confirma transição estrutural para AI search agents como padrão de consumo: clientes B2B sem estratégia GEO estão expostos a quebras de tráfego progressivas — argumento de urgência concreto no pitch comercial. Requer atualização do deck com dados de 1B utilizadores AI Mode.
+- A instabilidade de citação (40–60% de renovação mensal) é o argumento mais forte para serviço de monitorização contínua de brand mentions em AI — posicionar como "citability monitoring" recorrente, não projeto pontual.
+- llms.txt reposicionar como "preparação B2A (Business-to-Agent)" e não como SEO: dado que crawlers AI ignoram o ficheiro, o valor real é para agentes IDE (Cursor, Claude Code) e MCP servers — narrativa diferenciadora para prospects técnicos. Só awareness, sem mudança de pitch principal.
+
 ## 2026-05-26
 
 ### 🔵 Anúncios oficiais
