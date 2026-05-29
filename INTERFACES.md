@@ -60,9 +60,11 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/
 
 **Parsing contract para Deck Builder:**
 1. Fetch a URL acima
-2. Slice do markdown de `## 1. Princípios` até (exclusive) `## 4. Catálogo destaque.ai`
-3. Prepend ao SYSTEM do gerador de prompts
-4. Se fetch ≠ 200 OU slice vazio → usar fallback hardcoded
+2. `loadPromptDirectives` (`src/lib/skill/prompts.ts`): slice de `## 1. Princípios` até (exclusive) `## 4. Catálogo destaque.ai`; prepend ao SYSTEM do gerador
+3. `loadPromptConfig` (mesmo ficheiro): parse da tabela `## 3.` para a distribuição por tier. As colunas a seguir a "Total" mapeiam, **por ordem posicional**, para `PROMPT_CATEGORIES` (a constante TS dona do SET). `premium` espelha `diagnostic` se ausente. `generate-audit-prompts.ts` segue esta distribuição (já não a constante hardcoded)
+4. Se fetch ≠ 200, slice vazio, ou a tabela §3 faltar/`free`/`diagnostic` inválidos → fallback hardcoded (`FALLBACK_PROMPTS_MD` / `TIER_DISTRIBUTION`)
+
+**Mudar a ORDEM das colunas da tabela §3** (ou a ordem de `PROMPT_CATEGORIES`) parte o zip posicional — coordenar. Mudar só os **números** é seguro e propaga em ≤1h.
 
 ### Contrato 2: models (API ID lookup)
 
@@ -144,15 +146,16 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/
 Secção `## Deck Builder method` no fim do ficheiro. Contém:
 - uma linha `SINAL: <expansão>`;
 - a tabela **glossário** com header `| sigla | nome | definicao |`;
-- a tabela **8 dimensões** com header `| n | dimensao | foco |`.
+- a tabela **8 dimensões** com header `| n | dimensao | foco |`;
+- a tabela **SEO vs GEO** com header `| seo | geo |`.
 
 É o resumo client-facing (PT-PT) da lista canónica em `## Methodology — SINAL` (§ Scope — holistic, §116-130). Fonte única — o deck **não** reescreve o método.
 
 **Parsing contract para Deck Builder** (`src/lib/skill/method.ts` → `loadMethod`):
 1. Fetch a URL acima; localizar `## Deck Builder method`; cortar até ao próximo `## `
-2. `SINAL:` via regex de linha; as duas tabelas classificadas pelo header (`sigla` → glossário, `dimensao` → dimensões); strip de backticks
-3. Slide 06 usa o glossário; Slide 07 usa as 8 dimensões + a expansão SINAL
-4. Se < 3 linhas de glossário OU < 8 dimensões OU fetch ≠ 200 → fallback hardcoded em código (paridade)
+2. `SINAL:` via regex de linha; as três tabelas classificadas pelo header (`sigla` → glossário, `dimensao` → dimensões, `| seo | geo |` → contraste SEO vs GEO); strip de backticks
+3. Slide 06 usa o glossário; Slide 07 usa as 8 dimensões + a expansão SINAL; Slide 05 usa a tabela SEO vs GEO
+4. Se < 3 linhas de glossário OU < 8 dimensões OU fetch ≠ 200 → fallback hardcoded inteiro. A tabela SEO vs GEO tem fallback parcial próprio (se < 4 linhas, só ela cai para o hardcoded)
 
 **Adicionar/editar uma linha** é seguro e propaga em ≤1h. **Mudar um header** parte o parser — coordenar.
 
@@ -213,6 +216,7 @@ Secção `## Deck Builder method` no fim do ficheiro. Contém:
 | 2026-05-24 | `dudumendonca84/destaque-ai-ops` criado como **private consumer downstream** — memória operacional privada (clientes, propostas, learnings) que consome a metodologia SINAL via `skills/geo-seo-aeo-master/SKILL.md` (§ Methodology + § Audit workflow), `references/prompts.md` (catálogo segmento) e `references/models.md` (lock-in modelos por engine). Fluxo private → public mediado por camada de anonimização (`learnings/`) e futura Routine `synthesis-weekly`. Counterpart documentation: `INTERFACES.md` em `destaque-ai-ops`. | Nenhum impacto a contratos públicos existentes. Implicação para esta repo: mudanças materiais a § Audit workflow / scorecard / 4 horizontes em `SKILL.md` devem sinalizar potencial follow-up em `destaque-ai-ops/templates/` (private; sessões públicas não veem, mas registar no `methodology-changelog.md` ajuda a tracker). |
 | 2026-05-26 | **Triagem de PRs.** Correcções de model ID em `models.md` § Deck Builder API mappings: `claude` cost_optimized `claude-haiku-4-5-20251001`→`claude-haiku-4-5`; `grok` production `grok-4`→`grok-4.3` (grok-4 retira 15 Ago 2026). `deepseek` mantém-se `deepseek-v4-flash` (decisão de main, pro é lento). PRs stale fechados (#2, #5, #6), #9 merged (3 tracker references), #3 merged (este log). | Deck Builder picks up no próximo fetch — sem code change. Engines `chatgpt`/`copilot` em `gpt-5.5`. |
 | 2026-05-29 | **Contrato 3 (benchmarks) formalizado.** `## Deck Builder core stats` em `benchmarks.md` ganha a `key` `aio_top10_share` (54%, BrightEdge §6) consumida pelo Slide 05; `b2b_ai_answer` (82%) passa a alimentar também o Slide 10b. Antes destes slides hardcodavam os números. | Deck Builder picks up no próximo fetch — sem code change. Os números GEO dos Slides 03/05/10b passam a vir vivos da skill; fallback hardcoded mantém paridade se a tabela faltar. |
-| 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` — glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista canónica §116-130. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch — sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. **Nota:** o resumo §70 do SKILL.md e a tabela em `destaque-ai-deck-builder/CLAUDE.md` listam 8 dimensões ligeiramente diferentes da lista detalhada §116-130 (que é a canónica) — drift interno a reconciliar num PR de skill. |
+| 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` — glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista canónica §116-130. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch — sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. |
+| 2026-05-29 | **Contrato 4 estendido + Contrato 1 reforçado + drift de taxonomia decidido.** (1) `## Deck Builder method` ganha 3.ª tabela **SEO vs GEO** (`\| seo \| geo \|`), consumida pelo Slide 05 (antes hardcoded no componente). (2) Contrato 1: a tabela §3 de `prompts.md` passa a ser **parseada** (`loadPromptConfig`, zip posicional com `PROMPT_CATEGORIES`) — `generate-audit-prompts.ts` segue a distribuição viva, já não a constante. (3) **Decisão do founder:** a lista canónica das 8 dimensões é a detalhada §116-130 (technical · content · entity · authority · **social** · **authority-on-site** · measurement · positioning). `destaque-ai-deck-builder/CLAUDE.md` foi alinhado a esta lista. | Deck Builder picks up no próximo fetch. **DRIFT POR RESOLVER:** `references/gap_action_mapping.md` está organizado pela taxonomia antiga (DIMENSÃO 5 = UX & engagement, DIMENSÃO 8 = Operational excellence) — contradiz a §116-130 canónica. Reconciliar exige reescrever os patterns de acção dessas 2 dimensões (→ "social signals" + "authority signals on site"); é authoring de metodologia, fica para PR de skill dedicado. |
 
 Adicionar entry sempre que algum contrato mudar.

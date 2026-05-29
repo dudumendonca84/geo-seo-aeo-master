@@ -369,4 +369,15 @@ SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
 | 7 | Medição e feedback | GSC, GA4 (canal IA), Bing AI Performance, auditorias mensais. |
 | 8 | Posicionamento estratégico | Share-of-voice, estratégia no-click, mapeamento ao funil. |
 
+### SEO vs GEO (client-facing)
+
+O GEO assenta sobre o SEO — substrato vs camada de citabilidade. Contraste para o deck:
+
+| seo | geo |
+|---|---|
+| Otimizas para 10 links azuis | Otimizas para 1 resposta |
+| O utilizador escolhe entre resultados | A IA escolhe por ele |
+| Palavras-chave e backlinks | Estrutura, autoridade e citabilidade |
+| Medes posições no Google | Medes menções nos motores de IA |
+
 As acções saem num plano de 4 horizontes (semana 1-2 · 3-6 · 7-12 · 90+ dias).
