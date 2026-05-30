@@ -8,6 +8,21 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-05-30
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic — Claude Opus 4.8 lançado (28 maio)** — [anthropic.com](https://www.anthropic.com/news/claude-opus-4-8). Novas capacidades: dynamic workflows no Claude Code para problemas de grande escala, controlo de esforço por parte do utilizador, fast mode 3× mais barato que em Opus 4.7. Melhoria transversal em benchmarks relativamente a Opus 4.7.
+
+- **Anthropic — Series H de $65 B, valuation $965 B (28 maio)** — [anthropic.com](https://www.anthropic.com/news/series-h). Round liderado por Altimeter Capital, Dragoneer, Greenoaks e Sequoia; run-rate de receita cruzou $47 B antes do fecho. Maior ronda de financiamento privado em AI até à data.
+
+- **Google May 2026 Core Update — dia 9 de rollout (em curso)** — [searchengineland.com](https://searchengineland.com/google-may-2026-core-update-rolling-out-now-478430). Iniciado a 21 maio, conclusão estimada c. 4 junho. Volatilidade reportada em finance, SaaS e e-commerce; sem post de acompanhamento do Google.
+
+### 💡 Implicações para destaque.ai
+
+- A valuation de $965 B da Anthropic e receita de $47 B confirmam que o mercado AI enterprise está em aceleração — argumento adicional para clientes SaaS B2B que ainda hesitam em investir em GEO/AEO: os fornecedores de AI search têm runway longo.
+- Claude Opus 4.8 com dynamic workflows reforça o papel de Claude Code em automação de tarefas complexas; destaque.ai pode explorar integração de workflows de produção de conteúdo GEO-optimizado directamente via Claude Code.
+
 ## 2026-05-29
 
 ### 🔵 Anúncios oficiais
