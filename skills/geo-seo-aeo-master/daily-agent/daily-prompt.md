@@ -67,7 +67,7 @@ EXCLUIR:
 
 ## Output
 
-Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
+Adiciona ao TOPO de skills/geo-seo-aeo-master/daily-agent/news-feed.md (após cabeçalho ---):
 
 ## YYYY-MM-DD
 
@@ -128,9 +128,9 @@ Adiciona ao TOPO de daily-agent/news-feed.md (após cabeçalho ---):
 
    Se já estiver absorvido, ok truncar. Se não, absorve agora.
 
-2. Truncate: se news-feed.md tem mais de 60 ## headers, trunca para últimos 60 dias (depois da absorção do passo 1).
-3. Adiciona log em daily-agent/execution-log.md — inclui "absorvido: [lista]" se aplicável.
-4. Apenas sextas: gera 3 drafts em daily-agent/drafts/YYYY-MM-DD-weekly.md
+2. Truncate: se skills/geo-seo-aeo-master/daily-agent/news-feed.md tem mais de 60 ## headers, trunca para últimos 60 dias (depois da absorção do passo 1).
+3. Adiciona log em skills/geo-seo-aeo-master/daily-agent/execution-log.md — inclui "absorvido: [lista]" se aplicável.
+4. Apenas sextas: gera 3 drafts em skills/geo-seo-aeo-master/daily-agent/drafts/YYYY-MM-DD-weekly.md
    - LinkedIn ~200 palavras (tom destaque.ai)
    - Blog ~1500 palavras (aprofundamento técnico)
    - Twitter thread ~10 tweets (atómico)
