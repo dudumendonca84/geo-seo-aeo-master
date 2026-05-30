@@ -131,6 +131,7 @@ Adiciona ao TOPO de skills/geo-seo-aeo-master/daily-agent/news-feed.md (após ca
 2. Truncate: se skills/geo-seo-aeo-master/daily-agent/news-feed.md tem mais de 60 ## headers, trunca para últimos 60 dias (depois da absorção do passo 1).
 3. Adiciona log em skills/geo-seo-aeo-master/daily-agent/execution-log.md — inclui "absorvido: [lista]" se aplicável.
 4. Apenas sextas: gera 3 drafts em skills/geo-seo-aeo-master/daily-agent/drafts/YYYY-MM-DD-weekly.md
+5. **Validação de contratos parseáveis** (antes de commit). Corre `node scripts/validate-skill-tables.mjs` a partir da raiz do repo. Se exit code != 0, **NÃO faças commit** — descreve o que falhou na resposta. Provavelmente uma absorção do passo 1 partiu um header consumido pelo deck-builder (ver INTERFACES.md). Corrige o header e re-corre o validator antes de continuar.
    - LinkedIn ~200 palavras (tom destaque.ai)
    - Blog ~1500 palavras (aprofundamento técnico)
    - Twitter thread ~10 tweets (atómico)

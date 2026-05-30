@@ -323,6 +323,23 @@ Posts re-citados alimentam branded mentions e anchors orgânicos. Indirecto sobr
 
 ---
 
+### Pattern: Sem org GitHub pública (SaaS técnico)
+
+#### Hipóteses
+1. Código fechado por opção comercial, sem repos auxiliares (SDKs, exemplos, integrações).
+2. Org GitHub existe mas sem actividade visível há >12 meses.
+
+#### Acção
+Criar org GitHub com 1-2 repos públicos: SDK do produto, exemplos de integração, documentação técnica em markdown, ou um eval/benchmark próprio. README sóbrio, LICENSE clara, releases versionados. Ligar ao `Organization.sameAs` (DIMENSÃO 3).
+
+#### Esforço
+1-2 dias setup + 1-2h/semana de manutenção.
+
+#### Impacto típico
+GitHub é fonte directa em queries técnicas: o Code Interpreter do ChatGPT, Claude com web search e Perplexity dev resolvem nomes de bibliotecas e padrões através dele. Sem estudo a isolar lift por marca; relação correlacional com presença em queries "como integrar X" e "alternativas a Y SDK".
+
+---
+
 ## DIMENSÃO 6 — Authority signals on site (E-E-A-T)
 
 ### Pattern: Conteúdo sem autores declarados (sem `Person` schema)
@@ -359,6 +376,23 @@ Publicar case studies com cliente nomeado (ou anonimizado com métricas reais): 
 
 #### Impacto típico
 Casos verificáveis suportam claims em decision-stage queries e a perna "Trust" do E-E-A-T. Surface area para citation em buyer-education. Campo emergente, sem fonte a isolar o lift.
+
+---
+
+### Pattern: Página "Sobre" / "Equipa" sem bios E-E-A-T compliant
+
+#### Hipóteses
+1. Fotos + nomes mas sem credenciais nem experiência declarada.
+2. Bios em prosa sem schema (`Person` + `sameAs`) — leitura humana funciona, knowledge-graph extraction não.
+
+#### Acção
+Reescrever bios com: credenciais nomeadas (universidade, certificações reconhecidas), anos de experiência específica no domínio, 2-3 outputs públicos (papers, talks, posts citados) e `Person` schema com `sameAs` para LinkedIn / ORCID / Google Scholar / X. Lidar com a perna "Experience" do E-E-A-T explicitamente.
+
+#### Esforço
+4-6h pela página inteira; 30 min por bio nova depois.
+
+#### Impacto típico
+About/Team é frequentemente das primeiras URLs visitadas por crawlers em audit de marca; sem signals E-E-A-T cria gap em decision-stage queries. Sem fonte a isolar lift por componente — é sinal de qualidade, não palanca directa.
 
 ---
 
