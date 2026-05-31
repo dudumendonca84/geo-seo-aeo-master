@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-05-31
+
+### 🔵 Anúncios oficiais
+
+- **CNN processa Perplexity por infracção de copyright em 17.000 conteúdos** — [cnn.com](https://www.cnn.com/2026/05/28/media/cnn-sues-perplexity-ai-copyright). Acção intentada a 28 de maio no SDNY: CNN alega que Perplexity raspou e redistribuiu 17.000 artigos, fotos e vídeos sem licença, usados como input em tempo real nos LLMs da empresa. Primeiro processo de uma rede televisiva contra motor de pesquisa IA; negociação prévia de 2025 falhou antes da queixa.
+
+- **Google publica guia oficial: "AEO e GEO são ainda SEO"** — [searchenginejournal.com](https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/). Novo documento de guidance afirma explicitamente que llms.txt, content chunking e schema específico para IA não são necessários para os sistemas Google; otimizar para AI search é otimizar para a experiência de pesquisa — sem tratamento diferenciado para conteúdo destinado a IA generativa.
+
+### 📊 Estudos & dados
+
+- **72% das marcas têm zero menções em respostas IA, mesmo com posição na página 1 do Google** — [superlines.io](https://www.superlines.io/articles/ai-search-statistics/) (dados março 2026). A mesma marca regista variação de 615× no volume de citações entre plataformas (ex. Grok vs Claude); 85% das menções de marca em IA provêm de páginas de terceiros, não de domínios próprios; 60% das citações em AI Overviews vêm de URLs fora do top 20 orgânico; páginas não actualizadas trimestralmente têm 3× mais probabilidade de perder citações.
+
+### 💡 Implicações para destaque.ai
+
+- O processo CNN vs Perplexity expõe a fragilidade do modelo de raspagem sem consentimento: marcas sem controlo das suas fontes de citação em IA ficam expostas a conteúdo extraído sem contexto. Oportunidade de posicionar destaque.ai em "narrative control" em AI search — só awareness por agora.
+- A variação de 615× nas citações entre plataformas é o argumento mais forte para dashboard multi-motor: clientes SaaS B2B que apenas monitorizam Google AI têm uma visão incompleta da sua visibilidade real. Potencial diferenciador de serviço a desenvolver.
+- O guia Google "GEO é SEO" simplifica o pitch para clientes conservadores: não exige nova terminologia, apenas boas práticas de conteúdo com legibilidade para IA — reduz resistência à adopção e facilita qualificação de leads.
+
 ## 2026-05-30
 
 ### 🔵 Anúncios oficiais
