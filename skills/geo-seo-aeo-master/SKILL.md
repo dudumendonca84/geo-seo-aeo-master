@@ -225,6 +225,16 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Is HTML server-rendered (LLMs read it without JS)?
 - **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images — image SEO is now a citation surface.
 
+**Multimodal grounding checklist** (expansão da bullet acima — em 2026 deixou de ser extensão e tornou-se citation surface autónoma):
+
+- `schema.org/ImageObject` por hero / produto / data viz — com `caption`, `description`, `contentUrl` absoluto, e `creditText` ou `author` (`Person` com `sameAs`) quando há autoria
+- `schema.org/VideoObject` por vídeo embebido — com `transcript` ou `caption` (é a transcrição que LLMs indexam quando o vídeo é citado), `thumbnailUrl`, `uploadDate`
+- `alt` descritivo (não keyword-stuffing) — o `alt` é frequentemente o texto que aparece em image carousels de AI Overviews e em previews de Gemini app
+- Cache headers nos assets — bot-traffic surge em ChatGPT/Perplexity quando uma imagem é citada; sem cache, latência pode causar fallback para fonte concorrente
+- Multimodal prompt test: repetir queries do audit com image upload nos engines que suportam (Gemini, GPT-5 multimodal); documentar URLs citadas separadamente das text-only
+
+Engines que citam imagens directamente em respostas (Maio 2026): Gemini 3.5+ (AI Mode e app), GPT-5+ (ChatGPT). Bing Copilot exibe imagem-cita com link de referência separado.
+
 **Manual prompt audit — multi-engine matrix.** Don't test 1 or 2 engines, test the full matrix that matters for the client's market. Each engine has different retrieval, different default model, different citation behavior.
 
 **CRITICAL: always use the current default model of each engine at audit time.** Models change frequently (Gemini 2.x → 3.5 Flash in May 2026 I/O; future versions inevitable). Before running the prompt test:
@@ -353,7 +363,7 @@ SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
 | sigla | nome | definicao |
 |---|---|---|
 | SEO | Search Engine Optimization | Pesquisa clássica — Google, Bing. A base sobre a qual o GEO se constrói. |
-| GEO | Generative Engine Optimization | Aparecer em respostas geradas por IA — ChatGPT, Claude, Gemini, Grok. |
+| GEO | Generative Engine Optimization | Aparecer em respostas geradas por IA — ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot. |
 | AEO | Answer Engine Optimization | Otimizar para resposta directa — featured snippets, voz, AI Overviews. |
 
 ### 8 dimensões (client-facing)
