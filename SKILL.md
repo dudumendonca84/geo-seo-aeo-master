@@ -112,6 +112,42 @@ When asked to audit a site, produce a document with this structure. The 3HASH au
 ### 9. Closing note
 - Honest commercial posture. If the site does not need intervention, say so. Do not invent urgency.
 
+## Deck Builder method
+
+> **Consumido por:** `destaque-ai-deck-builder/src/lib/skill/method.ts` → Slides 06 (Definition) e 07 (Methodology). Parser lê esta secção até à próxima `##`. Não renomear headers de tabela (`sigla`, `dimensao`, `seo`/`geo`) sem actualizar o consumer.
+
+SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
+
+### Glossário
+
+| sigla | nome | definicao |
+|---|---|---|
+| SEO | Search Engine Optimization | Pesquisa clássica — Google, Bing. A base sobre a qual o GEO se constrói. |
+| GEO | Generative Engine Optimization | Aparecer em respostas geradas por IA — ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot. |
+| AEO | Answer Engine Optimization | Otimizar para resposta directa — featured snippets, voz, AI Overviews. |
+
+### Dimensões (v1.7)
+
+| n | dimensao | foco |
+|---|---|---|
+| 1 | Fundação técnica | Schema, llms.txt, crawlers de IA, performance, HTML renderizado pelo servidor. |
+| 2 | Conteúdo e autoridade temática | Clusters de tópicos, cadência editorial, dados e estatísticas próprias. |
+| 3 | Entidade e marca | Wikidata, Wikipedia, Knowledge Panel, sameAs, consistência NAP. |
+| 4 | Autoridade e PR digital | Cobertura Tier-1, podcasts, conferências, qualidade do link graph. |
+| 5 | Sinais sociais e comunidade | LinkedIn, GitHub, Reddit, X — plataformas que a IA cita. |
+| 6 | Sinais de autoridade no site | Autores com schema Person, sinais E-E-A-T, casos verificáveis. |
+| 7 | Medição e feedback | GSC, GA4 (canal IA), Bing AI Performance, auditorias mensais. |
+| 8 | Posicionamento estratégico | Share-of-voice, estratégia no-click, mapeamento ao funil. |
+
+### SEO vs GEO
+
+| seo | geo |
+|---|---|
+| Otimizas para 10 links azuis | Otimizas para 1 resposta |
+| O utilizador escolhe entre resultados | A IA escolhe por ele |
+| Palavras-chave e backlinks | Estrutura, autoridade e citabilidade |
+| Medes posições no Google | Medes menções nos motores de IA |
+
 ## Editorial voice
 
 - PT-PT for body and client-facing prose.
