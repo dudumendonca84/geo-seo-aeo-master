@@ -1,0 +1,125 @@
+#!/usr/bin/env node
+// Valida que os blocos parseáveis consumidos pelo destaque-ai-deck-builder
+// mantêm os headers e estrutura mínima do contrato em INTERFACES.md.
+//
+// Run from repo root:  node scripts/validate-skill-tables.mjs
+// Exits 1 se algum contrato falhar. Usado pela routine antes de commit,
+// para que uma absorção que parta um header não escape para main.
+
+import { readFileSync } from "node:fs";
+
+const SKILL = "skills/geo-seo-aeo-master";
+const results = [];
+
+const check = (name, ok, detail) => results.push({ name, ok, detail });
+
+const read = (path) => {
+  try { return readFileSync(path, "utf8"); }
+  catch { return null; }
+};
+
+// Devolve o conteúdo de uma secção `## Header` até ao próximo `## ` (h2 only).
+const sectionContent = (body, header) => {
+  const idx = body.indexOf(header);
+  if (idx < 0) return null;
+  const rest = body.slice(idx + header.length);
+  const next = rest.search(/\n## (?!#)/);
+  return next < 0 ? rest : rest.slice(0, next);
+};
+
+// Conta linhas de tabela markdown (começam por `|`, excluindo separador `|---|`).
+const countTableRows = (section) =>
+  section
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith("|") && !/^\|[\s\-:|]+\|$/.test(l))
+    .length;
+
+// --- Contrato 3: benchmarks core stats (consumido por loadCoreBenchmarks)
+{
+  const name = "Contrato 3 · benchmarks core stats";
+  const body = read(`${SKILL}/references/benchmarks.md`);
+  if (!body) { check(name, false, "ficheiro não encontrado"); }
+  else {
+    const section = sectionContent(body, "## Deck Builder core stats");
+    if (!section) check(name, false, "secção '## Deck Builder core stats' ausente");
+    else if (!section.includes("| key | value | caption | source | url | date |")) {
+      check(name, false, "header da tabela mudou — esperado: '| key | value | caption | source | url | date |'");
+    } else {
+      const rows = countTableRows(section) - 1; // -1 do header
+      rows >= 3
+        ? check(name, true, `${rows} stats parseáveis`)
+        : check(name, false, `menos de 3 stats (encontradas: ${rows}) — deck cai em fallback`);
+    }
+  }
+}
+
+// --- Contrato 4: SKILL.md Deck Builder method (consumido por loadMethod)
+{
+  const body = read(`${SKILL}/SKILL.md`);
+  if (!body) { check("Contrato 4 · method", false, "SKILL.md não encontrado"); }
+  else {
+    const section = sectionContent(body, "## Deck Builder method");
+    if (!section) check("Contrato 4 · method", false, "secção '## Deck Builder method' ausente");
+    else {
+      const haveGlossary = /\|\s*sigla\s*\|/i.test(section);
+      const haveDims = /\|\s*dimens[aã]o\s*\|/i.test(section);
+      const haveSeoGeo = /\|\s*seo\s*\|\s*geo\s*\|/i.test(section);
+      check("Contrato 4 · glossário", haveGlossary, haveGlossary ? "header 'sigla' presente" : "header com 'sigla' ausente");
+      check("Contrato 4 · 8 dimensões", haveDims, haveDims ? "header 'dimensao' presente" : "header com 'dimensao' ausente");
+      check("Contrato 4 · SEO vs GEO", haveSeoGeo, haveSeoGeo ? "header '| seo | geo |' presente" : "header '| seo | geo |' ausente");
+    }
+  }
+}
+
+// --- Contrato 1: prompts §3 distribuição (consumido por loadPromptConfig)
+{
+  const name = "Contrato 1 · distribuição por tier";
+  const body = read(`${SKILL}/references/prompts.md`);
+  if (!body) { check(name, false, "prompts.md não encontrado"); }
+  else {
+    const section = sectionContent(body, "## 3.");
+    if (!section) check(name, false, "anchor '## 3.' ausente");
+    else {
+      // Espelha a normalização do parser do deck (loadPromptConfig): strip de
+      // backticks + lowercase, depois match por cell.
+      const cleaned = section.toLowerCase().replace(/`/g, "");
+      const hasFree = /\|\s*free\s*\|/.test(cleaned);
+      const hasDiag = /\|\s*diagnostic\s*\|/.test(cleaned);
+      hasFree && hasDiag
+        ? check(name, true, "rows 'free' + 'diagnostic' presentes")
+        : check(name, false, `tiers em falta (free: ${hasFree}, diagnostic: ${hasDiag})`);
+    }
+  }
+}
+
+// --- Contrato 2: models.md Deck Builder API mappings
+{
+  const name = "Contrato 2 · API mappings";
+  const body = read(`${SKILL}/references/models.md`);
+  if (!body) { check(name, false, "models.md não encontrado"); }
+  else {
+    const section = sectionContent(body, "## Deck Builder API mappings");
+    if (!section) check(name, false, "secção '## Deck Builder API mappings' ausente");
+    else if (!section.includes("| Deck engine | Vendor | production | cost_optimized |")) {
+      check(name, false, "header da tabela mudou — esperado: '| Deck engine | Vendor | production | cost_optimized |'");
+    } else {
+      const rows = countTableRows(section) - 1;
+      rows >= 6
+        ? check(name, true, `${rows} engines parseáveis`)
+        : check(name, false, `menos de 6 engines (encontradas: ${rows}) — deck cai em fallback`);
+    }
+  }
+}
+
+let allOk = true;
+for (const r of results) {
+  console.log(`${r.ok ? "✓" : "✗"} ${r.name} — ${r.detail}`);
+  if (!r.ok) allOk = false;
+}
+
+if (!allOk) {
+  console.error("\n❌ Validation failed — um ou mais contratos parseáveis estão fora de sincronia com os parsers do deck-builder. Deck cai em fallback hardcoded até isto ser corrigido.");
+  process.exit(1);
+}
+console.log("\n✅ Todos os 4 contratos parseáveis válidos.");
