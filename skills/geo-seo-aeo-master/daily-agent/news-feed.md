@@ -8,6 +8,30 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-01
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic separa uso programático em pool de créditos independente a partir de 15 junho** — [infoworld.com](https://www.infoworld.com/article/4171274/anthropic-puts-claude-agents-on-a-meter-across-its-subscriptions.html). A partir de 15 junho, Claude Code GitHub Actions, Agent SDK, `claude -p` e apps de terceiros (Zed, Conductor, OpenClaw) saem da pool de subscrição e passam a debitar numa pool separada de créditos Agent SDK: Pro $20/mês, Max 5× $100/mês, Max 20× $200/mês a preços API completos. Claude Code interativo em terminal e claude.ai permanecem inalterados.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google May 2026 Core Update — conclusão prevista 2-4 junho, primeiros dados** — [schemaninja.com](https://schemaninja.com/core-update-is-almost-complete/). Dados preliminares: páginas com schema completo (Article, FAQPage, autor nomeado, datePublished/dateModified) mantiveram ou melhoraram posições; portais de comparação, agregadores de informação e conteúdo sem schema são os maiores perdedores. Google não confirmou padrões verticais antes do encerramento oficial.
+
+- **Perplexity Computer chega ao Microsoft 365** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog). Disponível desde 29 maio em Word, Excel, PowerPoint, Outlook e Teams; fontes e contexto de pesquisa visíveis em threads Computer dentro das apps M365.
+
+### 📄 Research académico
+
+- **"Beyond Retrieval: Modeling Confidence Decay and Deterministic Agentic Platforms in GEO"** — [arxiv.org/abs/2604.03656](https://arxiv.org/abs/2604.03656). Identifica o "zero-click paradox": LLMs que absorvem conteúdo no treino deixam de citar fontes externas para esse conteúdo. Propõe modelação de confidence decay para medir quando conteúdo perde visibilidade em GE independentemente da sua qualidade.
+
+- **"From Experience to Skill: Multi-Agent GEO via Reusable Strategy Learning"** — [arxiv.org/abs/2604.19516](https://arxiv.org/abs/2604.19516). Framework multi-agente que aprende estratégias de otimização de conteúdo reutilizáveis entre motores generativos distintos (ChatGPT, Gemini, Perplexity), reduzindo necessidade de reoptimização por plataforma.
+
+### 💡 Implicações para destaque.ai
+
+- **Anthropic billing split (15 junho) afecta automações de conteúdo GEO**: clientes e agências que usam Claude Code em pipelines Agent SDK vão registar aumento de custo real. Alertar clientes técnicos para rever workflows antes do dia 15; Claude Code interativo (não afectado) é alternativa sem custo adicional para tarefas ad-hoc.
+- **May Core Update confirma schema como factor diferenciador imediato**: primeiros dados de winners/losers reforçam FAQPage + Article schema + author markup como implementação de maior impacto para clientes SaaS B2B — argumento técnico concreto para posicionar auditoria de structured data como serviço urgente.
+- **Zero-click paradox** (2604.03656) é dado contra-intuitivo com valor de pitch: o modelo pode ter memorizado conteúdo de um cliente sem o citar em tempo real — invisibilidade que dashboards de ranking clássico não detectam. Reforça necessidade de monitorização de brand mentions em AI via fontes externas (citação ao vivo vs. parametric memory).
+
 ## 2026-05-31
 
 ### 🔵 Anúncios oficiais
