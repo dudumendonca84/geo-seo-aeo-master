@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-02
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic: deprecação de Claude Sonnet 4 e Opus 4 na API — deadline 15 junho** — [anthropic.com](https://www.anthropic.com/research/deprecation-updates-opus-3). Retirement agendado para 15 junho 2026; migração recomendada para `claude-sonnet-4-6` e `claude-opus-4-7`. Preços mantidos nos novos modelos equivalentes.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google AI Mode — citation link cards em teste** — Google testa novo formato de card de citação dentro de AI Overviews e AI Mode, com maior destaque visual às fontes citadas. [Search Engine Roundtable, 1 junho 2026](https://www.seroundtable.com/recap-06-01-2026-41426.html).
+
+- **Google AI Mode — anúncios conversacionais e healthcare ads em teste** — Google testa formatos publicitários conversacionais e ads de saúde directamente integrados em respostas de AI Mode. [Search Engine Land](https://searchengineland.com/google-tests-new-conversational-ad-formats-in-ai-mode-and-search-478115).
+
+### 💡 Implicações para destaque.ai
+
+- **Deadline iminente (15 junho)** para clientes técnicos com automações baseadas em `claude-sonnet-4` ou `claude-opus-4`: alertar para migração para modelos 4.6/4.7 antes do retirement. Só awareness — sem impacto em serviços destaque.ai se já actualizados.
+- **Citation link cards em AI Mode** sinalizam que o Google está a testar maior transparência de fontes: conteúdo com citações claras e autoridade verificável pode beneficiar quando o formato se generalizar. Monitorizar rollout.
+- **Anúncios em AI Mode** confirmam monetização do canal como prioritária para o Google: clientes B2B em SaaS, saúde e financeiro devem antecipar maior competição paga — argumento para consolidar presença GEO orgânica antes que o CPM no canal suba.
+
 ## 2026-06-01
 
 ### 🔵 Anúncios oficiais
