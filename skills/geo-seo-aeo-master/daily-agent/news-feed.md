@@ -8,6 +8,38 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-03
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic files IPO confidentially with SEC** — [Washington Post](https://www.washingtonpost.com/technology/2026/06/01/anthropic-maker-claude-files-with-sec-go-public-an-ipo/) | [CBS News](https://www.cbsnews.com/news/anthropic-ipo-confidential-filing-claude-ai/). Filed June 1. Valuation estimada em $965B; receita anualizada de $47B em subscrições Claude. Maior ronda privada em AI até à data ($65B Series H) precede a entrada em bolsa.
+
+- **Perplexity Personal Computer expands to Windows** — [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-02/perplexity-splits-ai-work-between-pcs-and-servers-to-ease-strain). Anunciado June 3: Personal Computer — agente orquestrador que dirige tarefas AI entre hardware local e nuvem — disponível em Windows com acesso a Word, Outlook e ficheiros locais. Anteriormente Mac-only.
+
+- **OpenAI: GPT-4.5 retiring June 27; o3 retiring August 26** — [OpenAI Release Notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) | [Releasebot](https://releasebot.io/updates/openai/chatgpt). GPT-4.5 remove-se de ChatGPT a 27 de junho (30-day sunset); o3 a 26 de agosto (90-day sunset). GPT-5.5 Instant é o novo padrão desde maio 2026; absorção em models.md.
+
+### 📊 Estudos & dados
+
+- **50 Most-Cited Websites in Perplexity (June 2026)** — [Ahrefs Brand Radar](https://ahrefs.com/blog/most-cited-domains-perplexity/). Análise de 3,1M queries US: YouTube lidera com 32,4% do citation share — concentração mais elevada em qualquer engine estudado pelo Ahrefs. Metodologia automática mensal via Agent A.
+
+- **AirOps 2026 State of AI Search Report** — [AirOps Blog](https://www.airops.com/blog/aeo-answer-engine-optimization). 83% das citações AI provêm de páginas actualizadas nos últimos 12 meses; tráfego via citação AI converte 3–4× acima do orgânico clássico. HubSpot 2026 State of Marketing corrobora: 58% dos marketers confirmam taxas de conversão superiores em tráfego AI vs. orgânico.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity — Search as Code (SaC)** — [research.perplexity.ai](https://research.perplexity.ai/articles/rethinking-search-as-code-generation). Nova arquitectura agentic: modelos constroem pipelines de retrieval como código executável em sandbox (via Agentic Search SDK com primitivas composable), substituindo pipelines estáticos. Publicado ~31 maio.
+
+- **Google May 2026 Core Update — conclusão estimada hoje** — [Search Engine Land](https://searchengineland.com/google-may-2026-core-update-rolling-out-now-478430). Rollout iniciado 21 maio. Dados preliminares: pages com schema completo (Article + autor + datePublished) mantiveram ou melhoraram; agregadores sem valor original são maiores perdedores. Aguardar dados Search Console até 11 junho.
+
+### 📄 Research académico
+
+- **"Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — [arxiv:2506.00054](https://arxiv.org/abs/2506.00054). Publicado junho 2026. Estrutura e granularidade de chunks determinam directamente quais conteúdos são recuperados e citados por AI search engines — relevante para arquitectura de conteúdo GEO.
+
+### 💡 Implicações para destaque.ai
+
+- O Perplexity Personal Computer no Windows abre o mercado agentic ao ecossistema Microsoft 365. SaaS B2B deve garantir dados acessíveis via API estruturada — conteúdo em silos fechados fica invisível para agentes. Só awareness por agora; sem mudança de pitch.
+- YouTube com 32,4% das citações em Perplexity (3,1M queries): vídeos explicativos de casos de uso B2B são agora um canal AEO material, não opcional. Considerar nova linha de serviço de "AEO multimodal" ou incluir no pitch como gap a endereçar.
+- O IPO da Anthropic ($965B) reforça o argumento de runway longo do ecossistema AI search — resposta a clientes que invocam "incerteza do mercado AI" como razão para adiar investimento em GEO.
+
 ## 2026-06-02
 
 ### 🔵 Anúncios oficiais

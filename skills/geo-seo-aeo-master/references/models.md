@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 23 May 2026** — see `daily-agent/news-feed.md` for releases after this date.
+**Last refresh: 03 Jun 2026** — see `daily-agent/news-feed.md` for releases after this date.
 
 ---
 
@@ -32,16 +32,18 @@ When citing capabilities, **always include the model version and the date observ
 
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
-| **GPT-5** | Aug 2025 | 256k tokens | Yes (with tool) | ChatGPT (paid), ChatGPT Search, API default |
-| **GPT-5 mini** | Oct 2025 | 256k | Yes (with tool) | Free ChatGPT for some queries |
+| **GPT-5.5 Instant** | May 2026 | 256k tokens | Yes (with tool) | ChatGPT default (all tiers) since May 5 2026 |
+| **GPT-5** | Aug 2025 | 256k tokens | Yes (with tool) | ChatGPT Search, API (explicit), some paid workflows |
+| **GPT-5 mini** | Oct 2025 | 256k | Yes (with tool) | Free ChatGPT fallback for some queries |
 | **GPT-4o** | May 2024 | 128k | Yes | Legacy in API, deprecation announced Q3 2026 |
+| **GPT-4.5** | 2025 | 128k | Yes | **Retiring June 27 2026** — 30-day sunset announced |
 | **o1 / o1-pro** | Sept 2024 | 128k | No (reasoning only) | "Think longer" mode |
-| **o3 / o3-pro** | Jan 2026 | 200k | Yes | Pro tier "deep research" |
+| **o3 / o3-pro** | Jan 2026 | 200k | Yes | **Retiring August 26 2026** — 90-day sunset announced |
 
 ### Products and which model
 
-- **ChatGPT Search / SearchGPT** — GPT-5 default since Sept 2025; web search via Bing index + OpenAI crawl.
-- **ChatGPT Atlas browser** — GPT-5 with browsing tools enabled by default.
+- **ChatGPT Search / SearchGPT** — GPT-5.5 Instant default since May 5 2026; web search via Bing index + OpenAI crawl.
+- **ChatGPT Atlas browser** — GPT-5.5 Instant with browsing tools enabled by default.
 - **Custom GPTs** — pinned to model owner chose (often GPT-4o legacy still).
 
 ### GEO-relevant notes
@@ -58,16 +60,17 @@ When citing capabilities, **always include the model version and the date observ
 
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
-| **Claude Opus 4.7** | Apr 2026 | 1M tokens | Yes | Claude Pro / Max ("Most intelligent") |
+| **Claude Opus 4.8** | May 2026 | 1M tokens | Yes | Claude Code Fast mode; Claude Pro Max ("Most intelligent") |
+| **Claude Opus 4.7** | Apr 2026 | 1M tokens | Yes | Claude Pro / Max (previous default — being superseded) |
 | **Claude Sonnet 4.6** | Mar 2026 | 1M tokens | Yes | claude.ai default, API default |
 | **Claude Haiku 4.5** | Oct 2025 | 200k | Yes | Speed tier, batch jobs |
 | **Claude Sonnet 4.5** | Sept 2025 | 1M tokens | Yes | Still available in API for compat |
 
 ### Products and which model
 
-- **claude.ai** (web) — Sonnet 4.6 default; Opus 4.7 for Max subscribers.
+- **claude.ai** (web) — Sonnet 4.6 default; Opus 4.8 for Max subscribers.
 - **Claude Desktop** — same as claude.ai.
-- **Claude Code (CLI + Web Routines)** — Sonnet 4.6 default; Opus 4.7 for "fast mode" on Opus.
+- **Claude Code (CLI + Web Routines)** — Sonnet 4.6 default; Opus 4.8 in Fast mode (released May 28 2026).
 - **API** — explicit model parameter required. IDs: `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-haiku-4-5-20251001`.
 
 ### GEO-relevant notes
