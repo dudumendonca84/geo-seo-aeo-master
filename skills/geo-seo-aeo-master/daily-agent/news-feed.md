@@ -8,6 +8,22 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-04
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console — Search Generative AI Performance Reports + opt-out toggle** — [developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) | [searchengineland.com](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298). Announced June 3: dedicated reports in Search Console exposing impressions within AI Overviews, AI Mode, and Discover AI features (metrics: impressions, pages, countries, devices, dates; click data not yet included). A new toggle lets site owners exclude their content from generative AI features — effective June 17; exclusion does not affect classic ranking signals. Initial rollout limited to a UK subset; global expansion timeline unconfirmed.
+
+### 📄 Research académico
+
+- **"What Gets Cited: Competitive GEO in AI Answer Engines"** — Vishwakarma et al., [arxiv.org/abs/2605.25517](https://arxiv.org/abs/2605.25517) (May 2026). 252,000 controlled trials across 6 LLMs; two-document RAG testbed with brand anonymisation and counterbalanced source order to isolate position bias. Topical relevance and list position are the strongest predictors of first-citation among 18 tested content factors.
+
+### 💡 Implicações para destaque.ai
+
+- O Search Console AI Report não inclui dados de cliques — visibilidade em AI Mode ainda não é mensurável em ROI directo para clientes; oportunidade de posicionamento da destaque.ai como quem audita "AI brand impressions" antes da generalização global do relatório (actualmente UK-only).
+- O toggle de opt-out do AI Mode (efectivo 17 junho, UK-only por agora) é uma decisão estratégica nova: clientes SaaS B2B portugueses devem ser briefados sobre a escolha opt-in/opt-out antes da expansão global. **Potencial novo serviço de "AI visibility audit + opt-in strategy".**
+- O paper 2605.25517 confirma empiricamente que relevância tópica e estrutura de lista dominam a citação em AI engines — reforça a metodologia existente da destaque.ai; apenas awareness necessária.
+
 ## 2026-06-03
 
 ### 🔵 Anúncios oficiais
