@@ -173,7 +173,7 @@ Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO)
 
 ### 4.6 Vertical B2B SaaS PT (cross-category)
 
-Prompts vertical-specific (core ICP destaque.ai), classificados em várias categorias:
+Estes prompts são vertical-specific (core ICP destaque.ai) e classificam-se em várias categorias. A definição do ICP — qualificação por **mecanismo** (compra ponderada, research-driven), nunca por receita ou tamanho — vive em `SKILL.md` § ICP / qualificação destaque.ai.
 
 | ID | Prompt | Categoria principal | Self-audit |
 |---|---|---|---|
