@@ -2,6 +2,7 @@
 
 | Data (Lisboa) | Status | Notas |
 |---|---|---|
+| 2026-06-05 | ✅ OK | 1 anúncio (Microsoft Web IQ, lançado 2 junho), 2 estudos (5W Citation Index 680M citações; AI bot traffic GPTBot/Claudebot), 1 mudança plataforma (CMA context Search Console opt-out). Sexta: drafts gerados em drafts/2026-06-05-weekly.md |
 | 2026-06-04 | ✅ OK | 1 anúncio Tier 1 (Google Search Console AI Performance Reports + opt-out toggle, June 3), 1 paper académico (arXiv 2605.25517 competitive GEO, 252k trials). Quinta-feira — sem weekly drafts. |
 | 2026-06-03 | ✅ OK | 3 anúncios (Anthropic IPO, Perplexity PC→Windows, OpenAI GPT-4.5/o3 deprecations), 2 estudos (Ahrefs Perplexity 3,1M queries, AirOps AI Search 2026), 2 mudanças plataforma (Perplexity SaC, May Core Update conclusão), 1 paper (arxiv 2506.00054). Absorvido em models.md: Opus 4.8 (Anthropic), GPT-5.5 Instant default + deprecações GPT-4.5/o3 (OpenAI). Terça-feira — sem weekly drafts. |
 | 2026-06-02 | ✅ OK | 1 anúncio (Anthropic model deprecation June 15), 2 mudanças plataforma (Google citation cards + conversational ads em AI Mode). Segunda-feira — sem weekly drafts. |

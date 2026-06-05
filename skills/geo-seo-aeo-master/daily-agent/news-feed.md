@@ -8,6 +8,28 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-05
+
+### 🔵 Anúncios oficiais
+
+- **Microsoft lança Web IQ — grounding API para agentes IA** — [searchengineland.com](https://searchengineland.com/microsoft-releases-web-iq-powered-by-bing-but-designed-for-how-ai-agents-search-479194). Lançado a 2 de junho. Suite de APIs baseada no índice Bing, desenhada especificamente para agentes IA (não para utilizadores humanos): prioriza extracção de informação e velocidade de entrega em vez de ranking de resultados. Alimenta actualmente o Microsoft Copilot e o ChatGPT Search da OpenAI; expansão a outras plataformas anunciada. Primeiro produto Bing explicitamente posicionado como infraestrutura de retrieval agentic.
+
+### 📊 Estudos & dados
+
+- **GPTBot atinge 4,5% do tráfego desktop; Claudebot quase duplicou** — [searchengineland.com](https://searchengineland.com/seo-2026-higher-standards-ai-influence-web-catching-up-473540) (análise anual). GPTBot passou de 2,9% (2024) para 4,5% do tráfego desktop em 2025; Claudebot de 1,9% para 3,6%. Crescimento contínuo do volume de crawling IA sobre o stock de páginas indexadas — relevante para estimativa de exposição a citação.
+
+- **5W AI Platform Citation Source Index 2026 — top 15 domínios capturam 68% das citações** — [prnewswire.com](https://www.prnewswire.com/news-releases/5w-releases-ai-platform-citation-source-index-2026-the-50-websites-that-now-decide-what-brands-are-visible-inside-chatgpt-claude-perplexity-gemini-and-google-ai-overviews-302759804.html) (680 M citações sintetizadas, 6 estudos Aug 2024–Apr 2026). Reddit é a fonte #1 em todos os motores (~40% de frequência de citação); Wikipedia domina ChatGPT (26–48% do citation share top-10); Perplexity favorece portais de research primária (NIH/PubMed, press B2B de nicho); Claude prefere jornalismo de referência (NYT, The Atlantic, The Economist). Concentração mais extrema do que o PageRank alguma vez produziu.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Search Console AI Report — contexto regulatório CMA confirma expansão global pendente** — [searchengineland.com](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298). A Competition and Markets Authority (UK) confirmou a 3 de junho que o rollout UK-first dos relatórios e do toggle de opt-out resulta de exigências regulatórias sob o Digital Markets Competition Regime. Expansão global sem calendário definido; toggle efectivo a 17 de junho para os sites no rollout UK inicial.
+
+### 💡 Implicações para destaque.ai
+
+- O Web IQ da Microsoft confirma que o Bing é a camada de retrieval por trás de Copilot e ChatGPT Search — optimizar para Bing deixa de ser opcional para clientes B2B que querem visibilidade em múltiplos motores IA. Argumento directo: presença no Bing index é infraestrutura de citação cross-platform.
+- A concentração de citações (68% em 15 domínios) e a preferência de Claude por jornalismo de referência indica que PR em publicações de autoridade (não apenas SEO técnico) tem ROI directo em AEO — oportunidade de serviço "media authority for AI citation" para clientes com orçamento de comunicação.
+- O crescimento de GPTBot/Claudebot reforça a urgência de conteúdo bem estruturado e crawlável: bots IA estão a indexar activamente; a janela para construir autoridade antes da saturação do canal está a fechar.
+
 ## 2026-06-04
 
 ### 🔵 Anúncios oficiais
