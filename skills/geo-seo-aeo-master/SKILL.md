@@ -21,6 +21,7 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `references/competitor_filtering.md` | Four-question peer-competitor test + worked examples + sector heuristics. Used by the Visibility Tracker to classify brand mentions extracted from LLM responses into `peer` vs `adjacent_vendor` vs `adjacent_consultancy` vs `expert_individual` vs others. |
 | `references/alert_thresholds.md` | Severity bands (critical / notable / informational) and per-metric WoW thresholds (CR / SoV / position / sentiment) plus event-based and trend-based alerts. Used by the Visibility Tracker to decide which week-over-week changes warrant surfacing. |
 | `references/narrative_templates.md` | Editorial structural skeletons for weekly Top-3, weekly Próximas acções, monthly digest, quarterly review, proposal copy. Used by the Visibility Tracker (and proposal flows) to keep narrative outputs in the SINAL voice. |
+| `references/search_modes.md` | Canonical declaration of SINAL's two audit modes (`knowledge` vs `augmented`) and the per-engine native tool/feature each consumer (Tracker, Deck Builder) must enable to put an engine into augmented mode. |
 | `daily-agent/news-feed.md` | Auto-updated daily 08:00 Lisboa. "What changed in the last 24-48h" entries (model releases, AIO mechanic changes, studies, papers). |
 | `destaque-ai-self/audit-baseline.md` | Auto-updated weekly Mondays 09:00. Current technical audit of destaque.ai itself in the destaque.ai house style (eating own dog food). |
 | `destaque-ai-self/improvements-backlog.md` | Auto-updated weekly. Prioritized list of improvements to destaque.ai, with status, effort, origin (audit / news / external request). |
@@ -224,6 +225,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent.
 - Is HTML server-rendered (LLMs read it without JS)?
 - **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images — image SEO is now a citation surface.
+- **Two-mode measurement.** Every audit prompt is run twice per engine — once in `knowledge` mode (raw model, no tools) and once in `augmented` mode (native web-search / grounding feature enabled). Report `knowledge_cr` and `augmented_cr` side-by-side; never blend them. Per-engine activation table is in `references/search_modes.md`. The *gap* between the two is itself a finding: `knowledge` weak / `augmented` strong points to entity-foundation work; the reverse points to crawlability and freshness work.
 
 **Multimodal grounding checklist** (expansão da bullet acima — em 2026 deixou de ser extensão e tornou-se citation surface autónoma):
 

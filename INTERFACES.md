@@ -161,12 +161,49 @@ Secção `## Deck Builder method` no fim do ficheiro. Contém:
 
 ---
 
+### Contrato 5: search modes (knowledge vs augmented, per-engine activation)
+
+**Path no repo:** `skills/geo-seo-aeo-master/references/search_modes.md`
+
+**Raw URL:**
+```
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/search_modes.md
+```
+
+**Estrutura consumida:**
+
+Bloco `## Per-engine augmentation feature` no meio do ficheiro. Tabela com header:
+
+```
+| Deck engine | Vendor | augmented mode | API surface | Notes |
+```
+
+Engines listados: os mesmos do Contrato 2 (`chatgpt`, `claude`, `gemini`, `grok`, `perplexity`, `copilot`, `mistral`, `deepseek`, `meta`). Coluna 3 (`augmented mode`) declara *como* activar o modo augmented:
+
+- `web_search` / `google_search` / `live_search` / etc → consumer activa a tool/feature nativa correspondente do vendor
+- `n/a (always on)` → engine só tem modo augmented (Perplexity); skip do half `knowledge`
+- `not supported` → engine só tem modo knowledge; skip do half `augmented`, persistir `null` nas séries augmented
+
+**Parsing contract** (consumers — Deck Builder e Tracker, `src/lib/skill/searchModes.ts`):
+1. Fetch a URL acima
+2. Localizar a secção `## Per-engine augmentation feature`
+3. Parse da tabela com o header exacto acima; strip de backticks
+4. Para cada engine, mapear coluna 1 → coluna 3. Aplicar a regra de skip quando coluna 3 = `n/a (always on)` ou `not supported`
+5. Se fetch ≠ 200 OU tabela vazia → fallback hardcoded em código (estado canónico mais recente conhecido)
+
+**Adicionar uma linha** (novo engine) é seguro. **Mudar o header ou alterar os valores `n/a (always on)` / `not supported`** parte os skip rules — coordenar com PR no(s) consumer(s) antes.
+
+**Reporting contract** (downstream, não parsing): consumers MUST persist `search_mode` por row em `audit_responses` / `audit_runs` e expor métricas duplicadas (`knowledge_cr` + `augmented_cr`, `knowledge_sov` + `augmented_sov`, etc) no client-facing UI. Nunca blend.
+
+---
+
 ## Frequência de actualização
 
 | Ficheiro | Cadência | Trigger |
 |---|---|---|
 | `prompts.md` § 1-3 (princípios + categorias + distribuição) | Raro | Mudança de metodologia (`methodology-changelog.md`) |
 | `prompts.md` § 4 (catálogo segmento) | Semanal/diário | Daily agent absorve novos prompts |
+| `search_modes.md` per-engine table | Quando um vendor adiciona/remove search nativo | Daily agent monitor + manual |
 | `models.md` per-vendor tables | Quando há release | Daily agent monitor + manual |
 | `models.md` § Deck Builder API mappings | Quando há release ou deprecation | Daily agent + manual coordination |
 
