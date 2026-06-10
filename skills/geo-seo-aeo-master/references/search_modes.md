@@ -4,7 +4,7 @@ SINAL audits every prompt **twice** per engine. The two queries are physically s
 
 This file is the canonical contract. Consumers (`destaque-ai-tracker`, `destaque-ai-deck-builder`) parse the per-engine table below to know **which tool/feature** to enable to put each engine in `augmented` mode.
 
-Last refresh: **6 Jun 2026**.
+Last refresh: **10 Jun 2026** (Grok augmented surface corrected — see per-engine table).
 
 ---
 
@@ -44,9 +44,9 @@ Single source of truth for what consumers must enable to put each engine into `a
 | Deck engine | Vendor    | augmented mode  | API surface (May/Jun 2026)                                                                 | Notes |
 |-------------|-----------|-----------------|--------------------------------------------------------------------------------------------|-------|
 | `chatgpt`   | OpenAI    | `web_search`    | Responses API, `tools: [{ type: "web_search" }]`                                           | Native since Apr 2025; recommended over the older `browsing` plugin path. |
-| `claude`    | Anthropic | `web_search`    | Messages API, `tools: [{ type: "web_search_20250305", name: "web_search" }]`               | Available on `claude-sonnet-4-6` and `claude-opus-4-7`; Haiku family limited. |
+| `claude`    | Anthropic | `web_search`    | Messages API, `tools: [{ type: "web_search_20260209", name: "web_search" }]`               | Current tool version (adds dynamic filtering); the older `web_search_20250305` still works. On `claude-sonnet-4-6` / `claude-opus-4-7`+; Haiku family limited. |
 | `gemini`    | Google    | `google_search` | `generateContent` with `tools: [{ google_search: {} }]`                                    | Returns `groundingMetadata` with citation URIs in the response. |
-| `grok`      | xAI       | `live_search`   | OpenAI-compatible chat completions with vendor extension `search_parameters: { mode: "on" }` | Real-time X corpus by default; can scope to `web`, `news`, `x`. |
+| `grok`      | xAI       | `web_search`    | Responses API (`/v1/responses`), `tools: [{ type: "web_search" }]`                          | **Corrected 10 Jun 2026.** The old Live Search `search_parameters: { mode: "on" }` on chat completions was **retired 2026-01-12 (HTTP 410)**; use the Responses API `web_search` tool. Scope via `tools[].filters` (allowed/excluded domains). Source: xAI Live Search docs (field finding) — confirm against xAI's live docs before relying. |
 | `perplexity`| Perplexity| n/a (always on) | `sonar*` models are search-grounded by definition                                          | `augmented` is the only mode; `knowledge` is **not measurable**. Consumers should skip Perplexity for the knowledge half of the run. |
 | `copilot`   | Microsoft | (varies)        | Bing grounding via the Azure OpenAI extension `data_sources: [{ type: "bing_search" }]`    | Requires a Bing API key alongside the Azure deployment. |
 | `mistral`   | Mistral   | not supported   | No first-party search tool in the API as of Jun 2026                                       | Consumers should **skip** the augmented half of the run; record `null`, do not synthesise. |
