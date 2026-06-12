@@ -8,6 +8,44 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-12
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console: Generative AI Performance Reports** — [developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). Lançado a 3 junho, em rollout para subset de sites (primeiro no UK): relatórios dedicados para impressions em AI Overviews e AI Mode, com dimensões por URL, país, dispositivo e data. Não há dados de clicks, CTR nem query breakdown. A Search Console inclui também um controlo para bloquear conteúdo de aparecer em AI responses.
+
+- **Google I/O 2026 — Search: AI Mode, Information Agents e redesign da Search box** — [blog.google/products-and-platforms/products/search/search-io-2026/](https://blog.google/products-and-platforms/products/search/search-io-2026/). Gemini 3.5 Flash torna-se o modelo padrão no AI Mode para todos os utilizadores globalmente. AI Mode ultrapassa 1 bilião de utilizadores mensais, com queries a dobrar por trimestre. Personal Intelligence expande para ~200 países e 98 línguas sem subscrição. Information Agents (monitorização contínua de topics em background) em rollout este verão, primeiro para Google AI Pro/Ultra. Redesign da Search box anunciado como a maior mudança em 25 anos.
+
+- **Google Search Central — Guidance oficial para GEO/AEO** — [developers.google.com/search/docs/fundamentals/ai-optimization-guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide). Google publicou orientações técnicas estabelecendo-se como fonte de referência para práticas de otimização para features generativas (AI Overviews, AI Mode). Inclui recomendações sobre estrutura de conteúdo e alerta para cautela com ferramentas e dados de terceiros não validados.
+
+### 📊 Estudos & dados
+
+- **The SEO-GEO gap: AI search traffic differs from organic traffic** — [searchengineland.com](https://searchengineland.com/seo-geo-gap-ai-search-traffic-organic-traffic-478731). Análise mostra que visibilidade em AI search e tráfego orgânico clássico não são correlacionados: sites bem posicionados em AI Mode e AI Overviews não são necessariamente os que lideram nos resultados orgânicos tradicionais.
+
+- **Google AI Mode envia tráfego em 69% das queries transacionais** — [searchengineland.com](https://searchengineland.com/google-ai-mode-traffic-transactional-queries-data-465604). Dados de terceiros indicam que AI Mode gera cliques em quase 7 em cada 10 queries com intenção de compra ou conversão — indicador relevante para SaaS B2B.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google — May 2026 Core Update completo** — Rollout iniciado a 21 maio, concluído a 2 junho (12 dias). Classificado por profissionais como mais volátil que o March 2026 update; quase 80% dos resultados top-3 do march update tinham sido alterados. [searchengineland.com](https://searchengineland.com/google-may-2026-core-update-rollout-is-now-complete-479119)
+
+- **Perplexity — Search as Code (SaC)** — Nova arquitectura que trata search como primitivos programáveis para harnesses de agentes, em substituição do modelo monolítico. Permite controlo granular sobre estratégias de retrieval por tarefa. [research.perplexity.ai](https://research.perplexity.ai/articles/rethinking-search-as-code-generation)
+
+- **Anthropic Claude — Web search disponível globalmente em todos os planos** — Search integrado com execução automática de código para filtrar resultados e reduzir uso de contexto; redução reportada de 85% em token usage comparado com ingestão directa. [anthropic.com/news/web-search](https://www.anthropic.com/news/web-search)
+
+### 📄 Research académico
+
+- **SoK: Agentic Retrieval-Augmented Generation (RAG)** — Autores múltiplos, [arxiv.org/abs/2603.07379](https://arxiv.org/abs/2603.07379) (março 2026). Taxonomia de arquitecturas RAG agênticas: LLMs a coordenar raciocínio multi-etapa, gestão dinâmica de memória e retrieval iterativo — base técnica para como AI search engines processam e citam fontes.
+
+- **Structured Linked Data as a Memory Layer for Agent-Orchestrated Retrieval** — [arxiv.org/pdf/2603.10700](https://arxiv.org/pdf/2603.10700). Propõe dados estruturados em linked data como camada de memória persistente para agentes de retrieval — implicação directa para como schema.org e dados estruturados afectam citações em AI search.
+
+### 💡 Implicações para destaque.ai
+
+- **Novo serviço: AI Visibility Measurement.** O lançamento dos GSC AI reports sem CTR cria uma lacuna de medição que ferramentas tradicionais de SEO não cobrem. Oportunidade de posicionar destaque.ai como parceiro para clientes B2B em Portugal que precisam de framework de métricas para AI Overviews e AI Mode (impressions, share of voice, citation rate).
+
+- **Urgência no pitch GEO para SaaS B2B.** AI Mode a 1B utilizadores com 69% de tráfego transaccional documentado remove o argumento "ainda é cedo". Clientes em Portugal com dependência de lead gen via pesquisa orgânica devem ser abordados com dados concretos, não com previsões.
+
+- **Alinhamento com terminologia Google.** A guidance oficial de GEO/AEO do Google Search Central é uma âncora de credibilidade para o pitch junto de decisores mais conservadores; recomenda-se rever materiais comerciais para usar a mesma nomenclatura e citar fontes primárias Google. Requer apenas actualização de awareness e materiais — não muda serviço.
+
 ## 2026-06-07
 
 ### 🔵 Anúncios oficiais
