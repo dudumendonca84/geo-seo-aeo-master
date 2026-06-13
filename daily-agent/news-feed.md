@@ -8,6 +8,26 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-13
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic apresenta S-1 confidencial à SEC** — Anthropic ([anthropic.com/news/confidential-draft-s1-sec](https://www.anthropic.com/news/confidential-draft-s1-sec)). A 1 de junho, Anthropic submeteu confidencialmente um registo S-1 à SEC para uma potencial IPO, avaliada em ~$965 mil milhões após Série H de $65 mil milhões. Número de acções, preço e calendário ainda não definidos; dependem de market conditions e revisão da SEC.
+
+- **OpenAI submete draft S-1 à SEC** — CNBC ([cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html](https://www.cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html)). A 8 de junho, OpenAI confirmou submissão confidencial de S-1, avaliada em ~$852 mil milhões. Juntamente com Anthropic e SpaceX (listagem concluída a 12 de junho), representa o maior pipeline de IPO em AI da história.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Search — volatilidade de ranking persiste pós May 2026 Core Update** — Search Engine Roundtable ([seroundtable.com/google-search-ranking-volatility-41466.html](https://www.seroundtable.com/google-search-ranking-volatility-41466.html)). Ferramentas de monitorização (Semrush Sensor, MozCast, SERPmetrics) mantêm leituras elevadas na semana de 6-12 junho, após conclusão do core update a 2 junho. Profissionais SEO descrevem 2026 como o ano mais volátil do Google, com oscilações de 30-40% de tráfego orgânico overnight e recuperação parcial na semana seguinte.
+
+- **GSC AI blocking toggle: efectivo em 4 dias (17 junho)** — Google Search Central ([developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)). O controlo de opt-out de AI features (AI Overviews, AI Mode, Discover) passa a ser respeitado pelo Google a partir de 17 junho. Configurações realizadas antes desta data não têm impacto imediato. O toggle não afecta organic rankings.
+
+### 💡 Implicações para destaque.ai
+
+- **Acção imediata (prazo: 17 junho):** Clientes B2B com conteúdo técnico diferenciado não devem activar o opt-out — tráfego via AI Mode em queries transaccionais converte 4,4× mais que organic clássico (ConvertMate GEO Benchmark 2026). Contactar clientes activos antes de segunda-feira.
+- **IPOs de Anthropic e OpenAI** consolidam a AI search como mercado permanente. Para decisores conservadores em Portugal, estes marcos financeiros removem a objecção de timing — incorporar como evidência de maturidade do sector em materiais comerciais; requer apenas actualização de awareness.
+- **Volatilidade 2026 como argumento de serviço:** Oscilações de 30-40% de tráfego orgânico criam urgência genuína para auditoria GEO/SEO — adaptar messaging comercial para enquadrar a volatilidade como risco mensurável e GEO como cobertura, não como aposta em tendência futura.
+
 ## 2026-06-12
 
 ### 🔵 Anúncios oficiais
