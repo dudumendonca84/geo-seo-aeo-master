@@ -8,6 +8,28 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-15
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic — Claude Fable 5 disponível temporariamente em planos Pro/Max/Team** — [anthropic.com/news/claude-fable-5-mythos-5](https://www.anthropic.com/news/claude-fable-5-mythos-5). A partir de hoje (15 junho) e até 22 junho, Fable 5 está incluído sem custo adicional nos planos Pro, Max, Team e Enterprise seat-based; a partir de 23 junho requer créditos de uso até que a capacidade seja reforçada. Disponível imediatamente na API e em planos enterprise de consumo.
+
+- **Perplexity Research upgrade (13 junho)** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog/what-we-shipped-june-13th). Research integra capacidades anteriormente exclusivas do Labs: criação de imagens e gráficos, browsing web em tempo real, display de media e orquestração mais inteligente do processo de pesquisa; permite pesquisa multimodal end-to-end numa única sessão.
+
+### 📊 Estudos & dados
+
+- **"The 5-layer framework for measuring GEO performance"** — Search Engine Land, [searchengineland.com](https://searchengineland.com/the-5-layer-framework-for-measuring-geo-performance-477742). Análise de 150.000 páginas indexadas em 10 websites (março 2026, cross-vertical B2B e B2C): conteúdo genérico/educacional tem desempenho baixo em citações LLM porque os modelos conseguem gerá-lo autonomamente; dados originais, research proprietário e insights diferenciados são os maiores factores preditivos de citação.
+
+### ⚙️ Mudanças nas plataformas
+
+- **GSC AI Features opt-out toggle activo em 48h (17 junho)** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). O controlo de exclusão de AI Overviews, AI Mode e Discover no Search Console torna-se efectivo na próxima terça-feira; sites que activem o toggle deixam de aparecer em AI responses sem impacto em organic rankings. Janela de decisão fecha esta segunda-feira.
+
+### 💡 Implicações para destaque.ai
+
+- **Acção urgente — prazo GSC toggle (48h):** Contactar clientes activos antes de segunda-feira para confirmar que a decisão de opt-in/opt-out está tomada com dados. Para SaaS B2B em Portugal com conteúdo técnico diferenciado, o benchmark ConvertMate (4,4× conversão via AI Mode) sustenta manter presença em AI responses.
+- **Dado de investigação accionável:** A evidência de que dados originais e research proprietário superam conteúdo genérico em citações LLM é argumento directo para clientes que questionam ROI de produção de conteúdo — incorporar nos materiais de pitch como case para GEO content strategy diferenciada do SEO clássico; não requer novo serviço, actualização de messaging.
+- **Anthropic Fable 5 até 22 junho sem custo:** Janela de teste para equipas técnicas de clientes avaliarem capabilities para workflows de research e due diligence; awareness apenas.
+
 ## 2026-06-13
 
 ### 🔵 Anúncios oficiais
