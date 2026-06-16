@@ -8,6 +8,30 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-16
+
+### 🔵 Anúncios oficiais
+
+- **Google Information Agents: rollout efectivo para AI Mode / AI Ultra** — [9to5Google](https://9to5google.com/2026/06/12/google-information-agents/) / [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Em 12 de junho, Robby Stein (VP Product, Search) confirmou que os information agents passaram de anúncio (I/O, maio) para rollout efectivo em todos os idiomas e mercados do AI Mode para subscritores AI Ultra. O agente monitoriza blogs, notícias, finanças em tempo real e redes sociais 24/7 e envia actualizações com links; expansão a planos inferiores prevista para o verão.
+
+- **Google confirma oficialmente: llms.txt não é usado pelo Search** — [Search Engine Land](https://searchengineland.com/google-llms-txt-chrome-lighthouse-478246). Em 15 de junho, John Mueller clarificou que os ficheiros llms.txt nos sites Google existem por razões internas de CMS e não são usados para descoberta ou ranking. Simultaneamente, o Chrome Lighthouse adicionou uma auditoria para llms.txt — para fins de UX/agents no lado do cliente, não para indexação.
+
+- **Optimizely + Conductor lançam plataforma AEO enterprise** — [CMSWire](https://www.cmswire.com/digital-experience/optimizely-conductor-unveil-aeo-platform/). Em 10 de junho, Optimizely e Conductor anunciaram uma plataforma AEO integrada com Agent Visibility Analytics para enterprise marketers rastrearem visibilidade em motores de IA e actuarem sobre insights de content discovery com agentes pré-construídos.
+
+### 📊 Estudos & dados
+
+- **Gap de execução: 43% declaram AI optimization como prioridade, só 14% rastreiam** — [GoodFirms](https://www.goodfirms.co/resources/seo-statistics-ai-search-rankings-zero-click-trends). 43% das empresas nomearam AI optimization como estratégia core em 2026; apenas 14% utilizam ferramentas de rastreamento de visibilidade em LLMs/AI Overviews. YouTube mentions e branded web mentions são os factores com maior correlação com visibilidade em ChatGPT, AI Mode e AI Overviews.
+
+### 📄 Research académico
+
+- **RAG: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers** — vários autores, [arxiv 2506.00054](https://arxiv.org/abs/2506.00054). Taxonomia de arquitecturas RAG em quatro classes (retriever-centric, generator-centric, hybrid, robustness-oriented); relevante para avaliar como pipelines de GEO recuperam e citam conteúdo em motores de IA generativa.
+
+### 💡 Implicações para destaque.ai
+
+- A confirmação oficial de que llms.txt não tem impacto em Search fecha o debate: não faz sentido oferecer implementação de llms.txt como serviço pago. Retirar da lista de deliverables se presente. **Acção interna.**
+- O gap 43% vs. 14% (prioridade declarada vs. rastreamento efectivo) é uma entrada comercial: diagnóstico de visibilidade em LLMs como serviço modular inicial, de baixo risco, antes de contrato de retainer. Clientes SaaS B2B com GSC AI reports activos têm os dados brutos mas não o framework de análise. **Requer novo serviço.**
+- O lançamento AEO da Optimizely/Conductor valida o mercado enterprise; o timing de entrar em Portugal antes da adopção local ainda é favorável. **Só awareness.**
+
 ## 2026-06-15
 
 ### 🔵 Anúncios oficiais
