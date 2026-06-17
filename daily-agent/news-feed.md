@@ -8,6 +8,21 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-17
+
+### ⚙️ Mudanças nas plataformas
+
+- **GSC AI opt-out toggle tornou-se efectivo hoje (17 junho)** — https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports. O controlo de exclusão de AI Overviews, AI Mode e funcionalidades generativas no Discover passou a ser respeitado pelo Google a partir de hoje; sites que o tenham activado deixam agora de aparecer em AI responses, sem impacto em rankings orgânicos.
+
+### 📊 Estudos & dados
+
+- **The State of AI Visibility in B2B SaaS: 2026 Benchmark Report** — DerivateX, https://derivatex.agency/report/ai-visibility-b2b-saas-2026/. 50 empresas B2B SaaS analisadas com 1.400 prompts de buyer-intent em ChatGPT, Perplexity, Claude e Gemini: AI Presence Score médio de 56,9/100, com 44% das empresas abaixo de 50; AI search representa já 17% da descoberta de marca para B2B SaaS, face a 4% em 2025. Claude é a plataforma mais selectiva (88% de mention rate vs. 100% no ChatGPT e Gemini).
+
+### 💡 Implicações para destaque.ai
+
+- O GSC opt-out agora activo cria urgência retroactiva: qualquer cliente que não tenha tomado decisão informada até ontem está agora excluído por omissão ou incluído sem política definida — momento para contacto de follow-up com clientes com conteúdo técnico diferenciado.
+- O estudo DerivateX (44% invisíveis em AI search, crescimento de 4% → 17% de branded discovery via AI) é o argumento quantificado mais directo para pitch B2B SaaS em Portugal disponível publicamente — incluir no deck com citação da fonte e notar que o benchmark é EUA, contexto PT pode divergir.
+
 ## 2026-06-16
 
 ### 🔵 Anúncios oficiais
