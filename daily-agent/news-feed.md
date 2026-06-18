@@ -8,6 +8,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-18
+
+### 🔵 Anúncios oficiais
+
+- **Meta lança AI Mode no Facebook Search** — [Search Engine Land](https://searchengineland.com/meta-ai-mode-facebook-search-480393), 16 Jun 2026. Respostas geradas por IA dentro do Facebook baseadas em conteúdo público de Groups, Reels e Meta apps; substitui lista tradicional de resultados. Não há API pública nem programa de publisher anunciado.
+
+- **Google clarifica product rich results: variantes com URL própria elegíveis** — [Google Search Central](https://developers.google.com/search/updates), 17 Jun 2026. Documentação actualizada confirma explicitamente que páginas de variante de produto com URL distinta são elegíveis para product rich results — alinhamento formal com prática já observada.
+
+- **Google alerta: spam policies aplicam-se a citações em AI Overviews e AI Mode** — [seroundtable.com](https://www.seroundtable.com/june-2026-google-webmaster-report-41446.htm), Jun 2026. Aviso formal de que comprar ou manipular citações em AI features constitui violação das políticas de spam, sujeita às mesmas consequências de ranking que manipulação em resultados orgânicos.
+
+### 📊 Estudos & dados
+
+- **Consumer trust in AI search: −28 p.p. em 12 meses** — [Search Engine Land](https://searchengineland.com/new-ai-search-data-visibility-trust-480089). Confiança do consumidor em respostas de AI search caiu de 82% para 54% entre 2025 e 2026; segmento cético cresceu 6× no mesmo período. Dado com metodologia e sample size não divulgados publicamente no resumo — tratar com cautela para citação directa.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity expande para Microsoft Office (Word, Excel, PowerPoint, Outlook)** — [perplexity.ai](https://www.perplexity.ai/hub/blog), Jun 2026. Perplexity Computer integrado nativamente em apps Microsoft 365; posicionamento explícito como camada de produtividade empresarial embutida em ferramentas existentes, não como motor de pesquisa autónomo.
+
+- **Google Search Console: nova secção de performance em AI Overviews e AI Mode** — [developers.google.com](https://developers.google.com/search/updates), Jun 2026. Rollout de secção dedicada que apresenta impressões e cliques em AI features de forma separada dos dados orgânicos clássicos; métricas distintas permitem comparação directa de visibilidade IA vs. orgânico.
+
+### 💡 Implicações para destaque.ai
+
+- **Compliance de earned citations — diferenciador imediato**: Google confirmou que manipular citações IA viola spam policies. A destaque.ai pode comunicar explicitamente metodologia de earned citations por conteúdo como garantia de compliance; mensagem de risco relevante para clientes que avaliam agências concorrentes com abordagens duvidosas. Só awareness — não requer mudança de serviço.
+- **Nova secção AI Mode no Search Console como KPI de retenção**: dados separados de visibilidade em AI Overviews/AI Mode permitem demonstrar ROI GEO com métricas verificáveis pelo próprio cliente. Incorporar no dashboard mensal de clientes; muda o pitch de "SEO clássico" para "visibilidade em IA search" com evidência directa do Google.
+- **Meta AI Mode como novo canal de descoberta B2B**: Facebook Groups é um canal de comunidade activo para decisores PME em Portugal. A ausência de API pública implica que o único caminho de visibilidade é conteúdo orgânico de qualidade partilhado em Groups — argumento adicional para estratégia de conteúdo orientada a comunidade. Awareness — sem acção imediata.
+
 ## 2026-06-17
 
 ### ⚙️ Mudanças nas plataformas
