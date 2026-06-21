@@ -8,6 +8,30 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-21
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic: governo dos EUA suspende acesso global a Fable 5 e Mythos 5** — [anthropic.com/news/fable-mythos-access](https://www.anthropic.com/news/fable-mythos-access). Diretiva de export control forçou Anthropic a desativar ambos os modelos para todos os clientes não-americanos; Claude Fable 5 (lançado para uso geral) e Claude Mythos 5 (camada sem algumas salvaguardas, para ciber-defensores e infra crítica) ficaram indisponíveis. Impacto imediato em integrações B2B europeias com a API Anthropic.
+
+- **Perplexity — Personal Computer: orquestrador híbrido local/cloud lançado** — [perplexity.ai/changelog/what-we-shipped-june-13th](https://www.perplexity.ai/changelog/what-we-shipped-june-13th). Perplexity lança Personal Computer, primeiro sistema de inferência híbrido local-servidor que decide automaticamente o que corre no dispositivo vs. em agentes cloud; acompanham Comet iOS, Computer for Enterprise e Computer no Slack. Posicionamento como camada de pesquisa embutida em fluxos de trabalho, não como motor autónomo.
+
+### 📊 Estudos & dados
+
+- **Zero-click searches atingem 68% nos EUA em 2026** — SparkToro/Similarweb via [searchengineland.com](https://searchengineland.com/google-zero-click-searches-2026-study-479717). 68,01% das pesquisas Google (EUA, jan–abr 2026) não geraram nenhum clique — contra 60,45% em 2024, um aumento de 7,56 p.p. em dois anos. AI Overviews presentes em >20% das pesquisas; quando surgem, CTR cai ~60%. Painel clickstream Similarweb, desktop + mobile web.
+
+- **AI Overviews reduzem cliques orgânicos em média 34,5%** — [ahrefs.com](https://ahrefs.com/blog/ai-overviews-reduce-clicks/). Estudo Ahrefs sobre impacto de AIO: queda média de 34,5% nos cliques orgânicos quando AIO aparece; caso extremo (Daily Mail): CTR desktop caiu de 25,23% para 2,79% (−89%). Marcas citadas no AIO ganham 35% mais cliques orgânicos e 91% mais pagos face a marcas não citadas.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Microsoft 365 Copilot — DLP para pesquisa web em rollout mundial em junho** — [microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes). Data Loss Prevention impede que dados sensíveis de prompts saiam para pesquisa web no Copilot Chat; respostas continuam ancoradas em fontes internas. Roll-out worldwide em junho para organizações com licenças M365 Copilot.
+
+### 💡 Implicações para destaque.ai
+
+- A suspensão do Fable 5 por diretiva americana afeta clientes europeus que usem a API Anthropic diretamente; a destaque.ai deve mapear exposição de clientes a esta dependência e identificar se Claude.ai como produto (vs. API) mantém acesso — diferenciador de serviço de consultoria: auditoria de dependências de plataforma AI.
+- Os dados de zero-clicks (68%) e queda de CTR (−34,5% médio com AIO) consolidam o argumento comercial GEO: estar na resposta AI é mais valioso do que o rank #1 clássico; estes números são citáveis em propostas a SaaS B2B portugueses com fontes verificáveis (SparkToro + Ahrefs).
+- O Perplexity Personal Computer como orquestrador local/cloud é o primeiro sinal de "AI search no dispositivo" — aware para acompanhar adoção enterprise; sem mudança de serviço imediata.
+
 ## 2026-06-20
 
 ### 🔵 Anúncios oficiais
