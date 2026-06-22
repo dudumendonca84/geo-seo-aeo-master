@@ -8,6 +8,10 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-22
+
+Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio oficial, estudo com dados ou mudança de plataforma nas últimas 48h que não tenha sido coberto nas entradas anteriores.
+
 ## 2026-06-21
 
 ### 🔵 Anúncios oficiais
