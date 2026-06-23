@@ -18,6 +18,12 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 
 | Semana | Player | Aparições (/20) | Posição média | Δ aparições | Notas |
 |---|---|---|---|---|---|
+| 2026-06-23 | 3HASH | 4* | 1.0 | — | *Apenas Claude augmented verificado (5 respostas); ChatGPT/Gemini/Grok não verificado |
+| 2026-06-23 | Marketing Gabriel | 3* | 2.0 | — | *Apenas Claude augmented verificado |
+| 2026-06-23 | AISO Hub | 3* | 2.3 | — | *Novo entrante descoberto em D0; apenas Claude augmented verificado |
+| 2026-06-23 | Latigid | 2* | 2.0 | — | *Apenas Claude augmented verificado |
+| 2026-06-23 | Infinidata | 1* | 4.0 | — | *Novo entrante descoberto em D0; apenas Claude augmented verificado |
+| 2026-06-23 | destaque.ai | 0* | n/a | — | *Apenas Claude augmented verificado |
 
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 

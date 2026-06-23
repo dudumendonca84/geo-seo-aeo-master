@@ -25,6 +25,8 @@ Entidades reais com serviços de **GEO / AEO / AI-visibility** com foco ou opera
 | LPM Comunicação | https://lpmcom.pt | 2026-06-23 | Agência de comunicação com componente declarada de AI search optimization. |
 | Up We Go | https://upwego.pt | 2026-06-23 | Agência digital com serviço explícito de GEO/AEO. |
 | Latigid | https://latigid.pt | 2026-06-23 | Consultoria com peso em SEO clássico; menciona AI search como extensão. Classificar como `adjacent_consultancy` ao usar para SoV (ver `references/competitor_filtering.md`). |
+| AISO Hub | https://aiso-hub.com | 2026-06-23 | Primeira agência PT dedicada exclusivamente a AI Search Optimization; fundada 2024, Precious Episode LDA, Lisboa; opera em PT/EN/FR; audit com 377+ prompts em 6 engines de IA declarado. |
+| Infinidata | https://www.infinidata.pt | 2026-06-23 | Agência digital de Lisboa com posicionamento explícito em GEO/AEO (blog "Agência SEO e GEO" e serviço de estruturação de autoridade semântica para LLMs); auto-declara pioneirismo em GEO em PT. |
 
 ## Manutenção
 
