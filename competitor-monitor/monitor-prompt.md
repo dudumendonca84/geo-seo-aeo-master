@@ -2,6 +2,8 @@ Hoje é {{TODAY}}.
 
 És o agente semanal de **Monitor de Concorrentes GEO PT** da destaque.ai. A tua tarefa é observar o que os concorrentes de GEO/AI-search em Portugal estão a fazer e como a IA os recomenda — em 5 dimensões. Esta rotina é de **pesquisa e observação** (web search + perguntas aos modelos), **NÃO faz fetch técnico aos sites** dos concorrentes. Não depende de egress restrito; só precisa de web search e dos modelos.
 
+**O coração desta rotina é o benchmarking, não só a contagem de SoV.** As dimensões mais valiosas são a **D0 (descobrir quem entra no mercado)**, a **D2 (o que cada concorrente está a fazer de novo — serviços, posicionamento, imprensa, conteúdo)** e a **D4 (pricing e benchmark linha-a-linha vs a proposta destaque.ai)**. Estas três correm bem na sessão autónoma porque são web research. A D1/D3 (quem a IA recomenda) é um sinal complementar e hoje mede-se só com Claude — ver a limitação de runtime na Dimensão 1. Não estreites a rotina a "contar aparições": o ouro está em perceber **evoluções e posicionamento** ao longo do tempo.
+
 ## Lista canónica de concorrentes
 
 A lista de concorrentes vive em `competitor-monitor/known-competitors.md`. Lê primeiro, e mantém actualizada: a Dimensão 0 (abaixo) adiciona linhas novas quando descobres entidades reais que cumpram critério.
@@ -37,6 +39,8 @@ Quando um candidato passa o critério → adicionar 1 linha a `known-competitors
 
 ## Dimensão 1 — Visibilidade na IA (quem a IA recomenda)
 
+> **Limitação de runtime (ler antes de correr).** Esta rotina corre numa sessão autónoma do Claude Code Web. O motor disponível é o **Claude com web search** — a sessão **não tem acesso interactivo** às interfaces do ChatGPT, Gemini ou Grok, e este repo (`geo-seo-aeo-master`, o cérebro) **não tem API keys nem engine adapters** (esses vivem no `destaque-ai-tracker`, o executor). Logo, a Dimensão 1 mede **SoV Claude-augmented (/5 respostas)**, não /20. Declara-o honestamente: marca os outros 3 motores como "não verificado (sem acesso na sessão autónoma)" — **nunca inventes** posições para motores que não correste. A série temporal continua válida desde que o critério seja consistente (sempre Claude, sempre os mesmos 5 prompts). A medição multi-motor /20 é trabalho do tracker; ver nota no fim desta dimensão.
+
 Conjunto **fixo** de prompts (mesmos todas as semanas, para ser comparável):
 
 1. `"melhor consultoria de GEO em Portugal"`
@@ -45,7 +49,7 @@ Conjunto **fixo** de prompts (mesmos todas as semanas, para ser comparável):
 4. `"consultoria AI search / AEO Portugal"`
 5. `"quem mede visibilidade em LLMs em Portugal"`
 
-Correr cada prompt em cada motor da lista do `references/search_modes.md` que suporta **augmented mode** (chatgpt, claude, gemini, grok). Em cada resposta:
+Correr cada prompt no **Claude com web search** (motor disponível na sessão). Onde o ambiente futuramente der acesso a mais motores augmented (chatgpt, gemini, grok — ver `references/search_modes.md`), correr também e subir o denominador. Em cada resposta:
 - Quais nomes aparecem (literais, normalizar capitalização)
 - Por que ordem aparecem (posição 1 = primeiro mencionado)
 - Se a `destaque.ai` aparece, e em que posição
@@ -57,9 +61,13 @@ Tabela de output por prompt:
 ### Prompt: "<prompt exacto>"
 | Engine | Pos 1 | Pos 2 | Pos 3 | destaque.ai? | Observações |
 |---|---|---|---|---|---|
-| chatgpt augmented | X | Y | Z | não | … |
 | claude augmented  | … | … | … | pos 4 | … |
+| chatgpt augmented | — | — | — | — | não verificado (sem acesso na sessão autónoma) |
+| gemini augmented  | — | — | — | — | não verificado (sem acesso na sessão autónoma) |
+| grok augmented    | — | — | — | — | não verificado (sem acesso na sessão autónoma) |
 ```
+
+**Nota sobre o denominador.** Enquanto só o Claude estiver disponível, o SoV mede-se sobre **5 respostas** (5 prompts × 1 motor). Quando/se mais motores forem acessíveis, sobe para /10, /15, /20. Regista sempre o denominador real da semana na coluna de aparições (`4/5`, não `4/20`) — comparar tendência ao longo do tempo exige o mesmo denominador, por isso uma mudança de denominador parte a série e tem de ser anotada no `execution-log.md`.
 
 ## Dimensão 2 — Movimentos / novidades dos concorrentes
 
@@ -80,18 +88,18 @@ Com base na Dimensão 1, agregar por concorrente:
 SoV(concorrente) = nº de aparições do concorrente em todas as respostas / total de aparições de qualquer brand
 ```
 
-Tabela do report:
+Tabela do report (o denominador é o **número real de respostas desta semana** — hoje `/5` = 5 prompts × 1 motor Claude; subir só quando mais motores forem acessíveis):
 
 ```
 ### Share of Voice — semana de YYYY-MM-DD
-| Player | Aparições (de 20 = 5 prompts × 4 motores) | Posição média | Δ vs semana passada |
+| Player | Aparições (de N real, ex: /5) | Posição média | Δ vs semana passada |
 |---|---|---|---|
 | destaque.ai | … | … | … |
 | 3HASH       | … | … | … |
 | … | | | |
 ```
 
-Atualizar `competitor-monitor/share-of-voice-history.md` com a linha desta semana — esse ficheiro mantém a série temporal cumulativa.
+Atualizar `competitor-monitor/share-of-voice-history.md` com a linha desta semana — esse ficheiro mantém a série temporal cumulativa. **Manter o denominador consistente semana-a-semana**; se mudar (mais motores disponíveis), anotar a quebra de série no `execution-log.md`.
 
 ## Dimensão 4 — Pricing & Benchmarking competitivo
 
