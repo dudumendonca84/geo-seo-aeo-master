@@ -8,6 +8,7 @@ Routines do Claude Code Web não se podem criar programaticamente. Aqui estão o
 |---|---|---|---|
 | [`geo-seo-news-daily.md`](./geo-seo-news-daily.md) | `geo-seo-news-daily` | Diário 08:00 Lisboa | Loop 1 — research das 24-48h, alimenta `news-feed.md`, absorve insights em references |
 | [`destaque-ai-self-audit-weekly.md`](./destaque-ai-self-audit-weekly.md) | `destaque-ai-self-audit-weekly` | Segundas 09:00 Lisboa | Loop 2 — self-audit SINAL ao destaque.ai, actualiza baseline/backlog/history |
+| [`competitor-monitor-weekly.md`](./competitor-monitor-weekly.md) | `competitor-monitor-weekly` | Terças 09:00 Lisboa | Loop 4 — monitor semanal dos concorrentes GEO PT em 5 dimensões (descoberta, SoV, movimentos, pricing); alimenta `competitor-monitor/` |
 | [`synthesis-weekly.md`](./synthesis-weekly.md) | `synthesis-weekly` | Sextas 10:00 Lisboa | Loop 3 — absorve patterns anonimizados de `destaque-ai-ops/learnings/`, propõe PR draft a `references/`. Requer MCP scope em ambos os repos |
 
 ## Setup
