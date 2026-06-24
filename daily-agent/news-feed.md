@@ -8,6 +8,36 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-24
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic — Claude Tag** — [anthropic.com](https://www.anthropic.com/news/introducing-claude-tag). Lançado a 23 Jun em beta para clientes Enterprise e Team: Claude integra-se como membro de canais Slack, constrói contexto a partir do histórico de mensagens e pode receber delegação de tarefas por qualquer membro do canal. Sem API extra — funciona directamente via menção @Claude.
+
+- **Google Search Console — Generative AI Performance Reports** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). Relatórios dedicados de impressões em AI Overviews e AI Mode, com cinco dimensões: impressões, páginas, países, dispositivos e datas (granularidade hourly/daily/weekly/monthly). Rollout inicial a subset de proprietários de sites no Reino Unido; expansão global sem data confirmada. Dados de cliques **não incluídos** na versão actual.
+
+- **Google — Toggle de opt-out de funcionalidades generativas** — [blog.google](https://blog.google/products-and-platforms/products/search/new-controls-website-owners/). Toggle no Search Console permite excluir um site de AI Overviews, AI Mode e AI Overviews em Discover. Opt-out não é usado como sinal de ranking nas restantes pesquisas orgânicas.
+
+- **Google I/O 2026 — Métricas de escala** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). AI Mode ultrapassou **1 bilião de utilizadores mensais**; AI Overviews tem **2,5 biliões de utilizadores activos mensais**. Modelo base actualizado para Gemini 3.5 Flash; Personal Intelligence expandida a ~200 países sem subscrição.
+
+### 📊 Estudos & dados
+
+- **97% dos ficheiros llms.txt nunca receberam um pedido** — Ahrefs, [ahrefs.com/blog/llmstxt-study](https://ahrefs.com/blog/llmstxt-study/). Análise de 137.210 domínios (Ahrefs Web Analytics, Mai 2026): ~28% tinham um llms.txt válido (~38K domínios), mas apenas ~1.100 (3%) receberam qualquer tráfego de crawlers. Nenhum major AI lab confirmou publicamente honrar o ficheiro em produção. Benefício prático actual limita-se a agentes IDE (Cursor, Cline) e documentação para developers.
+
+- **50 domínios mais citados pelo Perplexity (Jun 2026)** — Ahrefs, [ahrefs.com](https://ahrefs.com/blog/most-cited-domains-perplexity/). Análise de 3,1 milhões de queries nos EUA; rankings equivalentes publicados para Copilot e Grok no mesmo período.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity — Deep Research com Labs advancements** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog/what-we-shipped-june-13th). A 19 Jun: Deep Research integrado em Computer com command access, forking e analytics APIs com custom credit limits. A 13 Jun: Research incorpora melhorias do Labs (criação de imagens/gráficos, browsing, orquestração inteligente).
+
+- **Cloudflare — Bots representam 57,5% do tráfego HTML** — meados de 2026. Automated requests ultrapassaram tráfego humano na web; dado contextualiza a pressão crescente sobre crawl budget e gestão de robots.txt em contexto de AI crawlers.
+
+### 💡 Implicações para destaque.ai
+
+- **Search Console Gen AI Reports + opt-out toggle** são argumento de vendas imediato para clientes B2B com publicações/blogs: pela primeira vez há dados mensuráveis de visibilidade em AI Mode. Incluir "auditoria de visibilidade em AI features" no onboarding; o opt-out deve ser enquadrado como decisão estratégica (publisher vs. captura zero-click), não como protecção automática.
+- **llms.txt sem adopção de crawlers** (97% sem pedidos, 137K domínios): evitar vender implementação de llms.txt como diferenciador até há adoção confirmada pelos labs. Comunicação correcta: "pré-posicionamento técnico" — não "optimização imediata". Excepção: clientes developer-tools/SaaS ganham discoverability em IDE agents já agora.
+- **Claude Tag em Slack**: sinal de que Anthropic está a competir no espaço de ferramentas enterprise (Teams, Slack) directamente; monitorizar adoção e casos de uso B2B para avaliar se é serviço complementar ou concorrente de ferramentas internas dos clientes.
+
 ## 2026-06-22
 
 Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio oficial, estudo com dados ou mudança de plataforma nas últimas 48h que não tenha sido coberto nas entradas anteriores.
