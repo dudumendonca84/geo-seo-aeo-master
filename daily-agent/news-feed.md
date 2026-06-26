@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-26
+
+### 🔵 Anúncios oficiais
+
+- **Bing — Webmaster Tools AI Performance: Citation Share, Intents, Topics e Compare** — [blogs.bing.com](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare). Lançado a 16 Jun em preview mundial: Citation Share calcula a percentagem de citações do site face ao total de citações para a mesma query de grounding; Intents classifica queries por tipo (Informacional, Comercial, Navigacional, Research, etc.); Topics agrupa queries em clusters temáticos; Compare sobrepõe períodos para análise de evolução histórica. Complementa directamente os relatórios equivalentes do Google Search Console (lançados a 3 Jun).
+
+### 📊 Estudos & dados
+
+- **Ahrefs — AIO citations: share do Top-10 cai de 76% para 38%** — [ahrefs.com](https://ahrefs.com/blog/ai-overview-citations-top-10/). Publicado a 2 Mar 2026; 863K SERPs e 4M URLs de AI Overviews analisadas (mais do dobro da análise anterior). Em julho 2025, 76% das citações em AIO provinham de páginas no Top-10 orgânico; na análise actual: 38% Top-10, 31,2% posições 11–100, 31% fora do Top-100. Estrutura do conteúdo e citabilidade têm agora maior peso do que rank orgânico isolado.
+
+- **Conductor — AEO/GEO Benchmarks Report 2026** — [conductor.com](https://www.conductor.com/academy/aeo-geo-benchmarks-report/). Corpus: 21,9M pesquisas Google, 17M respostas AI-generated, 100M citações AI em 13.770 domínios e 10 sectores. AI Overviews activados em 25,11% das queries; Health Care lidera (48,7%), Real Estate tem menor presença (4,48%). Tipos de conteúdo mais citados: blogs, vídeos, artigos, notícias e páginas de produto.
+
+### 💡 Implicações para destaque.ai
+
+- O Bing Citation Share (% de visibilidade por query de grounding) é uma métrica directamente accionável: clientes podem agora medir share-of-voice AI em dois motores (Google + Bing) de forma comparável — argumento sólido para propor monitorização contínua de visibilidade AI como serviço recorrente, não apenas auditoria pontual.
+- A queda 76%→38% no Top-10 AIO confirma que clientes com rankings orgânicos sólidos mas conteúdo não estruturado para citabilidade (passagens autónomas, dados com fonte, listas definidas) perdem visibilidade AI apesar do SEO; diferenciador claro para o pitch GEO da destaque.ai.
+- O Conductor report calibra a mensagem comercial: apenas 25,11% das queries disparam AIO — não é "SEO morreu" mas "o quarto das pesquisas que afecta o teu sector requer estratégia distinta" — framing mais honesto e defensável perante clientes B2B portugueses que questionem urgência.
+
 ## 2026-06-24
 
 ### 🔵 Anúncios oficiais
