@@ -26,6 +26,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 - A queda 76%→38% no Top-10 AIO confirma que clientes com rankings orgânicos sólidos mas conteúdo não estruturado para citabilidade (passagens autónomas, dados com fonte, listas definidas) perdem visibilidade AI apesar do SEO; diferenciador claro para o pitch GEO da destaque.ai.
 - O Conductor report calibra a mensagem comercial: apenas 25,11% das queries disparam AIO — não é "SEO morreu" mas "o quarto das pesquisas que afecta o teu sector requer estratégia distinta" — framing mais honesto e defensável perante clientes B2B portugueses que questionem urgência.
 
+## 2026-06-25
+
+### 🔵 Anúncios oficiais
+- **Google June 2026 Spam Update** — Google Search Status Dashboard / [Search Engine Land](https://searchengineland.com/google-releases-june-2026-spam-update-481002). Launched June 24 at 9:00 a.m. PT; global rollout, all languages, still in progress. Targets scaled content abuse, cloaking, doorway pages, expired-domain abuse, and auto-generated spam — explicitly does NOT cover link spam or site reputation abuse. Second spam update of 2026.
+- **Anthropic — Claude Tag** — [anthropic.com/news](https://www.anthropic.com/news/introducing-claude-tag). Launched June 23; Slack-native AI team member available to Enterprise and Team customers. Learns organizational context from channel history, executes multi-step tasks autonomously, and has an ambient mode that proactively surfaces updates. Anthropic disclosed that 65% of its own product team's code is written by an internal version of Claude Tag.
+- **Google Search Central Live Deep Dive — Europe** — [developers.google.com](https://developers.google.com/search/blog/2026/06/scl-deep-dive-europe-2026). Community vote open until July 1 for city selection (Barcelona, Budapest, Berlin, Frankfurt, Lisbon, Prague). Event planned for September–October 2026; first EMEA edition of the multi-day technical deep-dive format.
+
+### 📊 Estudos & dados
+- **AI-Recommended Brands Saw 2.5x More Site Visits** — Similarweb / [Search Engine Journal](https://www.searchenginejournal.com/ai-recommended-brands-saw-2-5x-more-site-visits-similarweb/580241/). US desktop study (finance, travel, beauty): brands cited by ChatGPT are 2.5× more likely to receive a site visit within 7 days. AI-influenced visitors view avg. 12 pages and spend 11.8 min on site vs. 6.5 pages / 5.6 min for non-AI traffic. 55.9% of those visits arrive via search, not direct ChatGPT referral.
+- **Only 38% of AI Overview citations come from top-10 organic results** — Ahrefs / [ahrefs.com/blog](https://ahrefs.com/blog/ai-overview-citations-top-10/). Analysis of 863K keyword SERPs and 4M AI Overview URLs shows the share fell from 76% seven months ago; 31.2% of citations now come from positions 11–100, and 31.0% from beyond position 100 — driven by Gemini's multi-query fan-out system.
+- **WARP: Web Agent Retrieval Poisoning** — Cornell Tech / [Search Engine Land](https://searchengineland.com/deep-research-ai-agents-poison-ugc-480952). A single injected comment on a public UGC page causes deep-research AI agents to cite fabricated entities in 38–62% of generated reports. Attack requires zero access to the underlying model, prompts, or search engine.
+- **B2B brands cited in only 3% of AI Overviews** — Walker Sands / [Search Engine Land](https://searchengineland.com/b2b-brands-rank-google-appear-ai-overviews-480954). Analysis of 828 enterprise B2B companies across 45M+ queries (March 2026): AI Overviews appear in ~50% of queries where brands rank organically, yet the median brand is cited in only 3% of those AIOs. Cybersecurity led at 4.2%; professional services trailed at 2.1%.
+
+### ⚙️ Mudanças nas plataformas
+- **Google — llms.txt confirmed to have no ranking value** — John Mueller stated llms.txt is untrustworthy self-declaration: "can't trust what is in the LLMs.txt file as a way of differentiating between different websites." Confirmed no effect on rankings. [Search Engine Journal](https://www.searchenginejournal.com/google-exposes-llms-txt-flaw/579814/)
+- **Google Search Console — Search Generative AI Performance Reports** — Launched June 3; shows impressions for URLs appearing in AI Overviews and AI Mode, broken down by page, country, device, and date. No click or CTR data yet; not available via API or BigQuery. Includes a new opt-out toggle to exclude a site from AI Overviews and AI Mode independently of standard organic indexing. [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
+- **Google — Back-button hijacking enforcement began June 15** — Pages preventing browser back navigation may now receive manual spam actions or automated demotions; site owners are liable even when the behaviour originates from third-party ad scripts. [developers.google.com](https://developers.google.com/search/blog/2026/04/back-button-hijacking)
+
+### 📄 Research académico
+- **Diagnosing and Repairing Citation Failures in GEO** — [arxiv.org/abs/2603.09296](https://arxiv.org/abs/2603.09296) (March 2026). 43% of topically relevant pages receive zero AI citations despite covering the right subject matter; paper identifies three citation failure mode categories and proposes an automated repair system — actionable for brands with content already indexed but uncited in AI engines.
+
+### 💡 Implicações para destaque.ai
+- O spam update de 24 Jun penaliza directamente conteúdo gerado em escala sem qualidade editorial — reforça o argumento de pitch para B2B: qualidade e autoridade como hedge contra actualizações de spam, não apenas como best practice.
+- O estudo Similarweb valida GEO como canal de pipeline concreto: visitas vindas de recomendações AI têm engagement 2× superior. Para SaaS B2B português, justifica incluir métricas de visibilidade em AI (share of voice em ChatGPT/Gemini) no reporting de clientes — novo serviço a considerar.
+- O Google Search Console com relatório de impressões AI é a primeira fonte de dados first-party para medir exposição em AI Mode; vale integrar no onboarding de clientes como baseline de AEO — awareness, sem mudança de pitch por agora.
+
 ## 2026-06-24
 
 ### 🔵 Anúncios oficiais
@@ -55,6 +81,36 @@ editorial_voice: sober, primary-source-anchored, no hype
 - **Search Console Gen AI Reports + opt-out toggle** são argumento de vendas imediato para clientes B2B com publicações/blogs: pela primeira vez há dados mensuráveis de visibilidade em AI Mode. Incluir "auditoria de visibilidade em AI features" no onboarding; o opt-out deve ser enquadrado como decisão estratégica (publisher vs. captura zero-click), não como protecção automática.
 - **llms.txt sem adopção de crawlers** (97% sem pedidos, 137K domínios): evitar vender implementação de llms.txt como diferenciador até há adoção confirmada pelos labs. Comunicação correcta: "pré-posicionamento técnico" — não "optimização imediata". Excepção: clientes developer-tools/SaaS ganham discoverability em IDE agents já agora.
 - **Claude Tag em Slack**: sinal de que Anthropic está a competir no espaço de ferramentas enterprise (Teams, Slack) directamente; monitorizar adoção e casos de uso B2B para avaliar se é serviço complementar ou concorrente de ferramentas internas dos clientes.
+
+## 2026-06-23
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console — Generative AI Performance Reports** — developers.google.com (3 Jun). Novos relatórios dedicados à visibilidade em AI Overviews e AI Mode: impressões, páginas, países, dispositivos e datas. Não incluem dados de cliques. Em rollout inicial para subset de sites no Reino Unido. [https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
+
+- **Google AI Mode — Information Agents disponíveis para AI Ultra** — blog.google (12 Jun). Agentes de pesquisa contínua disponíveis para subscritores AI Ultra em todos os mercados e idiomas do AI Mode. Monitorizam a web em background 24/7 e entregam sínteses com capacidade de acção. [https://blog.google/products-and-platforms/products/search/search-io-2026/](https://blog.google/products-and-platforms/products/search/search-io-2026/)
+
+- **Bing Webmaster Tools — AI Visibility Insights: Intents, Topics, Citation Share, Compare** — blogs.bing.com (Jun). Quatro novas dimensões de reporte de presença em respostas AI do Copilot/Bing em preview global: intent das queries, clusters temáticos, percentagem de citações por query, e comparação temporal. [https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare)
+
+- **OpenAI Responses API — Pesquisa web com image results (GA)** — openai.com (9 Jun). Web search na Responses API passa a devolver resultados de imagem junto com texto, configurável via `search_content_types` e `image_settings`. [https://platform.openai.com/docs/guides/tools-web-search](https://platform.openai.com/docs/guides/tools-web-search)
+
+### 📊 Estudos & dados
+
+- **State of Generative Engine Optimization in B2B Marketing** — GNW Consulting + Demand Metric (3 Jun). Com base em 225 respostas de líderes B2B, documenta GEO em fase operacional com impacto mensurável: "We're in an execution phase, with companies betting on measurable performance." Recurso gratuito. [https://www.prnewswire.com/news-releases/new-research-from-gnw-consulting-and-demand-metric-finds-geo-adoption-accelerating-across-b2b-marketing-302789540.html](https://www.prnewswire.com/news-releases/new-research-from-gnw-consulting-and-demand-metric-finds-geo-adoption-accelerating-across-b2b-marketing-302789540.html)
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Search Central — GEO e AEO nomeados como "still SEO"** (5 Jun). Documentação oficial actualizada: Google define GEO e AEO explicitamente e afirma que "optimizing for generative AI search is optimizing for the search experience, and thus still SEO." Debunka também llms.txt, content chunking para AI e schema especial para LLMs como desnecessários. [https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/](https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/)
+
+- **Google — FAQ Rich Results descontinuados** (Mai/Jun 2026). Suporte removido desde 7 Mai. Search Console remove relatórios em Jun, API em Ago. FAQPage schema mantém valor GEO como sinal estrutural para LLMs; o benefício visual em SERP deixou de existir.
+
+- **Movimentação de rankings não confirmada** (19-21 Jun). Search Engine Roundtable reportou movimento focado em sites black-hat/spam a partir de 19 Jun. Google não confirmou update oficial. A monitorizar. [https://www.digitalapplied.com/blog/google-june-2026-ranking-update-volatility-seo-analysis](https://www.digitalapplied.com/blog/google-june-2026-ranking-update-volatility-seo-analysis)
+
+### 💡 Implicações para destaque.ai
+
+- **Search Console AI reports = prova de produto**: os relatórios de impressões em AI Overviews/AI Mode tornam GEO mensurável com dados nativos Google. Para clientes SaaS B2B em Portugal o argumento evolui de "visibilidade futura" para "visibilidade com métricas". Rollout começou no UK — estimar disponibilidade PT em semanas. Preparar framing de relatório antecipadamente. Só awareness por agora.
+- **Bing AI Citation Share é o único KPI de citação disponível hoje**: percentagem de citações por query é exactamente o que faltava para demonstrar ROI de GEO. Mesmo com quota Bing/Copilot menor em Portugal, é o KPI nativo disponível. Incorporar nos pitches como proxy mensurável de AEO. Potencial novo ângulo de serviço.
+- **GEO B2B em fase operacional (n=225)**: early mover advantage a estreitar. Clientes SaaS PT que não iniciaram GEO operacional estão já atrás da curva. Não requer novo serviço — reforça urgência no pitch existente.
 
 ## 2026-06-22
 
@@ -115,6 +171,26 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - O salto de 4% → 17% de descoberta B2B via AI num único ano é o argumento quantitativo mais forte disponível para justificar investimento GEO/AEO junto de clientes portugueses; integrar no pitch deck com fonte citável (data-mania benchmark, 50 empresas SaaS).
 - A distinção citation vs. recommendation (19.8% de divergência, SEJ 18 junho) valida a necessidade de optimização orientada a recommendation e não apenas a citation — possível novo tier de serviço a propor, diferenciador face a concorrentes que apenas medem presença em AI responses.
 - O crescimento de 386% do Claude em referrals exige incluir Anthropic como plataforma-alvo explícita na estratégia AEO de clientes; actualmente subrepresentada nos frameworks face a ChatGPT e Perplexity.
+
+## 2026-06-19
+
+### 🔵 Anúncios oficiais
+- **Google Search Console: Generative AI Performance Reports** — [Google Search Central](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports), 3 Jun 2026. Novos relatórios dedicados mostram impressões em AI Overviews e AI Mode (Search + Discover); cinco dimensões: impressões, páginas, países, dispositivos, datas (granularidade horária a mensal). Sem dados de cliques, CTR ou queries por agora. A rolar para sites no Reino Unido em primeiro lugar.
+- **Perplexity lança "Brain"** — [Perplexity Blog](https://www.perplexity.ai/hub/blog/self-improving-memory-for-agents), 18 Jun 2026. Sistema de memória auto-melhorante para o agente Computer: constrói um grafo de contexto das tarefas executadas e atualiza-se em intervalos regulares (e.g., overnight). Números divulgados pela Perplexity (sem validação externa): +25% de correção e +16% de recall em tarefas repetidas. Em Research Preview para assinantes Max e Enterprise Max.
+- **Google atualiza orientação sobre llms.txt** — [Search Engine Journal](https://www.searchenginejournal.com/googles-says-its-fine-to-use-llms-txt-for-ai-seo/579608/), Jun 2026. A documentação Search Central foi revista: llms.txt não afeta rankings no Google Search (positiva nem negativamente). Tom anterior era dissuasivo; nova versão reconhece que outros motores de IA podem ler o ficheiro, limitando o aviso a "Google Search (incluindo as suas funcionalidades de IA generativa)".
+
+### 📊 Estudos & dados
+- **AI Overviews reduzem 58% dos cliques para páginas no topo** — [Ahrefs](https://ahrefs.com/blog/ai-overviews-reduce-clicks/), Fev 2026. Análise de 300.000 keywords (150k com AI Overview, 150k informacionais sem): CTR do resultado #1 em queries com AI Overview caiu de 0,073% (Dez 2023) para 0,016% (Dez 2025). O mesmo estudo oito meses antes registava -34,5% — a queda está a acelerar.
+- **llms.txt: adoção de 10% mas crawlers de IA ignoram o ficheiro** — [Presenc AI Research](https://presenc.ai/research/state-of-llms-txt-2026), 2026. Survey de 300.000 domínios (SE Ranking): taxa de adoção de 10,13%. Monitorização de tráfego: 84 pedidos a llms.txt em 62.100 visitas de AI crawlers (0,1%). GPTBot, ClaudeBot e PerplexityBot crawlam maioritariamente HTML direto.
+
+### ⚙️ Mudanças nas plataformas
+- **UK CMA impõe requisitos de conduta ao Google Search** — [GOV.UK](https://www.gov.uk/government/news/further-cma-action-to-secure-a-fairer-deal-for-businesses-and-improve-google-search-services-in-uk), 3 Jun 2026. Ao abrigo do DMCC Act 2024: (1) Google deve dar ferramentas a editores para optar por não ter conteúdo usado em AI Overviews; (2) atribuição obrigatória com links claros em resultados gerativos. Prazo: 9 meses.
+- **Google AI Mode ultrapassa 1 bilhão de utilizadores mensais** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Um ano após o lançamento, AI Mode atingiu este marco; queries a duplicar por trimestre desde o início.
+
+### 💡 Implicações para destaque.ai
+- A introdução de métricas de impressões de AI Mode no Search Console valida AI visibility como KPI autónomo do SEO clássico — argumento comercial direto para SaaS B2B que ainda não monitoriza presença em AI Overviews; requer atualização de dashboards de reporting e proposta de valor.
+- Os dados Ahrefs (-58% de cliques para queries com AI Overview) são o argumento mais forte para clientes conservadores: a perda de tráfego informacional é mensurável e está a acelerar. Não requer mudança de serviço, mas sim enquadramento dos dados em apresentações comerciais.
+- A decisão da CMA pode preceder legislação semelhante na UE; para clientes portugueses em setores regulados (fintech, saúde, legal), o opt-out de AI Overviews é um tópico de compliance a monitorizar nos próximos 12-18 meses. Awareness necessária, sem ação imediata.
 
 ## 2026-06-18
 
@@ -203,6 +279,40 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - **Dado de investigação accionável:** A evidência de que dados originais e research proprietário superam conteúdo genérico em citações LLM é argumento directo para clientes que questionam ROI de produção de conteúdo — incorporar nos materiais de pitch como case para GEO content strategy diferenciada do SEO clássico; não requer novo serviço, actualização de messaging.
 - **Anthropic Fable 5 até 22 junho sem custo:** Janela de teste para equipas técnicas de clientes avaliarem capabilities para workflows de research e due diligence; awareness apenas.
 
+## 2026-06-14
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console: Generative AI Performance Reports** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) (3 Jun). Google lançou relatórios dedicados de visibilidade em AI search: impressões em AI Overviews, AI Mode e Discover, segmentadas por página, país, dispositivo e data. Rollout inicial para subset de sites UK; expansão global a seguir.
+
+- **Perplexity Research — actualização multimodal** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog/what-we-shipped-june-13th) (13 Jun). Research incorpora criação de imagens, gráficos, browsing e media display. Lançados Comet iOS e multimodal Deep Research; Model Council passa a comparar múltiplos modelos em paralelo.
+
+- **Anthropic S-1 confidencial submetido à SEC** — [anthropic.com/news](https://www.anthropic.com/news/confidential-draft-s1-sec) (1 Jun). Anthropic submeteu registo para IPO. Claude Fable 5 e Mythos 5 suspensos por directiva governamental de controlo de exportações — [anthropic.com/news](https://www.anthropic.com/news/claude-fable-5-mythos-5).
+
+### 📊 Estudos & dados
+
+- **State of llms.txt 2026** — [presenc.ai/research](https://presenc.ai/research/state-of-llms-txt-2026). Adopção em 10.13% de 300 000 domínios; apenas 0.1% do tráfego de crawlers IA acede ao /llms.txt. Nenhum major player (Google, OpenAI, Anthropic) confirmou leitura em produção. Semrush não encontrou correlação estatística entre llms.txt e melhoria de citações em AI.
+
+- **GEO — impacto das estratégias de optimização** — [emarketer.com](https://www.emarketer.com/content/faq-on-geo-aeo--where-ai-search-seo-overlap-2026). Citar fontes, adicionar estatísticas e linguagem autoritativa melhora visibilidade em motores generativos entre 30-40%; combinar estratégias supera qualquer táctica isolada em >5.5% (Aggarwal et al.). 92.36% dos AI Overviews incluem pelo menos um domínio do top 10 orgânico.
+
+### ⚙️ Mudanças nas plataformas
+
+- **OpenAI — GPT-5.2 removido** — [help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) (12 Jun). GPT-5.2 retirado do ChatGPT; conversas migradas automaticamente para GPT-5.5. GPT-4.5 encerra 27 Jun; OpenAI o3 encerra 26 Ago.
+
+- **Google AI Mode — 1 mil milhões de utilizadores mensais** — [blog.google](https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/). Um ano após lançamento: 1B utilizadores mensais, queries a duplicar por trimestre. Gemini 3.5 Flash é agora o modelo padrão global em AI Mode; Search Agents disponíveis directamente em Search.
+
+- **Google: spam policies alargadas a AI search** — [searchengineland.com](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298). Google confirmou que as políticas anti-spam se aplicam a AI Overviews e AI Mode, com aviso explícito contra manipulação e compra de citações em AI search.
+
+### 📄 Research académico
+
+- **RAG: Comprehensive Survey of Architectures, Enhancements and Robustness Frontiers** — [arxiv 2506.00054](https://arxiv.org/abs/2506.00054) (Mai 2026). Survey cobre arquitecturas retriever-centric, generator-centric e híbridas; relevante para sistemas de content citation automática em contexto B2B.
+
+### 💡 Implicações para destaque.ai
+
+- Google Search Console Gen AI reports é a primeira métrica oficial de visibilidade em AI search fornecida pela Google — abre nova categoria de KPIs para clientes B2B (impressões em AI Mode vs. cliques orgânicos) e posiciona a destaque.ai para auditar e reportar esses dados como serviço.
+- Google alargar spam policies a AI search reforça o posicionamento white-hat da destaque.ai: abordagens de "citation hacking" ou link schemes adaptados para AI search têm agora risco de penalização explícito — diferenciador de pitch.
+- llms.txt sem ROI comprovado → não prioritizar como deliverable; redirigir esforço para estrutura de conteúdo, schema.org e authority building — correlação documentada de 30-40% em citações AI.
+
 ## 2026-06-13
 
 ### 🔵 Anúncios oficiais
@@ -260,6 +370,154 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - **Urgência no pitch GEO para SaaS B2B.** AI Mode a 1B utilizadores com 69% de tráfego transaccional documentado remove o argumento "ainda é cedo". Clientes em Portugal com dependência de lead gen via pesquisa orgânica devem ser abordados com dados concretos, não com previsões.
 
 - **Alinhamento com terminologia Google.** A guidance oficial de GEO/AEO do Google Search Central é uma âncora de credibilidade para o pitch junto de decisores mais conservadores; recomenda-se rever materiais comerciais para usar a mesma nomenclatura e citar fontes primárias Google. Requer apenas actualização de awareness e materiais — não muda serviço.
+
+## 2026-06-11
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console: Generative AI Performance Reports** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) (June 3, 2026). Novos relatórios dedicados no Search Console mostram impressões do site em AI Overviews, AI Mode e Discover AI features, com granularidade horária a mensal e filtros por página, país e device. Inclui toggle de opt-out que remove o site das respostas de IA sem afectar os resultados de pesquisa clássicos. Rollout gradual iniciado no Reino Unido, a expandir globalmente.
+
+- **Google I/O 2026: AI Mode atinge 1B utilizadores mensais e lança Information Agents** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). AI Mode ultrapassa 1 mil milhão de utilizadores mensais um ano após lançamento, com queries a duplicar cada trimestre. Gemini 3.5 Flash torna-se o modelo padrão global. Personal Intelligence expande para ~200 países e 98 idiomas sem subscrição. "Information Agents" — agentes que monitorizam a web 24/7 e enviam sínteses — anunciados para AI Pro/Ultra subscribers no verão 2026. AI Overviews chega a 2,5B utilizadores mensais activos.
+
+- **Google publica guia oficial de GEO em Search Central** — [searchenginejournal.com](https://www.searchenginejournal.com/googles-new-guidance-claims-authority-over-seo-tools-and-aeo-geo/578162/) | [digitalapplied.com](https://www.digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026). A 15 de maio, Google publicou "Optimizing your website for generative AI features on Google Search" na Search Central, e a 5 de junho adicionou AEO/GEO como categoria explícita na sua página de ferramentas e serviços SEO de terceiros — reconhecimento oficial que "optimizar para AI search é ainda SEO".
+
+### 📊 Estudos & dados
+
+- **AI search cresce 42,8% YoY, gap com Google Search estreita** — [surmado.com](https://www.surmado.com/blog/answer-engine-optimization-aeo-geo-guide). Q1 2025→Q1 2026: visitas AI search passaram de 15,6B para 27,4B (+42,8%); Google Search cresceu apenas 2,4% no mesmo período. O rácio Google/AI-search desceu de 4,9:1 para 3,5:1. Visitantes via AI search têm valor 4,4× superior ao visitante orgânico médio (chegam após síntese comparativa).
+
+- **llms.txt: 10,1% de adopção, crawlers IA ignoram o ficheiro** — [aeo.press](https://www.aeo.press/ai/the-state-of-llms-txt-in-2026) | [wix.com/studio](https://www.wix.com/studio/ai-search-lab/llms-txt-myths). Estudo SE Ranking (300 K domínios): taxa de adopção de 10,13%. Em 500M de visitas de bots IA num período de 90 dias, apenas 408 foram directamente a `/llms.txt` — GPTBot, ClaudeBot, PerplexityBot ignoram o ficheiro e rastreiam HTML directamente. Excepção: IDEs de desenvolvimento (Cursor, Claude Code, GitHub Copilot) lêem `/llms.txt` de forma consistente.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google May 2026 Core Update — concluído, dados analisáveis a partir de hoje** — [searchenginejournal.com](https://www.searchenginejournal.com/googles-may-core-update-complete-after-volatile-rollout/577704/). Rollout de 21 mai a 2 jun (11 dias 21 horas). Glenn Gabe reportou impacto "across verticals and countries", mais pesado que o update de março. Penalizou ecossistemas de conteúdo de baixo valor, agregadores e content farms; beneficiou sites com expertise original e profundidade de nicho. Junho 11 é a data mínima recomendada para comparar dados de Search Console com baseline pré-update.
+
+- **ChatGPT: novo sistema de memória e web search em Codex** — [releasebot.io](https://releasebot.io/updates/openai/chatgpt). Novo sistema de memória escalável com resumo revisto pelo utilizador (Plus/Pro, EUA). Codex passa a ter web search standalone em code mode, incluindo a partir de chamadas JavaScript aninhadas.
+
+- **Claude Managed Agents em public beta** — [releasebot.io](https://releasebot.io/updates/anthropic/claude). Agentes com agendamento cron, variáveis de ambiente em vault, integrações com browser e CLI — automação recorrente com acesso autenticado a serviços externos.
+
+### 📄 Research académico
+
+- **"Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — arxiv [2506.00054](https://arxiv.org/abs/2506.00054) (junho 2026). Taxonomia de arquitecturas RAG: retriever-centric, generator-centric, híbrida e orientada a robustez — a última categoria mostra que qualidade e frescura das fontes indexadas são determinantes para a frequência de citação por sistemas AI.
+
+### 💡 Implicações para destaque.ai
+
+- **Novo KPI de negócio disponível hoje:** os relatórios de AI Search Console permitem mostrar a clientes SaaS B2B a sua visibilidade em AI Overviews e AI Mode com dados verificáveis. Oportunidade de diferenciação de pitch: "medimos a sua presença na AI search, não apenas rankings clássicos" — requer novo serviço de reporting ou extensão do relatório mensal existente.
+- **May Core Update — janela de auditoria abre agora:** hoje é a data mínima para análise de impacto. Recomendar auditoria urgente a clientes com quedas de tráfego desde 21 de maio; focar em conteúdo com expertise original vs. agregado. Potencial novo serviço de diagnóstico e recovery.
+- **llms.txt: apenas awareness para contextos de documentação técnica B2B** (portais de devs, help centers) — não promover como táctica GEO/AEO genérica. O valor real está em IDE agents (Cursor, Claude Code), relevante para clientes com produtos developer-facing.
+
+## 2026-06-10
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console: Search Generative AI Performance Reports** — [developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). Lançado a 3 junho: relatórios dedicados de impressões em AI Overviews e AI Mode (Search e Discover), com desagregação por páginas, países, dispositivos e datas. Sem dados de cliques. Rollout inicial para site owners no Reino Unido.
+
+- **Google I/O 2026 — AI Mode com Gemini 3.5 Flash e AI Agents** — [blog.google/products-and-platforms/products/search/search-io-2026](https://blog.google/products-and-platforms/products/search/search-io-2026/). Gemini 3.5 Flash torna-se modelo padrão em AI Mode globalmente; Personal Intelligence alargado a ~200 países e 98 línguas sem subscrição; "information agents" para monitorização web em background disponíveis no verão para assinantes Pro/Ultra.
+
+- **Google Search Central: GEO reconhecido oficialmente como prática SEO** — [digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026](https://www.digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026). A 5 junho, o Google adicionou secção "Generative AI fundamentals" ao Search Central, com guia "Optimizing your website for generative AI features on Google Search". Citação oficial: "optimizing for generative AI search is optimizing for the search experience, and thus still SEO."
+
+- **Anthropic: S-1 submetido confidencialmente à SEC** — [anthropic.com/news/confidential-draft-s1-sec](https://www.anthropic.com/news/confidential-draft-s1-sec). Anthropic submeteu draft Form S-1 à SEC a 1 junho para potencial IPO, após revisão regulatória. Inclui expansão de parceria com Google e Broadcom para múltiplos gigawatts de compute de nova geração.
+
+- **OpenAI: ChatGPT "Dreaming" — sistema de memória persistente** — [openai.com/news](https://openai.com/news/). A 4 junho, ChatGPT lançou sistema de memória "Dreaming" que mantém preferências e contexto actualizados e relevantes entre conversações.
+
+### 📊 Estudos & dados
+
+- **Semrush: Impacto de AI Search no tráfego SEO** — [semrush.com/blog/ai-search-seo-traffic-study](https://www.semrush.com/blog/ai-search-seo-traffic-study/). CTR orgânico em queries com AI Overviews caiu 61% (1.76% → 0.61%), recuperando para ~2.4% no início de 2026. AI Overviews citam pelo menos um domínio do top 10 orgânico em 92.4% dos casos; marcas citadas recebem ~120% mais cliques por impressão que marcas não citadas nas mesmas queries.
+
+- **Crescimento de tráfego via IA** — [position.digital/blog/ai-seo-statistics](https://www.position.digital/blog/ai-seo-statistics/). Tráfego IA cresce 165× mais rápido que pesquisa orgânica; ChatGPT já envia mais tráfego de referência que Reddit e LinkedIn combinados; 58.5% das pesquisas Google terminam sem clique; 83% das queries com resposta gerada por IA são resolvidas na SERP.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity — Personal Computer: orquestrador local/cloud híbrido** — [perplexity.ai/hub/blog/the-data-center-moves-to-your-machine](https://www.perplexity.ai/hub/blog/the-data-center-moves-to-your-machine). A 2 junho, lançado orquestrador que determina automaticamente se tarefas com dados sensíveis (saúde, finanças, ficheiros pessoais) correm localmente ou em servidor cloud. Integração disponível em Microsoft 365 (Word, Excel, PowerPoint, Outlook, Teams) desde 29 maio.
+
+### 📄 Research académico
+
+- **"Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — arxiv [2506.00054](https://arxiv.org/abs/2506.00054), junho 2026. Taxonomia de arquitecturas RAG em retriever-centric, generator-centric, hybrid e robustness-oriented; relevante para entender os mecanismos de citação em AI search.
+
+### 💡 Implicações para destaque.ai
+
+- O Search Console agora expõe impressões em AI features (sem cliques) — oportunidade de pitch directa para SaaS B2B: "precisas de uma baseline de visibilidade GEO antes de optimizar; sem métricas não há estratégia". Justifica novo serviço de auditoria/monitorização GEO separado do SEO clássico.
+- O Google canonizou o GEO como prática legítima em Search Central: elimina a objecção "é moda passageira" nos ciclos de venda B2B conservadores em Portugal; pode ser citado directamente em propostas e materiais comerciais. Awareness, não mudança de serviço.
+- Dados Semrush confirmam recuperação de CTR (→2.4%) após mínimos de 2025, mas zero-click mantém-se em 58.5% — janela para posicionar clientes SaaS antes da próxima pressão descendente sobre tráfego orgânico.
+
+## 2026-06-09
+
+### 🔵 Anúncios oficiais
+
+- **Google Search Console: Generative AI Performance Reports** — [Google Search Central Blog](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) (3 Jun 2026). Novos relatórios dedicados no Search Console mostram impressões de URLs em AI Overviews e AI Mode (Search e Discover), com dimensões de página, país, dispositivo e data. Dados de cliques ainda não incluídos; rollout inicial a um subconjunto de sites no Reino Unido.
+
+- **Google I/O 2026: Information Agents e Gemini 3.5 Flash em AI Mode** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/) (20 Mai 2026, rollout verão 2026). Google entra na era dos "Search agents": information agents que monitoram a web 24/7 em background, sintetizando atualizações sobre tópicos definidos pelo utilizador. Gemini 3.5 Flash passa a ser o modelo-padrão de AI Mode para todos globalmente. AI Mode ultrapassou 1 mil milhão de utilizadores mensais com queries a duplicar por trimestre.
+
+- **Google May 2026 Core Update: concluído** — [Search Engine Land](https://searchengineland.com/google-may-2026-core-update-rollout-is-now-complete-479119) (2 Jun 2026). Core update iniciado a 21 de Maio (dia do I/O) concluiu ao fim de ~12 dias. Elevada volatilidade confirmada por ferramentas de tracking; Glenn Gabe reportou impacto cross-verticals. Foco declarado do Google: expertise genuína, insights originais e "information gain" — penalização de conteúdo que replica informação já disponível.
+
+- **Anthropic Claude: melhorias ao Web Search API** — [anthropic.com/news](https://www.anthropic.com/news/web-search-api). As ferramentas web search e fetch na API do Claude passam a escrever e executar código automaticamente para filtrar resultados de pesquisa, mantendo apenas conteúdo relevante em contexto — melhora qualidade e eficiência de tokens em agentes de research.
+
+### 📊 Estudos & dados
+
+- **State of AEO/GEO 2026 — CMO Investment Report** — [Conductor Academy](https://www.conductor.com/academy/state-of-aeo-geo-report/). 97% dos respondentes reportaram impacto positivo do AEO em 2025; 94% planeiam aumentar investimento em AEO em 2026. Maioria das equipas de marketing enterprise já tem iniciativas GEO activas; PMEs ainda não começaram.
+
+- **AI referral traffic converte 5× mais que orgânico Google** — [Marketing LTB / GEO Statistics 2026](https://marketingltb.com/blog/statistics/generative-engine-optimization-statistics/). AI referral traffic converte a 14,2% vs. 2,8% do orgânico Google. ChatGPT ultrapassa 900 milhões de utilizadores semanais activos (Março 2026); Google AI Overviews aparecem em >25% de todas as pesquisas.
+
+- **Ahrefs: AI Overviews reduzem CTR em 58%** — Ahrefs (2026). AI Overviews reduziram CTR do conteúdo top-ranking no Google em 58%, subida face aos 34,5% do ano anterior. Dado quantifica a erosão do tráfego orgânico clássico.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google AI Mode — Gemini 3.5 Flash global** — Modelo actualizado para todos os utilizadores (não apenas assinantes). Agentic booking expandido a experiências locais com preços e disponibilidade em tempo real. [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)
+
+- **Perplexity — Research com imagens, gráficos e media** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog) (13 Jun → anunciado na semana de 9 Jun). Research passa a incluir criação de imagens e gráficos, browsing web e exibição de media, integrados das ferramentas Labs. Personal Computer lançado a 2 Jun: orquestrador híbrido local-cloud que roteia tarefas entre dispositivo e agentes na cloud.
+
+### 📄 Research académico
+
+- **"Why Retrieval-Augmented Generation Fails: A Graph Perspective"** — Kai Guo et al., [arXiv:2605.14192](https://arxiv.org/abs/2605.14192). Usa circuit tracing e grafos de atribuição para modelar como evidências recuperadas influenciam a geração de respostas em sistemas RAG; identifica os modos de falha estruturais — relevante para perceber quando a IA falha em citar fontes correctamente.
+
+### 💡 Implicações para destaque.ai
+
+- Os **Generative AI Performance Reports no Search Console** (só impressões, sem cliques) confirmam que o mercado começa a medir presença em AI separadamente do SEO clássico — a destaque.ai pode diferenciar o seu dashboard como a plataforma que já unifica essa leitura para SaaS B2B em PT. **Awareness imediata; possível ângulo de pitch.**
+- O lançamento de **information agents (Google)** que monitoram a web 24/7 acelera a necessidade de conteúdo B2B estruturado e citável. Empresas SaaS portuguesas sem presença nas fontes que a IA consulta ficam invisíveis para agentes que sintetizam informação do sector. **Argumento de pitch directo para novos clientes.**
+- A disparidade de conversão **AI traffic 14,2% vs. orgânico 2,8%** é o dado quantitativo mais forte disponível para justificar investimento GEO a C-levels em Portugal — não requer novo serviço, só awareness e integração na proposta de valor existente.
+
+## 2026-06-08
+
+### 🔵 Anúncios oficiais
+
+- **Search Generative AI performance reports in Search Console** — Google Search Central ([developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)). Google lança relatórios dedicados no Search Console para impressões em AI Overviews e AI Mode (dimensões: páginas, países, dispositivos, datas); dados de cliques ainda não incluídos; inclui controlos para bloquear conteúdo de respostas IA. Rollout começa no Reino Unido.
+
+- **Google I/O 2026 Search: AI Mode ultrapassa 1 mil milhões de utilizadores mensais** — blog.google ([blog.google/products-and-platforms/products/search/search-io-2026/](https://blog.google/products-and-platforms/products/search/search-io-2026/)). Gemini 3.5 Flash definido como modelo padrão em AI Mode globalmente; lançados Search Agents (information agents que operam 24/7); queries em AI Mode mais do que duplicaram cada trimestre desde o lançamento; Personal Intelligence expandida a 200 países em 98 línguas sem custo adicional.
+
+- **Microsoft Build 2026: NLWeb — protocolo aberto para queries em linguagem natural** — Microsoft Source ([news.microsoft.com/source/features/company-news/introducing-nlweb-bringing-conversational-interfaces-directly-to-the-web/](https://news.microsoft.com/source/features/company-news/introducing-nlweb-bringing-conversational-interfaces-directly-to-the-web/)). Protocolo liderado por R.V. Guha (criador de Schema.org) permite que qualquer site aceite queries em linguagem natural de humanos e agentes IA sem desenvolvimento customizado.
+
+- **Perplexity Comet browser disponível gratuitamente a nível global** — Perplexity ([perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide](https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide)). Browser nativo de IA anteriormente exclusivo do plano Max ($200/mês) passa a ser gratuito; utilizadores que o descarregaram fizeram 6–18× mais queries nas primeiras 24h.
+
+- **Anthropic submete S-1 confidencial à SEC** — Anthropic ([anthropic.com/news/confidential-draft-s1-sec](https://www.anthropic.com/news/confidential-draft-s1-sec)). Rascunho de S-1 submetido a 1 de junho de 2026 para eventual IPO; Project Glasswing expandido a ~150 organizações com >10 000 falhas críticas identificadas em codebases reais.
+
+### 📊 Estudos & dados
+
+- **Cloudflare: ClaudeBot rastreia 11 122 páginas por cada visita referenciada; GPTBot 857:1** — Cloudflare Radar ([blog.cloudflare.com/ai-search-crawl-refer-ratio-on-radar/](https://blog.cloudflare.com/ai-search-crawl-refer-ratio-on-radar/)). Dados semana 25 mai – 1 jun 2026: Googlebot ratio 5:1; 82% do crawling IA nos últimos 6 meses foi para treino, apenas 18% para pesquisa.
+
+- **ChatGPT inline brand links: tráfego de referência sobe 157,7% semana-a-semana** — Similarweb ([similarweb.com/blog/insights/ai-news/chatgpt-referral-traffic-triples/](https://www.similarweb.com/blog/insights/ai-news/chatgpt-referral-traffic-triples/)). A 7 de maio de 2026, ChatGPT substituiu citações em rodapé por links inline clicáveis; share de respostas com link inline subiu de 0,4% para 6,2% num dia (14×, dados Profound); homepages +354,7%; SaaS B2B >200%.
+
+- **AI Overviews reduzem CTR em 58% para posição 1** — Ahrefs ([ahrefs.com/blog/ai-overviews-reduce-clicks-update/](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/)). Atualização mostra queda de CTR orgânico da posição 1 de 34,5% para 58% em queries com AI Overview ativo.
+
+- **llms.txt: adoção em 10,13% de 300 000 domínios; crawlers IA raramente o accedem** — aeoengine.ai ([aeoengine.ai/blog/llms-txt-zero-usage-ai-bots-ignore](https://aeoengine.ai/blog/llms-txt-zero-usage-ai-bots-ignore)). Estudo de 500M+ visitas de bots IA em 90 dias encontrou apenas 408 pedidos diretos a /llms.txt; Gary Illyes (Google) confirmou que Google não suporta o formato.
+
+- **Google May 2026 core update concluído a 2 de junho** — Search Engine Land ([searchengineland.com/google-may-2026-core-update-rollout-is-now-complete-479119](https://searchengineland.com/google-may-2026-core-update-rollout-is-now-complete-479119)). Segundo core update de 2026; duração 11 dias 21 horas; volatilidade elevada reportada por ferramentas de terceiros; sem guidance específica adicional.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google — FAQ rich results removidos desde 7 de maio de 2026** — Google Search Central ([developers.google.com/search/docs/appearance](https://developers.google.com/search/docs/appearance)). Google confirmou na documentação que FAQ rich results deixaram de aparecer no Search a partir de 7 de maio de 2026.
+
+- **Google — GEO/AEO declarados como SEO** — Search Engine Journal ([searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/](https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/)). Novo guia de AI Search do Google enquadra explicitamente AEO e GEO como parte do SEO para Google Search, não como disciplinas separadas.
+
+- **Yoast SEO 27.1: Schema Aggregation em parceria com Microsoft NLWeb** — Yoast ([yoast.com/yoast-seo-march-3-2026/](https://yoast.com/yoast-seo-march-3-2026/)). Feature opt-in expõe o grafo completo de structured data de um site WordPress num único endpoint; agentes IA podem recuperar entidades conectadas sem rastrear páginas individuais.
+
+### 📄 Research académico
+
+- **"RAG: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — múltiplos autores, arxiv ([arxiv.org/abs/2506.00054](https://arxiv.org/abs/2506.00054)). Taxonomia de arquiteturas RAG (retriever-centric, generator-centric, híbridas, orientadas para robustez); relevante para compreender como motores de busca IA selecionam e ponderam fontes na geração de respostas.
+
+### 💡 Implicações para destaque.ai
+
+- **Search Console Gen AI reports + ChatGPT inline links**: Dois sistemas de métricas novos exigem dois dashboards distintos — impressões no Google AI (Search Console, sem cliques) e referrals ChatGPT (Analytics). Oportunidade de serviço de setup e interpretação de métricas IA para clientes B2B PT que ainda não monitorizam nenhum dos dois.
+- **NLWeb + Yoast Schema Aggregation**: O stack técnico para "ser citável por agentes IA" começa a consolidar-se em torno de structured data e endpoints agnósticos. Clientes WordPress em Portugal podem beneficiar de implementação imediata com Yoast 27.1; novo argumento concreto no pitch técnico.
+- **Cloudflare: 82% do crawling IA é para treino, não para pesquisa; CTR orgânico cai 58%**: A batalha pela visibilidade em IA tem duas frentes separadas — estar no training data (longo prazo, difícil de controlar) e estar nas respostas de pesquisa (curto prazo, otimizável). Destaque.ai deve posicionar a oferta na segunda frente, onde há ROI mensurável.
 
 ## 2026-06-07
 
