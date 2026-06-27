@@ -8,6 +8,26 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-27
+
+### 🔵 Anúncios oficiais
+
+- **Google I/O 2026 — Search Agents e Antigravity** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Keynote realizado hoje (27 Jun): Google lança Search Agents de informação (operação 24/7 em background, notificação push com citações de fontes) para subscritores AI Pro/Ultra; anuncia "Antigravity" — mini-apps construídas dentro do Search, com rollout nos próximos meses nos EUA. A query média em AI Mode é 3× mais longa do que uma pesquisa Google clássica; AI Mode confirmado em 1 bilião de utilizadores mensais.
+
+- **Anthropic — Mythos 5 parcialmente desbloqueado, Fable 5 continua suspenso** — [The Hill](https://thehill.com/policy/technology/5943549-anthropic-mythos-5-access/) / [9to5Mac](https://9to5mac.com/2026/06/26/anthropic-cleared-to-release-claude-mythos-5-to-over-100-us-institutions/), 26 Jun. Acordo com o governo dos EUA permite que a Anthropic disponibilize Mythos 5 a mais de 100 instituições e agências governamentais americanas. Fable 5 — modelo de uso geral — permanece suspenso ao 15.º dia após a diretiva de export control de 12 junho; negociações sobre Fable 5 em curso segundo fontes próximas do processo.
+
+- **Gemini 3.5 Flash — Computer Use integrado nativamente (preview público)** — [blog.google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/), 24 Jun. Computer Use deixa de ser modelo separado e passa a ferramenta nativa no Gemini 3.5 Flash — o mesmo modelo usado para Search grounding, function calling e Maps. Um único agente pode agora ver ecrã, pesquisar e interagir com Maps sem trocar de modelo. Score de 78,4 no benchmark OSWorld-Verified; disponível via Gemini API e Enterprise Agent Platform.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity — Health data hub em rollout para Pro/Max** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog), Jun 2026. Perplexity Health em rollout para subscritores Pro e Max: ligação segura a dados de saúde de mais de 1 milhão de prestadores de cuidados (EUA), Fitbit e Google Fit. Posiciona Perplexity como motor de pesquisa verticalmente integrado em dados pessoais, reforçando a estratégia de substituição de pesquisa activa por contexto contínuo.
+
+### 💡 Implicações para destaque.ai
+
+- Os **Search Agents em background** do Google (que notificam utilizadores com citações sem pesquisa activa) alteram o modelo de descoberta B2B: estar indexado e citável passa a ser condição de visibilidade *passiva* — o cliente é encontrado mesmo sem pesquisar. Nova dimensão no pitch GEO para SaaS B2B português: optimizar para monitorização contínua por agentes, não apenas para queries pontuais.
+- O **Computer Use nativo no Gemini 3.5 Flash** (um agente opera browser, apps e Maps sem trocar de modelo) coloca a visibilidade em AI search no fluxo de decisão automatizado B2B: agentes vão pesquisar, comparar e recomendar ferramentas SaaS de forma autónoma. Awareness para incluir em materiais de pitch avançados — ainda não requer serviço novo.
+- O desbloquei parcial do **Mythos 5 (apenas EUA, Fable 5 suspenso)** confirma que a dicotomia Claude.ai produto vs. API Anthropic persiste para clientes europeus; risco residual de dependência exclusiva da API mantém-se. Sem acção imediata — continuar a monitorizar.
+
 ## 2026-06-26
 
 ### 🔵 Anúncios oficiais
