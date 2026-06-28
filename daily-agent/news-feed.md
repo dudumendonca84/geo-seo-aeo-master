@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-28
+
+### ⚙️ Mudanças nas plataformas
+
+- **OpenAI — GPT-4.5 retirado do ChatGPT** — [openai.com/news](https://openai.com/news/). GPT-4.5 deixou de estar disponível no ChatGPT a 26 de junho (um dia antes do encerramento anunciado a 27 jun), incluindo em GPTs personalizados. GPT-5.2 já tinha sido removido a 12 de junho; OpenAI o3 encerra a 26 de agosto. [help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+
+- **Google Search Console — AI performance reports alargados a mais utilizadores** — [searchengineland.com](https://searchengineland.com/google-search-console-ai-performance-reports-rolling-out-to-more-users-480867). A 23 de junho o Google confirmou expansão dos relatórios de visibilidade em AI Overviews e AI Mode (lançados a 3 de junho no UK) a um número mais alargado de proprietários de sites; progressão para acesso global sem data confirmada.
+
+### 💡 Implicações para destaque.ai
+
+- A remoção definitiva do GPT-4.5 consolida a linha GPT-5.x como única disponível no ChatGPT; clientes com prompts calibrados para GPT-4.5 devem ser alertados — oportunidade de contacto de suporte técnico proactivo para os que usam a API OpenAI.
+- A expansão progressiva dos GSC AI reports reforça a urgência de incluir baseline de impressões em AI Mode no onboarding de novos clientes antes de acesso generalizado tornar o exercício banal — vantagem de early adopter para SaaS B2B em Portugal.
+
 ## 2026-06-27
 
 ### 🔵 Anúncios oficiais
