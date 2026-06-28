@@ -138,4 +138,51 @@ Se um plano gerado cair maioritariamente numa só dimensão (tipicamente `techni
 
 ---
 
-**Última actualização:** 26 Jun 2026 (criação inicial — 8 dimensões, 2-4 patterns cada, alinhado com o contrato `apply-jobs` do Tracker).
+## Perfil: negócio local / físico
+
+> **Quando aplicar:** `audience_type` é `b2c` ou `hybrid` **e** o negócio depende de um local físico — clínica (dentária, médica, estética), restauração, hotelaria/turismo, comércio, serviços de proximidade. Para estes, as 8 dimensões mantêm-se, mas a interpretação muda: o substrato de entidade é o **Google Business Profile**, não o Wikidata; o sinal social são as **reviews**, não o Reddit; a autoridade é **local**, não media nacional Tier-1.
+>
+> Regra de não-diluição (espelha a do produto): a bandeira continua a ser **visibilidade na IA**. O SEO local é a **base** que a sustenta — quando alguém pergunta a um assistente "melhor dentista em Braga", a resposta é construída a partir de GBP, reviews e citações locais. Não é "agência local genérica"; é tornar o negócio físico **citável pelos motores**.
+
+### Sinais de entidade local (o que substitui Wikidata/Wikipedia)
+
+Para um negócio local, a "fundação de entidade" não é o QID Wikidata — é o **Google Business Profile** bem construído e consistente. Priorizar isto antes de qualquer trabalho de Wikipedia.
+
+### Patterns por dimensão (local)
+
+| # | Dimensão | Sinal / gap | Acção (`action`) | `severity` | `horizon` | `effort` | `source` |
+|---|---|---|---|---|---|---|---|
+| 1 | `entity` | Google Business Profile incompleto ou não reclamado | Reclamar/verificar o GBP; preencher categorias primária+secundárias, horários, serviços, atributos, fotos; manter actualizado. É o substrato que os motores resolvem para queries locais. | high | h1_2 | low | site_scan |
+| 2 | `entity` | NAP inconsistente entre GBP, site e diretórios | Alinhar Nome/Morada/Telefone idênticos em GBP, site (schema `LocalBusiness`), e diretórios (PAI, Cylex, mapas). Inconsistência trava a corroboração. | high | h1_2 | low | audit |
+| 3 | `technical` | Sem schema `LocalBusiness` (ou subtipo) no site | Implementar `LocalBusiness`/`Dentist`/`Restaurant` schema com `address`, `geo`, `openingHours`, `telephone`, `aggregateRating`. | medium | h1_2 | low | site_scan |
+| 4 | `social` | Poucas reviews / desactualizadas / sem resposta | Pôr a recolher reviews Google de forma sistemática (pedido pós-serviço); responder a TODAS (boas e más) com tom sóbrio. Volume + frescura + resposta = sinal forte para motores e para o cliente. | high | h1_2 | medium | audit |
+| 5 | `social` | Queixas recorrentes não tratadas (reputação) | Mapear temas das queixas (espera, preço, atendimento); corrigir a causa e responder publicamente. A IA repete o sentimento que encontra. | high | h3_6 | medium | audit |
+| 6 | `authority` | Ausente de diretórios e imprensa local | Listar em diretórios locais relevantes (PAI.pt, Cylex, câmara/associações de comércio); pitch a imprensa/blogs locais e regionais. Citações locais > backlinks genéricos. | medium | h3_6 | medium | competitor |
+| 7 | `content` | Sem páginas de serviço × localidade | Criar páginas dedicadas por serviço e por zona ("Implantes dentários em [cidade]"), com FAQ local e conteúdo útil — captura "near me" e queries de localidade. | medium | h3_6 | medium | audit |
+| 8 | `authority_on_site` | Profissionais sem credenciais declaradas | Apresentar a equipa com nome, foto, credenciais reais (Ordem, especialidade) e `Person` schema. E-E-A-T "Experience" para serviços de confiança. **Sem inventar credenciais.** | medium | h3_6 | medium | site_scan |
+| 9 | `measurement` | Sem leitura de GBP Insights / Maps | Acompanhar GBP Insights (pesquisas, chamadas, direcções), posição no local pack e GA4. Baseline antes de optimizar. | medium | h1_2 | low | audit |
+| 10 | `positioning` | Sem presença no local pack / "perto de mim" | Trabalhar GBP + reviews + páginas de localidade até aparecer no local pack das queries-chave; cobrir a área de serviço. | medium | h7_12 | medium | competitor |
+
+### Prompts locais (orientação para `generate_prompts`)
+
+Para negócios locais, qualificar as queries por **localização** e por **intenção de proximidade**, na categoria `local_recommendation`:
+
+- "melhor [serviço] em [cidade/zona]" · "[serviço] perto de mim em [zona]"
+- "[serviço] melhor avaliado em [cidade]" (review-driven) · "[serviço] aberto agora em [zona]"
+- comparações locais: "[marca] vs [concorrente local]" · "vale a pena [marca] em [cidade]?"
+
+Misturar com `generic_category` (sem cidade) para apanhar também recomendações não-geográficas. Evitar `feature_specific`/`price_comparison` ao estilo SaaS, salvo quando o sector os justifica (ex: preços de menu, gamas de tratamento).
+
+### Concorrentes locais
+
+Rivais locais (outra clínica, outro restaurante na mesma zona) são `peer`. Os buckets `adjacent_vendor`/`adjacent_consultancy`/`expert_individual`/`media_publisher` raramente se aplicam a local — não forçar. Um `distractor` local típico é um agregador/diretório (ex: um portal de marcações) que aparece nas respostas mas não é concorrente directo.
+
+### O que NÃO fazer no perfil local
+
+- Não mandar criar QID Wikidata / artigo Wikipedia como prioridade a um negócio local — o substrato é o GBP. (Wikipedia só faz sentido para marcas locais com notoriedade real.)
+- Não recomendar podcasts/conferências/Tier-1 nacional como H1 — a autoridade local começa em reviews, diretórios e imprensa regional.
+- Não inventar reviews, casos clínicos, ou credenciais. A reputação mede-se, não se fabrica.
+
+
+---
+**Última actualização:** 27 Jun 2026 (adicionado perfil "negócio local / físico" — 10 patterns locais nas 8 dimensões, GBP/reviews/NAP/imprensa local, prompts locais; mantém o contrato `apply-jobs`).
