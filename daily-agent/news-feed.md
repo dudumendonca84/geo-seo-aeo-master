@@ -8,6 +8,26 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-29
+
+### 🔵 Anúncios oficiais
+
+- **Google June 2026 Spam Update — rollout concluído (24-26 Jun)** — [Search Engine Land](https://searchengineland.com/google-june-2026-spam-update-done-rolling-out-481063). Segundo spam update de 2026, concluído em ~2 dias globalmente (24 jun meio-dia ET → 26 jun 14h ET). Destaque relevante para GEO/AEO: as spam policies foram alargadas para cobrir explicitamente tentativas de manipular AI answers — comprar ou inflar citações em AI Overviews/AI Mode é agora tratado sob as mesmas políticas de link schemes. Análise inicial aponta impacto em sites com conteúdo thin e redes de páginas templated (location/comparison pages); tráfego orgânico em queda de 25%+ reportado nos primeiros segmentos afetados. [Search Engine Journal](https://www.searchenginejournal.com/seo-pulse-google-spam-update-rolls-out-ai-manipulation-in-scope/580565/)
+
+- **Google publica guia oficial de AI Search: GEO/AEO = SEO** — [Search Engine Journal](https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/). Novo documento do Google define formalmente que "optimizing for generative AI search is optimizing for the search experience, and thus still SEO." Explicitamente desaconselha: llms.txt, chunking especial para AI, e schema markup específico para AI como táticas prioritárias. Reforça foco em conteúdo estruturado de qualidade e sinaliza alinhamento com as spam policies acima.
+
+### 📊 Estudos & dados
+
+- **OtterlyAI AI Citation Economy Report 2026** — [otterly.ai](https://otterly.ai/blog/the-ai-citations-report-2026/) (1M+ pontos de dados). Apenas 11% dos domínios são citados simultaneamente por ChatGPT e Perplexity — cada plataforma opera como ecossistema de citação independente. Plataformas de comunidade (Reddit, Quora) captam 52,5% das citações AI vs. 47,5% para sites de marca. 97,4% das citações provêm de earned media fora do Tier-1 tradicional.
+
+- **llms.txt: AI crawlers ignoram o ficheiro sistematicamente** — [Search Engine Journal / Ahrefs](https://www.searchenginejournal.com/97-of-llms-txt-files-got-no-requests-ahrefs-data-shows/579478/). 97% dos ficheiros llms.txt válidos (~38.000 domínios) receberam zero pedidos em maio 2026. GPTBot, ClaudeBot, PerplexityBot e OAI-SearchBot ignoram /llms.txt e consomem HTML diretamente. 78% dos ficheiros existentes foram gerados automaticamente pelo Shopify (silenciosamente, em abril/maio 2026).
+
+### 💡 Implicações para destaque.ai
+
+- O spam update que cobre AI citation manipulation reforça o argumento comercial da destaque.ai: clientes SaaS B2B que investiram em táticas de manipulação de AI answers ficaram expostos. É argumento de pitch concreto — **mudança de pitch: enfatizar sustentabilidade e compliance GEO vs. atalhos agora classificados como spam**.
+- A posição oficial do Google (GEO/AEO = SEO) e os dados de citação (11% de sobreposição entre plataformas) confirmam que visibilidade em AI search exige estratégia multi-plataforma distinta por motor — **novo serviço potencial: AI Visibility Audit por plataforma (ChatGPT vs. Perplexity vs. AI Mode separados)**.
+- llms.txt confirmado como não prioritário pelos dados. Recursos de clientes devem ir para otimização de HTML semântico, conteúdo com dados quantitativos próprios, e presença em comunidades — **awareness: desaconselhar investimento em llms.txt como tática principal**.
+
 ## 2026-06-28
 
 ### ⚙️ Mudanças nas plataformas
