@@ -8,6 +8,39 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-06-30
+
+### 🔵 Anúncios oficiais
+
+- **Google AI Mode atinge 1 mil milhão de utilizadores mensais** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Menos de um ano após o lançamento, AI Mode ultrapassou 1B de utilizadores mensais, com queries a duplicar por trimestre; Google confirmou Gemini 3.5 Flash como novo modelo padrão no AI Mode globalmente.
+
+- **Anthropic — Claude Tag** — [anthropic.com/news](https://www.anthropic.com/news/introducing-claude-tag). Lançado a 23 junho: integração de Claude diretamente em canais Slack como membro de equipa, com capacidade de automação de tarefas colaborativas via menção @Claude.
+
+- **OpenAI — preview GPT-5.6** — [openai.com](https://openai.com/index/previewing-gpt-5-6-sol/). Preview limitado da série GPT-5.6: Sol (flagship), Terra (2x mais barato que GPT-5.5 a performance comparável) e Luna (baixo custo). GPT-4.5 retirado de ChatGPT a 26 junho.
+
+### 📊 Estudos & dados
+
+- **"AEO Statistics 2026: 55+ Data Points on Brand Visibility"** — [omnibound.ai](https://www.omnibound.ai/blog/answer-engine-optimization-aeo-statistics). 37% das queries informacionais geram agora resposta AI-generated (era 12% em janeiro 2024); early adopters AEO aparecem em 18% das respostas relevantes vs. 3% para marcas não otimizadas; CTR em citações IA: 22%, equivalente à posição 3-4 em SERP tradicional.
+
+- **llms.txt: 10% de adoção, impacto nulo em SEO** — [seranking.com](https://seranking.com/blog/llms-txt/) / [digitalapplied.com](https://www.digitalapplied.com/blog/google-llms-txt-no-seo-value-lighthouse-audit-2026). Análise de ~300.000 domínios: apenas 10.13% implementaram llms.txt; análise de 500M eventos de AI-crawlers revela que apenas 408 requests visaram o ficheiro diretamente. A 15 junho, Google atualizou o guia oficial: llms.txt não tem efeito positivo ou negativo em Search rankings ou AI Overviews.
+
+- **Zero-click searches: 68% nos EUA (jan–abr 2026)** — [realinternetsales.com](https://www.realinternetsales.com/google-ai-mode-1-billion-users-geo-statistics-2026/). Entre janeiro e abril de 2026, 68% das pesquisas Google nos EUA não geraram qualquer clique para site externo; apenas 14% dos URLs citados no AI Mode coincidem com citações do AI Overview tradicional.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity — Deep Research expandido para Computer** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog). A 19 junho: painel de comandos, thread forking, ações inline, APIs analíticas e integração de dados premium (CB Insights, PitchBook, Statista) no assistente Computer; expansão para Microsoft 365 (Word, Excel, PowerPoint, Outlook).
+
+- **Google — May 2026 Core Update concluído a 2 junho** — [searchengineland.com](https://searchengineland.com/library/platforms/google/google-algorithm-updates). Rollout de 12 dias (21 maio–2 junho); segundo core update de 2026, apenas 6 semanas após o March update. Padrão consistente: recompensa expertise demonstrada, autoridade e utilidade a nível de página.
+
+### 📄 Research académico
+
+- **"Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — [arxiv.org/abs/2506.00054](https://arxiv.org/abs/2506.00054). Survey que categoriza arquiteturas RAG (retriever-centric, generator-centric, híbridas, robustness-oriented) — relevante para compreender como plataformas AEO selecionam e verificam fontes para citação em respostas geradas.
+
+### 💡 Implicações para destaque.ai
+
+- **Mudança de pitch necessária**: 1B de utilizadores em AI Mode + 68% zero-click nos EUA tornam a "visibilidade em AI answers" o argumento central para clientes SaaS B2B — substituir "ranking #1 no Google" por "ser a fonte citada pela IA que os teus clientes já usam". Requer atualização de materiais de venda.
+- **llms.txt: não priorizar operacionalmente**: Google confirmou sem ambiguidade que não usa o ficheiro. Foco deve manter-se em E-E-A-T, Schema.org e freshness — 83% das citações AEO provêm de páginas atualizadas nos últimos 12 meses.
+- **Dados concretos para proposta de valor**: 3.4x mais visibilidade para early adopters AEO + 22% CTR em citações IA são métricas defensáveis para justificar investimento GEO/AEO a clientes portugueses. Awareness comercial por agora; aguardar dados PT/EU antes de construir case study local.
 ## 2026-06-29
 
 ### 🔵 Anúncios oficiais
