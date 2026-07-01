@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 03 Jun 2026** — see `daily-agent/news-feed.md` for releases after this date.
+**Last refresh: 01 Jul 2026 (partial)** — only the GPT-5.6 preview row below was added on this date; interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) were not absorbed. See `daily-agent/news-feed.md` for the full running record.
 
 ---
 
@@ -32,6 +32,7 @@ When citing capabilities, **always include the model version and the date observ
 
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
+| **GPT-5.6 (Sol/Terra/Luna)** | Jun 2026 (preview) | 256k tokens | Yes (with tool) | **Limited preview only** — API + Codex, trusted partners; not in ChatGPT. GA expected "coming weeks" |
 | **GPT-5.5 Instant** | May 2026 | 256k tokens | Yes (with tool) | ChatGPT default (all tiers) since May 5 2026 |
 | **GPT-5** | Aug 2025 | 256k tokens | Yes (with tool) | ChatGPT Search, API (explicit), some paid workflows |
 | **GPT-5 mini** | Oct 2025 | 256k | Yes (with tool) | Free ChatGPT fallback for some queries |

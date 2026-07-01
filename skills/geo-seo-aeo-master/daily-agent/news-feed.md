@@ -8,6 +8,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-01
+
+### 🔵 Anúncios oficiais
+
+- **OpenAI — preview limitado de GPT-5.6 (Sol, Terra, Luna)** — [openai.com](https://openai.com/index/previewing-gpt-5-6-sol/). Anunciado 26 junho: Sol (flagship), Terra (performance comparável ao GPT-5.5 a metade do custo) e Luna (mais rápido/barato). Disponível apenas via API e Codex a parceiros de confiança — ainda não está no ChatGPT. Pricing por 1M tokens: Sol $5/$30 in/out, Terra $2.50/$15, Luna $1/$6. Introduz prompt caching mais previsível (cache breakpoints explícitos, vida mínima de cache de 30 min). GA prevista "nas próximas semanas".
+
+- **Google — June 2026 spam update concluído** — [Google Search Status Dashboard](https://status.search.google.com/incidents/YUX1peHev5a4fkxLDiUQ). Rollout de 24–26 junho via SpamBrain; visa scaled content abuse, cloaking, sneaky redirects e scraped content (não visa link spam nem site reputation abuse). É o braço de aplicação da expansão da política de spam de 15 maio, que passou a classificar explicitamente a manipulação de respostas de IA generativa (AI Overviews/AI Mode) como spam.
+
+### 📊 Estudos & dados
+
+- **38% das citações em AI Overviews vêm agora do top-10 orgânico (era ~76%)** — [Ahrefs](https://ahrefs.com/blog/ai-overview-citations-top-10/). Análise de 863K keywords e 4M URLs de AI Overviews mostra que a sobreposição com o ranking clássico caiu de ~76% (julho 2025) para 38% — a posição orgânica é hoje um preditor bastante mais fraco da citação em IA do que há um ano.
+
+- **YouTube lidera citações em Google AI Overviews com 20,9% de share** — [Ahrefs](https://ahrefs.com/blog/most-cited-domains-ai-overviews/). Ranking dos 50 domínios mais citados em AI Overviews, com base em mais de 3M queries US rastreadas em junho de 2026.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Perplexity — Deep Research no Computer passa a correr em Claude Opus 4.6** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog). Adiciona também command panel, forking de sessões e controlos enterprise (Computer Analytics API, limites de crédito personalizados).
+
+### 💡 Implicações para destaque.ai
+
+- A queda de ~76% para 38% na sobreposição entre top-10 orgânico e citações em AI Overviews confirma que otimizar apenas para ranking clássico já não garante presença nas respostas geradas — reforça o caso para tracking dedicado de citações IA nos relatórios de clientes B2B.
+- O spam update de junho, ao ligar formalmente a manipulação de AI Overviews à penalização, valida o posicionamento de GEO "branco" (dados próprios, structured data, E-E-A-T) em vez de táticas agressivas de force-fit em listicles — bom argumento de venda contra abordagens de risco da concorrência.
+- GPT-5.6 ainda em preview restrito (API/Codex, sem ChatGPT): sem impacto imediato em GEO/AEO, mas monitorizar — se Terra/Luna se tornarem default no ChatGPT Search, a economia de custo pode alterar o volume de queries com web search activo. Awareness por agora.
+
+**Nota de execução**: esta é a primeira entrada em `skills/geo-seo-aeo-master/daily-agent/` desde 2026-06-05 (gap de ~26 dias). Cobertura de hoje limitada às últimas 24-72h conforme o mandato do prompt — não é um backfill retroactivo do período em falta.
+
 ## 2026-06-05
 
 ### 🔵 Anúncios oficiais
