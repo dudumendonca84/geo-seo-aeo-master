@@ -2,6 +2,7 @@
 
 | Data (Lisboa) | Status | Notas |
 |---|---|---|
+| 2026-07-02 | ✅ OK | 1 anúncio Tier 1 (Anthropic — Claude Sonnet 5, novo default claude.ai Free/Pro, 30 jun), 2 estudos (Semrush/SEL ChatGPT Thinking mode citações, Peec AI Deep Research crawl logs), 2 mudanças de plataforma (AdSense Gemini ad intents, AI Mode receitas redesenhadas), 2 papers académicos (arXiv 2606.20065, 2606.12439). Absorvido em models.md: Claude Sonnet 5 (secção Anthropic + Deck Builder mapping `claude`.production). Quinta-feira — sem weekly drafts. |
 | 2026-07-01 | ✅ OK | Gap de 26 dias desde a última execução (05 jun) — cobertura de hoje é apenas últimas 24-72h, não backfill. 2 anúncios (OpenAI GPT-5.6 preview Sol/Terra/Luna, Google June spam update concluído), 2 estudos (Ahrefs AIO citations 76%→38%, Ahrefs most-cited domains YouTube 20,9%), 1 mudança plataforma (Perplexity Deep Research → Opus 4.6). Sem paper académico novo verificado nas últimas 48h. Absorvido em models.md: GPT-5.6 preview row (parcial — interim releases Jun não recuperados). Quarta-feira — sem weekly drafts. |
 | 2026-06-05 | ✅ OK | 1 anúncio (Microsoft Web IQ, lançado 2 junho), 2 estudos (5W Citation Index 680M citações; AI bot traffic GPTBot/Claudebot), 1 mudança plataforma (CMA context Search Console opt-out). Sexta: drafts gerados em drafts/2026-06-05-weekly.md |
 | 2026-06-04 | ✅ OK | 1 anúncio Tier 1 (Google Search Console AI Performance Reports + opt-out toggle, June 3), 1 paper académico (arXiv 2605.25517 competitive GEO, 252k trials). Quinta-feira — sem weekly drafts. |

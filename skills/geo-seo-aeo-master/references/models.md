@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 01 Jul 2026 (partial)** — only the GPT-5.6 preview row below was added on this date; interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) were not absorbed. See `daily-agent/news-feed.md` for the full running record.
+**Last refresh: 02 Jul 2026 (partial)** — Claude Sonnet 5 row added on this date (Anthropic section + Deck Builder mapping). Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset, Claude Fable 5 / Mythos 5) were not absorbed. See `daily-agent/news-feed.md` for the full running record.
 
 ---
 
@@ -62,17 +62,20 @@ When citing capabilities, **always include the model version and the date observ
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
 | **Claude Opus 4.8** | May 2026 | 1M tokens | Yes | Claude Code Fast mode; Claude Pro Max ("Most intelligent") |
+| **Claude Sonnet 5** | 30 Jun 2026 | 1M tokens (default and max), 128k max output | Yes | **New default for Free and Pro plans on claude.ai** (since 30 Jun 2026); also available Max/Team/Enterprise and API (`claude-sonnet-5`) |
 | **Claude Opus 4.7** | Apr 2026 | 1M tokens | Yes | Claude Pro / Max (previous default — being superseded) |
-| **Claude Sonnet 4.6** | Mar 2026 | 1M tokens | Yes | claude.ai default, API default |
+| **Claude Sonnet 4.6** | Mar 2026 | 1M tokens | Yes | Superseded as claude.ai/API default by Sonnet 5 (30 Jun 2026); still available in API |
 | **Claude Haiku 4.5** | Oct 2025 | 200k | Yes | Speed tier, batch jobs |
 | **Claude Sonnet 4.5** | Sept 2025 | 1M tokens | Yes | Still available in API for compat |
 
+Claude Sonnet 5 pricing: intro $2/$10 per million input/output tokens through 31 Aug 2026, then $3/$15. Anthropic positions it as close to Opus 4.8 performance at lower cost; safety card reports lower hallucination/sycophancy and improved agentic-safety (prompt-injection resistance) vs. Sonnet 4.6. Uses an updated tokenizer (same input maps to ~1.0–1.35x tokens vs. prior tokenizer). Source: [anthropic.com/news/claude-sonnet-5](https://www.anthropic.com/news/claude-sonnet-5).
+
 ### Products and which model
 
-- **claude.ai** (web) — Sonnet 4.6 default; Opus 4.8 for Max subscribers.
+- **claude.ai** (web) — Sonnet 5 default for Free/Pro (since 30 Jun 2026); Opus 4.8 for Max subscribers.
 - **Claude Desktop** — same as claude.ai.
-- **Claude Code (CLI + Web Routines)** — Sonnet 4.6 default; Opus 4.8 in Fast mode (released May 28 2026).
-- **API** — explicit model parameter required. IDs: `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-haiku-4-5-20251001`.
+- **Claude Code (CLI + Web Routines)** — Sonnet 5 default; Opus 4.8 in Fast mode (released May 28 2026).
+- **API** — explicit model parameter required. IDs: `claude-opus-4-7`, `claude-sonnet-5`, `claude-sonnet-4-6`, `claude-haiku-4-5-20251001`.
 
 ### GEO-relevant notes
 
@@ -313,7 +316,7 @@ Two columns per engine:
 | Deck engine | Vendor | production | cost_optimized |
 |---|---|---|---|
 | `chatgpt` | OpenAI | `gpt-5.5` | `gpt-5.5` |
-| `claude` | Anthropic | `claude-sonnet-4-6` | `claude-haiku-4-5` |
+| `claude` | Anthropic | `claude-sonnet-5` | `claude-haiku-4-5` |
 | `gemini` | Google | `gemini-3.5-flash` | `gemini-2.5-flash` |
 | `perplexity` | Perplexity | `sonar-pro` | `sonar` |
 | `copilot` | Microsoft (Azure OpenAI) | `gpt-5.5` | `gpt-5.5` |
@@ -351,8 +354,8 @@ This block is updated whenever:
 
 The daily-agent (`daily-agent/daily-prompt.md`) is instructed to update this table when a release qualifies (see § Methodology evolution in `SKILL.md`). The Deck Builder picks up changes on its next fetch — zero code change required there for routine model updates.
 
-**Last refresh of API mappings: 23 May 2026.**
+**Last refresh of API mappings: 02 Jul 2026** — `claude` production ID updated from `claude-sonnet-4-6` to `claude-sonnet-5` following Anthropic's 30 Jun 2026 release (now default on claude.ai Free/Pro).
 
 ---
 
-Last refresh: 23 May 2026.
+Last refresh: 02 Jul 2026.
