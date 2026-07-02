@@ -42,11 +42,11 @@ Todos os contratos são ficheiros markdown servidos via `raw.githubusercontent.c
 
 ### Contrato 1: prompts (audit prompt generation)
 
-**Path no repo:** `skills/geo-seo-aeo-master/references/prompts.md`
+**Path no repo:** `references/prompts.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/prompts.md
 ```
 
 **Estrutura consumida:**
@@ -68,11 +68,11 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/
 
 ### Contrato 2: models (API ID lookup)
 
-**Path no repo:** `skills/geo-seo-aeo-master/references/models.md`
+**Path no repo:** `references/models.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/models.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/models.md
 ```
 
 **Estrutura consumida:**
@@ -100,11 +100,11 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
 
 ### Contrato 3: benchmarks (core stats do deck público)
 
-**Path no repo:** `skills/geo-seo-aeo-master/references/benchmarks.md`
+**Path no repo:** `references/benchmarks.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/benchmarks.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/benchmarks.md
 ```
 
 **Estrutura consumida:**
@@ -134,11 +134,11 @@ Keys consumidas hoje pelo Deck Builder:
 
 ### Contrato 4: method (glossário + 8 dimensões do deck público)
 
-**Path no repo:** `skills/geo-seo-aeo-master/SKILL.md`
+**Path no repo:** `SKILL.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/SKILL.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/SKILL.md
 ```
 
 **Estrutura consumida:**
@@ -163,11 +163,11 @@ Secção `## Deck Builder method` no fim do ficheiro. Contém:
 
 ### Contrato 5: search modes (knowledge vs augmented, per-engine activation)
 
-**Path no repo:** `skills/geo-seo-aeo-master/references/search_modes.md`
+**Path no repo:** `references/search_modes.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/search_modes.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/search_modes.md
 ```
 
 **Estrutura consumida:**
@@ -250,7 +250,7 @@ Engines listados: os mesmos do Contrato 2 (`chatgpt`, `claude`, `gemini`, `grok`
 | Data | Mudança | Impacto |
 |---|---|---|
 | 2026-05-23 | Inicialização — prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
-| 2026-05-24 | `dudumendonca84/destaque-ai-ops` criado como **private consumer downstream** — memória operacional privada (clientes, propostas, learnings) que consome a metodologia SINAL via `skills/geo-seo-aeo-master/SKILL.md` (§ Methodology + § Audit workflow), `references/prompts.md` (catálogo segmento) e `references/models.md` (lock-in modelos por engine). Fluxo private → public mediado por camada de anonimização (`learnings/`) e futura Routine `synthesis-weekly`. Counterpart documentation: `INTERFACES.md` em `destaque-ai-ops`. | Nenhum impacto a contratos públicos existentes. Implicação para esta repo: mudanças materiais a § Audit workflow / scorecard / 4 horizontes em `SKILL.md` devem sinalizar potencial follow-up em `destaque-ai-ops/templates/` (private; sessões públicas não veem, mas registar no `methodology-changelog.md` ajuda a tracker). |
+| 2026-05-24 | `dudumendonca84/destaque-ai-ops` criado como **private consumer downstream** — memória operacional privada (clientes, propostas, learnings) que consome a metodologia SINAL via `SKILL.md` (§ Methodology + § Audit workflow), `references/prompts.md` (catálogo segmento) e `references/models.md` (lock-in modelos por engine). Fluxo private → public mediado por camada de anonimização (`learnings/`) e futura Routine `synthesis-weekly`. Counterpart documentation: `INTERFACES.md` em `destaque-ai-ops`. | Nenhum impacto a contratos públicos existentes. Implicação para esta repo: mudanças materiais a § Audit workflow / scorecard / 4 horizontes em `SKILL.md` devem sinalizar potencial follow-up em `destaque-ai-ops/templates/` (private; sessões públicas não veem, mas registar no `methodology-changelog.md` ajuda a tracker). |
 | 2026-05-26 | **Triagem de PRs.** Correcções de model ID em `models.md` § Deck Builder API mappings: `claude` cost_optimized `claude-haiku-4-5-20251001`→`claude-haiku-4-5`; `grok` production `grok-4`→`grok-4.3` (grok-4 retira 15 Ago 2026). `deepseek` mantém-se `deepseek-v4-flash` (decisão de main, pro é lento). PRs stale fechados (#2, #5, #6), #9 merged (3 tracker references), #3 merged (este log). | Deck Builder picks up no próximo fetch — sem code change. Engines `chatgpt`/`copilot` em `gpt-5.5`. |
 | 2026-05-29 | **Contrato 3 (benchmarks) formalizado.** `## Deck Builder core stats` em `benchmarks.md` ganha a `key` `aio_top10_share` (54%, BrightEdge §6) consumida pelo Slide 05; `b2b_ai_answer` (82%) passa a alimentar também o Slide 10b. Antes destes slides hardcodavam os números. | Deck Builder picks up no próximo fetch — sem code change. Os números GEO dos Slides 03/05/10b passam a vir vivos da skill; fallback hardcoded mantém paridade se a tabela faltar. |
 | 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` — glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista canónica §116-130. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch — sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. |
