@@ -2,6 +2,7 @@
 
 | Data (Lisboa) | Status | Notas |
 |---|---|---|
+| 2026-07-02 | ✅ OK | Colheita fraca — sem anúncios Tier 1 nas últimas 24-48h. 2 estudos (Semrush/SEL ChatGPT Thinking mode citações, Peec AI Deep Research crawl logs), 2 mudanças de plataforma (AdSense Gemini ad intents, AI Mode receitas), 2 papers académicos (arXiv 2606.20065, 2606.12439). Quinta-feira → sem drafts. |
 | 2026-06-30 | ✅ OK | 3 anúncios oficiais (Google AI Mode 1B, Claude Tag, GPT-5.6 preview), 3 estudos (AEO stats 37%, llms.txt 10% adoção, zero-click 68%), 2 mudanças plataforma (Perplexity Computer, May core update concluído), 1 paper académico (RAG survey 2506.00054). Terça-feira → sem drafts. |
 | 2026-06-29 | ✅ OK | 2 anúncios oficiais (Google June spam update concluído + AI citation manipulation in scope, Google guia oficial GEO/AEO=SEO), 2 estudos (OtterlyAI 1M+ data points citações AI, llms.txt 97% zero AI bot requests). Domingo → sem drafts. |
 | 2026-06-28 | ✅ OK | Dia leve — 2 mudanças de plataforma (GPT-4.5 retirado ChatGPT, GSC AI reports expansão confirmada). Sem anúncios novos Tier 1 nas últimas 48h. Domingo → sem drafts. |

@@ -8,6 +8,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-02
+
+### 📊 Estudos & dados
+
+- **ChatGPT Thinking mode muda que marcas são citadas** — [Search Engine Land](https://searchengineland.com/chatgpt-thinking-mode-brands-sources-citations-481439), citando estudo da Semrush. Apenas 25.6% de sobreposição nos domínios citados entre o modo "Instant" e o modo "Thinking" do ChatGPT para o mesmo prompt; a taxa de citação sobe de 50% para 68% e o número de fontes por resposta quase duplica (2.6→4.5), com deslocação de UGC/Reddit para fontes governamentais e académicas.
+
+- **Como o Deep Research do ChatGPT lê um site (análise de logs)** — [Peec AI](https://peec.ai/blog/how-chatgpt-deep-research-reads-your-site-what-the-logs-reveal). Amostra de ~1.240 registos de fontes mostra que o Deep Research lê muito mais páginas do que as que acaba por citar, segue links internos e lê alt text de imagens; tipicamente só os 2-3 primeiros resultados Bing por sub-query entram no conjunto lido — as contagens de citações subestimam a influência real.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google AdSense — conteúdo gerado por Gemini em "ad intents"** — [support.google.com](https://support.google.com/adsense/answer/17116795). Desde 30 de junho de 2026, os diálogos de ad intents mostram automaticamente um explicador escrito pelo Gemini junto ao anúncio, sem opção de opt-out para o publisher.
+
+- **Google AI Mode — resultados de receitas redesenhados** — [Search Engine Roundtable](https://www.seroundtable.com/recap-07-01-2026-41605.html). Anunciado por Robby Stein (Google) a 1 de julho de 2026; AI Mode passa a mostrar links de receitas mais destacados com nome do criador, rating e nº de ingredientes.
+
+### 📄 Research académico
+
+- **"Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines"** — [arxiv.org/abs/2606.20065](https://arxiv.org/abs/2606.20065). Análise de 100.000+ respostas a prompts em 100+ marcas (mar-mai 2026): ~78% das citações em motores de IA vão para sites corporativos próprios, YouTube é a principal fonte não-corporativa citada, e conteúdo tipo "best-of"/listicle representa ~21% dos formatos citados.
+
+- **"Position: Generative Engine Optimization Creates Underexamined Risks, Governance Must Target Concentration, Disclosure, and Academic Blind Spots"** — [arxiv.org/abs/2606.12439](https://arxiv.org/abs/2606.12439). Argumenta que o GEO cria riscos de concentração de influência (baixa contestabilidade nas respostas de LLMs) e de influência comercial não divulgada nas evidências citadas.
+
+### 💡 Implicações para destaque.ai
+
+- O estudo Semrush/SEL confirma que otimizar só para "ser citado" no ChatGPT é insuficiente — o modo Thinking privilegia fontes institucionais e académicas, reforçando a tese de que autoridade e dados verificáveis pesam mais do que volume de conteúdo. Útil para responder a clientes que perguntam "porque é que o ChatGPT não me cita".
+- O achado da Peec AI (Deep Research lê muito mais do que cita) sugere que métricas de "share of citation" reportadas a clientes podem subestimar a exposição real da marca — vale a pena acrescentar uma nota metodológica nos relatórios GEO, sem ainda mudar a metodologia (amostra pequena, não peer-reviewed).
+- Sem necessidade de mudança de pitch ou de novo serviço esta semana — apenas awareness interna; não houve anúncios Tier 1 relevantes nas últimas 48h.
+
 ## 2026-06-30
 
 ### 🔵 Anúncios oficiais
