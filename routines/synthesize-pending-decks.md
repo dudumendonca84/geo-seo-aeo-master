@@ -7,7 +7,7 @@
 
 ## Propósito
 
-Esta Routine é o **cérebro real** do método SINAL na destaque.ai. Lê propostas com `deck_synthesis_pending = true`, faz auditoria profunda dos dados (audit em 6 motores + SINAL scan + dados do prospect), e escreve análise editorial de qualidade de excelência (referência interna: nível 3HASH ou superior — mas NUNCA nomeies "3HASH" no output; é concorrente).
+Esta Routine é o **cérebro real** do método SINAL na destaque.ai. Lê propostas com `deck_synthesis_pending = true`, faz auditoria profunda dos dados (audit em 7 motores + SINAL scan + dados do prospect), e escreve análise editorial de qualidade de excelência (referência interna: nível 3HASH ou superior — mas NUNCA nomeies "3HASH" no output; é concorrente).
 
 **Não é "sintetizar audit data em deck blocks"**. É **fazer audit profundo com a skill como brain activo**: ler skill, fazer research adicional (Wikipedia, Wikidata, web), pensar 30-40 min, escrever 2000-3000 palavras de análise sober, auto-criticar, refinar, persistir.
 
@@ -136,7 +136,7 @@ Guarda em variáveis mentais — vais consultar várias vezes ao longo do racioc
 
 **Isto é a parte mais rica do audit. Não saltes.**
 
-Tens **180 respostas raw** dos 6 motores LLM em `audit_runs.response`. Cada uma é texto real do motor a recomendar (ou não) o prospect. Lê com olhos críticos:
+Tens as **respostas raw** dos 7 motores LLM (o número de linhas varia com os modos knowledge/augmented) em `audit_runs.response`. Cada uma é texto real do motor a recomendar (ou não) o prospect. Lê com olhos críticos:
 
 - **Para cada motor, lê pelo menos 8-10 respostas variadas** (não só onde a marca aparece — sobretudo onde NÃO aparece). Identifica:
   - **Tom**: o motor é cauteloso? assertivo? lista 3 opções ou enumera 10?
@@ -258,7 +258,7 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
 - **faq** (5-8 perguntas): **maioria sobre GEO/AEO e a metodologia, ancoradas neste audit** — não comerciais genéricas. O cliente quer perceber a disciplina e o que os números querem dizer. Mistura recomendada: **4-5 substantivas de GEO** + no máximo 1-2 de processo (prazo/ownership). Exemplos de boas perguntas GEO (adapta ao caso, não copies):
   - "Apareço no Google mas não no ChatGPT — porquê? É o mesmo problema?"
   - "Qual a diferença entre citação e menção num motor de IA, e qual conta?"
-  - "Os 6 motores comportam-se igual? Tenho de optimizar para cada um?"
+  - "Os 7 motores comportam-se igual? Tenho de optimizar para cada um?"
   - "Criar QID Wikidata / sameAs muda mesmo a citação? Em quanto tempo?"
   - "Schema.org e llms.txt sozinhos resolvem, ou é preciso autoridade externa?"
   - "Como se mede share-of-voice em LLMs, já que não há 'posição' como no Google?"
