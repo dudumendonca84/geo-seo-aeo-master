@@ -118,7 +118,7 @@ to the executive level — no "this Tuesday", more "in the next 4 weeks".]
 
 ## Anexo metodológico
 
-[Two sentences. "Auditoria semanal com 30 prompts × 6 motores LLM (X total chamadas).
+[Two sentences. "Auditoria semanal com 30 prompts × 7 motores LLM (X total chamadas).
 Métricas calculadas conforme `metrics.md` da skill canónica. Dados crus disponíveis em /history."]
 ```
 

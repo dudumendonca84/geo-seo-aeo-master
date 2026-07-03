@@ -133,6 +133,6 @@ To keep the bar high:
 
 ## 10. Maintenance
 
-Thresholds are calibrated to ~30 prompts × 6 engines × 1 week. If the prompt count or engine count changes materially, recalibrate — variance at 10 prompts × 3 engines is much higher than at 30 × 6, and the same pp thresholds would fire too often.
+Thresholds are calibrated to ~30 prompts × 7 engines × 1 week (Perplexity augmented-only). If the prompt count or engine count changes materially, recalibrate — variance at 10 prompts × 3 engines is much higher than at 30 × 7, and the same pp thresholds would fire too often.
 
 Last calibration check: 25 May 2026, using destaque.ai self-audit baseline data.

@@ -103,6 +103,8 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 - No public inter-rater reliability data exists.
 - Treat as directional, not absolute. Useful for catching negative drift; not useful as a precise KPI.
 
+**Per-competitor net sentiment (Perception Map y-axis).** Same polarity, but computed for **each brand** in the category — client *and* competitors — as a net score in **-1..1**: `(positive − negative) / responses_mentioning_the_brand`. Plotted against presence (x-axis) it produces the presence × narrative quadrant (Leaders / Niche / Laggers / Controversial) that Peec and Profound expose. **Minimum base:** with few mentions (< ~5) the read is noise — **omit it** (mark "not yet measured") rather than assert a value. Directional only, subject to the caveats above.
+
 ---
 
 ## 8. Prompt coverage

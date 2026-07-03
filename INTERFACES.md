@@ -42,11 +42,11 @@ Todos os contratos são ficheiros markdown servidos via `raw.githubusercontent.c
 
 ### Contrato 1: prompts (audit prompt generation)
 
-**Path no repo:** `references/prompts.md`
+**Path no repo:** `skills/geo-seo-aeo-master/references/prompts.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/prompts.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md
 ```
 
 **Estrutura consumida:**
@@ -68,11 +68,11 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/referen
 
 ### Contrato 2: models (API ID lookup)
 
-**Path no repo:** `references/models.md`
+**Path no repo:** `skills/geo-seo-aeo-master/references/models.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/models.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/models.md
 ```
 
 **Estrutura consumida:**
@@ -100,11 +100,11 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
 
 ### Contrato 3: benchmarks (core stats do deck público)
 
-**Path no repo:** `references/benchmarks.md`
+**Path no repo:** `skills/geo-seo-aeo-master/references/benchmarks.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/benchmarks.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/benchmarks.md
 ```
 
 **Estrutura consumida:**
@@ -138,7 +138,7 @@ Keys consumidas hoje pelo Deck Builder:
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/SKILL.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/SKILL.md
 ```
 
 **Estrutura consumida:**
@@ -163,11 +163,11 @@ Secção `## Deck Builder method` no fim do ficheiro. Contém:
 
 ### Contrato 5: search modes (knowledge vs augmented, per-engine activation)
 
-**Path no repo:** `references/search_modes.md`
+**Path no repo:** `skills/geo-seo-aeo-master/references/search_modes.md`
 
 **Raw URL:**
 ```
-https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/references/search_modes.md
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/search_modes.md
 ```
 
 **Estrutura consumida:**

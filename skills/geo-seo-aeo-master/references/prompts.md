@@ -213,3 +213,51 @@ A Routine diária (`daily-agent/daily-prompt.md`) tem instrução explícita par
 - **Sazonalidade**: alguns prompts spike em determinadas alturas (ex: prompts price_comparison sobem em Setembro/Janeiro — budget planning seasons). Tracking de sazonalidade é roadmap, não capacidade actual.
 
 Last refresh: 23 May 2026.
+
+---
+
+## Descoberta de prompts por persona (Tracker — task `generate_prompts`)
+
+> Esta secção serve o **Visibility Tracker** (multi-tenant), distinta das tiers de
+> self-audit da destaque.ai acima. Para **qualquer cliente**, geram-se prompts por
+> **persona** e **fase de funil**, com uma estimativa **honesta** de interesse.
+> Consumida em runtime pela Routine (`generate_prompts`) e espelhada em
+> `destaque-ai-tracker/routines/tracker-brain.md`.
+
+### Personas canónicas
+
+- **B2B / SaaS:** `CMO`, `CEO/fundador`, `decisor técnico`, `comprador`.
+- **Local / b2c / físico:** `cliente local` — qualificado por ocasião + zona/cidade
+  (ex: "melhor [tipo] em [cidade]", "onde [ocasião] perto de [zona]").
+
+Adaptar o vocabulário à categoria do cliente; estas são as âncoras, não uma lista fechada.
+
+### Fase de funil (`intent_stage`)
+
+- **Topo:** `awareness`, `research` — descoberta de categoria.
+- **Meio:** `comparison` — shortlists, alternativas.
+- **Fundo:** `decision`, `post_decision` — intenção de compra. **São os que
+  convertem — prioriza gerá-los por persona.**
+
+### Interesse (1–5) — estimativa honesta, **não volume**
+
+Escala qualitativa do quanto a audiência faz este tipo de pergunta:
+
+- `5` = pergunta muito comum na categoria · `3` = procura moderada · `1` = nicho.
+
+**Não é volume de pesquisa real** (não temos esses dados) — é *directional*, como o
+Peec AI. **Nunca inventes números precisos de volume.** Omite (`null`) quando não
+consegues estimar honestamente.
+
+### Contrato por prompt
+
+`{ prompt_text, category, intent_stage, topic, branded, persona, interest }`
+
+- Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
+  `local_recommendation` qualificada por cidade/zona.
+
+### Backfill
+
+Numa corrida, se existirem prompts **ativos sem `persona`/`interest`**, preenche-os
+(`update`) além de propor novos — assim o histórico fica coerente com as colunas
+novas (migração `0025` do Tracker).
