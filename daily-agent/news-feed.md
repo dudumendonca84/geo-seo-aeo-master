@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-03
+
+### 📊 Estudos & dados
+- **ChatGPT's Thinking mode changes which brands get cited** — Search Engine Land (https://searchengineland.com/chatgpt-thinking-mode-brands-sources-citations-481439), com dados do estudo Semrush/Kevin Indig (https://www.semrush.com/blog/chatgpt-reasoning-ai-visibility/). Em 100 prompts testados no GPT-5.2 em modo "minimal" vs. "high" reasoning, a taxa de citação subiu de 50% para 68% e as citações por resposta de 2.6 para 4.5, mas só 25.6% dos domínios citados coincidiram entre os dois modos; conteúdo UGC (ex. Reddit) perdeu cerca de metade da quota de citações em modo de raciocínio elevado, enquanto fontes governamentais, académicas e documentação oficial ganharam quota.
+
+### ⚙️ Mudanças nas plataformas
+- **Google AI Mode — resultados de receitas** — a Google lançou um novo carrossel visual para queries de receitas no AI Mode, com nome do criador, rating e número de ingredientes em destaque, após cerca de um ano de queixas de publishers sobre perdas de tráfego (reportadas entre 30-80%). https://www.seroundtable.com/google-ai-mode-improves-links-recipes-41600.html
+- **Google AI Overviews — renderização inesperada de markdown** — Lily Ray identificou que alguns snippets de citação em AI Overviews mostram sintaxe de tabelas markdown em vez de texto renderizado; John Mueller (Google) classificou o comportamento como "inesperado" e reconfirmou que a Google não dá tratamento especial a ficheiros markdown ou llms.txt para efeitos de ranking ou funcionalidades de IA. https://www.seroundtable.com/google-ai-overview-markdown-files-41595.html
+
+### 💡 Implicações para destaque.ai
+- O estudo Semrush/Indig mostra que "aparecer no ChatGPT" não é um alvo único — o modo de raciocínio usado altera drasticamente que marcas são citadas. Reforça o argumento de vender monitorização contínua e multi-modo, não um snapshot único; é reforço de pitch existente, não exige novo serviço.
+- A reconfirmação da Google de que markdown/llms.txt não pesam no ranking nem em AI Overviews/AI Mode é útil para gerir expectativas de clientes B2B SaaS PT que perguntam por esse ficheiro — deve ser comunicado com clareza para evitar promessas exageradas sobre llms.txt.
+- A atualização de receitas é de nicho, mas mostra que a Google está disposta a devolver mais atribuição sob pressão de publishers — vale a pena vigiar se um padrão semelhante chega a verticais B2B/SaaS; por agora é só awareness.
+
 ## 2026-06-30
 
 ### 🔵 Anúncios oficiais
