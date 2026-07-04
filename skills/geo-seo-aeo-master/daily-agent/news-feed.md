@@ -8,6 +8,25 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-04
+
+### 🔵 Anúncios oficiais
+- **Anthropic restaura acesso a Claude Fable 5 e Mythos 5** — [anthropic.com/news](https://www.anthropic.com/news) (1 jul 2026). O Departamento de Comércio dos EUA removeu os controlos de exportação que tinham suspendido os dois modelos; ficaram disponíveis de novo na Claude Platform, Claude.ai, Claude Code e Claude Cowork globalmente, com crédito de até 50% do limite semanal de uso para Pro/Max/Team/Enterprise até 7 de julho.
+- **Google Search Console — relatório de performance AI generativa expande cobertura** — [Google Search Central Blog](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). O relatório (lançado a 3 jun, isola impressões de AI Overviews, AI Mode e Discover AI) está a ser distribuído incrementalmente a mais sites e países (EUA, Índia, Suíça, entre outros), confirmado por John Mueller no Bluesky.
+
+### 📊 Estudos & dados
+- **What 1 million keywords reveal about AI's impact on search** — [Search Engine Land](https://searchengineland.com/what-1-million-keywords-reveal-about-ais-impact-on-search-481474) (2 jul 2026). Fractl/SEL analisaram 1.010.848 keywords de alto volume (10k+ pesquisas/mês, 379 marcas, 8 verticais): 29% da procura de alto volume está em declínio, com um volume quase equivalente a crescer noutras categorias — procura total redistribuída, não reduzida.
+- **llms.txt: adoção sobe 8,8x mas 97% dos ficheiros nunca são pedidos por crawlers de IA** — estudo Originality.ai, atualização jun 2026, via [ppc.land](https://ppc.land/llms-txt-adoption-rises-8-8x-but-97-of-files-get-zero-ai-requests/). Tracking de 3M+ sites: instâncias de llms.txt subiram de 4.088 (jun 2025) para 36.120 (mai 2026); GPTBot, ClaudeBot, PerplexityBot e Google-Extended continuam a ignorar o ficheiro na larga maioria dos casos.
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search Console — relatório de indexação de páginas corrigido**. Esteve bloqueado desde 11/12 de junho; dados atualizados a 29 de junho foram publicados a 3 de julho. [Search Engine Roundtable](https://www.seroundtable.com/google-page-indexing-report-fixed-and-updated-41626.html).
+- **Google AI Overviews — renderização inesperada de markdown**. Lily Ray identificou snippets de citação a mostrar sintaxe de tabelas markdown em vez de texto renderizado; John Mueller (Google) classificou como "inesperado" e reconfirmou que não há tratamento especial de ranking para markdown ou llms.txt. [Search Engine Roundtable](https://www.seroundtable.com/google-ai-overview-markdown-files-41595.html) (2 jul 2026).
+
+### 💡 Implicações para destaque.ai
+- Fable 5/Mythos 5 restaurados — absorvido em `references/models.md` (secção Anthropic). Sem mudança de mecânica de citação conhecida; modelos não são default em nenhum produto de AI search, awareness apenas.
+- O dado dos 97% de llms.txt ignorados por crawlers de IA (absorvido em `references/frameworks.md` §1) confirma que não é tática prioritária isolada — reforça o pitch de continuar a apostar em schema markup, entity signals e conteúdo estruturado como sinais que os crawlers efetivamente consomem.
+- A redistribuição de procura (29% em declínio vs. crescimento equivalente noutras categorias) é argumento para reposicionar relatórios de clientes SaaS B2B: menos foco em "tráfego total", mais em tracking de categorias de query que estão a ganhar vs. perder.
+
 ## 2026-07-02
 
 ### 🔵 Anúncios oficiais

@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 02 Jul 2026 (partial)** — Claude Sonnet 5 row added on this date (Anthropic section + Deck Builder mapping). Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset, Claude Fable 5 / Mythos 5) were not absorbed. See `daily-agent/news-feed.md` for the full running record.
+**Last refresh: 04 Jul 2026 (partial)** — Claude Fable 5 / Mythos 5 rows added on this date (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `daily-agent/news-feed.md` for the full running record.
 
 ---
 
@@ -61,6 +61,8 @@ When citing capabilities, **always include the model version and the date observ
 
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
+| **Claude Fable 5** | Jun 2026 (export-restricted); access restored 01 Jul 2026 | 1M tokens, 128k max output | Yes | Anthropic's most capable widely-released model; not a default anywhere yet — opt-in for demanding agentic/reasoning work |
+| **Claude Mythos 5** | Jun 2026 (limited release) | 1M tokens, 128k max output | Yes | Limited release via "Project Glasswing"; same capabilities as Fable 5, routes cyber/bio-chem/distillation-flagged requests to Opus 4.8 instead |
 | **Claude Opus 4.8** | May 2026 | 1M tokens | Yes | Claude Code Fast mode; Claude Pro Max ("Most intelligent") |
 | **Claude Sonnet 5** | 30 Jun 2026 | 1M tokens (default and max), 128k max output | Yes | **New default for Free and Pro plans on claude.ai** (since 30 Jun 2026); also available Max/Team/Enterprise and API (`claude-sonnet-5`) |
 | **Claude Opus 4.7** | Apr 2026 | 1M tokens | Yes | Claude Pro / Max (previous default — being superseded) |
@@ -69,6 +71,8 @@ When citing capabilities, **always include the model version and the date observ
 | **Claude Sonnet 4.5** | Sept 2025 | 1M tokens | Yes | Still available in API for compat |
 
 Claude Sonnet 5 pricing: intro $2/$10 per million input/output tokens through 31 Aug 2026, then $3/$15. Anthropic positions it as close to Opus 4.8 performance at lower cost; safety card reports lower hallucination/sycophancy and improved agentic-safety (prompt-injection resistance) vs. Sonnet 4.6. Uses an updated tokenizer (same input maps to ~1.0–1.35x tokens vs. prior tokenizer). Source: [anthropic.com/news/claude-sonnet-5](https://www.anthropic.com/news/claude-sonnet-5).
+
+Claude Fable 5 / Mythos 5 pricing: $10/$50 per million input/output tokens. Both were subject to US Department of Commerce export controls that suspended access; Anthropic began restoring Fable 5 on 01 Jul 2026 across Claude Platform, Claude.ai, Claude Code and Claude Cowork globally after the controls were lifted, with Pro/Max/Team/select-Enterprise users credited up to 50% of weekly usage limits through 07 Jul 2026 as compensation for the disruption. Source: [anthropic.com/news](https://www.anthropic.com/news).
 
 ### Products and which model
 
