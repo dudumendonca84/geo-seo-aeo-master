@@ -8,6 +8,15 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-05
+
+### 📊 Estudos & dados
+- **Estudo de campo (SSRN) confirma quebra de cliques em AI Overviews, mas não encontra diferença de qualidade** — Saharsh Agarwal e Ananya Sen, via [Search Engine Journal](https://www.searchenginejournal.com/google-ai-overviews-study-finds-lost-clicks-werent-lower-quality/581298/). Experiência de campo com atribuição aleatorizada mede uma redução de 39,8% em cliques orgânicos quando AI Overviews aparecem no SERP; não encontra diferença mensurável em bounce rate, regresso à SERP ou tempo no site entre os cliques perdidos e os restantes — resultado que contraria a justificação pública da Google de que os cliques eliminados por AI Overviews seriam maioritariamente de baixa qualidade. Nota: working paper em SSRN, ainda sem peer review.
+
+### 💡 Implicações para destaque.ai
+- O estudo Agarwal/Sen reforça, com dado independente, o argumento já levantado pelo estudo Fractl/SEL de 29 jun (procura redistribuída, não perdida): a narrativa de "cliques perdidos = cliques de baixa qualidade" carece de suporte empírico. Útil para justificar a clientes a necessidade de tracking de citações IA como complemento — não substituto — ao tráfego orgânico clássico.
+- Sem anúncio Tier 1 novo, mudança algorítmica confirmada, ou lançamento de modelo LLM nas últimas 24-48h (fim de semana nos EUA, período tipicamente parado após o feriado de 4 de julho). Awareness apenas; sem mudança de pitch ou metodologia necessária hoje.
+
 ## 2026-07-04
 
 ### 🔵 Anúncios oficiais
