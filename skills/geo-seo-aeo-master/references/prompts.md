@@ -280,3 +280,25 @@ Numa corrida, se existirem prompts **ativos sem `persona`/`interest`**, preenche
 `id`** para uma pergunta natural — preserva o histórico (a série é por `id`, não por
 texto) e afina a redação. Assim o catálogo do cliente converge para perguntas reais
 sem perder as semanas já medidas.
+
+### 8.6 Cobertura de funil e balanço de personas (recomendação)
+
+Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
+
+- **Todos os estágios de funil cobertos — especialmente BOFU** (`decision` /
+  `post_decision`). Um catálogo só com topo/meio (descoberta e comparação) deixa o
+  **momento da compra por medir** — o mapa de funil fica a `0/0` no BOFU, que é
+  precisamente o estágio que converte. Se um estágio estiver vazio, **gera prompts
+  para o preencher**. Exemplos BOFU (sem nomear a marca do cliente):
+  - *"Qual é a melhor [categoria] em [país] para contratar para [ICP]?"*
+  - *"Que [fornecedor] tem casos de sucesso comprovados com resultados verificáveis?"*
+  - *"Vale mais a pena contratar ou desenvolver a capacidade internamente?"*
+  - *"Quanto devo orçamentar para contratar e o que está incluído?"*
+  - *"O que esperar nos primeiros 90 dias de trabalho com [fornecedor]?"* (`post_decision`)
+- **Personas equilibradas por ângulo** — não concentres o catálogo num só perfil.
+  Cada persona pergunta de forma diferente (§8.1): CEO/fundador = ROI e decisão de
+  investir; CMO = tráfego e visibilidade; decisor técnico = exequibilidade;
+  comprador = preço e quem contratar. Evita que uma persona domine enquanto outra
+  (tipicamente **CEO/fundador**) fica quase ausente — se acontecer, reatribui a
+  persona dos prompts cujo ângulo é claramente de outro perfil (`update` no mesmo
+  `id`, não perde histórico).
