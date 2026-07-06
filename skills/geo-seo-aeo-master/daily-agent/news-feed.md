@@ -8,6 +8,16 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-06
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search — AMP passa a apontar diretamente para a página do publisher** — [Search Engine Land](https://searchengineland.com/google-search-now-sends-searchers-directly-to-publisher-hosted-amp-pages-481431) (1 jul 2026). A Google deixou de encaminhar utilizadores para a versão em cache no AMP Viewer, levando-os agora diretamente à página AMP alojada pelo próprio site; um porta-voz confirmou que "AMP content will continue to rank just like any other webpage" e que mantém o suporte ao formato open-source AMPhtml — a mudança não afeta rankings, só simplifica analytics/tracking para publishers.
+
+### 💡 Implicações para destaque.ai
+- Mudança do AMP é irrelevante para a esmagadora maioria da carteira B2B SaaS em Portugal (adoção de AMP residual neste segmento) — apenas awareness, sem ação de cliente necessária.
+- Sem anúncio Tier 1 novo, estudo com dados inédito ou mudança algorítmica de maior peso confirmada nas últimas 24-48h: os candidatos encontrados nesta pesquisa (estudo Semrush/Indig sobre reasoning mode do ChatGPT, tracking Originality.ai de llms.txt, revisão Agarwal/Sen sobre cliques em AI Overviews) já estão cobertos e absorvidos nas entradas de 2, 4 e 5 de julho — incluí-los de novo seria repackaging de news velhas.
+- Sem mudança de pitch ou de metodologia necessária hoje.
+
 ## 2026-07-05
 
 ### 📊 Estudos & dados
