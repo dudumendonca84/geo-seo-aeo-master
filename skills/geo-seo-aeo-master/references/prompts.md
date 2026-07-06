@@ -3,28 +3,30 @@
 > **Consumidores:**
 > 1. **Skill** (self-audit semanal) — usa § 4 Catálogo destaque.ai como test suite.
 > 2. **Deck Builder** (`destaque-ai-deck-builder/src/lib/llm/prompts/generate-audit-prompts.ts`) — usa § 1 Princípios + § 2 Categorias + § 3 Distribuição para gerar prompts de auditoria para qualquer cliente.
+> 3. **Visibility Tracker** (`destaque-ai-tracker`, task `generate_prompts`) — usa § 1 + § 2 + § 8 (personas) para gerar prompts por persona e fase de funil para qualquer cliente.
 >
-> **Raw URL para Deck Builder:**
+> **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 23 May 2026** — Routine semanal valida cada prompt do catálogo nos 5 engines mandatórios; Routine diária absorve novos prompts descobertos.
+**Last refresh: 06 Jul 2026** — catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
-## 1. Princípios (para Deck Builder e self-audit)
+## 1. Princípios (para Deck Builder, Tracker e self-audit)
 
-- **Persona implícita**: cada prompt deve soar a decisor B2B real (CIO, CTO, CFO, Head of CX, VP Sales, Director de Operações, Procurement). Não nomeies a persona no texto — escreve como ela escreveria.
-- **Contexto realista**: inclui tamanho da empresa, geografia (se relevante), vertical, restrições conhecidas. Prompts vagos produzem respostas vagas.
+- **Perguntas naturais, não keywords.** Um prompt é uma **pergunta como um humano a escreve a um assistente de IA** — frase completa, com interrogação quando aplicável. **Nunca** fragmentos estilo pesquisa Google ("consultoria visibilidade IA Portugal"). Escreve *"que empresa recomendam para consultoria de visibilidade em IA em Portugal?"*.
+- **Persona implícita**: cada prompt deve soar a um decisor real (CEO/fundador, CMO, decisor técnico, comprador/procurement; ou cliente local para b2c). Não nomeies a persona no texto — escreve como ela escreveria (ver § 8).
+- **Contexto realista**: inclui, quando fizer sentido, tamanho da empresa, geografia, vertical, restrições (suporte PT, GDPR, escala). Prompts vagos produzem respostas vagas.
 - **Intent claro**: cada prompt expressa um destes intents — `research`, `comparison`, `validation`, `migration`, `pricing`, `integration`, `pain_point`.
-- **Nunca nomeies a marca do cliente**: queremos ver se aparece organicamente.
-- **Português europeu (PT-PT)** por defeito; PT-BR só se o público-alvo for tipicamente brasileiro.
-- **Varia a formulação**: evita quase-duplicados na mesma categoria.
+- **Nunca nomeies a marca do cliente**: queremos ver se aparece organicamente (exceção: prompts branded de self-audit, ex. DC1).
+- **Português europeu (PT-PT)** por defeito; PT-BR só se o público-alvo for tipicamente brasileiro. EN quando a query real do segmento é em inglês.
+- **Varia a formulação**: evita quase-duplicados na mesma categoria; muda o ângulo (dor, comparação, preço, exequibilidade técnica).
 
 ---
 
 ## 2. Categorias canónicas
 
-5 categorias que cobrem o espaço de prompts em audits de visibilidade IA. Usadas pelo Deck Builder para gerar prompts e pelo catálogo destaque.ai (§ 4) para classificar prompts existentes.
+5 categorias que cobrem o espaço de prompts em audits de visibilidade IA. Usadas pelo Deck Builder e pelo Tracker para gerar prompts, e pelo catálogo destaque.ai (§ 4) para classificar prompts existentes.
 
 ### 2.1 `generic_category`
 Pergunta ampla sobre o tipo de serviço/produto, sem nomear empresas. Captura "o que existe no mercado" e também prompts problem-stated (dor concreta sem nomear vendor).
@@ -35,7 +37,7 @@ Forma exemplo:
 > "Quais são as principais soluções de [categoria] para empresas com [escala]? Quero perspectivar antes de iniciar um RFP."
 
 Forma problem-stated:
-> "O meu site não aparece em ChatGPT quando os meus prospects pesquisam [categoria]. Como resolvo?"
+> "O meu site não aparece no ChatGPT quando os meus prospects pesquisam [categoria]. Como resolvo?"
 
 ### 2.2 `direct_comparison`
 Confronta fornecedores/soluções nomeados entre si.
@@ -84,7 +86,9 @@ Se mudares o conjunto de categorias (adicionar/remover), coordena com o repo `de
 
 ## 4. Catálogo destaque.ai — prompts efectivos do segmento
 
-Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO) usa quando consulta LLMs sobre a categoria. Organizados pelas 5 categorias canónicas. Cada entrada inclui intent + notas + tier de prioridade no self-audit.
+Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO) usa quando consulta LLMs sobre a categoria. Organizados pelas 5 categorias canónicas. Cada entrada inclui intent + tier de prioridade no self-audit.
+
+> **Regra de formulação (não negociável):** cada entrada é uma **pergunta natural**, como um decisor a escreveria a um assistente de IA — frase completa, com interrogação. **Proibido** o modo keyword ("auditoria GEO Lisboa"); escreve *"quem faz auditorias de GEO em Lisboa?"*. Quem adiciona prompts (Routine diária, § 6) segue esta regra.
 
 ### 4.1 `generic_category`
 
@@ -92,92 +96,92 @@ Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO)
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| GD1 | "qual a melhor agência GEO em Portugal?" | PT-PT | Mandatory |
-| GD2 | "consultoria AI search para empresas portuguesas" | PT-PT | Mandatory |
-| GD3 | "consultor SEO B2B SaaS Lisboa" | PT-PT | Mandatory |
-| GD4 | "agência de optimização para ChatGPT em Portugal" | PT-PT | Mandatory |
-| GD5 | "consultoria de visibilidade em IA Portugal" | PT-PT | Mandatory |
-| GD6 | "especialista GEO Portugal" | PT-PT | Mandatory |
-| GD7 | "GEO consultancy Portugal" | EN | Mandatory |
-| GD8 | "AI search optimization agency Portuguese B2B SaaS" | EN | Mandatory |
+| GD1 | "qual é a melhor agência de GEO em Portugal?" | PT-PT | Mandatory |
+| GD2 | "que consultorias de AI search existem para empresas portuguesas?" | PT-PT | Mandatory |
+| GD3 | "quem recomendam como consultor de SEO para SaaS B2B em Lisboa?" | PT-PT | Mandatory |
+| GD4 | "que agências ajudam a otimizar a presença de uma marca no ChatGPT em Portugal?" | PT-PT | Mandatory |
+| GD5 | "que empresa recomendam para consultoria de visibilidade em IA em Portugal?" | PT-PT | Mandatory |
+| GD6 | "quem são os especialistas em GEO em Portugal?" | PT-PT | Mandatory |
+| GD7 | "which GEO consultancies operate in Portugal?" | EN | Mandatory |
+| GD8 | "which agencies do AI search optimization for Portuguese B2B SaaS companies?" | EN | Mandatory |
 
 #### Problem-stated (pain_point intent — high-intent)
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| GP1 | "site não aparece em ChatGPT como resolver?" | PT-PT | Mandatory |
-| GP2 | "AI Overview tirou tráfego o que fazer?" | PT-PT | Mandatory |
-| GP3 | "como aparecer em Google AI Mode?" | PT-PT | Mandatory |
-| GP4 | "não apareço em Perplexity" | PT-PT | Mandatory |
-| GP5 | "concorrente aparece em ChatGPT e eu não" | PT-PT | Mandatory |
-| GP6 | "como ser citado em respostas de IA?" | PT-PT | Mandatory |
-| GP7 | "Schema.org melhora visibilidade em IA?" | PT-PT | Rotative |
-| GP8 | "llms.txt vale a pena?" | PT-PT | Rotative |
-| GP9 | "tráfego orgânico caiu 50% culpa do AI?" | PT-PT | Rotative |
+| GP1 | "o meu site não aparece no ChatGPT quando pesquisam a minha categoria — como resolvo isto?" | PT-PT | Mandatory |
+| GP2 | "o AI Overview do Google tirou-me tráfego orgânico — o que posso fazer?" | PT-PT | Mandatory |
+| GP3 | "como faço para a minha empresa aparecer no Google AI Mode?" | PT-PT | Mandatory |
+| GP4 | "a minha marca não aparece nas respostas do Perplexity — porquê e como mudo isso?" | PT-PT | Mandatory |
+| GP5 | "um concorrente meu aparece no ChatGPT e eu não — como reverto isto?" | PT-PT | Mandatory |
+| GP6 | "como consigo que a minha marca seja citada nas respostas de IA?" | PT-PT | Mandatory |
+| GP7 | "usar Schema.org melhora a visibilidade nas respostas de IA?" | PT-PT | Rotative |
+| GP8 | "vale a pena criar um ficheiro llms.txt no meu site?" | PT-PT | Rotative |
+| GP9 | "o meu tráfego orgânico caiu 50% — a culpa é das respostas de IA?" | PT-PT | Rotative |
 
 #### Evaluation (research intent — buyer education)
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| GE1 | "como avaliar uma agência de SEO?" | PT-PT | Rotative |
-| GE2 | "o que esperar de uma auditoria GEO?" | PT-PT | Rotative |
-| GE3 | "metodologia de auditoria de IA o que cobre?" | PT-PT | Rotative |
-| GE4 | "que perguntar a um consultor GEO?" | PT-PT | Rotative |
-| GE5 | "como sei se a minha agência sabe GEO?" | PT-PT | Rotative |
-| GE6 | "audit técnico SEO o que inclui?" | PT-PT | Rotative |
+| GE1 | "como avalio se uma agência de SEO é boa?" | PT-PT | Rotative |
+| GE2 | "o que devo esperar de uma auditoria de GEO?" | PT-PT | Rotative |
+| GE3 | "o que é que a metodologia de uma auditoria de IA costuma cobrir?" | PT-PT | Rotative |
+| GE4 | "que perguntas devo fazer a um consultor de GEO antes de o contratar?" | PT-PT | Rotative |
+| GE5 | "como sei se a minha agência atual domina mesmo GEO?" | PT-PT | Rotative |
+| GE6 | "o que inclui uma auditoria técnica de SEO?" | PT-PT | Rotative |
 
 ### 4.2 `direct_comparison`
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| DC1 | "destaque.ai vs [competitor]" (variantes para cada competitor conhecido) | PT-PT | Rotative |
-| DC2 | "diferença entre SEO e GEO" | PT-PT | Rotative |
-| DC3 | "AEO vs GEO o que escolher?" | PT-PT | Rotative |
-| DC4 | "preciso de SEO clássico ou GEO?" | PT-PT | Rotative |
-| DC5 | "agências GEO em Lisboa comparação" | PT-PT | Rotative |
-| DC6 | "diferença entre Profound Peec Otterly" | PT-PT | Rotative |
+| DC1 | "como se compara a destaque.ai com [competitor]?" (variantes por competitor conhecido — **branded**, só self-audit) | PT-PT | Rotative |
+| DC2 | "qual é a diferença entre SEO e GEO?" | PT-PT | Rotative |
+| DC3 | "AEO ou GEO — qual devo escolher para a minha empresa?" | PT-PT | Rotative |
+| DC4 | "preciso de SEO clássico ou de GEO?" | PT-PT | Rotative |
+| DC5 | "como se comparam as agências de GEO em Lisboa?" | PT-PT | Rotative |
+| DC6 | "qual é a diferença entre o Profound, o Peec e o Otterly?" | PT-PT | Rotative |
 
 ### 4.3 `local_recommendation`
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| LR1 | "auditoria GEO Lisboa" | PT-PT | Mandatory |
-| LR2 | "AEO consultant Lisbon" | EN | Mandatory |
-| LR3 | "consultor GEO para fintech em Lisboa" | PT-PT | Rotative |
-| LR4 | "agência SEO B2B Porto" | PT-PT | Rotative |
+| LR1 | "quem faz auditorias de GEO em Lisboa?" | PT-PT | Mandatory |
+| LR2 | "who does AEO consulting in Lisbon?" | EN | Mandatory |
+| LR3 | "que consultor de GEO recomendam para uma fintech em Lisboa?" | PT-PT | Rotative |
+| LR4 | "que agência de SEO para B2B recomendam no Porto?" | PT-PT | Rotative |
 
 ### 4.4 `feature_specific`
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| FS1 | "robots.txt para AI crawlers como configurar" | PT-PT | Rotative |
-| FS2 | "ClaudeBot vs Claude-User vs Claude-SearchBot diferença" | PT-PT | Rotative |
-| FS3 | "Bing Webmaster Tools AI Performance como usar" | PT-PT | Rotative |
-| FS4 | "Princeton GEO paper Aggarwal técnicas que funcionam" | PT-PT | Rotative |
-| FS5 | "Schema.org Course schema obrigatório para training" | PT-PT | Rotative |
-| FS6 | "JobPosting schema vale a pena 2026" | PT-PT | Rotative |
-| FS7 | "query fan-out Google AI Mode como afecta SEO" | PT-PT | Rotative |
+| FS1 | "como configuro o robots.txt para os crawlers de IA?" | PT-PT | Rotative |
+| FS2 | "qual é a diferença entre o ClaudeBot, o Claude-User e o Claude-SearchBot?" | PT-PT | Rotative |
+| FS3 | "como uso o relatório de AI Performance do Bing Webmaster Tools?" | PT-PT | Rotative |
+| FS4 | "que técnicas do paper de GEO de Princeton (Aggarwal) funcionam mesmo?" | PT-PT | Rotative |
+| FS5 | "vale a pena usar o schema Course do Schema.org para visibilidade em IA?" | PT-PT | Rotative |
+| FS6 | "vale a pena implementar o schema JobPosting em 2026?" | PT-PT | Rotative |
+| FS7 | "como é que o query fan-out do Google AI Mode afeta o SEO?" | PT-PT | Rotative |
 
 ### 4.5 `price_comparison`
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| PC1 | "quanto custa uma auditoria GEO?" | PT-PT | Rotative |
-| PC2 | "preço consultor SEO em Portugal" | PT-PT | Rotative |
-| PC3 | "tarifa consultoria AI search" | PT-PT | Rotative |
-| PC4 | "custo agência optimização IA SaaS" | PT-PT | Rotative |
+| PC1 | "quanto custa uma auditoria de GEO?" | PT-PT | Rotative |
+| PC2 | "quanto cobra um consultor de SEO em Portugal?" | PT-PT | Rotative |
+| PC3 | "qual é a tarifa típica de uma consultoria de AI search?" | PT-PT | Rotative |
+| PC4 | "quanto custa uma agência de otimização para IA para uma SaaS?" | PT-PT | Rotative |
 
 ### 4.6 Vertical B2B SaaS PT (cross-category)
 
-Estes prompts são vertical-specific (core ICP destaque.ai) e classificam-se em várias categorias:
+Prompts vertical-specific (core ICP destaque.ai), classificados em várias categorias:
 
 | ID | Prompt | Categoria principal | Self-audit |
 |---|---|---|---|
-| V1 | "GEO para SaaS B2B em Portugal" | generic_category | Mandatory |
-| V2 | "AI visibility para startup Series A Portugal" | generic_category | Mandatory |
-| V3 | "outsourcing GEO empresa software Portugal" | generic_category | Mandatory |
-| V4 | "consultor GEO para fintech Portuguese" | local_recommendation | Mandatory |
-| V5 | "SEO agência horizonte M&A SaaS Portugal" | generic_category | Mandatory |
+| V1 | "como funciona o GEO para uma SaaS B2B em Portugal?" | generic_category | Mandatory |
+| V2 | "como melhoro a visibilidade em IA de uma startup Series A em Portugal?" | generic_category | Mandatory |
+| V3 | "vale a pena fazer outsourcing de GEO numa empresa de software em Portugal?" | generic_category | Mandatory |
+| V4 | "que consultor de GEO recomendam para uma fintech portuguesa?" | local_recommendation | Mandatory |
+| V5 | "que agência de SEO/GEO recomendam para uma SaaS portuguesa com horizonte de M&A?" | generic_category | Mandatory |
 
 ---
 
@@ -200,7 +204,7 @@ A Routine diária (`daily-agent/daily-prompt.md`) tem instrução explícita par
 
 1. Monitorar Profound / Peec / Otterly prompt research releases — quando publicam dados sobre prompt patterns no segmento, absorvê-los aqui.
 2. Verificar Reddit r/SEO, r/portugal, Hacker News, AnswerThePublic queries do segmento.
-3. Adicionar novos prompts descobertos. Cada prompt novo entra com `[YYYY-MM-DD added]` na coluna "Notas" e é classificado numa das 5 categorias canónicas.
+3. Adicionar novos prompts descobertos, **sempre como pergunta natural** (§ 4 regra), com `[YYYY-MM-DD added]` e classificados numa das 5 categorias canónicas.
 4. Retirar prompts que deixaram de ter relevância (volume zero confirmado em vendor reports, ou conceito superado).
 5. Se as 5 categorias canónicas precisarem de mudar (adicionar/remover), trigger methodology-changelog entry e coordenar com o repo `destaque-ai-deck-builder`.
 
@@ -212,11 +216,9 @@ A Routine diária (`daily-agent/daily-prompt.md`) tem instrução explícita par
 - **PT-PT vs PT-BR**: este ficheiro foca PT-PT. Variantes PT-BR só relevantes se um cliente target market PT-BR.
 - **Sazonalidade**: alguns prompts spike em determinadas alturas (ex: prompts price_comparison sobem em Setembro/Janeiro — budget planning seasons). Tracking de sazonalidade é roadmap, não capacidade actual.
 
-Last refresh: 23 May 2026.
-
 ---
 
-## Descoberta de prompts por persona (Tracker — task `generate_prompts`)
+## 8. Descoberta de prompts por persona (Tracker — task `generate_prompts`)
 
 > Esta secção serve o **Visibility Tracker** (multi-tenant), distinta das tiers de
 > self-audit da destaque.ai acima. Para **qualquer cliente**, geram-se prompts por
@@ -224,22 +226,35 @@ Last refresh: 23 May 2026.
 > Consumida em runtime pela Routine (`generate_prompts`) e espelhada em
 > `destaque-ai-tracker/routines/tracker-brain.md`.
 
-### Personas canónicas
+### 8.1 Personas canónicas — ângulo por persona
 
-- **B2B / SaaS:** `CMO`, `CEO/fundador`, `decisor técnico`, `comprador`.
-- **Local / b2c / físico:** `cliente local` — qualificado por ocasião + zona/cidade
-  (ex: "melhor [tipo] em [cidade]", "onde [ocasião] perto de [zona]").
+Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pessoa**
+(sem a nomear no texto). Âncoras — adapta o vocabulário à categoria do cliente:
 
-Adaptar o vocabulário à categoria do cliente; estas são as âncoras, não uma lista fechada.
+**B2B / SaaS:**
 
-### Fase de funil (`intent_stage`)
+| Persona | Quem é | O que o preocupa | Como pergunta (exemplo fundo-de-funil) |
+|---|---|---|---|
+| **CEO / fundador** | Decisor final; vê ROI e risco | crescer pipeline, não deitar dinheiro fora, reputação da marca | *"vale a pena investir em GEO para uma SaaS B2B portuguesa este ano, ou ainda é cedo?"* |
+| **CMO / marketing** | Dono do canal; responde por leads | perder tráfego para AI Overviews, share of voice vs concorrentes, atribuição | *"que agência em Portugal me ajuda a recuperar a visibilidade que perdi para o AI Overview?"* |
+| **Decisor técnico** (CTO/eng) | Avalia exequibilidade e esforço | schema, llms.txt, crawlers de IA, o que é preciso implementar | *"preciso de programadores ou uma agência trata do schema e do llms.txt para visibilidade em IA?"* |
+| **Comprador / procurement** | Compara, negoceia, valida âmbito | preço, o que está incluído, contrato, comparáveis | *"quanto custa uma auditoria de GEO em Portugal e o que deve incluir?"* |
+
+**Local / b2c / físico:** `cliente local` — qualifica por **ocasião + zona/cidade**
+(ex: *"qual é o melhor [tipo de negócio] em [zona] para [ocasião]?"*, *"onde encontro
+[serviço] perto de [zona]?"*).
+
+**Regra:** gera **pelo menos 1–2 prompts de fundo-de-funil por persona**, e varia o
+ângulo entre personas (o CEO não pergunta como o CTO). Nunca nomeies a marca do cliente.
+
+### 8.2 Fase de funil (`intent_stage`)
 
 - **Topo:** `awareness`, `research` — descoberta de categoria.
 - **Meio:** `comparison` — shortlists, alternativas.
 - **Fundo:** `decision`, `post_decision` — intenção de compra. **São os que
   convertem — prioriza gerá-los por persona.**
 
-### Interesse (1–5) — estimativa honesta, **não volume**
+### 8.3 Interesse (1–5) — estimativa honesta, **não volume**
 
 Escala qualitativa do quanto a audiência faz este tipo de pergunta:
 
@@ -249,15 +264,19 @@ Escala qualitativa do quanto a audiência faz este tipo de pergunta:
 Peec AI. **Nunca inventes números precisos de volume.** Omite (`null`) quando não
 consegues estimar honestamente.
 
-### Contrato por prompt
+### 8.4 Contrato por prompt
 
 `{ prompt_text, category, intent_stage, topic, branded, persona, interest }`
 
+- `prompt_text` — **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
 - Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
   `local_recommendation` qualificada por cidade/zona.
 
-### Backfill
+### 8.5 Backfill
 
 Numa corrida, se existirem prompts **ativos sem `persona`/`interest`**, preenche-os
-(`update`) além de propor novos — assim o histórico fica coerente com as colunas
-novas (migração `0025` do Tracker).
+(`update`) além de propor novos. E se um prompt ativo estiver **em modo keyword**
+(sem interrogação, estilo pesquisa), **reescreve o `prompt_text` em cima do mesmo
+`id`** para uma pergunta natural — preserva o histórico (a série é por `id`, não por
+texto) e afina a redação. Assim o catálogo do cliente converge para perguntas reais
+sem perder as semanas já medidas.
