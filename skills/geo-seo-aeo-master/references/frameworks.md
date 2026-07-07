@@ -91,6 +91,10 @@ Cloudflare published a report (4 Aug 2025) alleging Perplexity used undeclared/r
 | `cohere-ai` | Cohere | Training |
 | `Diffbot` | Diffbot | Knowledge-graph crawl |
 
+### Cloudflare "Content Signals" robots.txt extension — no effect confirmed (Jul 2026)
+
+Cloudflare's "Content Signals" policy extends `robots.txt` with three declarable preferences (`search`, `ai-input`, `ai-train`) letting site owners state intent for how crawled content may be used. John Mueller (Google) confirmed on-record, 6 Jul 2026, that the directive has "no effect whatsoever" on any crawler — including Google's own — and that Google does not consume it, nor `llms.txt` / `llms-author.txt`, for crawling or ranking decisions ([Search Engine Roundtable](https://www.seroundtable.com/google-cloudflare-content-signals-41631.html)). Same posture as §1: an unenforced declaration of intent, not a technical control.
+
 ### Practical pattern for B2B SaaS
 
 Allow **real-time / answer-engine** bots:

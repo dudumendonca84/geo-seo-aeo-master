@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-07
+
+### 📊 Estudos & dados
+- **Self-Promotional Content Works — Until It Backfires** — [Ahrefs](https://ahrefs.com/blog/self-promotional-content-ai-seo-experiment/) (6 jul 2026). Experimento controlado fev-mai 2026 em ChatGPT/Gemini/Perplexity/Copilot: após lançar a conferência própria "Evolve", a Ahrefs passou a ser citada em 66,4% das respostas a "best SEO conferences 2026" mas apenas em 15,8% de "best marketing conferences 2026" — conteúdo auto-promocional só gera citação quando a marca já é uma resposta plausível para a categoria da query.
+
+### ⚙️ Mudanças nas plataformas
+- **Google — directiva "Content Signals" da Cloudflare confirmada sem efeito** — [Search Engine Roundtable](https://www.seroundtable.com/google-cloudflare-content-signals-41631.html) (6 jul 2026). John Mueller confirmou on-record que a nova extensão robots.txt da Cloudflare (categorias `search`/`ai-input`/`ai-train`) não tem "qualquer efeito" em nenhum crawler, incluindo os da própria Google; reconfirmou também que a Google não consome `llms.txt` nem `llms-author.txt`.
+
+### 📄 Research académico
+- **Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines** — Pratyush Kumar, [arxiv.org/abs/2606.20065](https://arxiv.org/abs/2606.20065) (18 jun 2026). 100K+ prompts / 100+ marcas (mar-mai 2026): marcas globais aparecem em 73% das respostas relevantes vs. 11% para marcas nicho; listicles "best-of" são o formato mais citado (~21% de todas as citações).
+- **Covering the Unseen: Information Demand Coverage Optimization for RAG (GeoRAG)** — Zhang, Jia, Zhu, [arxiv.org/abs/2606.29328](https://arxiv.org/abs/2606.29328) (28 jun 2026). Retrieval top-k tradicional cobre bem uma faceta de queries multi-hop mas ignora outras; conteúdo que responde explicitamente a várias sub-perguntas de um tópico tem maior probabilidade de recuperação em queries complexas.
+- **Per-Entity Bias Mapping for AI Visibility** — Zoltán Varga, [arxiv.org/abs/2606.21595](https://arxiv.org/abs/2606.21595) (19 jun 2026). Marcas médias — suficientemente conhecidas para o modelo "completar o padrão" mas sub-representadas nos dados de treino — têm taxa de menções fabricadas mais alta (52,7%) do que marcas muito conhecidas (37,9%).
+
+### 💡 Implicações para destaque.ai
+- A confirmação de Mueller sobre o Content Signals da Cloudflare — absorvida em `references/frameworks.md` §2 — reforça que não existe hoje mecanismo fiável de "opt-in/opt-out" de crawling de IA via robots.txt; não vender isto como solução a clientes, manter apenas como awareness.
+- O estudo Ahrefs confirma que GEO não substitui autoridade de marca já construída: conteúdo auto-promocional só gera citação quando a marca já é candidata plausível na categoria — reforça o pitch de priorizar autoridade temática antes de conteúdo de produto.
+- O paper sobre o "Brand Hallucination Paradox" é argumento concreto para upsell de dados estruturados: marcas B2B portuguesas de média dimensão beneficiam de schema.org e knowledge graphs consistentes para reduzir menções incorrectas geradas por IA — awareness por agora, avaliar como serviço para clientes médios com pouca presença estruturada online.
+
 ## 2026-07-06
 
 ### ⚙️ Mudanças nas plataformas
