@@ -40,6 +40,20 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-06-30 | Websystems | 1/5 | 8.0 | — (1.ª semana) | 1/5 (só Claude) | Novo entrante D0; prompt 2 pos 8 |
 | 2026-06-30 | destaque.ai | 0/5 | n/a | = | 1/5 (só Claude) | Cobertura parcial; ausência nos 5 prompts fixos; indexado em query fora dos 5 fixos |
 
+| 2026-07-07 | 3HASH | 2/5 | 1.5 | = | 1/5 (só Claude) | Cobertura parcial; prompts 3, 4 |
+| 2026-07-07 | destaque.ai | 1/5 | 1.0 | +1 (era 0) | 1/5 (só Claude) | Cobertura parcial; prompt 5 pos 1 — primeira aparição no top-3, 3.ª semana seguida sem concorrência PT nesta query |
+| 2026-07-07 | LUSO AI | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1 |
+| 2026-07-07 | Latigid | 1/5 | 2.0 | -2 | 1/5 (só Claude) | Cobertura parcial; prompt 1; flutuação esperável a este denominador |
+| 2026-07-07 | AP\|Portugal | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 1 |
+| 2026-07-07 | Infinidata | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 |
+| 2026-07-07 | Marketing Gabriel | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 |
+| 2026-07-07 | SmartLinks | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 4 pos 1 — 2.ª semana consecutiva |
+| 2026-07-07 | AISO Hub | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 4 |
+| 2026-07-07 | Studio.351 | 0/5 | n/a | -1 | 1/5 (só Claude) | Cobertura parcial; ausente esta semana |
+| 2026-07-07 | LPM Comunicação | 0/5 | n/a | -1 | 1/5 (só Claude) | Cobertura parcial; ausente esta semana |
+| 2026-07-07 | Bluesoft | 0/5 | n/a | -1 | 1/5 (só Claude) | Cobertura parcial; ausente do top-3 nos 5 prompts fixos apesar de lançamento de produto (BlueMentions) coberto em D2 — divergência a vigiar |
+| 2026-07-07 | Websystems | 0/5 | n/a | -1 | 1/5 (só Claude) | Cobertura parcial; ausente esta semana |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
