@@ -8,6 +8,22 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-08
+
+### 🔵 Anúncios oficiais
+- **See how content from social and video platforms performs on Google Search** — Google Search Central Blog ([link](https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms)). Google lançou "platform properties" no Search Console: um novo tipo de propriedade que permite a criadores/marcas verificar contas Instagram, TikTok, X ou YouTube e ver dados de impressões, cliques e desempenho por publicação vindos do Google Search e Discover, mesmo sem site próprio; rollout gradual nas próximas semanas.
+
+### 📊 Estudos & dados
+- **ChatGPT commands 92% of AI referral traffic** — Search Engine Land, cobrindo estudo da Previsible ([link](https://searchengineland.com/chatgpt-ai-referral-traffic-sessions-data-481630)). Análise de 6,77 milhões de sessões geradas por LLMs em 166 sites (nov/2024–mai/2026) mostra que o ChatGPT gera 92,4% do tráfego de referência rastreável de LLMs (crescimento de 12,8x em 19 meses), com a Claude a ultrapassar a Perplexity em março de 2026 e o Copilot a cair 96% face ao pico de agosto de 2025.
+
+### 📄 Research académico
+- **How Large Language Models Source Brand Reputation Across Languages and Markets** — Dmitrij Zatuchin, arXiv:2606.25787 ([link](https://arxiv.org/abs/2606.25787)). Em 167.551 citações analisadas para 128 marcas, 85,7% apontam para sites de terceiros (não da própria marca) e 80% das citações concentram-se em apenas 18% dos domínios — a otimização GEO deve priorizar presença nesses domínios de terceiros de alta alavancagem, não apenas páginas próprias.
+
+### 💡 Implicações para destaque.ai
+- A nova funcionalidade do Search Console (dados de Search/Discover para contas sociais) é relevante para clientes B2B que publicam sobretudo em redes sociais e não têm tráfego orgânico forte no site — pode justificar um novo ângulo de reporting/awareness, sem mudança de pitch imediata.
+- O domínio esmagador do ChatGPT no tráfego de referência LLM (92%) confirma que estratégias de GEO em Portugal devem continuar a priorizar visibilidade no ChatGPT antes de investir esforço equivalente noutras plataformas (Perplexity, Copilot) com tráfego residual e em queda.
+- O estudo académico sobre concentração de citações (80% em 18% dos domínios) reforça a necessidade de mapear, para cada cliente, quais os domínios de terceiros com mais peso nas respostas de IA no seu setor/mercado — isto pode tornar-se um serviço concreto (auditoria de "domínios-fonte") em vez de apenas awareness.
+
 ## 2026-07-03
 
 ### 📊 Estudos & dados
