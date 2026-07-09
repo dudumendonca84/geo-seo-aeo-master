@@ -8,6 +8,25 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-09
+
+### 🔵 Anúncios oficiais
+- **OpenAI lança GPT-Live** — [openai.com](https://openai.com/index/introducing-gpt-live/) (8 jul 2026). Novos modelos de voz full-duplex (GPT-Live-1, GPT-Live-1 mini) substituem o Advanced Voice Mode no ChatGPT; a arquitetura ouve e fala em simultâneo em vez de turn-based. Para perguntas que exigem pesquisa web ou raciocínio mais profundo, o GPT-Live delega o pedido ao modelo frontier (GPT-5.5) em segundo plano e devolve a resposta na conversa — o motor de pesquisa/citação subjacente não muda.
+- **Google Search Console lança "platform properties"** — [Google Search Central Blog](https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms) (7 jul 2026). Novo tipo de propriedade permite a criadores/marcas verificar contas Instagram, TikTok, X ou YouTube e ver dados de impressões, cliques e desempenho por publicação vindos do Google Search e Discover, mesmo sem site próprio; rollout gradual nas próximas semanas.
+
+### 📊 Estudos & dados
+- **ChatGPT domina 92% do tráfego de referência de LLMs** — Search Engine Land, estudo Previsible ([link](https://searchengineland.com/chatgpt-ai-referral-traffic-sessions-data-481630)). Análise de 6,77 milhões de sessões geradas por LLMs em 166 sites (nov/2024–mai/2026): o ChatGPT gera 92,4% do tráfego de referência rastreável de LLMs (crescimento de 12,8x em 19 meses), a Claude ultrapassou a Perplexity em março de 2026, e o Copilot caiu 96% face ao pico de agosto de 2025.
+
+### 📄 Research académico
+- **How Large Language Models Source Brand Reputation Across Languages and Markets** — Dmitrij Zatuchin, [arxiv.org/abs/2606.25787](https://arxiv.org/abs/2606.25787). Em 167.551 citações analisadas para 128 marcas, 85,7% apontam para sites de terceiros (não da própria marca) e 80% das citações concentram-se em apenas 18% dos domínios — a otimização GEO deve priorizar presença nesses domínios de terceiros de alta alavancagem, não apenas páginas próprias.
+
+### 💡 Implicações para destaque.ai
+- O domínio esmagador do ChatGPT no tráfego de referência LLM (92,4%) confirma que estratégias de GEO em Portugal devem continuar a priorizar visibilidade no ChatGPT antes de investir esforço equivalente noutras plataformas (Perplexity, Copilot) com tráfego residual e em queda.
+- A concentração de citações em poucos domínios de terceiros (80% em apenas 18% dos domínios, per o paper académico) reforça a necessidade de mapear, para cada cliente, quais domínios-fonte pesam mais no seu setor/mercado — pode tornar-se serviço concreto de "auditoria de domínios-fonte", não apenas awareness.
+- GPT-Live e a nova propriedade do Search Console são awareness por agora: nenhum muda mecânica de citação nem exige mudança de pitch imediata; a nova propriedade do Search Console é relevante para clientes B2B que publicam sobretudo em redes sociais sem tráfego orgânico forte no site próprio.
+
+**Nota de integridade de dados**: os itens de Search Console platform properties, estudo ChatGPT 92% e paper arXiv 2606.25787 foram originalmente descobertos por um run anterior mas escritos no caminho errado (`daily-agent/news-feed.md` na raiz, sob a data 2026-07-08) em vez de `skills/geo-seo-aeo-master/daily-agent/` — recuperados aqui. O GPT-Live é o único item genuinamente novo desta pesquisa de hoje. A árvore `daily-agent/` na raiz continua divergente desta (`skills/geo-seo-aeo-master/`); recomenda-se consolidar/remover a cópia da raiz numa próxima sessão.
+
 ## 2026-07-07
 
 ### 📊 Estudos & dados

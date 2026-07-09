@@ -46,6 +46,7 @@ When citing capabilities, **always include the model version and the date observ
 - **ChatGPT Search / SearchGPT** — GPT-5.5 Instant default since May 5 2026; web search via Bing index + OpenAI crawl.
 - **ChatGPT Atlas browser** — GPT-5.5 Instant with browsing tools enabled by default.
 - **Custom GPTs** — pinned to model owner chose (often GPT-4o legacy still).
+- **ChatGPT Voice (GPT-Live)** — since 8 Jul 2026, full-duplex voice models (GPT-Live-1 flagship for paid tiers, GPT-Live-1 mini default for free users) replace Advanced Voice Mode. Voice layer only — delegates web search/reasoning to the GPT-5.5 backend when a query needs it; underlying search/citation model unchanged. Source: [openai.com/index/introducing-gpt-live](https://openai.com/index/introducing-gpt-live/).
 
 ### GEO-relevant notes
 
