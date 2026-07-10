@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-10
+
+### ⚙️ Mudanças nas plataformas
+- **OpenAI — GPT-Live** (8 jul 2026) — Nova família de modelos de voz full-duplex (GPT-Live-1 para planos pagos, GPT-Live-1-mini para o plano gratuito) a substituir a experiência de voz do ChatGPT; conversas por voz passam a integrar pesquisa web, memória e widgets visuais, em rollout para iOS, Android e web. https://openai.com/index/introducing-gpt-live/
+- **OpenAI — GPT-5.6** (9 jul 2026) — Disponibilidade geral da nova família de modelos (Sol, Terra, Luna) no ChatGPT, ChatGPT Work, Codex e API, com rollout global nas 24h seguintes ao anúncio. https://help.openai.com/articles/11909943
+
+### 📄 Research académico
+- **Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines** — arXiv:2606.20065 (jun 2026). Mediu mais de 100 mil respostas de prompts para 100+ marcas entre março e maio de 2026, propondo uma metodologia replicável de benchmark de visibilidade de marca em motores de pesquisa generativos. https://arxiv.org/abs/2606.20065
+
+### 💡 Implicações para destaque.ai
+- O GPT-Live acrescenta pesquisa web e memória à voz do ChatGPT — a superfície de "answer engines" a monitorizar alarga-se para além do texto; por agora é awareness, mas justifica manter GPT-Live na lista de motores a testar assim que a adoção em Portugal for relevante.
+- A metodologia do arXiv:2606.20065 (100+ marcas, 100 mil respostas) é um exemplo replicável de benchmark de visibilidade multi-marca — útil como referência técnica para justificar a robustez metodológica dos relatórios de AI visibility da destaque.ai perante clientes mais técnicos. Sem mudança de serviço, só awareness.
+
 ## 2026-07-08
 
 ### 🔵 Anúncios oficiais

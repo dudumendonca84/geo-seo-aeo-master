@@ -2,6 +2,7 @@
 
 | Data (Lisboa) | Status | Notas |
 |---|---|---|
+| 2026-07-10 | OK | 2 mudanças de plataforma (OpenAI GPT-Live 8 jul, GPT-5.6 GA 9 jul), 1 paper académico (arXiv:2606.20065). Sem estudos novos não-duplicados nas últimas 48h (Search Console platform properties e estudo ChatGPT Thinking mode já cobertos em 07-08 e 07-03). Sexta-feira → drafts gerados: LinkedIn 200w, Blog 1500w, Twitter 10 tweets (2026-07-10-weekly.md). |
 | 2026-07-08 | OK | 2 itens Tier 1/2 (Google Search Console platform properties; estudo ChatGPT 92% do tráfego LLM) + 1 paper académico (arXiv:2606.25787). Sem novidades verificáveis em Tier 3/4 na janela de 24-48h. news-feed.md sem necessidade de truncar (<60 entradas). Quarta-feira → sem drafts. |
 | 2026-07-03 | ✅ OK | 1 estudo (Semrush/Indig — ChatGPT thinking mode: 25.6% overlap de citações entre modos), 2 mudanças de plataforma (Google AI Mode recipes carousel, Google AI Overviews markdown rendering + reconfirmação llms.txt sem valor de ranking). Sem anúncios oficiais Tier 1 nem papers académicos verificados nas últimas 48h. Sexta-feira → drafts gerados: LinkedIn 200w, Blog 1500w, Twitter 10 tweets (2026-07-03-weekly.md). |
 | 2026-06-30 | ✅ OK | 3 anúncios oficiais (Google AI Mode 1B, Claude Tag, GPT-5.6 preview), 3 estudos (AEO stats 37%, llms.txt 10% adoção, zero-click 68%), 2 mudanças plataforma (Perplexity Computer, May core update concluído), 1 paper académico (RAG survey 2506.00054). Terça-feira → sem drafts. |
