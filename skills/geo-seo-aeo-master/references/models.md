@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 04 Jul 2026 (partial)** — Claude Fable 5 / Mythos 5 rows added on this date (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `daily-agent/news-feed.md` for the full running record.
+**Last refresh: 11 Jul 2026 (partial)** — OpenAI section (GPT-5.6 Sol/Terra/Luna GA rows) and the Deck Builder API mappings `chatgpt` row updated on this date, absorbing the 9 Jul 2026 GPT-5.6 launch. Prior refresh 04 Jul 2026: Claude Fable 5 / Mythos 5 rows added (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `skills/geo-seo-aeo-master/daily-agent/news-feed.md` for the full running record.
 
 ---
 
@@ -32,8 +32,10 @@ When citing capabilities, **always include the model version and the date observ
 
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
-| **GPT-5.6 (Sol/Terra/Luna)** | Jun 2026 (preview) | 256k tokens | Yes (with tool) | **Limited preview only** — API + Codex, trusted partners; not in ChatGPT. GA expected "coming weeks" |
-| **GPT-5.5 Instant** | May 2026 | 256k tokens | Yes (with tool) | ChatGPT default (all tiers) since May 5 2026 |
+| **GPT-5.6 — Sol** (`gpt-5.6-sol`) | 9 Jul 2026 (GA) | 256k tokens | Yes (with tool) | ChatGPT Plus/Pro/Business/Enterprise default (regular chat) since 9 Jul 2026; gradual rollout, not yet on Free/Go |
+| **GPT-5.6 — Terra** (`gpt-5.6-terra`) | 9 Jul 2026 (GA) | 256k tokens | Yes (with tool) | ChatGPT Work default for Free/Go; selectable elsewhere. ~Sol performance at lower cost |
+| **GPT-5.6 — Luna** (`gpt-5.6-luna`) | 9 Jul 2026 (GA) | 256k tokens | Yes (with tool) | Lowest-cost GPT-5.6 variant; selectable in ChatGPT Work, API |
+| **GPT-5.5 Instant** | May 2026 | 256k tokens | Yes (with tool) | ChatGPT Free/Go default (regular chat) — remains the free-tier default after the GPT-5.6 launch |
 | **GPT-5** | Aug 2025 | 256k tokens | Yes (with tool) | ChatGPT Search, API (explicit), some paid workflows |
 | **GPT-5 mini** | Oct 2025 | 256k | Yes (with tool) | Free ChatGPT fallback for some queries |
 | **GPT-4o** | May 2024 | 128k | Yes | Legacy in API, deprecation announced Q3 2026 |
@@ -43,8 +45,8 @@ When citing capabilities, **always include the model version and the date observ
 
 ### Products and which model
 
-- **ChatGPT Search / SearchGPT** — GPT-5.5 Instant default since May 5 2026; web search via Bing index + OpenAI crawl.
-- **ChatGPT Atlas browser** — GPT-5.5 Instant with browsing tools enabled by default.
+- **ChatGPT Search / SearchGPT** — since 9 Jul 2026, default is tier-dependent: GPT-5.6 Sol for Plus/Pro/Business/Enterprise, GPT-5.5 Instant unchanged for Free/Go (gradual rollout, not confirmed complete as of 11 Jul). Web search via Bing index + OpenAI crawl for both. Source: [openai.com/index/gpt-5-6](https://openai.com/index/gpt-5-6/) (9 Jul 2026); publish-date and detail cross-confirmed via OpenAI Help Center, TechCrunch, CNBC (direct fetch of openai.com blocked by bot-protection at verification time).
+- **ChatGPT Atlas browser** — GPT-5.5 Instant with browsing tools enabled by default (not yet confirmed migrated to GPT-5.6).
 - **Custom GPTs** — pinned to model owner chose (often GPT-4o legacy still).
 - **ChatGPT Voice (GPT-Live)** — since 8 Jul 2026, full-duplex voice models (GPT-Live-1 flagship for paid tiers, GPT-Live-1 mini default for free users) replace Advanced Voice Mode. Voice layer only — delegates web search/reasoning to the GPT-5.5 backend when a query needs it; underlying search/citation model unchanged. Source: [openai.com/index/introducing-gpt-live](https://openai.com/index/introducing-gpt-live/).
 
@@ -320,7 +322,7 @@ Two columns per engine:
 
 | Deck engine | Vendor | production | cost_optimized |
 |---|---|---|---|
-| `chatgpt` | OpenAI | `gpt-5.5` | `gpt-5.5` |
+| `chatgpt` | OpenAI | `gpt-5.6-sol` | `gpt-5.6-luna` |
 | `claude` | Anthropic | `claude-sonnet-5` | `claude-haiku-4-5` |
 | `gemini` | Google | `gemini-3.5-flash` | `gemini-2.5-flash` |
 | `perplexity` | Perplexity | `sonar-pro` | `sonar` |
@@ -329,6 +331,8 @@ Two columns per engine:
 | `grok` | xAI | `grok-4.3` | `grok-4.1-fast` |
 | `deepseek` | DeepSeek | `deepseek-v4-flash` | `deepseek-v4-flash` |
 | `meta` | Meta | `llama-3.1-405b-instruct` | `llama-3.1-70b-instruct` |
+
+**Caveat — `chatgpt` row (11 Jul 2026):** with GPT-5.6's launch, ChatGPT's default is tier-dependent for the first time (previously a single model served all tiers). `gpt-5.6-sol` reflects the Plus/Pro/Business/Enterprise default; free/Go ChatGPT users still default to `gpt-5.5-instant` as of this refresh. The `production` value above is calibrated to the paid-diagnostic-audit rationale in the Tier assignment table below, not to the free-tier product experience.
 
 ### Tier assignment (Deck Builder)
 
@@ -359,7 +363,7 @@ This block is updated whenever:
 
 The daily-agent (`daily-agent/daily-prompt.md`) is instructed to update this table when a release qualifies (see § Methodology evolution in `SKILL.md`). The Deck Builder picks up changes on its next fetch — zero code change required there for routine model updates.
 
-**Last refresh of API mappings: 02 Jul 2026** — `claude` production ID updated from `claude-sonnet-4-6` to `claude-sonnet-5` following Anthropic's 30 Jun 2026 release (now default on claude.ai Free/Pro).
+**Last refresh of API mappings: 11 Jul 2026** — `chatgpt` production/cost_optimized updated from `gpt-5.5`/`gpt-5.5` to `gpt-5.6-sol`/`gpt-5.6-luna` following OpenAI's 9 Jul 2026 GPT-5.6 GA launch (Plus/Pro/Business/Enterprise default; free/Go tier unchanged on `gpt-5.5-instant` — see caveat above the table). Previous refresh: 02 Jul 2026 — `claude` production ID updated from `claude-sonnet-4-6` to `claude-sonnet-5` following Anthropic's 30 Jun 2026 release (now default on claude.ai Free/Pro).
 
 ---
 

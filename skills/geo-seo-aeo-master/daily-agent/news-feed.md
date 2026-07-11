@@ -8,6 +8,18 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-11
+
+### 🔵 Anúncios oficiais
+- **OpenAI lança GPT-5.6 em disponibilidade geral (Sol/Terra/Luna)** — [openai.com/index/gpt-5-6](https://openai.com/index/gpt-5-6/) (9 jul 2026). Substitui o preview limitado de 26 junho (API/Codex apenas). Sol torna-se o default em ChatGPT Plus/Pro/Business/Enterprise (chat regular); o tier Free/Go mantém GPT-5.5 Instant como default — é a primeira vez que o ChatGPT tem defaults diferentes por tier em vez de um único modelo para todos. Terra e Luna (mais baratos, performance comparável a Sol/GPT-5.5) ficam disponíveis no novo "ChatGPT Work" e via API. Rollout gradual desde 9 jul, sem confirmação pública de conclusão a 100% até à data. IDs de API: `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`.
+
+### 💡 Implicações para destaque.ai
+- Actualizado `references/models.md` (secção OpenAI + Deck Builder API mapping `chatgpt`.production → `gpt-5.6-sol`, `.cost_optimized` → `gpt-5.6-luna`, com nota de que o tier gratuito do ChatGPT continua em GPT-5.5 Instant). Apenas actualização técnica de infraestrutura de auditoria — sem mudança de mecânica de citação conhecida, sem impacto directo no pitch.
+- O ChatGPT deixar de ter um modelo único para todos os tiers é awareness relevante para relatórios GEO técnicos: a partir de agora, "que modelo o ChatGPT usa" deixa de ter resposta única e passa a depender do plano do utilizador — vale a pena qualificar essa nuance quando um cliente pergunta "porque é que a IA responde de forma diferente para mim e para o meu concorrente".
+- Sem mudança de metodologia de auditoria necessária hoje; o Deck Builder continua a testar via `production` (fidelidade ao tier pago), que é a escolha correta para auditorias diagnostic/premium pagas.
+
+**Nota de integridade de dados**: GPT-Live (8 jul), a expansão do relatório de performance AI generativa do Search Console a mais países (EUA/Índia/Suíça) e o estudo SSRN sobre quebra de 39,8% em cliques com AI Overviews já estão cobertos nas entradas de 2026-07-09, 2026-07-04 e 2026-07-05 respectivamente — não repetidos aqui para evitar repackaging. A entrada de 2026-07-10 foi, mais uma vez, escrita por engano no caminho errado (`daily-agent/news-feed.md` na raiz, não `skills/geo-seo-aeo-master/daily-agent/`) — mesmo erro já sinalizado nas entradas de 02, 03, 04, 08 e 09 de julho. O único item genuinamente novo e ainda não absorvido nessa entrada mal colocada era o GPT-5.6 em preview (26 jun); a informação foi verificada de novo e absorvida correctamente aqui já como GA (9 jul), com detalhe adicional (defaults por tier, IDs de API) confirmado nesta pesquisa. A divergência entre as duas árvores persiste sem correcção estrutural — recomenda-se fortemente, numa próxima sessão com mandato para tal, remover ou redirecionar a cópia da raiz (`daily-agent/`, e as restantes pastas raiz `references/`, `SKILL.md`, `competitor-monitor/`, `destaque-ai-self/`, `routines/`, que também parecem duplicados legados face à estrutura canónica em `skills/geo-seo-aeo-master/` confirmada em `README.md`) para impedir que runs futuros continuem a escrever no caminho errado.
+
 ## 2026-07-09
 
 ### 🔵 Anúncios oficiais
