@@ -136,3 +136,21 @@ To keep the bar high:
 Thresholds are calibrated to ~30 prompts × 7 engines × 1 week (Perplexity augmented-only). If the prompt count or engine count changes materially, recalibrate — variance at 10 prompts × 3 engines is much higher than at 30 × 7, and the same pp thresholds would fire too often.
 
 Last calibration check: 25 May 2026, using destaque.ai self-audit baseline data.
+
+## 8. Território — alertas de invasão (event-based, semana vs semana anterior)
+
+Comparação por pergunta entre auditorias consecutivas. Não suprimidos (são
+eventos, §3-style). Os três tipos, com os `type` canónicos usados pelo Tracker:
+
+- **`territory_invasion`** — um concorrente passa a ser citado numa pergunta em
+  que na semana anterior só o cliente era citado. `notable`; **`critical`** se a
+  pergunta for de intenção de compra (`decision`/`post_decision`).
+- **`bofu_newcomer`** — marca nova (primeira vez no tracking) aparece numa
+  pergunta `decision`/`post_decision`. `notable`.
+- **`territory_claimed`** — pergunta que estava livre (nenhuma marca citada)
+  passa a ter dono ≠ cliente. `notable`.
+
+Copy: nomeia a pergunta e a marca, com contagens reais — *"[NOTÁVEL] A marca B
+passou a ser citada em 'pergunta X' (2 de 7 motores), onde na semana passada só
+tu aparecias."* A resposta natural a qualquer um destes é o pattern «Território
+livre» do `gap_action_mapping.md` (defender ou flanquear).

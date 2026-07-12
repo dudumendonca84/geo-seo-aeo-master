@@ -211,6 +211,7 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
     }
   ],
   "competitive_landscape_md": "Markdown 200-400 palavras — leitura honesta do landscape: quem são os peers reais (se existem), quem são vendors (não concorrência), e se os motores fabricam nomes (sinal de categoria imatura)",
+  "territorio_livre_md": "Markdown 150-300 palavras — o TERRITÓRIO LIVRE da categoria: (a) 3-5 perguntas do audit onde NENHUMA marca é recomendada (assinala as de intenção de compra); (b) 2-3 fontes citadas pelos motores sem dono claro; (c) o ângulo de posicionamento que ninguém reclama. Só evidência do audit; se não há perguntas livres, omite o campo",
   "projection_6m": {
     "citation_rate_baseline": 0.07,
     "citation_rate_target": 0.32,
@@ -247,6 +248,7 @@ Output é JSON wrapper com **campos de markdown grandes**. Estrutura:
   - `positioning_md`: 1-2 frases sobre o que faz e como se posiciona.
   - `mention_count`: vezes que aparece no total; `real_engine_mentions`: só em respostas reais (não mock).
 
+- **territorio_livre_md**: o slide mais persuasivo do deck — mostrar o espaço vago vende mais do que mostrar o problema. Fundo-de-funil livre primeiro. Nunca inventes perguntas nem fontes; sem território livre real, omite (o slide não aparece).
 - **competitive_landscape_md** (200-400 palavras): leitura honesta. Se NÃO há peer_consultancy reais (vácuo PT), diz claramente — é a oportunidade. Separa vendors de concorrência. Se os motores fabricam nomes, nomeia-os como evidência de categoria nascente. NUNCA apresentes um vendor_platform como concorrente directo.
 
 - **projection_6m**:
