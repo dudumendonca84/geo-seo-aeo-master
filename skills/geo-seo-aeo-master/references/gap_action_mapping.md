@@ -470,6 +470,37 @@ Comparison-intent queries são high-conversion. Sem fonte isolando o impacto.
 
 ---
 
+### Pattern: Território livre — perguntas e ângulos sem dono nas respostas de IA
+
+#### Como detectar (evidência da auditoria, não intuição)
+1. **Perguntas sem dono**: prompts onde nenhuma marca é recomendada de forma
+   consistente — a IA responde genericamente porque não tem candidato. As de
+   fundo-de-funil (`decision`/`post_decision`) são as vitórias mais baratas.
+2. **Ângulos por reclamar**: dos perfis e excertos dos concorrentes, mapear que
+   atributos já têm dono ("prova social" = X, "preço" = Y) e quais ninguém
+   reclama nas respostas ("especialista vertical", "medição contínua",
+   "PT-PT nativo", "implementação, não só consultoria").
+3. **Fontes sem dono**: domínios que os motores citam na categoria onde nenhum
+   concorrente domina a co-ocorrência e o cliente está ausente.
+
+#### Acção
+Reclamar 1 ângulo livre de cada vez, na ordem: (1) publicar a página/conteúdo
+citável que responde às perguntas sem dono desse ângulo (BOFU primeiro);
+(2) plantar presença nas fontes sem dono que os motores já citam;
+(3) alinhar o positioning statement do site e da entidade (schema, About) com
+o ângulo reclamado. Regra: **flanquear, não atacar de frente** — nunca
+escolher um ângulo já dominado por um peer forte.
+
+#### Esforço
+2-4 semanas por ângulo (conteúdo + 2-3 fontes).
+
+#### Impacto típico
+Perguntas sem dono não exigem destronar ninguém — o custo de entrada é o mais
+baixo do catálogo. Sem estudo público a quantificar; evidência é a própria
+auditoria semanal (antes/depois no prompt visado).
+
+---
+
 ## Patterns transversais (cross-dimensional)
 
 ### Pattern: Citation rate <10% em todos os motores
