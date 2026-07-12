@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-12
+
+### 🔵 Anúncios oficiais
+- **Search Central Live Deep Dive Europe 2026 confirmado para Barcelona** — [Google Search Central Blog](https://developers.google.com/search/blog/2026/07/search-central-live-deep-dive-europe-2026) (jul 2026). Google fechou a votação pública de cidade (aberta desde junho, entre Barcelona, Budapeste, Berlim, Frankfurt, Lisboa e Praga) e confirmou Barcelona, 30 set–2 out 2026, como primeira edição EMEA do formato "Deep Dive" (multi-dia, cobertura técnica aprofundada de tópicos de Search).
+
+### ⚙️ Mudanças nas plataformas
+- **OpenAI — ChatGPT retira group chats** — [OpenAI Help Center](https://help.openai.com/en/articles/12703475-group-chats-in-chatgpt), efectivo 9 jul 2026. Deixa de ser possível criar novos group chats, converter conversas em group chats, ou entrar por convite (web, iOS, Android); chats existentes ficam disponíveis em modo leitura. Mudança de produto/UX, sem impacto conhecido em mecânica de citação ou pesquisa.
+
+### 💡 Implicações para destaque.ai
+- Dia de notícias leve (domingo) — os dois itens são awareness pura, sem mudança de mecânica de citação, pitch ou metodologia de auditoria.
+- A confirmação de Barcelona para o Deep Dive Europe é relevante para networking/presença de destaque.ai num evento técnico presencial da Google em território europeu próximo (Espanha) — vale considerar participação, sem urgência imediata.
+
+**Nota de integridade de dados**: esta pesquisa começou por, mais uma vez, escrever a entrada no caminho errado (`daily-agent/news-feed.md` na raiz do repo, branch antiga `claude/compassionate-planck-mjh8my`) antes de ser detectado e corrigido ainda antes do commit — mesmo erro já registado nas entradas de 02, 03, 04, 08, 09 e 10 de julho. Todos os itens inicialmente encontrados nessa pesquisa (GPT-5.6, Search Console platform properties, estudo Previsible 92,4%, paper arXiv 2606.25787) já estavam cobertos nas entradas de 07-09/07-11 — não são repetidos aqui. Apenas dois itens sobreviveram como genuinamente novos: a confirmação de Barcelona e a retirada de group chats do ChatGPT. A árvore `daily-agent/` (e `references/`, `SKILL.md`, `competitor-monitor/`, `destaque-ai-self/`, `routines/`) na raiz do repo continua divergente e por remover/redirecionar — sexta recomendação consecutiva nesse sentido.
+
 ## 2026-07-11
 
 ### 🔵 Anúncios oficiais
