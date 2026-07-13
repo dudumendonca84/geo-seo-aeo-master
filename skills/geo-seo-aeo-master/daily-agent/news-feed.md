@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-13
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search — clarificação sobre tempo de reavaliação de canonicalização** (10 jul 2026) — Google actualizou a documentação de troubleshooting de canonicalização para especificar que, mesmo após corrigir problemas de conteúdo duplicado, uma página pode permanecer no cluster duplicado até duas semanas antes de ser reavaliada; a separação do cluster é mais rápida quando a diferença de conteúdo entre as páginas é clara e significativa. Reportado pela [Search Engine Land](https://searchengineland.com/google-clarifys-canonicalization-fixes-can-take-up-to-two-weeks-to-resolve-481998), confirmado de forma independente pela [Search Engine Journal](https://www.searchenginejournal.com/google-says-canonical-re-evaluation-can-take-up-to-two-weeks/582053/) e pela [Search Engine Roundtable](https://www.seroundtable.com/google-canonicalization-two-weeks-41664.html).
+
+### 📄 Research académico
+- **Evaluating Chunking Strategies for Retrieval-Augmented Generation on Academic Texts** — Kreileder, Reisinger, Fischer, [arXiv:2607.01852](https://arxiv.org/abs/2607.01852) (2 jul 2026). Em testes com o framework RAGAS sobre documentos longos e estruturados, chunking semântico baseado em clusters não superou o chunking fixo/recursivo mais simples — argumento contra sobre-engenharia de pipelines de indexação RAG usados por ferramentas de auditoria AEO.
+
+### 💡 Implicações para destaque.ai
+- A clarificação da Google sobre o prazo de reavaliação de canonicalização (até 2 semanas) é útil para gerir expectativas de clientes B2B SaaS PT após correcções técnicas — evita pedidos prematuros de reindexação e explica atrasos aparentes em auditorias de follow-up. Awareness operacional, sem mudança de pitch.
+- O resultado do paper sobre chunking (simples supera complexo em RAG) é apenas nota técnica interna sobre a construção de pipelines de indexação — sem impacto directo no pitch a clientes.
+
+**Nota de integridade de dados**: dia de notícias muito leve — verificadas todas as fontes Tier 1 (Google Search Central, blog.google, OpenAI, Anthropic, DeepMind, Bing, Perplexity), 5 fontes Tier 2 (Ahrefs, Search Engine Land, Search Engine Journal, Profound, Otterly, Peec), vozes Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Marie Haynes, Mike King, Rand Fishkin), comunidades Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) e arXiv cs.IR/cs.CL últimos 30 dias. Sem itens novos verificáveis em Tier 1, 3 ou 4 nas últimas 24-72h. Um estudo Clovion (SEJ, ~9 jul, 69.120 conversas multi-turn, 62% das recomendações de marca desaparecem após pergunta de follow-up) ficou fora da janela estrita de 72h e não foi incluído — candidato a verificar/incluir na próxima entrada se ainda não coberto.
+
 ## 2026-07-12
 
 ### 🔵 Anúncios oficiais
