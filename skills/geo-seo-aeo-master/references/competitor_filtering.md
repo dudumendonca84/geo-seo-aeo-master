@@ -81,6 +81,35 @@ Generalising across sectors, here are heuristics that help the four-question tes
 - **Adjacent**: services in nearby cities with overlap; national chains entering the city.
 - **Watch for**: PT-PT vs PT-BR confusion — LLMs trained mostly on PT-BR will surface Brazilian brands for a PT-PT client. Filter out unless the client serves both.
 
+## 4b. What is NEVER a competitor mention
+
+Learned from production (the "dono: ChatGPT" incident, July 2026): when the
+extraction instruction reads "all other brands mentioned", the analyser
+faithfully lists the answer engines and the tools the answer talks *about* —
+and every downstream aggregate (SoV, territory ownership, co-mention chips)
+inherits the garbage. `competitors_mentioned` is strictly **brands the
+client's buyer could hire or buy instead of the client**. Never extract:
+
+1. **Answer engines and their vendors/products** — ChatGPT, GPT-x, OpenAI,
+   Claude, Anthropic, Gemini, Google, Bard, AI Overviews, AI Mode, Grok, xAI,
+   DeepSeek, Mistral, Perplexity, Copilot, Bing, Microsoft, Meta AI, Llama.
+   They are the measurement instrument. An answer that says "use ChatGPT to
+   draft FAQs" is not naming a competitor.
+2. **Tools and infrastructure referenced as resources** — Google Search
+   Console, GA4, Google Business Profile, Bing Webmaster Tools, Cloudflare,
+   Wikipedia, Wikidata, and social platforms (Reddit, LinkedIn, YouTube,
+   Instagram). These belong, at most, in `media_publisher`/context — never in
+   `competitors_mentioned`. Exception: a tool vendor that genuinely competes
+   in the client's category (e.g. an SEO-tool client whose peer IS Semrush)
+   passes the four-question test like anyone else — the test, not the name,
+   decides.
+3. **The client's own brand** — that is `cited`, not a competitor mention.
+
+Quick test before extracting any name: *could the client's buyer spend the
+same budget on this instead of the client?* If not, leave it out. Executors
+should also keep a mechanical backstop list in code for historical rows, but
+clean extraction at the source is the contract.
+
 ## 5. The "common dictionary word" trap
 
 Brand names that are also common Portuguese or English words (e.g. *Latigid* is a fabricated example name; *Otter*, *Cake*, *Notion*) require an additional disambiguation step:
