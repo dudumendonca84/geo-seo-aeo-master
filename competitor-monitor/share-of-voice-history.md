@@ -54,6 +54,17 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-07-07 | Bluesoft | 0/5 | n/a | -1 | 1/5 (só Claude) | Cobertura parcial; ausente do top-3 nos 5 prompts fixos apesar de lançamento de produto (BlueMentions) coberto em D2 — divergência a vigiar |
 | 2026-07-07 | Websystems | 0/5 | n/a | -1 | 1/5 (só Claude) | Cobertura parcial; ausente esta semana |
 
+| 2026-07-14 | Infinidata | 2/5 | 1.0 | +1 (era 1/5) — subida forte, posição 1 nos dois prompts | 1/5 (só Claude) | Cobertura parcial; prompts 1, 2 pos 1 em ambos — maior recall registado até à data para este player |
+| 2026-07-14 | 3HASH | 2/5 | 2.0 | = vs 2/5, mas posição pior (2.0 vs 1.5) | 1/5 (só Claude) | Cobertura parcial; prompts 3 (pos 1), 4 (pos 3) |
+| 2026-07-14 | AISO Hub | 1/5 | 1.0 | = vs 1/5, posição melhor (1.0 vs 3.0) | 1/5 (só Claude) | Cobertura parcial; prompt 4 pos 1 |
+| 2026-07-14 | SmartLinks | 1/5 | 2.0 | = vs 1/5, posição pior (2.0 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; prompt 4 pos 2 |
+| 2026-07-14 | LUSO AI | 1/5 | 2.0 | = vs 1/5, posição pior (2.0 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 2 |
+| 2026-07-14 | AP\|Portugal | 1/5 | 2.0 | = vs 1/5, posição pior (2.0 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 2 |
+| 2026-07-14 | Marketing Gabriel | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 |
+| 2026-07-14 | Bluesoft | 1/5 | 2.0 | +1 (era 0/5) | 1/5 (só Claude) | Cobertura parcial; prompt 3 pos 2 — primeira aparição no top-3 desde o lançamento do BlueMentions (report 2026-07-07) |
+| 2026-07-14 | destaque.ai | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 5 pos 1 — 4.ª semana consecutiva sem concorrência PT nesta query |
+| 2026-07-14 | Latigid | 0/5 | n/a | -1 vs 1/5 | 1/5 (só Claude) | Cobertura parcial; ausente esta semana |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
