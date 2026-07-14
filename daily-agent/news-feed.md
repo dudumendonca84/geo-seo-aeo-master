@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-14
+
+### 📊 Estudos & dados
+- **ChatGPT citations change when hidden search pipelines switch** — Search Engine Land, análise de Chris Green e Suganthan Mohanadasan ([link](https://searchengineland.com/chatgpt-citations-change-hidden-search-pipelines-481843)). Em 1.000 prompts testados até 10x cada (9.946 execuções completas), 11,6% mudaram a fonte de pesquisa primária entre execuções repetidas; identificaram 4 pipelines de retrieval distintos por trás das respostas (rotulados internamente Labrador, Bright, Oxylabs, SERP), invisíveis nos cartões de citação mostrados ao utilizador.
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — Computer** (13 jul 2026) — Atualização do agente Computer: memória persistente entre sessões, respostas mais rápidas, troca de modelo a meio da tarefa, publicação de websites a partir de um único prompt e investigação de empresas privadas. https://www.perplexity.ai/changelog
+
+### 💡 Implicações para destaque.ai
+- O estudo da Search Engine Land confirma que "estar visível no ChatGPT" não é um alvo estável nem dentro da própria plataforma — a mesma query pode ser servida por pipelines de retrieval diferentes (com fontes diferentes) em execuções sucessivas. Reforça o argumento de vender monitorização contínua e multi-execução em vez de auditorias pontuais; é reforço de pitch existente, não exige novo serviço.
+- A instabilidade de 11,6% nas fontes primárias por prompt é um dado concreto para justificar a cadência de tracking recomendada aos clientes (múltiplas execuções por período, não uma amostra única) — pode alimentar a metodologia dos relatórios de AI visibility da destaque.ai.
+- A expansão do Perplexity Computer para publicação de websites e investigação de empresas privadas é, por agora, apenas awareness — não afeta diretamente GEO/AEO, mas confirma investimento continuado do Perplexity em funcionalidades agênticas para lá da pesquisa pura.
+
 ## 2026-07-10
 
 ### ⚙️ Mudanças nas plataformas
