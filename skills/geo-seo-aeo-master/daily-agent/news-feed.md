@@ -8,6 +8,22 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-15
+
+### 🔵 Anúncios oficiais
+- **Google Images celebra 25 anos — Nano Banana chega às AI Overviews** — [Google Search Blog](https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/) (14 jul 2026). Google integra o modelo de geração de imagens Nano Banana directamente nas AI Overviews: um prompt de texto na pesquisa gera uma imagem original na hora, em vez de apenas devolver imagens existentes. Rollout gradual em inglês, nas regiões que já têm geração de imagens no AI Mode, nas próximas semanas. Faz parte de um redesign mais amplo do Google Images (galeria estilo Pinterest para utilizadores autenticados nos EUA).
+
+### 📊 Estudos & dados
+- **62% das recomendações de marca em IA desaparecem após uma pergunta de follow-up** — Clovion, via [Search Engine Journal](https://www.searchenginejournal.com/62-of-ai-brand-recommendations-vanish-after-one-buyer-question-new-clovion-data/581469/) (~9 jul 2026). Em 69.120 conversas multi-turn com Claude, ChatGPT e Gemini em 36 categorias B2B software/fintech: repetir a mesma pergunta mantém ~90% da lista de marcas original, mas acrescentar um único detalhe realista de comprador (ex. "for a small team") reduz a sobreposição para ~28% — ou seja, 62% das marcas da primeira resposta desaparecem na segunda.
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — Computer** (13 jul 2026) — Actualização do agente Computer: memória persistente entre sessões, respostas mais rápidas, troca de modelo a meio da tarefa, publicação de websites a partir de um único prompt e investigação de empresas privadas. https://www.perplexity.ai/changelog
+
+### 💡 Implicações para destaque.ai
+- O dado da Clovion (62% de churn de marcas citadas após um único follow-up) é o número mais concreto até à data para justificar, com evidência externa, que auditorias de visibilidade IA baseadas num único prompt por categoria são estruturalmente insuficientes — absorvido em `references/benchmarks.md` §19. Reforça a metodologia de tracking multi-prompt já usada pela destaque.ai; não exige novo serviço, mas é argumento de vendas forte para explicar a clientes porque "aparecer uma vez" não chega.
+- A chegada do Nano Banana às AI Overviews é, por agora, apenas awareness — não altera mecânica de citação nem ranking, mas confirma que a Google continua a investir em manter o utilizador dentro da própria AI Overview (agora também com criação de imagem), o que reforça a pressão de atribuição/tráfego já discutida em entradas anteriores. Vale a pena monitorizar se este tipo de geração de conteúdo nativo começa a competir com resultados de imagem de marcas B2B.
+- A expansão do Perplexity Computer (memória persistente, publicação de websites, investigação de empresas privadas) é awareness de produto agêntico, sem impacto directo conhecido em mecânica de pesquisa/citação — mantém-se na lista de plataformas a vigiar mas sem acção imediata para clientes.
+
 ## 2026-07-13
 
 ### ⚙️ Mudanças nas plataformas

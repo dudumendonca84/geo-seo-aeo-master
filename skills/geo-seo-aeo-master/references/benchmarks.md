@@ -217,6 +217,20 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 19. Clovion — AI brand recommendation churn after a follow-up question
+
+- **URL.** https://www.searchenginejournal.com/62-of-ai-brand-recommendations-vanish-after-one-buyer-question-new-clovion-data/581469/
+- **Date.** Published ~9 Jul 2026.
+- **Sample.** 69,120 multi-turn conversations across Claude, ChatGPT and Gemini, 36 B2B software/fintech categories. Opening question (e.g. "best CRM tools?") followed by one realistic buyer follow-up.
+- **Findings.**
+  - Repeating the exact same question keeps ~90% of the original brand list intact.
+  - Adding one ordinary buyer detail ("for a small team") keeps only ~28% — **62% of the brands from the first answer are gone by the second answer**.
+  - "For a large enterprise" produces near-identical churn (~72% either way) vs ~10% for a verbatim repeat.
+- **Caveat.** Vendor-run study (Clovion sells AI visibility tracking); methodology not independently peer-reviewed. Directionally consistent with the general finding that single-prompt AI visibility snapshots are unstable (cf. §16 chunking/retrieval variance literature).
+- **Use.** Concrete number to justify tracking methodology built around realistic follow-up questions, not single-prompt snapshots — relevant to how destaque.ai should design AI-visibility audits for B2B SaaS clients.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -239,4 +253,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 23 May 2026.
+Last refresh: 15 Jul 2026.
