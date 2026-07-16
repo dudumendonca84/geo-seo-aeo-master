@@ -231,6 +231,30 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 20. Perplexity WANDR — research-agent grounding benchmark
+
+- **URL.** https://research.perplexity.ai/articles/wandr-benchmark-evaluating-research-agents-that-must-search-wide-and-deep
+- **Date.** Published 14 Jul 2026. Open-sourced under Apache 2.0.
+- **Sample.** 500 research tasks requiring 170,495 source-verified evidence records; graded by re-fetching each cited page rather than against a static gold set.
+- **Findings.** The strongest system tested — Perplexity's own "Search as Code" agent (announced ~31 May 2026, see news-feed entry) — scores only **0.363 soft-F1 / 0.133 hard-F1**: full credit on roughly 1 in 7 submitted evidence records.
+- **Caveat.** Vendor-published (Perplexity benchmarking its own product), but notable for disclosing a weak result about itself rather than a favourable one; not independently peer-reviewed.
+- **Use.** Concrete, source-disclosed number for how far current agentic research/grounding still is from reliable evidence-backed synthesis — useful to temper client expectations about "AI citation accuracy" and to reinforce continuous multi-run tracking over single-snapshot audits.
+
+---
+
+## 21. YouGov — trust gap between AI assistants and search engines
+
+- **URL.** https://yougov.com/en-us/reports/55071-us-websearch-ai-report-2026 ("Searching for answers: how AI is changing online discovery in 2026"); SEO framing via [Search Engine Journal](https://www.searchenginejournal.com/only-28-of-americans-trust-ai-search-and-that-gap-is-your-seo-opening/581913/) (15 Jul 2026).
+- **Date.** US fieldwork ~8 Jul 2026; part of a 19-market study with per-market cuts staggered through July 2026 (UK/India/Australia not yet reviewed here).
+- **Sample.** n=2,000 US adults.
+- **Findings.**
+  - Only **28%** trust an AI assistant's answer, vs **70%** for a search engine and **76%** for a maps app.
+  - Among respondents who do use AI in search, **22%** still click through to a supplied link vs **17%** who stop at the AI answer.
+- **Caveat.** US cut only; do not extrapolate the exact percentages to PT/EU markets without the corresponding country cut.
+- **Use.** Concrete trust-gap number showing the click-through behaviour has not disappeared even where AI answers are trusted less — supports selling "citation + click" presence rather than citation alone.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -253,4 +277,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 15 Jul 2026.
+Last refresh: 16 Jul 2026.

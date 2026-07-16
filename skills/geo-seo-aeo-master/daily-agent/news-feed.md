@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-16
+
+### 🔵 Anúncios oficiais
+- **Perplexity torna open-source o benchmark WANDR para agentes de research** — [research.perplexity.ai](https://research.perplexity.ai/articles/wandr-benchmark-evaluating-research-agents-that-must-search-wide-and-deep) (14 jul 2026, licença Apache 2.0). 500 tarefas de research exigindo 170.495 registos de evidência verificados por fonte, avaliados por re-fetch das páginas citadas em vez de um gold-set estático; o sistema mais forte testado — o próprio "Search as Code" da Perplexity — obtém apenas 0,363 soft-F1 / 0,133 hard-F1, ou seja, crédito completo em cerca de 1 em cada 7 registos submetidos.
+
+### 📊 Estudos & dados
+- **YouGov — "Searching for answers: how AI is changing online discovery in 2026"** — [yougov.com](https://yougov.com/en-us/reports/55071-us-websearch-ai-report-2026), análise via [Search Engine Journal](https://www.searchenginejournal.com/only-28-of-americans-trust-ai-search-and-that-gap-is-your-seo-opening/581913/) (15 jul 2026). Em 2.000 adultos nos EUA, apenas 28% confiam na resposta de um assistente de IA vs. 70% num motor de pesquisa e 76% numa app de mapas; entre quem usa IA na pesquisa, 22% ainda clica numa fonte fornecida vs. 17% que fica apenas pela resposta da IA.
+
+### 💡 Implicações para destaque.ai
+- A confiança ainda baixa nas respostas de IA (28% nos EUA, YouGov) mantém o clique como comportamento residual mas real — reforça o argumento de que estar citado nas AI Overviews/Perplexity não substitui SEO clássico, é complementar; o pitch deve continuar a vender "presença dupla" (citação + clique), não só citação. Absorvido em `references/benchmarks.md` §21.
+- O benchmark WANDR da Perplexity (grounding fraco, ~13% hard-F1 mesmo no próprio sistema da Perplexity) é dado técnico útil para gerir expectativas de clientes que questionam a variabilidade da taxa de citação — absorvido em `references/benchmarks.md` §20. Não muda oferta, mas reforça o argumento de tracking contínuo em vez de confiar numa única resposta.
+- Sem mudança de pitch ou novo serviço hoje — ambos os itens são awareness/reforço de argumentário já existente.
+
 ## 2026-07-15
 
 ### 🔵 Anúncios oficiais
