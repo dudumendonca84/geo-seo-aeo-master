@@ -168,6 +168,7 @@ See `frameworks.md` §6 for the full 9-method ranking and follow-up papers.
 | [arXiv 2510.11560](https://arxiv.org/html/2510.11560v1) — "Characterizing Web Search in The Age of Generative AI" | Organic Google results stable (~10 links/query); generative rankings fluctuate significantly across model and index updates. |
 | [arXiv 2507.05301](https://arxiv.org/html/2507.05301v1) — "News Source Citing Patterns in AI Search Systems" | Comparative citation behavior across ChatGPT, Copilot, Perplexity, Google AI for news sources. |
 | [arXiv 2602.06718](https://arxiv.org/abs/2602.06718) — "GhostCite" | Quantifies citation hallucination rates across 13 SOTA LLMs. |
+| [arXiv 2607.14035](https://arxiv.org/html/2607.14035v1) — "Optimizing Visibility in Generative Engines: A Critical Survey of GEO (2023–2026)" (Jul 2026) | Reviews 45 studies; frames GEO as a multi-stage, partially-observable pipeline (activation, crawl/index, retrieval, rerank, citation, prominence, factual absorption, fidelity, user behaviour) rather than a single ranking task — the foundational GEO paper's gains are conditional on the source already being present in a fixed context, not universal. |
 
 ---
 
@@ -252,6 +253,19 @@ When confronted with such a stat by a client, the response is: *"That number cir
   - Among respondents who do use AI in search, **22%** still click through to a supplied link vs **17%** who stop at the AI answer.
 - **Caveat.** US cut only; do not extrapolate the exact percentages to PT/EU markets without the corresponding country cut.
 - **Use.** Concrete trust-gap number showing the click-through behaviour has not disappeared even where AI answers are trusted less — supports selling "citation + click" presence rather than citation alone.
+
+---
+
+## 22. DeltaV Digital — citation patterns by page type and industry
+
+- **URL.** https://www.deltavdigital.com/resources/reports/ai-citation-study/
+- **Date.** Data window 14 Apr–13 Jul 2026; DeltaV's first original GEO research release.
+- **Sample.** 21,075 AI engine responses tracked via Peec AI, yielding 25,337 citations across ChatGPT, Perplexity, Gemini and Google AI (Overviews + Mode), spanning 8 industries.
+- **Findings.**
+  - The page type that wins citations varies sharply by industry: listicles capture **61%** of citations for a B2B technology-services vertical, homepages **55%** for a local-services brand, program pages **53%** in higher education.
+  - Comparison pages ("X vs Y") are cited **~45% more often per retrieval** than the dataset average, despite being rarely produced.
+- **Caveat.** Single agency's client portfolio via a single tracking tool (Peec AI) — not independently replicated, industry categories are the agency's own client mix, not a representative sample.
+- **Use.** Concrete, per-vertical evidence against applying one generic GEO content template to every client — corroborates the existing comparison-content recommendation in `gap_action_mapping.md` (Dimensão 2) rather than changing it.
 
 ---
 

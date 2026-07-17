@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 11 Jul 2026 (partial)** — OpenAI section (GPT-5.6 Sol/Terra/Luna GA rows) and the Deck Builder API mappings `chatgpt` row updated on this date, absorbing the 9 Jul 2026 GPT-5.6 launch. Prior refresh 04 Jul 2026: Claude Fable 5 / Mythos 5 rows added (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `skills/geo-seo-aeo-master/daily-agent/news-feed.md` for the full running record.
+**Last refresh: 17 Jul 2026 (partial)** — Microsoft section corrected: Microsoft 365 Copilot moved from GPT-5 to GPT-5.6 Sol (preferred model since 9 Jul 2026), absorbing an item missed by 8 days (see news-feed 2026-07-17 for the gap note). Bing Copilot row left unchanged — no evidence that surface moved off GPT-5. Prior refresh 11 Jul 2026 (partial): OpenAI section (GPT-5.6 Sol/Terra/Luna GA rows) and the Deck Builder API mappings `chatgpt` row updated, absorbing the 9 Jul 2026 GPT-5.6 launch. Prior refresh 04 Jul 2026: Claude Fable 5 / Mythos 5 rows added (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `skills/geo-seo-aeo-master/daily-agent/news-feed.md` for the full running record.
 
 ---
 
@@ -126,14 +126,15 @@ Claude Fable 5 / Mythos 5 pricing: $10/$50 per million input/output tokens. Both
 
 | Model | Used in | Notes |
 |---|---|---|
-| **GPT-5** (via Azure OpenAI) | Bing Copilot, Microsoft 365 Copilot | Microsoft partners with OpenAI for frontier model access |
+| **GPT-5** (via Azure OpenAI) | Bing Copilot | Microsoft partners with OpenAI for frontier model access |
+| **GPT-5.6 — Sol** (via Azure OpenAI) | Microsoft 365 Copilot (Word, Excel, PowerPoint, Chat, Cowork) | Preferred model since 9 Jul 2026; Copilot may auto-select it or expose it via a model picker depending on region/tenant |
 | **GPT-4o** | Legacy Copilot fallback | Being phased out |
 | **Phi-4** (Microsoft internal) | Edge Copilot sidebar, lightweight tasks | Open weights, ~14B params |
 
 ### Products
 
-- **Bing Copilot** — GPT-5 with Bing index for retrieval and citation.
-- **Microsoft 365 Copilot** — GPT-5 + customer's Graph data via Microsoft Search.
+- **Bing Copilot** — GPT-5 with Bing index for retrieval and citation. No evidence found (as of 17 Jul 2026) that this AI-search-facing surface has moved to GPT-5.6 — distinct from the Microsoft 365 Copilot productivity product below.
+- **Microsoft 365 Copilot** — GPT-5.6 Sol (preferred model since 9 Jul 2026, replacing GPT-5) + customer's Graph data via Microsoft Search. Productivity assistant embedded in Office apps, not an AI search engine — tracked here for completeness, not part of the Deck Builder `copilot` engine (which represents Bing Copilot).
 - **Bing Webmaster Tools AI Performance** — first-party telemetry of Copilot citations, public preview since 9 Feb 2026.
 
 ### GEO-relevant notes

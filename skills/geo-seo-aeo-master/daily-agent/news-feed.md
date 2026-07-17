@@ -8,6 +8,28 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-17
+
+### 🔵 Anúncios oficiais
+- **Google — Connected Apps chega ao AI Mode** — [blog.google](https://blog.google/products-and-platforms/products/search/connected-apps/) (16 jul 2026), confirmado por [Search Engine Journal](https://www.searchenginejournal.com/google-starts-rolling-out-connected-apps-in-ai-mode-search/582545/) e [9to5Google](https://9to5google.com/2026/07/16/google-ai-mode-youtube-music/). Utilizadores nos EUA (inglês) podem ligar contas de terceiros ao AI Mode — parceiros de lançamento Instacart (adicionar itens de uma lista de compras gerada ao carrinho), YouTube Music (guardar uma playlist curada) e Canva (obter templates); Google diz que mais integrações chegam nos próximos meses.
+
+### 📊 Estudos & dados
+- **DeltaV Digital — que tipo de página ganha citação varia por indústria** — [deltavdigital.com](https://www.deltavdigital.com/resources/reports/ai-citation-study/), primeira investigação original da agência sobre GEO. 21.075 respostas de motores de IA rastreadas via Peec AI entre 14 abr e 13 jul 2026, 25.337 citações analisadas em ChatGPT, Perplexity, Gemini e Google AI (Overviews + Mode) em 8 indústrias: listicles capturam 61% das citações em serviços de tecnologia B2B, homepages 55% numa marca de serviços locais, páginas de programa 53% no ensino superior; páginas de comparação ("X vs Y") são citadas cerca de 45% mais vezes por retrieval do que a média do dataset, apesar de raramente produzidas.
+
+### ⚙️ Mudanças nas plataformas
+- **OpenAI — GPT-5.6 (Sol) passa a modelo preferido no Microsoft 365 Copilot** — [openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/) (9 jul 2026), confirmado pela [Microsoft Tech Community](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%e2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152). Substitui o GPT-5 em Word, Excel, PowerPoint, Chat e Cowork; disponibilidade pode variar por região/tenant. Sem indícios de que o Bing Copilot (o produto de pesquisa IA da Microsoft, distinto do M365 Copilot) tenha mudado de modelo.
+
+### 📄 Research académico
+- **"Optimizing Visibility in Generative Engines: A Critical Survey of Generative Engine Optimization (2023–2026)"** — [arXiv:2607.14035](https://arxiv.org/html/2607.14035v1) (jul 2026). Revisão de 45 estudos GEO/AEO: enquadra GEO como um pipeline estocástico e parcialmente observável (ativação de pesquisa, crawling/indexação, retrieval, reranking, citação, protagonismo, absorção factual, fidelidade, comportamento do utilizador), não uma tarefa única de ranking — os ganhos do paper fundador da GEO (Aggarwal et al.) são válidos no seu setting mas condicionados à fonte já estar presente num contexto fixo, não universais.
+
+### 💡 Implicações para destaque.ai
+- O estudo DeltaV (padrões de citação muito diferentes por vertical/tipo de página) é dado concreto contra aplicar o mesmo template de conteúdo GEO a todos os clientes — reforça (sem substituir) a recomendação já existente sobre conteúdo comparativo em `references/gap_action_mapping.md`. Absorvido em `references/benchmarks.md` §22, com caveat de estudo de agência via um único painel de tracking (Peec AI).
+- O survey crítico (arXiv 2607.14035) confirma a visão de auditoria multi-etapa (crawl → retrieval → citação → fidelidade) já seguida pela destaque.ai e avisa contra vender otimização de página isolada como solução — reforço de metodologia existente, sem mudança necessária. Absorvido na tabela de papers em `references/benchmarks.md` §16.
+- O Connected Apps é apenas awareness por agora (EUA/inglês) — mas confirma que o Google continua a expandir o AI Mode de resposta para execução de tarefas com integrações de terceiros; vigiar quando/se chega à UE/PT.
+- Correção de gap em `references/models.md`: Microsoft 365 Copilot estava registado com GPT-5, desatualizado desde 9 jul — corrigido para GPT-5.6 Sol. Manutenção interna de precisão de dados, sem impacto de pitch.
+
+**Nota de integridade de dados**: o item do Microsoft 365 Copilot (9 jul) tem 8 dias e não foi capturado em tempo real por esta rotina — gap identificado e corrigido nesta entrada, sem repetição de outros itens já cobertos entre 07-11 e 07-16.
+
 ## 2026-07-16
 
 ### 🔵 Anúncios oficiais
