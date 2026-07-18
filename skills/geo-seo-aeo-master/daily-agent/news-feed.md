@@ -8,6 +8,21 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-18
+
+### 🔵 Anúncios oficiais
+- **Google (Nick Fox) quantifica pela primeira vez cliques gerados por AI features na Search** — [LinkedIn](https://www.linkedin.com/posts/nickthefox_ai-in-search-is-driving-more-queries-and-activity-7359002534067228672-u7fJ) e X (17 jul 2026), analisado pela [Search Engine Journal](https://www.searchenginejournal.com/google-puts-a-number-on-ai-search-clicks-without-the-data/582755/). Nick Fox (SVP Knowledge & Information, Google) declara que as AI features na Search enviam "biliões de cliques a websites por semana", ao lado da métrica diária já conhecida de Search no geral. A SEJ nota que é a primeira vez que a Google atribui um número a cliques especificamente das AI features, mas o número não vem acompanhado de metodologia, período ou definição de "clique" — ao contrário das métricas diárias habituais da Google, esta não tem a etiqueta de verificação que a empresa costuma aplicar.
+
+### 📊 Estudos & dados
+- **SE Ranking — anúncios de texto aparecem em quase 1 em cada 3 queries comerciais no AI Mode** — [seranking.com](https://seranking.com/blog/google-ai-mode-ads/) (~14 jul 2026), confirmado pela [Search Engine Land](https://searchengineland.com/google-ai-mode-ads-reach-queries-study-482475) (17 jul 2026). Dados recolhidos a 30 jun 2026 sobre 50.032 keywords comerciais nos EUA em 20 nichos (~2.500/nicho, excluindo carrosséis de produto): anúncios de texto em 29,45% das queries (14.733 de 50.032); 71,1% das respostas com anúncio mostram dois anúncios simultâneos; presença de anúncios sobe de 24,33% em keywords <$2 CPC para 53,56% em keywords ≥$10 CPC; Pets tem a taxa mais alta (72,38%), Healthcare a mais baixa (2,64%). SE Ranking nota que a taxa real pode ser superior, dado que os resultados do AI Mode variam entre sessões.
+
+### 💡 Implicações para destaque.ai
+- O estudo SE Ranking (anúncios em quase 1/3 das queries comerciais do AI Mode, escalando com CPC) é dado concreto e recente para reforçar que o AI Mode não é um canal "grátis": em categorias B2B de CPC alto, a citação orgânica está a competir com anúncios pagos dentro da própria resposta de IA — reforça (não substitui) o argumento já existente de vender presença dupla (GEO + SEO/PPC clássico), não GEO como substituto de paid. Absorvido em `references/benchmarks.md` §23.
+- A declaração de Nick Fox é a primeira vez que a Google atribui um número (não verificável) a cliques vindos especificamente de AI features — útil como contexto quando um cliente cita a narrativa de "zero-click" pós-AI Overviews, mas deve ser apresentada com a mesma reserva que a SEJ aplica (sem metodologia, sem definição de "clique", sem tag de verificação); não substitui os dados já absorvidos (YouGov §21, Seer §13) sobre comportamento real de clique. Awareness, não absorvido em benchmarks.md por falta de dados verificáveis.
+- Sem mudança de pitch, novo serviço ou de metodologia de auditoria hoje — ambos os itens reforçam argumentário já existente sobre a coexistência de citação e clique.
+
+**Nota de integridade de dados**: verificadas as 7 fontes Tier 1 (sem itens adicionais não-duplicados face à entrada de 07-17), Tier 2 (Ahrefs, Search Engine Land, Search Engine Journal, Profound, Otterly, Peec — os três últimos só com actualizações de produto próprio, não notícia de plataforma de IA, não incluídas), Tier 3/4 (sem itens verificáveis nas últimas 24-72h) e arXiv cs.IR/cs.CL (sem paper novo genuinamente não coberto na janela; o próximo achado relevante, "What Gets Cited: Competitive GEO in AI Answer Engines", está associado ao SIGIR '26 de 20–24 jul, ainda sem versão pública nova). Uma alegação de "Google June core update, 30 jun–17 jul" surgida em pesquisa inicial foi investigada e descartada — cruzamento com Search Engine Land, Search Engine Roundtable e o Google Search Status Dashboard confirma que não existe tal update em 2026 (essas datas pertencem ao core update de **junho de 2025**); o único update de junho de 2026 confirmado é o June spam update (24–26 jun, já coberto em entrada anterior). Sessão iniciada correctamente a partir de `origin/main`.
+
 ## 2026-07-17
 
 ### 🔵 Anúncios oficiais

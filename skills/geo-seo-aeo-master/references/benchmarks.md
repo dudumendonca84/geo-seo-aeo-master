@@ -269,6 +269,21 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 23. SE Ranking — Google AI Mode ad presence by commercial intent
+
+- **URL.** https://seranking.com/blog/google-ai-mode-ads/; secondary coverage via [Search Engine Land](https://searchengineland.com/google-ai-mode-ads-reach-queries-study-482475) (17 Jul 2026).
+- **Date.** Data collected 30 Jun 2026; published ~14 Jul 2026.
+- **Sample.** 50,032 US commercial keywords across 20 niches (~2,500 keywords/niche); text ads only (product carousels excluded).
+- **Findings.**
+  - Text ads appeared on **29.45%** of commercial queries (14,733 of 50,032).
+  - **71.1%** of ad-triggering responses showed two ads simultaneously; 28.9% showed one.
+  - Ad presence scales with CPC: **24.33%** on sub-$2 keywords rising to **53.56%** at $10+.
+  - Highest-ad vertical: Pets (**72.38%**); lowest: Healthcare (**2.64%**).
+- **Caveat.** Single-vendor study (SE Ranking), US-only, single snapshot day (30 Jun) — SE Ranking itself notes AI Mode results vary across sessions, so the true rate may be higher.
+- **Use.** Concrete, recent evidence that Google is monetizing AI Mode aggressively in high-CPC commercial categories — reinforces selling "citation + paid" presence to B2B SaaS clients rather than treating GEO/AI Mode visibility as a free replacement for paid search.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
