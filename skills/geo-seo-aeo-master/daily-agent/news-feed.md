@@ -8,6 +8,21 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-19
+
+### 🔵 Anúncios oficiais
+- **Perplexity lança SPACE (Sandboxed Platform for Agentic Code Execution)** — [Perplexity Hub](https://www.perplexity.ai/hub/blog/secure-sandboxes-for-agents) (15 jul 2026), confirmado pela [SiliconANGLE](https://siliconangle.com/2026/07/15/perplexity-launches-secure-sandbox-make-ai-agents-secure-powerful/). Nova infraestrutura de execução para o agente Perplexity Computer: cada tarefa corre isolada numa microVM Firecracker (tecnologia open-source da AWS, arranque ~5ms), com pausa/retoma, "forking" de sessão e credenciais isoladas por sessão; construída em 10 semanas, processa agora 100% do tráfego de produção do Computer, com arranque 3-5x mais rápido do que a solução anterior.
+
+### ⚙️ Mudanças nas plataformas
+- **Google AI Overviews — carrossel "Top Stories" totalmente activo (mobile, EUA)** — [Search Engine Land](https://searchengineland.com/top-stories-roll-out-in-google-ai-overviews-482615), confirmado por porta-voz da Google (17 jul 2026); cobertura complementar na [Search Engine Roundtable](https://www.seroundtable.com/google-top-stories-ai-overviews-41583.html). O carrossel de notícias em destaque — já em teste desde maio — está agora totalmente disponível dentro do AI Overviews para pesquisas mobile nos EUA em tópicos noticiosos em desenvolvimento; combina resumos estáticos gerados por IA com reportagem dinâmica em tempo real de fontes como NYT e Yahoo, destacando as "Preferred Sources" da Google.
+
+### 💡 Implicações para destaque.ai
+- O SPACE da Perplexity é infraestrutura de execução (isolamento de sessão/credenciais para agentes), não muda mecânica de citação — awareness sobre a maturidade crescente dos agentes de research da Perplexity, sem impacto directo no pitch.
+- O carrossel Top Stories reforça a tendência já registada (Connected Apps, 07-17) de a Google expandir o AI Overviews de resumo estático para camada editorial dinâmica dentro da própria SERP — mantém a pressão de atribuição/tráfego já discutida em entradas anteriores; ainda sem sinal de expansão à UE/PT. Awareness, sem mudança de pitch.
+- Sem mudança de metodologia de auditoria necessária hoje.
+
+**Nota de integridade de dados**: dia de notícias muito leve na janela estrita de 24-48h (18-19 jul) — verificadas as 7 fontes Tier 1, Tier 2 (Ahrefs, Search Engine Land, Search Engine Journal, Profound, Otterly, Peec, SE Ranking), Tier 3/4 e arXiv cs.IR/cs.CL, sem itens genuinamente novos datados de 18 ou 19 jul (o recap diário da Search Engine Roundtable para essas datas ainda não estava publicado à hora da pesquisa). Dois itens de gap foram recuperados e incluídos aqui: o carrossel Top Stories (confirmado 17 jul, não capturado na entrada de 07-17) e o SPACE da Perplexity (15 jul, infraestrutura distinta da actualização do Perplexity Computer já coberta em 07-15 — memória/troca de modelo vs. isolamento de execução). Sessão iniciada a partir de `origin/main` (a branch de trabalho fornecida só continha a árvore raiz legada desactualizada — mesmo padrão recorrente já sinalizado nas entradas anteriores). Domingo — sem weekly drafts. Commit feito directamente em `main` por instrução explícita da rotina (sem PR).
+
 ## 2026-07-18
 
 ### 🔵 Anúncios oficiais
