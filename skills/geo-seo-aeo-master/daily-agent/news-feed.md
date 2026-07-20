@@ -8,6 +8,18 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-20
+
+### 📄 Research académico
+- **CITETRACE — Verified Misguidance: Measuring Structural Citation Failures in Search-Augmented LLMs** — Seo, Jeong, Kim, Jang, Lee, [arXiv:2605.28565](https://arxiv.org/abs/2605.28565) (submetido 27 mai 2026 — achado de recuperação de gap, não capturado por esta rotina até agora). Dataset CITETRACE: 11.200 queries reais de 28 comunidades, emparelhadas com 112.000 respostas de 10 modelos de 5 fornecedores, gerando 761.495 pares de citação avaliáveis num framework de 3 dimensões (alinhamento intenção-propósito, adequação da fonte, fidelidade resposta-fonte). Padrão sistemático identificado ("Verified Misguidance"): os modelos citam fontes reais e acessíveis mas falham numa ou mais dimensões — 30,6% das citações distorcem a fonte citada, 27,1% vêm de fontes de domínio inadequado, e ao nível da resposta até 90% dos utilizadores encontram pelo menos uma citação problemática.
+
+### 💡 Implicações para destaque.ai
+- O dado da CITETRACE (até 90% das respostas com pelo menos uma citação estruturalmente falha) é evidência quantitativa forte de que "estar citado" não implica ser representado com fidelidade — reforça a distinção metodológica já seguida pela destaque.ai entre presença de citação e qualidade da citação, sem exigir mudança de scorecard hoje. Absorvido em `references/benchmarks.md` §24.
+- Sem anúncios oficiais, mudanças de plataforma ou estudos de mercado genuinamente novos e não-duplicados nas últimas 24-48h — dia de notícias muito leve (ver nota de integridade de dados).
+- Sem mudança de pitch, novo serviço ou de metodologia de auditoria hoje.
+
+**Nota de integridade de dados**: verificadas as 7 fontes Tier 1 (sem itens novos e não-duplicados face à entrada de 07-19), Tier 2 (Ahrefs, Search Engine Land, Search Engine Journal, Profound, Otterly, Peec, SE Ranking — sem achados de plataforma de IA não cobertos), Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Mike King — sem posições substantivas verificáveis na janela) e Tier 4 (Hacker News, Reddit — sem itens verificáveis). Uma alegação de volatilidade de ranking Google a 18 jul ("weekend fluctuations") foi investigada e descartada por ser explicitamente não-confirmada por qualquer tracker ou pela Google (critério de exclusão "mudanças algorítmicas confirmadas, não rumor"). Dois candidatos adicionais foram descartados por já estarem cobertos em entradas anteriores: "Gemini 3.5 Flash como modelo por defeito" (já coberto no I/O 2026, 19-20 mai) e "Connected Apps no AI Mode" (já coberto em 07-17). O único achado genuinamente novo para esta rotina é uma recuperação de gap académico (arXiv 2605.28565, submetido 27 mai, nunca antes capturado). Absorvido em `references/benchmarks.md` §24. Sem mudança metodológica sinalizada (SKILL.md § Audit workflow não afectado — o achado reforça a distinção já existente entre citação e fidelidade, não introduz uma dimensão auditável nova por site). Segunda-feira — sem weekly drafts. Nada a absorver por limiar de 60 (26 headers no news-feed após esta entrada). `node scripts/validate-skill-tables.mjs` corrido antes do commit. Sessão iniciada a partir de `origin/main` (a branch de trabalho fornecida só continha a árvore raiz legada desactualizada — mesmo padrão recorrente já sinalizado em praticamente todas as entradas anteriores; ver nota de 07-16 para o histórico completo). Commit feito directamente em `main` por instrução explícita da rotina (sem PR).
+
 ## 2026-07-19
 
 ### 🔵 Anúncios oficiais

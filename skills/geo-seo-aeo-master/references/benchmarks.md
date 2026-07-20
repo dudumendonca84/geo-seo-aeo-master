@@ -284,6 +284,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 24. CITETRACE (Seo, Jeong, Kim, Jang, Lee) — structural citation failures in search-augmented LLMs
+
+- **URL.** https://arxiv.org/abs/2605.28565
+- **Date.** Submitted 27 May 2026 (arXiv 2605.28565) — gap recovery, not captured by this routine until 20 Jul 2026.
+- **Sample.** CITETRACE dataset: 11,200 real-world queries from 28 communities, paired with 112,000 responses from 10 models across 5 providers, yielding 761,495 evaluable citation pairs. Three-dimension scoring framework: intent-purpose alignment, source suitability, answer-source fidelity.
+- **Findings.** Systematic pattern named "Verified Misguidance" (VM): models cite real, accessible sources yet fail along one or more dimensions, producing a fidelity-suitability trade-off (faithful models select inappropriate sources and vice versa). **30.6%** of citations distort their source; **27.1%** originate from domain-inappropriate sources; at the response level, up to **90%** of users encounter at least one such citation.
+- **Caveat.** Pre-print, authors' own 3-dimension scoring methodology, no independent replication found yet.
+- **Use.** Strong quantitative evidence that citation presence ≠ citation fidelity — reinforces (does not replace) the existing distinction between "being cited" and "being represented accurately" already built into destaque.ai's audit approach. Does not introduce a new auditable per-site dimension; no scorecard change triggered.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
