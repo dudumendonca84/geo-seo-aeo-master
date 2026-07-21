@@ -295,6 +295,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 25. Capraro, Marcoccia & Quattrociocchi — AI advice suppresses willingness to say "I don't know"
+
+- **URL.** https://arxiv.org/abs/2607.13562
+- **Date.** Submitted 15 Jul 2026 (arXiv 2607.13562); covered by [The Register](https://www.theregister.com/ai-and-ml/2026/07/19/using-ai-makes-people-less-likely-to-admit-they-dont-know-something/5274567), 19 Jul 2026.
+- **Sample.** 5 experiments, 3,132 participants (4 preregistered, 1 direct replication); questions engineered so AI advice given was wrong (e.g. film trivia), isolating AI *use* from AI *accuracy*.
+- **Findings.** Mere access to AI advice — whether actively requested or just displayed — collapsed willingness to say "I don't know" from **44% to 3%**, dropped accuracy from **27% to 9%**, and raised confidence from **30% to 76%**. Monetary incentives for accuracy only partially recovered the effect (suspension of judgment: 3% → 8%; accuracy: 9% → 16%, still below the 27% baseline).
+- **Caveat.** Lab experiment on trivia questions (film details); authors argue findings generalise across domains, but no field replication yet in a commercial AI-search context.
+- **Use.** Reinforces (does not replace) the trust-vs-behaviour gap already logged in §21 (YouGov, 28% trust AI search) — confidence in an AI answer rises sharply even when the answer is wrong, so "the AI said so" is not a reliable proxy for the user having verified anything. Useful to explain to clients why citation ≠ persuasion-with-scrutiny; no scorecard or pitch change triggered.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -317,4 +328,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 16 Jul 2026.
+Last refresh: 21 Jul 2026.

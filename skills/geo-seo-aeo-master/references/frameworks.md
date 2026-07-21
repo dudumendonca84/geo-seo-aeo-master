@@ -305,6 +305,8 @@ Defensive practice for content owners:
 
 Lidsky & Daves, **"Inevitable Errors: Defamation by Hallucination in AI Reasoning Models"** (Journal of Free Speech Law, 2025) — [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5362314). The pending *LTL LED v. Google* case alleges an AI Overview falsely associated the plaintiff with a state-AG lawsuit.
 
+**Germany, first concrete rulings (2026).** Unlike the still-pending US case above, Germany has produced actual decisions. The Munich Regional Court ruled (28 May 2026) that Google is directly liable for a false claim an AI Overview generated about two Munich-based publishers, treating the AI Overview as Google's own speech rather than a neutral aggregation of third-party results. Germany's media regulator (ZAK) followed on 14 Jul 2026, ruling that Google's AI Overviews and Perplexity's answers operate as publisher content — not neutral conduits — stripping them of the EU Digital Services Act's standard platform liability exemption; the first such media-law ruling worldwide ([Tech Times](https://www.techtimes.com/articles/320790/20260716/germany-strips-ai-search-its-eu-liability-shield-worlds-first-media-ruling.htm); [The Decoder](https://the-decoder.com/germany-puts-googles-ai-overviews-and-perplexity-under-media-law-in-first-of-its-kind-ruling/)). No equivalent ruling in Portugal/EU-wide yet — treat as an early signal for regulated-industry clients (fintech, health, legal), not as settled EU law.
+
 Practical mitigation:
 1. Monitor brand mentions in LLM outputs at regular intervals (monthly minimum; weekly for high-profile clients).
 2. Submit corrections via vendor feedback channels (Google AI Overview "report" affordance; OpenAI feedback; Perplexity "report this source").
