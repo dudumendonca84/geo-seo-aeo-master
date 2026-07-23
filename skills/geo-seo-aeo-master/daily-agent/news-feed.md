@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-23
+
+### 🔵 Anúncios oficiais
+- **Google lança Gemini 3.6 Flash, 3.5 Flash-Lite e 3.5 Flash Cyber** — [blog.google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/) (21 jul 2026). O Gemini 3.5 Flash-Lite — o modelo mais rápido e económico da série 3.5 (350 tokens de output/seg, $0,30/1M input, $2,50/1M output) — está a ser encaminhado para queries da Google Search (confirmado pela Google: pesquisas são encaminhadas para o Flash-Lite consoante a pergunta, sobretudo em compreensão de intenção conversacional, pesquisa agentic e processamento de documentos), a par da app Gemini. O Gemini 3.6 Flash reduz o uso de tokens de output em 17% face ao 3.5 Flash (até 65% em alguns benchmarks).
+
+### 📊 Estudos & dados
+- **Semrush: topical authority ainda determina liderança de categoria em AI search** — [Search Engine Land](https://searchengineland.com/topical-authority-ai-search-482875) (22 jul 2026). Análise de 1.094 categorias nos EUA (5 prompts/categoria, snapshots mensais Jan–Jun 2026 no ChatGPT, 220k+ domínios, 50k+ marcas, 600k+ citações, 220k+ URLs) mostra que só 15,2% das categorias tinham um "dono" claro em Junho 2026, com 53,7% ainda em disputa aberta entre vários concorrentes; as categorias de maior volume são as menos consolidadas.
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search — routing para Gemini 3.5 Flash-Lite** — ver anúncio acima; ainda não fica claro se substitui o Gemini 3.5 Flash como modelo primário do AI Overviews/AI Mode ou se é usado como camada adicional de routing por latência/tipo de query. Absorvido em `references/models.md` (secção Google + Deck Builder API mappings, `gemini` `cost_optimized`).
+
+### 💡 Implicações para destaque.ai
+- A maioria das categorias B2B ainda não tem "dono" claro em AI search (só 15,2% consolidadas, Semrush) — janela real para SaaS portugueses capturarem share of voice antes da consolidação; usar o dado como prova social em outreach. Absorvido em `references/benchmarks.md` §26.
+- O routing da Google para um modelo mais leve (Flash-Lite) em parte das queries de pesquisa reforça a prioridade de conteúdo directamente extraível (respostas curtas, estruturadas, com dados) — awareness, sem mudança de metodologia de auditoria (o mecanismo de teste via Deck Builder já cobre troca de modelo).
+- Sem mudança de pitch ou novo serviço hoje.
+
+**Nota de integridade de dados**: verificadas as 7 fontes Tier 1 — único achado genuinamente novo e não-duplicado na janela 21-23 jul foi o lançamento Gemini 3.6 Flash/3.5 Flash-Lite/3.5 Flash Cyber (blog.google, 21 jul). Tier 2: Semrush/Search Engine Land (22 jul, incluído acima); descartados por serem repackaging de news antigas — SE Ranking/SEJ sobre llms.txt e adoção (dado de 16 jun 2026, já fora da janela de 24-48h) e a "Expert Advice" do AI Mode/AI Overviews (blog.google, 6 mai 2026 — já teria sido coberto por entradas anteriores a esta árvore, fora de janela). Candidato "actualização de algoritmo do fim-de-semana 18-19 jul" mantido descartado por falta de confirmação oficial (mesmo critério das entradas de 07-20 e 07-21). Tier 3/4 sem itens verificáveis. arXiv cs.IR/cs.CL: nenhum paper novo dentro da janela estrita (paper ICTIR'26 "Covering the Unseen" tem data de conferência 25 jul 2026, ainda sem release pública de dados/insight prático avaliável). Gap de 1 dia sem execução nesta árvore (22 jul) — coberto pela janela alargada desta entrada. Absorvido: Gemini 3.5 Flash-Lite em `references/models.md` (tabela Google + Deck Builder API mappings, `gemini` `cost_optimized` de `gemini-2.5-flash` para `gemini-3.5-flash-lite`); Semrush topical authority em `references/benchmarks.md` §26. Sem mudança metodológica sinalizada (SKILL.md § Methodology evolution — routing para Flash-Lite não altera o audit workflow, já coberto pelo mecanismo existente de fetch do Deck Builder antes de cada audit). Quinta-feira — sem weekly drafts. Nada a absorver por limiar de 60 (28 headers no news-feed após esta entrada). `node scripts/validate-skill-tables.mjs` corrido antes do commit. Sessão iniciada a partir de uma branch de trabalho fornecida que continha apenas a árvore raiz legada e desactualizada (`daily-agent/`, `references/`, etc. na raiz do repo, sem `daily-prompt.md` canónico) — detectado ao correr `git log origin/main` (mesmo erro recorrente já sinalizado em praticamente todas as entradas anteriores); corrigido antes de qualquer escrita, mudando para uma branch local a seguir `origin/main` e usando o caminho canónico `skills/geo-seo-aeo-master/`. Commit feito directamente em `main` por instrução explícita da rotina (sem PR).
+
 ## 2026-07-21
 
 ### ⚙️ Mudanças nas plataformas

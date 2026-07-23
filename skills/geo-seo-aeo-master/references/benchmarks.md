@@ -306,6 +306,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 26. Semrush — topical authority and category ownership in AI search
+
+- **URL.** https://searchengineland.com/topical-authority-ai-search-482875
+- **Date.** Published 22 Jul 2026 (Search Engine Land, reporting Semrush data).
+- **Sample.** 1,094 US categories, 5 prompts per category, monthly snapshots Jan–Jun 2026 in ChatGPT; 220k+ domains, 50k+ brands, 600k+ citations, 220k+ URLs tracked.
+- **Findings.** Only **15.2%** of categories had a clear "owner" brand by Jun 2026; **53.7%** remained open fields with several contenders for the top spot. The largest-volume categories are the *least* likely to have a settled owner.
+- **Caveat.** Vendor study (Semrush); ChatGPT-only, US-only categories — no confirmation the same consolidation pattern holds in Perplexity, AI Overviews, or PT-PT categories.
+- **Use.** Quantifies the "open field" opportunity for B2B categories not yet consolidated in AI search — supports the destaque.ai first-mover pitch for clients entering categories before a competitor locks in citation dominance. No scorecard change triggered.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -328,4 +339,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 21 Jul 2026.
+Last refresh: 23 Jul 2026.

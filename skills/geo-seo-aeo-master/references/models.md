@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 17 Jul 2026 (partial)** — Microsoft section corrected: Microsoft 365 Copilot moved from GPT-5 to GPT-5.6 Sol (preferred model since 9 Jul 2026), absorbing an item missed by 8 days (see news-feed 2026-07-17 for the gap note). Bing Copilot row left unchanged — no evidence that surface moved off GPT-5. Prior refresh 11 Jul 2026 (partial): OpenAI section (GPT-5.6 Sol/Terra/Luna GA rows) and the Deck Builder API mappings `chatgpt` row updated, absorbing the 9 Jul 2026 GPT-5.6 launch. Prior refresh 04 Jul 2026: Claude Fable 5 / Mythos 5 rows added (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `skills/geo-seo-aeo-master/daily-agent/news-feed.md` for the full running record.
+**Last refresh: 23 Jul 2026 (partial)** — Google section: added Gemini 3.5 Flash-Lite row, absorbing Google's 21 Jul 2026 launch (blog.google) — Google confirmed Search queries are now routed to Flash-Lite depending on the question (conversational intent understanding, agentic search, document processing), alongside the existing 3.5 Flash default for AI Overviews/AI Mode; not yet clear whether Flash-Lite displaces 3.5 Flash as primary or is an additional latency-routing tier (see news-feed 2026-07-23). Deck Builder API mappings `gemini` `cost_optimized` updated accordingly. Prior refresh 17 Jul 2026 (partial): Microsoft section corrected: Microsoft 365 Copilot moved from GPT-5 to GPT-5.6 Sol (preferred model since 9 Jul 2026), absorbing an item missed by 8 days (see news-feed 2026-07-17 for the gap note). Bing Copilot row left unchanged — no evidence that surface moved off GPT-5. Prior refresh 11 Jul 2026 (partial): OpenAI section (GPT-5.6 Sol/Terra/Luna GA rows) and the Deck Builder API mappings `chatgpt` row updated, absorbing the 9 Jul 2026 GPT-5.6 launch. Prior refresh 04 Jul 2026: Claude Fable 5 / Mythos 5 rows added (Anthropic section), absorbing the 01 Jul 2026 export-control restoration. Interim vendor releases between 03 Jun and 01 Jul (e.g. Claude Tag, GPT-5.2 sunset) remain not absorbed. See `skills/geo-seo-aeo-master/daily-agent/news-feed.md` for the full running record.
 
 ---
 
@@ -99,6 +99,7 @@ Claude Fable 5 / Mythos 5 pricing: $10/$50 per million input/output tokens. Both
 | Model | Released | Context | Web grounding | Default in |
 |---|---|---|---|---|
 | **Gemini 3.5 Flash** | May 2026 (I/O) | 2M tokens | Yes | AI Mode (announced 23 May 2026), Gemini app free tier |
+| **Gemini 3.5 Flash-Lite** | 21 Jul 2026 | 2M tokens | Yes | Routed for latency-sensitive Google Search queries (conversational intent, agentic search, document processing) and Gemini app; fastest/most cost-effective 3.5-class model (350 output tokens/sec) |
 | **Gemini 3.5 Pro** | May 2026 (I/O) | 2M tokens | Yes | Gemini Advanced ($), Workspace integrations |
 | **Gemini 2.5 Pro** | Dec 2025 | 1M tokens | Yes | Still available in Vertex AI, AI Studio |
 | **Gemini 2.5 Flash** | Dec 2025 | 1M tokens | Yes | API default before I/O 2026 |
@@ -106,8 +107,8 @@ Claude Fable 5 / Mythos 5 pricing: $10/$50 per million input/output tokens. Both
 
 ### Products and which model
 
-- **Google Search AI Overviews** — Gemini 3.5 Flash since I/O 2026 (replacing 2.5 Flash). Uses **same Google index as classic Search** ([Search Central docs](https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing)).
-- **Google AI Mode** — Gemini 3.5 Flash globally since I/O 2026; >1B monthly users declared at I/O.
+- **Google Search AI Overviews** — Gemini 3.5 Flash since I/O 2026 (replacing 2.5 Flash). Uses **same Google index as classic Search** ([Search Central docs](https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing)). Since 21 Jul 2026, Google routes some Search queries to **Gemini 3.5 Flash-Lite** instead, depending on the question — not yet confirmed whether this is a partial replacement or an additional latency tier ([blog.google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)).
+- **Google AI Mode** — Gemini 3.5 Flash globally since I/O 2026; >1B monthly users declared at I/O. Flash-Lite routing (see above) also applies here for conversational/agentic queries.
 - **Gemini app / Gemini Advanced** — 3.5 Pro for paid tier.
 - **Vertex AI / AI Studio** — exposes all current generation models with explicit selection.
 
@@ -325,7 +326,7 @@ Two columns per engine:
 |---|---|---|---|
 | `chatgpt` | OpenAI | `gpt-5.6-sol` | `gpt-5.6-luna` |
 | `claude` | Anthropic | `claude-sonnet-5` | `claude-haiku-4-5` |
-| `gemini` | Google | `gemini-3.5-flash` | `gemini-2.5-flash` |
+| `gemini` | Google | `gemini-3.5-flash` | `gemini-3.5-flash-lite` |
 | `perplexity` | Perplexity | `sonar-pro` | `sonar` |
 | `copilot` | Microsoft (Azure OpenAI) | `gpt-5.5` | `gpt-5.5` |
 | `mistral` | Mistral | `mistral-large-latest` | `mistral-small-latest` |
@@ -364,7 +365,7 @@ This block is updated whenever:
 
 The daily-agent (`daily-agent/daily-prompt.md`) is instructed to update this table when a release qualifies (see § Methodology evolution in `SKILL.md`). The Deck Builder picks up changes on its next fetch — zero code change required there for routine model updates.
 
-**Last refresh of API mappings: 11 Jul 2026** — `chatgpt` production/cost_optimized updated from `gpt-5.5`/`gpt-5.5` to `gpt-5.6-sol`/`gpt-5.6-luna` following OpenAI's 9 Jul 2026 GPT-5.6 GA launch (Plus/Pro/Business/Enterprise default; free/Go tier unchanged on `gpt-5.5-instant` — see caveat above the table). Previous refresh: 02 Jul 2026 — `claude` production ID updated from `claude-sonnet-4-6` to `claude-sonnet-5` following Anthropic's 30 Jun 2026 release (now default on claude.ai Free/Pro).
+**Last refresh of API mappings: 23 Jul 2026** — `gemini` `cost_optimized` updated from `gemini-2.5-flash` to `gemini-3.5-flash-lite` following Google's 21 Jul 2026 launch and confirmation that Google Search now routes some queries to Flash-Lite (see news-feed 2026-07-23 and Google section above); `production` (`gemini-3.5-flash`) left unchanged — no evidence Flash-Lite has displaced 3.5 Flash as the primary AI Overviews/AI Mode model. Previous refresh: 11 Jul 2026 — `chatgpt` production/cost_optimized updated from `gpt-5.5`/`gpt-5.5` to `gpt-5.6-sol`/`gpt-5.6-luna` following OpenAI's 9 Jul 2026 GPT-5.6 GA launch (Plus/Pro/Business/Enterprise default; free/Go tier unchanged on `gpt-5.5-instant` — see caveat above the table). Prior refresh: 02 Jul 2026 — `claude` production ID updated from `claude-sonnet-4-6` to `claude-sonnet-5` following Anthropic's 30 Jun 2026 release (now default on claude.ai Free/Pro).
 
 ---
 
