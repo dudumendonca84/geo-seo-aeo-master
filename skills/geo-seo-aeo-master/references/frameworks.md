@@ -113,6 +113,8 @@ Decide deliberately on **training** crawlers (`GPTBot`, `ClaudeBot`, `Google-Ext
 
 The Congruent case (in-house audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` — leaving silent gaps.
 
+**Empirical confirmation for `Google-Extended` (SIGIR '26, Jul 2026).** Grossman et al., "How Generative AI Disrupts Search" ([arXiv:2604.27790](https://arxiv.org/abs/2604.27790), formally published at SIGIR '26, Melbourne, 20–24 Jul 2026; see `benchmarks.md` §27), find that sites disallowing `Google-Extended` are significantly less likely to be retrieved by Google AI Overviews, even when the content is otherwise crawlable and accessible. This is the first controlled empirical evidence — not just vendor guidance — that the training/answer-engine distinction above has a measurable, engine-specific effect for Google: blocking `Google-Extended` is not a neutral "opt out of training only" choice, it carries a real AIO-visibility cost.
+
 ---
 
 ## 3. Schema.org and structured data for AI

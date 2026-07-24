@@ -317,6 +317,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 27. Grossman et al. — How Generative AI Disrupts Search: An Empirical Study of Google Search, Gemini, and AI Overviews
+
+- **URL.** https://arxiv.org/abs/2604.27790
+- **Date.** Submitted Apr 2026 (arXiv 2604.27790) — gap recovery, not captured by this routine until formal publication at SIGIR '26 (Melbourne, 20–24 Jul 2026).
+- **Sample.** Public benchmark of 11,500 real user queries (adapted/extended from prior query collections for broader localised-intent and syntactic-form coverage); paired retrieval from Google Search (SERP), Google AI Overviews, and Gemini. Dataset and scripts public on [GitHub](https://github.com/rag24/AIO).
+- **Findings.** AI Overviews are generated for **51.5%** of representative real-user queries — but generation rate swings from **17.4%** (Amazon Retail-style queries) to **94.6%** (ELI5 queries). Each engine returns a similar *number* of sources per answer (Gemini 9.68, AIO 9.24, classic SERP 8.75), but the *overlap* between which sources each engine returns is low — attributed to differing retrieval methodology, not differing volume. Classic Google Search is significantly more likely to surface institutional/government/education domains; generative engines (AIO, Gemini) are significantly more likely to surface Google-owned content. **Actionable finding**: sites that disallow `Google-Extended` are significantly less likely to be retrieved by AI Overviews, despite the content being otherwise accessible. For debate/controversial queries, 33.4% of AIO summaries open with a direct affirmative or negative stance.
+- **Caveat.** Preprint dates to Apr 2026 (only reached this routine via its SIGIR '26 formal publication in Jul 2026); single research group's crawl methodology; US/English query set, no confirmed PT-PT replication.
+- **Use.** First empirical evidence tying a specific robots.txt directive (`Google-Extended`) to AIO retrieval odds — upgrades the existing `frameworks.md` §2 recommendation (allow answer-engine crawlers, decide deliberately on training crawlers) from best-practice reasoning to measured effect, specifically for Google. Reinforces (does not change) the audit weight already given to robots.txt in the audit workflow (§7).
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -339,4 +350,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 23 Jul 2026.
+Last refresh: 24 Jul 2026.
