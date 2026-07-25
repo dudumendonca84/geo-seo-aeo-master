@@ -328,6 +328,18 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 28. Search Engine Land — AI retrievability audit of 71 local businesses
+
+- **URL.** https://searchengineland.com/ai-search-cant-verify-business-fix-483376
+- **Date.** Published 24 Jul 2026.
+- **Sample.** 71 verified businesses across food & beverage, retail, professional services, technology, agriculture, health care, accommodation and golf (single-region audit; region not specified as US/CA in the piece beyond the sample composition).
+- **Method.** Points-based diagnostic adapted from Google's E-E-A-T rater framework, retooled to score how AI retrieval systems (rather than classic Search) can verify and extract a business's identity.
+- **Findings.** Average business in the sample had **84%** of its identity "leaked" — i.e., unverifiable by AI systems despite being true. **17%** of the 71 businesses had no AI-retrievable digital presence at all (unreadable site, dead domain, or equivalent).
+- **Caveat.** Single-author methodology, not independently replicated; small sample (71); scoring framework is proprietary to the piece, not a published academic instrument.
+- **Use.** First concretely-scored "identity leak" framing found in the wild — useful as a diagnostic vocabulary for destaque.ai's own audit narrative (distinct from, but complementary to, the existing E-E-A-T § 4 discussion and the `sameAs`/entity gaps already tracked in `frameworks.md` §3 and §7). No scorecard change triggered — the underlying signals (schema, `sameAs`, NAP consistency, crawlable content) are already in the audit workflow; this is a new way to narrate the same gaps to prospects.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.

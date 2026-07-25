@@ -138,6 +138,10 @@ JSON-LD remains the format recommended by Google and the one major AI engines (B
 | `BreadcrumbList` | Site structure signal. | Missing in templated pages |
 | `ClaimReview` / `Claim` | Fact-check markup; high-trust signal for verification queries. | Only used by news orgs |
 
+### Review/AggregateRating — fake and incentivized reviews prohibited (Jul 2026)
+
+Google updated the Review snippet structured-data documentation (24 Jul 2026) with an explicit guideline: "Don't include fake or undisclosed incentivized reviews on your page or in your structured data markup" ([developers.google.com](https://developers.google.com/search/docs/appearance/structured-data/review-snippet), reported by [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)). Examples given: reviews not based on a genuine experience, and reviews exchanged for money/discounts/vouchers/free products without clear, prominent disclosure of the incentive. This tightens (does not replace) the existing `AggregateRating` guidance in the table above — clients with testimonial/review sections should confirm their markup and underlying review-collection process comply before the next technical audit; not yet clear whether this is enforced by automated re-crawls or by manual action only.
+
 ### The Ahrefs schema null result (May 2026)
 
 Ahrefs' May 2026 study compared 1,885 pages with newly-added schema against 4,000 controls (Aug 2025 – Mar 2026) ([Ahrefs](https://ahrefs.com/blog/schema-ai-citations/)). Result: no meaningful citation uplift; AI Overviews showed a small but statistically significant 4.6% **decline** for schema-added pages.
