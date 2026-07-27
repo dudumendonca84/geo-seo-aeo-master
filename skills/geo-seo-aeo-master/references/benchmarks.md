@@ -340,6 +340,18 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 29. Iturra-Bocaz & Galuščáková — A Reproducibility Study of Metacognitive Retrieval-Augmented Generation
+
+- **URL.** https://arxiv.org/abs/2604.19899
+- **Date.** Submitted Apr 2026 (arXiv 2604.19899) — gap recovery, not captured by this routine until formal publication at SIGIR '26 (Melbourne, 20–24 Jul 2026).
+- **Authors.** Gabriel Iturra-Bocaz, Petra Galuščáková (IAI Group, University of Stavanger). Code: [github.com/iai-group/sigir2026-metarag](https://github.com/iai-group/sigir2026-metarag).
+- **Method.** Independent reproduction of MetaRAG (a metacognitive RAG architecture that self-evaluates retrieval sufficiency across rounds) under its original experimental setup, extended with (i) PointWise vs. ListWise reranking after each retrieval round and (ii) a head-to-head comparison against SIM-RAG (lightweight critic model gates when retrieval stops).
+- **Findings.** MetaRAG's *relative* improvement over standard RAG and reasoning-only baselines reproduces, and reranking (especially ListWise) adds a further substantial gain — but *absolute* scores come in lower than the original paper reported, which the authors attribute to closed-source LLM version drift, missing implementation details, and prompts the original authors did not release. MetaRAG also proved more robust than SIM-RAG once extended with the same retrieval features.
+- **Caveat.** Single independent reproduction, not a multi-lab replication; the gap between relative and absolute reproducibility is itself the finding — no specific percentage-point figures are given in available coverage, so none are asserted here.
+- **Use.** A concrete, dated caution against taking any single paper's *absolute* RAG/GEO benchmark numbers as durable ground truth — closed-source model drift alone can move them. Reinforces the sourcing discipline already applied throughout this file (caveats, sample sizes, "no independent replication" flags) rather than introducing a new claim to cite to clients. No scorecard or methodology change triggered.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
