@@ -11,6 +11,47 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-07-27 — Terceira execução
+
+**Score global:** 69/100 (Bom, com lacunas de verificação que persistem — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 20 jul: −2.**
+
+**Score por categoria (delta vs. 20 jul):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 86/100 | −1 |
+| Performance / CWV | N/D | — |
+| SEO On-Page | 93/100 | +1 |
+| Schema / dados estruturados | 95/100 | +1 |
+| Optimização de imagens | 65/100 | +10 |
+| GEO técnica | 87/100 | 0 |
+| Conteúdo & topical authority | 88/100 | −3 |
+| Entidade / brand foundation | 77/100 | 0 |
+| Autoridade & digital PR | 20/100 | 0 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | +2 |
+| Medição & feedback loop | 45/100 | N/D→45 |
+
+**Nota sobre o Δ global negativo:** não reflecte regressão do site. A categoria Medição passou de N/D (excluída da média) para uma pontuação real de 45/100, o que por si só puxa a média de 11 categorias para baixo face à média de 10 categorias da semana passada — ver § "Nota de encerramento" de `audit-baseline.md` para o detalhe aritmético e a justificação de tratar isto como correcção de processo, não como piora.
+
+**Items movidos para DONE esta semana:** 1 novo — "SCHEMA — /perguntas não amostrado" (confirmado FAQPage+Question+Answer+BreadcrumbList+WebPage speakable, 26 perguntas declaradas). "SCHEMA — Casos de estudo sem schema de resultado verificável" passa de TODO a IN PROGRESS (a parte de verificação por leitura do corpo ficou concluída e confirma anonimização; a parte de adicionar schema de resultado estruturado continua por fazer). "MEASUREMENT — Stack de medição não verificável" passa de TODO a IN PROGRESS (Tracker confirmado em produção via Vercel, ainda sem GSC/GA4/BWT confirmados).
+
+**Items novos detectados:** 5 — 1 P1 (MEASUREMENT — bug `/competitors/[id]` no Tracker, cliente real afectado), 3 P2 (MEASUREMENT — rate-limit Mistral recorrente desde 23 jun; GEO — lacunas de `hreflang` em `/consultoria-geo-portugal` e no estudo mais recente; STRATEGIC — ausência de destaque.ai em roundups de concorrentes como AISO Hub), 1 P3 (CONTENT — hiato de publicação desde 17 jul, item de vigilância, não ainda urgente).
+
+**Mudanças materiais observadas:**
+- **Correcção de processo mais importante da execução:** duas auditorias anteriores (13 e 20 jul) verificaram apenas Supabase para o Visibility Tracker próprio e concluíram "sem projecto acessível". Esta semana, ao verificar os projectos Vercel da conta pela primeira vez, confirma-se que `destaque-ai-tracker` está em produção desde 5 jun 2026, com cliente real, cadência de desenvolvimento muito activa (8 PRs em ~48h) — mas também um bug de produção não corrigido e um rate-limit de fornecedor (Mistral) recorrente há mais de um mês.
+- **Melhoria genuína:** primeira ruptura do padrão "zero imagens sitewide" em três auditorias — `/tracker` ganhou 12 imagens com `alt` descritivo (sem `ImageObject` ainda). Cinco tipos de schema novos confirmados (`SoftwareApplication`, `HowTo`/`HowToStep`, `BlogPosting`, `Dataset`/`PropertyValue`, `DefinedTerm`). Resposta honesta e completa, por leitura directa do corpo, à pergunta em aberto sobre os casos de estudo: são anonimizados, não nomeiam clientes reais, mas têm métricas T0/T1 datadas e uma secção de limitações própria. Descoberta de um canal de distribuição novo (`/feed.xml`, 20 itens reais).
+- **Estagnação/regressão pontual:** zero deploys de produção ao site principal entre 17 e 27 jul (~10 dias) depois de um ciclo de publicação intenso — vigiar, não ainda urgente. CSP continua Report-Only, 3ª semana. `llms.txt` continua sem referenciar `/en/`, 2ª semana. Nova lacuna de `hreflang` na página pilar `/consultoria-geo-portugal` (prioridade 0.9, sem par EN nem hreflang).
+- **Teste multi-motor:** taxa de presença global estável em modo augmented (4/21 mandatórios citados com URL, 0 mencionados sem citar — face a "3 citados + 1 mencionado" há uma semana), mas a composição dos prompts que ganham mudou; continua ausente dos dois prompts de descoberta de maior intenção comercial (`LR1`, `LR2`). Modo knowledge: 0/31 pela terceira semana, 0 alucinações, recusa correcta no prompt branded.
+
+**Limitações operacionais desta execução (evolução face às duas semanas anteriores):**
+- `curl` de saída e PageSpeed Insights continuam bloqueados/rate-limited — 3ª semana consecutiva; deixa de ser tratável como falha pontual.
+- ChatGPT, Perplexity, Google AI Mode, Bing Copilot continuam sem acesso — 3ª semana sem progresso.
+- `WebFetch` directo a domínios externos (testado esta semana contra `destaque.ai`, `wikidata.org`, `aiso-hub.com`) confirma-se bloqueado de forma geral pelo sandbox — não é um problema específico de indexação do Wikidata, como se suspeitava.
+- Vercel (`list_projects`, `list_deployments`, `get_runtime_errors`, `get_runtime_logs`) usado pela primeira vez para além do site principal — revelou o projecto `destaque-ai-tracker`, previamente invisível a esta auditoria. Recomenda-se manter este passo no Routine daqui para a frente.
+
+Ver `audit-baseline.md` para o detalhe completo, e `improvements-backlog.md` para os itens novos e actualizados.
+
 ### 2026-07-20 — Segunda execução
 
 **Score global:** 71/100 (Bom, com lacunas de verificação que persistem — 2 de 12 categorias N/D: Performance/CWV, Medição). **Δ vs. 13 jul: +3.**
