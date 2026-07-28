@@ -62,6 +62,12 @@ A senior practitioner who:
 - "Run an audit on site X" → use the audit workflow below.
 - "Is llms.txt worth doing?" → `frameworks.md` (short version: publish it, do not promise it influences inference).
 
+## ICP / qualificação destaque.ai
+
+SaaS B2B de compra ponderada: comprador que pesquisa e compara antes de decidir (não impulso), com um ciclo de decisão onde uma citação por IA pode influenciar o negócio. Qualifica-se pelo MECANISMO (compra considerada, research-driven), nunca por receita ou tamanho — empresas pequenas são bom-fit. Mau-fit: impulso/B2C de ciclo curto, decisão sem pesquisa, categorias que ninguém consulta à IA. Sem limiares de receita em copy pública; qualquer mínimo de orçamento resolve-se na conversa comercial.
+
+O catálogo de prompts que representa este ICP vive em `references/prompts.md` §4.6 (Vertical B2B SaaS PT — "core ICP destaque.ai"): os prompts marcados `Mandatory` no self-audit são a operacionalização desta qualificação por mecanismo.
+
 ## Methodology — SINAL
 
 **SINAL** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.*
