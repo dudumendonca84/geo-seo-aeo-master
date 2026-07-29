@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-29
+
+### 🔵 Anúncios oficiais
+- **Google — AI Overviews e AI Mode chegam a França** — confirmado por Elizabeth Reid (VP Search) a 22 jul 2026; ativação em desktop, mobile e app, dois meses antes do prazo comunicado a editores (23 set). França era o último grande mercado da Europa Ocidental sem estas funcionalidades, após acordo de compensação com editores franceses e introdução de opt-out via Search Console. [Telecompaper](https://www.telecompaper.com/news/google-ai-overviews-and-ai-mode-arrive-in-france--1577900)
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search — review snippet guidelines** — documentação de structured data para review snippets atualizada a 24 jul 2026 para proibir explicitamente reviews falsas ou incentivadas não divulgadas; incumprimento pode resultar em ação manual. [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)
+
+### 💡 Implicações para destaque.ai
+- O rollout de AI Overviews/AI Mode em França chegou dois meses antes do prazo comunicado — sinal de que a Google está a acelerar a expansão europeia; vale a pena confirmar se existe data equivalente para Portugal antes de assumir o timeline "setembro" como referência para clientes. Awareness, sem mudança de pitch imediata.
+- A proibição explícita de reviews incentivadas não divulgadas em review snippet markup é relevante para clientes B2B SaaS que usam prova social (G2, Capterra, Trustpilot) em schema — vale adicionar como item de checklist nas auditorias técnicas existentes (verificar disclosure de reviews pagas antes de marcação estruturada).
+- Dia sem novidades Tier 1/2 adicionais verificáveis com dados novos além destes dois itens; sem paper académico novo confirmado na janela.
+
 ## 2026-07-14
 
 ### 📊 Estudos & dados
