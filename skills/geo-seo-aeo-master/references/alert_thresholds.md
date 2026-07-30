@@ -77,6 +77,41 @@ These fire on the boolean event itself, not on a metric delta.
 | **A new peer-classified brand appears for the first time** (after `competitor_filtering` clears it) | `notable` |
 | **An ambiguous mention spike** (≥ 10% of total mentions flagged ambiguous) | `informational` for the client; surface to ops |
 | **`models.md` indicates a default model changed** since the last audit | `informational` — annotate that this week's comparison is not fully comparable |
+| **Negative mention that meets the crisis bar** (see §3.1) | `critical` — `type: negative_mention`, carries the crisis payload |
+
+### 3.1 Negative mention — crisis trigger and payload
+
+The sentiment thresholds in §2 measure the *mix* drifting. This event is
+different: it fires on **individual responses** where the engine says
+something materially damaging or false about the brand — the case SKILL.md
+§ Crisis-response protocol exists for.
+
+Fire `negative_mention` when, in the current audit, a response (a) mentions
+or cites the client brand AND (b) makes a concrete negative claim about it —
+an accusation, a factual error, an association with a failure or scandal.
+General unfavourable comparison ("X é mais barato que a marca") is **not**
+a crisis — that is ordinary competition, covered by §2. When in doubt,
+do not fire; a false crisis alarm costs more credibility than a missed one.
+
+The alert `details` JSONB must carry everything step 1 of the protocol
+needs, so the client never has to reconstruct the evidence:
+
+```
+{
+  "engines":      ["<engine key>", …],
+  "search_mode":  "knowledge" | "augmented",
+  "prompt_text":  "<the exact prompt>",
+  "excerpt":      "<the damaging passage, verbatim, ≤ 400 chars>",
+  "grounded":     true | false,   // does the response cite a real source containing the claim?
+  "sources":      ["<url>", …]    // the cited sources behind the claim, when grounded
+}
+```
+
+`grounded` decides the response path (step 3 vs 4 of the protocol): grounded
+→ the work is with the source publisher; hallucinated → vendor feedback +
+canonical statement on the owned domain. One alert per distinct claim, not
+per response — the same accusation across 5 engines is ONE crisis with the
+engine list in details.
 
 ## 4. Cumulative / trend-based alerts
 
