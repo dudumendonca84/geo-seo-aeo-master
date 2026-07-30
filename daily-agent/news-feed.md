@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-30
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search Console — platform properties disponíveis globalmente** — confirmado a 29 jul 2026 no Google Search Central Blog ([link](https://developers.google.com/search/blog/2026/07/platform-properties-social-video-guide)). A funcionalidade, em rollout gradual desde início de julho, passa a estar disponível para todos: permite verificar contas Instagram, TikTok, X e YouTube e ver dados de impressões e cliques vindos do Google Search e Discover para essas contas, mesmo sem site próprio; acompanhada de novo guia oficial de análise de desempenho social/vídeo.
+- **Perplexity — Sonar Chat Completions passa a Agent API** — [docs.perplexity.ai/changelog](https://docs.perplexity.ai/changelog/changelog) (actualização de 28 jul 2026). A API é reestruturada para dar acesso directo a modelos de terceiros (GPT-5.4, Claude Sonnet 4.6, Gemini 3.1 Pro Preview, Nvidia Nemotron) a preços de fornecedor sem markup, com custos de ferramentas cobrados à parte (web_search $0,005/chamada, fetch_url $0,0005/chamada).
+
+### 📄 Research académico
+- **Optimizing Visibility in Generative Engines: A Critical Survey of Generative Engine Optimization (2023–2026)** — arXiv:2607.14035 (15 jul 2026, [link](https://arxiv.org/abs/2607.14035)). Revisão de 45 estudos publicados entre nov/2023 e jul/2026 argumenta que GEO não é uma tarefa única de ranking, mas um pipeline estocástico e parcialmente observável com 8 etapas distintas — activação da pesquisa, crawling/indexação, retrieval, reranking/alocação de contexto, citação, proeminência, absorção factual, fidelidade e comportamento do utilizador.
+
+### 💡 Implicações para destaque.ai
+- A expansão global das "platform properties" no Search Console é relevante para clientes B2B SaaS PT com presença social/vídeo forte mas site menos otimizado — vale incluir estas contas nas auditorias de visibilidade existentes; awareness, sem mudança de pitch.
+- A reestruturação da API da Perplexity (Sonar → Agent API) é sobretudo relevante para ferramentas de tracking de citações AI construídas sobre a Sonar API — vale confirmar se algum fornecedor usado internamente ou por clientes depende desta API antes da migração completa.
+- O framework de 8 etapas do arXiv:2607.14035 é útil para estruturar auditorias GEO por etapa do pipeline (em vez de tratar "visibilidade em IA" como métrica única) — pode informar a metodologia dos relatórios de AI visibility da destaque.ai, sem exigir novo serviço.
+
 ## 2026-07-29
 
 ### 🔵 Anúncios oficiais
