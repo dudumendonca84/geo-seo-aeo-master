@@ -30,6 +30,7 @@ destaque.ai is positioned as: **independent GEO/AEO consultancy for B2B SaaS in 
 | **Profound** | Yes (B2B marketing/GEO buyer) | No — SaaS tool, not consultancy | Different — ongoing measurement | <50% — bought together | Adjacent vendor |
 | **Otterly.AI** | Yes | No — SaaS tool | Different — ongoing | <50% | Adjacent vendor |
 | **Ahrefs Brand Radar** | Partial — broader SEO/marketing buyer | No — SaaS tool, not consultancy | Different | <50% — Ahrefs is bought regardless | Adjacent vendor |
+| **Keyword.com / international rank trackers** | Partial — SEO/marketing buyer, mostly non-PT | No — self-service SaaS rank tracking (now with AI-visibility add-ons), not consultancy | Different — bought as ongoing measurement | <30% — a tracker subscription does not replace an engagement | Adjacent vendor — never a peer, regardless of AI-tracking features |
 | **Latigid** | Partial — overlapping buyer but different JTBD | No — SEO clássico, not GEO | Earlier in funnel (general SEO) | <30% | **Not a peer** — adjacent (SEO incumbents) |
 | **Marketing4eCommerce** | No — ecommerce media/agency | No — media + agency, not GEO consultancy | No | <20% | **Not a peer** — distractor |
 | **Aleyda Solis / Lily Ray** | Yes for some buyers | Partially — international SEO/GEO consultants | Sometimes (high-end engagements) | <30% — different market (international vs PT-PT) | **Not a peer** — international consultants, track in `expert_mentions` |
