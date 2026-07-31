@@ -8,6 +8,23 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-07-31
+
+### 🔵 Anúncios oficiais
+- **Anthropic lança Claude Opus 5** — TechCrunch, via anthropic.com/news ([link](https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/)). Lançado a 24 de julho; na mesma semana a Perplexity passou a usar o Opus 5 em Search e Computer, com impacto direto na qualidade de resposta e comportamento de citação em AEO.
+
+### 📊 Estudos & dados
+- **"Ghost citations": ~40% das citações de IA não nomeiam a marca** — Search Engine Land, dados Writesonic ([link](https://searchengineland.com/ghost-citation-problem-ai-483794)). Taxa de citação "fantasma" (link para a fonte sem menção da marca no texto da resposta) varia por motor: Perplexity 52%, Google AI Mode 49%, Google AI Overviews 41%.
+- **15,7M citações do Google AI Mode: citação é ao nível da passagem, não do URL** — Search Engine Land, dados Pillarbase ([link](https://searchengineland.com/what-15-7-million-ai-mode-citations-reveal-about-getting-quoted-by-google-483393)). Um ano de dados em 148 indústrias: 80,9% das passagens citadas apenas uma vez, passagem mediana citada com 117 palavras, e em 80% dos casos a resposta está na primeira frase do trecho extraído.
+- **Modelos de IA favorecem marcas já conhecidas — pesquisadas 3,2x mais** — Search Engine Land, dados geoSurge ([link](https://searchengineland.com/ai-models-favor-familiar-brands-search-study-484054)). 66 prompts de compra testados 60x cada (3.960 respostas, 13.281 pesquisas fan-out): marcas já no top-10 de familiaridade do modelo foram pesquisadas em 55,7% dos casos vs. 17,4% para marcas fora do top-10.
+
+### 💡 Implicações para destaque.ai
+- O estudo de 15,7M citações e o de "ghost citations" confirmam que estruturar respostas diretas e autocontidas nas primeiras frases de secções citáveis pesa mais do que otimizar só para menção de marca — reforça a metodologia GEO atual do destaque.ai, sem exigir mudança de pitch.
+- O estudo geoSurge (marcas conhecidas pesquisadas 3,2x mais) é argumento importante para gerir expectativas de clientes B2B em Portugal com pouca notoriedade prévia: GEO não substitui construção de autoridade de marca — deve ser comunicado como pré-requisito, não como bónus incluído.
+- A adoção do Claude Opus 5 pela Perplexity (Search e Computer) é awareness a monitorizar: mudanças de modelo subjacente podem alterar padrões de citação nas próximas semanas — vale confirmar se os relatórios de AI visibility de clientes mostram variação após esta troca.
+
+*Nota de fontes: fetch direto às páginas Tier 1 (Google Search Central, blog.google, openai.com/news, anthropic.com/news, deepmind.google, blogs.bing.com, perplexity.ai/hub) foi bloqueado (HTTP 403); os itens acima foram confirmados via citações secundárias verificáveis com URL e data. Candidatos excluídos por falta de confirmação direta de data/fonte primária: Gemini 3.5 Flash-Lite no Search, "Query Fanouts" da Peec AI, atualizações Enterprise da Perplexity. Search Console "platform properties" e o survey arXiv:2607.14035 já estavam cobertos na entrada de 2026-07-30 — não repetidos aqui. Nada de relevante e verificável encontrado em Hacker News/Reddit ou nos perfis X da Tier 3 dentro da janela.*
+
 ## 2026-07-30
 
 ### ⚙️ Mudanças nas plataformas
