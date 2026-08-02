@@ -8,6 +8,10 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-08-02 — Share of Voice unificado (peers-only)
+
+O rótulo "Share of Voice" cobria três fórmulas (todas as marcas no summary; só peers no deck; presença simples no dossier). Unificado na convenção peers-only fraccionária — ver §3 de `references/metrics.md`. O dossier de concorrente passa a rotular a sua métrica como "Presença". Efeito esperado: SoV do cartão principal sobe (denominador menor) no primeiro recompute após a mudança.
+
 ## 2026-05-29 — SINAL v1.7 — Taxonomia das 8 dimensões reconciliada (§116-130 canónica) + método exposto ao deck
 
 **Trigger.** Ligação dos Slides 05/06/07 do deck à skill (método deixa de ser hardcoded) expôs um drift interno: duas listas de 8 dimensões coexistiam — a detalhada e citada em `SKILL.md` § Scope (§116-130) vs a taxonomia usada no resumo, no `destaque-ai-deck-builder/CLAUDE.md` e em `gap_action_mapping.md`.
