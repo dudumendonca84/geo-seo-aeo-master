@@ -39,6 +39,8 @@ SoV = brand_mentions / Σ(brand_mentions + competitor_mentions)
 ```
 across the prompt set. Some tools weight by response position (à la Princeton's PAWC, see §10).
 
+**Convenção destaque.ai (unificada 02 Ago 2026).** Nos produtos destaque.ai (Tracker e Deck Builder), o conjunto de marcas do denominador restringe-se ao **cliente + concorrentes directos (peers)** — marcas adjacentes (seguradoras, plataformas, consultoras de outra categoria) ficam fora. Atribuição fraccionária intra-resposta (1/nº de marcas do conjunto presentes na resposta), média sobre as respostas que nomeiam pelo menos uma marca do conjunto; presença do cliente pela flag `cited` do analisador, presença dos peers por `competitors_mentioned` normalizado (sem acentos). Implementação canónica: `computeShareOfVoice(rows, clientName, peerNames)` no Tracker. Um SoV sobre todas as marcas extraídas é outra métrica e deve ser rotulado como tal.
+
 **Caveats.**
 - **Highly sensitive to prompt-list choice.** Two tools with different default prompts produce different SoV for the same brand.
 - Profound publishes pre-defined per-industry prompt sets; Peec and Otterly require user-defined prompts.
