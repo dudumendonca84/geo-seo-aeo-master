@@ -197,6 +197,37 @@ Engines listados: os mesmos do Contrato 2 (`chatgpt`, `claude`, `gemini`, `grok`
 
 ---
 
+### Contrato 6: engine playbooks (como aparecer em cada motor)
+
+**Path no repo:** `skills/geo-seo-aeo-master/references/engine_playbooks.md`
+
+**Raw URL:**
+```
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/engine_playbooks.md
+```
+
+**Estrutura consumida:**
+
+Bloco `## Deck Builder/Tracker playbooks` com uma secção `### <engine_key>`
+por motor/superfície. Keys = as engine keys do Tracker (`chatgpt`, `claude`,
+`gemini`, `grok`, `deepseek`, `mistral`, `perplexity`, `google_aio`,
+`google_ai_mode`, `copilot`, `copilot_bing`). O corpo de cada secção é prosa
+PT-PT client-facing (o Tracker mostra-o tal como está no cartão do motor,
+secção "Como aparecer aqui").
+
+**Parsing contract** (Tracker, `src/lib/skill/playbooks.ts`):
+1. Fetch a URL acima
+2. Localizar `## Deck Builder/Tracker playbooks`
+3. Cada `### <key>` → texto até ao próximo `###`/fim
+4. Keys desconhecidas ignoram-se em silêncio; keys em falta escondem a
+   secção no cartão (sem fallback hardcoded — conteúdo editorial vive na skill)
+
+**Regras editoriais:** tom sóbrio, números só com fonte, acção concreta.
+Renomear as keys ou o header do bloco parte o parser — coordenar com PR no
+Tracker.
+
+---
+
 ## Frequência de actualização
 
 | Ficheiro | Cadência | Trigger |
@@ -206,6 +237,7 @@ Engines listados: os mesmos do Contrato 2 (`chatgpt`, `claude`, `gemini`, `grok`
 | `search_modes.md` per-engine table | Quando um vendor adiciona/remove search nativo | Daily agent monitor + manual |
 | `models.md` per-vendor tables | Quando há release | Daily agent monitor + manual |
 | `models.md` § Deck Builder API mappings | Quando há release ou deprecation | Daily agent + manual coordination |
+| `engine_playbooks.md` por motor | Quando o mecanismo de um motor muda | Daily agent (vendor changes) + self-audit + synthesis-weekly |
 
 **Implicação para Deck Builder:** fetch antes de cada audit é seguro. O ficheiro pode mudar entre dois audits do mesmo cliente; é feature, não bug (audits posteriores usam modelos mais recentes).
 
