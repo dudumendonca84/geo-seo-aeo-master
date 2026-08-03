@@ -66,6 +66,18 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/
 
 **Mudar a ORDEM das colunas da tabela §3** (ou a ordem de `PROMPT_CATEGORIES`) parte o zip posicional — coordenar. Mudar só os **números** é seguro e propaga em ≤1h.
 
+**Língua e mercado (Ago 2026).** O consumidor passa dois campos com o pedido:
+
+| Campo | Origem no Tracker | Efeito |
+|---|---|---|
+| `locale` | `clients.locale` (`pt-PT` \| `en`) | Língua do catálogo gerado e de tudo o que o cliente lê. |
+| `market` | `clients.market` (ISO do país) | Referência geográfica dentro dos prompts e localização das superfícies. |
+
+São campos distintos de propósito: uma marca inglesa pode competir no mercado
+português. Gerar prompts na língua errada não é um defeito cosmético, mede outra
+coisa e produz uma taxa de citação incomparável.
+
+
 ### Contrato 2: models (API ID lookup)
 
 **Path no repo:** `skills/geo-seo-aeo-master/references/models.md`
