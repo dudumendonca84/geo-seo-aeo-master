@@ -8,6 +8,22 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-03
+
+### 🔵 Anúncios oficiais
+- **Geração de imagens chega ao AI Overviews (Nano Banana)** — [blog.google](https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/) (14 jul 2026). O AI Overviews passa a gerar imagens originais a partir do prompt de texto do utilizador em vez de reutilizar apenas imagens existentes, usando o modelo Nano Banana; rollout progressivo em inglês, nas regiões que já suportam geração de imagem no AI Mode.
+
+### 📊 Estudos & dados
+- **Citação no AI Overviews não é o mesmo que recomendação** — Lily Ray, via [Search Engine Land](https://searchengineland.com/google-ai-overviews-cite-self-serving-listicles-recommend-competitors-480573) (estudo publicado 17 jun 2026). Em 100 queries B2B "best [categoria] software" testadas em três datas (15 abr, 15 mai, 8 jun 2026), listicles "best" auto-promocionais foram citados como fonte 323 vezes, mas em 69% desses casos o AI Overviews citou a marca sem a incluir na recomendação final, favorecendo concorrentes mais conhecidos.
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — Personal Computer expande para Windows** — [perplexity.ai/hub/blog](https://www.perplexity.ai/hub/blog/the-intelligent-business-introducing-comet-for-enterprise-pro) (final de jul 2026). O agente always-on antes exclusivo de Mac mini começa rollout para Windows, disponível a subscritores Max e Enterprise Max em lista de espera.
+
+### 💡 Implicações para destaque.ai
+- Com o AI Overviews a gerar imagens em vez de só reutilizar as existentes, o peso desloca-se para descrições textuais claras à volta de screenshots e diagramas de produto (alt text, legendas estruturadas) — a IA vai "recriar" visualmente o produto a partir do texto, não copiar a imagem original. Vale rever isto nas auditorias técnicas GEO.
+- O estudo da Lily Ray é um aviso direto para clientes SaaS B2B em Portugal que investem em conteúdo "melhores ferramentas de X": ser citado não significa ser recomendado, e listicles auto-promocionais podem estar a alimentar a visibilidade da concorrência. Vale auditar isto nas contas GEO ativas antes de recomendar este formato de conteúdo.
+- A expansão do Personal Computer da Perplexity para Windows é, por agora, awareness — confirma investimento continuado em agentes always-on ligados a IT empresarial, mas sem impacto direto imediato em GEO/AEO.
+
 ## 2026-07-31
 
 ### 🔵 Anúncios oficiais
