@@ -8,6 +8,16 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-08-03 — Filtragem de concorrentes: classificação por tipo antes do teste
+
+O teste das quatro perguntas continua correcto mas era lento de aplicar e o cérebro re-derivava-o todas as semanas, com drift. Adicionadas três secções a `references/competitor_filtering.md`:
+
+- **§2b Tipos que nunca são peers**, seja qual for o sector: fundações e institutos de investigação, redes só de diagnóstico ou laboratório, seguradoras, prestadores públicos, directórios e agregadores, media, e ferramentas de co-compra. Classificar por tipo primeiro, correr as quatro perguntas só no que sobra. Cada linha traz o erro real que teria evitado, incluindo a Fundação Champalimaud classificada como concorrente directo de uma rede hospitalar, onde um 4,8 de um centro de investigação fazia um 3,75 parecer derrota.
+- **§2c Onde o conjunto de peers se usa e onde não**: peers-only em Share of Voice, pódio, confronto directo e reputação local; todos os buckets nas listagens e dossiers, com etiqueta. Errar aqui não dá erro, dá um número silenciosamente falso.
+- **§2d As decisões ficam**: um bucket com `status = 'confirmed'` é decisão do operador e o cérebro não a re-deriva. Evidência nova que a contrarie regista-se nas notas da corrida, não se troca em silêncio.
+
+Contrapartida no Tracker: `src/lib/competitors/scope.ts` passa a ser o sítio único que define o âmbito de cada superfície, depois de a regra estar aplicada em cinco ficheiros e ausente noutros vinte.
+
 ## 2026-08-03 — Engine playbooks: auto-alimentação ligada nos três loops
 
 O `references/engine_playbooks.md` afirmava evoluir por três loops, mas só o daily-agent tinha gatilho escrito. Ligados os outros dois: o self-audit semanal actualiza um bloco `### <engine>` quando o prompt-test multi-engine contradiz uma alavanca listada (regra de confirmação: duas auditorias seguidas ou fonte primária do vendor, para uma semana atípica não derrubar conhecimento válido); a synthesis-weekly passa a ter os playbooks como destino para alavancas validadas em engagements reais (N≥3, anonimizadas). O parágrafo de manutenção do ficheiro passa a nomear a routine e o ponto exacto de cada loop.
