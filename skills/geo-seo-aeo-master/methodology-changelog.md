@@ -8,6 +8,12 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-08-03 — Engine playbooks: auto-alimentação ligada nos três loops
+
+O `references/engine_playbooks.md` afirmava evoluir por três loops, mas só o daily-agent tinha gatilho escrito. Ligados os outros dois: o self-audit semanal actualiza um bloco `### <engine>` quando o prompt-test multi-engine contradiz uma alavanca listada (regra de confirmação: duas auditorias seguidas ou fonte primária do vendor, para uma semana atípica não derrubar conhecimento válido); a synthesis-weekly passa a ter os playbooks como destino para alavancas validadas em engagements reais (N≥3, anonimizadas). O parágrafo de manutenção do ficheiro passa a nomear a routine e o ponto exacto de cada loop.
+
+Contrato 6 adicionado ao `scripts/validate-skill-tables.mjs` (verifica o header do bloco, as 11 keys de motor e blocos sem texto). Motivo: o Tracker consome este ficheiro sem fallback hardcoded, logo um header fora do formato faz a secção "Como aparecer aqui" desaparecer de todos os cartões em silêncio — e agora há três routines autónomas a escrever no ficheiro.
+
 ## 2026-08-02 — Share of Voice unificado (peers-only)
 
 O rótulo "Share of Voice" cobria três fórmulas (todas as marcas no summary; só peers no deck; presença simples no dossier). Unificado na convenção peers-only fraccionária — ver §3 de `references/metrics.md`. O dossier de concorrente passa a rotular a sua métrica como "Presença". Efeito esperado: SoV do cartão principal sobe (denominador menor) no primeiro recompute após a mudança.

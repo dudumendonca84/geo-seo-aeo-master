@@ -112,6 +112,42 @@ const countTableRows = (section) =>
   }
 }
 
+// --- Contrato 6: engine playbooks (consumido por loadEnginePlaybooks no Tracker)
+// Sem fallback hardcoded do lado do Tracker: um header partido aqui faz
+// desaparecer a secção "Como aparecer aqui" de TODOS os cartões de motor,
+// em silêncio. As routines (daily-agent, self-audit, synthesis) editam este
+// ficheiro, por isso o contrato tem de ser validado como os outros.
+{
+  const name = "Contrato 6 · engine playbooks";
+  const body = read(`${SKILL}/references/engine_playbooks.md`);
+  if (!body) { check(name, false, "engine_playbooks.md não encontrado"); }
+  else {
+    const section = sectionContent(body, "## Deck Builder/Tracker playbooks");
+    if (!section) check(name, false, "secção '## Deck Builder/Tracker playbooks' ausente");
+    else {
+      // Espelha o parser do Tracker (src/lib/skill/playbooks.ts): `### <key>`
+      // sozinho na linha, key em word chars.
+      const keys = [...section.matchAll(/^###[ \t]+(\w+)[ \t]*$/gm)].map((m) => m[1]);
+      // Keys do Tracker (src/lib/llm/models.ts ENGINES + superfícies).
+      const EXPECTED = [
+        "chatgpt", "claude", "gemini", "grok", "deepseek", "mistral", "perplexity",
+        "google_aio", "google_ai_mode", "copilot", "copilot_bing",
+      ];
+      const missing = EXPECTED.filter((k) => !keys.includes(k));
+      // Bloco vazio = cartão sem texto: o parser descarta, mas avisa-se aqui.
+      const bodies = section.split(/^###[ \t]+\w+[ \t]*$/gm).slice(1);
+      const empty = bodies.filter((b) => b.trim() === "").length;
+      if (missing.length > 0) {
+        check(name, false, `motores sem bloco '### <key>': ${missing.join(", ")}`);
+      } else if (empty > 0) {
+        check(name, false, `${empty} bloco(s) sem texto — o cartão fica sem "Como aparecer aqui"`);
+      } else {
+        check(name, true, `${keys.length} motores com playbook`);
+      }
+    }
+  }
+}
+
 let allOk = true;
 for (const r of results) {
   console.log(`${r.ok ? "✓" : "✗"} ${r.name} — ${r.detail}`);
@@ -122,4 +158,4 @@ if (!allOk) {
   console.error("\n❌ Validation failed — um ou mais contratos parseáveis estão fora de sincronia com os parsers do deck-builder. Deck cai em fallback hardcoded até isto ser corrigido.");
   process.exit(1);
 }
-console.log("\n✅ Todos os 4 contratos parseáveis válidos.");
+console.log("\n✅ Todos os contratos parseáveis válidos.");
