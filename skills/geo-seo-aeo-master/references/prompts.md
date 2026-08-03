@@ -19,7 +19,8 @@
 - **Contexto realista**: inclui, quando fizer sentido, tamanho da empresa, geografia, vertical, restrições (suporte PT, GDPR, escala). Prompts vagos produzem respostas vagas.
 - **Intent claro**: cada prompt expressa um destes intents — `research`, `comparison`, `validation`, `migration`, `pricing`, `integration`, `pain_point`.
 - **Nunca nomeies a marca do cliente**: queremos ver se aparece organicamente (exceção: prompts branded de self-audit, ex. DC1).
-- **Português europeu (PT-PT)** por defeito; PT-BR só se o público-alvo for tipicamente brasileiro. EN quando a query real do segmento é em inglês.
+- **A língua é a do cliente, não a nossa.** O consumidor passa `locale` (`pt-PT` | `en`) com o pedido: gera o catálogo nessa língua, com o idioma do mercado dele. PT-PT é o valor por omissão e a nossa casa, não uma regra universal. Isto **não é cosmético**: um comprador em Londres escreve em inglês, e medi-lo com perguntas em português mede outra coisa, com uma taxa de citação que não é comparável com nada. Dentro de PT, PT-BR só se o público-alvo for tipicamente brasileiro; e mesmo num cliente PT-PT, EN quando a query real do segmento é em inglês (termos técnicos que ninguém traduz).
+- **Geografia segue o mercado.** Um prompt para um cliente britânico diz "in the UK", não "em Portugal". A referência geográfica sai de `market`, não da língua: uma marca inglesa pode competir no mercado português.
 - **Varia a formulação**: evita quase-duplicados na mesma categoria; muda o ângulo (dor, comparação, preço, exequibilidade técnica).
 
 ---
