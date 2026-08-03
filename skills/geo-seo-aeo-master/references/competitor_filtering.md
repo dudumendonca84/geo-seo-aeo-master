@@ -39,6 +39,55 @@ destaque.ai is positioned as: **independent GEO/AEO consultancy for B2B SaaS in 
 
 The destaque.ai peer set (May 2026): **3HASH** plus any new entrant who passes the four-question test. The peer set is small on purpose — Portuguese GEO consultancy is a thin market.
 
+## 2b. Kinds that are NEVER peers, whatever the sector
+
+The four-question test is sound but slow to apply under pressure, and the
+brain re-derives it every week. These categories fail question 2 (same
+job-to-be-done) or question 4 (substitutability) **by construction**. Classify
+them by kind first, and only run the four questions on what survives.
+
+| Kind | Why it is never a peer | Real miss it would have caught |
+|---|---|---|
+| **Research foundations / specialist institutes** | Sell research or one narrow speciality, not the client's service. Their public rating and reputation are not comparable with a generalist provider. | Fundação Champalimaud classified as a peer of a private hospital network (Aug 2026). A 4.8 research centre made a 3.75 network look like it was losing. |
+| **Diagnostics-only / laboratory networks** | Deliver one input to the buyer's journey; bought *alongside*, not instead. | Joaquim Chaves, Affidea, Unilabs, Synlab, Germano de Sousa appearing in a hospital's competitive set. |
+| **Insurers and health plans** | Pay for the service; they are the channel, not the alternative. | Médis, Multicare, AdvanceCare, Fidelidade inflating a hospital SoV denominator. |
+| **Public / state providers** | Different funding and access model; the buyer does not shortlist them against a private provider at the same moment. | SNS in a private healthcare set. |
+| **Directories, marketplaces and aggregators** | Sell attention, not the service. They are a *source* to be present in. | Doctoralia, hospitaisonline in a competitor list rather than in the source-presence list. |
+| **Media and publishers** | Same reason: citation surface, not alternative. | Observador, ECO. |
+| **Tools the buyer also uses** | Complements with high co-purchase. | Peec, Profound, Ahrefs for a consultancy. |
+
+**Rule of thumb that resolves most cases in one line:** *could the buyer sign
+with this instead of the client, for the same need, in the same week?* If the
+honest answer needs a caveat, it is adjacent.
+
+## 2c. Where the peer set is used, and where it is not
+
+This is the contract the Tracker implements (`src/lib/competitors/scope.ts`).
+Getting it wrong does not produce an error, it produces a number that is
+quietly false.
+
+| Surface | Scope | Why |
+|---|---|---|
+| Share of Voice | **peers only** | The label says "vs. concorrentes directos". Adjacents inflate the denominator and sink the client. |
+| Category podium / "à frente de X de Y" | **peers only** | A ranking against non-alternatives is not a ranking. |
+| Head-to-head | **peers only** | |
+| Local reputation (Google ratings) | **peers only** | A specialist centre out-rates a generalist network by construction. |
+| Competitor listing and dossiers | **all buckets**, each labelled | The client owns the data and should see everything found, correctly labelled. |
+| Source presence | **not a competitor surface** | Directories and media belong here, never in the competitive set. |
+
+## 2d. Decisions stick
+
+Once a brand is classified with `status = 'confirmed'`, that is the operator's
+decision and **the brain must never re-derive it**. Weekly re-classification of
+a settled brand is drift, not learning. The Tracker enforces this in code
+(`upsertDiscoveredCompetitors` only fills buckets that are still
+`unclassified`); the brain must respect it too, and simply skip brands that
+already carry a confirmed bucket.
+
+If new evidence genuinely contradicts a confirmed classification, do not
+silently flip it: state the evidence in the run notes and leave the change to
+the operator.
+
 ## 3. Categories of non-peer mentions to keep separate
 
 A brand that fails the peer test may still appear in LLM responses. Track these in distinct buckets, do not collapse into SoV:
