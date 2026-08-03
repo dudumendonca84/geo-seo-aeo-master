@@ -148,6 +148,49 @@ const countTableRows = (section) =>
   }
 }
 
+// --- Contrato 5: search_modes augmentation (consumido por loadEngineAugmentation)
+// A tabela SOBREPÕE-SE ao fallback do código (`{...fallback, ...tabela}`), por
+// isso uma linha errada aqui não dá erro: duplica chamadas ao fornecedor e
+// rotula metade das linhas como "memória de treino" numa superfície que
+// pesquisa sempre. Foi o que aconteceu com o `copilot` até Ago 2026, ao custo
+// de metade da quota SerpApi.
+{
+  const name = "Contrato 5 · search modes";
+  const body = read(`${SKILL}/references/search_modes.md`);
+  if (!body) { check(name, false, "search_modes.md não encontrado"); }
+  else {
+    const section = sectionContent(body, "## Per-engine augmentation feature");
+    if (!section) check(name, false, "secção '## Per-engine augmentation feature' ausente");
+    else {
+      // Espelha o parser do Tracker (src/lib/skill/searchModes.ts).
+      const parsed = {};
+      for (const line of section.split("\n")) {
+        const t = line.trim();
+        if (!t.startsWith("|")) continue;
+        if (t.includes("Deck engine") || /^\|[\s\-:|]+\|$/.test(t)) continue;
+        const cells = t.split("|").slice(1, -1).map((c) => c.trim().replace(/^`|`$/g, ""));
+        if (cells.length < 3) continue;
+        const [engine, , mode] = cells;
+        if (!engine || !mode) continue;
+        const l = mode.toLowerCase();
+        parsed[engine] = { alwaysOn: l.includes("always") || l.includes("n/a") };
+      }
+      // Superfícies de consumo e Perplexity não têm modo "memória": têm de
+      // estar na tabela E marcadas always-on.
+      const ALWAYS = ["perplexity", "google_aio", "google_ai_mode", "copilot", "copilot_bing"];
+      const missing = ALWAYS.filter((e) => !parsed[e]);
+      const twoMode = ALWAYS.filter((e) => parsed[e] && !parsed[e].alwaysOn);
+      if (missing.length > 0) {
+        check(name, false, `superfícies ausentes da tabela: ${missing.join(", ")}`);
+      } else if (twoMode.length > 0) {
+        check(name, false, `correriam dois modos (duplicam custo): ${twoMode.join(", ")}`);
+      } else {
+        check(name, true, `${Object.keys(parsed).length} motores, ${ALWAYS.length} superfícies always-on`);
+      }
+    }
+  }
+}
+
 let allOk = true;
 for (const r of results) {
   console.log(`${r.ok ? "✓" : "✗"} ${r.name} — ${r.detail}`);

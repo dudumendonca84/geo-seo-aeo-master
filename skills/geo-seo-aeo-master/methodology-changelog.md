@@ -8,6 +8,18 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-08-03 — Superfícies de consumo passam a always-on na tabela de modos
+
+A tabela `## Per-engine augmentation feature` de `references/search_modes.md` sobrepõe-se ao fallback do código no consumidor (`{...fallback, ...tabela}`), por isso uma linha errada não dá erro: duplica chamadas ao fornecedor e rotula metade das linhas como "memória de treino" numa superfície que pesquisa sempre.
+
+Era o caso do `copilot`, marcado `(varies)`: corria dois modos e emitia o MESMO pedido duas vezes. Numa auditoria de 35 perguntas, 29 dos 35 pares voltaram byte a byte idênticos e 34 dos 35 concordaram na citação (CUF, Ago 2026). Metade da quota SerpApi ia nisto. A linha também descrevia o mecanismo errado, o caminho Azure OpenAI com `data_sources`, que não é o que o Tracker mede.
+
+- `copilot` passa a `n/a (always on)` com o mecanismo real (superfície standalone lida via SerpApi).
+- `google_aio`, `google_ai_mode` e `copilot_bing` passam a constar da tabela, também always-on. Estavam ausentes e funcionavam só por cair no fallback do código.
+- Nota explícita: superfícies de consumo não têm modo memória.
+
+Contrato 5 adicionado ao `scripts/validate-skill-tables.mjs`: exige que as cinco always-on estejam na tabela e marcadas como tal. Sem isto o modo de falha é silencioso e a factura só aparece no fim do mês.
+
 ## 2026-08-03 — Filtragem de concorrentes: classificação por tipo antes do teste
 
 O teste das quatro perguntas continua correcto mas era lento de aplicar e o cérebro re-derivava-o todas as semanas, com drift. Adicionadas três secções a `references/competitor_filtering.md`:
