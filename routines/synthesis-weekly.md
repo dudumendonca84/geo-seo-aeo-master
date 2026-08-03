@@ -45,6 +45,7 @@ Se algum scope falhar, para imediatamente e reporta `MCP scope insuficiente — 
    - `skills/geo-seo-aeo-master/references/gap_action_mapping.md`
    - `skills/geo-seo-aeo-master/references/prompts.md` (§ 4 catálogo destaque.ai)
    - `skills/geo-seo-aeo-master/references/benchmarks.md`
+   - `skills/geo-seo-aeo-master/references/engine_playbooks.md` (blocos `### <engine>`)
 
    Para cada novo pattern, verifica se já existe um similar — **não duplicar**. Em vez disso refina o existente com novo evidence ou actualiza o "Impacto típico".
 
@@ -70,6 +71,7 @@ Para cada update validado, aplica no ficheiro destino conforme a tabela:
 | Refinamento de pattern existente | `gap_action_mapping.md` | edit in-place; adiciona `[YYYY-MM-DD updated]` no Impacto típico |
 | Novo prompt canónico do segmento | `prompts.md` § 4 | linha no tier apropriado com `[YYYY-MM-DD added]` |
 | Benchmark com sample-size publicável | `benchmarks.md` | entry numerada (§N) com source URL, ou nota "single-case observation, treat as directional" se N<5 |
+| Alavanca validada **num motor específico** (o que fez a marca passar a aparecer no ChatGPT, no AI Overviews, no Perplexity…) | `engine_playbooks.md`, bloco `### <engine>` | edit in-place da prosa; N≥3 engagements para adicionar alavanca nova, N≥3 para remover uma existente que os dados não sustentam |
 
 Para `benchmarks.md`: sample-size mínimo é **N≥5** ou nota explícita de direccionalidade. Não inventar números — princípio SINAL "No fabricated benchmarks".
 

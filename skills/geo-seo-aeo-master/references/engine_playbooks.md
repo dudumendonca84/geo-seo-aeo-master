@@ -23,12 +23,26 @@ do sector da saúde mede forte nas duas vias. A via onde a marca já ganha
 diz que alavanca puxar a seguir.
 
 **Manutenção (auto-alimentação).** Este ficheiro evolui pelos três loops da
-skill: o daily-agent absorve mudanças de mecanismo por motor (novos modos de
-pesquisa, mudanças de fontes preferidas, rollouts por mercado) directamente
-nos blocos abaixo; o self-audit semanal e a synthesis-weekly (learnings de
-engagements) corrigem alavancas que os dados reais contradigam. Cada
-alteração de substância regista-se no `methodology-changelog.md`. Estatísticas
-só com fonte — sem estudo, dizê-lo.
+skill, cada um com o seu gatilho escrito na respectiva routine:
+
+- **daily-agent** (diário) — absorve mudanças de mecanismo anunciadas pelos
+  vendors (novos modos de pesquisa, mudanças de fontes preferidas, rollouts
+  por mercado) directamente nos blocos abaixo.
+  Ver `daily-agent/daily-prompt.md`, ponto "Mudanças no funcionamento dos vendors".
+- **self-audit semanal** (segundas) — o prompt-test multi-engine ao próprio
+  destaque.ai é evidência empírica: quando o observado contradiz uma alavanca
+  listada, corrige-a. Uma semana não derruba uma alavanca — precisa de duas
+  auditorias seguidas ou de fonte primária do vendor.
+  Ver `routines/destaque-ai-self-audit-weekly.md`, ponto 7.
+- **synthesis-weekly** (sextas) — alavancas validadas em engagements reais,
+  anonimizadas e com N≥3, entram no bloco do motor onde funcionaram.
+  Ver `routines/synthesis-weekly.md`, Pass 3.
+
+Cada alteração de substância regista-se no `methodology-changelog.md`.
+Estatísticas só com fonte — sem estudo, dizê-lo. Qualquer routine que edite
+este ficheiro corre `node scripts/validate-skill-tables.mjs` antes de commit:
+o Tracker não tem fallback para este conteúdo, e um header fora do formato
+`### <engine_key>` faz a secção desaparecer dos cartões em silêncio.
 
 ## Deck Builder/Tracker playbooks
 
