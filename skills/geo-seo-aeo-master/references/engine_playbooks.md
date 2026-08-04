@@ -89,6 +89,19 @@ como os restantes motores augmented. Alavancas: as mesmas da via da
 pesquisa (conteúdo comparativo + ranking) e presença em fontes europeias da
 categoria.
 
+### llama
+
+Corre só em memória de treino: nenhum dos fornecedores que alojam o Llama
+expõe pesquisa de primeira parte. O que conta aqui é o que o modelo
+absorveu, portanto as alavancas são as da entidade: presença no Wikidata e
+na Wikipédia, descrições consistentes em todas as plataformas, e menções em
+fontes abertas que entram nos conjuntos de treino. Move-se em meses, ao
+ritmo dos ciclos de treino.
+
+Nota para quem mostra isto a um cliente: este motor é o modelo Llama, não
+o assistente Meta AI que ele usa no WhatsApp. O assistente traz sistema,
+recolha e guardas próprias, e não é medível por API nenhuma hoje.
+
 ### perplexity
 
 Pesquisa sempre a web viva e cita fontes explícitas — dá peso invulgar a

@@ -335,7 +335,9 @@ Two columns per engine:
 | `mistral` | Mistral | `mistral-large-latest` | `mistral-small-latest` |
 | `grok` | xAI | `grok-4.3` | `grok-4.1-fast` |
 | `deepseek` | DeepSeek | `deepseek-v4-flash` | `deepseek-v4-flash` |
-| `meta` | Meta | `llama-3.1-405b-instruct` | `llama-3.1-70b-instruct` |
+| `llama` | Meta (third-party hosts) | `llama-4-maverick-17b-128e-instruct` | `llama-4-scout-17b-16e-instruct` |
+
+**Caveat — `llama` row (04 Aug 2026):** the engine key was `meta` with Llama 3.1 IDs; renamed to `llama` and moved to Llama 4, and the vendor column now says "third-party hosts" on purpose. Meta's own Llama API (llama.developer.meta.com) shut down on 6 Jul 2026, so the models are reachable only through Groq, Together, Fireworks, Bedrock and similar, all OpenAI-compatible. **This row is the MODEL, not the assistant.** Meta AI as a consumer surface (WhatsApp, Instagram, meta.ai) has no public API and no SERP provider exposes it, so it is not measurable today; a consumer must not label a Llama API call as "Meta AI", because the assistant carries its own system prompt, retrieval and guardrails and answers differently. Ungrounded: none of the third-party hosts expose a first-party web-search tool on the chat endpoint, so this engine runs training-memory only.
 
 **Caveat — `chatgpt` row (11 Jul 2026):** with GPT-5.6's launch, ChatGPT's default is tier-dependent for the first time (previously a single model served all tiers). `gpt-5.6-sol` reflects the Plus/Pro/Business/Enterprise default; free/Go ChatGPT users still default to `gpt-5.5-instant` as of this refresh. The `production` value above is calibrated to the paid-diagnostic-audit rationale in the Tier assignment table below, not to the free-tier product experience.
 

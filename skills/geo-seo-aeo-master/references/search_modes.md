@@ -54,7 +54,7 @@ Single source of truth for what consumers must enable to put each engine into `a
 | `copilot_bing`| Microsoft| n/a (always on)| Copilot block inside the Bing SERP (DataForSEO)                                             | Consumption surface, distinct from standalone `copilot`; never sum the two. |
 | `mistral`   | Mistral   | not supported   | No first-party search tool in the API as of Jun 2026                                       | Consumers should **skip** the augmented half of the run; record `null`, do not synthesise. |
 | `deepseek`  | DeepSeek  | not supported   | No first-party search tool in the API as of Jun 2026                                       | Same — skip the augmented half. |
-| `meta`      | Meta      | not supported   | Llama via Together/Groq/Fireworks; no first-party search                                   | Same — skip the augmented half. |
+| `llama`     | Meta      | not supported   | Llama 4 via Groq/Together/Fireworks/Bedrock, OpenAI-compatible; no first-party search        | Same, skip the augmented half. **This is the model, not the assistant**: Meta AI in WhatsApp/Instagram/meta.ai has no public API and no SERP provider exposes it, so it is not measurable. Meta's own Llama API shut down 6 Jul 2026. |
 
 **Consumption surfaces have no knowledge mode.** `google_aio`, `google_ai_mode`, `copilot`, `copilot_bing` and `perplexity` are marked `n/a (always on)` and run the augmented half only. Marking one of them as two-mode does not produce an error: it silently doubles the provider bill and labels half the rows "training memory" for a surface that cannot answer without searching. Both happened with `copilot` until Aug 2026.
 
