@@ -11,6 +11,48 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-08-03 — Quarta execução
+
+**Score global:** 69/100 (Bom, com lacunas de verificação que persistem — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 27 jul: 0.**
+
+**Score por categoria (delta vs. 27 jul):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 87/100 | +1 |
+| Performance / CWV | N/D | — |
+| SEO On-Page | 93/100 | 0 |
+| Schema / dados estruturados | 96/100 | +1 |
+| Optimização de imagens | 72/100 | +7 |
+| GEO técnica | 91/100 | +4 |
+| Conteúdo & topical authority | 85/100 | −3 |
+| Entidade / brand foundation | 77/100 | 0 |
+| Autoridade & digital PR | 20/100 | 0 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 38/100 | −7 |
+
+**Nota sobre o Δ global de 0:** não reflecte estagnação. Ganhos reais em Schema (+1), Optimização de imagens (+7) e GEO técnica (+4) — três itens de backlog fechados por 6 PRs mergeados entre 27-31 jul (#93-#98) — são compensados por uma queda em Medição (−7, nova degradação activa de 3 motores no Visibility Tracker por quota SerpApi esgotada) e em Conteúdo (−3, hiato editorial de ~19 dias que ultrapassou o limiar de escalada definido na semana passada). Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 4 — "GEO — llms.txt não referencia /en/" (secção English nova confirmada); "GEO — hreflang em falta na página pilar + x-default em falta no estudo" (x-default resolvido por implementação; hreflang da página pilar resolvido por decisão explícita documentada em commit, não por código); "GEO — Multimodal: primeira ruptura sem ImageObject" (`ImageObject` confirmado nas 14 imagens do `/tracker`); "MEASUREMENT — bug `/competitors/[id]`" (não observado nos erros dos últimos 7 dias, resolvido sem commit identificado — marcado com ressalva). "SCHEMA — Casos de estudo sem schema de resultado" passa a IN PROGRESS com progresso parcial (`author` Organization adicionado via PR #93; schema de resultado estruturado continua por fazer).
+
+**Items novos detectados:** 4 — 1 P0 (MEASUREMENT — quota SerpApi esgotada + erro de campo DataForSEO, 3 motores do Tracker degradados agora mesmo — o item mais severo até agora nesta auditoria), 1 P1 (PROCESS — categoria nova; estrutura de repositório duplicada, `news-feed.md` fragmentado entre dois caminhos não sincronizados), 1 P2 (MEASUREMENT — `BING_OAUTH_CLIENT_ID` em falta no Tracker), 1 P3 (GEO — re-testar scan de preparação para agentes isitagentready.com e confirmar negociação de conteúdo em markdown). Adicionalmente, "CONTENT — cadência de publicação parada" foi escalado de P3 para P2 por ultrapassar o limiar de 2-3 semanas definido em 27 jul.
+
+**Mudanças materiais observadas:**
+- **Correcção de processo mais importante da execução:** confirmação de que o repositório tem duas árvores paralelas e não sincronizadas do skill (`skills/geo-seo-aeo-master/` canónico vs. uma árvore duplicada na raiz), com o `daily-agent/news-feed.md` fragmentado entre ambas — um risco estrutural real para a fiabilidade de auditorias futuras, não apenas um incómodo de sessão. Ver item PROCESS no backlog.
+- **Degradação mais severa do que a semana passada em Medição:** o bug isolado da semana passada (`/competitors/[id]`) foi resolvido, mas foi substituído por uma falha activa e mais ampla — quota da SerpApi esgotada, a afectar 3 motores de medição do Tracker neste preciso momento, mais um erro de configuração (`BING_OAUTH_CLIENT_ID`) e o rate-limit da Mistral que ultrapassa agora 6 semanas sem resolução de causa raiz.
+- **Progresso técnico genuíno:** 6 PRs mergeados (#93-#98) fecharam 3 itens do backlog (x-default, `/en/` no llms.txt, `ImageObject` no `/tracker`) e introduziram uma superfície nova — "preparação para agentes" (Content-Signal, índice de Agent Skills, negociação de conteúdo em markdown) — ainda sem peso formal no scorecard SINAL.
+- **Teste multi-motor — dado mais fino, padrão mais claro:** modo augmented passou a distinguir "citado" de "recomendado" pela primeira vez. destaque.ai foi citada em 5/21 prompts mandatórios (a taxa mais alta das 4 execuções), mas nunca como opção recomendada — sempre como fonte de dados/leitura de fundo, com concorrentes reais (Studio.351, Infinidata, UniK SEO) explicitamente recomendados à frente em pelo menos um caso (`V5`). `LR1` testado pela primeira vez em augmented — destaque.ai ausente, 7 concorrentes citados. Modo knowledge: 0/31 pela quarta semana, 0 alucinações, recusa correcta no prompt branded (`DC1`-variante com AISO Hub).
+- **Descoberta lateral:** quarto projecto Vercel da conta, `destaque-ai-commercial` ("Caçador de Clientes"), uma ferramenta interna de prospecção que já usa a própria metodologia de destaque.ai (sinais Claude-only, directional) — não pública, sem impacto no scorecard, mas confirma a empresa a comer a sua própria comida.
+
+**Limitações operacionais desta execução (evolução face às três semanas anteriores):**
+- `curl` de saída e PageSpeed Insights continuam bloqueados/rate-limited — 4ª semana consecutiva.
+- ChatGPT, Perplexity, Google AI Mode, Bing Copilot continuam sem acesso — 4ª semana sem progresso, agora agravado pela degradação do próprio Tracker (ver acima).
+- `references/models.md` — tentativa de refresh mandatório (>7 dias) feita, sem mudança confirmada com fonte primária; ver nota no próprio ficheiro.
+- Amostragem técnica de páginas mais estreita do que nas três execuções anteriores (6 URLs directamente amostrados vs. 17-20 nas semanas anteriores), por causa do tempo dedicado ao diagnóstico da estrutura duplicada do repositório e ao teste multi-motor mais granular (5 sub-agentes, 52 pares prompt×motor). Categorias 8-11 do scorecard não re-verificadas esta semana — valores de 27 jul mantidos sem alteração assumida.
+
+Ver `audit-baseline.md` para o detalhe completo, e `improvements-backlog.md` para os itens novos e actualizados.
+
 ### 2026-07-27 — Terceira execução
 
 **Score global:** 69/100 (Bom, com lacunas de verificação que persistem — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 20 jul: −2.**
