@@ -48,6 +48,33 @@ Intents típicos: `comparison`, `validation`, `migration`.
 Forma exemplo:
 > "Estou a comparar [vendor A], [vendor B] e [vendor C] para [caso de uso] numa operação de [escala]. Em que critérios cada um se destaca?"
 
+**Regra dura — a marca medida tem de caber na resposta.**
+
+Num catálogo de tracking, uma pergunta de comparação só é válida se a marca
+medida puder aparecer na resposta. Há duas formas de garantir isso, e só duas:
+
+1. **A marca é um dos lados nomeados.** "Como se compara [marca] com [concorrente]?"
+2. **A comparação é de categoria**, com os lados descritos por tipo e não por
+   nome, de maneira que a marca cabe num deles. "Vale a pena escolher uma rede
+   nacional ou um operador regional para [caso de uso]?"
+
+**Nunca dois concorrentes nomeados um contra o outro sem a marca medida.**
+"Como se compara [concorrente A] com [concorrente B]?" mede o duelo dos outros:
+a ausência da marca está garantida antes de a pergunta correr, e entra na
+métrica como se fosse uma derrota. Não é um sinal fraco, é um zero fabricado —
+baixa a taxa de citação com uma pergunta onde estar ausente era o único
+resultado possível.
+
+O erro é fácil de cometer quando se geram prompts a partir do panorama
+competitivo: os nomes dos concorrentes estão à mão e a pergunta sai natural.
+Ao rever um catálogo gerado, ler cada `direct_comparison` e perguntar "se o
+motor responder bem a isto, há alguma hipótese de nomear a marca?". Se não
+houver, reescrever pela forma 1 ou 2.
+
+(Excepção conhecida: no self-audit da destaque.ai, DC6 compara ferramentas de
+terceiros de propósito — mede o panorama, não a nossa visibilidade, e está
+marcado como tal.)
+
 ### 2.3 `local_recommendation`
 Pede recomendações para uma geografia específica.
 
