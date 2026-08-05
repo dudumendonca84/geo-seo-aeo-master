@@ -142,3 +142,105 @@ AIO). A recolha automática desta superfície está instável do lado dos
 fornecedores de dados (a Microsoft endureceu contra scraping, Ago 2026) —
 medição suspensa até estabilizar. Alavancas: as mesmas do copilot; quando a
 medição voltar, a presença aqui herda o trabalho feito no índice Bing.
+
+## Deck Builder/Tracker playbooks (EN)
+
+Espelho inglês do bloco acima, para clientes cujo `locale` é `en`. Mesmas
+chaves, mesma ordem, mesma substância — o que muda é a língua, não o método.
+Quando uma alavanca mudar em cima, muda aqui também: duas versões que
+divergem são pior do que uma só.
+
+### chatgpt
+
+Mixes training memory with web search, and only turns search on for a
+fraction of questions (~34.5% of queries, Semrush clickstream, Feb 2026).
+Levers: presence in durable sources that feed training (press, "best of"
+lists, Wikipedia where eligible); on-site content that answers the
+category's comparison questions directly, for the search route; consistent
+brand name and description across every source.
+
+### claude
+
+Mostly training memory in base mode; with search on, it prefers
+institutional sources and clear documentation. Levers: a consistent entity
+(sameAs, stable descriptions), technical and factual content without
+inflated promises, pages that explain what the brand does in plain language.
+
+### gemini
+
+Wired into the Google ecosystem: what Google indexes and understands well
+feeds Gemini. Levers: healthy classical SEO (organic top 10), complete
+schema.org, an up-to-date Google Business Profile per location, content with
+declared authority (named authors with credentials).
+
+### grok
+
+Pulls from the web index and gives unusual weight to conversation on X and
+to recent signals. Levers: an active and quotable presence on X, quick
+reaction to category topics, on-site content that backs up what is claimed
+on social.
+
+### deepseek
+
+Training memory weighted heavily toward English-language sources. Levers:
+an English version of the brand's key pages, presence in international
+directories and category lists, a brand name without linguistic ambiguity.
+
+### mistral
+
+Training memory with good European coverage; with search on, it behaves like
+the other augmented engines. Levers: the same as the search route
+(comparative content plus ranking) and presence in European sources for the
+category.
+
+### llama
+
+Runs on training memory alone: none of the providers hosting Llama expose
+first-party search. What counts here is what the model absorbed, so the
+levers are the entity ones: presence on Wikidata and Wikipedia, consistent
+descriptions across platforms, and mentions in open sources that feed
+training sets. It moves in months, at the pace of training cycles.
+
+A note for anyone showing this to a client: this engine is the Llama model,
+not the Meta AI assistant it powers in WhatsApp. The assistant brings its own
+system, retrieval and guardrails, and no API measures it today.
+
+### perplexity
+
+Always searches the live web and cites explicit sources, with unusual weight
+on communities (Reddit is ~47% of citations in some category studies; treat
+as directional). Levers: being present and mentioned in relevant communities
+(Reddit, category forums), content with original data worth citing, pages
+that are fast and readable by bots (PerplexityBot in robots.txt).
+
+### google_aio
+
+The AI answer block at the top of Google. About 54% of citations come from
+the organic top 10 (BrightEdge), so classical SEO is the ticket in. On local
+and urgent questions Google tends to show the local pack (the map) instead of
+the block: there the battle is each location's Google listing, not the AIO.
+Levers: organic ranking on comparison questions, direct answer paragraphs at
+the top of pages, schema, complete Google listings per location.
+
+### google_ai_mode
+
+Google's conversational search mode. It answers almost every question and
+cites sources at passage level. Levers: everything from google_aio plus
+depth: each page should answer one complete question per section, with data
+and explicit comparisons the engine can quote on their own.
+
+### copilot
+
+Microsoft's chat, searching through the Bing index. Levers: being well
+indexed in Bing (Bing Webmaster Tools connected, IndexNow), clear
+comparative content, declared authority on the site. Bing Webmaster Tools
+"AI Performance" is the only first-party telemetry of AI citations, and is
+always worth connecting.
+
+### copilot_bing
+
+The Copilot block inside Bing's results page, Microsoft's counterpart to the
+AIO. Automated collection of this surface is unstable on the data providers'
+side (Microsoft hardened against scraping, Aug 2026), so measurement is
+suspended until it settles. Levers: the same as copilot; when measurement
+returns, presence here inherits the work done on the Bing index.
