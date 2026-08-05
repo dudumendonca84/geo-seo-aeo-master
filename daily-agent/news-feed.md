@@ -8,6 +8,25 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-05
+
+### ⚙️ Mudanças nas plataformas
+- **Microsoft Clarity — filtro branded/non-branded em AI Citations** — o dashboard AI Citations do Clarity passa a segmentar as queries de "grounding" (as pesquisas que os sistemas de IA fazem para fundamentar uma resposta) em branded vs. non-branded, com filtro dedicado e quebra do "Share of Authority" por esta dimensão. É a terceira release do Clarity relacionada com citações IA em 25 dias. https://clarity.microsoft.com/blog/branded-non-branded-queries/
+
+### 💡 Implicações para destaque.ai
+- O filtro branded/non-branded do Clarity é gratuito e pode complementar (não substituir) ferramentas pagas como Profound/Peec AI em reporting a clientes SaaS B2B — vale testar, não requer mudança de pitch.
+- Sem anúncios oficiais Tier 1 (Google, OpenAI, Anthropic, Perplexity) nem core updates confirmados nas últimas 48h — apenas awareness, sem acção imediata.
+
+## 2026-08-04
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search Console — fim do suporte a FAQ rich results na API** — a partir de agosto de 2026, a Search Console API deixa de devolver dados de FAQ rich results, três meses após o desaparecimento do FAQ search appearance nos resultados de pesquisa (7 de maio de 2026) e a remoção do relatório correspondente e do suporte no Rich Results Test (junho de 2026). O FAQPage markup pode continuar no código — não gera erro — mas deixou de produzir qualquer resultado visível no Google. ([Search Engine Land](https://searchengineland.com/google-to-no-longer-support-faq-rich-results-476957))
+
+### 💡 Implicações para destaque.ai
+- FAQ schema deixa de ser uma alavanca de AEO para o Google (SERP) — não vale a pena continuar a vender FAQPage markup como táctica de rich results a clientes portugueses; é awareness, não requer novo serviço.
+- ChatGPT, Perplexity e outros AI answer engines continuam a poder extrair conteúdo de blocos FAQ mesmo sem o schema formal — o valor do formato pergunta-resposta mantém-se para GEO, só a codificação schema.org perdeu utilidade específica no Google.
+- Quem tem dashboards ou relatórios automatizados (BigQuery, Looker Studio) ligados à Search Console API para métricas de FAQ deve confirmar que essas queries não quebram silenciosamente este mês.
+
 ## 2026-08-03
 
 ### 🔵 Anúncios oficiais
@@ -23,6 +42,21 @@ editorial_voice: sober, primary-source-anchored, no hype
 - Com o AI Overviews a gerar imagens em vez de só reutilizar as existentes, o peso desloca-se para descrições textuais claras à volta de screenshots e diagramas de produto (alt text, legendas estruturadas) — a IA vai "recriar" visualmente o produto a partir do texto, não copiar a imagem original. Vale rever isto nas auditorias técnicas GEO.
 - O estudo da Lily Ray é um aviso direto para clientes SaaS B2B em Portugal que investem em conteúdo "melhores ferramentas de X": ser citado não significa ser recomendado, e listicles auto-promocionais podem estar a alimentar a visibilidade da concorrência. Vale auditar isto nas contas GEO ativas antes de recomendar este formato de conteúdo.
 - A expansão do Personal Computer da Perplexity para Windows é, por agora, awareness — confirma investimento continuado em agentes always-on ligados a IT empresarial, mas sem impacto direto imediato em GEO/AEO.
+
+## 2026-08-02
+
+### 📊 Estudos & dados
+- **AI Recognizes 96% Of Brands But Mentions Almost None** — Victorious Q2 2026 Quarterly Search Report, via Search Engine Journal (https://www.searchenginejournal.com/ai-brand-mention-study-victorious-spa/582765/). 175 marcas testadas em 8 plataformas de IA (ChatGPT, Claude, Gemini, Copilot, Perplexity, Google AI Overviews/AI Mode, Meta AI): 96% descritas com precisão quando perguntadas directamente, mas 89% nunca apareceram em respostas a perguntas de research de categoria.
+- **Google's "Generative AI" Search Console Data Is A Trap For Marketers** — Search Engine Journal (https://www.searchenginejournal.com/googles-generative-ai-search-console-data-is-a-trap-for-marketers/584018/). Após ~8 semanas do relatório de IA generativa no GSC (lançado 3 jun 2026): mostra impressões sem cliques correspondentes, trata toda a citação em AI Overviews como "posição 1" (distorcendo a posição média), e pode mascarar quebras reais de tráfego/receita orgânica.
+
+### 💡 Implicações para destaque.ai
+- O estudo Victorious separa duas coisas que os clientes confundem: o modelo *saber* o que a marca é (96%) e o modelo *escolher* nomeá-la quando alguém pergunta pela categoria (11%). É o argumento mais limpo para explicar por que "o ChatGPT descreve-nos bem" não é medição de visibilidade.
+- O aviso sobre o relatório de IA generativa do GSC aplica-se directamente ao Tracker: a posição média que o Google reporta nesse relatório não é comparável com a posição que medimos nas respostas, e não deve ser apresentada lado a lado sem nota.
+
+## 2026-08-01
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — Model Council chega ao Computer** — a partir de 29 jul 2026, o Computer da Perplexity integra o Model Council: o utilizador escolhe entre 2-8 modelos (OpenAI, Anthropic, Google, GLM, Kimi) para analisar a mesma questão de forma independente, produzindo um relatório único com citações que mostra onde os modelos concordam e discordam. https://www.perplexity.ai/hub/blog/model-council-comes-to-computer
 
 ## 2026-07-31
 
