@@ -138,10 +138,22 @@ autoridade declarada no site. O Bing Webmaster Tools "AI Performance" é a
 ### copilot_bing
 
 O bloco Copilot dentro da página de resultados do Bing (análogo Microsoft do
-AIO). A recolha automática desta superfície está instável do lado dos
-fornecedores de dados (a Microsoft endureceu contra scraping, Ago 2026) —
-medição suspensa até estabilizar. Alavancas: as mesmas do copilot; quando a
-medição voltar, a presença aqui herda o trabalho feito no índice Bing.
+AIO). **Medição suspensa — não voltar a ligar sem confirmação do fornecedor.**
+
+Confirmado pela DataForSEO por email a 5 Ago 2026: a Bing começou há meses a
+baralhar os resultados contra scrapers, o Copilot incluído, e o problema
+afecta todos os recolhedores da Bing, não só um. A recomendação deles é
+expressa — não criar novas tarefas Bing até confirmarem que está resolvido.
+Não é limitação de um fornecedor, é a Microsoft a defender-se, e trocar de
+fornecedor não resolve.
+
+O que se observa quando corre à mesma: pedidos pagos que devolvem sempre a
+ausência do bloco. Não conta como medição (o sentinela `[sem ` exclui-a das
+métricas), mas gasta consulta a cada pergunta e a cada semana.
+
+Alavancas: as mesmas do copilot; quando a medição voltar, a presença aqui
+herda o trabalho já feito no índice Bing — não há nada a fazer de diferente
+entretanto.
 
 ## Deck Builder/Tracker playbooks (EN)
 
@@ -240,7 +252,19 @@ always worth connecting.
 ### copilot_bing
 
 The Copilot block inside Bing's results page, Microsoft's counterpart to the
-AIO. Automated collection of this surface is unstable on the data providers'
-side (Microsoft hardened against scraping, Aug 2026), so measurement is
-suspended until it settles. Levers: the same as copilot; when measurement
-returns, presence here inherits the work done on the Bing index.
+AIO. **Measurement suspended — do not switch it back on without provider
+confirmation.**
+
+Confirmed by DataForSEO over email on 5 Aug 2026: Bing began scrambling
+results against scrapers some months ago, Copilot included, and the problem
+affects every Bing collector rather than one vendor. Their recommendation is
+explicit: set no new Bing tasks until they confirm it is resolved. This is
+Microsoft defending itself, so switching provider does not help.
+
+What is observed if it runs anyway: paid requests that always return the
+block as absent. It does not count as measurement (the `[sem ` sentinel keeps
+it out of the metrics), but it spends a query per question, per week.
+
+Levers: the same as copilot; when measurement returns, presence here inherits
+the work already done on the Bing index — there is nothing different to do in
+the meantime.
