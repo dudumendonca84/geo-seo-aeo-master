@@ -8,6 +8,110 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-06
+
+### 📊 Estudos & dados
+- **Should multilingual websites add English pages for AI visibility?** — Search Engine Land (5 ago 2026, https://searchengineland.com/multilingual-websites-english-pages-ai-visibility-484251). Para a maioria dos sites multilingues analisados, uma versão em inglês bem mantida das páginas-pilar aumentou a presença em respostas de IA — efeito mais visível no ChatGPT, evidente no Copilot, direccionalmente semelhante nas superfícies de IA da Google. Mas uma página EN desactualizada teve pior desempenho do que não ter nenhuma (os LLMs tratam-na como canónica desde o lançamento), e o efeito diminui em modelos mais maduros, cada vez mais treinados noutras línguas.
+
+### 💡 Implicações para destaque.ai
+- Achado directamente relevante para clientes B2B SaaS em Portugal com conteúdo apenas em PT-PT: uma página EN das páginas-pilar pode aumentar visibilidade em ChatGPT/Copilot, mas só compensa como compromisso sustentado de manutenção — "publica e esquece" é pior do que não ter página nenhuma. Vale testar em 1-2 clientes antes de recomendar como prática geral. Awareness accionável, sem mudança de metodologia de auditoria.
+
+**Nota de integridade de dados**: verificadas as 7 fontes Tier 1 — fetch directo bloqueado (HTTP 403, como em sessões anteriores); via WebSearch, sem anúncios oficiais genuinamente novos e não-duplicados na janela estrita de 24-48h (4-6 ago) em developers.google.com/search/blog, blog.google, openai.com/news, anthropic.com/news, deepmind.google/discover/blog, blogs.bing.com/search ou perplexity.ai/hub. Candidatos investigados e descartados por já cobertos: filtro branded/non-branded do Microsoft Clarity (3 ago — já registado em 2026-08-05); relatório Ahrefs "75.000 marcas, menções no YouTube são o sinal mais forte de visibilidade em IA" (publicado 26-27 mai, fora de qualquer janela de recuperação de gap razoável); estudo Ahrefs "97% dos ficheiros llms.txt sem qualquer pedido" (publicado 16 jun, idem). Sem novo core update confirmado da Google (Search Status Dashboard — último foi o June spam update, 14-26 jun; próximo esperado Q3 2026; volatilidade não-confirmada notada por webmasters a 1 ago). arXiv cs.IR/cs.CL: sem paper genuinamente novo verificado na janela — candidato mais próximo (arXiv:2607.14035, critical survey GEO) já coberto anteriormente. Quinta-feira → sem weekly drafts. **Migração de conteúdo (correcção de rota crítica)**: ao correr `git log origin/main` antes de qualquer escrita, confirmou-se que a branch de trabalho fornecida partia de um snapshot de `main` anterior à existência da estrutura canónica `skills/geo-seo-aeo-master/` — o mesmo padrão de árvore-raiz-legada sinalizado em praticamente todas as entradas deste log desde início de julho. Ao contrário das ~20 ocorrências anteriores (sempre detectadas e corrigidas antes do commit), as 7 sessões mais recentes (2026-07-29 a 2026-08-05) **não detectaram o problema e commitaram directamente em `daily-agent/news-feed.md` e `daily-agent/execution-log.md` na raiz do repo** — fora do caminho canónico usado pelo resto da skill (`references/`, `SKILL.md`, absorção, validator). Isto significa que `skills/geo-seo-aeo-master/daily-agent/news-feed.md` ficou parado em 2026-07-28 durante 8 dias corridos, enquanto a árvore legada acumulava conteúdo real e verificado mas nunca visível para quem consulta a skill pelo caminho documentado. Nesta sessão, as 7 entradas de 2026-08-05 a 2026-07-29 foram migradas verbatim da árvore legada para este ficheiro (abaixo) e para `execution-log.md`, preservando o conteúdo original sem reescrita. **Nenhuma absorção retroactiva foi tentada** para essas 7 entradas — as sessões que as escreveram não passaram por `references/`, pelo que não há absorções prévias a verificar nem a desfazer, mas fica como trabalho pendente (ver `execution-log.md` de hoje). A árvore duplicada na raiz (`daily-agent/`, e possivelmente outras — não verificadas nesta sessão) não foi removida; mantém-se a recomendação, já repetida dezenas de vezes neste log, de que uma sessão com mandato explícito para mudanças estruturais a elimine. `node scripts/validate-skill-tables.mjs` corrido antes do commit. Commit feito directamente em `main` por instrução explícita da rotina (sem PR).
+
+## 2026-08-05
+
+### ⚙️ Mudanças nas plataformas
+- **Microsoft Clarity — filtro branded/non-branded em AI Citations** — o dashboard AI Citations do Clarity passa a segmentar as queries de "grounding" (as pesquisas que os sistemas de IA fazem para fundamentar uma resposta) em branded vs. non-branded, com filtro dedicado e quebra do "Share of Authority" por esta dimensão. É a terceira release do Clarity relacionada com citações IA em 25 dias. https://clarity.microsoft.com/blog/branded-non-branded-queries/
+
+### 💡 Implicações para destaque.ai
+- O filtro branded/non-branded do Clarity é gratuito e pode complementar (não substituir) ferramentas pagas como Profound/Peec AI em reporting a clientes SaaS B2B — vale testar, não requer mudança de pitch.
+- Sem anúncios oficiais Tier 1 (Google, OpenAI, Anthropic, Perplexity) nem core updates confirmados nas últimas 48h — apenas awareness, sem acção imediata.
+
+## 2026-08-04
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search Console — fim do suporte a FAQ rich results na API** — a partir de agosto de 2026, a Search Console API deixa de devolver dados de FAQ rich results, três meses após o desaparecimento do FAQ search appearance nos resultados de pesquisa (7 de maio de 2026) e a remoção do relatório correspondente e do suporte no Rich Results Test (junho de 2026). O FAQPage markup pode continuar no código — não gera erro — mas deixou de produzir qualquer resultado visível no Google. ([Search Engine Land](https://searchengineland.com/google-to-no-longer-support-faq-rich-results-476957))
+
+### 💡 Implicações para destaque.ai
+- FAQ schema deixa de ser uma alavanca de AEO para o Google (SERP) — não vale a pena continuar a vender FAQPage markup como táctica de rich results a clientes portugueses; é awareness, não requer novo serviço.
+- ChatGPT, Perplexity e outros AI answer engines continuam a poder extrair conteúdo de blocos FAQ mesmo sem o schema formal — o valor do formato pergunta-resposta mantém-se para GEO, só a codificação schema.org perdeu utilidade específica no Google.
+- Quem tem dashboards ou relatórios automatizados (BigQuery, Looker Studio) ligados à Search Console API para métricas de FAQ deve confirmar que essas queries não quebram silenciosamente este mês.
+
+## 2026-08-03
+
+### 🔵 Anúncios oficiais
+- **Geração de imagens chega ao AI Overviews (Nano Banana)** — [blog.google](https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/) (14 jul 2026). O AI Overviews passa a gerar imagens originais a partir do prompt de texto do utilizador em vez de reutilizar apenas imagens existentes, usando o modelo Nano Banana; rollout progressivo em inglês, nas regiões que já suportam geração de imagem no AI Mode.
+
+### 📊 Estudos & dados
+- **Citação no AI Overviews não é o mesmo que recomendação** — Lily Ray, via [Search Engine Land](https://searchengineland.com/google-ai-overviews-cite-self-serving-listicles-recommend-competitors-480573) (estudo publicado 17 jun 2026). Em 100 queries B2B "best [categoria] software" testadas em três datas (15 abr, 15 mai, 8 jun 2026), listicles "best" auto-promocionais foram citados como fonte 323 vezes, mas em 69% desses casos o AI Overviews citou a marca sem a incluir na recomendação final, favorecendo concorrentes mais conhecidos.
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — Personal Computer expande para Windows** — [perplexity.ai/hub/blog](https://www.perplexity.ai/hub/blog/the-intelligent-business-introducing-comet-for-enterprise-pro) (final de jul 2026). O agente always-on antes exclusivo de Mac mini começa rollout para Windows, disponível a subscritores Max e Enterprise Max em lista de espera.
+
+### 💡 Implicações para destaque.ai
+- Com o AI Overviews a gerar imagens em vez de só reutilizar as existentes, o peso desloca-se para descrições textuais claras à volta de screenshots e diagramas de produto (alt text, legendas estruturadas) — a IA vai "recriar" visualmente o produto a partir do texto, não copiar a imagem original. Vale rever isto nas auditorias técnicas GEO.
+- O estudo da Lily Ray é um aviso direto para clientes SaaS B2B em Portugal que investem em conteúdo "melhores ferramentas de X": ser citado não significa ser recomendado, e listicles auto-promocionais podem estar a alimentar a visibilidade da concorrência. Vale auditar isto nas contas GEO ativas antes de recomendar este formato de conteúdo.
+- A expansão do Personal Computer da Perplexity para Windows é, por agora, awareness — confirma investimento continuado em agentes always-on ligados a IT empresarial, mas sem impacto direto imediato em GEO/AEO.
+
+## 2026-08-02
+
+### 📊 Estudos & dados
+- **AI Recognizes 96% Of Brands But Mentions Almost None** — Victorious Q2 2026 Quarterly Search Report, via Search Engine Journal (https://www.searchenginejournal.com/ai-brand-mention-study-victorious-spa/582765/). 175 marcas testadas em 8 plataformas de IA (ChatGPT, Claude, Gemini, Copilot, Perplexity, Google AI Overviews/AI Mode, Meta AI): 96% descritas com precisão quando perguntadas directamente, mas 89% nunca apareceram em respostas a perguntas de research de categoria.
+- **Google's "Generative AI" Search Console Data Is A Trap For Marketers** — Search Engine Journal (https://www.searchenginejournal.com/googles-generative-ai-search-console-data-is-a-trap-for-marketers/584018/). Após ~8 semanas do relatório de IA generativa no GSC (lançado 3 jun 2026): mostra impressões sem cliques correspondentes, trata toda a citação em AI Overviews como "posição 1" (distorcendo a posição média), e pode mascarar quebras reais de tráfego/receita orgânica.
+
+### 💡 Implicações para destaque.ai
+- O estudo Victorious separa duas coisas que os clientes confundem: o modelo *saber* o que a marca é (96%) e o modelo *escolher* nomeá-la quando alguém pergunta pela categoria (11%). É o argumento mais limpo para explicar por que "o ChatGPT descreve-nos bem" não é medição de visibilidade.
+- O aviso sobre o relatório de IA generativa do GSC aplica-se directamente ao Tracker: a posição média que o Google reporta nesse relatório não é comparável com a posição que medimos nas respostas, e não deve ser apresentada lado a lado sem nota.
+
+## 2026-08-01
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — Model Council chega ao Computer** — a partir de 29 jul 2026, o Computer da Perplexity integra o Model Council: o utilizador escolhe entre 2-8 modelos (OpenAI, Anthropic, Google, GLM, Kimi) para analisar a mesma questão de forma independente, produzindo um relatório único com citações que mostra onde os modelos concordam e discordam. https://www.perplexity.ai/hub/blog/model-council-comes-to-computer
+
+## 2026-07-31
+
+### 🔵 Anúncios oficiais
+- **Anthropic lança Claude Opus 5** — TechCrunch, via anthropic.com/news ([link](https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/)). Lançado a 24 de julho; na mesma semana a Perplexity passou a usar o Opus 5 em Search e Computer, com impacto direto na qualidade de resposta e comportamento de citação em AEO.
+
+### 📊 Estudos & dados
+- **"Ghost citations": ~40% das citações de IA não nomeiam a marca** — Search Engine Land, dados Writesonic ([link](https://searchengineland.com/ghost-citation-problem-ai-483794)). Taxa de citação "fantasma" (link para a fonte sem menção da marca no texto da resposta) varia por motor: Perplexity 52%, Google AI Mode 49%, Google AI Overviews 41%.
+- **15,7M citações do Google AI Mode: citação é ao nível da passagem, não do URL** — Search Engine Land, dados Pillarbase ([link](https://searchengineland.com/what-15-7-million-ai-mode-citations-reveal-about-getting-quoted-by-google-483393)). Um ano de dados em 148 indústrias: 80,9% das passagens citadas apenas uma vez, passagem mediana citada com 117 palavras, e em 80% dos casos a resposta está na primeira frase do trecho extraído.
+- **Modelos de IA favorecem marcas já conhecidas — pesquisadas 3,2x mais** — Search Engine Land, dados geoSurge ([link](https://searchengineland.com/ai-models-favor-familiar-brands-search-study-484054)). 66 prompts de compra testados 60x cada (3.960 respostas, 13.281 pesquisas fan-out): marcas já no top-10 de familiaridade do modelo foram pesquisadas em 55,7% dos casos vs. 17,4% para marcas fora do top-10.
+
+### 💡 Implicações para destaque.ai
+- O estudo de 15,7M citações e o de "ghost citations" confirmam que estruturar respostas diretas e autocontidas nas primeiras frases de secções citáveis pesa mais do que otimizar só para menção de marca — reforça a metodologia GEO atual do destaque.ai, sem exigir mudança de pitch.
+- O estudo geoSurge (marcas conhecidas pesquisadas 3,2x mais) é argumento importante para gerir expectativas de clientes B2B em Portugal com pouca notoriedade prévia: GEO não substitui construção de autoridade de marca — deve ser comunicado como pré-requisito, não como bónus incluído.
+- A adoção do Claude Opus 5 pela Perplexity (Search e Computer) é awareness a monitorizar: mudanças de modelo subjacente podem alterar padrões de citação nas próximas semanas — vale confirmar se os relatórios de AI visibility de clientes mostram variação após esta troca.
+
+*Nota de fontes: fetch direto às páginas Tier 1 (Google Search Central, blog.google, openai.com/news, anthropic.com/news, deepmind.google, blogs.bing.com, perplexity.ai/hub) foi bloqueado (HTTP 403); os itens acima foram confirmados via citações secundárias verificáveis com URL e data. Candidatos excluídos por falta de confirmação direta de data/fonte primária: Gemini 3.5 Flash-Lite no Search, "Query Fanouts" da Peec AI, atualizações Enterprise da Perplexity. Search Console "platform properties" e o survey arXiv:2607.14035 já estavam cobertos na entrada de 2026-07-30 — não repetidos aqui. Nada de relevante e verificável encontrado em Hacker News/Reddit ou nos perfis X da Tier 3 dentro da janela.*
+
+## 2026-07-30
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search Console — platform properties disponíveis globalmente** — confirmado a 29 jul 2026 no Google Search Central Blog ([link](https://developers.google.com/search/blog/2026/07/platform-properties-social-video-guide)). A funcionalidade, em rollout gradual desde início de julho, passa a estar disponível para todos: permite verificar contas Instagram, TikTok, X e YouTube e ver dados de impressões e cliques vindos do Google Search e Discover para essas contas, mesmo sem site próprio; acompanhada de novo guia oficial de análise de desempenho social/vídeo.
+- **Perplexity — Sonar Chat Completions passa a Agent API** — [docs.perplexity.ai/changelog](https://docs.perplexity.ai/changelog/changelog) (actualização de 28 jul 2026). A API é reestruturada para dar acesso directo a modelos de terceiros (GPT-5.4, Claude Sonnet 4.6, Gemini 3.1 Pro Preview, Nvidia Nemotron) a preços de fornecedor sem markup, com custos de ferramentas cobrados à parte (web_search $0,005/chamada, fetch_url $0,0005/chamada).
+
+### 📄 Research académico
+- **Optimizing Visibility in Generative Engines: A Critical Survey of Generative Engine Optimization (2023–2026)** — arXiv:2607.14035 (15 jul 2026, [link](https://arxiv.org/abs/2607.14035)). Revisão de 45 estudos publicados entre nov/2023 e jul/2026 argumenta que GEO não é uma tarefa única de ranking, mas um pipeline estocástico e parcialmente observável com 8 etapas distintas — activação da pesquisa, crawling/indexação, retrieval, reranking/alocação de contexto, citação, proeminência, absorção factual, fidelidade e comportamento do utilizador.
+
+### 💡 Implicações para destaque.ai
+- A expansão global das "platform properties" no Search Console é relevante para clientes B2B SaaS PT com presença social/vídeo forte mas site menos otimizado — vale incluir estas contas nas auditorias de visibilidade existentes; awareness, sem mudança de pitch.
+- A reestruturação da API da Perplexity (Sonar → Agent API) é sobretudo relevante para ferramentas de tracking de citações AI construídas sobre a Sonar API — vale confirmar se algum fornecedor usado internamente ou por clientes depende desta API antes da migração completa.
+- O framework de 8 etapas do arXiv:2607.14035 é útil para estruturar auditorias GEO por etapa do pipeline (em vez de tratar "visibilidade em IA" como métrica única) — pode informar a metodologia dos relatórios de AI visibility da destaque.ai, sem exigir novo serviço.
+
+## 2026-07-29
+
+### 🔵 Anúncios oficiais
+- **Google — AI Overviews e AI Mode chegam a França** — confirmado por Elizabeth Reid (VP Search) a 22 jul 2026; ativação em desktop, mobile e app, dois meses antes do prazo comunicado a editores (23 set). França era o último grande mercado da Europa Ocidental sem estas funcionalidades, após acordo de compensação com editores franceses e introdução de opt-out via Search Console. [Telecompaper](https://www.telecompaper.com/news/google-ai-overviews-and-ai-mode-arrive-in-france--1577900)
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search — review snippet guidelines** — documentação de structured data para review snippets atualizada a 24 jul 2026 para proibir explicitamente reviews falsas ou incentivadas não divulgadas; incumprimento pode resultar em ação manual. [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)
+
+### 💡 Implicações para destaque.ai
+- O rollout de AI Overviews/AI Mode em França chegou dois meses antes do prazo comunicado — sinal de que a Google está a acelerar a expansão europeia; vale a pena confirmar se existe data equivalente para Portugal antes de assumir o timeline "setembro" como referência para clientes. Awareness, sem mudança de pitch imediata.
+- A proibição explícita de reviews incentivadas não divulgadas em review snippet markup é relevante para clientes B2B SaaS que usam prova social (G2, Capterra, Trustpilot) em schema — vale adicionar como item de checklist nas auditorias técnicas existentes (verificar disclosure de reviews pagas antes de marcação estruturada).
+- Dia sem novidades Tier 1/2 adicionais verificáveis com dados novos além destes dois itens; sem paper académico novo confirmado na janela.
+
 ## 2026-07-28
 
 Sem novidades significativas hoje — nenhum item genuinamente novo e não-duplicado nas fontes Tier 1-5 dentro da janela estrita de 24-48h (26-28 jul).
