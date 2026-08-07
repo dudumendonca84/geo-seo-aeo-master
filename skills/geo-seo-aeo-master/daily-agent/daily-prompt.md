@@ -137,6 +137,24 @@ Adiciona ao TOPO de skills/geo-seo-aeo-master/daily-agent/news-feed.md (após ca
    - Blog ~1500 palavras (aprofundamento técnico)
    - Twitter thread ~10 tweets (atómico)
 
+## Onde escrever (caminho único)
+
+Existiu durante meses uma cópia destes ficheiros em `daily-agent/` na RAIZ
+do repositório, a par da que vive aqui. As duas foram sendo escritas por
+corridas diferentes e divergiram: 30 entradas só numa, 33 só na outra, e
+nenhuma completa. Pior, os produtos (Tracker e Deck Builder) fazem fetch de
+`skills/geo-seo-aeo-master/daily-agent/news-feed.md` — quem escrevesse na
+raiz publicava para ninguém.
+
+A cópia da raiz foi apagada e as entradas fundidas aqui. **O caminho
+canónico é `skills/geo-seo-aeo-master/daily-agent/`, e é o único.** Se
+encontrares uma pasta `daily-agent/` na raiz, não escrevas lá: alguém a
+recriou por engano.
+
+Antes de escrever, confirma que estás a acrescentar a um ficheiro que já tem
+histórico. Se o `news-feed.md` te parecer vazio, **pára e diz** — não é a
+primeira execução, é o caminho errado ou um checkout incompleto.
+
 ## Princípio editorial geral
 
 A skill deve ficar **mais inteligente** com o tempo, não só ter um arquivo crescente. Cada técnica nova, cada framework validado, cada caso público documentado — vai para references/ no formato canónico (sóbrio, sourced, com caveats). News-feed é onde nascem; references é onde vivem.
