@@ -121,7 +121,7 @@ Reference for `geo-seo-aeo-master`. Eight vendors covering AI visibility monitor
 
 ## What none of these tools do (the consultant gap)
 
-The 3HASH audit of congruent.pt (22 May 2026) demonstrates a category of work that **no SaaS tool in this list produces**: an integrated technical audit combining
+A destaque.ai-methodology audit (e.g. the in-house audit of congruent.pt, 22 May 2026) demonstrates a category of work that **no SaaS tool in this list produces**: an integrated technical audit combining
 
 - TTFB measured from PT (5 curl corridas).
 - HTTP `Content-Encoding` presence (Brotli/gzip).
@@ -143,6 +143,50 @@ A working destaque.ai stack:
 
 ---
 
+## Data APIs, as raw material rather than tools
+
+The vendors above sell dashboards. These sell the underlying collection, which
+matters when the measurement is built rather than bought.
+
+### DataForSEO — SERP and AI Optimization APIs
+
+Evaluated 5 Aug 2026 by direct correspondence with the vendor. Notes below are
+from that reply, not from the marketing pages.
+
+**Bing / Copilot SERP collection is broken, vendor-wide.** Bing began
+scrambling results against scrapers months ago, Copilot block included, and it
+affects every Bing collector rather than one vendor. Their own recommendation
+is to set no new Bing tasks until they confirm a fix. Switching provider does
+not help: this is Microsoft defending itself.
+
+**LLM Responses** — live queries at request time against ChatGPT, Claude,
+Gemini and Perplexity. The catch that decides it: **no `location_code` or
+`language_code`**, only a weak search-country bias, and no control over the
+response language. For anyone already holding API keys to those four models,
+this adds a middleman and subtracts localisation. Cited sources come with
+character offsets, but there is no brand-rank field. $0.0006/task plus the
+provider token cost, which dominates.
+
+**LLM Mentions** — pre-collected panel rather than live. Google AI Overview
+across 94 locations with proper locale support; ChatGPT US/English only. This
+is the one built for visibility tracking: ranked sources, a `brand_entities`
+array with rank, the full answer, and — the part with no equivalent elsewhere —
+**AI search volume with 12 months of history**. $0.001 per returned row.
+
+That last field addresses a real hole in prompt-set design. A catalogue chosen
+by editorial judgement measures whether the brand appears in questions someone
+decided were representative; it says nothing about whether those questions are
+asked. Demand data would let a catalogue be argued rather than asserted.
+
+Two caveats that must survive into any client-facing use: panel data is not
+live measurement and carries the usual directional caveat, and ChatGPT coverage
+being US/English-only makes it useless for the Portuguese market — where only
+the Google AI Overview half applies.
+
+**Meta AI is not on their roadmap** (confirmed 5 Aug 2026), which closes the
+question for every API route. Vendors who report Meta AI numbers are driving a
+headless browser against the assistant's interface.
+
 ## Tools to ignore or treat as marketing
 
 - Vendors making strong-form claims of citation lifts from "their" methodology without naming a controlled study (most "AEO" listicle vendors). The Ahrefs May 2026 schema null result is a useful counter-anchor.
@@ -155,4 +199,4 @@ A working destaque.ai stack:
 
 Pricing, ownership and product capabilities in this market change monthly. Verify on the vendor's current pricing page before quoting numbers to a client. The structure of this file (what to look for, what gap the consultant fills) is more durable than the individual entries.
 
-Last refresh: 23 May 2026.
+Last refresh: 05 Aug 2026 (DataForSEO section added from vendor correspondence). Prior refresh 23 May 2026.

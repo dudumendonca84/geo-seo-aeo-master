@@ -1,0 +1,25 @@
+{
+  "name": "destaque-ai",
+  "owner": {
+    "name": "Eduardo Mendonça",
+    "email": "etmendonca@gmail.com"
+  },
+  "description": "destaque.ai — Plugin marketplace for GEO/AEO/SEO skills, focused on B2B SaaS in Portugal",
+  "plugins": [
+    {
+      "name": "geo-seo-aeo-master",
+      "source": "./",
+      "description": "Canonical destaque.ai knowledge base for GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) and classical SEO, with a daily auto-updated news feed.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eduardo Mendonça",
+        "email": "etmendonca@gmail.com"
+      },
+      "homepage": "https://github.com/dudumendonca84/geo-seo-aeo-master",
+      "repository": "https://github.com/dudumendonca84/geo-seo-aeo-master",
+      "license": "MIT",
+      "keywords": ["geo", "aeo", "seo", "ai-search", "llm", "chatgpt", "perplexity", "ai-overviews"],
+      "category": "knowledge"
+    }
+  ]
+}

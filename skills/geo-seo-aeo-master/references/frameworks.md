@@ -18,20 +18,20 @@ Required structure:
 
 Companion file `llms-full.txt` concatenates actual content (not just links). Used by Cloudflare, Vercel, Anthropic for their developer docs ([Cloudflare](https://developers.cloudflare.com/llms.txt), [Anthropic](https://docs.anthropic.com/llms.txt), [Vercel](https://vercel.com/docs/llms-full.txt)).
 
-### Adoption status (May 2026)
+### Adoption status (Jul 2026)
 
-**Publishers.** Cloudflare, Vercel, Anthropic, Mintlify and hundreds of dev-tool / SaaS docs sites publish `llms.txt` and/or `llms-full.txt`. Cloudflare reports agents pointed at their `llms.txt`-served docs use ~31% fewer tokens and reach correct answers ~66% faster than against unrefined sites ([Cloudflare](https://blog.cloudflare.com/agent-readiness/)).
+**Publishers.** Cloudflare, Vercel, Anthropic, Mintlify and hundreds of dev-tool / SaaS docs sites publish `llms.txt` and/or `llms-full.txt`. Cloudflare reports agents pointed at their `llms.txt`-served docs use ~31% fewer tokens and reach correct answers ~66% faster than against unrefined sites ([Cloudflare](https://blog.cloudflare.com/agent-readiness/)). Originality.ai's year-long tracking study (3M+ sites monitored, updated Jun 2026) found `llms.txt` instances grew **8.8x**, from 4,088 (Jun 2025) to 36,120 (May 2026); including the companion `llms-full.txt`/`ai.txt` formats, 38,980 sites had adopted at least one variant ([Originality.ai via ppc.land](https://ppc.land/llms-txt-adoption-rises-8-8x-but-97-of-files-get-zero-ai-requests/)).
 
 **Consumers.** No major LLM provider has publicly confirmed using `llms.txt` for inference or training.
-- **Google.** Gary Illyes (Search Central Live, Jul 2025) and John Mueller publicly stated Google does not support `llms.txt` and has no plans to ([Search Engine Land](https://searchengineland.com/google-says-normal-seo-works-for-ranking-in-ai-overviews-and-llms-txt-wont-be-used-459422), [Search Engine Roundtable](https://www.seroundtable.com/google-does-not-endorse-llms-txt-40789.html)). Mueller compared it to the deprecated `keywords` meta tag.
+- **Google.** Gary Illyes (Search Central Live, Jul 2025) and John Mueller publicly stated Google does not support `llms.txt` and has no plans to ([Search Engine Land](https://searchengineland.com/google-says-normal-seo-works-for-ranking-in-ai-overviews-and-llms-txt-wont-be-used-459422), [Search Engine Roundtable](https://www.seroundtable.com/google-does-not-endorse-llms-txt-40789.html)). Mueller compared it to the deprecated `keywords` meta tag; reconfirmed 2 Jul 2026 after Lily Ray flagged unrelated markdown-rendering artifacts in AI Overviews citation snippets ([Search Engine Roundtable](https://www.seroundtable.com/google-ai-overview-markdown-files-41595.html)).
 - **OpenAI / Anthropic.** Anthropic publishes the file but has not stated Claude or ClaudeBot consume it. OpenAI has not announced support.
-- **Server-log studies.** Otterly, Reboot Online and SE Ranking (~300k domains, Nov 2025) find AI crawlers requesting `/llms.txt` at near-zero rates with no measurable lift in AI citation ([Otterly](https://otterly.ai/blog/the-llms-txt-experiment/), [aeoengine summary](https://aeoengine.ai/blog/llms-txt-zero-usage-ai-bots-ignore)).
+- **Server-log studies.** Otterly, Reboot Online and SE Ranking (~300k domains, Nov 2025) find AI crawlers requesting `/llms.txt` at near-zero rates with no measurable lift in AI citation ([Otterly](https://otterly.ai/blog/the-llms-txt-experiment/), [aeoengine summary](https://aeoengine.ai/blog/llms-txt-zero-usage-ai-bots-ignore)). Originality.ai's Jun 2026 update corroborates this at larger scale: despite the adoption growth, **97% of `llms.txt` files logged zero requests from AI crawlers** (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended all overwhelmingly crawl HTML directly instead).
 
 ### Honest assessment
 
 A community-maintained convention with growing publisher adoption but **no confirmed consumption by frontier LLMs in inference paths**. Useful as documentation hygiene and for agent-tool ecosystems that explicitly fetch it (some IDE agents). Not a substitute for structured data, server-rendered HTML, and classical SEO for visibility in ChatGPT Search, Perplexity, Google AI Overviews or Copilot.
 
-Practical posture for destaque.ai clients: **publish it, do not promise inference impact.** A complete `llms.txt` plus `llms-full.txt` is a low-cost signal of technical hygiene that pays off if any inference-path consumption materialises. Make sure the URL count matches the sitemap — a `llms.txt` declaring 20 URLs while the sitemap holds 182 is worse than nothing (the 3HASH/Congruent finding).
+Practical posture for destaque.ai clients: **publish it, do not promise inference impact.** A complete `llms.txt` plus `llms-full.txt` is a low-cost signal of technical hygiene that pays off if any inference-path consumption materialises. Make sure the URL count matches the sitemap — a `llms.txt` declaring 20 URLs while the sitemap holds 182 is worse than nothing (in-house audit of congruent.pt, 22 May 2026).
 
 ---
 
@@ -91,6 +91,10 @@ Cloudflare published a report (4 Aug 2025) alleging Perplexity used undeclared/r
 | `cohere-ai` | Cohere | Training |
 | `Diffbot` | Diffbot | Knowledge-graph crawl |
 
+### Cloudflare "Content Signals" robots.txt extension — no effect confirmed (Jul 2026)
+
+Cloudflare's "Content Signals" policy extends `robots.txt` with three declarable preferences (`search`, `ai-input`, `ai-train`) letting site owners state intent for how crawled content may be used. John Mueller (Google) confirmed on-record, 6 Jul 2026, that the directive has "no effect whatsoever" on any crawler — including Google's own — and that Google does not consume it, nor `llms.txt` / `llms-author.txt`, for crawling or ranking decisions ([Search Engine Roundtable](https://www.seroundtable.com/google-cloudflare-content-signals-41631.html)). Same posture as §1: an unenforced declaration of intent, not a technical control.
+
 ### Practical pattern for B2B SaaS
 
 Allow **real-time / answer-engine** bots:
@@ -107,7 +111,9 @@ Allow: /
 
 Decide deliberately on **training** crawlers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Bytespider`, `CCBot`). The training/answer distinction is the GEO-relevant decision. A B2B SaaS that wants discovery should normally allow both; a publisher that wants payment for training data should block training while allowing answer-engine real-time agents.
 
-The Congruent case (3HASH audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` — leaving silent gaps.
+The Congruent case (in-house audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` — leaving silent gaps.
+
+**Empirical confirmation for `Google-Extended` (SIGIR '26, Jul 2026).** Grossman et al., "How Generative AI Disrupts Search" ([arXiv:2604.27790](https://arxiv.org/abs/2604.27790), formally published at SIGIR '26, Melbourne, 20–24 Jul 2026; see `benchmarks.md` §27), find that sites disallowing `Google-Extended` are significantly less likely to be retrieved by Google AI Overviews, even when the content is otherwise crawlable and accessible. This is the first controlled empirical evidence — not just vendor guidance — that the training/answer-engine distinction above has a measurable, engine-specific effect for Google: blocking `Google-Extended` is not a neutral "opt out of training only" choice, it carries a real AIO-visibility cost.
 
 ---
 
@@ -131,6 +137,10 @@ JSON-LD remains the format recommended by Google and the one major AI engines (B
 | `Person` | `jobTitle`, `worksFor`, `sameAs` → supports E-E-A-T author signals. | No author pages at all |
 | `BreadcrumbList` | Site structure signal. | Missing in templated pages |
 | `ClaimReview` / `Claim` | Fact-check markup; high-trust signal for verification queries. | Only used by news orgs |
+
+### Review/AggregateRating — fake and incentivized reviews prohibited (Jul 2026)
+
+Google updated the Review snippet structured-data documentation (24 Jul 2026) with an explicit guideline: "Don't include fake or undisclosed incentivized reviews on your page or in your structured data markup" ([developers.google.com](https://developers.google.com/search/docs/appearance/structured-data/review-snippet), reported by [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)). Examples given: reviews not based on a genuine experience, and reviews exchanged for money/discounts/vouchers/free products without clear, prominent disclosure of the incentive. This tightens (does not replace) the existing `AggregateRating` guidance in the table above — clients with testimonial/review sections should confirm their markup and underlying review-collection process comply before the next technical audit; not yet clear whether this is enforced by automated re-crawls or by manual action only.
 
 ### The Ahrefs schema null result (May 2026)
 
@@ -300,6 +310,8 @@ Defensive practice for content owners:
 ### Hallucinated negative associations
 
 Lidsky & Daves, **"Inevitable Errors: Defamation by Hallucination in AI Reasoning Models"** (Journal of Free Speech Law, 2025) — [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5362314). The pending *LTL LED v. Google* case alleges an AI Overview falsely associated the plaintiff with a state-AG lawsuit.
+
+**Germany, first concrete rulings (2026).** Unlike the still-pending US case above, Germany has produced actual decisions. The Munich Regional Court ruled (28 May 2026) that Google is directly liable for a false claim an AI Overview generated about two Munich-based publishers, treating the AI Overview as Google's own speech rather than a neutral aggregation of third-party results. Germany's media regulator (ZAK) followed on 14 Jul 2026, ruling that Google's AI Overviews and Perplexity's answers operate as publisher content — not neutral conduits — stripping them of the EU Digital Services Act's standard platform liability exemption; the first such media-law ruling worldwide ([Tech Times](https://www.techtimes.com/articles/320790/20260716/germany-strips-ai-search-its-eu-liability-shield-worlds-first-media-ruling.htm); [The Decoder](https://the-decoder.com/germany-puts-googles-ai-overviews-and-perplexity-under-media-law-in-first-of-its-kind-ruling/)). No equivalent ruling in Portugal/EU-wide yet — treat as an early signal for regulated-industry clients (fintech, health, legal), not as settled EU law.
 
 Practical mitigation:
 1. Monitor brand mentions in LLM outputs at regular intervals (monthly minimum; weekly for high-profile clients).

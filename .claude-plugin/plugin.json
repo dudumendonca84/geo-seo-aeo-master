@@ -1,0 +1,13 @@
+{
+  "name": "geo-seo-aeo-master",
+  "description": "Canonical destaque.ai knowledge base for GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) and classical SEO, focused on B2B SaaS in Portugal. Loads SKILL.md + references/{frameworks,tools,metrics,benchmarks}.md on demand. Daily news feed in daily-agent/news-feed.md auto-updated 08:00 Lisboa via Claude Code Web Routine.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eduardo Mendonça",
+    "email": "etmendonca@gmail.com"
+  },
+  "homepage": "https://github.com/dudumendonca84/geo-seo-aeo-master",
+  "repository": "https://github.com/dudumendonca84/geo-seo-aeo-master",
+  "license": "MIT",
+  "keywords": ["geo", "aeo", "seo", "ai-search", "llm", "chatgpt", "perplexity", "ai-overviews"]
+}

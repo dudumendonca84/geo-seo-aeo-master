@@ -1,0 +1,85 @@
+---
+title: Execution log — competitor-monitor
+maintained_by: competitor-monitor (rotina semanal)
+---
+
+# Execution log — competitor-monitor
+
+Uma linha por execução semanal: data, dimensões cobertas, candidatos descobertos, anomalias. Não substitui o report — é metadata operacional.
+
+## Formato
+
+```
+## YYYY-MM-DD HH:MM (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓ (ou X✗ com motivo)
+- Candidatos D0: [N] → adicionados [M] a known-competitors.md
+- SoV history: linha adicionada para [N] players com aparições
+- Anomalias: [descrição ou "nenhuma"]
+- Engines (Dimensão 1): chatgpt ✓ · claude ✓ · gemini ✓ · grok ✗ (motivo)
+- Report: competitor-monitor/reports/YYYY-MM-DD.md
+```
+
+## Entries
+
+## 2026-06-23 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 3 analisados → 2 adicionados a known-competitors.md (AISO Hub, Infinidata); 1 rejeitado (Organic301 — base Brasil)
+- SoV history: 6 linhas adicionadas (3HASH, Marketing Gabriel, AISO Hub, Latigid, Infinidata, destaque.ai)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso interactivo às interfaces; SoV apenas /5 (Claude). (2) "Marketing Gabriel" em known-competitors.md usa URL marketinggabriel.com mas pesquisas apontam para gabrielcunha.com/agencia-geo/ — verificar na próxima execução se são o mesmo operador ou entidades distintas.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-06-23.md
+
+## 2026-06-23 — correcção pós-execução (sessão manual)
+- Tarefa 1 (buckets): adicionada coluna `Bucket` a known-competitors.md; classificadas as 9 entradas pelo teste das 4 perguntas. **AISO Hub reclassificada `peer`** (passa as 4 perguntas: B2B SaaS, audit-first AISO, mesmo momento, substituível ≥70% — peer mais sério desde o 3HASH). Infinidata confirmada `adjacent_consultancy` (full-service, falha substitutability). Regra gravada: nenhuma marca entra em SoV sem bucket.
+- Tarefa 2 (cobertura): linhas 2026-06-23 de share-of-voice-history.md marcadas `coverage: 1/5 (só Claude)`; convenção mudada de denominador fixo /20 para denominador real /N. Decisão: série Claude-only rotulada — semanas parciais ficam na série mas marcadas, não excluídas.
+- Tarefa 4 (anomalia Marketing Gabriel): **RESOLVIDA.** Operador = Gabriel Cunha; "Marketing Gabriel" é a marca; URL canónico do serviço GEO = https://www.gabrielcunha.com/agencia-geo/ (lançou GEO/AEO Fev 2026, 3 níveis, base 16 anos SEO). known-competitors.md corrigida de marketinggabriel.com para o URL verificado.
+- monitor-prompt.md: Dimensão 1 passa a declarar honestamente a limitação de runtime (só Claude augmented na sessão autónoma); D2/D4 realçadas como o coração do benchmarking. Sem gate duro, sem mudar push directo a main (decisões do founder mantidas). Motores corrigidos para os 4 reais do ecossistema (chatgpt/claude/gemini/grok); Perplexity/Google AI Mode/Bing Copilot não fazem parte do SET deste sistema.
+- Anomalias residuais: nenhuma. SEOLabs e LusoAI (sugeridos externamente) **não** entram — não há entidade PT verificável; ficam em fila de human-review (§8 competitor_filtering.md) até aparecerem em ≥3 respostas/2 semanas.
+
+## 2026-06-30 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 9 avaliados → 7 adicionados a known-competitors.md (SmartLinks, LUSO AI, Helder Mesquita, Websystems, Bluesoft, UniK SEO, Jelly); 2 em observação sem adição (Abia Digital — blog vs serviço inconclusivo; Marco Gouveia — sinal ainda débil); múltiplos rejeitados (base BR ou SaaS internacionais). LUSO AI: previamente retida por "sem entidade PT verificável" (log 2026-06-23); URL GEO verificado esta semana — adicionada como adjacent_vendor.
+- SoV history: 13 linhas adicionadas (Latigid 3/5, 3HASH 2/5, Marketing Gabriel 1/5, AP|Portugal 1/5, Infinidata 1/5, Studio.351 1/5, AISO Hub 1/5, LPM Comunicação 1/5, SmartLinks 1/5, LUSO AI 1/5, Bluesoft 1/5, Websystems 1/5, destaque.ai 0/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso; SoV apenas /5 (Claude). (2) Expansão expressiva: mercado passou de 9 para 16 concorrentes rastreados; 7 novos entrantes confirmados numa semana — sinal de aceleração do sector GEO PT. (3) SmartLinks em posição #1 na query "consultoria AI search AEO Portugal" na primeira semana de tracking — vigiar bucket (peer vs adjacent) nas próximas 2 semanas. (4) Flutuações notadas em 3HASH (-2) e AISO Hub (-2) vs semana anterior; com denominador /5 e 1 motor, flutuações de ±2 são ruído — não reagir sem 4+ semanas de série.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-06-30.md
+
+## 2026-07-07 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 6 avaliados → 2 adicionados a known-competitors.md (SEOLabs, Somos6Digital); SEOLabs foi previamente rejeitada em 2026-06-23 por "sem entidade PT verificável" — reclassificada esta semana com serviço GEO/AEO/LLM confirmado no site próprio (não erro anterior, mudança de estado). 2 em observação sem adição (Local SEO Portugal — evidência de GEO pago pouco explícita; Orbis — incerto se é operação PT dedicada ou rede internacional localizada). 1 sinal não verificado a vigiar (Prosperidade Conteúdos, surgiu no Prompt 1 de D1, pos 3 — entra em fila de human-review conforme `competitor_filtering.md` §8). Múltiplos rejeitados (base BR, directórios, sem serviço GEO dedicado).
+- SoV history: 12 linhas adicionadas (3HASH 2/5, destaque.ai 1/5, LUSO AI 1/5, Latigid 1/5, AP|Portugal 1/5, Infinidata 1/5, Marketing Gabriel 1/5, SmartLinks 1/5, AISO Hub 1/5, Studio.351 0/5, LPM Comunicação 0/5, Bluesoft 0/5, Websystems 0/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso; SoV apenas /5 (Claude). (2) **destaque.ai apareceu pela primeira vez em SoV** (1/5, pos 1, prompt 5) — 3.ª semana consecutiva sem concorrência PT nesse prompt específico. (3) Bluesoft lançou ferramenta gratuita "BlueMentions" + case study Jaba Recordati (+80% citações IA) — movimento de produto mais relevante da rotina até à data, mas sem correspondência em aparições no top-3 dos 5 prompts fixos desta semana; divergência entre cobertura de imprensa e recall directo, a vigiar. (4) Mercado passou de 16 para 18 concorrentes rastreados.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-07-07.md
+
+## 2026-07-14 09:07 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 4 avaliados → 1 adicionado a known-competitors.md (Basicamente Digital, `adjacent_consultancy`); 2 em observação sem adição (Orbis — 2.ª semana sem conseguir confirmar sede/equipa PT dedicada; AI Solutions Portugal — core é automação IA, sem linha GEO/AEO). 1 candidato saiu da fila de observação por rejeição confirmada: Prosperidade Conteúdos (estava em observação desde 2026-07-07; confirmado esta semana como agência brasileira via cases B3/Banco PAN — rejeitado, base BR). AEO Copilot identificado e rejeitado — é um diretório/ferramenta internacional de listagem de agências, não uma entidade PT prestadora de serviço.
+- SoV history: 10 linhas adicionadas (Infinidata 2/5, 3HASH 2/5, AISO Hub 1/5, SmartLinks 1/5, LUSO AI 1/5, AP|Portugal 1/5, Marketing Gabriel 1/5, Bluesoft 1/5, destaque.ai 1/5, Latigid 0/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso; SoV apenas /5 (Claude). (2) **Infinidata subiu de 1/5 para 2/5 com posição média 1.0** — maior recall directo já registado para este player, sem evento de imprensa identificável; a vigiar 2-3 semanas antes de reagir (pode ser optimização de conteúdo sustentada ou ruído do denominador /5). (3) Bluesoft entrou pela primeira vez no top-3 de um prompt fixo (Prompt 3, pos 2) — BlueMentions consolidou domínio próprio (bluementions.pt) e funil de upsell pago; a divergência produto-vs-recall notada em 2026-07-07 começa a fechar-se. (4) destaque.ai mantém 4.ª semana consecutiva de domínio isolado no Prompt 5. (5) Mercado passou de 18 para 19 concorrentes rastreados (líquido: +1 Basicamente Digital; Prosperidade Conteúdos nunca chegou a entrar na lista, estava só em observação).
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-07-14.md
+
+## 2026-07-21 09:08 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 3 avaliados → 0 adicionados a known-competitors.md. **Orbis** passa a fila de human review (3.ª semana consecutiva a aparecer no Prompt 4 sem confirmação de operação PT dedicada — critério `competitor_filtering.md` §8 de "≥3 aparições em 2+ semanas consecutivas" atingido; decisão de classificação fica para revisão humana, não auto-classificado). AI Solutions Portugal permanece rejeitado (listicle editorial, sem linha de serviço GEO/AEO própria). SEOptimizers (Lisboa/Braga) avaliado e rejeitado nesta primeira aparição — agência de SEO clássico com artigo listicle sobre "agências de IA em Lisboa", sem GEO/AEO como serviço próprio declarado.
+- SoV history: 9 linhas adicionadas (Infinidata 2/5, 3HASH 2/5, AP|Portugal 1/5, LUSO AI 1/5, SmartLinks 1/5, Latigid 1/5, SEOLabs 1/5, UniK SEO 1/5, destaque.ai 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso; SoV apenas /5 (Claude). (2) **AP|Portugal e UniK SEO entraram/regressaram ao top-3 na mesma semana em que publicaram conteúdo alinhado literalmente com os prompts fixos da rotina** — sinal mais directo já observado de correlação conteúdo→recall num único ciclo semanal; ver Sinais no report. (3) AISO Hub saiu do top-3 do Prompt 4 pela primeira vez desde que é rastreado (era pos 1 em 2026-07-14); sem sinal negativo de imprensa/produto — provável ruído do denominador /5, a vigiar 2 semanas. (4) Bluesoft saiu do top-3 do Prompt 3 (era pos 2 em 2026-07-14); BlueMentions inalterada. (5) destaque.ai publicou um segundo estudo próprio em duas semanas ("55% das marcas aparecem em, no máximo, um assistente de IA" — 84 marcas, 7 motores, 2205 respostas, 8–12 jul 2026); não é concorrente, registado em Sinais/Benchmark como asset próprio. (6) UniK SEO apareceu pela primeira vez a par da destaque.ai no Prompt 5 — primeiro sinal de conteúdo concorrente a entrar neste cluster antes exclusivo. (7) Mercado mantém-se em 20 concorrentes rastreados (sem adições nem remoções esta semana).
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-07-21.md
+
+## 2026-07-28 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 2 avaliados → 0 adicionados a known-competitors.md. Orbis mantém-se em fila de human review (decisão de 2026-07-21), mas desapareceu por completo dos resultados de pesquisa desta semana — quebra a série de 3 semanas consecutivas que motivou a fila. AI Solutions Portugal permanece rejeitado (sem linha GEO/AEO própria).
+- SoV history: 9 linhas adicionadas (Latigid 2/5, 3HASH 2/5, AP|Portugal 1/5, Infinidata 1/5, Basicamente Digital 1/5, LUSO AI 1/5, SmartLinks 1/5, destaque.ai 1/5, UniK SEO 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso; SoV apenas /5 (Claude). (2) **Basicamente Digital entrou no top-3 pela 1.ª vez** (Prompt 2, pos 3), citado explicitamente pela síntese ao lado de AP|Portugal e Infinidata. (3) **Latigid teve a sua melhor semana registada** (2/5, posição média 1.0, pos 1 em dois prompts) sem evento identificável — reforça o padrão "conteúdo próprio move recall" já visto em AP|Portugal/UniK SEO. (4) **AISO Hub confirma 2.ª semana consecutiva de queda** no Prompt 4 (pos 1 em 07-14 → 4.º em 07-21 → 5.º em 07-28) — a vigiar se se torna tendência de enfraquecimento sustentado de um peer sério. (5) Um sinal de pricing não confirmado surgiu para 3HASH ("Crescer" €90/mês) mas não foi possível verificar directamente na página (3hash.pt devolveu 403 nesta sessão) — não reportado como facto, a re-tentar na próxima execução. (6) destaque.ai não publicou novo estudo esta semana (quebra a cadência quinzenal de 07-07/07-21), mas mantém 6.ª semana consecutiva de domínio isolado no Prompt 5. (7) Mercado mantém-se em 20 concorrentes rastreados (sem adições nem remoções esta semana).
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-07-28.md
+
+## 2026-08-04 (Europe/Lisbon)
+- Dimensões: D0✓ D1✓ D2✓ D3✓ D4✓
+- Candidatos D0: 4 avaliados → 0 adicionados a known-competitors.md. Orbis reaparece nos resultados de pesquisa (Prompt 4, fora do top-3) após ausência total em 07-28; mantém-se em fila de human review (decisão de 07-21 não revertida). Agência Femo (perfil LinkedIn) e Local SEO Portugal avaliados e rejeitados nesta semana — sinal fraco/sem linha de serviço GEO dedicada. Rankfender identificado num resultado de pesquisa mas sem confirmação de operação PT — sinal insuficiente até para observação.
+- SoV history: 9 linhas adicionadas (Latigid 2/5, 3HASH 2/5, AP|Portugal 1/5, Infinidata 1/5, LUSO AI 1/5, SmartLinks 1/5, destaque.ai 1/5, SEOLabs 1/5, UniK SEO 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — sessão autónoma sem acesso; SoV apenas /5 (Claude). (2) **AISO Hub confirma 3.ª semana consecutiva de queda** no Prompt 4 (pos 1 em 07-14 → 4.º em 07-21 → 5.º em 07-28 → 5.º em 08-04) — a tendência de enfraquecimento assinalada como "a vigiar" em 07-28 passa a confirmada; primeiro peer sério com erosão sustentada nesta rotina. (3) **SEOLabs regressa ao top-3** do Prompt 2 (pos 3), enquanto **Basicamente Digital sai** do mesmo prompt (era pos 3 em 07-28) — troca directa de posição entre os dois. (4) 3HASH: página de serviço GEO/AEO dedicada e nomeada identificada pela primeira vez (3hash.pt/geo-aeo-otimizacao-ia); preço de entrada €150 reconfirmado; tier "Crescer" €90/mês sinalizado em 07-28 continua não confirmável. (5) destaque.ai mantém 7.ª semana consecutiva de domínio isolado no Prompt 5, mas 2.ª semana seguida sem publicar research nova. (6) Mercado mantém-se em 20 concorrentes rastreados (sem adições nem remoções esta semana).
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-08-04.md

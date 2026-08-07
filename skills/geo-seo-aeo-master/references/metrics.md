@@ -39,6 +39,8 @@ SoV = brand_mentions / Σ(brand_mentions + competitor_mentions)
 ```
 across the prompt set. Some tools weight by response position (à la Princeton's PAWC, see §10).
 
+**Convenção destaque.ai (unificada 02 Ago 2026).** Nos produtos destaque.ai (Tracker e Deck Builder), o conjunto de marcas do denominador restringe-se ao **cliente + concorrentes directos (peers)** — marcas adjacentes (seguradoras, plataformas, consultoras de outra categoria) ficam fora. Atribuição fraccionária intra-resposta (1/nº de marcas do conjunto presentes na resposta), média sobre as respostas que nomeiam pelo menos uma marca do conjunto; presença do cliente pela flag `cited` do analisador, presença dos peers por `competitors_mentioned` normalizado (sem acentos). Implementação canónica: `computeShareOfVoice(rows, clientName, peerNames)` no Tracker. Um SoV sobre todas as marcas extraídas é outra métrica e deve ser rotulado como tal.
+
 **Caveats.**
 - **Highly sensitive to prompt-list choice.** Two tools with different default prompts produce different SoV for the same brand.
 - Profound publishes pre-defined per-industry prompt sets; Peec and Otterly require user-defined prompts.
@@ -102,6 +104,8 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 - Sentiment classifiers disagree across vendors; small wording differences flip labels.
 - No public inter-rater reliability data exists.
 - Treat as directional, not absolute. Useful for catching negative drift; not useful as a precise KPI.
+
+**Per-competitor net sentiment (Perception Map y-axis).** Same polarity, but computed for **each brand** in the category — client *and* competitors — as a net score in **-1..1**: `(positive − negative) / responses_mentioning_the_brand`. Plotted against presence (x-axis) it produces the presence × narrative quadrant (Leaders / Niche / Laggers / Controversial) that Peec and Profound expose. **Minimum base:** with few mentions (< ~5) the read is noise — **omit it** (mark "not yet measured") rather than assert a value. Directional only, subject to the caveats above.
 
 ---
 
@@ -181,7 +185,13 @@ Exposes:
 
 Data goes back ~3 months (to Nov 2025).
 
-**Critical gap.** Shows citations, not clicks. Cannot measure traffic outcome from Copilot citations directly. **This is currently the only first-party AI citation telemetry from a major engine.** Recommend enabling for every client.
+**June 2026 expansion — four new capabilities** ([Bing Search Blog](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare), 16 Jun 2026 — live worldwide in preview; gap recovery, missed during this routine's 5 Jun–1 Jul execution gap):
+- **Citation Share** — the site's share of total citations for a specific grounding query (e.g. 3 of 10 citations = 30% share). Observational only; does not show competitor domains or traffic share.
+- **Intents** — grounding queries classified into broader categories (Informational, Commercial, Navigational, Learn and Solve, Research, Creation, Local, etc.).
+- **Topics** — citations grouped by subject area.
+- **Compare** — track how citation patterns change over time, to measure the impact of content updates, new structured data, or editorial changes on AI visibility.
+
+**Critical gap.** Shows citations, not clicks. Cannot measure traffic outcome from Copilot citations directly. **This is currently the only first-party AI citation telemetry from a major engine.** Recommend enabling for every client. The Compare feature (above) is the closest first-party equivalent to a before/after audit-impact measurement currently available from any engine.
 
 ### Browser referrer behavior
 
