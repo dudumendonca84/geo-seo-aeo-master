@@ -8,6 +8,23 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-08-08 — Engine playbooks: formato accionável + sincronização com o news-feed
+
+**Trigger.** Founder feedback no cartão "Como evoluir" do Tracker (a prosa corrida não dizia o que fazer) + directiva de garantir que a skill sabe o estado actual de cada motor. **Change (formato).** Cada bloco de motor (PT e EN) passa a "Como decide:" (mecanismo) + "Faz:" (acções imperativas numeradas, uma por linha, sem hard-wrap para renderizar limpo com `pre-line`). Travessões removidos dos blocos renderizados (regra client-facing). **Change (substância)** — cruzamento sistemático com o news-feed (precedência do mais fresco):
+
+- `google_aio`: stat superada substituída — top-10 orgânico explica 38% das citações (Ahrefs, Mar 2026; era 76% Jul 2025), no lugar dos ~54% BrightEdge; + Google-Extended no robots.txt (SIGIR 2026), citações de discussões na resposta (Google, Mai 2026), aviso listicles/spam policy (Lily Ray + Google, Jun 2026).
+- `chatgpt`: pesquisa corre sobre o índice Bing e lê top 2-3 resultados por sub-pergunta (SEL Jun 2026; Peec AI Jul 2026); 28,3% das páginas mais citadas sem visibilidade orgânica (Ahrefs Q1 2026); modo de raciocínio desloca citações para fontes institucionais (Semrush Jul 2026); páginas-pilar EN actualizadas (SEL Ago 2026).
+- `perplexity`: YouTube lidera citações (32,4%, Ahrefs Jun 2026) ao lado do peso Reddit; ghost citations 52% (Writesonic Jul 2026); research primária/trade press (5W Jun 2026).
+- `gemini`: YouTube 20,9% das citações AIO (Ahrefs); favorecimento de conteúdo Google (SIGIR 2026); menções não aparecem em GSC/GA4 (SEL Ago 2026).
+- `google_ai_mode`: specs de passagem (resposta na 1ª frase em 80%, mediana ~117 palavras, Pillarbase Jul 2026); anúncios dentro da resposta (SE Ranking Jun 2026).
+- `mistral`: corrigida a implicação de via de pesquisa medível — API sem pesquisa first-party (search_modes.md), medição só memória.
+- `claude`: perfil jornalismo de referência (5W Jun 2026). `copilot`: Citation Share/Compare no AI Performance (Bing Jun 2026). `deepseek`: caveat página EN desactualizada.
+- Preâmbulo: llms.txt retirado da lista de alavancas (SE Ranking ~300k domínios + Limy.AI 500M visitas de bots, Ago 2026: sem efeito, crawlers lêem o HTML directamente).
+
+Sem alterações: `grok`, `llama`, `copilot_bing` (o bloco de suspensão DataForSEO 5 Ago 2026 é o facto mais fresco).
+
+---
+
 ## 2026-08-03 — Superfícies de consumo passam a always-on na tabela de modos
 
 A tabela `## Per-engine augmentation feature` de `references/search_modes.md` sobrepõe-se ao fallback do código no consumidor (`{...fallback, ...tabela}`), por isso uma linha errada não dá erro: duplica chamadas ao fornecedor e rotula metade das linhas como "memória de treino" numa superfície que pesquisa sempre.
