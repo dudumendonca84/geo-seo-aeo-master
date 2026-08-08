@@ -41,6 +41,15 @@ skill, cada um com o seu gatilho escrito na respectiva routine:
   anonimizadas e com N≥3, entram no bloco do motor onde funcionaram.
   Ver `routines/synthesis-weekly.md`, Pass 3.
 
+**Marcadores de aplicabilidade.** Um item do "Faz:" pode terminar com um
+marcador `{{skip:<condição>}}` que o consumidor avalia contra o contexto do
+cliente e usa para ESCONDER o item quando a condição se verifica. O marcador
+nunca aparece ao cliente (o consumidor remove-o sempre do texto). Condições
+definidas: `en-site` — esconder quando o site/locale do cliente já é inglês
+(um "publica versão EN" a um cliente EN é ruído). Condição desconhecida =
+mostrar o item na mesma, sem o marcador (fail-open). A regra vive aqui na
+skill; o código só avalia.
+
 Cada alteração de substância regista-se no `methodology-changelog.md`.
 Estatísticas só com fonte — sem estudo, dizê-lo. Qualquer routine que edite
 este ficheiro corre `node scripts/validate-skill-tables.mjs` antes de commit:
@@ -58,7 +67,7 @@ Faz:
 2. Garante indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa.
 3. Publica documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos (Semrush via Search Engine Land, Jul 2026).
 4. Procura presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
-5. Mantém uma versão EN actualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desactualizada desempenha pior do que não ter nenhuma (Search Engine Land, Ago 2026).
+5. Mantém uma versão EN actualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desactualizada desempenha pior do que não ter nenhuma (Search Engine Land, Ago 2026). {{skip:en-site}}
 6. Usa o mesmo nome e a mesma descrição da marca em todas as fontes.
 
 ### claude
@@ -96,7 +105,7 @@ Faz:
 Como decide: memória de treino com forte peso de fontes em inglês; cobertura pt-PT mais fina.
 
 Faz:
-1. Publica versão EN das páginas-chave da marca e mantém-na actualizada: uma página EN desactualizada desempenha pior do que não ter nenhuma, porque os modelos a tratam como canónica (Search Engine Land, Ago 2026).
+1. Publica versão EN das páginas-chave da marca e mantém-na actualizada: uma página EN desactualizada desempenha pior do que não ter nenhuma, porque os modelos a tratam como canónica (Search Engine Land, Ago 2026). {{skip:en-site}}
 2. Entra em directórios e listas internacionais da categoria.
 3. Usa um nome de marca sem ambiguidade linguística nas fontes EN.
 
@@ -156,7 +165,7 @@ Faz:
 1. Garante indexação saudável no Bing: Bing Webmaster Tools activo e IndexNow ligado.
 2. Publica conteúdo comparativo claro, com autoridade declarada no site.
 3. Liga o "AI Performance" do Bing Webmaster Tools e usa o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação (Jun 2026). É a única telemetria first-party de citações de IA.
-4. Mantém versão EN actualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot (Search Engine Land, Ago 2026).
+4. Mantém versão EN actualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot (Search Engine Land, Ago 2026). {{skip:en-site}}
 
 ### copilot_bing
 
@@ -184,7 +193,7 @@ Do:
 2. Keep Bing indexing healthy (Bing Webmaster Tools, IndexNow): it is the index ChatGPT search uses.
 3. Publish verifiable, institution-grade documentation and data: in reasoning mode ChatGPT shifts citations from UGC to institutional sources, with only 25.6% domain overlap between modes (Semrush via Search Engine Land, Jul 2026).
 4. Earn presence in durable sources: press, "best of" lists, Wikipedia where eligible. Feeds training memory, in months.
-5. Keep an up-to-date EN version of pillar pages: it raises presence in answers, but a stale EN page performs worse than none (Search Engine Land, Aug 2026).
+5. Keep an up-to-date EN version of pillar pages: it raises presence in answers, but a stale EN page performs worse than none (Search Engine Land, Aug 2026). {{skip:en-site}}
 6. Use the same brand name and description across every source.
 
 ### claude
@@ -222,7 +231,7 @@ Do:
 How it decides: training memory weighted heavily toward English-language sources.
 
 Do:
-1. Publish an English version of the brand's key pages and keep it current: a stale EN page performs worse than none, because models treat it as canonical (Search Engine Land, Aug 2026).
+1. Publish an English version of the brand's key pages and keep it current: a stale EN page performs worse than none, because models treat it as canonical (Search Engine Land, Aug 2026). {{skip:en-site}}
 2. Enter international directories and category lists.
 3. Use a brand name without linguistic ambiguity in English sources.
 
@@ -282,7 +291,7 @@ Do:
 1. Keep Bing indexing healthy: Bing Webmaster Tools connected and IndexNow on.
 2. Publish clear comparative content, with declared authority on the site.
 3. Connect Bing Webmaster Tools "AI Performance" and use Citation Share and Compare to measure the citation-rate effect of each content or schema change (Jun 2026). It is the only first-party telemetry of AI citations.
-4. Keep an up-to-date EN version of pillar pages: the effect on AI-answer presence is evident in Copilot too (Search Engine Land, Aug 2026).
+4. Keep an up-to-date EN version of pillar pages: the effect on AI-answer presence is evident in Copilot too (Search Engine Land, Aug 2026). {{skip:en-site}}
 
 ### copilot_bing
 
