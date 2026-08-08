@@ -1,0 +1,65 @@
+# As routines (daily-agent, self-audit) correm em sessões Claude Code web
+# que só conseguem empurrar para o branch da própria sessão — o "push
+# directo ao main" das specs nunca acontece, e o output ficava em branches
+# claude/* até alguém fazer merge à mão. Os produtos (Tracker, Deck Builder)
+# lêem do main: routine que não chega ao main é routine que não existiu.
+#
+# Este workflow leva ao main automaticamente, com três guardas:
+#   1. só commits com a assinatura das routines ("daily:" ou "audit:");
+#   2. só quando o diff toca exclusivamente caminhos de routine — se um
+#      humano estiver a trabalhar num branch claude/*, nada acontece;
+#   3. os contratos parseáveis validam antes do push (o Tracker consome
+#      estes ficheiros em runtime; um header partido apaga secções em
+#      silêncio).
+name: routine-automerge
+
+on:
+  push:
+    branches:
+      - "claude/**"
+
+permissions:
+  contents: write
+
+jobs:
+  automerge:
+    if: startsWith(github.event.head_commit.message, 'daily:') || startsWith(github.event.head_commit.message, 'audit:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Merge para o main se o diff for só de routine
+        env:
+          BRANCH: ${{ github.ref_name }}
+          HEAD_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+          git config user.name "routine-automerge"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin "$BRANCH"
+
+          CHANGED=$(git diff --name-only "main...origin/$BRANCH")
+          if [ -z "$CHANGED" ]; then
+            echo "Nada para merge: o branch já está contido no main."
+            exit 0
+          fi
+          echo "Ficheiros no diff:"
+          echo "$CHANGED"
+
+          ALLOWED='^skills/geo-seo-aeo-master/(daily-agent/|destaque-ai-self/|references/|methodology-changelog\.md)'
+          OUTSIDE=$(echo "$CHANGED" | grep -vE "$ALLOWED" || true)
+          if [ -n "$OUTSIDE" ]; then
+            echo "Caminhos fora da lista de routine — sem automerge:"
+            echo "$OUTSIDE"
+            exit 0
+          fi
+
+          FIRST_LINE=$(printf '%s' "$HEAD_MSG" | head -n 1)
+          git merge --no-ff "origin/$BRANCH" -m "automerge(routine): $FIRST_LINE" -m "branch: $BRANCH"
+
+          node scripts/validate-skill-tables.mjs
+
+          git push origin main
