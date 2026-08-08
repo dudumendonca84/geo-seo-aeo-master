@@ -155,6 +155,24 @@ Antes de escrever, confirma que estás a acrescentar a um ficheiro que já tem
 histórico. Se o `news-feed.md` te parecer vazio, **pára e diz** — não é a
 primeira execução, é o caminho errado ou um checkout incompleto.
 
+## Commit e chegada ao main
+
+A sessão onde corres só consegue empurrar para o branch dela — não tentes
+push a `main`. O que te leva ao main é a **mensagem de commit**: o workflow
+`routine-automerge` faz merge automático de qualquer branch `claude/*` cujo
+commit comece por `daily:` e cujo diff toque apenas caminhos de routine
+(`daily-agent/`, `destaque-ai-self/`, `references/`,
+`methodology-changelog.md`). Portanto:
+
+- Mensagem: `daily: YYYY-MM-DD news update` — o prefixo `daily:` é a
+  assinatura que o automerge procura; sem ele o trabalho fica no branch e
+  os produtos nunca o vêem.
+- Não toques em ficheiros fora dos caminhos de routine no mesmo commit: um
+  único ficheiro fora da lista trava o automerge inteiro (guarda contra
+  merges acidentais de trabalho humano).
+- O validador do passo 5 corre outra vez dentro do workflow antes do push;
+  se falhar lá, o merge não acontece e fica visível nos Actions.
+
 ## Princípio editorial geral
 
 A skill deve ficar **mais inteligente** com o tempo, não só ter um arquivo crescente. Cada técnica nova, cada framework validado, cada caso público documentado — vai para references/ no formato canónico (sóbrio, sourced, com caveats). News-feed é onde nascem; references é onde vivem.
