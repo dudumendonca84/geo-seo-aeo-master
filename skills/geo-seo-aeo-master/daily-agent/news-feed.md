@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-08
+
+### 🔵 Anúncios oficiais
+- **IAB releases "Measuring Visibility in the AI Era"** — [IAB](https://www.iab.com/guidelines/measuring-visibility-in-the-ai-era/), 3-4 ago 2026 ([MediaPost](https://www.mediapost.com/publications/article/416970/iab-unveils-framework-for-ai-visibility.html), [PR Newswire](https://www.prnewswire.com/news-releases/iab-releases-measuring-visibility-in-the-ai-era-to-help-brands-publishers-and-agencies-navigate-ai-powered-discovery-302840611.html)). Primeiro standard de medição cross-vendor do sector para visibilidade em IA: organiza métricas numa hierarquia causal de "4 P's" (Presence, Prominence, Portrayal, Persuasion) e introduce uma classificação em dois níveis para separar dados "decision-grade" (fiáveis para decisões de budget) de dados apenas indicativos de tendências — resposta directa à fragmentação de metodologia entre as 20+ ferramentas de AI-visibility hoje no mercado (Profound, Peec, Otterly, Ahrefs Brand Radar, Semrush AI Toolkit, etc.).
+
+### 📊 Estudos & dados
+- **Only 16% of brands formally track AI visibility** — dado divulgado pelo IAB junto com o standard acima ([ppc.land](https://ppc.land/only-16-of-brands-track-ai-visibility-as-iab-sets-measurement-standard/), ago 2026). Apenas 16% das marcas monitorizam formalmente a sua presença em respostas de IA, apesar do número de ferramentas comerciais de medição já ultrapassar 20.
+
+### 💡 Implicações para destaque.ai
+- O framework "4 P's" do IAB dá um vocabulário comum e reconhecido pela indústria para reporting de visibilidade em IA — mapear os relatórios da destaque.ai a Presence/Prominence/Portrayal/Persuasion facilita comparação e credibilidade junto de clientes B2B mais sofisticados em Portugal. Absorvido em `references/metrics.md` §12 para referência na metodologia de reporting.
+- O dado de que só 16% das marcas medem visibilidade em IA é argumento de vendas directo: ainda existe vantagem de "first mover" em oferecer isto já em Portugal, antes de a categoria se tornar commodity. Awareness accionável — sem mudança de pitch imediata, mas vale citar o número em propostas.
+- A classificação "decision-grade vs. indicativo" do IAB é útil para gerir expectativas de clientes sobre o que os dados de qualquer vendor (incluindo os usados pela destaque.ai) efectivamente suportam — não tratar todos os números de visibilidade em IA como equivalentes em rigor.
+
 ## 2026-08-07
 
 ### 🔵 Anúncios oficiais

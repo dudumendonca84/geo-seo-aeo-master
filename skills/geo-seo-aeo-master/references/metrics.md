@@ -159,6 +159,25 @@ Aggarwal et al., KDD 2024 ([arXiv 2311.09735](https://arxiv.org/abs/2311.09735))
 
 ---
 
+## 12. IAB "4 P's of AI Visibility" (industry standard, Aug 2026)
+
+**Definition.** IAB's cross-vendor measurement standard, "Measuring Visibility in the AI Era" (released 3-4 Aug 2026, [IAB](https://www.iab.com/guidelines/measuring-visibility-in-the-ai-era/)). First attempt at a shared vocabulary across the 20+ commercial AI-visibility tools, organised as a causal hierarchy:
+
+1. **Presence** — does the brand/publisher appear in an AI response at all.
+2. **Prominence** — where and how prominently it appears (position, citation vs. mention, density).
+3. **Portrayal** — in what context and with what accuracy (sentiment, factual correctness — overlaps with §7 above).
+4. **Persuasion** — downstream effect on user behaviour/trust (least measurable of the four; mostly aspirational as of this release).
+
+**Two-tier data-quality classification.** IAB distinguishes "decision-grade" data (methodology disclosed, reproducible, suitable for budget/strategy decisions) from "directional" data (useful for spotting trends, not for hard decisions). No named vendor has yet been independently certified against this bar; treat it as a standard to evaluate vendors against, not a certification any tool currently holds.
+
+**Why it matters.** Prior to this release there was no shared framework: every vendor's "visibility score" bundled different combinations of §1-§9 above under one number, making cross-vendor comparison meaningless. Only 16% of brands formally track AI visibility at all ([ppc.land](https://ppc.land/only-16-of-brands-track-ai-visibility-as-iab-sets-measurement-standard/), citing IAB data), so the standard is arriving early in the category's maturity curve.
+
+**Use in client work.** Map destaque.ai reporting sections to Presence/Prominence/Portrayal/Persuasion where practical — it gives clients an industry-recognised vocabulary instead of an in-house one. Persuasion has no reliable measurement method yet (see §6 AI-attributed traffic caveats); do not claim to measure it directly.
+
+**Caveat.** Released 3-4 Aug 2026 — too early for independent scrutiny of the methodology itself or for vendor adoption data. Revisit in Q4 2026.
+
+---
+
 ## Measurement tools — current state (May 2026)
 
 ### Google Search Console
