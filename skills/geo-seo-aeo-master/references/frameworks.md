@@ -142,6 +142,10 @@ JSON-LD remains the format recommended by Google and the one major AI engines (B
 
 Google updated the Review snippet structured-data documentation (24 Jul 2026) with an explicit guideline: "Don't include fake or undisclosed incentivized reviews on your page or in your structured data markup" ([developers.google.com](https://developers.google.com/search/docs/appearance/structured-data/review-snippet), reported by [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)). Examples given: reviews not based on a genuine experience, and reviews exchanged for money/discounts/vouchers/free products without clear, prominent disclosure of the incentive. This tightens (does not replace) the existing `AggregateRating` guidance in the table above — clients with testimonial/review sections should confirm their markup and underlying review-collection process comply before the next technical audit; not yet clear whether this is enforced by automated re-crawls or by manual action only.
 
+### NLWeb — open protocol for natural-language site queries (Jun 2026)
+
+Announced at Microsoft Build 2026 and led by R.V. Guha (co-creator of Schema.org), **NLWeb** is an open protocol letting any site accept natural-language queries — from humans or AI agents — without custom development, built on top of existing structured data ([Microsoft Source](https://news.microsoft.com/source/features/company-news/introducing-nlweb-bringing-conversational-interfaces-directly-to-the-web/)). It is early-stage (no adoption or citation-impact data yet, unlike the `llms.txt` null results above) but directionally significant: it treats well-formed Schema.org markup as the substrate for conversational retrieval rather than just rich-result eligibility. Track for adoption signals before recommending implementation; the types-table above (`Organization`, `Product`, `FAQPage`, etc.) is the same foundation NLWeb consumes, so clients with clean schema are already positioned to adopt it cheaply if it gains traction.
+
 ### The Ahrefs schema null result (May 2026)
 
 Ahrefs' May 2026 study compared 1,885 pages with newly-added schema against 4,000 controls (Aug 2025 – Mar 2026) ([Ahrefs](https://ahrefs.com/blog/schema-ai-citations/)). Result: no meaningful citation uplift; AI Overviews showed a small but statistically significant 4.6% **decline** for schema-added pages.
@@ -185,6 +189,10 @@ All five systems below use a variant of **retrieve → rank → generate → cit
 | **Claude (web search)** | Brave Search | Lower citation count; conservative — claims sourced when uncertain, others left uncited | API requires citations to be shown to end users when surfacing search results ([Anthropic web-search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)) |
 | **Bing Copilot** | Bing index | Format similar to ChatGPT Search | First-party citation telemetry now exposed via Bing Webmaster Tools "AI Performance" dashboard (public preview 9 Feb 2026, [Bing blog](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)) |
 | **Gemini (Gemini Advanced + AI Mode)** | Google index, Gemini reasoning | Verbose; cites less densely than Perplexity | Strong YouTube/Reddit pull |
+
+### Bing Copilot / ChatGPT Search share a retrieval backend: Web IQ (Jun 2026)
+
+Microsoft's **Web IQ**, launched 2 Jun 2026, is a grounding-API suite built on the Bing index but designed for AI agents rather than human searchers — it prioritises fast information extraction over classic result ranking ([Search Engine Land](https://searchengineland.com/microsoft-releases-web-iq-powered-by-bing-but-designed-for-how-ai-agents-search-479194)). It currently powers both Microsoft Copilot and OpenAI's ChatGPT Search, with expansion to other platforms announced. Practical implication: Bing-index optimisation (the standard already in the table above) is not just a Copilot lever — it is shared retrieval infrastructure for ChatGPT Search too, reinforcing Bing indexing hygiene as a cross-engine, not single-engine, investment.
 
 ### Cross-engine domain overlap is low
 
