@@ -11,6 +11,44 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-08-10 — Quinta execução
+
+**Score global:** 69/100 (Bom, com lacunas de verificação que persistem — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 03 ago: 0.** Terceira semana seguida estável no número, por compensação, não por estagnação.
+
+**Score por categoria (delta vs. 03 ago):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 87/100 | 0 |
+| Performance / CWV | N/D | — |
+| SEO On-Page | 93/100 | 0 |
+| Schema / dados estruturados | 96/100 | 0 |
+| Optimização de imagens | 72/100 | 0 |
+| GEO técnica | 91/100 | 0 |
+| Conteúdo & topical authority | 81/100 | −4 |
+| Entidade / brand foundation | 79/100 | +2 |
+| Autoridade & digital PR | 20/100 | 0 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 35/100 | −3 |
+
+**Nota sobre o Δ global de 0:** Entidade sobe (+2) por reconfirmação directa do `Organization.sameAs` no JSON-LD da homepage e pela descoberta do `Person` do fundador (Eduardo Mendonça, `sameAs` LinkedIn) — sinal de E-E-A-T/entidade que as quatro execuções anteriores não tinham registado explicitamente. Conteúdo desce (−4) porque o hiato editorial, já escalado há uma semana, chega a 26/28 dias sem resposta de nenhum tipo. Medição desce (−3): o incidente agudo da semana passada (quota SerpApi) parece resolvido, mas foi substituído por algo mais crónico — créditos de API esgotados em Gemini (7+ semanas), Perplexity e OpenAI, parcialmente compensado por uma vaga de correcções de segurança de qualidade real no Tracker (#299-#302) que não move esta métrica mas é um sinal positivo genuíno noutro eixo. Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 0. Nenhum item do backlog atingiu resolução confirmada nesta execução — o incidente de quota SerpApi/DataForSEO de 03 ago desceu de P0 para P1 e passou a IN PROGRESS (sintoma agudo não recorreu, mas DataForSEO continua instável por outra via) sem ser marcado DONE.
+
+**Items novos detectados:** 5 — 1 P0 (MEASUREMENT — créditos de API esgotados em Gemini/Perplexity/OpenAI, o Gemini há mais de 7 semanas), 1 P1 (TECH — Performance/CWV sem dado há 5 semanas, formalizado como item de backlog pela primeira vez após a via alternativa de Horizonte 1 ter sido confirmada desligada), 1 P2 (STRATEGIC — colisão do termo "GEO" com a indústria de geodesia em pesquisas genéricas, achado novo do teste multi-motor), 1 P3 (GEO — falha de fetch de `llms.txt` distinta do bloqueio de rede geral, não explicada), 1 P3 informativo (SCHEMA — `FAQPage` da homepage é markup inerte para o Google desde 7 mai 2026, cruzado do news-feed, sem acção necessária). Adicionalmente, "CONTENT — cadência de publicação parada" foi escalado de P2 para P1 — 2ª escalada consecutiva sem resposta.
+
+**Mudanças materiais observadas:**
+- **Escalada mais severa da execução: créditos de API esgotados, não quota de fornecedor de dados.** O incidente de 03 ago (quota SerpApi + erro de campo DataForSEO) não recorreu com a mesma assinatura, mas revelou-se menos importante do que um problema mais antigo e mais caro em tempo: o Gemini está sem crédito pré-pago desde 23 jun 2026 — mais de 7 semanas — juntando-se a Perplexity e OpenAI/ChatGPT esgotados desde 03 ago. É, ao mesmo tempo, o problema mais barato de resolver de toda a auditoria (top-up de conta) e o que está a durar mais tempo sem resolução.
+- **Contraponto real: vaga de segurança de qualidade no Tracker, não pedida por esta auditoria.** 4 PRs (#299-#302) corrigiram uma falha P0 genuína — o papel `viewer` podia apagar dados de cliente via PostgREST directo, contornando toda a aplicação — mais bugs de impersonação de operador em 12 rotas OAuth. Trabalho de revisão de arquitectura séria, feito proactivamente.
+- **Reconfirmação de entidade mais rica do que documentado antes:** extracção directa do JSON-LD da homepage (em vez de amostra visual) revelou `Person` do fundador com `sameAs`, `jobTitle` e `knowsAbout` — um sinal de E-E-A-T/entidade presente mas não registado nas quatro execuções anteriores.
+- **Hiato de conteúdo editorial: 2ª escalada consecutiva sem resposta.** 26 dias sem post, 28 sem estudo; o pedido explícito de pelo menos registar uma decisão consciente, feito há uma semana, também não foi atendido.
+- **Achado novo: colisão de termo.** "GEO" em português e inglês colide com a indústria de geodesia/topografia em 3 dos 21 prompts mandatórios — ninguém do sector de AI search aparece nessas queries, destaque.ai incluída. Distinto de competição directa: é um problema de desambiguação, não de posicionamento.
+- **Teste multi-motor — mesmo padrão, prompts diferentes:** modo augmented, destaque.ai mencionada em 3/21 (`GD5`, `V1`, `V2`), citação genuína e usada na resposta em apenas 1/21 (`V1`). AISO Hub e UniK SEO reclamam liderança de categoria explicitamente em prompts distintos. Modo knowledge: 0/31 pela quinta semana, 0 alucinações, recusa correcta no prompt branded (desta vez UniK SEO). Protocolo de crise: não accionado.
+- **Performance/CWV — a via alternativa também falhou.** PSI `HTTP 429` de novo (5ª semana); Vercel Web Analytics, recomendado na semana passada como proxy, confirmado **não activado** no projecto `destaque-ai` (`404 Not Found`).
+
+**Reconciliação playbooks:** sem divergências. Os achados desta semana (colisão de termo "GEO", padrão citado-sem-recomendação em `V1`/`V2`/`GD5`, AISO Hub/UniK SEO a reclamar liderança) reforçam ou estendem blocos existentes em `engine_playbooks.md` sem os contradizer — nenhuma edição feita. `source_intelligence.md` continua sem entradas (a rotina do cérebro do Tracker ainda não gerou a primeira semana de dado).
+
 ### 2026-08-03 — Quarta execução
 
 **Score global:** 69/100 (Bom, com lacunas de verificação que persistem — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 27 jul: 0.**
