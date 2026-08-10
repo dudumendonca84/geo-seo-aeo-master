@@ -46,7 +46,10 @@ marcador `{{skip:<condição>}}` que o consumidor avalia contra o contexto do
 cliente e usa para ESCONDER o item quando a condição se verifica. O marcador
 nunca aparece ao cliente (o consumidor remove-o sempre do texto). Condições
 definidas: `en-site` — esconder quando o site/locale do cliente já é inglês
-(um "publica versão EN" a um cliente EN é ruído). Condição desconhecida =
+(um "publica versão EN" a um cliente EN é ruído); `bwt-connected` — esconder
+quando o cliente já tem o Bing Webmaster Tools ligado no Tracker (recomendar
+ligar o que já está ligado é o achado que destrói a confiança — o consumidor
+avalia com os dados de integração que já tem). Condição desconhecida =
 mostrar o item na mesma, sem o marcador (fail-open). A regra vive aqui na
 skill; o código só avalia.
 
@@ -64,7 +67,7 @@ Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa 
 
 Faz:
 1. Responde no site às perguntas comparativas da categoria, uma pergunta por secção. Abre a via da pesquisa em semanas.
-2. Garante indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa.
+2. Garante indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa. {{skip:bwt-connected}}
 3. Publica documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos (Semrush via Search Engine Land, Jul 2026).
 4. Procura presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
 5. Mantém uma versão EN actualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desactualizada desempenha pior do que não ter nenhuma (Search Engine Land, Ago 2026). {{skip:en-site}}
@@ -162,9 +165,9 @@ Faz:
 Como decide: é o chat da Microsoft; pesquisa via índice Bing.
 
 Faz:
-1. Garante indexação saudável no Bing: Bing Webmaster Tools activo e IndexNow ligado.
+1. Garante indexação saudável no Bing: Bing Webmaster Tools activo e IndexNow ligado. {{skip:bwt-connected}}
 2. Publica conteúdo comparativo claro, com autoridade declarada no site.
-3. Liga o "AI Performance" do Bing Webmaster Tools e usa o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação (Jun 2026). É a única telemetria first-party de citações de IA.
+3. Liga o "AI Performance" do Bing Webmaster Tools e usa o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação (Jun 2026). É a única telemetria first-party de citações de IA. {{skip:bwt-connected}}
 4. Mantém versão EN actualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot (Search Engine Land, Ago 2026). {{skip:en-site}}
 
 ### copilot_bing
@@ -190,7 +193,7 @@ How it decides: mixes training memory with web search, and only turns search on 
 
 Do:
 1. Answer the category's comparison questions on your site, one question per section. Opens the search route in weeks.
-2. Keep Bing indexing healthy (Bing Webmaster Tools, IndexNow): it is the index ChatGPT search uses.
+2. Keep Bing indexing healthy (Bing Webmaster Tools, IndexNow): it is the index ChatGPT search uses. {{skip:bwt-connected}}
 3. Publish verifiable, institution-grade documentation and data: in reasoning mode ChatGPT shifts citations from UGC to institutional sources, with only 25.6% domain overlap between modes (Semrush via Search Engine Land, Jul 2026).
 4. Earn presence in durable sources: press, "best of" lists, Wikipedia where eligible. Feeds training memory, in months.
 5. Keep an up-to-date EN version of pillar pages: it raises presence in answers, but a stale EN page performs worse than none (Search Engine Land, Aug 2026). {{skip:en-site}}
@@ -288,9 +291,9 @@ Do:
 How it decides: Microsoft's chat; searches through the Bing index.
 
 Do:
-1. Keep Bing indexing healthy: Bing Webmaster Tools connected and IndexNow on.
+1. Keep Bing indexing healthy: Bing Webmaster Tools connected and IndexNow on. {{skip:bwt-connected}}
 2. Publish clear comparative content, with declared authority on the site.
-3. Connect Bing Webmaster Tools "AI Performance" and use Citation Share and Compare to measure the citation-rate effect of each content or schema change (Jun 2026). It is the only first-party telemetry of AI citations.
+3. Connect Bing Webmaster Tools "AI Performance" and use Citation Share and Compare to measure the citation-rate effect of each content or schema change (Jun 2026). It is the only first-party telemetry of AI citations. {{skip:bwt-connected}}
 4. Keep an up-to-date EN version of pillar pages: the effect on AI-answer presence is evident in Copilot too (Search Engine Land, Aug 2026). {{skip:en-site}}
 
 ### copilot_bing
