@@ -64,6 +64,8 @@ across the prompt set. Some tools weight by response position (à la Princeton's
 
 **Measurement (May 2026).** GSC does **not** allow filtering by AI Overview / AI Mode. AIO and AI Mode clicks/impressions are folded into the "Web" search type aggregate ([Search Engine Land](https://searchengineland.com/google-ai-mode-traffic-data-search-console-457076)). The only practical proxy: compare impression deltas pre/post AIO rollout per keyword (noisy).
 
+**Update (Jun 2026).** Google launched a dedicated "Search Generative AI performance" report in Search Console ([Google Search Central Blog](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports), 3 Jun 2026), giving a real filtered view — impressions by page/country/device/date inside AI Overviews, AI Mode and generative Discover. Still no click, CTR or query data, and rollout expanded from an initial UK-only subset through June to more markets (US, India, Switzerland reported by late Jun). Applies to AIO/AI Mode only — Gemini standalone still has no equivalent report ([Search Engine Land](https://searchengineland.com/measure-brand-visibility-gemini-484116), 3 Aug 2026). The pre/post impression-delta proxy above remains the fallback for click-level or Gemini-standalone estimates.
+
 December 2025: GSC added natural-language report configuration ([Google blog](https://developers.google.com/search/blog/2025/12/ai-powered-configuration)). UI improvement, no new metric.
 
 **Known data quality issue.** Google disclosed in a changelog (3 April 2026) that GSC over-reported impressions from **13 May 2025** through early April 2026. Any YoY analysis crossing that window is contaminated. Annotate dashboards.
@@ -184,6 +186,7 @@ Aggarwal et al., KDD 2024 ([arXiv 2311.09735](https://arxiv.org/abs/2311.09735))
 
 - Performance report (Web) **aggregates** AIO and AI Mode impressions/clicks into standard totals. No filter for AIO/AI Mode.
 - Dec 2025: added "AI-powered configuration" — natural-language report setup. UI improvement only.
+- **Jun 2026: dedicated "Search Generative AI performance" report** launched — filtered impressions (page/country/device/date) for AIO, AI Mode and generative Discover, no clicks/CTR/query data yet. Rolled out beyond initial UK-only subset through the month. No equivalent exists for Gemini standalone as of Aug 2026.
 - Data quality issue: over-reported impressions 13 May 2025 → early April 2026.
 - Practical use: still essential for keyword-level impression and CTR baselines; complement with vendor AIO checkers.
 
