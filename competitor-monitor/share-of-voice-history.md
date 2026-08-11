@@ -95,6 +95,16 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-08-04 | SEOLabs | 1/5 | 3.0 | +1 (era 0/5) — regressa ao top-3 | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 |
 | 2026-08-04 | UniK SEO | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 5 pos 2 — 3.ª semana consecutiva |
 
+| 2026-08-11 | destaque.ai | 2/5 | 1.0 | +1 (era 1/5) | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1 (NOVO — 1.ª aparição nesta query), prompt 5 pos 1 — 8.ª semana consecutiva no Prompt 5 |
+| 2026-08-11 | Latigid | 2/5 | 1.5 | = aparições (2/5), posição pior (1.5 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 2 (era pos 1, destaque.ai tomou o lugar), prompt 4 pos 1 |
+| 2026-08-11 | 3HASH | 2/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompts 3 (pos 1), 4 (pos 3) |
+| 2026-08-11 | AP\|Portugal | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 1 |
+| 2026-08-11 | Infinidata | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 2 |
+| 2026-08-11 | LUSO AI | 1/5 | 3.0 | = aparições (1/5), posição pior (3.0 vs 2.0) | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 3 (era pos 2) |
+| 2026-08-11 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 4 pos 2 |
+| 2026-08-11 | UniK SEO | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 5 pos 2 — 4.ª semana consecutiva |
+| 2026-08-11 | Basicamente Digital | 1/5 | 3.0 | +1 (era 0/5) — regressa ao top-3 | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 (tinha saído em 08-04, esteve presente em 07-28) |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
