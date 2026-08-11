@@ -156,7 +156,7 @@ Faz:
 Como decide: é o modo conversacional de pesquisa do Google; responde a quase todas as perguntas e cita ao nível da passagem. Em 80% das citações a resposta está na primeira frase do trecho extraído, e a passagem citada mediana tem ~117 palavras (Pillarbase, 15,7M citações, Jul 2026). Nas perguntas comerciais aparecem anúncios dentro da resposta (29% dos casos; mais de metade nas keywords de CPC alto; SE Ranking, Jun 2026).
 
 Faz:
-1. Tudo o que vale para o google_aio.
+1. Tudo o que vale para o Google AI Overviews.
 2. Abre cada secção com a resposta na primeira frase e mantém passagens autocontidas de cerca de 120 palavras.
 3. Conta com anúncios dentro da resposta nas perguntas comerciais: a citação orgânica não substitui presença paga.
 
@@ -282,7 +282,7 @@ Do:
 How it decides: Google's conversational search mode; it answers almost every question and cites at passage level. In 80% of citations the answer sits in the first sentence of the extracted passage, and the median cited passage runs ~117 words (Pillarbase, 15.7M citations, Jul 2026). On commercial questions ads appear inside the answer (29% of cases; over half on high-CPC keywords; SE Ranking, Jun 2026).
 
 Do:
-1. Everything that applies to google_aio.
+1. Everything that applies to Google AI Overviews.
 2. Open each section with the answer in the first sentence and keep self-contained passages of about 120 words.
 3. Expect ads inside the answer on commercial questions: organic citation does not replace paid presence.
 
