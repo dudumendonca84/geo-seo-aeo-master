@@ -253,6 +253,10 @@ Introduces **GEO-bench** (10,000 queries across 8 domains) and tests 9 content-m
 
 "Statistics, named-source quotations and inline citations are the most evidence-backed content interventions for AI search visibility. The Princeton headline numbers (~+40% PAWC) are from the original 2023 benchmark and should not be quoted as expected 2026 lifts — but the *direction* (numbers and named sources beat adjectives) is robust across all follow-up work."
 
+### Official recognition by Google (Jun 2026)
+
+On 5 June 2026, Google added a "Generative AI fundamentals" section to Search Central, with a guide titled "Optimizing your website for generative AI features on Google Search" ([digitalapplied.com](https://www.digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026)). Official quote: *"optimizing for generative AI search is optimizing for the search experience, and thus still SEO."* Useful to close the "is GEO just a fad" objection in conservative B2B sales cycles — Google itself now frames it as an extension of SEO, not a separate discipline.
+
 ### Follow-up papers (2025-2026)
 
 - **Chen, Wang et al.** "Generative Engine Optimization: How to Dominate AI Search", arXiv [2509.08919](https://arxiv.org/abs/2509.08919), Sept 2025. Large-scale controlled experiments across verticals, languages, paraphrases. **Finds a systematic bias toward earned media over brand-owned sources.**
@@ -336,4 +340,4 @@ The model may attribute a claim to the brand that the brand never made. Monitori
 
 This file is updated on substantive change to the field, not on a schedule. The `daily-agent/news-feed.md` carries the running record of changes — consult both when answering "what's new?" questions. When the news-feed accumulates a material shift (e.g. a new crawler family from a major vendor, a Google announcement on AIO mechanics, a peer-reviewed paper that overturns Aggarwal), this file is updated in a single commit with the source citation.
 
-Maintained for: destaque.ai. Last refresh: 23 May 2026.
+Maintained for: destaque.ai. Last refresh: 11 Aug 2026.

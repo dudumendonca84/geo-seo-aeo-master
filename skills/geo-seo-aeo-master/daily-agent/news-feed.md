@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-11
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google — teste de homepage AI-first para utilizadores não autenticados** — [mobilesyrup.com](https://mobilesyrup.com/2026/08/10/google-search-hidden-pushing-ai-features/), 10 ago 2026 (corroborado por Digital Trends, Android Authority, PC Guide, SearchEngineWatch). Para quem não tem sessão iniciada, a Google está a testar uma homepage que substitui o botão clássico "Google Search" por atalhos "Create images", "Ask about files" e "Brainstorm", com o AI Mode integrado na própria caixa de pesquisa; observado em Chrome, Edge e no browser Comet da Perplexity, o que sugere rollout do lado do servidor e não uma variação por browser. A Google não confirmou oficialmente o teste.
+- **Google — URLs hreflang não são "indexadas" no sentido tradicional** — [seroundtable.com](https://www.seroundtable.com/google-hreflang-urls-not-indexed-41838.html), 10 ago 2026. Gary Illyes (Google) esclareceu que os URLs alternativos de hreflang não são indexados de forma independente: funcionam como apontadores para a página canónica e só aparecem em resultados quando essa página canónica está a posicionar — relevante para interpretar anomalias no relatório de indexação de sites internacionais.
+- **Google Business Profiles — proibidos nomes bilingues repetidos / transliterações de script** — [optimixed.com](https://www.optimixed.com/google-business-profiles-disallows-repeated-bilingual-names-script-transliterations/), 10 ago 2026. A Google acrescentou linguagem explícita às guidelines de nome de perfil a proibir o mesmo nome repetido em dois scripts (ex. "Burger King バーガーキング"), mesmo quando ambas as versões aparecem na fachada física da loja.
+
+### 💡 Implicações para destaque.ai
+
+- O teste de homepage AI-first (Google a esconder o botão "Search" clássico para utilizadores não autenticados) reforça a tese central da destaque.ai — a superfície de descoberta está a migrar para interfaces conversacionais. Awareness accionável para citar em conversas de venda; não requer mudança de pitch nem de metodologia (não muda mecânica de retrieval/citação, por isso não é gatilho de evolução metodológica).
+- As alterações de política da Google (hreflang, nomes bilingues em GBP) são relevantes sobretudo para clientes com presença multi-idioma/multi-mercado ou múltiplas localizações físicas; impacto directo baixo para a maioria da carteira B2B SaaS PT — vale referir apenas se surgir um cliente com esse perfil.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para todos os domínios tentados, incluindo as 7 fontes Tier 1 (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai), Tier 2 (ahrefs.com, searchengineland.com, searchenginejournal.com, otterly.ai, tryprofound.com) e arxiv.org; verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes para cada item incluído. Sem anúncio oficial Tier 1 genuinamente novo e verificável na janela 9-11 ago. Candidato investigado e **descartado por ser rumor não confirmado**: alegação de que a Meta está a construir o seu próprio motor de crawling/pesquisa para alimentar o Meta AI (SERoundtable/Social Media Today, citando um post anónimo de @levelsio no X, com um único data-point de volume de crawl não verificado) — sem declaração oficial da Meta, fonte secundária única, critério anti-rumor aplicado. Watch específico Bing Webmaster AI Performance API: sem novidade — via WebSearch, API ainda não existe (Fabrice Canel continua a dizer "durante 2026", sem changelog novo desde fev 2026), mesma posição registada em sessões anteriores. Sem lançamento de modelo LLM novo relevante para produtos de AI search: a mudança da OpenAI de 6 ago (chats de texto ilimitados + GPT-5.6 Luna por defeito para utilizadores Free/Go) já está absorvida em `references/models.md` desde o refresh de 10 ago — é mudança de quota/produto, não de modelo por defeito (Luna já era o default Free/Go desde 3 ago). Sem paper académico novo verificado em arXiv cs.IR/cs.CL na janela de 30 dias — candidato mais próximo (arXiv:2607.14035, critical survey GEO) já coberto extensivamente desde 07-17 e absorvido em `references/benchmarks.md` §16/§22, não repetido. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo) sem itens verificáveis específicos da janela via WebSearch. Sem novo core update confirmado da Google (Search Status Dashboard — último foi o June spam update; próximo esperado Q3 2026).
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-10). A maioria do conteúdo durável já estava absorvida em `references/` por sessões anteriores (relatório "Search Generative AI performance" do Search Console já reconciliado em `metrics.md` desde 08-10; "information agents"/Gemini 3.5 Flash de I/O 2026 já superados por versão mais específica em `engine_playbooks.md`; CTR de AI Overviews e "+120% clicks per impression" para marcas citadas já em `benchmarks.md` §2 e §13 com dados mais recentes/Ahrefs e Seer Interactive; Perplexity Personal Computer já coberto com estado mais actual em entradas posteriores de jun/ago). Uma lacuna genuína identificada e absorvida agora: o reconhecimento oficial do GEO como prática legítima de SEO pelo Google Search Central (secção "Generative AI fundamentals", 5 jun 2026) ainda não estava em `references/frameworks.md` — adicionada nova subsecção "Official recognition by Google (Jun 2026)" em §6, útil para fechar a objeção "é moda passageira" em ciclos de venda B2B conservadores. Não absorvidos por não-duráveis: submissão confidencial de S-1 da Anthropic à SEC (evento corporativo pontual, sem efeito em metodologia) e sistema de memória "Dreaming" do ChatGPT (feature de produto sem mecânica de citação envolvida) — mesmo critério usado para descartar notícias financeiras/corporate em sessões anteriores. `references/frameworks.md` "Last refresh" actualizado para 11 ago 2026.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — nenhum dos itens de hoje altera mecânica de retrieval/citação, pesos de scorecard ou introduz sinal novo mensurável.
+
+Terça-feira → sem weekly drafts.
+
 ## 2026-08-10
 
 Sem novidades significativas hoje.
@@ -1057,38 +1078,4 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - **Novo KPI de negócio disponível hoje:** os relatórios de AI Search Console permitem mostrar a clientes SaaS B2B a sua visibilidade em AI Overviews e AI Mode com dados verificáveis. Oportunidade de diferenciação de pitch: "medimos a sua presença na AI search, não apenas rankings clássicos" — requer novo serviço de reporting ou extensão do relatório mensal existente.
 - **May Core Update — janela de auditoria abre agora:** hoje é a data mínima para análise de impacto. Recomendar auditoria urgente a clientes com quedas de tráfego desde 21 de maio; focar em conteúdo com expertise original vs. agregado. Potencial novo serviço de diagnóstico e recovery.
 - **llms.txt: apenas awareness para contextos de documentação técnica B2B** (portais de devs, help centers) — não promover como táctica GEO/AEO genérica. O valor real está em IDE agents (Cursor, Claude Code), relevante para clientes com produtos developer-facing.
-
-## 2026-06-10
-
-### 🔵 Anúncios oficiais
-
-- **Google Search Console: Search Generative AI Performance Reports** — [developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). Lançado a 3 junho: relatórios dedicados de impressões em AI Overviews e AI Mode (Search e Discover), com desagregação por páginas, países, dispositivos e datas. Sem dados de cliques. Rollout inicial para site owners no Reino Unido.
-
-- **Google I/O 2026 — AI Mode com Gemini 3.5 Flash e AI Agents** — [blog.google/products-and-platforms/products/search/search-io-2026](https://blog.google/products-and-platforms/products/search/search-io-2026/). Gemini 3.5 Flash torna-se modelo padrão em AI Mode globalmente; Personal Intelligence alargado a ~200 países e 98 línguas sem subscrição; "information agents" para monitorização web em background disponíveis no verão para assinantes Pro/Ultra.
-
-- **Google Search Central: GEO reconhecido oficialmente como prática SEO** — [digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026](https://www.digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026). A 5 junho, o Google adicionou secção "Generative AI fundamentals" ao Search Central, com guia "Optimizing your website for generative AI features on Google Search". Citação oficial: "optimizing for generative AI search is optimizing for the search experience, and thus still SEO."
-
-- **Anthropic: S-1 submetido confidencialmente à SEC** — [anthropic.com/news/confidential-draft-s1-sec](https://www.anthropic.com/news/confidential-draft-s1-sec). Anthropic submeteu draft Form S-1 à SEC a 1 junho para potencial IPO, após revisão regulatória. Inclui expansão de parceria com Google e Broadcom para múltiplos gigawatts de compute de nova geração.
-
-- **OpenAI: ChatGPT "Dreaming" — sistema de memória persistente** — [openai.com/news](https://openai.com/news/). A 4 junho, ChatGPT lançou sistema de memória "Dreaming" que mantém preferências e contexto actualizados e relevantes entre conversações.
-
-### 📊 Estudos & dados
-
-- **Semrush: Impacto de AI Search no tráfego SEO** — [semrush.com/blog/ai-search-seo-traffic-study](https://www.semrush.com/blog/ai-search-seo-traffic-study/). CTR orgânico em queries com AI Overviews caiu 61% (1.76% → 0.61%), recuperando para ~2.4% no início de 2026. AI Overviews citam pelo menos um domínio do top 10 orgânico em 92.4% dos casos; marcas citadas recebem ~120% mais cliques por impressão que marcas não citadas nas mesmas queries.
-
-- **Crescimento de tráfego via IA** — [position.digital/blog/ai-seo-statistics](https://www.position.digital/blog/ai-seo-statistics/). Tráfego IA cresce 165× mais rápido que pesquisa orgânica; ChatGPT já envia mais tráfego de referência que Reddit e LinkedIn combinados; 58.5% das pesquisas Google terminam sem clique; 83% das queries com resposta gerada por IA são resolvidas na SERP.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Perplexity — Personal Computer: orquestrador local/cloud híbrido** — [perplexity.ai/hub/blog/the-data-center-moves-to-your-machine](https://www.perplexity.ai/hub/blog/the-data-center-moves-to-your-machine). A 2 junho, lançado orquestrador que determina automaticamente se tarefas com dados sensíveis (saúde, finanças, ficheiros pessoais) correm localmente ou em servidor cloud. Integração disponível em Microsoft 365 (Word, Excel, PowerPoint, Outlook, Teams) desde 29 maio.
-
-### 📄 Research académico
-
-- **"Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — arxiv [2506.00054](https://arxiv.org/abs/2506.00054), junho 2026. Taxonomia de arquitecturas RAG em retriever-centric, generator-centric, hybrid e robustness-oriented; relevante para entender os mecanismos de citação em AI search.
-
-### 💡 Implicações para destaque.ai
-
-- O Search Console agora expõe impressões em AI features (sem cliques) — oportunidade de pitch directa para SaaS B2B: "precisas de uma baseline de visibilidade GEO antes de optimizar; sem métricas não há estratégia". Justifica novo serviço de auditoria/monitorização GEO separado do SEO clássico.
-- O Google canonizou o GEO como prática legítima em Search Central: elimina a objecção "é moda passageira" nos ciclos de venda B2B conservadores em Portugal; pode ser citado directamente em propostas e materiais comerciais. Awareness, não mudança de serviço.
-- Dados Semrush confirmam recuperação de CTR (→2.4%) após mínimos de 2025, mas zero-click mantém-se em 58.5% — janela para posicionar clientes SaaS antes da próxima pressão descendente sobre tráfego orgânico.
 
