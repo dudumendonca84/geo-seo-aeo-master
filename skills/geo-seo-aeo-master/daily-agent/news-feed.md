@@ -8,6 +8,33 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-13
+
+### 📊 Estudos & dados
+
+- **Mesmo conteúdo, citação muito diferente por motor de IA** — OtterlyAI, dados até 27 jul 2026 ([geo-experiment-2000-ai-blogs-google-penalization](https://otterly.ai/blog/geo-experiment-2000-ai-blogs-google-penalization/), publicado 5 ago 2026). Em 482.394 citações rastreadas em 7 motores de IA (1 abr–27 jul 2026), o mesmo conteúdo teve 8% de share de citações numa plataforma e 0% noutras quatro; um site removido pela Google ao fim de 8 dias tornou-se o preferido do Bing, com 91.104 impressões em julho (pico diário de 9.618).
+- **Rácio crawl-to-refer da Anthropic melhora mas mantém-se extremo** — SEOmator, dados até 1 ago 2026 ([crawl-to-refer-ratio-ai-crawlers-llm-bots](https://seomator.com/blog/crawl-to-refer-ratio-ai-crawlers-llm-bots)). O rácio caiu de 3.386:1 em junho para 1.917:1 em julho de 2026, à medida que o Claude começa a devolver mais tráfego de referência aos sites que rastreia — mantém-se, ainda assim, muito acima do rácio da Google.
+
+### ⚙️ Mudanças nas plataformas
+
+- **OpenAI — testes de cabeçalhos publicitários por cima de respostas do ChatGPT** — reportado pela Search Engine Roundtable no recap de 12 de agosto ([recap-08-12-2026-41861](https://www.seroundtable.com/recap-08-12-2026-41861.html)). A OpenAI está a testar cabeçalhos descritivos colocados acima de anúncios inseridos em respostas do ChatGPT; ainda em teste, sem confirmação de rollout geral nem data.
+
+### 💡 Implicações para destaque.ai
+
+- A fragmentação de citações por plataforma (estudo OtterlyAI) confirma que "otimizar para IA" não é uma métrica única — reforça o valor de vender/mostrar tracking multi-motor (ChatGPT, Perplexity, Google AIO, Bing/Copilot) em vez de um score GEO agregado. Awareness accionável, sem mudança de metodologia.
+- A melhoria (ainda que parcial) no rácio crawl-to-refer da Anthropic é sinal de que o tráfego de referência via IA está a começar a tornar-se mensurável — vale garantir que clientes B2B SaaS segmentam tráfego de bots/agentes de IA (ChatGPT, Claude, Perplexity) separadamente do search orgânico clássico nos seus analytics.
+- Publicidade dentro das respostas do ChatGPT (ainda em teste) é um watch item: se avançar para rollout geral, conteúdo citável passa a competir por atenção com anúncios dentro da própria superfície de resposta — sem ação imediata, mas relevante para o pitch de "visibilidade" a clientes que também investem em search ads.
+
+**Watch específico — Bing Webmaster Tools AI Performance API**: sem novidade. Confirmado via Microsoft Q&A e blogs.bing.com/webmaster que a API ainda não existe — dashboard continua manual-only, Fabrice Canel mantém "durante 2026" sem data nem changelog novo. Mesma posição de sessões anteriores; `BING_WEBMASTER_API_KEY` continua à espera na Vercel, import manual continua a ser o ritual do Tracker.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para todas as 7 fontes Tier 1 (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai) e para Tier 2 (ahrefs.com, searchengineland.com, seroundtable.com); verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes. Sem anúncio oficial Tier 1 genuinamente novo e não-duplicado na janela 11-13 ago (GPT-5.6 Sol — ajuste de "effort slider" e redução de erros factuais reportada pela própria OpenAI, 6 ago — já reconciliado como mudança de quota/produto, sem novo modelo por defeito, no refresh de `references/models.md` de 10 ago; não repetido). Candidato descartado por já coberto: fim do suporte a FAQ rich results na Search Console API (já registado em 2026-08-04, não repetido). Candidato descartado por falta de dados/metodologia verificável: "Google a mostrar AI Overviews aleatoriamente em resultados locais" (fonte não-Tier, sem data nem amostra confirmável). Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico novo verificado em arXiv cs.IR/cs.CL na janela de 30 dias (nenhum candidato com prefixo 2608 encontrado; candidatos mais recentes por ID já cobertos em sessões anteriores). Sem novo core update confirmado da Google (Search Status Dashboard).
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair (2026-06-12). A maioria do conteúdo durável já estava absorvida em sessões anteriores: Search Console Generative AI Performance Reports em `references/metrics.md` (absorvido 08-10); AI Mode 1B utilizadores/Information Agents/Gemini 3.5 Flash (I/O 2026) superados por versões mais específicas em `references/engine_playbooks.md`; guidance oficial GEO/AEO do Google Search Central já em `references/frameworks.md` §6 (absorvido 08-11); Perplexity Search as Code já referenciado em `references/benchmarks.md` (associado ao benchmark WANDR, §20). Quatro itens revistos e não absorvidos por serem não-duráveis/superados: "SEO-GEO gap" e "AI Mode 69% tráfego transaccional" (estudos sem sample size/metodologia reportados no news-feed original, abaixo do critério actual de inclusão); paper "SoK: Agentic RAG" (arXiv:2603.07379) e "Structured Linked Data as Memory Layer" (arXiv:2603.10700), ambos surveys/conceptuais de março 2026 já superados por surveys mais recentes e mais citados nesta skill (arXiv:2506.00054, arXiv:2607.14035); disponibilidade global do Claude web search, hoje facto operacional básico já reflectido em `references/models.md` (secção Anthropic). Nenhuma lacuna genuína identificada — nada novo a absorver por causa deste truncate.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — nenhum dos itens de hoje altera mecânica de retrieval/citação, pesos de scorecard nem introduz sinal novo mensurável.
+
+Quinta-feira → sem weekly drafts.
+
 ## 2026-08-12
 
 ### 🔵 Anúncios oficiais
@@ -1026,40 +1053,3 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - **IPOs de Anthropic e OpenAI** consolidam a AI search como mercado permanente. Para decisores conservadores em Portugal, estes marcos financeiros removem a objecção de timing — incorporar como evidência de maturidade do sector em materiais comerciais; requer apenas actualização de awareness.
 - **Volatilidade 2026 como argumento de serviço:** Oscilações de 30-40% de tráfego orgânico criam urgência genuína para auditoria GEO/SEO — adaptar messaging comercial para enquadrar a volatilidade como risco mensurável e GEO como cobertura, não como aposta em tendência futura.
 
-## 2026-06-12
-
-### 🔵 Anúncios oficiais
-
-- **Google Search Console: Generative AI Performance Reports** — [developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). Lançado a 3 junho, em rollout para subset de sites (primeiro no UK): relatórios dedicados para impressions em AI Overviews e AI Mode, com dimensões por URL, país, dispositivo e data. Não há dados de clicks, CTR nem query breakdown. A Search Console inclui também um controlo para bloquear conteúdo de aparecer em AI responses.
-
-- **Google I/O 2026 — Search: AI Mode, Information Agents e redesign da Search box** — [blog.google/products-and-platforms/products/search/search-io-2026/](https://blog.google/products-and-platforms/products/search/search-io-2026/). Gemini 3.5 Flash torna-se o modelo padrão no AI Mode para todos os utilizadores globalmente. AI Mode ultrapassa 1 bilião de utilizadores mensais, com queries a dobrar por trimestre. Personal Intelligence expande para ~200 países e 98 línguas sem subscrição. Information Agents (monitorização contínua de topics em background) em rollout este verão, primeiro para Google AI Pro/Ultra. Redesign da Search box anunciado como a maior mudança em 25 anos.
-
-- **Google Search Central — Guidance oficial para GEO/AEO** — [developers.google.com/search/docs/fundamentals/ai-optimization-guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide). Google publicou orientações técnicas estabelecendo-se como fonte de referência para práticas de otimização para features generativas (AI Overviews, AI Mode). Inclui recomendações sobre estrutura de conteúdo e alerta para cautela com ferramentas e dados de terceiros não validados.
-
-### 📊 Estudos & dados
-
-- **The SEO-GEO gap: AI search traffic differs from organic traffic** — [searchengineland.com](https://searchengineland.com/seo-geo-gap-ai-search-traffic-organic-traffic-478731). Análise mostra que visibilidade em AI search e tráfego orgânico clássico não são correlacionados: sites bem posicionados em AI Mode e AI Overviews não são necessariamente os que lideram nos resultados orgânicos tradicionais.
-
-- **Google AI Mode envia tráfego em 69% das queries transacionais** — [searchengineland.com](https://searchengineland.com/google-ai-mode-traffic-transactional-queries-data-465604). Dados de terceiros indicam que AI Mode gera cliques em quase 7 em cada 10 queries com intenção de compra ou conversão — indicador relevante para SaaS B2B.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Google — May 2026 Core Update completo** — Rollout iniciado a 21 maio, concluído a 2 junho (12 dias). Classificado por profissionais como mais volátil que o March 2026 update; quase 80% dos resultados top-3 do march update tinham sido alterados. [searchengineland.com](https://searchengineland.com/google-may-2026-core-update-rollout-is-now-complete-479119)
-
-- **Perplexity — Search as Code (SaC)** — Nova arquitectura que trata search como primitivos programáveis para harnesses de agentes, em substituição do modelo monolítico. Permite controlo granular sobre estratégias de retrieval por tarefa. [research.perplexity.ai](https://research.perplexity.ai/articles/rethinking-search-as-code-generation)
-
-- **Anthropic Claude — Web search disponível globalmente em todos os planos** — Search integrado com execução automática de código para filtrar resultados e reduzir uso de contexto; redução reportada de 85% em token usage comparado com ingestão directa. [anthropic.com/news/web-search](https://www.anthropic.com/news/web-search)
-
-### 📄 Research académico
-
-- **SoK: Agentic Retrieval-Augmented Generation (RAG)** — Autores múltiplos, [arxiv.org/abs/2603.07379](https://arxiv.org/abs/2603.07379) (março 2026). Taxonomia de arquitecturas RAG agênticas: LLMs a coordenar raciocínio multi-etapa, gestão dinâmica de memória e retrieval iterativo — base técnica para como AI search engines processam e citam fontes.
-
-- **Structured Linked Data as a Memory Layer for Agent-Orchestrated Retrieval** — [arxiv.org/pdf/2603.10700](https://arxiv.org/pdf/2603.10700). Propõe dados estruturados em linked data como camada de memória persistente para agentes de retrieval — implicação directa para como schema.org e dados estruturados afectam citações em AI search.
-
-### 💡 Implicações para destaque.ai
-
-- **Novo serviço: AI Visibility Measurement.** O lançamento dos GSC AI reports sem CTR cria uma lacuna de medição que ferramentas tradicionais de SEO não cobrem. Oportunidade de posicionar destaque.ai como parceiro para clientes B2B em Portugal que precisam de framework de métricas para AI Overviews e AI Mode (impressions, share of voice, citation rate).
-
-- **Urgência no pitch GEO para SaaS B2B.** AI Mode a 1B utilizadores com 69% de tráfego transaccional documentado remove o argumento "ainda é cedo". Clientes em Portugal com dependência de lead gen via pesquisa orgânica devem ser abordados com dados concretos, não com previsões.
-
-- **Alinhamento com terminologia Google.** A guidance oficial de GEO/AEO do Google Search Central é uma âncora de credibilidade para o pitch junto de decisores mais conservadores; recomenda-se rever materiais comerciais para usar a mesma nomenclatura e citar fontes primárias Google. Requer apenas actualização de awareness e materiais — não muda serviço.
