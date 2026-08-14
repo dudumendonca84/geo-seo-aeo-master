@@ -8,6 +8,16 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-14
+
+Sem novidades significativas hoje.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para todas as 7 fontes Tier 1 e para searchengineland.com/ahrefs.com (Tier 2); verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes. Sem anúncio oficial Tier 1 genuinamente novo e não-duplicado na janela 12-14 ago em developers.google.com/search/blog, blog.google, openai.com/news, anthropic.com/news, deepmind.google/discover/blog, blogs.bing.com/search ou perplexity.ai/hub. Candidatos investigados e descartados por já cobertos em sessões anteriores: llms.txt/300k domínios SE Ranking (já em 2026-08-07); estudos Ahrefs "75k marcas/menções YouTube" e "17M citações/frescura de conteúdo" (publicados mai/jun 2026, já identificados e excluídos por fora de janela em sessões de 08-06 e anteriores, não repetidos); IAB "4 P's" (já em 2026-08-08); relatório "AI halftime report H1 2026" da Search Engine Land / Kevin Indig (publicado ~27 jul, fora da janela de recuperação de gap razoável). Sem novo core update confirmado da Google (Search Status Dashboard sem incidente registado; último confirmado continua a ser o June spam update). Watch específico Bing Webmaster Tools AI Performance API: sem novidade — via Microsoft Q&A, API ainda não existe, Fabrice Canel mantém "durante 2026" sem changelog novo; dashboard continua manual-only. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico novo verificado em arXiv cs.IR/cs.CL na janela de 30 dias (candidatos encontrados sem data de submissão confirmável em agosto 2026, ou já superados por surveys anteriores cobertos nesta skill). Sexta-feira → weekly drafts gerados em `drafts/2026-08-14-weekly.md`.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-13: S-1 confidenciais da Anthropic e OpenAI à SEC, volatilidade de ranking pós-May-Core-Update, toggle de opt-out de AI features na GSC efectivo a 17 jun). Os dois S-1 são eventos financeiros pontuais sem efeito em metodologia — mesmo critério usado para não absorver eventos corporativos noutras sessões (submissão S-1 da Anthropic revista de novo em 2026-08-11/08-12, mesma conclusão). A volatilidade de ranking pós-core-update é um facto operacional já superado (o June spam update e os relatos de volatilidade de agosto, ambos mais recentes, já servem de referência em critérios de exclusão de sessões posteriores). Uma lacuna genuína identificada e absorvida agora: o toggle de opt-out de AI features na Search Console (efectivo desde 17 jun 2026) não estava documentado em `references/metrics.md` — adicionado à secção "Google Search Console" com a implicação de auditoria (confirmar que está desligado antes de recomendar trabalho de GEO a clientes com queries transaccionais fortes em AI Mode).
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — nenhum item de hoje altera mecânica de retrieval/citação nem introduz sinal novo mensurável.
+
 ## 2026-08-13
 
 ### 📊 Estudos & dados
@@ -1032,24 +1042,4 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - Google Search Console Gen AI reports é a primeira métrica oficial de visibilidade em AI search fornecida pela Google — abre nova categoria de KPIs para clientes B2B (impressões em AI Mode vs. cliques orgânicos) e posiciona a destaque.ai para auditar e reportar esses dados como serviço.
 - Google alargar spam policies a AI search reforça o posicionamento white-hat da destaque.ai: abordagens de "citation hacking" ou link schemes adaptados para AI search têm agora risco de penalização explícito — diferenciador de pitch.
 - llms.txt sem ROI comprovado → não prioritizar como deliverable; redirigir esforço para estrutura de conteúdo, schema.org e authority building — correlação documentada de 30-40% em citações AI.
-
-## 2026-06-13
-
-### 🔵 Anúncios oficiais
-
-- **Anthropic apresenta S-1 confidencial à SEC** — Anthropic ([anthropic.com/news/confidential-draft-s1-sec](https://www.anthropic.com/news/confidential-draft-s1-sec)). A 1 de junho, Anthropic submeteu confidencialmente um registo S-1 à SEC para uma potencial IPO, avaliada em ~$965 mil milhões após Série H de $65 mil milhões. Número de acções, preço e calendário ainda não definidos; dependem de market conditions e revisão da SEC.
-
-- **OpenAI submete draft S-1 à SEC** — CNBC ([cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html](https://www.cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html)). A 8 de junho, OpenAI confirmou submissão confidencial de S-1, avaliada em ~$852 mil milhões. Juntamente com Anthropic e SpaceX (listagem concluída a 12 de junho), representa o maior pipeline de IPO em AI da história.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Google Search — volatilidade de ranking persiste pós May 2026 Core Update** — Search Engine Roundtable ([seroundtable.com/google-search-ranking-volatility-41466.html](https://www.seroundtable.com/google-search-ranking-volatility-41466.html)). Ferramentas de monitorização (Semrush Sensor, MozCast, SERPmetrics) mantêm leituras elevadas na semana de 6-12 junho, após conclusão do core update a 2 junho. Profissionais SEO descrevem 2026 como o ano mais volátil do Google, com oscilações de 30-40% de tráfego orgânico overnight e recuperação parcial na semana seguinte.
-
-- **GSC AI blocking toggle: efectivo em 4 dias (17 junho)** — Google Search Central ([developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)). O controlo de opt-out de AI features (AI Overviews, AI Mode, Discover) passa a ser respeitado pelo Google a partir de 17 junho. Configurações realizadas antes desta data não têm impacto imediato. O toggle não afecta organic rankings.
-
-### 💡 Implicações para destaque.ai
-
-- **Acção imediata (prazo: 17 junho):** Clientes B2B com conteúdo técnico diferenciado não devem activar o opt-out — tráfego via AI Mode em queries transaccionais converte 4,4× mais que organic clássico (ConvertMate GEO Benchmark 2026). Contactar clientes activos antes de segunda-feira.
-- **IPOs de Anthropic e OpenAI** consolidam a AI search como mercado permanente. Para decisores conservadores em Portugal, estes marcos financeiros removem a objecção de timing — incorporar como evidência de maturidade do sector em materiais comerciais; requer apenas actualização de awareness.
-- **Volatilidade 2026 como argumento de serviço:** Oscilações de 30-40% de tráfego orgânico criam urgência genuína para auditoria GEO/SEO — adaptar messaging comercial para enquadrar a volatilidade como risco mensurável e GEO como cobertura, não como aposta em tendência futura.
 
