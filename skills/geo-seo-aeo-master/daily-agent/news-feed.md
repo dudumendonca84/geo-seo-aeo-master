@@ -8,6 +8,33 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-16
+
+### 🔵 Anúncios oficiais
+
+- **Gemini 3.7 Flash chega ao AI Mode do Google Search** — Google, via [Search Engine Land](https://searchengineland.com/gemini-3-7-flash-rolling-out-in-google-search-485058) e [Search Engine Journal](https://www.searchenginejournal.com/google-brings-gemini-3-7-flash-to-ai-mode-in-search/585923/), 14 ago 2026 (lançamento do modelo em 13 ago, [Bloomberg](https://www.bloomberg.com/news/articles/2026-08-13/google-debuts-new-gemini-flash-while-top-ai-model-still-delayed)). Construído sobre o Gemini 3.6 Flash, o 3.7 Flash passa a ser selecionável (não é ainda o default) no AI Mode via seletor de modelo, apenas para subscritores pagos Google AI Pro/Ultra e apenas em inglês. O lançamento geral do modelo (13 ago) é vocacionado sobretudo para coding/agentes, com preço introdutório a metade do 3.6 Flash até 31 dez 2026.
+
+### 📊 Estudos & dados
+
+- **ChatGPT mostra ads em 28,69% dos prompts comerciais de saúde** — [Search Engine Journal](https://www.searchenginejournal.com/openai-allows-some-health-finance-ads-in-chatgpt/585516/), 12 ago 2026. Medição própria da SEJ sobre a nova categoria de ads de saúde do ChatGPT (ver abaixo); a taxa é comparada com o valor já conhecido de 2,64% do Google AI Mode na mesma vertical (SE Ranking, jul 2026, já registado nesta skill) — não é um dado novo sobre o Google, mas confirma que a densidade publicitária do ChatGPT em queries de saúde já supera a do AI Mode.
+
+### ⚙️ Mudanças nas plataformas
+
+- **OpenAI — ChatGPT Ads passa a aprovar anunciantes de saúde e serviços financeiros caso-a-caso** — [openai.com](https://openai.com/index/our-approach-to-advertising-and-expanding-access/), atualização de política a 11 ago 2026 (corroborado por [Search Engine Journal](https://www.searchenginejournal.com/openai-allows-some-health-finance-ads-in-chatgpt/585516/)). Categorias antes bloqueadas por defeito (saúde, serviços financeiros) passam a ser avaliadas caso-a-caso, com verificação reforçada de credenciais; serviços legais continuam proibidos. Piloto de ads expandiu-se a 11 ago para Reino Unido, México, Brasil, Japão e Coreia do Sul (antes só EUA).
+- **Perplexity — Agent API adiciona Grok 4.6, DeepSeek V4 Flash e modelos NVIDIA Nemotron** — [docs.perplexity.ai/changelog](https://docs.perplexity.ai/docs/resources/changelog), ago 2026. Mudança no produto de developer/agentes da Perplexity (Agent API), distinto do Search/Pro de consumidor — não altera que modelo responde às queries de pesquisa dos utilizadores.
+
+### 💡 Implicações para destaque.ai
+
+- Gemini 3.7 Flash no AI Mode é, por agora, só opt-in para subscritores Pro/Ultra em inglês — sem impacto imediato para clientes B2B SaaS PT (mercado não-inglês, maioria de utilizadores no tier gratuito). Watch item: se o rollout se expandir para outros idiomas/tiers, testar se muda o comportamento de citação face ao Gemini 3.5 Flash antes de comunicar a clientes.
+- A expansão do ChatGPT Ads a saúde/finanças (com densidade publicitária de quase 1 em cada 4 respostas na categoria) é relevante para clientes destaque.ai em fintech/insurtech: a superfície de resposta onde a marca é citada passa a competir por atenção com anúncios pagos dentro da própria resposta — vale nomear no pitch a clientes destes verticais, sem ainda justificar mudança de metodologia.
+- Sem novidade no watch específico da API do Bing Webmaster Tools AI Performance — Microsoft mantém "durante 2026" sem changelog novo; dashboard continua manual-only.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para arxiv.org e para todas as 7 fontes Tier 1 tentadas (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai) e Tier 2 (searchengineland.com, rankability.com); verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes. Vários candidatos investigados e **descartados por já cobertos** nesta skill (confirmado por grep em `news-feed.md`/`references/` antes de escrever, não só por memória): Ahrefs "38% das citações AIO vêm do top-10, era 76%" (já em `news-feed.md` de 2026-06-04, 07-24 e 2026-03, absorvido em `engine_playbooks.md` e `search_modes.md` — reapareceu nas pesquisas de hoje como se fosse notícia de agosto, mas o estudo é de 2 mar 2026); SE Ranking "llms.txt sem efeito mensurável em 300k domínios" (já em 07-08, repetidamente reconfirmado como duplicado); "What Gets Cited: Competitive GEO in AI Answer Engines" (Vishwakarma et al., arXiv:2605.25517) — já coberto desde 2026-06-04, não é paper novo apesar de ligado ao SIGIR '26 (20-24 jul); rácio crawl-to-refer da Anthropic — já coberto em 08-13 (SEOmator, 1.917:1 jul 2026), fontes desta sessão (nobori.ai, SEOmator, alphamatch.ai) davam três valores incompatíveis (4.580:1, 2.237:1, 1.917:1) para o mesmo período — mesmo padrão de baixa fiabilidade já sinalizado em sessões anteriores, não incluído de novo. GPT-5.6 (ajustes de 6 ago, effort slider e default Luna para Free/Go) já reconciliado como mudança de quota em `references/models.md` desde o refresh de 10 ago — não repetido. Sem novo core update confirmado da Google (Search Status Dashboard sem incidente; volatilidade reportada 1-3 ago por fontes de baixa fiabilidade sem confirmação oficial). Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela 14-16 ago. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias (candidatos encontrados já cobertos ou sem data de submissão confirmável em agosto). Domingo → sem weekly drafts.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-14). Duas de quatro itens já estavam bem absorvidos: Search Console Generative AI Performance Reports (em `references/metrics.md`, entretanto já actualizado com dados mais recentes de agosto) e Google AI Mode 1B utilizadores/Gemini 3.5 Flash default (em `references/models.md`, confirmado ainda válido no refresh de hoje). Uma lacuna genuína identificada e absorvida agora: "Google: spam policies alargadas a AI Overviews/AI Mode" (aviso explícito contra manipulação/compra de citações) não estava em `references/frameworks.md` — adicionada nova subsecção "Google spam policies apply to AI Overviews / AI Mode (Jun 2026)" em §9, com a implicação de pitch (tácticas de manipulação têm o mesmo risco de penalização em AI search que em SEO clássico). Não absorvido por não-durável/genérico: survey arXiv:2506.00054 (RAG architectures) — coberto por surveys GEO mais específicos e recentes já em `benchmarks.md` (2607.14035); GPT-5.2 sunset (jun 2026) — modelo há muito descontinuado, sem relevância operacional actual, mesma decisão tomada para eventos financeiros pontuais noutras sessões. Truncado para 60 headers (2026-06-15 a 2026-08-16) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — nenhum item de hoje altera mecânica de retrieval/citação nem pesos de scorecard.
+
 ## 2026-08-14
 
 Sem novidades significativas hoje.
@@ -1008,38 +1035,3 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - **Acção urgente — prazo GSC toggle (48h):** Contactar clientes activos antes de segunda-feira para confirmar que a decisão de opt-in/opt-out está tomada com dados. Para SaaS B2B em Portugal com conteúdo técnico diferenciado, o benchmark ConvertMate (4,4× conversão via AI Mode) sustenta manter presença em AI responses.
 - **Dado de investigação accionável:** A evidência de que dados originais e research proprietário superam conteúdo genérico em citações LLM é argumento directo para clientes que questionam ROI de produção de conteúdo — incorporar nos materiais de pitch como case para GEO content strategy diferenciada do SEO clássico; não requer novo serviço, actualização de messaging.
 - **Anthropic Fable 5 até 22 junho sem custo:** Janela de teste para equipas técnicas de clientes avaliarem capabilities para workflows de research e due diligence; awareness apenas.
-
-## 2026-06-14
-
-### 🔵 Anúncios oficiais
-
-- **Google Search Console: Generative AI Performance Reports** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) (3 Jun). Google lançou relatórios dedicados de visibilidade em AI search: impressões em AI Overviews, AI Mode e Discover, segmentadas por página, país, dispositivo e data. Rollout inicial para subset de sites UK; expansão global a seguir.
-
-- **Perplexity Research — actualização multimodal** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog/what-we-shipped-june-13th) (13 Jun). Research incorpora criação de imagens, gráficos, browsing e media display. Lançados Comet iOS e multimodal Deep Research; Model Council passa a comparar múltiplos modelos em paralelo.
-
-- **Anthropic S-1 confidencial submetido à SEC** — [anthropic.com/news](https://www.anthropic.com/news/confidential-draft-s1-sec) (1 Jun). Anthropic submeteu registo para IPO. Claude Fable 5 e Mythos 5 suspensos por directiva governamental de controlo de exportações — [anthropic.com/news](https://www.anthropic.com/news/claude-fable-5-mythos-5).
-
-### 📊 Estudos & dados
-
-- **State of llms.txt 2026** — [presenc.ai/research](https://presenc.ai/research/state-of-llms-txt-2026). Adopção em 10.13% de 300 000 domínios; apenas 0.1% do tráfego de crawlers IA acede ao /llms.txt. Nenhum major player (Google, OpenAI, Anthropic) confirmou leitura em produção. Semrush não encontrou correlação estatística entre llms.txt e melhoria de citações em AI.
-
-- **GEO — impacto das estratégias de optimização** — [emarketer.com](https://www.emarketer.com/content/faq-on-geo-aeo--where-ai-search-seo-overlap-2026). Citar fontes, adicionar estatísticas e linguagem autoritativa melhora visibilidade em motores generativos entre 30-40%; combinar estratégias supera qualquer táctica isolada em >5.5% (Aggarwal et al.). 92.36% dos AI Overviews incluem pelo menos um domínio do top 10 orgânico.
-
-### ⚙️ Mudanças nas plataformas
-
-- **OpenAI — GPT-5.2 removido** — [help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) (12 Jun). GPT-5.2 retirado do ChatGPT; conversas migradas automaticamente para GPT-5.5. GPT-4.5 encerra 27 Jun; OpenAI o3 encerra 26 Ago.
-
-- **Google AI Mode — 1 mil milhões de utilizadores mensais** — [blog.google](https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/). Um ano após lançamento: 1B utilizadores mensais, queries a duplicar por trimestre. Gemini 3.5 Flash é agora o modelo padrão global em AI Mode; Search Agents disponíveis directamente em Search.
-
-- **Google: spam policies alargadas a AI search** — [searchengineland.com](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298). Google confirmou que as políticas anti-spam se aplicam a AI Overviews e AI Mode, com aviso explícito contra manipulação e compra de citações em AI search.
-
-### 📄 Research académico
-
-- **RAG: Comprehensive Survey of Architectures, Enhancements and Robustness Frontiers** — [arxiv 2506.00054](https://arxiv.org/abs/2506.00054) (Mai 2026). Survey cobre arquitecturas retriever-centric, generator-centric e híbridas; relevante para sistemas de content citation automática em contexto B2B.
-
-### 💡 Implicações para destaque.ai
-
-- Google Search Console Gen AI reports é a primeira métrica oficial de visibilidade em AI search fornecida pela Google — abre nova categoria de KPIs para clientes B2B (impressões em AI Mode vs. cliques orgânicos) e posiciona a destaque.ai para auditar e reportar esses dados como serviço.
-- Google alargar spam policies a AI search reforça o posicionamento white-hat da destaque.ai: abordagens de "citation hacking" ou link schemes adaptados para AI search têm agora risco de penalização explícito — diferenciador de pitch.
-- llms.txt sem ROI comprovado → não prioritizar como deliverable; redirigir esforço para estrutura de conteúdo, schema.org e authority building — correlação documentada de 30-40% em citações AI.
-
