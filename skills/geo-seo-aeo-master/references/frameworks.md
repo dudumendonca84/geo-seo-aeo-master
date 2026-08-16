@@ -334,6 +334,12 @@ Practical mitigation:
 
 The model may attribute a claim to the brand that the brand never made. Monitoring tooling (Profound, Otterly, AthenaHQ, Kalicube) is immature; treat as observation, not measurement.
 
+### Google spam policies apply to AI Overviews / AI Mode (Jun 2026)
+
+Google confirmed its existing spam policies (link schemes, cloaking, scaled content abuse, etc.) apply to AI Overviews and AI Mode surfaces, not just classic organic results, with an explicit warning against manipulating citations or paying for placement in AI-generated answers ([Search Engine Land](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298), 3 Jun 2026). No enforcement case publicly documented yet — treat as a policy statement, not evidence of active penalization mechanics for AI surfaces specifically.
+
+**What to say to clients:** "citation hacking" or link-scheme tactics adapted for AI search carry the same penalty risk as classic organic spam — a reason to stay on white-hat, content-structure-first GEO tactics rather than manipulation shortcuts.
+
 ---
 
 ## 10. Maintenance
