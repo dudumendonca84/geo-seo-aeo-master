@@ -8,6 +8,18 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-17
+
+Sem novidades significativas hoje.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para as 7 fontes Tier 1 (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai) e para Tier 2 (ahrefs.com, searchengineland.com, docs.perplexity.ai, rankability.com); verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes. Sem anúncio oficial Tier 1 genuinamente novo e não-duplicado na janela 15-17 ago. Candidatos investigados e **descartados por já cobertos** (confirmado por grep em `news-feed.md`/`references/` antes de escrever, não só por memória): Gemini 3.7 Flash rolling out no AI Mode (lançamento 13 ago, rollout 14 ago — já em `news-feed.md` de 2026-08-16, absorvido como watch item na secção de implicações dessa entrada); filtro branded/non-branded de citações IA no Microsoft Clarity (publicado 3 ago no Clarity Blog — já em `news-feed.md` de 2026-08-05); estatísticas de adopção de llms.txt via Rankability (8,7% do Tranco top-1000, jun 2026, 15,8% entre alcançáveis) — mesma categoria de dado já investigada e rejeitada em sessão anterior (2026-08-06) por padrão de três valores incompatíveis entre fontes não-Tier (8,7% / 10,13% / 51,8%), sem metodologia verificável a distinguir esta versão das anteriores. Candidato descartado por fora de âmbito: OpenAI "Ultrafast mode" (13 ago, novo tier de API com respostas até 14x mais rápidas para GPT-5.6 Sol) é uma mudança de infraestrutura/pricing de developer API sem mecânica de retrieval, citação ou comportamento de pesquisa — não se enquadra no âmbito GEO/AEO/SEO desta skill, mesmo critério usado para excluir DeepMind WeatherNext e reorganizações de liderança em sessões anteriores. Sem novo core update confirmado da Google (Search Status Dashboard sem incidente registado; último confirmado continua a ser o June 2026 spam update). Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias — candidatos encontrados (2604.25707, 2602.12187, 2603.29979, 2607.14035) já cobertos em sessões anteriores. Segunda-feira → sem weekly drafts.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-15: Claude Fable 5 temporariamente sem custo em Pro/Max/Team, Perplexity Research upgrade, estudo "5-layer framework" da Search Engine Land sobre 150.000 páginas, toggle de opt-out de AI Features na GSC). Dois de quatro itens já estavam bem absorvidos: o toggle de opt-out da GSC está em `references/metrics.md` (linha 190, com a implicação de auditoria); Claude Fable 5 está em `references/models.md`, superado por entradas mais recentes (Opus 5, 24 jul). Dois itens revistos e não absorvidos: o estudo "5-layer framework" (150k páginas, dados/research proprietário como maior preditor de citação) reforça um ponto já extensamente coberto por Aggarwal et al. (KDD 2024, statistics addition +40,6% PAWC) em `SKILL.md` e `references/benchmarks.md` — corrobora, não introduz achado novo; o Perplexity Research upgrade (13 jun, fusão de capacidades do Labs) é uma evolução de produto normal sem mudança de mecânica de citação/retrieval documentada em `engine_playbooks.md`, mesmo critério usado para não absorver evoluções de produto pontuais noutras sessões. Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-06-16 a 2026-08-17) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — nenhum item de hoje altera mecânica de retrieval/citação nem pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit. Commit feito directamente em `main` por instrução explícita da rotina (sem PR).
+
 ## 2026-08-16
 
 ### 🔵 Anúncios oficiais
@@ -1013,25 +1025,3 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - A confirmação oficial de que llms.txt não tem impacto em Search fecha o debate: não faz sentido oferecer implementação de llms.txt como serviço pago. Retirar da lista de deliverables se presente. **Acção interna.**
 - O gap 43% vs. 14% (prioridade declarada vs. rastreamento efectivo) é uma entrada comercial: diagnóstico de visibilidade em LLMs como serviço modular inicial, de baixo risco, antes de contrato de retainer. Clientes SaaS B2B com GSC AI reports activos têm os dados brutos mas não o framework de análise. **Requer novo serviço.**
 - O lançamento AEO da Optimizely/Conductor valida o mercado enterprise; o timing de entrar em Portugal antes da adopção local ainda é favorável. **Só awareness.**
-
-## 2026-06-15
-
-### 🔵 Anúncios oficiais
-
-- **Anthropic — Claude Fable 5 disponível temporariamente em planos Pro/Max/Team** — [anthropic.com/news/claude-fable-5-mythos-5](https://www.anthropic.com/news/claude-fable-5-mythos-5). A partir de hoje (15 junho) e até 22 junho, Fable 5 está incluído sem custo adicional nos planos Pro, Max, Team e Enterprise seat-based; a partir de 23 junho requer créditos de uso até que a capacidade seja reforçada. Disponível imediatamente na API e em planos enterprise de consumo.
-
-- **Perplexity Research upgrade (13 junho)** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog/what-we-shipped-june-13th). Research integra capacidades anteriormente exclusivas do Labs: criação de imagens e gráficos, browsing web em tempo real, display de media e orquestração mais inteligente do processo de pesquisa; permite pesquisa multimodal end-to-end numa única sessão.
-
-### 📊 Estudos & dados
-
-- **"The 5-layer framework for measuring GEO performance"** — Search Engine Land, [searchengineland.com](https://searchengineland.com/the-5-layer-framework-for-measuring-geo-performance-477742). Análise de 150.000 páginas indexadas em 10 websites (março 2026, cross-vertical B2B e B2C): conteúdo genérico/educacional tem desempenho baixo em citações LLM porque os modelos conseguem gerá-lo autonomamente; dados originais, research proprietário e insights diferenciados são os maiores factores preditivos de citação.
-
-### ⚙️ Mudanças nas plataformas
-
-- **GSC AI Features opt-out toggle activo em 48h (17 junho)** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). O controlo de exclusão de AI Overviews, AI Mode e Discover no Search Console torna-se efectivo na próxima terça-feira; sites que activem o toggle deixam de aparecer em AI responses sem impacto em organic rankings. Janela de decisão fecha esta segunda-feira.
-
-### 💡 Implicações para destaque.ai
-
-- **Acção urgente — prazo GSC toggle (48h):** Contactar clientes activos antes de segunda-feira para confirmar que a decisão de opt-in/opt-out está tomada com dados. Para SaaS B2B em Portugal com conteúdo técnico diferenciado, o benchmark ConvertMate (4,4× conversão via AI Mode) sustenta manter presença em AI responses.
-- **Dado de investigação accionável:** A evidência de que dados originais e research proprietário superam conteúdo genérico em citações LLM é argumento directo para clientes que questionam ROI de produção de conteúdo — incorporar nos materiais de pitch como case para GEO content strategy diferenciada do SEO clássico; não requer novo serviço, actualização de messaging.
-- **Anthropic Fable 5 até 22 junho sem custo:** Janela de teste para equipas técnicas de clientes avaliarem capabilities para workflows de research e due diligence; awareness apenas.
