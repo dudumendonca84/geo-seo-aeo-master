@@ -99,6 +99,18 @@ Intents típicos: `pricing`, `comparison`.
 Forma exemplo:
 > "Para [escala], qual é o range de preço por [unidade: agente, utilizador, transacção] das principais soluções de [categoria] e que componentes costumam ser add-ons cobrados à parte?"
 
+### 2.6 `transactional` [2026-08-18 added]
+Intenção de compra imediata de um produto concreto: onde comprar, disponibilidade, prazo de entrega, escolha final entre dois produtos no carrinho. É a categoria dos painéis de produto (Google AI Mode/AI Overviews mostram painéis com preço e botões na UE; carrosséis ChatGPT Shopping alimentados ~83% pelo top-40 orgânico do Google Shopping — Search Engine Land, Mar 2026).
+
+Intents típicos: `purchase`, `availability`, `fulfillment`.
+
+Formas exemplo:
+> "Onde comprar [produto] em Portugal com entrega até amanhã?"
+> "[produto A] ou [produto B] até [orçamento]: qual compro e porquê?"
+> "Quem tem [produto] em stock perto de [cidade]?"
+
+**Uso: Tracker apenas (clientes B2C/e-commerce com produtos físicos ou digitais compráveis).** Não entra na distribuição do Deck Builder (§3 inalterada) nem na constante `PROMPT_CATEGORIES` do deck-builder até decisão explícita — o slice §1-3 que o Deck Builder consome fica coerente porque a tabela §3 continua a mandar nas contagens.
+
 ---
 
 ## 3. Distribuição por tier (Deck Builder)
