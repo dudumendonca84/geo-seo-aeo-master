@@ -340,6 +340,27 @@ GitHub é fonte directa em queries técnicas: o Code Interpreter do ChatGPT, Cla
 
 ---
 
+### Pattern: Plataformas citadas pelos motores onde a marca pode registar-se e não está
+
+#### Hipóteses
+1. A plataforma nunca foi identificada como fonte da categoria — só a auditoria a revela.
+2. Presença tratada como canal de leads "não prioritário", quando na prática é um domínio que os motores leem para responder à categoria.
+3. Perfil existe mas incompleto ou desactualizado, sem entidade consistente.
+
+#### Acção
+Para cada domínio citado pelos motores nas perguntas da categoria que seja uma **plataforma de registo legítimo** — marketplace de serviços (ex.: zaask.pt), directório da categoria, plataforma de reviews, comunidade com perfis de empresa, mapas — e onde a marca não tem presença: criar ou reclamar o perfil com entidade consistente (mesmo nome, mesma descrição, NAP quando aplicável, link ao site) e ligar ao `Organization.sameAs` quando a plataforma dá URL pública de perfil (DIMENSÃO 3). Exclusões: domínios de concorrentes; imprensa (imprensa é outreach da DIMENSÃO 4, não registo); plataformas onde a presença exigiria afirmações falsas. O perfil é sempre verdadeiro e completo, nunca veículo de links — manipular citações de IA é spam ao abrigo da política da Google (Jun 2026).
+
+#### Esforço
+1-2h por plataforma, uma vez, mais manutenção ligeira.
+
+#### Impacto típico
+A marca passa a existir dentro de domínios que os motores já leem para a categoria — mais barato do que tentar substituí-los como fonte. Exemplo interno: zaask.pt citado 3× pelo Gemini na pergunta de preços da categoria GEO (auditoria destaque.ai, 27 Jul 2026). Correlacional; sem estudo público a isolar o lift por marca.
+
+#### Fonte
+Auditorias do Visibility Tracker (citações por domínio, fonte primária interna); consistente com os breakdowns de citation-share por plataforma (Profound, Perplexity).
+
+---
+
 ## DIMENSÃO 6 — Authority signals on site (E-E-A-T)
 
 ### Pattern: Conteúdo sem autores declarados (sem `Person` schema)
