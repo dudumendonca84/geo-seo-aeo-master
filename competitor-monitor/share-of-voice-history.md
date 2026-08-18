@@ -105,6 +105,16 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-08-11 | UniK SEO | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 5 pos 2 — 4.ª semana consecutiva |
 | 2026-08-11 | Basicamente Digital | 1/5 | 3.0 | +1 (era 0/5) — regressa ao top-3 | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 (tinha saído em 08-04, esteve presente em 07-28) |
 
+| 2026-08-18 | destaque.ai | 2/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1, prompt 5 pos 1 — 9.ª semana consecutiva no Prompt 5, 2.ª semana consecutiva no Prompt 1 |
+| 2026-08-18 | Latigid | 2/5 | 2.0 | = aparições (2/5), posição pior (2.0 vs 1.5) | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 3 (era pos 2, ultrapassado por Marco Gouveia), prompt 4 pos 1 |
+| 2026-08-18 | 3HASH | 2/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompts 3 (pos 1), 4 (pos 3) |
+| 2026-08-18 | AP\|Portugal | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 1 |
+| 2026-08-18 | Infinidata | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 2 |
+| 2026-08-18 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 4 pos 2 |
+| 2026-08-18 | UniK SEO | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 5 pos 2 — 5.ª semana consecutiva |
+| 2026-08-18 | SEOLabs | 1/5 | 3.0 | +1 (era 0/5) — regressa ao top-3, 3.ª troca directa com Basicamente Digital | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 |
+| 2026-08-18 | Marco Gouveia | 1/5 | 2.0 | — (1.ª semana) | 1/5 (só Claude) | Novo entrante D0 e D1 na mesma semana; prompt 1 pos 2 |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
