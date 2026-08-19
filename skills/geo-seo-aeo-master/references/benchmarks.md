@@ -352,6 +352,20 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 30. DerivateX — The State of AI Visibility in B2B SaaS: 2026 Benchmark Report
+
+- **URL.** https://derivatex.agency/report/ai-visibility-b2b-saas-2026/
+- **Date.** Published ~17 Jun 2026 (absorbed here retroactively — was reported in `news-feed.md` 2026-06-17 but never carried into this file until now).
+- **Sample.** 50 B2B SaaS companies, 1,400 buyer-intent prompts run across ChatGPT, Perplexity, Claude and Gemini.
+- **Findings.**
+  - Average "AI Presence Score" of **56.9/100**, with **44% of companies scoring below 50**.
+  - AI search now accounts for **17% of B2B SaaS brand discovery**, up from ~4% in 2025.
+  - Claude is the most selective engine — **88% mention rate** vs. **100% on both ChatGPT and Gemini** for the same brand set.
+- **Caveat.** Vendor-run study (DerivateX sells AI-visibility services); methodology and scoring formula for "AI Presence Score" not independently audited. US/English-market sample — no confirmation the 17%/4% discovery-share trend generalizes to PT-PT or EU B2B SaaS (cf. §17, the Portugal evidence gap).
+- **Use.** The clearest publicly available quantified argument for "you are already invisible in AI search and it is getting worse relative to classic discovery" — pairs with §17's caveat that no PT-PT-specific version of this number exists yet, so cite as a US benchmark directionally, not as a Portugal-verified figure.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -374,4 +388,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 24 Jul 2026.
+Last refresh: 19 Aug 2026.
