@@ -1,0 +1,184 @@
+# Perguntas do estudo "Como a IA recomenda produtos em Portugal" — v1
+# Fixadas a 20 Ago 2026, ANTES da recolha (ver protocolo-comercio-ia-pt.md).
+#
+# 10 categorias x 15 perguntas = 150. Distribuição igual em todas:
+#   5 genéricas · 4 com preço · 3 comparativas · 2 de atributo · 1 local
+#
+# Escritas como um comprador escreve: minúsculas, sem pontuação final,
+# em português europeu. Nada de linguagem de gabinete.
+#
+# A categoria de cada pergunta é o cabeçalho # que a precede — o runner
+# ignora estas linhas, e a análise reconstrói o mapeamento a partir daqui.
+#
+# ALTERAR ESTE FICHEIRO DEPOIS DE INICIADA A RECOLHA É UMA EMENDA AO
+# PROTOCOLO: data e justificação na secção própria, nunca em silêncio.
+
+# ── 1. Pequenos electrodomésticos ─────────────────────────────────
+qual o melhor ferro de engomar
+melhor fritadeira sem óleo
+qual a melhor varinha mágica
+melhor torradeira para uso diário
+qual a melhor chaleira eléctrica
+melhor ferro de engomar até 50 euros
+fritadeira sem óleo até 100 euros
+robot de cozinha até 300 euros
+micro-ondas bom até 150 euros
+fritadeira sem óleo ou forno de convecção
+varinha mágica ou liquidificadora
+ferro de engomar ou centro de engomagem
+fritadeira sem óleo para família de quatro pessoas
+robot de cozinha para quem cozinha pouco
+onde comprar electrodomésticos de cozinha em portugal com entrega rápida
+
+# ── 2. Portáteis ──────────────────────────────────────────────────
+qual o melhor portátil
+melhor portátil para estudantes
+qual o melhor portátil para trabalho
+melhor portátil leve para andar na mochila
+qual o melhor portátil para programação
+melhores portáteis até 800 euros
+portátil até 500 euros
+melhor portátil até 1200 euros
+portátil gaming até 1500 euros
+macbook air ou portátil windows
+ryzen ou intel num portátil
+portátil ou tablet com teclado
+portátil para edição de vídeo
+portátil com boa autonomia para quem viaja
+onde comprar portáteis em portugal com garantia
+
+# ── 3. Áudio pessoal ──────────────────────────────────────────────
+melhores auscultadores com cancelamento de ruído
+quais os melhores earbuds
+melhor coluna bluetooth
+melhores auscultadores para correr
+qual a melhor coluna portátil para a praia
+auscultadores com cancelamento de ruído até 200 euros
+earbuds até 100 euros
+coluna bluetooth até 150 euros
+auscultadores até 60 euros
+sony ou bose para cancelamento de ruído
+airpods ou galaxy buds
+auscultadores over-ear ou in-ear
+auscultadores para trabalhar em open space
+earbuds à prova de água para nadar
+onde comprar auscultadores em portugal com bom preço
+
+# ── 4. Aspiração e limpeza ────────────────────────────────────────
+melhor aspirador vertical sem fios
+qual o melhor robot aspirador
+melhor aspirador para pêlos de animais
+qual a melhor mopa a vapor
+melhor aspirador de mão para o carro
+aspirador vertical sem fios até 200 euros
+robot aspirador até 300 euros
+aspirador até 150 euros
+robot aspirador com lavagem até 500 euros
+dyson ou dreame
+robot aspirador ou aspirador vertical
+aspirador com saco ou sem saco
+aspirador para casa com muitos tapetes
+robot aspirador para apartamento pequeno
+onde comprar aspiradores em portugal com entrega rápida
+
+# ── 5. Café e cápsulas ────────────────────────────────────────────
+que máquina de café em cápsulas devo comprar
+qual a melhor máquina de café para casa
+melhor máquina de café expresso
+qual a melhor máquina de café com moinho
+melhores cápsulas de café compatíveis
+máquina de café em cápsulas até 100 euros
+máquina de café até 200 euros
+máquina de café automática até 500 euros
+máquina de café até 60 euros
+nespresso ou delta q
+dolce gusto ou nespresso
+máquina de cápsulas ou máquina com moinho
+máquina de café para escritório pequeno
+máquina de café para quem bebe cappuccino
+onde comprar máquinas de café em portugal
+
+# ── 6. Telemóveis ─────────────────────────────────────────────────
+qual o melhor telemóvel
+melhor telemóvel android
+qual o melhor telemóvel com boa câmara
+melhor telemóvel com bateria que dure o dia todo
+qual o melhor telemóvel compacto
+melhor telemóvel android até 400 euros
+telemóvel até 250 euros
+melhor telemóvel até 700 euros
+telemóvel até 150 euros
+iphone ou samsung
+xiaomi ou samsung na gama média
+android ou iphone para quem tira muitas fotografias
+telemóvel para idosos fácil de usar
+telemóvel resistente para quem trabalha em obra
+onde comprar telemóveis em portugal com garantia nacional
+
+# ── 7. Desporto e corrida ─────────────────────────────────────────
+melhores ténis para correr
+qual o melhor relógio de corrida
+melhores ténis de corrida para principiantes
+qual a melhor bicicleta para andar na cidade
+melhor passadeira de corrida para casa
+ténis de corrida até 100 euros
+relógio de corrida com gps até 250 euros
+bicicleta até 500 euros
+smartwatch com gps até 200 euros
+garmin ou polar
+ténis nike ou asics para correr
+bicicleta eléctrica ou trotinete
+ténis de corrida para pisada pronada
+relógio de corrida para trail
+onde comprar material de corrida em portugal
+
+# ── 8. Puericultura ───────────────────────────────────────────────
+qual a melhor cadeira auto para bebé
+melhor carrinho de bebé
+qual o melhor esterilizador de biberões
+melhor monitor de bebé
+qual a melhor cama de grades
+cadeira auto até 300 euros
+carrinho de bebé até 400 euros
+monitor de bebé até 150 euros
+cadeira da papa até 120 euros
+cadeira auto isofix ou com cinto
+carrinho de bebé trio ou duo
+fraldas de pano ou descartáveis
+cadeira auto para recém-nascido
+carrinho de bebé para quem anda de transportes
+onde comprar artigos de bebé em portugal
+
+# ── 9. Casa e têxtil ──────────────────────────────────────────────
+qual o melhor colchão
+melhores lençóis de algodão
+qual o melhor edredão
+melhor almofada para quem dorme de lado
+quais as melhores toalhas de banho
+colchão de casal até 500 euros
+edredão até 100 euros
+conjunto de lençóis até 80 euros
+sofá cama até 600 euros
+colchão de molas ou viscoelástico
+edredão de penas ou sintético
+lençóis de algodão ou percal
+colchão para quem tem dores de costas
+almofada para quem dorme de barriga para baixo
+onde comprar colchões em portugal com entrega e montagem
+
+# ── 10. Bricolage e jardim ────────────────────────────────────────
+qual o melhor berbequim
+melhor corta-relva
+qual a melhor lavadora de alta pressão
+melhor aparafusadora sem fios
+qual a melhor serra circular
+berbequim até 100 euros
+corta-relva até 300 euros
+lavadora de alta pressão até 200 euros
+conjunto de ferramentas até 150 euros
+bosch ou makita para bricolage
+corta-relva eléctrico ou a gasolina
+berbequim com fio ou sem fio
+berbequim para furar paredes de betão
+corta-relva para jardim pequeno
+onde comprar ferramentas em portugal com entrega rápida

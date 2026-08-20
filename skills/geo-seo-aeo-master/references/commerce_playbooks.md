@@ -46,6 +46,57 @@ dia, uma categoria, um mercado. Sugere mecanismos. Não quantifica nada, e
 não serve para afirmar percentagens de sobreposição, nossas ou de
 terceiros.
 
+**Os cartões têm selecção, e alguns vêm pré-marcados** (verificado de
+primeira mão, 20 Ago 2026, PT, sessão anónima). Cada cartão do carrossel
+tem um controlo de selecção no canto. Ao seleccionar, os produtos entram
+como contexto da pergunta seguinte (aparecem no campo de escrita, com ×
+para remover) e surgem três atalhos: **Comparar**, **Mais detalhes**,
+**Similar**.
+
+Não é checkout — é a fase de **comparação** do funil, dentro da conversa.
+Consequências para o método:
+
+1. Há duas eliminatórias, não uma. Aparecer no carrossel é a primeira;
+   estar seleccionado para comparação é a segunda.
+2. Numa observação, dois dos três cartões vinham **pré-marcados**. Quem
+   vem pré-marcado entra na comparação sem intervenção do utilizador.
+   Que produtos vêm pré-marcados, e com que critério, está por apurar —
+   e é a pergunta com mais consequência comercial nesta superfície.
+3. Métrica nova, que nenhuma ferramenta do mercado tem: dos produtos do
+   cliente que aparecem, quantos vêm pré-seleccionados.
+
+**A loja atribuída ao mesmo produto roda entre corridas** (verificado de
+primeira mão, 20 Ago 2026, PT). O mesmo produto, com o mesmo preço e a
+mesma avaliação, apareceu com lojas diferentes em corridas separadas por
+minutos: `Krups Essenza Mini · 59,99 € · 4,6 (3,2 mil)` com KuantoKusta
+numa corrida e Radio Popular noutra. O produto não muda; muda quem leva o
+cliente. Para o retalhista é a diferença entre a venda e o "+ outros", e
+só se mede repetindo.
+
+**Um cartão pode contradizer a recomendação escrita** (mesma data). Numa
+resposta, o cartão com fotografia mostrava um Tefal a 19,99 € enquanto o
+texto recomendava um Rowenta a 27,99 €. Quem clica na imagem não compra o
+que a IA aconselhou.
+
+**As descrições dos cartões vêm de feed, e não traduzidas** (mesma data).
+Numa resposta inteiramente em PT, as descrições dos cartões estavam em
+inglês ("Wireless headphones with active noise cancellation"), o que
+identifica a origem: dados de produto de feed, não texto gerado. Reforça
+que o caminho para esta superfície passa pelo feed (Merchant Center), não
+por publicar mais artigos — e sugere uma vantagem barata para quem tiver
+o feed em português.
+
+**O carrossel aparece sem sessão iniciada** (verificado de primeira mão,
+20 Ago 2026, PT). Tem duas consequências para a medição:
+
+1. Não é preciso conta para observar, e uma sessão anónima não tem
+   memória nem personalização — mede-se o que um comprador qualquer vê,
+   não o que o histórico de alguém condiciona. Observar com conta
+   iniciada introduz um viés que tem de ser declarado.
+2. Para o lojista, significa que a superfície de compra está aberta a
+   qualquer visitante, não a um segmento autenticado. Não se pode
+   descartar o carrossel como nicho de utilizadores registados.
+
 **Por confirmar, e é o teste que falta:** repetir a resposta **com pesquisa
 activa** e comparar o texto dela com o carrossel da mesma corrida. Se
 nomearem os mesmos produtos, o carrossel é a apresentação visual de algo
