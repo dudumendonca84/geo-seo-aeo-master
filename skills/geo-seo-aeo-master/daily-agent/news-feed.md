@@ -8,6 +8,17 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-20
+
+Sem novidades significativas hoje.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para as 7 fontes Tier 1 (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai) e para Tier 2 (ahrefs.com, searchengineland.com, searchenginejournal.com, seranking.com); verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes. Sem anúncio oficial Tier 1 genuinamente novo e não-duplicado na janela 19-20 ago. Candidatos investigados e **descartados por já cobertos** (confirmado por grep em `news-feed.md`/`references/` antes de escrever, não só por memória): August 2026 spam update (18 ago, já em 2026-08-19); Ahrefs "38% das citações AIO vêm do top-10, era 76%" (estudo de 2 mar 2026, reapareceu de novo nas pesquisas de hoje como se fosse notícia da semana — já rejeitado como duplicado em pelo menos seis sessões anteriores); estudo SE Ranking/llms.txt de 300k domínios sobre correlação nula com citação (já em 08-07, reconfirmado duplicado em 08-06, 08-12, 08-17, 08-18); toggle de opt-out de AI features na Search Console (efectivo desde 17 jun, já absorvido em `references/metrics.md`); Gemini 3.7 Flash no AI Mode (já em 08-16); Perplexity Agent API com novos modelos (já em 08-16); survey crítico de GEO arXiv:2607.14035 (já referenciado em sessões anteriores, incl. 08-17). Candidato descartado por fora de âmbito: ChatGPT Ads a expandir a 31 mercados europeus incl. Portugal — já registado em 08-19, lançamento continua agendado para 24 ago, sem novidade de estado hoje. Watch específico agentic commerce: **sem novidade** — checkout in-chat continua US-only (Instant Checkout da OpenAI permanece descontinuado desde mar 2026, redireccionando para apps de terceiros), sem confirmação de expansão europeia do Universal Commerce Protocol da Google nem do Instant Buy da Perplexity. Watch específico AI ads em Portugal: **sem novidade** desde 08-19 — lançamento a 24 ago mantém-se a próxima data relevante. Watch específico Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Watch específico de modelo-default: **sem novidade** — nenhum produto de AI search rastreado mudou de modelo default nesta janela. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias — candidatos encontrados (2508.11158, 2601.13938, 2605.29107) têm data de submissão fora da janela (ago 2025, jan 2026, mai 2026 respectivamente). Quinta-feira → sem weekly drafts.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-18: Meta AI Mode no Facebook Search, clarificação de product rich results, aviso de spam policies em AI Overviews/AI Mode, estudo de queda de confiança do consumidor −28pp, expansão do Perplexity Computer ao Microsoft Office, secção de performance IA na Search Console). Três itens já bem absorvidos: Meta/Facebook está coberto na tabela de crawlers de `references/frameworks.md` (linha ~86-87, `Meta-ExternalAgent`/`FacebookBot`); o aviso de spam policies em AI Overviews/AI Mode está absorvido verbatim em `references/frameworks.md` ("Google spam policies apply to AI Overviews / AI Mode (Jun 2026)", mesma data e fonte); a secção de performance IA na Search Console está superada pelo lançamento mais completo dos "Generative AI Performance Reports" (3 jun 2026), já absorvido em `references/metrics.md` e `references/engine_playbooks.md`. Dois itens revistos e não absorvidos por não cumprirem a barra: a expansão do Perplexity Computer ao Microsoft Office é posicionamento de produtividade empresarial, explicitamente não uma mudança de mecânica de pesquisa/citação (o próprio texto da entrada original distingue-o de "motor de pesquisa autónomo") — não se qualifica para `engine_playbooks.md`; o estudo de confiança do consumidor (−28pp, 82%→54%) não divulga metodologia nem sample size (a própria entrada original já pedia cautela) e o tema "trust gap AI search" já está coberto com dados mais robustos em `references/benchmarks.md` §21 (YouGov, 28% trust rate, sample e URL documentados) — duplicação temática sem qualidade adicional, não absorvido. A clarificação de product rich results é actualização de documentação sem impacto em mecânica GEO/AEO, fora do âmbito de absorção. Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-06-19 a 2026-08-20) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — sem novidades na janela.
+
+
 ## 2026-08-19
 
 ### 🔵 Anúncios oficiais
@@ -990,28 +1001,3 @@ Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio of
 - Os dados Ahrefs (-58% de cliques para queries com AI Overview) são o argumento mais forte para clientes conservadores: a perda de tráfego informacional é mensurável e está a acelerar. Não requer mudança de serviço, mas sim enquadramento dos dados em apresentações comerciais.
 - A decisão da CMA pode preceder legislação semelhante na UE; para clientes portugueses em setores regulados (fintech, saúde, legal), o opt-out de AI Overviews é um tópico de compliance a monitorizar nos próximos 12-18 meses. Awareness necessária, sem ação imediata.
 
-## 2026-06-18
-
-### 🔵 Anúncios oficiais
-
-- **Meta lança AI Mode no Facebook Search** — [Search Engine Land](https://searchengineland.com/meta-ai-mode-facebook-search-480393), 16 Jun 2026. Respostas geradas por IA dentro do Facebook baseadas em conteúdo público de Groups, Reels e Meta apps; substitui lista tradicional de resultados. Não há API pública nem programa de publisher anunciado.
-
-- **Google clarifica product rich results: variantes com URL própria elegíveis** — [Google Search Central](https://developers.google.com/search/updates), 17 Jun 2026. Documentação actualizada confirma explicitamente que páginas de variante de produto com URL distinta são elegíveis para product rich results — alinhamento formal com prática já observada.
-
-- **Google alerta: spam policies aplicam-se a citações em AI Overviews e AI Mode** — [seroundtable.com](https://www.seroundtable.com/june-2026-google-webmaster-report-41446.htm), Jun 2026. Aviso formal de que comprar ou manipular citações em AI features constitui violação das políticas de spam, sujeita às mesmas consequências de ranking que manipulação em resultados orgânicos.
-
-### 📊 Estudos & dados
-
-- **Consumer trust in AI search: −28 p.p. em 12 meses** — [Search Engine Land](https://searchengineland.com/new-ai-search-data-visibility-trust-480089). Confiança do consumidor em respostas de AI search caiu de 82% para 54% entre 2025 e 2026; segmento cético cresceu 6× no mesmo período. Dado com metodologia e sample size não divulgados publicamente no resumo — tratar com cautela para citação directa.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Perplexity expande para Microsoft Office (Word, Excel, PowerPoint, Outlook)** — [perplexity.ai](https://www.perplexity.ai/hub/blog), Jun 2026. Perplexity Computer integrado nativamente em apps Microsoft 365; posicionamento explícito como camada de produtividade empresarial embutida em ferramentas existentes, não como motor de pesquisa autónomo.
-
-- **Google Search Console: nova secção de performance em AI Overviews e AI Mode** — [developers.google.com](https://developers.google.com/search/updates), Jun 2026. Rollout de secção dedicada que apresenta impressões e cliques em AI features de forma separada dos dados orgânicos clássicos; métricas distintas permitem comparação directa de visibilidade IA vs. orgânico.
-
-### 💡 Implicações para destaque.ai
-
-- **Compliance de earned citations — diferenciador imediato**: Google confirmou que manipular citações IA viola spam policies. A destaque.ai pode comunicar explicitamente metodologia de earned citations por conteúdo como garantia de compliance; mensagem de risco relevante para clientes que avaliam agências concorrentes com abordagens duvidosas. Só awareness — não requer mudança de serviço.
-- **Nova secção AI Mode no Search Console como KPI de retenção**: dados separados de visibilidade em AI Overviews/AI Mode permitem demonstrar ROI GEO com métricas verificáveis pelo próprio cliente. Incorporar no dashboard mensal de clientes; muda o pitch de "SEO clássico" para "visibilidade em IA search" com evidência directa do Google.
-- **Meta AI Mode como novo canal de descoberta B2B**: Facebook Groups é um canal de comunidade activo para decisores PME em Portugal. A ausência de API pública implica que o único caminho de visibilidade é conteúdo orgânico de qualidade partilhado em Groups — argumento adicional para estratégia de conteúdo orientada a comunidade. Awareness — sem acção imediata.
