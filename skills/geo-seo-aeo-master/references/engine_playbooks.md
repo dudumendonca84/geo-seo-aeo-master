@@ -72,6 +72,7 @@ Faz:
 4. Procura presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
 5. Mantém uma versão EN actualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desactualizada desempenha pior do que não ter nenhuma (Search Engine Land, Ago 2026). {{skip:en-site}}
 6. Usa o mesmo nome e a mesma descrição da marca em todas as fontes.
+7. Separa conquistado de comprado desde já: os anúncios do ChatGPT entram em 31 mercados europeus (EEE e Suíça) a 24 de Ago 2026, nos planos Free e Go, com Plus/Pro/Business/Enterprise/Education sem anúncios. Não são personalizados no arranque (tema da conversa, localização geral, tipo de dispositivo). Aparecem por baixo da resposta, identificados. Ver/comprar não é a mesma coisa: a compra self-serve pelo OpenAI Ads Manager abriu primeiro nos EUA e o acesso fora deles abre por fases. Medir a linha de base conquistada ANTES de haver pago é o que torna o relatório seguinte interpretável. (OpenAI, aviso a utilizadores europeus 15 Ago 2026; Digiday, Dataconomy, TechXplore, 19 Ago 2026.)
 
 ### claude
 

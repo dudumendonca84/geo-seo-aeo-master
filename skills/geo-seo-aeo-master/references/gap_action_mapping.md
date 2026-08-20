@@ -383,6 +383,55 @@ Google Search Quality Rater Guidelines (Set 2025).
 
 ---
 
+### Pattern: Autor declarado no schema ≠ autor visível na página
+
+#### Hipóteses
+1. `author` aponta para `Person` e a página assina com o nome da empresa (ou o inverso).
+2. O byline diz "Equipa X" e o schema nomeia um indivíduo que não aparece em lado nenhum.
+3. Migração de CMS deixou o schema a apontar para um autor que já não escreve lá.
+
+#### Como detectar
+Extrair o `author` do JSON-LD e procurar esse nome no HTML com os `<script>` removidos. Se o nome não estiver no corpo visível, o sinal contradiz-se a si próprio. Um comando chega:
+
+```
+curl -s URL | python3 -c "import sys,re; h=sys.stdin.read(); print('Nome' in re.sub(r'<script.*?</script>','',h,flags=re.S))"
+```
+
+#### Acção
+Fazer coincidir os dois. O nome marcado tem de ser o nome impresso, e a assinatura visível deve ligar aos mesmos perfis que estão no `sameAs` do schema, para leitor e motor poderem confirmar a mesma coisa pelas mesmas vias. Quando o autor é mesmo a organização, usar `Organization` no `author` e assinar com a organização; misturar os dois é que não serve.
+
+#### Esforço
+1-2h se o byline for um componente partilhado, que é o caso normal. Corrige o site inteiro de uma vez.
+
+#### Impacto típico
+Sem lift isolado publicado. É higiene de coerência: a documentação do Google para `Article` pede explicitamente que o nome do autor no markup seja o mesmo que aparece na página, e um sinal que se contradiz vale menos do que sinal nenhum. Barato de corrigir, e frequente em sites que adicionaram schema por cima de um tema pré-existente.
+
+#### Fonte
+Google Search Central, structured data para `Article` (regra do author name coincidente).
+
+---
+
+### Pattern: Método proprietário sem autor nomeado
+
+#### Hipóteses
+1. A empresa vende uma metodologia com nome mas não diz quem a criou.
+2. A página do método fala em "a nossa abordagem" sem uma única pessoa associada.
+3. As credenciais existem (certificações, anos, publicações) mas vivem só no LinkedIn de alguém.
+
+#### Acção
+Atribuir o método a uma pessoa concreta, com `Person` schema e credenciais nomeadas, na própria página do método e não só no "Sobre". Um método com autor é uma entidade que um motor pode ligar a uma pessoa verificável noutras fontes; um método anónimo é uma afirmação de marketing. Quando houver, ligar a outputs públicos: papers com DOI, talks, dataset publicado.
+
+#### Esforço
+2-3h para a página do método; 30 min por credencial que precise de prova pública.
+
+#### Impacto típico
+Reforça a perna "Experience" do E-E-A-T, que é a mais difícil de simular e a que distingue consultoria de conteúdo genérico. Sem fonte a isolar lift; é sinal de qualidade acumulado, não palanca directa.
+
+#### Nota de auditoria
+Este pattern nasceu de uma auditoria à própria destaque.ai, em Agosto de 2026: o schema dos artigos declarava `author: Person` e as páginas assinavam "Por destaque.ai". Vale a pena correr o comando de detecção acima em qualquer cliente que tenha blog, porque a contradição é invisível a olho nu e frequente.
+
+---
+
 ### Pattern: Sem case studies com resultados verificáveis
 
 #### Hipóteses
