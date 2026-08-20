@@ -1,0 +1,126 @@
+# Community intelligence — which forums matter, and how to read them
+
+Reference for the Tracker tasks `discover_communities` and
+`analyze_community`, and for the Clipping IA deliverable. Consumed at
+runtime; the Tracker holds no editorial criteria of its own.
+
+**Why this exists.** Community platforms are among the most-cited sources
+in generative answers (dimension 5 of SINAL). A thread that ranks well in
+a category shapes what buyers are told for months. Measuring a brand here
+is measuring the raw material of answers — not vanity social listening.
+
+---
+
+## 1. Sources are per brand, never a fixed list
+
+The single most common failure is running the same forum list for every
+client. Which communities matter is a function of what the brand sells,
+who decides the purchase, and where that decision gets discussed.
+
+Propose sources by asking, in order:
+
+1. **Where does the buyer of THIS product argue about it?** A payroll SaaS
+   is discussed by HR managers, not on Hacker News. A running shoe is
+   discussed by runners. Name the room, not the platform.
+2. **Which decision does the brand lose most often?** If candidates are
+   the scarce resource, employer-brand sources (Glassdoor, Indeed reviews,
+   Blind in tech) matter more than product forums. If churn is the
+   problem, review platforms outrank discussion forums.
+3. **What does the engine actually cite for this category?** Cross-check
+   against the `cited sources` already measured for the client. A platform
+   the engines never cite is at best context, never a priority.
+4. **Is there a national or language-specific room?** For PT-PT brands,
+   r/portugal, r/devpt, Fórum Autohoje, ZWAME, and sector Facebook groups
+   (not collectable, but worth naming as a blind spot) often carry more
+   weight than the English-language equivalent.
+
+### Source families and when each earns a place
+
+| Family | Propose when | Examples |
+|---|---|---|
+| **General discussion** | Almost always; the category is debated somewhere | r/portugal, r/devpt, category subreddits |
+| **Employer brand** | Hiring is a stated constraint, or the brand is people-heavy (agency, consultancy, retail chains) | Glassdoor, Indeed reviews, Blind |
+| **Consumer reviews** | B2C or SMB self-serve, where purchase follows a review read | Trustpilot, Google reviews, Livro de Reclamações coverage |
+| **Software peer review** | B2B SaaS with a comparison-heavy sale | G2, Capterra, TrustRadius |
+| **Technical community** | Developer-facing product, API, open source | Hacker News, Stack Overflow, GitHub discussions |
+| **Sector forums** | Established vertical with a long-lived forum | ZWAME (tech PT), Autohoje (auto PT), industry associations |
+| **Video and long-form** | Category where demos or reviews drive decision | YouTube comment threads, podcast episode pages |
+
+**Do not propose** platforms whose terms forbid programmatic reading and
+which have no public search surface, and never propose a workaround for
+one. If a room matters but cannot be collected, name it in the rationale
+as a known blind spot — honest gaps beat silent ones.
+
+### Output contract (`discover_communities`)
+
+Return items with `kind` in `reddit_search | subreddit | hackernews | site`,
+`identifier` (search term, subreddit name without `r/`, or domain),
+`label` (human name), and `rationale` — one sentence saying why this
+source matters **for this brand**, not for brands in general. Everything
+lands inactive; a human confirms before collection touches it.
+
+Six to twelve sources is the useful range. More than that dilutes the
+weekly read and multiplies collection cost without adding signal.
+
+---
+
+## 2. Reading a mention (`analyze_community`)
+
+For each mention, decide three things.
+
+### Relevance
+
+- `brand` — the brand or its product is the subject, or is named in a
+  comparison. Includes misidentification ("isn't that the one that…").
+- `competitor` — a competitor is the subject and the brand is absent. This
+  is the share-of-voice signal: where the category is discussed without us.
+- `category` — the buying question is being discussed with no named brand.
+  This is free ground, and the highest-value opportunity class.
+- `irrelevant` — name collision, off-topic, spam, or a thread where the
+  match was incidental. Be strict: a false positive costs more credibility
+  than a missed thread.
+
+### Sentiment
+
+Judge the sentiment **towards the brand**, not the general mood of the
+thread. A furious thread about the category in which the brand is praised
+is positive. Neutral is the correct answer more often than not; reserve
+negative for actual criticism, not for mere absence of enthusiasm.
+
+### Summary
+
+One sentence, in the client's language, that a busy executive can read
+without opening the link. State what was said and by whom in role terms
+("a user comparing three tools said…"), never quote at length, never
+paraphrase into praise the thread does not contain.
+
+### Weighting: what deserves the weekly read
+
+Rank by consequence, not by recency:
+
+1. Threads the engines **cited** in this week's answers (the Tracker marks
+   these). A cited thread is a source, not a conversation.
+2. Threads with sustained discussion (comments, not upvotes) in a room the
+   buyer reads.
+3. Negative or factually wrong claims about the brand, at any volume — one
+   wrong claim in a well-ranked thread outlives a hundred neutral posts.
+4. Category threads with no brand named — free ground.
+
+Ignore volume for its own sake. Ten mentions in a dead subreddit are worth
+less than one in the thread the engine cites.
+
+---
+
+## 3. What never to do with this data
+
+- **No astroturfing, ever.** The output of this analysis is a decision
+  about where to participate genuinely, what to fix, or what to publish —
+  never a script for posting under false identity. Communities detect it,
+  engines learn from the backlash, and the client carries the damage.
+- **No private data.** Only what is publicly readable. No login-walled
+  content, no scraping around access controls, no personal identification
+  of pseudonymous users.
+- **No quoting individuals to clients by name.** Refer to roles and
+  positions, link to the public thread, and let the client read it.
+- **Absence is data.** A category discussed for months with the brand
+  never mentioned is a finding, and should be reported as one.

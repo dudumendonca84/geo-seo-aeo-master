@@ -238,6 +238,33 @@ secção "Como aparecer aqui").
 Renomear as keys ou o header do bloco parte o parser — coordenar com PR no
 Tracker.
 
+### Contrato 7: comunidade e fidelidade (Clipping IA, Tracker)
+
+**Paths no repo:**
+- `skills/geo-seo-aeo-master/references/community_intelligence.md`
+- `skills/geo-seo-aeo-master/references/claim_verification.md`
+
+**Consumo:** a Routine do cérebro (`routines/tracker-brain.md`) carrega-os
+por task, não há parsing estrutural — são lidos como instrução:
+
+| Task do Tracker | Ficheiro carregado | O que a Routine devolve |
+|---|---|---|
+| `discover_communities` | `community_intelligence.md` §1 | Fontes propostas por marca (`kind`, `identifier`, `label`, `rationale`), sempre inactivas até confirmação humana |
+| `analyze_community` | `community_intelligence.md` §2 | Por menção: `relevance`, `sentiment`, `summary` de uma frase |
+| `verify_claims` | `claim_verification.md` | Divergências com `fact_key`, `claimed`, `expected`, `severity`, `note` |
+
+**Regra dura de `verify_claims`:** sem facto na ficha da verdade que
+sustente, não há divergência. O silêncio é a resposta correcta quando a
+marca nunca declarou o que é verdade.
+
+**Regra dura de `discover_communities`:** as fontes são por marca, nunca
+uma lista fixa; plataformas cujos termos proíbem leitura programática
+nomeiam-se como ponto cego, nunca se contornam.
+
+Estes dois ficheiros são prosa: acrescentar secções é seguro, renomear os
+valores enumerados (`kind`, `relevance`, `sentiment`, `severity`) parte a
+validação em `scripts/brain/apply-jobs.mts` — coordenar com PR no Tracker.
+
 ---
 
 ## Frequência de actualização
