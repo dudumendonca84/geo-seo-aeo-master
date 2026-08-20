@@ -100,6 +100,24 @@ Adiciona ao TOPO de skills/geo-seo-aeo-master/daily-agent/news-feed.md (após ca
 - EN é aceitável e preferível para fontes primárias
 - PT-PT apenas para implicações para Portugal
 
+## Verificação de primeira mão (o que nos distingue)
+
+Quando um anúncio de plataforma abre uma funcionalidade num mercado, **não publicar a partir do comunicado**. Ir até onde a coisa deixa de funcionar, e publicar onde é que ela acaba.
+
+O caso que originou esta regra, 20 Ago 2026: a imprensa noticiou que os anúncios do ChatGPT chegavam a 31 mercados europeus a 24 de Agosto. O formulário de registo do OpenAI Ads Manager aceita país Portugal, moeda EUR, fuso de Lisboa e tipo de anunciante sem levantar objecção nenhuma. A parede está no ecrã seguinte: *"O Gerenciador de Anúncios ainda não está disponível no seu país"*. Quem parou no comunicado publicou que estava aberto. Quem foi até ao fim publicou onde acaba.
+
+**Procedimento, sempre que houver um lançamento relevante para PT:**
+
+1. Percorrer o fluxo real até ao ponto de falha: registo, primeiro ecrã de configuração, criação de campanha, escolha de mercado.
+2. Registar a mensagem exacta que bloqueia, em citação directa e com data.
+3. Anotar o que o fluxo aceita antes de bloquear, porque é aí que os outros se enganam.
+4. Anotar factos operacionais que só aparecem por dentro (exemplo real: uma agência não pode criar a conta em nome do cliente; o cliente cria e adiciona a equipa).
+5. Publicar com a data da verificação à vista e dizer explicitamente o que ficou por confirmar.
+
+**Sinalizar no news-feed** os anúncios que são candidatos a esta verificação, com a etiqueta `[verificar de primeira mão]`, para o humano decidir quais valem o tempo.
+
+**Regra de honestidade:** se a verificação contradisser o que já publicámos, corrige-se e diz-se que se corrigiu, com a prova nova. Um artigo que se corrige a si próprio com evidência vale mais do que um que nunca errou porque nunca arriscou.
+
 ## Manutenção
 
 1. **Absorção antes de truncar (CRÍTICO).** Antes de fazer qualquer truncate, percorre todas as entries que estariam prestes a sair (entries com >30 dias) e verifica se há conteúdo durável que ainda não foi absorvido em `references/`. Se houver, **absorve primeiro, trunca depois**.
