@@ -86,7 +86,7 @@ em todas as categorias:
 4 semanas, com hora aleatorizada dentro de 09:00-21:00 e ordem das
 perguntas aleatorizada em cada corrida.
 
-**Volume total.** 150 × 5 = **750 observações** na superfície principal.
+**Volume total.** 150 × 5 = **750 observações** na superfície principal. *(Alterado para 10 corridas e 1.500 observações pela Emenda 1.)*
 
 ## 4. O que se regista, por observação
 
@@ -196,5 +196,14 @@ Se nenhum patrocínio aparecer na janela, isso é resultado, não falha:
 "quatro semanas após o arranque europeu, as superfícies de compras
 observadas não mostravam conteúdo patrocinado em Portugal" é uma frase
 com valor próprio.
+
+**Corridas: de 5 para 10 por pergunta.** Sem custo (a superfície é a app)
+e com ganho directo de resolução: com 5 corridas a frequência de um item
+só se mede em saltos de 20%; com 10, em saltos de 10%, e os fenómenos
+raros (rotação de loja, patrocínio, produto intermitente) ganham
+lançamentos suficientes para aparecer. Total: 150 × 10 = **1.500
+observações**, recolhidas em duas sessões diárias (manhã e noite,
+~27 perguntas cada) para o ritmo se manter humano e distribuído. O
+volume total diário (~54) continua dentro do espírito da secção 7.
 
 **Arranque da recolha:** 25 de Agosto de 2026.
