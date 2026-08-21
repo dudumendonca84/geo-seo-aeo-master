@@ -207,3 +207,28 @@ observações**, recolhidas em duas sessões diárias (manhã e noite,
 volume total diário (~54) continua dentro do espírito da secção 7.
 
 **Arranque da recolha:** 25 de Agosto de 2026.
+
+### Extensão registada — Observatório até às 10.000 observações
+
+A recolha **não termina** no dia 28: continua ao mesmo ritmo e nas mesmas
+condições, em ciclos de 28 dias (corridas 11-20 no segundo ciclo, e assim
+em diante), até um total de **10.000 observações**. A análise faz-se por
+blocos, cada um com corte declarado ANTES dos dados desse bloco fecharem:
+
+| Bloco | Corte | Acumulado ~ | O que se analisa e publica |
+|---|---|---|---|
+| 1 · O estudo | 21 Set 2026 | 1.500 | as hipóteses H1-H6 do protocolo — a publicação principal |
+| 2 · Black Friday | 30 Nov 2026 | ~5.300 | o carrossel na época de maior pressão comercial do ano: preços, lojas, patrocínio |
+| 3 · Natal | 31 Dez 2026 | ~7.000 | idem na época de Natal; primeira comparação entre épocas |
+| 4 · Regressão | aos 10.000 (~Fev 2027, antes com escalada de ritmo) | 10.000 | associações multi-factor: preço, avaliações, cobertura de lojas e de análises vs frequência de aparição — sempre como associação observada, nunca causa |
+
+**Escalada de ritmo, pós-estudo apenas:** terminado o bloco 1, o volume
+diário pode subir por degraus (54 → ~70 → ~90), com a regra de sempre:
+paragem imediata e registada ao primeiro desafio de verificação humana,
+sem qualquer tentativa de contorno. O degrau em vigor fica anotado aqui a
+cada mudança. Durante o bloco 1, o ritmo não se toca.
+
+**Regra dos blocos:** cada bloco é analisado com as métricas já fixadas
+neste protocolo; nenhuma métrica nova se acrescenta a um bloco depois de
+os dados desse bloco existirem. Perguntas novas que surjam ficam para o
+bloco seguinte, registadas antes.
