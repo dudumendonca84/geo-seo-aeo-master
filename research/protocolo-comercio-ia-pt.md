@@ -161,8 +161,40 @@ reporta são distribuições e intervalos, não valores-p.
 | Protocolo v1 | escrito, 20 Ago 2026 |
 | Lista das 150 perguntas | fixada, 20 Ago 2026 (`research/perguntas-v1.txt`) |
 | Instrumento (Camada C) | funcional; leitura do painel de fontes por ligar |
-| Recolha | não iniciada |
+| Recolha | arranca a 25 Ago 2026 (Emenda 1) |
 
 ## Emendas
 
-_(nenhuma até à data)_
+### Emenda 1 — 21 Ago 2026 (antes de qualquer recolha)
+
+**Âmbito reduzido à superfície principal.** O estudo passa a medir apenas
+a app do ChatGPT em sessão anónima — o que um comprador vê, exactamente
+como vê. As "superfícies de comparação" da secção 3 (os motores por API)
+saem do desenho.
+
+**Razão, declarada sem verniz:** custo. A perna por API custaria dezenas
+de euros semanais que o orçamento actual não comporta. As 150 perguntas
+ficam preparadas no instrumento e a comparação multi-motor fica como
+extensão futura, se e quando houver financiamento — o que, a acontecer,
+será também declarado aqui.
+
+**Consequência nas hipóteses:** H1-H4 mantêm-se integralmente. H5 (efeito
+de categoria) mantém-se. A comparação entre superfícies fica limitada ao
+que a app oferece por si: com/sem pesquisa e formatos de apresentação.
+
+**Medição adicionada: patrocínio.** Os anúncios do ChatGPT arrancam na
+EEA a 24 de Agosto de 2026 — o dia 1 da recolha. Cada item passa a
+registar se traz marca de patrocínio visível e o texto exacto dessa
+marca. Hipótese adicional, registada antes dos dados:
+
+- **H6 — Patrocínio.** Se conteúdo patrocinado entrar nas superfícies de
+  compras durante a janela, é identificável por rotulagem visível, e a
+  sua entrada altera a composição dos produtos apresentados face à
+  linha de base das corridas anteriores.
+
+Se nenhum patrocínio aparecer na janela, isso é resultado, não falha:
+"quatro semanas após o arranque europeu, as superfícies de compras
+observadas não mostravam conteúdo patrocinado em Portugal" é uma frase
+com valor próprio.
+
+**Arranque da recolha:** 25 de Agosto de 2026.
