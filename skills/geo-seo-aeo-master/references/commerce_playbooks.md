@@ -86,6 +86,28 @@ que o caminho para esta superfície passa pelo feed (Merchant Center), não
 por publicar mais artigos — e sugere uma vantagem barata para quem tiver
 o feed em português.
 
+**O painel de fontes de um produto cita sobretudo fontes estrangeiras —
+mesmo em pergunta portuguesa** (verificado de primeira mão, 21 Ago 2026,
+PT, sessão anónima). Ao abrir "Mais detalhes" de um cartão (Krups
+Nespresso Essenza Mini, pergunta em PT sobre máquinas de café), o painel
+"O que estão as pessoas a dizer" citou 5 fontes com sentimento por fonte:
+toptenreviews.com (positivo), tweakers.net (positivo), kieskeurig.nl
+(positivo), coolblue.nl (neutro) e reddit.com (positivo, com citação
+textual em inglês de um utilizador). Três das cinco são **holandesas** e
+nenhuma é portuguesa. Consequências:
+
+1. A camada que justifica o produto ao comprador PT está a ser escrita
+   por avaliações de outros mercados — reforça o padrão dos decisores
+   estrangeiros com evidência ao nível do produto, não só da resposta.
+2. Reddit confirma-se como fonte de opinião citada dentro da superfície
+   de compra, com transcrição directa do utilizador.
+3. Para retalhistas e marcas PT, ter avaliações citáveis em sítios
+   portugueses de análise é espaço por ocupar: hoje o painel vai
+   buscá-las a Coolblue e Tweakers.
+
+Uma observação, um produto, uma pergunta — sugere o mecanismo, não
+quantifica. A repetição no observatório é que dirá se o padrão segura.
+
 **O carrossel aparece sem sessão iniciada** (verificado de primeira mão,
 20 Ago 2026, PT). Tem duas consequências para a medição:
 
