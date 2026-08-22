@@ -80,6 +80,23 @@ For each mention, decide three things.
   match was incidental. Be strict: a false positive costs more credibility
   than a missed thread.
 
+### Common-word brand names
+
+Some brand names are ordinary words — "destaque" is a Portuguese noun,
+and tool names like "Surfer" collide with entire hobbies. Two rules,
+learned the hard way:
+
+1. **Collection searches the full brand as an exact quoted phrase**
+   ("destaque.ai", never "destaque"). If a brand's only usable handle is
+   a common word, prefer scoped rooms (specific subreddits, site:
+   searches) over platform-wide search, and say so in the source's
+   rationale.
+2. **In analysis, collisions are `irrelevant`, aggressively.** A mention
+   of the word without the brand — surf threads for "Surfer", "em
+   destaque" as ordinary prose — is noise, and one week of noise costs
+   more credibility than a month of missed threads. When in doubt
+   whether the text means the brand, it does not.
+
 ### Sentiment
 
 Judge the sentiment **towards the brand**, not the general mood of the
