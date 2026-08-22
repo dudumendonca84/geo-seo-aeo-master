@@ -23,6 +23,16 @@ Cada padrão tem:
 
 Princípio SINAL: **não inventar `+X% em Y semanas` sem fonte.** Se a relação é correlacional ou indirecta, declarar.
 
+## Regra de especificidade: nomear o sítio
+
+**"Postar no Reddit" não é uma acção. "Responder no r/X, que alimentou 3 das 5 fontes do painel Y esta semana" é.** Toda a acção off-site (comunidade, PR, podcasts, YouTube, comparadores) nomeia o sítio exacto, e o sítio vem dos dados, por esta ordem:
+
+1. **Fontes medidas do próprio cliente.** O Tracker regista as fontes que alimentam cada resposta da categoria do cliente (grafo de fontes semanal, fontes dos painéis do carrossel, menções de comunidade recolhidas). O subreddit, o canal de YouTube, o comparador ou o fórum a recomendar é o que **já aparece a alimentar as respostas** onde o cliente devia estar — porque é aí que os motores comprovadamente vão buscar.
+2. **Fontes medidas da categoria.** Se o cliente ainda não tem histórico, usar as fontes das respostas onde os concorrentes dele são citados, na mesma malha de perguntas.
+3. **Benchmarks públicos** (Reddit ~47% das top citations da Perplexity, YouTube ~14%) só como fallback, sempre etiquetados como genéricos, e sempre com a nota de que a primeira semana de medição substitui o genérico pelo específico.
+
+Formato da acção: sítio nomeado + evidência de porquê esse sítio (quantas respostas da malha ele alimentou, em que motores) + o que publicar lá. Acção off-site sem sítio nomeado é rascunho, não entra em narrativa nem em relatório.
+
 ---
 
 ## DIMENSÃO 1 — Technical foundation
@@ -293,7 +303,7 @@ Top-X listicles têm presence forte em comparison-intent queries (LLM intent_sta
 3. A vertical discute em plataformas que não foram identificadas.
 
 #### Acção
-Identificar os 2-3 subreddits / comunidades (Hacker News, Stack Overflow, Discords, fóruns PT) onde a vertical é discutida. Participação genuína — responder a perguntas, partilhar dados próprios, nunca spam. Para SaaS técnico, presença no GitHub com repos/docs públicos.
+Nomear os 2-3 subreddits / comunidades exactos (regra de especificidade acima): primeiro os que o grafo de fontes do Tracker mostra a alimentar as respostas da categoria do cliente, depois os que alimentam as respostas onde os concorrentes são citados; Hacker News, Stack Overflow, Discords e fóruns PT entram quando os dados os mostram. O mesmo para YouTube: o canal ou formato que os motores citam na categoria, não "fazer vídeos". Participação genuína — responder a perguntas, partilhar dados próprios, nunca spam. Para SaaS técnico, presença no GitHub com repos/docs públicos.
 
 #### Esforço
 2-4h/semana sustained.
