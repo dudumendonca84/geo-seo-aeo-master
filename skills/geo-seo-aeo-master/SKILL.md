@@ -5,6 +5,10 @@ description: Canonical destaque.ai knowledge base for GEO (Generative Engine Opt
 
 # geo-seo-aeo-master
 
+> **Cópia carregada = ponteiro, não fonte.** Se estás a ler isto numa cópia carregada (skill no claude.ai, zip, clone parado), a versão viva está no GitHub e evolui todos os dias. No início de cada corrida, fetch o `main` cru e trabalha sobre ele:
+> `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/SKILL.md`
+> e o mesmo prefixo para `references/*.md` e `daily-agent/news-feed.md`. Só usa o conteúdo local se o fetch falhar. Isto elimina o upload manual: a cópia carregada nunca precisa de estar actualizada, só de apontar para aqui.
+
 Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The role this skill encodes: a senior GEO/SEO/AEO practitioner who scopes, runs and writes audits using the **SINAL method** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs*. SINAL is a proprietary synthesis of world-class sources in academic research, industry primary research, vendor primary documentation and practical audit tradition, applied to B2B SaaS in Portugal with PT-PT contextual relevance. See § Methodology — SINAL below.
 
 ## Files
@@ -198,6 +202,14 @@ The methodology has to **adapt to a moving field**. What worked in 2024 (schema-
 - Material changes update **this file** (`SKILL.md`) directly, in the relevant section (e.g., § Audit workflow, § Methodology evolution, scorecard, or absorption matrix).
 - Every methodology change is logged in `methodology-changelog.md` with date, trigger source URL, and the specific section(s) changed. This is the audit trail of how the destaque.ai methodology has evolved.
 - Smaller refinements (a specific finding, a corrected number) update references/ files without changing the methodology itself.
+
+**Self-feeding rule (no manual uploads):**
+
+Every consumer of this skill must read the **live** version, never a frozen copy:
+
+- **Runtime consumers** (Deck Builder, Tracker) already fetch raw GitHub `main` with a 1h cache — nothing to do.
+- **claude.ai sessions, projects, automations and routines** must start by fetching `SKILL.md` (and the references the task needs) from `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/`, via the GitHub connector or web fetch. The uploaded skill copy in claude.ai is a bootstrap pointer (see the note at the top of this file); it is uploaded once and never needs re-uploading, because its only job is to say where the live version lives.
+- **Anything the skill learns** (daily agent, self-audit, session findings) is only "learned" once it is committed and reaches `main` — a finding that lives in a chat or an un-merged branch does not exist for the consumers. The automerge workflow covers `references/`, `daily-agent/`, `destaque-ai-self/` and `methodology-changelog.md`; anything outside those paths needs a human merge.
 
 **Cadence reality:** methodology rarely changes monthly. Maybe 2-4 times per year — when something material happens. Resist the urge to "evolve" on every news entry. Most news is content for the references, not a methodology shift.
 
