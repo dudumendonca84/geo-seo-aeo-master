@@ -25,6 +25,15 @@ Hoje é {{TODAY}}.
 - blogs.bing.com/search
 - perplexity.ai/blog
 
+### TIER 1b — Radar LLM/IA (obrigatório; o founder quer o quadro todo, não só GEO)
+- Lançamentos, mudanças e deprecações de MODELOS: OpenAI, Anthropic,
+  Google, xAI, Mistral, DeepSeek, Meta (changelogs e release notes)
+- PREÇOS de API: openai.com/api/pricing · anthropic.com/pricing ·
+  ai.google.dev/pricing · docs.mistral.ai (pricing) · api-docs.deepseek.com
+  — qualquer mudança de preço é SEMPRE item do dia, com antes/depois
+- Mudanças de política/termos dos providers que toquem crawling,
+  treino com dados, ads ou API
+
 ### TIER 2 — Análise técnica (verificar 3-5 destas)
 - ahrefs.com/blog
 - searchengineland.com (filtro: artigos com dados)
@@ -117,6 +126,29 @@ Quando houver um item material:
 Zero alertas em semanas de calmaria é o resultado correcto. Um alerta
 por coisa menor treina o founder a ignorá-los — o limiar é "mudaria a
 agenda da semana dele".
+
+## 📬 Digest diário ao founder (SEMPRE, todos os dias)
+
+Além do news-feed, TODA a corrida termina com um email ao founder
+(etmendonca@gmail.com) via Gmail MCP:
+
+- **Assunto:** `[destaque.ai] Digest diário · YYYY-MM-DD`
+- **Corpo, nesta ordem e compacto** (só secções com conteúdo):
+  1. 🚨 Alerta (se houver item material — ver secção do alerta; vai no
+     topo do mesmo email, não em email separado)
+  2. Radar LLM/IA: modelos novos/deprecados, preços de API (com
+     antes/depois), políticas
+  3. GEO/AEO: o que saiu e importa
+  4. SEO/Google: idem
+  5. Implicações para a destaque.ai: cada uma com jogada e prazo
+- Dia parado: envia na mesma, uma linha ("Sem novidades significativas
+  hoje; corrida completa."). O digest diário é um contrato de presença:
+  o founder saber que a routine correu vale tanto como o conteúdo.
+- Sem Gmail MCP disponível: escreve o digest no topo do news-feed com o
+  título `## 📬 DIGEST (não enviado — Gmail indisponível)` e di-lo na
+  resposta da corrida.
+
+Tom: sócio de estratégia, sóbrio, sem travessão, máximo ~300 palavras.
 
 ## Alimentar a doutrina do porquê (camada 4)
 
