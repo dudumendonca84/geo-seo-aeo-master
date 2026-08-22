@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 2026-08-22
+
+### 🔵 Anúncios oficiais
+- **Google conclui o August 2026 Spam Update** — [Search Engine Journal](https://www.searchenginejournal.com/google-begins-rolling-out-the-august-2026-spam-update/586301/), confirmado no Search Status Dashboard da Google. Rollout global iniciado a 18 de agosto às 09:27 PT, concluído a 21 de agosto (~2 dias e 16h). Terceira spam update de 2026; sem novas políticas anunciadas — aplicam-se as políticas de spam já existentes.
+
+### 📊 Estudos & dados
+- **Citações da Reddit no ChatGPT Search caem 86,4% em quatro dias** — dados da Promptwatch via [Search Engine Land](https://searchengineland.com/reddit-chatgpt-search-citations-fall-report-485473). Quota média de citações da Reddit cai de 3,83% (18 jul–7 ago) para 0,52% (14–17 ago). Sem queda comparável nas AI Overviews da Google (2,5%→2,1%, declínio gradual). A Reddit bloqueou o domínio inteiro a crawlers de IA via robots.txt no mesmo período.
+- **14.472 citações de IA em pesquisa local analisadas** — Steady Demand via [MarTech](https://martech.org/business-websites-dominate-geminis-local-ai-citations/). Em 1.487 queries locais / 50 áreas metro dos EUA: ~60% das citações da Gemini apontam para o site próprio do negócio; Gemini e ChatGPT só coincidem no mesmo domínio citado em 8% dos casos e na mesma empresa recomendada em 4,2%; repetir a mesma query na Gemini só devolve as mesmas fontes em ~40% das vezes.
+- **Links só-em-JavaScript ficam invisíveis para a maioria dos crawlers de IA** — experiência controlada de 41 dias por Vinicius Stanula, [Search Engine Land](https://searchengineland.com/) (19 ago). Só a stack de crawling da Google (não o Googlebot de indexação) executou JS e seguiu os links injetados; GPTBot e Bingbot só os descobriram depois de os links passarem para HTML estático.
+
+### ⚙️ Mudanças nas plataformas
+- **ChatGPT Search — mudança no query fan-out** — segundo a Promptwatch (via Search Engine Land), a OpenAI alterou o comportamento de fan-out de queries a 8 de agosto de 2026, coincidindo com o início da queda de citações da Reddit.
+
+### 📄 Research académico
+- **"Optimizing Visibility in Generative Engines: A Critical Survey of GEO (2023–2026)"** — [arXiv:2607.14035](https://arxiv.org/abs/2607.14035). Revisão de 45 estudos (nov 2023–jul 2026) conclui que GEO não é uma tarefa de ranking única, mas um pipeline estocástico e parcialmente observável (ativação de pesquisa, crawling/indexação, retrieval, reranking, citação, absorção factual, comportamento do utilizador), com métricas e critérios de evidência ainda pouco padronizados entre estudos.
+
+### 💡 Implicações para destaque.ai
+- A dependência de uma única fonte de citação (ex.: Reddit no ChatGPT) é frágil — uma queda de 86% em 4 dias mostra que a citabilidade pode mudar de um dia para o outro por decisão de plataforma (fan-out) ou do próprio site (robots.txt). Reforça o argumento para diversificar presença (site próprio, imprensa, diretórios) em vez de depender de UGC de terceiros.
+- Para clientes B2B SaaS locais/PT, a baixa sobreposição entre motores e a baixa repetibilidade de citações (dado Steady Demand) confirma que "aparecer uma vez" não garante visibilidade sustentada — reforça o caso para tracking contínuo (tipo Peec/Profound) em vez de auditorias pontuais.
+- O achado sobre links só-em-JS é acionável de imediato: recomendar SSR/pre-render da navegação interna aos clientes, já que mesmo crawlers de IA "avançados" (GPTBot, Bingbot) não executam JS de forma fiável — item técnico concreto para checklists de auditoria GEO.
+
 ## 2026-08-21
 
 ### 📊 Estudos & dados
@@ -104,6 +125,23 @@ Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution)
 **Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-14). Duas de quatro itens já estavam bem absorvidos: Search Console Generative AI Performance Reports (em `references/metrics.md`, entretanto já actualizado com dados mais recentes de agosto) e Google AI Mode 1B utilizadores/Gemini 3.5 Flash default (em `references/models.md`, confirmado ainda válido no refresh de hoje). Uma lacuna genuína identificada e absorvida agora: "Google: spam policies alargadas a AI Overviews/AI Mode" (aviso explícito contra manipulação/compra de citações) não estava em `references/frameworks.md` — adicionada nova subsecção "Google spam policies apply to AI Overviews / AI Mode (Jun 2026)" em §9, com a implicação de pitch (tácticas de manipulação têm o mesmo risco de penalização em AI search que em SEO clássico). Não absorvido por não-durável/genérico: survey arXiv:2506.00054 (RAG architectures) — coberto por surveys GEO mais específicos e recentes já em `benchmarks.md` (2607.14035); GPT-5.2 sunset (jun 2026) — modelo há muito descontinuado, sem relevância operacional actual, mesma decisão tomada para eventos financeiros pontuais noutras sessões. Truncado para 60 headers (2026-06-15 a 2026-08-16) depois da absorção.
 
 Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — nenhum item de hoje altera mecânica de retrieval/citação nem pesos de scorecard.
+
+## 2026-08-15
+
+### 🔵 Anúncios oficiais
+- **AI Overviews ganham "guardar" e "simplificar linguagem"** — [Google Search blog via Android Central](https://www.androidcentral.com/apps-software/google-ai-overview-save-feature-expansion) / [Yahoo Tech](https://tech.yahoo.com/ai/articles/googles-ai-overviews-pick-save-175249178.html). Google começou a testar (15 ago, EUA, queries em inglês, opt-in via Labs) uma função para guardar um AI Overview e revisitá-lo na página "Interests", e um botão para "simplificar a linguagem" de uma resposta e reduzir jargão técnico.
+
+### 📊 Estudos & dados
+- **Scraping de IA atinge sites europeus 4x mais do que americanos** — [Digiday](https://digiday.com/media/european-publishers-are-getting-hit-harder-by-ai-bot-scraping-report-finds/) / [ResultSense](https://www.resultsense.com/news/2026-08-14-tollbit-european-publisher-scraping/), dados TollBit (H1 2026). Sites europeus recebem 1 visita humana referida por app de IA por cada 179 scrapes de bots (3x pior que nos EUA), e o robots.txt é ignorado quase 3x mais nesses sites.
+- **300 jornais franceses apresentam queixa contra a Google por causa das AI Overviews** — [Search Engine Land](https://searchengineland.com/french-newspapers-complaint-google-ai-overviews-484631) / [Euronews](https://www.euronews.com/next/2026/08/11/google-ai-summaries-french-dailies-file-complaint-with-competition-authority). A APIG queixou-se à autoridade da concorrência francesa (11 ago) porque a Google ativou AI Overviews/AI Mode em França a 22 de julho sem renegociar o acordo de "neighbouring rights" de 2022; o regulador Arcom estima perda de tráfego de 33-38% atribuível aos resumos gerados por IA.
+
+### ⚙️ Mudanças nas plataformas
+- **Perplexity — bloqueio a "markdown ads"** — [Digiday](https://digiday.com/media/perplexity-blocks-times-ads-served-to-ai-agents-calling-them-deceptive/) / [Nieman Lab](https://www.niemanlab.org/reading/perplexity-blocks-times-ads-served-to-ai-agents-calling-them-deceptive/). A Perplexity bloqueou anúncios que a Time inseria apenas na versão markdown das suas páginas (lida por crawlers/agentes de IA, não por humanos), classificando a prática como "deceptive" e avisando que publishers que a repitam arriscam penalização no "trust score" do seu índice.
+
+### 💡 Implicações para destaque.ai
+- O caso APIG/Arcom (perda de tráfego confirmada por regulador, 33-38%) é o dado mais forte até agora para justificar GEO como linha própria — mesmo sem equivalente em Portugal, é material de awareness/pitch a atualizar.
+- O bloqueio da Perplexity a "markdown ads" confirma que ficheiros dirigidos a crawlers de IA (llms.txt, feeds markdown) são escrutinados; reforça a recomendação de manter esse conteúdo factual e não promocional — sem necessitar de novo serviço.
+- O relatório TollBit sobre scraping desproporcional na Europa justifica incluir auditoria de robots.txt/crawlers de IA no onboarding técnico de clientes SaaS B2B em Portugal — awareness, sem mudança de pitch imediata.
 
 ## 2026-08-14
 

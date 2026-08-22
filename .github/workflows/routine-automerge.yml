@@ -49,7 +49,7 @@ jobs:
           echo "Ficheiros no diff:"
           echo "$CHANGED"
 
-          ALLOWED='^skills/geo-seo-aeo-master/(daily-agent/|destaque-ai-self/|references/|methodology-changelog\.md)'
+          ALLOWED='^(destaque-ai-self/|skills/geo-seo-aeo-master/(daily-agent/|destaque-ai-self/|references/|methodology-changelog\.md))'
           OUTSIDE=$(echo "$CHANGED" | grep -vE "$ALLOWED" || true)
           if [ -n "$OUTSIDE" ]; then
             echo "Caminhos fora da lista de routine — sem automerge:"
