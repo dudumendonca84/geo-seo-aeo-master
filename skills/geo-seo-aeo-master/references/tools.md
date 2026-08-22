@@ -1,6 +1,6 @@
-# Tools landscape — May 2026
+# Tools landscape — May 2026 (Whitebox added Aug 2026)
 
-Reference for `geo-seo-aeo-master`. Eight vendors covering AI visibility monitoring, content optimisation, and hybrid offerings. Honest assessment of what each does and does not do. Pricing reflects publicly visible figures at refresh date.
+Reference for `geo-seo-aeo-master`. Nine vendors covering AI visibility monitoring, content optimisation, and hybrid offerings. Honest assessment of what each does and does not do. Pricing reflects publicly visible figures at refresh date.
 
 ## TL;DR — what to recommend by use case
 
@@ -107,13 +107,24 @@ Reference for `geo-seo-aeo-master`. Eight vendors covering AI visibility monitor
 - **Honest limitation.** Profound's review (partisan, but methodologically specific) notes the toolkit relies heavily on API calls rather than scraped real-user-facing answers, which can miss the citations real users see ([Profound review](https://www.tryprofound.com/blog/semrush-ai-visibility-toolkit-review)).
 - **Best fit.** B2B SaaS clients already paying for Semrush — the AI toolkit is a defensible add-on at marginal cost rather than a standalone purchase.
 
+## 9. Whitebox
+
+- **URL.** https://thewhitebox.io/ — solutions: https://thewhitebox.io/solutions
+- **What it does.** GEO platform (visibility tracking, narrative control, content generation) that also markets itself as "the decision layer for AI answer advertising": claims to improve ChatGPT ad campaigns with organic context, real user intent and competitive signals, ROAS measurement, and alignment between the ad and the AI answer it appears in. Flagged by the founder 22 Aug 2026.
+- **Category.** Hybrid (monitoring + content + **paid layer**) — first vendor in this list to claim the ads-inside-AI-answers measurement/optimisation space.
+- **Engines covered.** ChatGPT, Perplexity, Google AI Overviews (per marketing copy; independent verification pending).
+- **Entry pricing.** Not publicly visible at review date; positioning reads enterprise/e-commerce.
+- **Launched.** Recent; no founding/funding data found in Tracxn/Crunchbase profiles that clearly match this company (name collides with several older "Whitebox" companies).
+- **Honest limitation.** Everything above is vendor marketing copy, treat as directional: no independent reviews found, no public methodology, and ChatGPT ads buying is only now opening outside the US, so the ads-optimisation claims cannot yet have deep production history in the EEA. Their methodology copy also claims to explain "the why behind AI rankings" — same territory as the SINAL doctrine of WHY.
+- **Best fit / competitive note.** Watch-list competitor for destaque.ai's paid-layer roadmap, not a recommendation. destaque.ai differentiation to hold: paid+earned measured in the same weekly question grid, from the client's market and language, two-column honesty (never summing paid and earned), account owned by the client, flat fee without spend percentage. **Site copy rule: never claim "no tool exists for AI ads measurement" — Whitebox already markets one.**
+
 ---
 
 ## Category summary
 
 **Pure monitoring (citation tracking).** Peec AI, Otterly (with light GEO audit), Ahrefs Brand Radar.
 
-**Hybrid (monitoring + content / optimization).** Profound, Goodie, Surfer (core content optimisation + AI Tracker), Semrush AI Toolkit.
+**Hybrid (monitoring + content / optimization).** Profound, Goodie, Surfer (core content optimisation + AI Tracker), Semrush AI Toolkit, Whitebox (adds a claimed paid-ads layer; vendor copy, unverified).
 
 **Service / agency.** Daydream — should be presented to clients as an option, not as a self-serve GEO product.
 
