@@ -4,6 +4,18 @@ Reference for `geo-seo-aeo-master`. Definitions, formulas, measurement methods a
 
 ---
 
+## Per-response why (`why`) — required in analyze_response
+
+Every analysed response carries a 1-2 sentence explanation, in the
+client's language, of why the engine cited whom it cited. One rule:
+**only evidence present in that row** — the cited sources (who appears
+in them, who does not), the mode (knowledge = model memory; augmented =
+what live search returned), who is mentioned, and what the text says.
+Never guess the model's internal mechanism; when the row has no
+evidence that explains the choice, the `why` says exactly that. This is
+what separates an explanation from a horoscope — and it is the honest
+version of the "ask the AI why" features the market sells.
+
 ## 1. Citation rate / share of citations
 
 **Definition.** Percentage of LLM responses, for a defined prompt set, that include a citation (clickable source link or footnote) pointing to the target domain. Distinct from "mention" — a citation requires an explicit source reference.

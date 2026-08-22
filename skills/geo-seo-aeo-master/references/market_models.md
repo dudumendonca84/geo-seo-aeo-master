@@ -48,7 +48,24 @@ position is opening". For each insight:
 4. **Date it and revisit it.** An insight that was right is evidence
    for the method; one that was wrong is calibration. Keep both.
 
-## 3. Honesty rules (non-negotiable)
+## 3. The intervention registry (the causal engine)
+
+`tracker.intervention_outcomes` accumulates, across clients and
+anonymised, what each completed action actually did: action class,
+dimension, coarse sector, citation/SoV at completion and 4 weeks later,
+and the confounders written honestly (what else changed in the window).
+
+- **Write**: for every opportunity marked done >=4 weeks ago and not
+  yet registered, add its row. Labels only — never a client name or
+  domain in text fields.
+- **Read**: when generating opportunities or the weekly bet, consult
+  the registry; with 3+ cases of the same class, cite them ("this class
+  of action moved citation +X pp in N cases"). Below 3 cases, do not
+  aggregate — one case is an anecdote, not evidence.
+- This is the asset the market cannot copy: intervention data, not
+  opinion. It only grows if every completed action is registered.
+
+## 4. Honesty rules (non-negotiable)
 
 - Every insight is **directional** and says so: grounded hypotheses
   from observed patterns, not certainties. "O padrão sugere" — never
