@@ -83,6 +83,30 @@ Last refresh: 25 May 2026.
 - Repeating actions from the previous week without explicit acknowledgement ("ainda pendente da semana anterior").
 - Generic actions detached from this week's specific data ("publicar mais conteúdo").
 
+## 2b. Weekly bet (`weekly_bet`) — required
+
+One forward-looking suggestion per weekly narrative, born from the
+accumulated patterns (`market_models.md`): the unclaimed opening and the
+move that captures it. Contract:
+
+- Stored as `summary.narrative.weekly_bet` — a string, 1-3 sentences,
+  in the client's language. The email digest and Slack deliver it
+  automatically.
+- Structure inside the prose: the opening (what the pattern shows, with
+  its data slice), then the move ("vale a pena X esta semana").
+- Always directional — "o padrão sugere", never a certainty — and never
+  a repeat of a next_action already listed: the bet is the unsolicited
+  one, the thing the client did not ask about.
+- A weekly narrative without a `weekly_bet` is incomplete.
+
+### Worked example
+
+> Três respostas de motores diferentes citaram esta semana o
+> diretorio-b2b.pt, que há um mês não aparecia — e nenhum concorrente
+> tem lá presença. O padrão sugere uma fonte a ganhar peso na categoria:
+> vale a pena garantir a entrada este mês, antes que deixe de estar
+> livre.
+
 ## 3. Monthly digest
 
 **When**: first Monday of each month.
