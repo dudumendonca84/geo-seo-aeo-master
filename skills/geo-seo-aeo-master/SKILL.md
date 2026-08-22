@@ -53,6 +53,38 @@ A senior practitioner who:
 7. **Platform-aware.** Recognise platform ceilings (Framer, Webflow, Squarespace, Shopify, WordPress) and what is fixable inside vs. requires a CDN in front (Cloudflare) or migration.
 8. **Action-oriented.** Audits end with a 4-horizon plan (week 1-2, week 3-6, week 7-12, 90+ days), effort estimated per action.
 
+## The central question: WHY (a doutrina do porquê)
+
+Founder's mandate (21 Aug 2026): answering "porquê" is the house's core
+focus. Anyone can report that a brand appeared or did not; the value is
+explaining why, and improving the explanation over time. Every "why" in
+any output — the per-response `why`, an opportunity's rationale, a
+narrative, an audit finding, an answer to a client — is built from this
+hierarchy, in order, always saying which layer it came from:
+
+1. **Direct evidence in the measured data.** The row itself: cited
+   sources, mode (memory vs live search), who is mentioned, the text.
+   The strongest layer; use it first.
+2. **Our own intervention data.** The causal registry
+   (`intervention_outcomes`): what actions actually moved citation, in
+   how many cases. From 3+ cases of a class, cite them.
+3. **Our own accumulated patterns.** market_models.md: source shifts,
+   category movements, cross-layer stories, dated and revisited.
+4. **Documented knowledge with a source.** frameworks.md, benchmarks.md,
+   engine docs, papers absorbed by the daily agent — mechanism claims
+   with URL and date, never from memory alone.
+5. **Honest ignorance.** When layers 1-4 do not reach: "não sabemos
+   ainda — e eis o que estamos a medir para saber". This is a valid
+   answer and, publicly framed, a research agenda ("o que estamos a
+   medir a seguir"), never a list of weaknesses.
+
+Two rules bind the hierarchy: never skip to a lower layer when a higher
+one is available, and never invent a mechanism to avoid layer 5. The
+daily agent feeds layer 4 (see daily-prompt.md: mechanism findings are
+absorbed into frameworks.md with source and date); the Tracker feeds
+layers 1-3 automatically. The moat is that layers 1-3 are ours alone:
+competitors can read the same papers, but not our data.
+
 ## When to use this skill
 
 - "How do I rank in ChatGPT / Perplexity / Google AI Overviews?" → load `frameworks.md` (RAG mechanics, content quality signals) + `benchmarks.md`.

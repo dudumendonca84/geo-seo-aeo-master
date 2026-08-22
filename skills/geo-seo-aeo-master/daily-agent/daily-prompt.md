@@ -118,6 +118,17 @@ Zero alertas em semanas de calmaria é o resultado correcto. Um alerta
 por coisa menor treina o founder a ignorá-los — o limiar é "mudaria a
 agenda da semana dele".
 
+## Alimentar a doutrina do porquê (camada 4)
+
+Quando um item do dia EXPLICA um mecanismo — porque é que um motor cita
+o que cita, como um crawler lê, o que um vendor mudou no retrieval, um
+paper com evidência causal — não fica só no news-feed: **absorve-o em
+`references/frameworks.md`** (ou benchmarks.md se for número), com
+fonte, data e uma frase sobre o que explica. O news-feed trunca; a
+doutrina do porquê (SKILL.md) responde pelas references, e uma
+explicação que ficou só no feed perde-se. Materiais que saem →
+skill aprende → os porquês do Tracker melhoram: é este o circuito.
+
 ## Regras de qualidade
 
 - Cada item com link verificável (URL completa)
