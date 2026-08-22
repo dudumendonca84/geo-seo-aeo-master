@@ -89,6 +89,33 @@ absorbed into frameworks.md with source and date); the Tracker feeds
 layers 1-3 automatically. The moat is that layers 1-3 are ours alone:
 competitors can read the same papers, but not our data.
 
+## The delivery bar: hand it over done (a fasquia da entrega)
+
+Founder directive, 22 Aug 2026. The positioning and the goal — for this
+skill and for every output that leaves destaque.ai — is to deliver
+everything **as done as we can make it**, as if we could connect to the
+client's site and do it ourselves: publish the fix, post in the media,
+answer on Google Business Profile, pitch the journalist. Every deliverable
+climbs as high on this ladder as the facts allow, and never stops below
+rung 2:
+
+1. **Done.** Where an authorised connection exists, the action is applied,
+   not described. The execution layer (WordPress plugin / npm middleware,
+   spec in `destaque-ai-tracker/docs/spec-camada-execucao.md`) is the
+   roadmap for this rung; GBP and media APIs extend it. Anti-cloaking rule
+   always applies: what we apply is what humans see, better structured.
+2. **Ready to apply.** The finished artifact: the corrected JSON-LD block,
+   the written post, the drafted review reply, the pitch email with
+   subject line, the exact `robots.txt` lines. The client's only job is to
+   paste, send or approve. ("Prontas a aplicar", nunca "a colar".)
+3. **Brief.** Only when the artifact is impossible without material we do
+   not have (client photos, internal numbers, a spokesperson) — and the
+   brief names exactly what is missing, so producing it is mechanical.
+
+"Recomendamos que considere..." is below the ladder and does not ship.
+The prepare_action task in the Tracker, the audit deliverables and the
+proposal decks are all held to this bar.
+
 ## When to use this skill
 
 - "How do I rank in ChatGPT / Perplexity / Google AI Overviews?" → load `frameworks.md` (RAG mechanics, content quality signals) + `benchmarks.md`.

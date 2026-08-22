@@ -45,6 +45,24 @@ Propose sources by asking, in order:
 | **Technical community** | Developer-facing product, API, open source | Hacker News, Stack Overflow, GitHub discussions |
 | **Sector forums** | Established vertical with a long-lived forum | ZWAME (tech PT), Autohoje (auto PT), industry associations |
 | **Video and long-form** | Category where demos or reviews drive decision | YouTube comment threads, podcast episode pages |
+| **Social 360** | Always — standing set since 22 Aug 2026 (founder directive) | YouTube, LinkedIn, Instagram, TikTok, X (x.com + twitter.com) as `site` sources |
+
+### Social 360 (standing set)
+
+Every client gets the five social networks as `site` sources — YouTube,
+LinkedIn, Instagram, TikTok, X — collected via Google-index `site:` search
+with the exact-quoted brand and confirmed-competitor terms (~$0.002/query
+via DataForSEO; ~50 queries/client/week, cost negligible). What it answers:
+who talks about the brand and its competitors on the networks, what they
+say, and which of those pages the engines then cite.
+
+Honesty of the method: coverage is **what Google indexes**, not the full
+firehose — Instagram and TikTok are partially indexed, X variably.
+That is declared in the rationale, never hidden. Upgrade path when volume
+justifies it: YouTube Data API (free quota) first; paid native APIs (X)
+only with the recurring cost shown to the founder before production.
+The 360 set still lands inactive for new clients until a human confirms —
+except where the founder has already ordered it on (destaque.ai, 22 Aug).
 
 **Do not propose** platforms whose terms forbid programmatic reading and
 which have no public search surface, and never propose a workaround for
