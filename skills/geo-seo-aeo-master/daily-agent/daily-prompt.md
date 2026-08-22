@@ -148,7 +148,15 @@ Além do news-feed, TODA a corrida termina com um email ao founder
   título `## 📬 DIGEST (não enviado — Gmail indisponível)` e di-lo na
   resposta da corrida.
 
-Tom: sócio de estratégia, sóbrio, sem travessão, máximo ~300 palavras.
+- **Layout**: HTML de email (htmlBody), largura 600px, cabeçalho com o
+  wordmark (destaque em fundo #FACC15), secções com etiqueta mono em
+  maiúsculas, jogadas destacadas com fundo #fef3c7. Simples e legível
+  no telemóvel.
+- **Fontes SEMPRE**: cada item termina com o link da fonte (ou fontes),
+  visível e clicável ("Fonte: Search Engine Land"). Item sem fonte não
+  entra no email.
+
+Tom: sócio de estratégia, sóbrio, sem travessão, máximo ~400 palavras.
 
 ## Alimentar a doutrina do porquê (camada 4)
 
