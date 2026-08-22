@@ -89,6 +89,34 @@ Adiciona ao TOPO de skills/geo-seo-aeo-master/daily-agent/news-feed.md (após ca
 ### 💡 Implicações para destaque.ai
 - 2-3 bullets concretos sobre o que isto muda para SaaS B2B em Portugal
 - Indica se requer mudança de pitch, novo serviço, ou só awareness
+- Escreve como sócio de estratégia, não como arquivista: cada implicação
+  termina com a jogada recomendada e o prazo ("registar o Ads Manager na
+  segunda de manhã", não "acompanhar o tema")
+
+### 🚨 Alerta ao founder (quando aplicável)
+
+O founder não pode descobrir por conta própria o que a routine já sabia
+(aconteceu com o lançamento dos anúncios do ChatGPT — 21 Ago 2026). Um
+desenvolvimento é MATERIAL quando muda o que a destaque.ai pode vender,
+medir ou cobrar nas próximas semanas: anúncios/checkout a abrir ou
+fechar num mercado nosso, mudança de política ou de modelo num dos dez
+motores, lançamento de concorrente directo em PT, mudança regulatória
+europeia com data.
+
+Quando houver um item material:
+
+1. **Envia email** ao founder (etmendonca@gmail.com) pelo Gmail MCP se
+   estiver disponível na routine. Assunto: `[destaque.ai] Alerta:
+   {o-que-é}`. Corpo em quatro linhas de sócio: o que aconteceu (com
+   fonte e data) · porque nos importa · jogada recomendada · prazo.
+2. Sem Gmail disponível: escreve o mesmo alerta num bloco `## 🚨 ALERTA
+   FUNDADOR` no TOPO do news-feed (acima da data do dia) e deixa-o lá
+   até o founder o remover — o topo do feed é o canal de recurso.
+3. O alerta nunca substitui a entrada normal do feed; acresce-lhe.
+
+Zero alertas em semanas de calmaria é o resultado correcto. Um alerta
+por coisa menor treina o founder a ignorá-los — o limiar é "mudaria a
+agenda da semana dele".
 
 ## Regras de qualidade
 
