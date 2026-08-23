@@ -95,6 +95,31 @@ Google Search Quality Rater Guidelines (Sept 2025 revisão).
 
 ---
 
+### Pattern: Schema injectado via Google Tag Manager
+
+#### Hipóteses
+1. Agência anterior "implementou schema sem tocar no site" via GTM.
+
+#### Acção
+Diagnóstico imediato: o GTM injecta por JavaScript, e os crawlers de IA
+(GPTBot, ClaudeBot, PerplexityBot) NÃO executam JS — verificado em
+experiência própria (19 Ago 2026) e por experiência controlada externa
+(Search Engine Land, Ago 2026). O Googlebot vê; a camada de IA não.
+Consequência: schema via GTM é invisível para os motores que decidem
+respostas. Correcção: mover o JSON-LD para o HTML servido (template,
+plugin, middleware) — nunca "optimizar" a camada de IA por tag manager.
+Argumento comercial honesto: conseguimos mostrar ao cliente, no site
+dele, que o schema pago à agência anterior nunca foi lido pela IA.
+
+#### Esforço
+Diagnóstico: minutos (fetch sem JS). Correcção: depende da plataforma.
+
+#### Fonte
+Experiência própria 19 Ago 2026; Search Engine Land (experiência de 41
+dias, links só-em-JS invisíveis a GPTBot/Bingbot), Ago 2026.
+
+---
+
 ## DIMENSÃO 2 — Content & topical authority
 
 ### Pattern: Sem original statistics publicadas
