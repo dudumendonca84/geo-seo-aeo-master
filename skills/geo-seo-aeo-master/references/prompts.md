@@ -342,3 +342,41 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
   (tipicamente **CEO/fundador**) fica quase ausente — se acontecer, reatribui a
   persona dos prompts cujo ângulo é claramente de outro perfil (`update` no mesmo
   `id`, não perde histórico).
+
+
+## Personas sintéticas (piloto especificado, 23 Ago 2026)
+
+Conceito do founder: perfis de comprador simulados que fazem as
+perguntas COM CONTEXTO e COM SEGUIMENTO — jornada multi-turn, não
+pergunta solta. Mede duas coisas que a auditoria de pergunta única não
+apanha:
+
+1. **Visibilidade por perfil.** A resposta muda com quem pergunta ("sou
+   CFO de uma PME de 200 pessoas" vs "sou técnico a avaliar
+   ferramentas"): em que perfis a marca vive e em quais desaparece.
+2. **Sobrevivência ao seguimento.** 62% das marcas da primeira resposta
+   caem quando o comprador faz uma pergunta de follow-up (Clovion, 69.120
+   conversas B2B, 2026). Medimos essa taxa para o cliente, no mercado
+   dele: "sobrevives à abertura, morres no 'e para uma equipa pequena?'".
+
+**Desenho do piloto (tecto escrito, não ultrapassar sem decisão do
+founder):** 3 personas × 10 perguntas × 2 turnos × 3 motores
+(cost_optimized) = ~180 chamadas/semana, custo estimado em cêntimos a
+2€/semana. Escala só com resultados à vista e número novo à frente do
+founder.
+
+**Pré-requisito duro:** o rastreio real de custo por auditoria
+(`total_cost_usd`, hoje por preencher no pipeline) tem de estar ligado
+ANTES da primeira corrida do piloto — o primeiro relatório do piloto
+sai com o custo real ao lado, ou não sai.
+
+**Honestidade a declarar sempre:** são simulações — medem o
+comportamento do motor para aquele perfil de contexto, não utilizadores
+reais nem personalização de contas (que a via directa não tem, e ainda
+bem: mede-se o perfil, não os vícios de uma conta).
+
+**Construção:** as personas derivam das que o catálogo de prompts já
+usa (persona × fase de funil); o turno 2 é a pergunta de seguimento
+natural dessa persona (orçamento, dimensão, localização, urgência).
+Resultados persistem como os das auditorias, com marca de persona e
+turno, fora das métricas contratadas até o piloto ser promovido.
