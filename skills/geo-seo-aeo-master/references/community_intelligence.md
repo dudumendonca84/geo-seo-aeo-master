@@ -47,6 +47,40 @@ Propose sources by asking, in order:
 | **Video and long-form** | Category where demos or reviews drive decision | YouTube comment threads, podcast episode pages |
 | **Social 360** | Always — standing set since 22 Aug 2026 (founder directive) | YouTube, LinkedIn, Instagram, TikTok, X (x.com + twitter.com) as `site` sources |
 
+### The observed-source rule (standing, 23 Aug 2026)
+
+**If a model is seen using a source, that source enters monitoring.** No
+debate about whether it "counts" as a community, no waiting for the next
+quarterly review. The engines decide what matters; our job is to notice
+and follow.
+
+This closes the loop between two things the Tracker already collects.
+The observatory reads, per answer, the domains an assistant consulted and
+the ones it cited, with the page URL. Any domain appearing there that is
+not already a monitored source is a **candidate**, and the standing rule
+is to adopt it rather than to justify it.
+
+Adopt on sight when the domain carries third-party opinion about the
+category: a forum, a review site, a local directory, a trade title, a
+community blog. These are the ones that move an answer and that nobody
+thinks to watch.
+
+Three that do not enter as community sources: the client's own domain
+(already covered as owned property), pure aggregators with no editorial
+or user content, and sources outside the client's market that got pulled
+in by language overlap. That last one is itself a finding worth reporting,
+not a source worth tracking. Observed on 23 Aug 2026: a question about
+private hospitals in Porto had the assistant reading six Brazilian
+health-sector domains. The lesson for the client is that the Portuguese
+sources are too thin to fill the answer, so the model reached across the
+language. The action is to publish where the gap is, not to monitor
+Brazilian trade press.
+
+Record every adoption with the answer that triggered it. A source with a
+provenance line ("entered after being cited for *melhor maternidade
+privada em Lisboa*, 23 Aug") survives scrutiny; a source on a list
+nobody can explain gets deleted at the first cleanup.
+
 ### Social 360 (standing set)
 
 Every client gets the five social networks as `site` sources — YouTube,
