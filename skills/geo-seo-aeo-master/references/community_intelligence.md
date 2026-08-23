@@ -146,6 +146,36 @@ less than one in the thread the engine cites.
 
 ---
 
+## 2b. Insights operacionais — a voz do cliente como produto
+
+Pedido do founder (23 Ago): do mapeamento de fóruns, reviews e redes,
+extrair também o que os clientes dizem DE CONCRETO sobre a operação da
+marca — "o tempo de espera da CUF Braga é grande", "o café tinha pouca
+variedade", "o peixe não estava fresco" — e devolvê-lo como
+oportunidades de melhoria operacional, com a citação como evidência.
+
+**A justificação estratégica, que vai no relatório:** o que os clientes
+escrevem hoje em reviews e fóruns é o que os motores respondem amanhã —
+estas plataformas são a matéria-prima das recomendações futuras.
+Optimizar a marca para a IA É optimizar o todo; a queixa operacional de
+hoje é a resposta negativa do modelo no próximo ciclo.
+
+**Regras de extracção (em `analyze_community`):**
+- Só entra o específico e accionável (tempo de espera, frescura,
+  variedade, atendimento X); desabafos vagos não são insight.
+- Recorrência antes de tendência: 2+ menções independentes = padrão;
+  1 menção = observação isolada, rotulada como tal, nunca apresentada
+  como tendência.
+- Cada insight leva a citação (com fonte e data) e, quando possível, a
+  localização ("Braga", "loja do Colombo") — é o detalhe que o torna
+  executável.
+- Formato de saída: "os clientes dizem X [evidência]; a melhoria
+  operacional é Y; o efeito esperado na IA é Z (as reviews futuras
+  alimentam as respostas futuras)".
+- Fronteira honesta: nós reportamos e priorizamos; a operação é do
+  cliente. Não fingimos consultoria de operações — entregamos o que o
+  mercado está a dizer, destilado e datado.
+
 ## 3. What never to do with this data
 
 - **No astroturfing, ever.** The output of this analysis is a decision
