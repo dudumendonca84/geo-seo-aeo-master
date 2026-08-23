@@ -371,6 +371,54 @@ Auditorias do Visibility Tracker (citações por domínio, fonte primária inter
 
 ---
 
+### Pattern: Negócio local com rating Google < 4,0
+
+Pedido do founder (23 Ago): "como revertemos o jogo para um restaurante
+com 3,5?" É reversível, é mensurável, e é dos poucos serviços locais
+com matemática à vista.
+
+#### Hipóteses
+1. Causa operacional real, visível nos temas das queixas (a vista de
+   reputação já as destila) — reviews são sintoma antes de serem número.
+2. Volume baixo: os satisfeitos calados são maioria e ninguém lhes pede.
+3. Negativas antigas a pesar num perfil parado (recência conta para
+   modelos e para leitores).
+
+#### Acção
+1. **A matemática primeiro**: calcular e mostrar o número exacto — "de
+   3,5 com 80 reviews para 4,3 são ~N avaliações 5 estrelas; ao ritmo
+   actual, X meses; com sistema, Y". Aritmética sobre dados já
+   recolhidos; é o argumento de venda e a meta do plano.
+2. **Causa antes do volume**: se os temas de queixa apontam operação
+   (atendimento, tempo de espera), a correcção operacional precede o
+   pedido de reviews — dizê-lo ao cliente é obrigatório, mesmo que não
+   seja o que quer ouvir. Encher um balde furado não é serviço.
+3. **Sistema de pedido universal**: pedir avaliação a TODOS os clientes,
+   sistematicamente (QR à mesa, SMS/email pós-visita com link directo).
+   Peça pronta: o cartão/QR, o texto do SMS, o momento do pedido.
+4. **Responder a 100% das reviews**, novas e antigas relevantes — pacote
+   de respostas prontas por tema, no tom da casa (deliverable do
+   Preparar).
+5. Perfil vivo: fotos, horários, menu, posts — recência em tudo.
+
+#### Linhas vermelhas (não negociáveis)
+Nunca comprar reviews; nunca review gating (filtrar só satisfeitos para
+o pedido viola as políticas do Google e arrisca o perfil); nunca
+responder a atacar o cliente. Quem propuser atalhos destes não é
+parceiro, é passivo.
+
+#### Esforço
+Setup 1-2 semanas; sistema contínuo. Reversão típica: meses, não
+semanas — dizer o prazo real.
+
+#### Impacto típico
+Directo no que os motores locais leem (rating, volume, recência, taxa
+de resposta alimentam Google Maps/AI Mode e as recomendações locais).
+Sem estudo público que isole lift por marca; a prova é o antes/depois
+do próprio cliente no registo causal.
+
+---
+
 ## DIMENSÃO 6 — Authority signals on site (E-E-A-T)
 
 ### Pattern: Conteúdo sem autores declarados (sem `Person` schema)
