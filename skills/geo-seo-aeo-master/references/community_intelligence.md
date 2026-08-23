@@ -176,6 +176,26 @@ hoje é a resposta negativa do modelo no próximo ciclo.
   cliente. Não fingimos consultoria de operações — entregamos o que o
   mercado está a dizer, destilado e datado.
 
+## 2c. Reddit: a porta da API fechou (24 Ago 2026)
+
+A Responsible Builder Policy do Reddit exige **aprovação explícita**
+antes de qualquer acesso à API, por formulário manual; projectos
+pequenos são frequentemente recusados e o uso comercial precisa de
+acordo escrito. Registar contas ou pedidos repetidos para o mesmo caso
+de uso é proibido: **não se volta a tentar**. O pedido da destaque.ai
+foi recusado e a conta não consegue criar apps.
+
+Consequência prática (nenhuma perda de capacidade):
+1. **Índice Google** (`site:reddit.com "marca"` via DataForSEO) — rico e
+   fresco, porque a Google tem acordo pago com o Reddit.
+2. **Threads que os motores citam** nas respostas medidas — a via mais
+   valiosa: dá o subreddit exacto que decide a categoria do cliente.
+3. **JSON público**, dentro da leitura pública não comercial.
+
+Leitura de mercado, útil em reunião: a porta fechou para TODOS. Quem
+vende "monitorização de Reddit" em 2026 ou paga contrato comercial, ou
+está a raspar. Dizê-lo é honestidade e diferenciação ao mesmo tempo.
+
 ## 3. What never to do with this data
 
 - **No astroturfing, ever.** The output of this analysis is a decision
