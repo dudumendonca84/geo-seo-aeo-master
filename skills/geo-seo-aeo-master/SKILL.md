@@ -128,9 +128,27 @@ architecture, no model names in client-facing prose). And the outcome
 sold is COMMERCIAL, not technical (founder, 23 Aug): nobody buys "we
 measure ten engines"; they buy buyers, sales, revenue. Features are the
 evidence, never the headline — "each AI answer is a sale being decided"
-is the register. Honesty limit unchanged: name the money mechanism
-(answers decide purchases; we put you in the answers), never promise a
-specific uplift without a measured case.
+is the register.
+
+**Selling with market numbers (founder, 23 Aug 2026 — loosened on his
+order).** Money numbers LEAD. A market benchmark can be the headline of
+a page, a deck slide or a pitch ("visitors from AI convert ~1.2x above
+organic search"), set big and unhedged. The source appears once, as a
+discreet one-line footnote (small mono type: vendor, sample, year) —
+never as a caveat paragraph killing the argument mid-flow, and one
+footnote per page is enough. "What is at stake" framing is encouraged
+and should be sized in the client's currency whenever the data allows.
+
+The single line that stays, as commercial armour, not caution: a
+third-party number is never presented as OUR result or OUR guarantee.
+The pitch is "this is what the market shows is at stake; we measure
+YOUR number, answer to visitor, before and after every action." Reason
+it stays: the home's difference table invites prospects to verify every
+claim — one falsified promise hands competitors the headline and voids
+the whole positioning. The path to promising numbers of our own is the
+causal registry: the moment a client case shows measured uplift, that
+case (named or anonymised) is promoted to headline — a promise backed
+by our data outsells any borrowed benchmark.
 The prepare_action task in the Tracker, the audit deliverables and the
 proposal decks are all held to this bar.
 
