@@ -1,6 +1,6 @@
-# Tools landscape — May 2026 (Whitebox added Aug 2026)
+# Tools landscape — May 2026 (Whitebox + Promptwatch added Aug 2026)
 
-Reference for `geo-seo-aeo-master`. Nine vendors covering AI visibility monitoring, content optimisation, and hybrid offerings. Honest assessment of what each does and does not do. Pricing reflects publicly visible figures at refresh date.
+Reference for `geo-seo-aeo-master`. Ten vendors covering AI visibility monitoring, content optimisation, and hybrid offerings. Honest assessment of what each does and does not do. Pricing reflects publicly visible figures at refresh date.
 
 ## TL;DR — what to recommend by use case
 
@@ -14,6 +14,7 @@ Reference for `geo-seo-aeo-master`. Nine vendors covering AI visibility monitori
 | Enterprise multi-engine + workflow | Profound (~US$499/mo entry, scales to enterprise) |
 | Wants done-for-them content + monitoring | Goodie (~US$495/mo entry) |
 | Wants an AI-SEO agency, not a tool | Daydream (custom quote) |
+| Self-serve multi-engine, multi-language, mid-market | Promptwatch (US$99/mo, 10 engines) |
 
 **Cross-cutting reality.** Every monitoring tool depends on a prompt list. Two tools with different default prompts will produce different "share of voice" for the same brand. Treat absolute numbers with scepticism; treat trends within a single tool over time as more reliable.
 
@@ -121,9 +122,22 @@ Reference for `geo-seo-aeo-master`. Nine vendors covering AI visibility monitori
 
 ---
 
+## 10. Promptwatch
+
+- **URL.** https://promptwatch.com — pricing: https://promptwatch.com/pricing
+- **What it does.** Self-serve AI visibility platform: brand mentions, citations and sentiment tracked model-by-model in one dashboard, prompt/conversation monitoring, content-gap analysis. Multi-language, pitched at agencies and mid-market. Flagged by the founder 22 Aug 2026.
+- **Category.** Monitoring (closest tool-level analogue to the Visibility Tracker seen so far).
+- **Engines covered.** ChatGPT, Gemini, Perplexity, Claude, Grok, Copilot, DeepSeek, Google AI Overviews, Mistral, Meta Llama — ten engines, the same headline number destaque.ai uses (their set swaps our Google AI Mode + surfaces for Meta Llama).
+- **Entry pricing.** Public: Basic US$99/mo (3,000 prompts), Starter US$249/mo (10,000), Growth US$499/mo (50,000, 3 seats).
+- **Founded.** Recent; no reliable founding/funding data found at review date.
+- **Honest limitation.** Volume-first design: thousands of generic prompt runs per month, engine-side only — no first-party joins (GSC/GA4/ads), no per-action before/after registry, no community/social layer, no shopping-carousel observatory, and no evidence of market-localised buyer-question curation. Their data studies (e.g. the Reddit citation-drop analysis, Aug 2026) earn wide press pickup — treat those numbers as directional vendor data, as the news-feed already does.
+- **Best fit / competitive note.** Watch-list: the most direct "tool vs tool" comparison a prospect may throw at us. destaque.ai differentiation to hold: curated buyer questions from the client's market and language (not raw volume), sources graph down to the exact place, first-party integrations, causal registry, done-for-you deliverables — we sell the measurement WITH the operation, not a dashboard. Their PR lesson is worth copying: original data studies get cited by Search Engine Land and Forbes; our observatory and barómetro can play the same game with PT/EEA data no one else has.
+
+---
+
 ## Category summary
 
-**Pure monitoring (citation tracking).** Peec AI, Otterly (with light GEO audit), Ahrefs Brand Radar.
+**Pure monitoring (citation tracking).** Peec AI, Otterly (with light GEO audit), Ahrefs Brand Radar, Promptwatch (10 engines, volume-first).
 
 **Hybrid (monitoring + content / optimization).** Profound, Goodie, Surfer (core content optimisation + AI Tracker), Semrush AI Toolkit, Whitebox (adds a claimed paid-ads layer; vendor copy, unverified).
 
