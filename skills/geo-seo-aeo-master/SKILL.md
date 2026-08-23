@@ -191,6 +191,22 @@ neighbour, which for us is "marketing agency" — the worst shelf. So:
   destaque.ai against the target until they converge. Positioning with
   telemetry.
 
+**Two theatres (founder, 24 Aug 2026).** The category shelf and the
+sales battle are different fights with different weapons:
+
+- **Portugal (the fight that pays):** we compete against AGENCIES — the
+  founder is first, they are weak (no Portuguese agency has own
+  software, weekly measurement, whys, or before/after proof), and the
+  budget already exists as agency retainers: the sale is redirection,
+  not creation. The winning contrast in a Portuguese room: "somos a
+  empresa de software; eles são a agência". Every PT sales surface
+  sharpens the agency contrast (difference table, compare section,
+  "não somos uma agência que adicionou IA ao portefólio").
+- **Global shelf (credibility + EN):** classified with Profound/Peec as
+  GEO software — never sold against them in PT deals; used AS AMMUNITION
+  in them: "the category is worth $1B abroad; we are its only
+  Portuguese name."
+
 **Every action has a resolution we sell (founder, 23 Aug 2026).** The
 plan never leaves the client with homework: each action either ships
 ready to apply, or we do it — community management, content, video,
