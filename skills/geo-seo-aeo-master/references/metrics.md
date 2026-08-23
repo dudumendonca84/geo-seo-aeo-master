@@ -294,3 +294,30 @@ prioritisation (low-cost lines first unless strategy says otherwise),
 and prospect reports (which line is winnable now). Honest limitation to
 declare when shown: bands are relative to the client's measured
 category, not comparable across categories.
+
+
+## Tendências de procura em LLMs (o "Google Trends" que não existe)
+
+Pergunta do founder (23 Ago 2026). Estado honesto: nenhum vendor
+publica volume de prompts por tema; não há firehose. Quem vender
+"prompt volume" exacto está a extrapolar painel — usar, rotulado
+direccional. Os proxies reais, por ordem de utilidade:
+
+1. **Google Trends** — o melhor proxy de procura por tema (a procura
+   transfere-se para os assistentes com cauda mais conversacional).
+2. **Clickstream panels** — Semrush (estudo de 17 meses/mil milhões de
+   linhas US, Abr 2026) e Similarweb: tendências agregadas de uso e
+   referrals; datasets à venda. Painel ≠ censo; EUA ≠ PT.
+3. **GSC do cliente** — impressões em AI Overviews por query: procura
+   real da marca nas superfícies de IA, primária e gratuita.
+4. **Estudos de uso dos vendors** (OpenAI, Anthropic Economic Index) —
+   categorias agregadas, contexto apenas.
+
+**O activo próprio ("Tendências da camada de decisão"):** o Trends mede
+o que se pergunta; nós medimos o que se RESPONDE, semana a semana —
+perguntas que ganham/perdem carrossel, fontes que sobem, marcas que
+entram, e as perguntas emergentes nas comunidades do cliente (as
+perguntas de hoje nos fóruns são os prompts de amanhã; a recolha de
+comunidade já as apanha). Quatro sinais juntos: procura (Trends),
+procura da marca (GSC/AIO), oferta das respostas (a nossa série),
+perguntas emergentes (comunidade). Fonte de camada 2 para o Onde Focar.
