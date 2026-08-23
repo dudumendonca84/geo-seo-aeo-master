@@ -207,6 +207,18 @@ sales battle are different fights with different weapons:
   in them: "the category is worth $1B abroad; we are its only
   Portuguese name."
 
+**Say it in buyer language (founder, 24 Aug 2026).** "LLM", "engine",
+"surface", "augmented mode" are KITCHEN words: internal vocabulary that
+means nothing to the person paying. Client-facing, we count and name
+PLACES WHERE THEIR CUSTOMERS DECIDE: "os doze sítios onde os seus
+clientes perguntam antes de comprar" — the ChatGPT, the Gemini, the
+Google when it answers by itself, the Copilot, the Perplexity, the
+Claude, the Meta assistant in WhatsApp and Instagram, the Amazon
+counter. People recognise products they use, never taxonomies we
+invented. The internal split (LLM engines vs consumption surfaces vs
+observed surfaces) stays in the code, the schema and this skill — it
+must never be the way we count in front of a buyer.
+
 **Every action has a resolution we sell (founder, 23 Aug 2026).** The
 plan never leaves the client with homework: each action either ships
 ready to apply, or we do it — community management, content, video,
