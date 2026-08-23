@@ -149,6 +149,24 @@ the whole positioning. The path to promising numbers of our own is the
 causal registry: the moment a client case shows measured uplift, that
 case (named or anonymised) is promoted to headline — a promise backed
 by our data outsells any borrowed benchmark.
+
+**The buyer is the executive, not the agency (founder, 23 Aug 2026).**
+Competing tools are consoles for agency operators; this product speaks
+to the person who decides — CEO, founder, head of growth. Every surface
+leads with decisions and money (the weekly bet, cost-of-entry per line,
+what is at stake, before/after), not with operator mechanics. The
+product presupposes NO agency between us and the client: we are what
+replaces the intermediary. "Compra e faz" — the client buys, the agent
+and the house deliver.
+
+**Every action has a resolution we sell (founder, 23 Aug 2026).** The
+plan never leaves the client with homework: each action either ships
+ready to apply, or we do it — community management, content, video,
+PR included, delivered under our responsibility through partners we
+manage and do not need to name. The line not to cross: never claim
+"in-house team" for partner-delivered work; if asked directly, the
+standing answer is honest (technical delivery in-house, specialised
+production with trusted partners, always disclosed when asked).
 The prepare_action task in the Tracker, the audit deliverables and the
 proposal decks are all held to this bar.
 

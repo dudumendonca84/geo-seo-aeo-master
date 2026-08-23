@@ -262,3 +262,35 @@ A working measurement stack for a B2B SaaS PT-PT engagement:
 6. The "click era is over" narrative is partly true (AIO collapses CTR where it appears) and partly hype (the remaining ~50% of Google queries still trigger no AIO per BrightEdge). For B2B Tech specifically, AIO presence is ~82% — the impact is upper-bound for destaque.ai's likely vertical.
 
 Last refresh: 23 May 2026.
+
+## Custo de Entrada (prompt / business-line difficulty)
+
+Founder's concept, 23 Aug 2026 — the LLM analogue of SEO keyword
+difficulty, computable from data the Tracker already measures. Answers
+the executive question "which line do I attack first, and why".
+
+Computed per prompt and aggregated per business line, from four drivers:
+
+1. **Incumbent concentration.** Distinct brands cited in the prompt's
+   answers and the leader's share of them. One brand in 80% of answers
+   = entrenched; ten brands scattered = open.
+2. **Source anchoring.** Do the answers rest on 2-3 strong recurring
+   sources (hard: you must enter THOSE sources) or on weak, scattered
+   ones (soft: good content enters)?
+3. **Knowledge route.** Memory-dominated prompts move in months (entity
+   work); search-dominated prompts move in weeks (source work). Route
+   comes from the knowledge/augmented split already measured.
+4. **Weekly stability.** Same answer every week = locked in; volatile
+   answers = contested, window open.
+
+**Output contract:** a band — `baixo | médio | alto` — plus the drivers
+written out with the evidence ("alto: a CUF aparece em 82% das
+respostas desta linha, ancorada em 3 fontes que se repetem, maioria em
+modo memória"). NEVER a decimal score: false precision on four ordinal
+drivers is fabrication. Directionality over exactness.
+
+Used by: the weekly narrative (line-level read), opportunity
+prioritisation (low-cost lines first unless strategy says otherwise),
+and prospect reports (which line is winnable now). Honest limitation to
+declare when shown: bands are relative to the client's measured
+category, not comparable across categories.
