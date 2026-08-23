@@ -55,6 +55,7 @@ When citing capabilities, **always include the model version and the date observ
 - **ChatGPT Atlas browser** — GPT-5.5 Instant with browsing tools enabled by default (not yet confirmed migrated to GPT-5.6).
 - **Custom GPTs** — pinned to model owner chose (often GPT-4o legacy still).
 - **ChatGPT Voice (GPT-Live)** — since 8 Jul 2026, full-duplex voice models (GPT-Live-1 flagship for paid tiers, GPT-Live-1 mini default for free users) replace Advanced Voice Mode. Voice layer only — delegates web search/reasoning to the GPT-5.5 backend when a query needs it; underlying search/citation model unchanged. Source: [openai.com/index/introducing-gpt-live](https://openai.com/index/introducing-gpt-live/).
+- **GPT-5.6 Sol API pricing cut (21 Aug 2026)** — promotional pricing through at least 21 Nov 2026: input $5.00→$4.00/1M tokens (-20%), cached input $0.50→$0.40/1M, output $30.00→$20.00/1M (-33%). Applies to the pay-as-you-go API, Codex credits and eligible ChatGPT Work plans; Plus/Pro/Business subscription prices unchanged. Now cheaper than Claude Opus 5 on both input and output — framed by OpenAI as a response to Anthropic/Chinese-lab price competition, not a model change. Source: [OpenAI Developer Community](https://community.openai.com/t/20-price-reduction-for-gpt-5-6-sol-api-codex-credits-and-chatgpt-work/1391726) (21 Aug 2026), corroborated by Reuters/Investing.com.
 
 ### GEO-relevant notes
 

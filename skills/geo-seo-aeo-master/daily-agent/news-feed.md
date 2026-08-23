@@ -8,6 +8,35 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-23
+
+Dia calmo. Único item novo: a OpenAI cortou os preços da API do GPT-5.6 Sol em mais de 20% (input) e 33% (output), promoção até 21 de novembro, tornando o modelo mais barato que o Claude Opus 5 nos dois lados. Sem mudança de mecânica de citação, de plataforma ou de modelo-default confirmada nas últimas 24 a 48 horas além disto. Sem alerta ao founder.
+
+Radar LLM/IA: corte de preço GPT-5.6 Sol (acima). Sem lançamentos novos de modelo em janela verificáveis (Grok 4.6 e Grok Imagine 2.0 são de 6 e 8 ago, já fora da janela).
+
+GEO/AEO: sem novidade não-duplicada; a história em curso da queda de citações do Reddit no ChatGPT (08-19 a 08-22) continua sem desenvolvimento novo hoje.
+
+SEO/Google: sem novidade; spam update de agosto já concluído (registado 08-21).
+
+Implicações: sem jogada urgente. Vale confirmar até sexta (28 ago) se algum componente interno chama GPT-5.6 Sol via API, para recalcular custo unitário com o novo preço.
+
+Dia parado, corrida completa.
+
+## 2026-08-23
+
+### 🔵 Anúncios oficiais
+- **OpenAI corta preços da API do GPT-5.6 Sol em mais de 20%** — [OpenAI Developer Community](https://community.openai.com/t/20-price-reduction-for-gpt-5-6-sol-api-codex-credits-and-chatgpt-work/1391726), 21 ago 2026, corroborado por Reuters/Investing.com e Finimize. Preço promocional até pelo menos 21 nov 2026: input $5,00→$4,00 por milhão de tokens (−20%), cache $0,50→$0,40, output $30,00→$20,00 (−33%). Aplica-se à API pay-as-you-go, créditos Codex e planos ChatGPT Work elegíveis; subscrições Plus/Pro/Business ficam inalteradas. O Sol passa a ser mais barato que o Claude Opus 5 em input e output — a OpenAI enquadra o corte como resposta à pressão competitiva da Anthropic e de labs chinesas, não como mudança de modelo.
+
+### 💡 Implicações para destaque.ai
+- O corte de preço não muda mecânica de citação, mas reduz o custo de qualquer ferramenta interna ou de cliente que chame GPT-5.6 Sol via API — **confirmar até sexta-feira, 28 de agosto, se algum componente do Tracker ou Deck Builder usa este modelo directamente**, e recalcular custo unitário se sim.
+- A guerra de preços OpenAI/Anthropic é awareness para pitches: custo de acesso via API deixou de ser diferenciador estável entre motores — reforçar, na próxima proposta que levante o tema, que a auditoria GEO mede citação por motor e não escolhe vencedor por preço de API. Sem prazo específico.
+
+**Nota de integridade de dados**: verificação feita via `WebSearch` (sem `WebFetch` directo às 7 fontes Tier 1 nesta sessão). Candidatos investigados e **descartados por já cobertos** (confirmado por grep em `news-feed.md`/`references/` antes de escrever): August 2026 spam update (18-21 ago, já em 08-19/08-21/08-22 — concluído); expansão de ChatGPT Ads a 31 mercados europeus incl. Portugal (já em 08-19, lançamento mantém-se a 24 ago, sem novidade de estado hoje); Gemini 3.7 Flash no AI Mode (já em 08-16, absorvido em `references/models.md`); Ahrefs "38% das citações AIO vêm do top-10, era 76%" (estudo de 2 mar 2026, reaparecido de novo nas pesquisas de hoje — já rejeitado em pelo menos seis sessões anteriores); SE Ranking/llms.txt 300k domínios, correlação nula via XGBoost (já em `news-feed.md` desde 08-07, reconfirmado duplicado outra vez); arXiv:2605.25517 "What Gets Cited: Competitive GEO" (já coberto em 2026-06-04, 252k trials); arXiv:2607.14035 survey crítico de GEO (já em 08-22); "Perplexity Brain" memória agêntica (já revisto e descartado em 2026-06-18/19 — produtividade do agente Computer, não mecânica de pesquisa/citação). Candidatos descartados por insuficiente novidade/fora da janela: Ahrefs "YouTube mentions correlação 0,737 em 75.000 marcas" (relatório de 26 mai 2026, fora da janela de 24-48h; tema de sobreposição YouTube/Reddit como fonte citada já coberto genericamente em `references/source_intelligence.md` e `community_intelligence.md` — não qualifica como notícia do dia); AI Overviews em França a 52,6% das queries (tema já extensamente coberto — lançamento 22 jul em 07-29, queixa APIG/Arcom em 08-11 — a percentagem em si sem fonte primária datada firme encontrada nesta sessão); conclusão do rollout global do relatório "Generative AI performance" no Search Console a 11 ago (funcionalidade já coberta desde o lançamento a 3 jun e a expansão de "platform properties" a 29 jul; sem fonte primária Tier 1 confirmando especificamente essa data de conclusão). Candidatos descartados por fora de âmbito: notícias societárias/financeiras da Anthropic (preparação de IPO, revenue run-rate, acordo de computação com a Riot Platforms, contratação de veterano de chips da Google, mudança de política de retenção de dados para clientes empresariais) — mesmo critério de exclusão usado em sessões anteriores. Watch específico agentic commerce: **sem novidade** — checkout in-chat continua bloqueado na UE por AI Act/GDPR/PSD2, sem confirmação de excepção nova. Watch específico AI ads em Portugal: **sem novidade** — lançamento em 24 ago é amanhã; verificação de primeira mão (registo → ecrã de bloqueio) a fazer nesse dia, não hoje. Watch específico Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe. Watch específico de modelo-default: **sem novidade** — nenhum produto de AI search rastreado mudou de modelo default nesta janela (o corte de preço do GPT-5.6 Sol não é uma troca de modelo). Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) sem posições substantivas novas verificáveis na janela — apenas listas genéricas de "experts to follow" nas pesquisas de hoje. Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning): sem itens verificáveis específicos da janela para além do já capturado em dias anteriores. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias — candidatos encontrados (2603.09296, 2604.19113) têm data de submissão fora da janela (mar/abr 2026). Domingo → sem weekly drafts.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 62 headers antes desta entrada (acima do limiar de 60 com a entrada de hoje) — revistas as três entradas mais antigas prestes a sair no truncate (2026-06-22, 2026-06-21, 2026-06-20). 2026-06-22 não tinha conteúdo ("Sem novidades significativas"). De 2026-06-21: a suspensão/restauro do Claude Fable 5/Mythos 5 por controlo de exportação já está absorvida em `references/models.md` (linha "export-restricted); access restored 01 Jul 2026"); o estudo Ahrefs "AI Overviews reduzem cliques em 34,5%" já está absorvido em `references/benchmarks.md` §1 como o valor anterior ("a versão de março de 2025 reportou 34,5%") face ao valor mais recente (58%, fev 2026); o estudo SparkToro/Similarweb "68,01% de zero-click searches nos EUA, +7,56pp desde 2024" **não estava absorvido** — adicionado agora como `references/benchmarks.md` §31, com URL, amostra e caveat (sem equivalente PT-PT, cf. §17). O Perplexity Personal Computer (orquestrador local/cloud) e o DLP do Microsoft 365 Copilot para pesquisa web, ambos de 2026-06-21, são features de produto sem mecânica de citação nova — não absorvidos, mesmo critério usado noutras entradas para features de produtividade. De 2026-06-20: o evento presencial Google Search Central Live Milão e a votação da próxima cidade do Deep Dive Europe estão superados (Barcelona já confirmada, registado em `drafts/2026-07-17-weekly.md`) — não absorvidos, sem valor durável adicional; o lançamento do GPT-5.5 Instant / descontinuação do GPT-5.2 (12 jun) já está reflectido em `references/models.md` (linha GPT-5.5 Instant, default Free/Go). Nenhuma lacuna genuína por resolver identificada. Truncado para 60 headers (2026-06-23 a 2026-08-23) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — o único item do dia é um corte de preço de API, sem mudança de mecânica de retrieval, citação ou crawling.
+
 ## 2026-08-22
 
 ### 🔵 Anúncios oficiais
@@ -984,62 +1013,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - **Bing AI Citation Share é o único KPI de citação disponível hoje**: percentagem de citações por query é exactamente o que faltava para demonstrar ROI de GEO. Mesmo com quota Bing/Copilot menor em Portugal, é o KPI nativo disponível. Incorporar nos pitches como proxy mensurável de AEO. Potencial novo ângulo de serviço.
 - **GEO B2B em fase operacional (n=225)**: early mover advantage a estreitar. Clientes SaaS PT que não iniciaram GEO operacional estão já atrás da curva. Não requer novo serviço — reforça urgência no pitch existente.
 
-## 2026-06-22
-
-Sem novidades significativas hoje. Fontes Tier 1 verificadas; nenhum anúncio oficial, estudo com dados ou mudança de plataforma nas últimas 48h que não tenha sido coberto nas entradas anteriores.
-
-## 2026-06-21
-
-### 🔵 Anúncios oficiais
-
-- **Anthropic: governo dos EUA suspende acesso global a Fable 5 e Mythos 5** — [anthropic.com/news/fable-mythos-access](https://www.anthropic.com/news/fable-mythos-access). Diretiva de export control forçou Anthropic a desativar ambos os modelos para todos os clientes não-americanos; Claude Fable 5 (lançado para uso geral) e Claude Mythos 5 (camada sem algumas salvaguardas, para ciber-defensores e infra crítica) ficaram indisponíveis. Impacto imediato em integrações B2B europeias com a API Anthropic.
-
-- **Perplexity — Personal Computer: orquestrador híbrido local/cloud lançado** — [perplexity.ai/changelog/what-we-shipped-june-13th](https://www.perplexity.ai/changelog/what-we-shipped-june-13th). Perplexity lança Personal Computer, primeiro sistema de inferência híbrido local-servidor que decide automaticamente o que corre no dispositivo vs. em agentes cloud; acompanham Comet iOS, Computer for Enterprise e Computer no Slack. Posicionamento como camada de pesquisa embutida em fluxos de trabalho, não como motor autónomo.
-
-### 📊 Estudos & dados
-
-- **Zero-click searches atingem 68% nos EUA em 2026** — SparkToro/Similarweb via [searchengineland.com](https://searchengineland.com/google-zero-click-searches-2026-study-479717). 68,01% das pesquisas Google (EUA, jan–abr 2026) não geraram nenhum clique — contra 60,45% em 2024, um aumento de 7,56 p.p. em dois anos. AI Overviews presentes em >20% das pesquisas; quando surgem, CTR cai ~60%. Painel clickstream Similarweb, desktop + mobile web.
-
-- **AI Overviews reduzem cliques orgânicos em média 34,5%** — [ahrefs.com](https://ahrefs.com/blog/ai-overviews-reduce-clicks/). Estudo Ahrefs sobre impacto de AIO: queda média de 34,5% nos cliques orgânicos quando AIO aparece; caso extremo (Daily Mail): CTR desktop caiu de 25,23% para 2,79% (−89%). Marcas citadas no AIO ganham 35% mais cliques orgânicos e 91% mais pagos face a marcas não citadas.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Microsoft 365 Copilot — DLP para pesquisa web em rollout mundial em junho** — [microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes). Data Loss Prevention impede que dados sensíveis de prompts saiam para pesquisa web no Copilot Chat; respostas continuam ancoradas em fontes internas. Roll-out worldwide em junho para organizações com licenças M365 Copilot.
-
-### 💡 Implicações para destaque.ai
-
-- A suspensão do Fable 5 por diretiva americana afeta clientes europeus que usem a API Anthropic diretamente; a destaque.ai deve mapear exposição de clientes a esta dependência e identificar se Claude.ai como produto (vs. API) mantém acesso — diferenciador de serviço de consultoria: auditoria de dependências de plataforma AI.
-- Os dados de zero-clicks (68%) e queda de CTR (−34,5% médio com AIO) consolidam o argumento comercial GEO: estar na resposta AI é mais valioso do que o rank #1 clássico; estes números são citáveis em propostas a SaaS B2B portugueses com fontes verificáveis (SparkToro + Ahrefs).
-- O Perplexity Personal Computer como orquestrador local/cloud é o primeiro sinal de "AI search no dispositivo" — aware para acompanhar adoção enterprise; sem mudança de serviço imediata.
-
-## 2026-06-20
-
-### 🔵 Anúncios oficiais
-
-- **Google Search Central Live Milan** — [developers.google.com/search/events](https://developers.google.com/search/events). Google realizou evento presencial em Milão na semana de 16-19 junho. Tópicos abordados: chunking de conteúdo para AI Mode, sinais site-wide, comportamento dos cliques provenientes de AI Overviews, conteúdo pago/paywall e AI content. Sem anúncios de mudanças algorítmicas.
-
-- **Google SCL Deep Dive Europe 2026 — voto aberto para próxima localização** — [developers.google.com/search/blog/2026/06/scl-deep-dive-europe-2026](https://developers.google.com/search/blog/2026/06/scl-deep-dive-europe-2026). Google abriu votação pública para escolher a próxima cidade europeia para o Search Central Live Deep Dive 2026, seguimento do formato aprofundado inaugurado em 2025.
-
-- **OpenAI — GPT-5.5 Instant lançado; GPT-5.2 descontinuado** — [openai.com/index/gpt-5-5-instant/](https://openai.com/index/gpt-5-5-instant/). A partir de 12 de junho de 2026, os modelos GPT-5.2 (Instant, Thinking, Pro) foram retirados do ChatGPT e substituídos automaticamente por GPT-5.5. Lançadas "Monitoring Tasks" — pesquisa web periódica com notificação apenas quando há algo relevante — para Plus, Pro, Business e Enterprise.
-
-### 📊 Estudos & dados
-
-- **"Citations ≠ Recommendations" — Search Engine Journal, 18 jun 2026** — [searchenginejournal.com](https://www.searchenginejournal.com/). Novos dados mostram 19.8% de overlap entre sites citados e sites recomendados nas AI responses do Google; estar citado num AI Overview não implica ser recomendado como solução preferencial — distinção crítica para estratégia GEO.
-
-- **AI Search Visibility Benchmarks 2026 — B2B SaaS** — [data-mania.com/blog/ai-search-visibility-benchmarks-2026-citation-rates-share-of-voice-b2b-saas/](https://www.data-mania.com/blog/ai-search-visibility-benchmarks-2026-citation-rates-share-of-voice-b2b-saas/). Amostra de 50 empresas SaaS: 17% da descoberta de software B2B ocorre agora via AI-generated answers (vs. 4% em 2025); 51% dos compradores B2B iniciam pesquisa em chatbot AI; tráfego referenciado por AI converte a 14.2% vs. 2.8% do Google Organic.
-
-- **AI Referral Platform Analysis — Superlines, jun 2026** — [superlines.io/articles/ai-search-statistics/](https://www.superlines.io/articles/ai-search-statistics/). Claude regista crescimento de 386% YoY em referral traffic — maior crescimento de qualquer plataforma monitorizada — mas representa apenas 1.4% do total; ChatGPT mantém 87.4% do tráfego AI-referenciado. 91% das citações ocorrem exclusivamente numa única plataforma, tornando estratégia multi-plataforma necessária.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Bing — extensão "kill switch" para desactivar Copilot AI** — [windowscentral.com](https://www.windowscentral.com/microsoft/bing/microsofts-search-lead-unveils-a-bing-kill-switch-for-copilot-ai-answers). Microsoft lançou extensão para Chrome e Edge que permite desactivar respostas Copilot AI no Bing e reverter para resultados tradicionais; Copilot Chat passa a incluir answer cards ricos (meteorologia, bolsa) em respostas conversacionais.
-
-### 📄 Research académico
-
-- **A-RAG: Scaling Agentic RAG via Hierarchical Retrieval Interfaces** — [arxiv.org/abs/2602.03442](https://arxiv.org/abs/2602.03442) (fev. 2026). Framework que expõe ao modelo LLM três ferramentas de retrieval hierárquicas (keyword search, semantic search, chunk read); heading hierarchy clara e segmentação semântica do conteúdo melhora probabilidade de citação em pipelines agentic-RAG.
-
-### 💡 Implicações para destaque.ai
-
-- O salto de 4% → 17% de descoberta B2B via AI num único ano é o argumento quantitativo mais forte disponível para justificar investimento GEO/AEO junto de clientes portugueses; integrar no pitch deck com fonte citável (data-mania benchmark, 50 empresas SaaS).
-- A distinção citation vs. recommendation (19.8% de divergência, SEJ 18 junho) valida a necessidade de optimização orientada a recommendation e não apenas a citation — possível novo tier de serviço a propor, diferenciador face a concorrentes que apenas medem presença em AI responses.
-- O crescimento de 386% do Claude em referrals exige incluir Anthropic como plataforma-alvo explícita na estratégia AEO de clientes; actualmente subrepresentada nos frameworks face a ChatGPT e Perplexity.

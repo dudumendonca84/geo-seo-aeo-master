@@ -366,6 +366,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 31. SparkToro/Similarweb — zero-click search share (US, 2026)
+
+- **URL.** https://searchengineland.com/google-zero-click-searches-2026-study-479717
+- **Date.** Published ~19 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-21, never carried into this file until now).
+- **Sample.** Similarweb clickstream panel, desktop + mobile web, US Google searches Jan–Apr 2026.
+- **Finding.** 68.01% of US Google searches produced zero clicks to any result — up from 60.45% in 2024 (+7.56pp in two years). AI Overviews present in >20% of searches; when present, CTR to organic results drops ~60%.
+- **Caveat.** Clickstream-panel extrapolation (methodology not independently audited), US-only, no PT-PT equivalent published (cf. §17). Distinct from — and consistent with — the AIO-specific CTR drop in §1 (58% lower top-ranking CTR when an AIO is present, Feb 2026).
+- **Use.** Headline "search without clicking is now the majority behavior" framing — complements §1's AIO-specific figure with an overall zero-click baseline.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
