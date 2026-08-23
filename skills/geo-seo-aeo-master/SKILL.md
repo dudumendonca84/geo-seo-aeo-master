@@ -124,7 +124,13 @@ half-shipped. The public framing for the product is **the intelligent
 agent** (it measures, reads, explains, decides and prepares, weekly,
 unprompted); the copy stays at the level of capabilities and outcomes —
 never internal machinery (no "brain", no API names, no routine
-architecture, no model names in client-facing prose).
+architecture, no model names in client-facing prose). And the outcome
+sold is COMMERCIAL, not technical (founder, 23 Aug): nobody buys "we
+measure ten engines"; they buy buyers, sales, revenue. Features are the
+evidence, never the headline — "each AI answer is a sale being decided"
+is the register. Honesty limit unchanged: name the money mechanism
+(answers decide purchases; we put you in the answers), never promise a
+specific uplift without a measured case.
 The prepare_action task in the Tracker, the audit deliverables and the
 proposal decks are all held to this bar.
 
