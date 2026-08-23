@@ -113,6 +113,18 @@ rung 2:
    brief names exactly what is missing, so producing it is mechanical.
 
 "Recomendamos que considere..." is below the ladder and does not ship.
+
+**Product-site parity rule (founder, 23 Aug 2026).** Any addition to the
+Visibility Tracker — a new system, capability, data layer or deliverable
+— is only DONE when the destaque.ai site reflects it: the /tracker page
+(PT and EN; the stack cards and the agent section) and, when relevant,
+the difference table on the home. A capability that ships without its
+site update is invisible to buyers and to the engines that index us —
+half-shipped. The public framing for the product is **the intelligent
+agent** (it measures, reads, explains, decides and prepares, weekly,
+unprompted); the copy stays at the level of capabilities and outcomes —
+never internal machinery (no "brain", no API names, no routine
+architecture, no model names in client-facing prose).
 The prepare_action task in the Tracker, the audit deliverables and the
 proposal decks are all held to this bar.
 
