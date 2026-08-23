@@ -43,3 +43,18 @@ Hoje é {{TODAY}}. Vais fazer uma self-audit semanal ao site destaque.ai (https:
 9. Commit + push ao branch da sessão com mensagem: "audit: YYYY-MM-DD destaque.ai SINAL self-audit". NÃO abras pull request. A sessão não consegue empurrar para `main` — quem leva ao main é o workflow `routine-automerge`, que faz merge automático de commits `claude/*` que comecem por `audit:` e toquem só caminhos de routine (`daily-agent/`, `destaque-ai-self/`, `references/`, `methodology-changelog.md`). O prefixo `audit:` na mensagem é obrigatório (é a assinatura que o automerge procura) e não podes tocar em ficheiros fora desses caminhos no mesmo commit — um ficheiro fora da lista trava o automerge inteiro. O validador corre outra vez dentro do workflow; se falhar lá, o merge não acontece e o erro fica nos Actions.
 
 Tom: sóbrio Economist style. Sem hype. Sem buzzwords ("game-changer", "revolutionary", "10x"). Números concretos com unidade e data. Honesto sobre o que destaque.ai ainda não tem feito — não inventar urgência. Caveats explícitos quando dados não verificáveis (ex: PageSpeed Insights rate-limited; manual prompt-test em determinado engine não accessível por geo-restriction). Crisis-response protocol (SKILL.md §14) aplica-se se for detectada menção negativa hallucinated em qualquer LLM.
+
+
+## Descrição-alvo da entidade (métrica desde 24 Ago 2026)
+
+Em cada corrida, perguntar aos motores medidos "o que é a destaque.ai"
+e comparar com a descrição-alvo:
+
+> "empresa de software portuguesa de GEO (Generative Engine
+> Optimization) que mede e constrói a presença de marcas nas respostas
+> dos motores de IA"
+
+Registar por motor: classifica-nos como software/tecnologia ou como
+agência/consultoria? Menciona GEO? Menciona o Visibility Tracker? A
+série de convergência entra no baseline; divergência persistente num
+motor vira acção (que fonte o está a alimentar com a categoria errada).

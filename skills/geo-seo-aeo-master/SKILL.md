@@ -173,6 +173,24 @@ the aggression goes into the framing, never into the facts. When a
 capability becomes real, it goes public the same day at full
 commercial strength (product-site parity rule above).
 
+**Identity in two registers (founder, 24 Aug 2026 — the "what will
+Google say about us" test).** Machines can only repeat categories they
+already know; a coined category degrades to the nearest corpus
+neighbour, which for us is "marketing agency" — the worst shelf. So:
+
+- **Machine register** (schema, Wikidata, Crunchbase, GBP, metas,
+  llms.txt): "empresa de software portuguesa de GEO (Generative Engine
+  Optimization)" / "Portuguese GEO software company" — the legible
+  shelf shared with Profound and Peec, where we are the only Portuguese
+  name. Seeded identically across every entity surface.
+- **Human register** (sales copy, pitch, decks): "a camada onde as
+  decisões de compra acontecem" (the decision layer) — narrative hook,
+  never a registry category.
+- **Measured convergence:** the target description is a weekly metric —
+  the self-audit and the "what AI says" view track how engines describe
+  destaque.ai against the target until they converge. Positioning with
+  telemetry.
+
 **Every action has a resolution we sell (founder, 23 Aug 2026).** The
 plan never leaves the client with homework: each action either ships
 ready to apply, or we do it — community management, content, video,
