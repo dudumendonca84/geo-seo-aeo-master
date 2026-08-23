@@ -123,3 +123,28 @@ X, o mercado documentado sugere Y), a recomendação di-lo e explica a
 escolha — a divergência é informação, não embaraço. E quando não há
 base suficiente para recomendar, a resposta é "ainda não sabemos;
 eis o que vamos medir para saber", nunca uma recomendação fabricada.
+
+
+## Roadmap de modelos internos (founder, 23 Ago 2026: "é possível?")
+
+Sim — e o padrão do mercado é mais baixo do que parece: os "proprietary
+models" dos vendors são, quase sempre, fórmulas de scoring + prompts
+sobre APIs de terceiros. A régua honesta da casa: **modelo próprio =
+construído e validado sobre os nossos dados, com método descritível a
+um cliente.** Nunca chamar "IA proprietária" a uma fórmula, nem vender
+um modelo antes de os dados o alimentarem.
+
+- **Já contam como modelos internos (existem):** Custo de Entrada
+  (ordinal, 4 drivers medidos), thresholds de alerta, derivação de
+  citação, filtro semântico de concorrentes.
+- **Fase 1 (semanas):** embeddings para clustering — perguntas por
+  intenção, fontes por perfil, respostas por narrativa. Custo marginal
+  (API de embeddings); output visível no produto.
+- **Fase 2 (quando o registo causal tiver dezenas de casos):**
+  probabilidade de citação — aprender que características movem
+  citação no mercado medido, treinado no antes/depois das nossas
+  intervenções. O modelo incopiável, porque o dataset de treino é o
+  registo causal. Não prometer antes de existir.
+- **Fase 3 (escala):** fine-tune de modelo pequeno para as
+  classificações do cérebro, quando o volume justificar o corte de
+  custo/latência. Antes disso é vaidade.
