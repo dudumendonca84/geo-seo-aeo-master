@@ -344,7 +344,7 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
   `id`, não perde histórico).
 
 
-## Personas sintéticas (piloto especificado, 23 Ago 2026)
+## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
 
 Conceito do founder: perfis de comprador simulados que fazem as
 perguntas COM CONTEXTO e COM SEGUIMENTO — jornada multi-turn, não
@@ -359,16 +359,13 @@ apanha:
    conversas B2B, 2026). Medimos essa taxa para o cliente, no mercado
    dele: "sobrevives à abertura, morres no 'e para uma equipa pequena?'".
 
-**Desenho do piloto (tecto escrito, não ultrapassar sem decisão do
-founder):** 3 personas × 10 perguntas × 2 turnos × 3 motores
-(cost_optimized) = ~180 chamadas/semana, custo estimado em cêntimos a
-2€/semana. Escala só com resultados à vista e número novo à frente do
-founder.
-
-**Pré-requisito duro:** o rastreio real de custo por auditoria
-(`total_cost_usd`, hoje por preencher no pipeline) tem de estar ligado
-ANTES da primeira corrida do piloto — o primeiro relatório do piloto
-sai com o custo real ao lado, ou não sai.
+**Arranque (disciplina interna, invisível ao comprador):** primeira
+fase 3 personas × 10 perguntas × 2 turnos × 3 motores (cost_optimized)
+= ~180 chamadas/semana, custo estimado em cêntimos a 2€/semana; escala
+com número novo à frente do founder. Em paralelo liga-se o rastreio
+real de custo (`total_cost_usd`) — acompanha a implementação, não a
+trava. Client-facing, isto vende-se desde já em força: medimos por
+persona e seguimos a conversa como a persona seguiria.
 
 **Honestidade a declarar sempre:** são simulações — medem o
 comportamento do motor para aquele perfil de contexto, não utilizadores
