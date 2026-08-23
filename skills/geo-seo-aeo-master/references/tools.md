@@ -135,6 +135,19 @@ Reference for `geo-seo-aeo-master`. Ten vendors covering AI visibility monitorin
 
 ---
 
+## Long-tail watchlist (not full entries)
+
+The prompt-dashboard category is flooding: entry barrier is an API key
+and a paid press release. Small entrants get one line here, not a full
+entry; promote only on real traction (independent reviews, funding,
+client overlap). Signal to keep: the dashboard is not the moat.
+
+- **Track My Visibility** (trackmyvisibility.com, Piyush Lathiya, NY,
+  launched 2025; flagged by founder 23 Aug 2026). ChatGPT/Claude/Gemini/
+  Perplexity tracking; no public pricing; beta-tester recruitment; launch
+  via syndicated paid PR; self-ranking listicles on own blog. No
+  independent reviews found.
+
 ## Category summary
 
 **Pure monitoring (citation tracking).** Peec AI, Otterly (with light GEO audit), Ahrefs Brand Radar, Promptwatch (10 engines, volume-first).
