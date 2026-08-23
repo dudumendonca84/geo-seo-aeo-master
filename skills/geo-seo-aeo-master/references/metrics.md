@@ -321,3 +321,22 @@ perguntas de hoje nos fóruns são os prompts de amanhã; a recolha de
 comunidade já as apanha). Quatro sinais juntos: procura (Trends),
 procura da marca (GSC/AIO), oferta das respostas (a nossa série),
 perguntas emergentes (comunidade). Fonte de camada 2 para o Onde Focar.
+
+**Consolidador da procura (founder, 24 Ago: "precisamos ver o que se
+pergunta, nem que sejamos os consolidadores de todas as fontes").**
+Estado honesto: os ingredientes existem, o prato não — construir. Task
+mensal do cérebro, por categoria de cliente ("O que se pergunta"):
+
+1. Queries reais do GSC do cliente (tabela `gsc_queries`), com
+   impressões AI Overviews — a procura que a marca já apanha.
+2. Perguntas emergentes na comunidade recolhida (fóruns, reviews) — os
+   prompts de amanhã, com citação e data.
+3. Google Trends por termos da categoria + números de painel públicos
+   (Semrush/Similarweb), sempre rotulados direccionais.
+
+Saída: as ~10 perguntas em crescimento na categoria, a fonte de cada
+uma, e quais já têm dono nas respostas medidas. Alimenta a rotação de
+prompts (perguntas novas entram no catálogo) e o Onde Focar. Fase 2
+(código): séries de procura via DataForSEO Trends/keywords numa tabela
+própria + vista no produto — e só então vai ao site como capacidade.
+
