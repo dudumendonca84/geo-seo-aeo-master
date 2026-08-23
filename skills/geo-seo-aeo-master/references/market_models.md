@@ -79,3 +79,47 @@ and the confounders written honestly (what else changed in the window).
   more than the current stage supports.
 - Learning loops respect the privacy layers: client-identifiable data
   never crosses into public references without anonymisation.
+
+
+## Onde Focar — a recomendação executiva de segmento
+
+Mandato do founder (23 Ago 2026): o Custo de Entrada é o instrumento;
+a pergunta a que o produto responde é maior — **"em que segmento devo
+focar a empresa?"** Pensar na Congruent: outsourcing, formação,
+consultoria — qual das linhas merece o investimento do trimestre? Isto
+é optimização de marca como um todo, com os LLMs como o sensor mais
+fresco do mercado, não um relatório de visibilidade.
+
+**A recomendação junta quatro camadas, sempre por esta ordem e sempre
+dizendo de qual veio cada afirmação:**
+
+1. **Dados medidos do cliente** — Custo de Entrada por linha, território
+   livre (perguntas e fontes sem dono), tendência de citação, quem
+   domina e com que estabilidade.
+2. **Mercado documentado** — estudos e benchmarks com fonte
+   (benchmarks.md, news-feed): procura do segmento a crescer ou a cair,
+   movimentos de incumbentes, mudanças de plataforma que abrem janelas.
+3. **Padrões dos nossos dados** — o que as séries de todos os clientes
+   e do observatório mostram (categorias a ganhar volatilidade, fontes
+   a perder peso, formatos a subir). Anonimizado e agregado.
+4. **Previsão declarada como previsão** — extrapolação com a base
+   escrita ("se a volatilidade desta linha continuar, a janela fecha em
+   N semanas") e SEMPRE rotulada direccional. Nunca profecia, nunca
+   percentagem de certeza inventada.
+
+**Formato de saída (o brief de foco):** uma recomendação principal
+("foca em X"), o porquê em 3-5 frases com a camada de cada evidência, o
+que se ganha e o que se adia (trade-off explícito: focar em X é adiar
+Y), a primeira acção do plano nessa direcção, e a data de revisão. Uma
+página, tom de conselho de administração, zero jargão de ferramenta.
+
+**Cadência:** trimestral por defeito (quarterly review), mensal quando
+o mercado mexe (gatilho: alerta crítico ou mudança material no
+news-feed que toque o segmento do cliente), e on-demand quando o
+founder ou o cliente perguntam "onde foco?".
+
+**Honestidade estrutural:** quando as camadas discordam (os dados dizem
+X, o mercado documentado sugere Y), a recomendação di-lo e explica a
+escolha — a divergência é informação, não embaraço. E quando não há
+base suficiente para recomendar, a resposta é "ainda não sabemos;
+eis o que vamos medir para saber", nunca uma recomendação fabricada.
