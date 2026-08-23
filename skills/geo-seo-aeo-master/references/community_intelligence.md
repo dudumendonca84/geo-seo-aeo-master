@@ -45,7 +45,28 @@ Propose sources by asking, in order:
 | **Technical community** | Developer-facing product, API, open source | Hacker News, Stack Overflow, GitHub discussions |
 | **Sector forums** | Established vertical with a long-lived forum | ZWAME (tech PT), Autohoje (auto PT), industry associations |
 | **Video and long-form** | Category where demos or reviews drive decision | YouTube comment threads, podcast episode pages |
+| **Trade and sector press** | Always, one per client sector: the trade titles the category actually reads, watched by name | Saúde Online (health), Meios & Publicidade / Marketeer (marketing), Jornal Económico (finance), ECO (business) |
 | **Social 360** | Always — standing set since 22 Aug 2026 (founder directive) | YouTube, LinkedIn, Instagram, TikTok, X (x.com + twitter.com) as `site` sources |
+
+### Press coverage: the wide net and the named watch (23 Aug 2026)
+
+Google News search is the WIDE NET: it aggregates the mainstream
+Portuguese press (Observador, ECO, Público, Forbes PT, the regionals)
+and one daily query per brand catches most of what a Cision would. It is
+not everything, and pretending otherwise is the kind of dishonesty the
+method bans. What the wide net misses, and what covers each gap:
+
+| Gap | Covered by |
+|---|---|
+| Trade titles thin in Google News, or where a single mention matters | A **named watch**: one `news_query` source per outlet, identifier `"Brand" site:outlet.pt`. The collector passes operators through. |
+| Outlets and directories the engines cite but no index carries | The **observed-source rule** below: seen in an answer, adopted into monitoring. |
+| Podcasts | Listen Notes free tier (planned, authority dimension). |
+| Newsletters and paywalled trade press | **Not covered.** Declared per client as a known limit, never silently assumed covered. |
+
+Per client, `discover_communities` proposes the sector's trade titles as
+named watches (health: Saúde Online; marketing: Meios & Publicidade,
+Marketeer; finance: Jornal Económico). The brand-wide query needs no
+proposal: it is seeded automatically and runs daily.
 
 ### The observed-source rule (standing, 23 Aug 2026)
 
