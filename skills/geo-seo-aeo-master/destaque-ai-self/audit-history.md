@@ -11,6 +11,46 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-08-24 — Sexta execução (vs. 10 ago — a rotina saltou 17 ago)
+
+**Score global:** 72/100 (Bom, em melhoria real — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 10 ago: +3.** Primeira subida líquida em quatro execuções, mas a comparação é contra uma auditoria de há duas semanas: não existe commit `audit: 2026-08-17 destaque.ai SINAL self-audit` — ver novo item PROCESS.
+
+**Score por categoria (delta vs. 10 ago):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 87/100 | 0 |
+| Performance / CWV | N/D | — |
+| SEO On-Page | 94/100 | +1 |
+| Schema / dados estruturados | 97/100 | +1 |
+| Optimização de imagens | 74/100 | +2 |
+| GEO técnica | 94/100 | +3 |
+| Conteúdo & topical authority | 95/100 | +14 |
+| Entidade / brand foundation | 82/100 | +3 |
+| Autoridade & digital PR | 20/100 | 0 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 48/100 | +13 |
+
+**Nota sobre o Δ global de +3:** o número esconde tanto a maior melhoria já vista por este Routine numa única categoria (Conteúdo, +14 — hiato editorial de três escaladas resolvido com 11 posts novos e duas páginas-pilar) como a persistência do problema mais barato de resolver de toda a auditoria (Gemini sem crédito, agora 9 semanas). Medição sobe +13 porque dois dos três motores com crédito esgotado (Perplexity, OpenAI) já não aparecem nos erros dos últimos 7 dias, parcialmente compensado por uma regressão confirmada na DataForSEO (o erro `language_name` que parecia resolvido em 10 ago voltou, 54 ocorrências). Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 2 — "CONTENT — Cadência de publicação parada" (11 posts novos + 2 páginas-pilar, maior vaga editorial já vista); "GEO — llms.txt: falha de fetch não explicada" (confirmado esta semana que era limitação da ferramenta desta sessão, não do site — `llms.txt` funciona e é rico).
+
+**Items novos detectados:** 4 — 1 P1 (PROCESS — a rotina semanal saltou 17 ago sem registo do porquê, primeira vez desde a baseline de 13 jul), 1 P1 (STRATEGIC — um consultor individual, Marco Gouveia, venceu destaque.ai em 2 recomendações directas no teste multi-motor, categoria de concorrente nova), 1 P1 (ENTITY/STRATEGIC — métrica nova de convergência de descrição de entidade por motor, baseline dia 1 mostra "consultoria" não "software" em Claude augmented PT e EN, cross-valida um problema que o founder já tinha visto e corrigido no próprio dia numa AI Overview da Google), 1 P2 (ENTITY — destaque.ia.br, empresa brasileira de nome quase idêntico, risco de confusão de marca detectado pela primeira vez em pesquisa EN). Adicionalmente, "MEASUREMENT — DataForSEO `language_name`" subiu de nota informal a P1 formal por regressão confirmada, e "STRATEGIC — colisão do termo GEO" foi reconfirmado pela 2ª auditoria consecutiva.
+
+**Mudanças materiais observadas:**
+- **Maior melhoria de conteúdo já vista por este Routine:** 11 posts novos (mais recente: ontem, 23 ago) e duas páginas-pilar novas (`/agencia-geo`, confronto software vs. agência; `/playbook`, o método publicado). O hiato de 26/28 dias, escalado três vezes seguidas, está resolvido por completo.
+- **`llms.txt` confirmado a funcionar pela primeira vez em três execuções** — ficheiro rico, com secção EN própria e negociação de conteúdo em markdown documentada.
+- **Correcção proactiva de categorização no próprio dia:** o founder corrigiu o título por omissão da homepage/`/en` (de "com método" para "software de visibilidade em IA") às 07:58 UTC de hoje, em resposta directa a uma AI Overview da Google que descrevia destaque.ai como "consultoria". O teste multi-motor desta mesma auditoria, horas depois, confirma o mesmo problema em Claude augmented (PT e EN) — não uma falha da correcção (é esperado no dia 1), mas uma validação cruzada independente do problema. Métrica de convergência de descrição de entidade introduzida esta semana para acompanhar isto.
+- **Teste multi-motor mais extenso já feito por este Routine (21 prompts, 3 sub-agentes frescos com `WebSearch`) revela o padrão estrutural central:** destaque.ai aparece nos resultados brutos de pesquisa em 7/21 prompts mas só sobrevive à síntese da resposta em 2/21 — "citado sem ser recomendado" em 5 dos 7 casos onde aparece.
+- **Concorrência nova:** Marco Gouveia (consultor individual, venceu destaque.ai em `LR1` e `V4`), Luso AI, Latigid, Digital Results, Somos6Digital — lista de candidatos a classificar formalmente cresce de 2 (AISO Hub, UniK SEO) para 6.
+- **Regressão em Medição:** o erro `Invalid Field: 'language_name'` da DataForSEO, registado em 10 ago como "parece resolvido", regressou com 54 ocorrências desde 1 ago — a leitura de há duas semanas não se confirmou.
+- **Recuperação parcial em Medição:** dos três motores com crédito de API esgotado (Gemini, Perplexity, OpenAI), dois já não aparecem nos erros dos últimos 7 dias. O Gemini continua exactamente onde estava — nona semana sem resolução, o item mais barato de toda a auditoria.
+- **Novo sentinela de operação:** cron diário `ops-health` mergeado hoje no Tracker — verifica auditorias em falta, backlog, respostas mock e imprensa parada, envia email só quando algo está vermelho. Sem histórico ainda para avaliar se cumpre a promessa.
+- **Processo:** a rotina semanal saltou 17 ago sem deixar registo — primeira vez desde a baseline. Todas as comparações desta entrada são, na prática, vs. há duas semanas.
+
+**Reconciliação playbooks:** **1 edição feita** — bloco `grok` (PT e EN) em `engine_playbooks.md` corrigido: duas auditorias consecutivas do Visibility Tracker via `source_intelligence.md` (10 e 17 ago, mesmo nicho) mediram zero citações de x.com/twitter.com nas respostas do Grok, contradizendo a alavanca "peso invulgar a conversas no X" — a "Como decide" passou a atribuir esse peso à documentação do fornecedor (não a facto observado próprio) e regista a contradição medida com fonte e datas; item novo em "Faz" recomenda não contar com o X como canal de citação garantido nesta categoria. A alavanca de manter presença no X não foi removida, só recontextualizada. Registado em `methodology-changelog.md` 2026-08-24. `node scripts/validate-skill-tables.mjs` verde antes do commit.
+
 ### 2026-08-10 — Quinta execução
 
 **Score global:** 69/100 (Bom, com lacunas de verificação que persistem — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 03 ago: 0.** Terceira semana seguida estável no número, por compensação, não por estagnação.

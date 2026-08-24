@@ -8,6 +8,12 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-08-24 — Engine playbook `grok`: peso ao X corrigido por evidência interna de duas semanas
+
+**Trigger.** Reconciliação semanal do self-audit (ponto 6b) sobre `source_intelligence.md`: duas auditorias consecutivas do Visibility Tracker (2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal) mediram zero citações de x.com/twitter.com nas respostas de pesquisa do Grok, em ambas as semanas — satisfaz a regra das duas auditorias para corrigir um bloco sem depender de fonte primária do vendor. **Change.** Bloco `grok` (PT e EN) em `references/engine_playbooks.md`: "Como decide"/"How it decides" passa a atribuir o peso a X à documentação do fornecedor (não a facto observado) e regista a contradição medida, com datas e fonte; item novo em "Faz"/"Do" recomenda não contar com o X como canal de citação garantido nesta categoria. A alavanca de manter presença no X não foi removida — mantém-se como sinal de marca geral, não como aposta de citação directa neste nicho. Sem alteração a `llama`, `copilot_bing` nem aos restantes blocos.
+
+---
+
 ## 2026-08-08 — Engine playbooks: formato accionável + sincronização com o news-feed
 
 **Trigger.** Founder feedback no cartão "Como evoluir" do Tracker (a prosa corrida não dizia o que fazer) + directiva de garantir que a skill sabe o estado actual de cada motor. **Change (formato).** Cada bloco de motor (PT e EN) passa a "Como decide:" (mecanismo) + "Faz:" (acções imperativas numeradas, uma por linha, sem hard-wrap para renderizar limpo com `pre-line`). Travessões removidos dos blocos renderizados (regra client-facing). **Change (substância)** — cruzamento sistemático com o news-feed (precedência do mais fresco):

@@ -97,12 +97,13 @@ Faz:
 
 ### grok
 
-Como decide: puxa do índice web e dá peso invulgar a conversas no X e a sinais recentes.
+Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Visibility Tracker (2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`) não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho — zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável.
 
 Faz:
-1. Mantém presença activa e citável no X, com reacção rápida aos temas da categoria.
+1. Mantém presença activa e citável no X, com reacção rápida aos temas da categoria — alavanca de marca geral, mesmo sem citação directa confirmada neste nicho.
 2. Garante que o site valida o que afirmas nas redes: cada afirmação com página correspondente.
 3. Publica com frequência: o recente pesa mais aqui do que nos outros motores.
+4. Não contes com o X como canal de citação garantido no Grok para esta categoria: prioriza o site e fontes indexadas antes de investir tempo em X à espera de citação directa.
 
 ### deepseek
 
@@ -223,12 +224,13 @@ Do:
 
 ### grok
 
-How it decides: pulls from the web index and gives unusual weight to conversation on X and to recent signals.
+How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Visibility Tracker audits (2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`) found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today.
 
 Do:
-1. Keep an active, quotable presence on X, reacting quickly to category topics.
+1. Keep an active, quotable presence on X, reacting quickly to category topics — a general brand lever, even without confirmed direct citation in this niche.
 2. Make the site back up what you claim on social: every claim with a matching page.
 3. Publish often: recency counts for more here than on other engines.
+4. Do not count on X as a guaranteed citation channel in Grok for this category: prioritise the site and indexed sources over X presence built purely to chase direct citation.
 
 ### deepseek
 
