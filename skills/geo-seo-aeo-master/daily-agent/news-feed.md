@@ -8,19 +8,45 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-23
+## 🚨 ALERTA FUNDADOR
 
-Dia calmo. Único item novo: a OpenAI cortou os preços da API do GPT-5.6 Sol em mais de 20% (input) e 33% (output), promoção até 21 de novembro, tornando o modelo mais barato que o Claude Opus 5 nos dois lados. Sem mudança de mecânica de citação, de plataforma ou de modelo-default confirmada nas últimas 24 a 48 horas além disto. Sem alerta ao founder.
+**O que aconteceu:** os anúncios do ChatGPT entraram hoje em funcionamento em Portugal e nos restantes 30 mercados do EEE + Suíça — [openai.com/index/chatgpt-ads-expands-across-europe/](https://openai.com/index/chatgpt-ads-expands-across-europe/) (19 ago 2026), data já anunciada, corroborada por [Euronews](https://www.euronews.com/next/2026/08/21/chatgpt-to-start-showing-ads-across-europe-next-week) e [Digiday](https://digiday.com/marketing/openais-ads-business-hits-europe-at-the-six-month-mark/).
+**Porque nos importa:** é o primeiro mercado pago dentro de um motor de IA a abrir em Portugal — a partir de hoje uma resposta do ChatGPT a um utilizador Free/Go em PT pode conter um bloco patrocinado por baixo da resposta.
+**Jogada recomendada:** confirmar que as capturas do Tracker em ChatGPT PT distinguem bloco patrocinado de citação orgânica (o dado SERP já faz essa distinção nos outros motores); publicar o artigo "chegaram os anúncios ao ChatGPT em Portugal" preparado desde 19 ago. A compra directa por agências/anunciantes PT continua fechada (só parceiros certificados) — ainda não há oferta de "gestão de AI ads" vendável hoje.
+**Prazo:** esta semana, até 28 de agosto.
 
-Radar LLM/IA: corte de preço GPT-5.6 Sol (acima). Sem lançamentos novos de modelo em janela verificáveis (Grok 4.6 e Grok Imagine 2.0 são de 6 e 8 ago, já fora da janela).
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-24
 
-GEO/AEO: sem novidade não-duplicada; a história em curso da queda de citações do Reddit no ChatGPT (08-19 a 08-22) continua sem desenvolvimento novo hoje.
+🚨 Alerta no topo do feed: os anúncios do ChatGPT foram ao ar hoje em Portugal e nos restantes 30 mercados EEE+Suíça — jogada e prazo no bloco acima.
 
-SEO/Google: sem novidade; spam update de agosto já concluído (registado 08-21).
+Radar LLM/IA: sem lançamentos de modelo nem mudanças de preço de API confirmados na janela de 24-48h.
 
-Implicações: sem jogada urgente. Vale confirmar até sexta (28 ago) se algum componente interno chama GPT-5.6 Sol via API, para recalcular custo unitário com o novo preço.
+GEO/AEO: sem desenvolvimento novo na história da queda de citações do Reddit no ChatGPT (parada desde 08-22); sem estudo novo qualificado na janela.
 
-Dia parado, corrida completa.
+SEO/Google: sem novidade além do já registado (spam update de agosto concluído a 21 ago).
+
+Implicações: a acção do dia é o alerta acima; sem outras jogadas com prazo.
+
+Corrida completa.
+
+## 2026-08-24
+
+### 🔵 Anúncios oficiais
+
+- **ChatGPT Ads entram em funcionamento em Portugal e em mais 30 mercados do EEE + Suíça** — OpenAI ([openai.com/index/chatgpt-ads-expands-across-europe/](https://openai.com/index/chatgpt-ads-expands-across-europe/), 19 ago 2026, corroborado por [Euronews](https://www.euronews.com/next/2026/08/21/chatgpt-to-start-showing-ads-across-europe-next-week), [Digiday](https://digiday.com/marketing/openais-ads-business-hits-europe-at-the-six-month-mark/), [TechXplore](https://techxplore.com/news/2026-08-openai-ads-chatgpt-europe-week.html) e [marketing4ecommerce](https://marketing4ecommerce.net/en/the-gpt-ads-arrive-in-europe-on-monday-august-24-how-do-they-work/)). A data anunciada a 19 ago cumpre-se hoje: anúncios activos para contas Free e Go em 31 mercados, sem personalização ao arranque (segmentação por tópico da conversa, localização aproximada, dispositivo, hora e língua; histórico de chat e memórias explicitamente excluídos), bloco identificado por baixo da resposta; Plus/Pro/Business/Enterprise/Education continuam sem ads. Personalização exige opt-in explícito e revogável. Compra por anunciantes europeus continua fechada — acesso inicial só via equipa OpenAI Ads Solutions e parceiros; self-service da UE previsto para "mais tarde este verão", sem data.
+
+### 💡 Implicações para destaque.ai
+
+- Ver 🚨 Alerta ao founder acima — é o item accionável do dia, com jogada recomendada e prazo (28 ago).
+- Sem mudança adicional de pitch: o modo de compra (self-serve UE fechado) e a ausência de personalização ao arranque são exactamente os já antecipados em 19 ago — hoje confirma-se o estado previsto, não se descobre estado novo. `references/ai_ads.md` actualizado (tabela-resumo + secção ChatGPT).
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para as 7 fontes Tier 1 (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai) — confirmado de novo hoje ao tentar aceder a openai.com/index/chatgpt-ads-expands-across-europe/; o item acima foi verificado via `WebSearch` com cross-corroboração por seis fontes independentes, todas a citar o mesmo comunicado da OpenAI. **Verificação de primeira mão**: sem browser autenticado com conta ChatGPT Free/Go geolocalizada em Portugal nesta sessão sandbox — não foi possível confirmar visualmente um anúncio numa resposta real; o registo assenta em confirmação oficial + corroboração de imprensa, não em observação directa (nota deixada em `references/ai_ads.md` para a próxima sessão com acesso a um ecrã real tentar reproduzir e citar o texto exacto). Candidatos investigados e **descartados por já cobertos** (confirmado por grep em `news-feed.md`/`references/` antes de escrever): August 2026 spam update (18-21 ago, já em 08-19/08-21/08-22); queda de citações do Reddit no ChatGPT Search (já em 08-21/08-22, sem desenvolvimento novo hoje); estudo Steady Demand sobre 14.472 citações locais Gemini/ChatGPT — "grounding drift" ~40% de sobreposição (já em 08-22); Gemini 3.7 Flash no AI Mode (já em 08-16); estatísticas de adopção de llms.txt via Rankability/SE Ranking (já rejeitadas como duplicado em pelo menos sete sessões anteriores); "Perplexity Brain" memória agêntica (já descartada em 06-18/06-19 — produtividade do agente Computer, não mecânica de citação); survey crítico de GEO arXiv:2607.14035 e "Citation Selection to Citation Absorption" arXiv:2604.25707 (já cobertos em sessões anteriores). Candidatos descartados por fora de âmbito: Google Ads API v25.1 (reporting de Google Ads, sem mecânica de citação orgânica); artigo do Search Engine Land sobre Search Console e conteúdo social (publicado 18 ago, reciclagem do lançamento original de 7 jul — fora da janela de 24-48h). Watch específico agentic commerce: **sem novidade** — checkout in-chat da OpenAI continua sem data de expansão à UE confirmada (pivot para "merchant-controlled checkout" de 4 mar 2026 mantém-se o estado mais recente); parceria PayPal-OpenAI referida em notícias de hoje ainda sem data de lançamento internacional. Watch específico Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Fabrice Canel mantém "durante 2026" sem changelog novo. Watch específico de modelo-default: **sem novidade** — nenhum produto de AI search rastreado mudou de modelo default na janela. Radar LLM/IA: sem lançamento de modelo nem mudança de preço de API confirmados na janela. Prompt patterns do segmento: sem novidade. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias. Segunda-feira → sem weekly drafts.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-23: GSC Generative AI Performance Reports, Information Agents para AI Ultra, Bing Webmaster AI Visibility Insights/Citation Share, OpenAI Responses API com resultados de imagem, estudo GNW Consulting/Demand Metric B2B GEO n=225, "Google nomeia GEO e AEO como still SEO", descontinuação de FAQ Rich Results, movimentação de rankings não confirmada 19-21 jun). Cinco itens já bem absorvidos: os relatórios de performance de IA da GSC estão em `references/metrics.md` e `references/engine_playbooks.md`; os Information Agents do AI Mode estão superados por dados mais recentes no playbook `google_ai_mode` de `references/engine_playbooks.md`; o Bing AI Visibility Insights/Citation Share está em `references/engine_playbooks.md` (linhas 171/297) e `references/metrics.md` (linha 224); a citação "still SEO" da Google está em `references/frameworks.md` (linha 258, com a citação exacta); a descontinuação de FAQ Rich Results está reconciliada com o fim de suporte à API, já registado em 2026-08-04. Três itens revistos e não absorvidos por não cumprirem a barra: a API de imagens da Responses API é feature de developer tooling sem mecânica de citação; o estudo GNW/Demand Metric (n=225) não traz número concreto além de "fase de execução" — tema já coberto com dados mais fortes noutras entradas de `references/benchmarks.md`; a movimentação de rankings de 19-21 jun nunca foi confirmada pela Google e está superada pelo spam update de agosto, esse sim confirmado. Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-06-24 a 2026-08-24) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — o lançamento dos anúncios do ChatGPT na UE é evento de monetização/mercado já antecipado e registado em 08-19, não uma mudança de mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-08-23
 
@@ -982,34 +1008,4 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - **Search Console Gen AI Reports + opt-out toggle** são argumento de vendas imediato para clientes B2B com publicações/blogs: pela primeira vez há dados mensuráveis de visibilidade em AI Mode. Incluir "auditoria de visibilidade em AI features" no onboarding; o opt-out deve ser enquadrado como decisão estratégica (publisher vs. captura zero-click), não como protecção automática.
 - **llms.txt sem adopção de crawlers** (97% sem pedidos, 137K domínios): evitar vender implementação de llms.txt como diferenciador até há adoção confirmada pelos labs. Comunicação correcta: "pré-posicionamento técnico" — não "optimização imediata". Excepção: clientes developer-tools/SaaS ganham discoverability em IDE agents já agora.
 - **Claude Tag em Slack**: sinal de que Anthropic está a competir no espaço de ferramentas enterprise (Teams, Slack) directamente; monitorizar adoção e casos de uso B2B para avaliar se é serviço complementar ou concorrente de ferramentas internas dos clientes.
-
-## 2026-06-23
-
-### 🔵 Anúncios oficiais
-
-- **Google Search Console — Generative AI Performance Reports** — developers.google.com (3 Jun). Novos relatórios dedicados à visibilidade em AI Overviews e AI Mode: impressões, páginas, países, dispositivos e datas. Não incluem dados de cliques. Em rollout inicial para subset de sites no Reino Unido. [https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
-
-- **Google AI Mode — Information Agents disponíveis para AI Ultra** — blog.google (12 Jun). Agentes de pesquisa contínua disponíveis para subscritores AI Ultra em todos os mercados e idiomas do AI Mode. Monitorizam a web em background 24/7 e entregam sínteses com capacidade de acção. [https://blog.google/products-and-platforms/products/search/search-io-2026/](https://blog.google/products-and-platforms/products/search/search-io-2026/)
-
-- **Bing Webmaster Tools — AI Visibility Insights: Intents, Topics, Citation Share, Compare** — blogs.bing.com (Jun). Quatro novas dimensões de reporte de presença em respostas AI do Copilot/Bing em preview global: intent das queries, clusters temáticos, percentagem de citações por query, e comparação temporal. [https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare)
-
-- **OpenAI Responses API — Pesquisa web com image results (GA)** — openai.com (9 Jun). Web search na Responses API passa a devolver resultados de imagem junto com texto, configurável via `search_content_types` e `image_settings`. [https://platform.openai.com/docs/guides/tools-web-search](https://platform.openai.com/docs/guides/tools-web-search)
-
-### 📊 Estudos & dados
-
-- **State of Generative Engine Optimization in B2B Marketing** — GNW Consulting + Demand Metric (3 Jun). Com base em 225 respostas de líderes B2B, documenta GEO em fase operacional com impacto mensurável: "We're in an execution phase, with companies betting on measurable performance." Recurso gratuito. [https://www.prnewswire.com/news-releases/new-research-from-gnw-consulting-and-demand-metric-finds-geo-adoption-accelerating-across-b2b-marketing-302789540.html](https://www.prnewswire.com/news-releases/new-research-from-gnw-consulting-and-demand-metric-finds-geo-adoption-accelerating-across-b2b-marketing-302789540.html)
-
-### ⚙️ Mudanças nas plataformas
-
-- **Google Search Central — GEO e AEO nomeados como "still SEO"** (5 Jun). Documentação oficial actualizada: Google define GEO e AEO explicitamente e afirma que "optimizing for generative AI search is optimizing for the search experience, and thus still SEO." Debunka também llms.txt, content chunking para AI e schema especial para LLMs como desnecessários. [https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/](https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/)
-
-- **Google — FAQ Rich Results descontinuados** (Mai/Jun 2026). Suporte removido desde 7 Mai. Search Console remove relatórios em Jun, API em Ago. FAQPage schema mantém valor GEO como sinal estrutural para LLMs; o benefício visual em SERP deixou de existir.
-
-- **Movimentação de rankings não confirmada** (19-21 Jun). Search Engine Roundtable reportou movimento focado em sites black-hat/spam a partir de 19 Jun. Google não confirmou update oficial. A monitorizar. [https://www.digitalapplied.com/blog/google-june-2026-ranking-update-volatility-seo-analysis](https://www.digitalapplied.com/blog/google-june-2026-ranking-update-volatility-seo-analysis)
-
-### 💡 Implicações para destaque.ai
-
-- **Search Console AI reports = prova de produto**: os relatórios de impressões em AI Overviews/AI Mode tornam GEO mensurável com dados nativos Google. Para clientes SaaS B2B em Portugal o argumento evolui de "visibilidade futura" para "visibilidade com métricas". Rollout começou no UK — estimar disponibilidade PT em semanas. Preparar framing de relatório antecipadamente. Só awareness por agora.
-- **Bing AI Citation Share é o único KPI de citação disponível hoje**: percentagem de citações por query é exactamente o que faltava para demonstrar ROI de GEO. Mesmo com quota Bing/Copilot menor em Portugal, é o KPI nativo disponível. Incorporar nos pitches como proxy mensurável de AEO. Potencial novo ângulo de serviço.
-- **GEO B2B em fase operacional (n=225)**: early mover advantage a estreitar. Clientes SaaS PT que não iniciaram GEO operacional estão já atrás da curva. Não requer novo serviço — reforça urgência no pitch existente.
 
