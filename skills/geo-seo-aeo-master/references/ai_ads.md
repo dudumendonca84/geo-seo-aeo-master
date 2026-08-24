@@ -1,16 +1,16 @@
 # AI ads — anúncios dentro de respostas e assistentes de IA
 
-**Last refresh:** 18 Aug 2026 (mapa inicial, pesquisa com fontes primárias e secundárias reputadas). Mantido pelo daily-agent: o watch "AI ads" em `daily-agent/daily-prompt.md` aponta para este ficheiro. Qualquer mudança de estado (abertura de canal, novo formato, chegada à UE/PT) actualiza a secção do motor E a linha da tabela-resumo, com data.
+**Last refresh:** 24 Aug 2026 — ChatGPT Ads passou de "lançamento agendado" a "live" em Portugal e nos restantes 30 mercados EEE+Suíça, conforme calendário já registado a 19 Aug. Mantido pelo daily-agent: o watch "AI ads" em `daily-agent/daily-prompt.md` aponta para este ficheiro. Qualquer mudança de estado (abertura de canal, novo formato, chegada à UE/PT) actualiza a secção do motor E a linha da tabela-resumo, com data.
 
 **O que este ficheiro é:** o par pago do GEO. O playbook orgânico por motor vive em `engine_playbooks.md`; este ficheiro cobre onde existe inventário pago, como se compra, e o que isso muda na leitura das respostas. Números de vendors (ROAS, eficácia) tratam-se como directional, regra de `benchmarks.md`.
 
 ---
 
-## Tabela-resumo (18 Aug 2026)
+## Tabela-resumo (24 Aug 2026)
 
 | Motor | Ads? | Canal de compra | Geografia |
 |---|---|---|---|
-| ChatGPT | Sim | OpenAI Ads Manager (self-serve) | EUA self-serve; **31 mercados EEE+Suíça a 24 Ago 2026** (Free e Go); compra por anunciantes UE ainda a abrir por fases |
+| ChatGPT | Sim | OpenAI Ads Manager (self-serve, só EUA) | EUA self-serve; **live desde 24 Ago 2026 em 31 mercados EEE+Suíça, incl. Portugal** (Free e Go); compra por anunciantes UE/PT ainda fechada — acesso inicial só via equipa OpenAI Ads Solutions e parceiros |
 | Google AIO / AI Mode | Sim | Google Ads (PMax, AI Max for Search, Search broad match) — automático, sem opt-in | Superfícies vivas em toda a UE; ads em rollout a partir dos EUA |
 | Microsoft Copilot | Sim | Microsoft Advertising (ads + Brand Agents) | EUA; expansão "2026" sem data UE |
 | Grok (X) | Em beta | X Ads Manager | Sem data UE |
@@ -27,10 +27,11 @@
 
 ### ChatGPT (OpenAI)
 
-- **Cronologia:** piloto convite-only nos EUA em Fev 2026 (compromisso mínimo $200k); self-serve **OpenAI Ads Manager** aberto a empresas nos EUA a 5 Mai 2026 (mínimo removido); "Advertise in ChatGPT" aberto a todos a 22 Jul 2026. Reino Unido: primeiro mercado europeu, 6 Jun 2026. **EEA (inclui Portugal): email da OpenAI aos utilizadores Free/Go a 15 Ago 2026, com data confirmada para 24 Ago 2026 em 31 mercados do EEE e Suíça — Free e Go apenas, Plus/Pro/Business/Enterprise/Education sem ads, não personalizados ao arranque, bloco por baixo da resposta e identificado** (segmentação por tópico, localização, dispositivo, hora, língua; OpenAI Ireland Limited como data controller).
+- **Cronologia:** piloto convite-only nos EUA em Fev 2026 (compromisso mínimo $200k); self-serve **OpenAI Ads Manager** aberto a empresas nos EUA a 5 Mai 2026 (mínimo removido); "Advertise in ChatGPT" aberto a todos a 22 Jul 2026. Reino Unido: primeiro mercado europeu, 6 Jun 2026. **EEA (inclui Portugal): email da OpenAI aos utilizadores Free/Go a 15 Ago 2026; anúncios foram ao ar a 24 Ago 2026 conforme calendário, em 31 mercados do EEE e Suíça — Free e Go apenas, Plus/Pro/Business/Enterprise/Education sem ads, não personalizados ao arranque (segmentação só por tópico da conversa, localização aproximada, tipo de dispositivo, hora e língua; histórico de chat e memórias explicitamente excluídos), bloco por baixo da resposta e identificado; personalização exige opt-in explícito, revogável a qualquer momento nas definições de privacidade; OpenAI Ireland Limited como data controller.**
 - **Mecânica de compra:** CPC (entrada reportada ~$3-5) e CPM (~$25-60, reportado), pixel de medição (OAIQ) + Conversions API. Targeting por contexto conversacional. Integrações: Dentsu, Omnicom, Publicis, WPP; Adobe, Criteo, Kargo, Pacvue, StackAdapt.
-- **Estado UE anunciantes:** a compra por contas europeias ainda não abriu. Acção quando abrir: registo imediato no Ads Manager.
-- Fontes: openai.com/index/new-ways-to-buy-chatgpt-ads · openai.com/index/testing-ads-in-chatgpt · ppc.land (rollout EEA, 15 Ago 2026) · digiday.com (expansão Mai 2026).
+- **Estado UE anunciantes (24 Ago 2026):** a compra directa por contas europeias/PT continua fechada — acesso inicial apenas via equipa OpenAI Ads Solutions e parceiros/agências certificadas; self-service via Ads Manager para a UE previsto para "mais tarde este verão", sem data exacta. Acção quando abrir: registo imediato no Ads Manager.
+- **Verificação de primeira mão (24 Ago 2026):** sem acesso a uma conta ChatGPT Free/Go geolocalizada em Portugal nesta sessão (ambiente sandbox, sem browser autenticado) — o "primeiro anúncio visível" fica por confirmar em primeira mão; o estado acima assenta na confirmação oficial da OpenAI e em corroboração cruzada de imprensa (ver news-feed 2026-08-24). Próxima sessão com acesso a um ecrã real de ChatGPT em PT deve tentar reproduzir e citar o texto exacto do anúncio.
+- Fontes: openai.com/index/chatgpt-ads-expands-across-europe/ (19 Ago 2026, WebFetch bloqueado pelo proxy — verificado via WebSearch) · euronews.com/next/2026/08/21 · digiday.com (openais-ads-business-hits-europe-at-the-six-month-mark) · techtimes.com (325091) · marketing4ecommerce.net.
 
 ### Google — AI Overviews e AI Mode
 
