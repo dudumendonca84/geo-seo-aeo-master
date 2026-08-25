@@ -18,7 +18,37 @@
       "homepage": "https://github.com/dudumendonca84/geo-seo-aeo-master",
       "repository": "https://github.com/dudumendonca84/geo-seo-aeo-master",
       "license": "MIT",
-      "keywords": ["geo", "aeo", "seo", "ai-search", "llm", "chatgpt", "perplexity", "ai-overviews"],
+      "keywords": [
+        "geo",
+        "aeo",
+        "seo",
+        "ai-search",
+        "llm",
+        "chatgpt",
+        "perplexity",
+        "ai-overviews"
+      ],
+      "category": "knowledge"
+    },
+    {
+      "name": "tracker-forensics",
+      "source": "./",
+      "description": "Analise forense dos dados do Visibility Tracker: citacoes por motor, taxonomia de fontes, directorios, sessao real e trafego atribuido a IA — com o crivo que separa um padrao real de um artefacto de medicao.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Eduardo Mendonça",
+        "email": "etmendonca@gmail.com"
+      },
+      "homepage": "https://github.com/dudumendonca84/geo-seo-aeo-master",
+      "repository": "https://github.com/dudumendonca84/geo-seo-aeo-master",
+      "license": "MIT",
+      "keywords": [
+        "data-analysis",
+        "citations",
+        "ai-search",
+        "tracker",
+        "forensics"
+      ],
       "category": "knowledge"
     }
   ]
