@@ -1,0 +1,58 @@
+# Barómetro de marcas — o que os assistentes de IA recomendam em Portugal
+#
+# Conjunto canónico v1, fixado a 25 Ago 2026. Alterações são emendas
+# datadas ao protocolo, nunca edições silenciosas: uma pergunta trocada a
+# meio torna a série incomparável com ela própria.
+#
+# DESENHO
+#   12 categorias, uma pergunta cada, TODAS com a mesma forma
+#   ("Qual é o melhor X em Portugal?"). A forma repetida é deliberada: com
+#   a pergunta constante, a diferença entre categorias é do mercado e não
+#   da maneira de perguntar.
+#
+#   + 3 controlos de FORMULAÇÃO no fim, sobre a mesma categoria. Servem
+#   para medir uma coisa que ninguém reporta: a resposta muda conforme se
+#   pede "o melhor", se pede recomendação, ou se se declara intenção de
+#   compra? Se mudar, metade dos rankings que se publicam por aí são
+#   artefactos da pergunta.
+#
+# COMO SE CORRE
+#   Todos os motores disponíveis (dez, contando AIO e AI Mode) × 3
+#   corridas no MESMO dia. 15 perguntas × 10 × 3 = 450 respostas.
+#
+#   Três corridas e não uma porque nós próprios verificámos, a 20 Ago
+#   2026, que a mesma pergunta devolve resultados diferentes de corrida
+#   para corrida. Publicar uma corrida só é publicar uma amostra de
+#   tamanho um — e seríamos os primeiros a saber disso.
+#
+# O QUE SE MEDE
+#   1. Consistência: marcas que aparecem nas TRÊS corridas do mesmo motor.
+#      É o número principal, e é o que distingue posição de sorte.
+#   2. Concordância entre motores: marcas presentes em todos os dez.
+#   3. Recusas: motores que se recusam a ordenar marcas. A taxa de recusa
+#      por motor é um achado por si só.
+#   4. Fontes que sustentam cada recomendação — a parte que só nós temos,
+#      e a que responde a "porque é que ele diz isto".
+#
+# PT-PT, mercado PT. Cliente de ingestão: Estudo · Comércio em IA (PT).
+
+# ── Categorias ────────────────────────────────────────────────────
+Qual é o melhor banco em Portugal?
+Qual é a melhor seguradora em Portugal?
+Qual é a melhor operadora de telecomunicações em Portugal?
+Qual é o melhor supermercado em Portugal?
+Qual é o melhor fornecedor de eletricidade em Portugal?
+Qual é o melhor hospital privado em Portugal?
+Qual é a melhor companhia aérea para voar a partir de Portugal?
+Qual é a melhor universidade em Portugal?
+Qual é a melhor imobiliária em Portugal?
+Qual é a melhor marca de moda portuguesa?
+Qual é o melhor restaurante em Portugal?
+Quais são as melhores marcas portuguesas?
+
+# ── Controlos de formulação (mesma categoria, três formas) ────────
+# A categoria escolhida é a banca por ser aquela em que quase toda a
+# gente já teve de decidir, e onde uma recomendação tem consequência.
+Que banco recomendas a quem vive em Portugal?
+Estou a pensar mudar de banco em Portugal. Qual devo escolher?
+Faz um top 5 dos bancos em Portugal.
