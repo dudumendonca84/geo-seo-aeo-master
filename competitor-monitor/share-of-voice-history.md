@@ -115,6 +115,19 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-08-18 | SEOLabs | 1/5 | 3.0 | +1 (era 0/5) — regressa ao top-3, 3.ª troca directa com Basicamente Digital | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 |
 | 2026-08-18 | Marco Gouveia | 1/5 | 2.0 | — (1.ª semana) | 1/5 (só Claude) | Novo entrante D0 e D1 na mesma semana; prompt 1 pos 2 |
 
+| 2026-08-25 | destaque.ai | 2/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1, prompt 5 pos 1 — 10.ª semana consecutiva no Prompt 5, 3.ª semana consecutiva no Prompt 1 |
+| 2026-08-25 | 3HASH | 2/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompts 3 (pos 1), 4 (pos 3) — slots idênticos à semana passada |
+| 2026-08-25 | Infinidata | 1/5 | 1.0 | = aparições (1/5), posição melhor (1.0 vs 2.0) | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 1 (era pos 2) — troca directa com AP\|Portugal |
+| 2026-08-25 | AP\|Portugal | 1/5 | 2.0 | = aparições (1/5), posição pior (2.0 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 2 (era pos 1) — troca directa com Infinidata |
+| 2026-08-25 | SEOLabs | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 2 pos 3 — mantém-se, sem troca com Basicamente Digital esta semana |
+| 2026-08-25 | Marco Gouveia | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 2 — mantém a posição da semana de estreia |
+| 2026-08-25 | SmartLinks | 1/5 | 2.0 | = aparições (1/5), posição = 2.0 mas noutro prompt | 1/5 (só Claude) | Cobertura parcial; prompt 4 pos 2 (era prompt 4 pos 2 também — posição igual, ranking interno do prompt mudou com a entrada de Filipe Raimundo) |
+| 2026-08-25 | Latigid | 1/5 | 3.0 | -1 aparição (era 2/5), posição pior (3.0 vs 2.0) | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 3 apenas — perde a presença no Prompt 4 (era pos 1 há várias semanas), sem causa pública identificada |
+| **2026-08-25** | **Filipe Raimundo** | **1/5** | **1.0** | **novo entrante** | 1/5 (só Claude) | Novo entrante D0 e D1 na mesma semana; prompt 4 pos 1 — mesmo padrão de estreia directa já visto com Marco Gouveia |
+| 2026-08-25 | UniK SEO | 0/5 | n/a | -1 (era 1/5) | 1/5 (só Claude) | Cobertura parcial; sai do top-3 do Prompt 5 — quebra 5 semanas consecutivas em pos 2 |
+| 2026-08-25 | AISO Hub | 0/5 | n/a | = vs 0 | 1/5 (só Claude) | Cobertura parcial; 6.ª semana consecutiva fora do top-3 do Prompt 4, sem causa pública identificável |
+| 2026-08-25 | Basicamente Digital | 0/5 | n/a | = vs 0 | 1/5 (só Claude) | Cobertura parcial; ausente do Prompt 2 esta semana |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
