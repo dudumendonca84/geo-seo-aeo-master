@@ -109,3 +109,44 @@ inventadas depois do facto:
    Base: 2,3% no Perplexity, o mais alto de todos.
 
 Pontuação a 1 de Setembro.
+
+### Primeiro teste da difusão entre motores
+
+A hipótese "um motor antecipa outro" foi testada hoje ao nível dos
+DOMÍNIOS (milhares de observações, não doze pontos semanais): para cada
+domínio citado por dois motores, qual deles o citou primeiro.
+
+**A primeira tentativa produziu um resultado falso e vale a pena guardar
+porquê.** Com todos os motores no mesmo saco, o Claude parecia anteceder o
+Google AI Mode em 23,5 dias — sinal enorme. Era artefacto: as superfícies
+Google e o Copilot só entraram na auditoria a 3 de Agosto, portanto
+nenhum domínio pode ter neles primeira aparição anterior a essa data.
+Comparar motores com janelas de observação diferentes fabrica difusão onde
+não há nenhuma. Regra que fica: **só se comparam motores que estiveram a
+ser observados ao mesmo tempo.**
+
+Restringindo aos quatro com janela comum desde 1 de Junho (chatgpt,
+claude, gemini, grok), sobra pouco — e o pouco que sobra é isto:
+
+| Par | Domínios | A primeiro | B primeiro | A lidera |
+|---|---|---|---|---|
+| chatgpt → claude | 160 | 68 | 39 | **63,6%** |
+| grok → gemini | 629 | 222 | 175 | 55,9% |
+| gemini → chatgpt | 255 | 86 | 66 | 56,6% |
+| claude ↔ gemini | 392 | 173 | 161 | 51,8% |
+| claude ↔ grok | 375 | 145 | 136 | 51,6% |
+
+**Um sinal sobrevive: o ChatGPT antecede o Claude**, cerca de dois para um
+nos pares em que houve diferença (68 contra 39, n=107 discordantes). Os
+restantes pares estão em cima de 50% e não dizem nada.
+
+Explicação alternativa que ainda não foi excluída, e que é preciso excluir
+antes de isto valer como regra: o Claude pesquisa menos vezes, e o que
+cita pode ser simplesmente um subconjunto mais lento por construção, não
+por seguir ninguém.
+
+**Previsão pontuável (para 1 de Setembro):** o ChatGPT mantém-se acima de
+55% na liderança sobre o Claude, com pelo menos 60 pares discordantes.
+Confiança média. Refuta-se abaixo de 55% ou com amostra insuficiente.
+Base: 63,6% em 107 pares, janela comum de 12 semanas, um só cliente com
+série longa.
