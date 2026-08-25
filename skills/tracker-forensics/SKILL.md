@@ -149,6 +149,34 @@ são vias diferentes, e a diferença entre elas é que é o achado.
 distingue é o `source_name` estar preenchido. Não há coluna booleana; quem
 escrever uma consulta sem saber isto conta tudo como citado.
 
+## Camada preditiva
+
+`predictions.md` é onde a análise deixa de descrever o passado e arrisca
+sobre o futuro. É a parte que faz o sistema aprender, e a razão é simples:
+uma descrição do passado não pode estar errada, e por isso também não
+ensina nada. Uma previsão datada pode — e quando falha, obriga a mudar o
+modelo.
+
+O que faz isto funcionar não é o algoritmo. É o ciclo: **prever, datar,
+pontuar, corrigir**. Ao fim de um trimestre o que fica não é uma opinião
+sobre os motores; é uma taxa de acerto verificável, que ninguém no mercado
+português tem.
+
+Regra dura, para não confundirmos engenho com resultado: **toda a previsão
+é comparada com a linha de base ingénua — "a próxima semana é igual a
+esta"** — e um método só entra em produção depois de a bater durante
+quatro semanas seguidas. A maior parte das ideias engenhosas perde para
+ela.
+
+E uma honestidade sobre o que não se faz: com oito a dez semanas de série
+por cliente, treinar um modelo é decorar ruído e chamar-lhe inteligência.
+Os métodos são deliberadamente simples até a série os merecer.
+
+A hipótese mais valiosa por testar, e verificável já com os dados que
+temos: **um motor antecipa outro?** Se uma mudança na família Google
+aparece no Perplexity duas semanas depois, isso é um alarme com duas
+semanas de vantagem — e é a diferença entre explicar depois e antecipar.
+
 ## Como se escreve o resultado
 
 Registo Economist. Números com denominador e data. Sem emoji, sem
