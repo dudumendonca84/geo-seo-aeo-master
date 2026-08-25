@@ -95,6 +95,7 @@ Claude Opus 5 pricing: $5/$25 per million input/output tokens — identical to O
 - **Claude Desktop** — same as claude.ai.
 - **Claude Code (CLI + Web Routines)** — Sonnet 5 default; Opus 4.8 in Fast mode (released May 28 2026) — not yet confirmed whether Fast mode moves to Opus 5.
 - **API** — explicit model parameter required. IDs: `claude-opus-4-7`, `claude-sonnet-5`, `claude-sonnet-4-6`, `claude-haiku-4-5-20251001`.
+- **Claude Tag** — Slack-native AI team member for Enterprise/Team customers, launched 23 Jun 2026 ([anthropic.com/news/introducing-claude-tag](https://www.anthropic.com/news/introducing-claude-tag)). Learns organizational context from channel history, executes multi-step tasks via @-mention, ambient mode proactively surfaces updates; no separate API. Anthropic disclosed 65% of its own product team's code is written by an internal version of it. No GEO/citation mechanic — internal productivity tool, not a search/retrieval surface; tracked here only for model-radar completeness.
 
 ### GEO-relevant notes
 
@@ -121,7 +122,7 @@ Claude Opus 5 pricing: $5/$25 per million input/output tokens — identical to O
 ### Products and which model
 
 - **Google Search AI Overviews** — Gemini 3.5 Flash since I/O 2026 (replacing 2.5 Flash). Uses **same Google index as classic Search** ([Search Central docs](https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing)). Since 21 Jul 2026, Google routes some Search queries to **Gemini 3.5 Flash-Lite** instead, depending on the question — not yet confirmed whether this is a partial replacement or an additional latency tier ([blog.google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)).
-- **Google AI Mode** — Gemini 3.5 Flash globally since I/O 2026; >1B monthly users declared at I/O. Flash-Lite routing (see above) also applies here for conversational/agentic queries. Since 14 Aug 2026, Google AI Pro/Ultra subscribers (English only) can opt into **Gemini 3.7 Flash** via the model picker — not a default change, but the first paid-tier model choice inside AI Mode itself ([Search Engine Land](https://searchengineland.com/gemini-3-7-flash-rolling-out-in-google-search-485058), 14 Aug 2026).
+- **Google AI Mode** — Gemini 3.5 Flash globally since I/O 2026; >1B monthly users declared at I/O (AI Overviews separately declared 2.5B monthly active users at the same I/O 2026 keynote — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)). Flash-Lite routing (see above) also applies here for conversational/agentic queries. Since 14 Aug 2026, Google AI Pro/Ultra subscribers (English only) can opt into **Gemini 3.7 Flash** via the model picker — not a default change, but the first paid-tier model choice inside AI Mode itself ([Search Engine Land](https://searchengineland.com/gemini-3-7-flash-rolling-out-in-google-search-485058), 14 Aug 2026).
 - **Gemini app / Gemini Advanced** — 3.5 Pro for paid tier.
 - **Vertex AI / AI Studio** — exposes all current generation models with explicit selection.
 
