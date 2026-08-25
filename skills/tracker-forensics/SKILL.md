@@ -140,8 +140,17 @@ secretaria, apps de telemóvel, link copiado) conta como directo. As AI
 Overviews chegam como `google / organic` e são invisíveis. Escrever sempre
 "tráfego de IA identificado", nunca "tráfego que a IA traz".
 
-**A API não é a aplicação.** A API do Claude não pesquisa em 49% das
-respostas; a aplicação pesquisa quase sempre. Nunca misturar
+**A API não é a aplicação.** A diferença entre as duas vias é real e está
+medida na comparação pública (7 fontes contra 16, 24% de marcas
+coincidentes). O que NÃO se cita mais é o nosso "a API do Claude não
+pesquisa em 49% das respostas": a 25 Ago 2026 percebeu-se que essas linhas
+não vinham da API — vinham da Routine, que em quatro semanas de dez não
+gravou as fontes que tinha encontrado. Errado no valor e no sujeito.
+Corrigido na origem pela migração 0079 do Tracker, que recusa uma resposta
+augmented escrita à mão sem fontes e sem explicação. **Lição para o crivo:
+antes de citar um número sobre o comportamento de um motor, confirmar QUEM
+escreveu a linha** — a latência e os tokens dizem-no: a API preenche-os
+sempre, quem escreve à mão deixa-os a zero. Nunca misturar
 `audit_responses` (API) com `ui_observations` (aplicação) no mesmo total —
 são vias diferentes, e a diferença entre elas é que é o achado.
 
