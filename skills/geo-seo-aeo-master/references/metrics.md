@@ -82,6 +82,8 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 
 **Known data quality issue.** Google disclosed in a changelog (3 April 2026) that GSC over-reported impressions from **13 May 2025** through early April 2026. Any YoY analysis crossing that window is contaminated. Annotate dashboards.
 
+**Known data quality issue (2).** A second, separate bug hit the "Search Generative AI performance" report specifically: impressions under-reported for data from **13 Aug 2026** onward. John Mueller confirmed it as a logging-only issue, not a real AI-visibility drop ([Search Engine Land](https://searchengineland.com/google-search-console-generative-ai-performance-report-in-search-data-bug-485215), [Search Engine Roundtable](https://www.seroundtable.com/google-search-console-performance-reports-drop-41884.html), ~17-20 Aug 2026 — verified via `WebSearch` cross-corroboration, `WebFetch` to the primary sources blocked by this session's network proxy). Any client showing a sudden AI-citation-impression drop starting mid-Aug 2026 should be checked against this before being read as a real change; no fix-confirmed date found yet.
+
 **Practical workaround.** Pair GSC keyword-level impressions with a third-party AIO presence checker (Profound, SerpAPI) to derive an indicative AIO impression share.
 
 ---

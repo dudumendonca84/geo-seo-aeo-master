@@ -15,19 +15,31 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Jogada recomendada:** confirmar que as capturas do Tracker em ChatGPT PT distinguem bloco patrocinado de citação orgânica (o dado SERP já faz essa distinção nos outros motores); publicar o artigo "chegaram os anúncios ao ChatGPT em Portugal" preparado desde 19 ago. A compra directa por agências/anunciantes PT continua fechada (só parceiros certificados) — ainda não há oferta de "gestão de AI ads" vendável hoje.
 **Prazo:** esta semana, até 28 de agosto.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-24
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-25
 
-🚨 Alerta no topo do feed: os anúncios do ChatGPT foram ao ar hoje em Portugal e nos restantes 30 mercados EEE+Suíça — jogada e prazo no bloco acima.
+🚨 Alerta no topo do feed continua activo (ChatGPT Ads em Portugal) — prazo 28 de agosto, sem alteração de estado hoje.
 
-Radar LLM/IA: sem lançamentos de modelo nem mudanças de preço de API confirmados na janela de 24-48h.
+Radar LLM/IA: sem lançamentos de modelo nem mudanças de preço de API confirmados na janela de 24-48h. Nota à margem, fora de âmbito GEO: a Nvidia estará em negociações para investir na Perplexity a uma avaliação >$30B (23 ago) — awareness financeira, sem mecânica de citação.
 
-GEO/AEO: sem desenvolvimento novo na história da queda de citações do Reddit no ChatGPT (parada desde 08-22); sem estudo novo qualificado na janela.
+GEO/AEO: sem desenvolvimento novo na história da queda de citações do Reddit no ChatGPT (parada desde 08-22); sem estudo novo qualificado na janela. Bug de sub-reporting no relatório "Generative AI performance" da Search Console (dados desde 13 ago, confirmado pela Google como falha de logging) absorvido hoje como caveat operacional em `references/metrics.md` — fora da janela para reportar como notícia do dia, mas relevante para quem lê dados de clientes.
 
 SEO/Google: sem novidade além do já registado (spam update de agosto concluído a 21 ago).
 
-Implicações: a acção do dia é o alerta acima; sem outras jogadas com prazo.
+Implicações: a acção do dia continua a ser o alerta acima; sem outras jogadas novas com prazo.
 
 Corrida completa.
+
+## 2026-08-25
+
+Sem novidades significativas hoje.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para as 7 fontes Tier 1 (developers.google.com, blog.google, openai.com, anthropic.com, deepmind.google, blogs.bing.com, perplexity.ai); verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes em cada área (Tier 1, Tier 1b, Tier 2, Tier 3, Tier 4, Tier 5, e os três watches específicos). Candidatos investigados e **descartados por já cobertos** (confirmado por grep em `news-feed.md`/`references/` antes de escrever): expansão de ChatGPT Ads a Portugal/EEE (já concluída a 24 ago, sem novidade de estado hoje); August 2026 spam update (já concluído, 18-21 ago); corte de preço da API do GPT-5.6 Sol (já em 08-21/08-23); Gemini 3.7 Flash no AI Mode (já em 08-16, absorvido em `references/models.md`); queda de citações do Reddit no ChatGPT Search (já em 08-21/08-22, sem confirmação nem desmentido novo desde então — continua por confirmar); estudo Steady Demand de 14.472 citações locais (já em 08-22); experiência de links só-em-JS invisíveis a crawlers de IA (já em 08-22); Promptwatch como concorrente directo do Tracker (já em 08-22). Descontinuação do Instant Checkout da OpenAI desde março 2026 (reaparecida nas pesquisas de hoje como se fosse achado novo): já documentada em entradas anteriores (08-19, 08-20) do watch de agentic commerce — não é facto novo. Candidatos descartados por fora de âmbito: negociações Nvidia-Perplexity para investimento a avaliação >$30B (23 ago, [The Information via Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/nvidia-discusses-perplexity-investment-30-031804276.html)) — notícia financeira/societária, mesmo critério de exclusão usado para notícias equivalentes da Anthropic em sessões anteriores. Candidato investigado e **absorvido em vez de reportado como notícia do dia** por estar fora da janela de 24-48h (publicação ~17-20 ago): bug de sub-reporting de impressões no relatório "Generative AI performance" da Search Console desde 13 ago, confirmado pela Google como falha de logging e não queda real de visibilidade ([Search Engine Land](https://searchengineland.com/google-search-console-generative-ai-performance-report-in-search-data-bug-485215), [Search Engine Roundtable](https://www.seroundtable.com/google-search-console-performance-reports-drop-41884.html)) — adicionado como "Known data quality issue (2)" em `references/metrics.md` §5, para que auditorias que usem GSC como fonte não leiam uma queda de meados de agosto como sinal real. Watch específico agentic commerce: **sem novidade** — checkout in-chat continua limitado aos EUA (Instant Checkout da OpenAI permanece descontinuado desde mar 2026; checkout agêntico da Google em AI Mode com expansão prevista para Canadá/Austrália/Reino Unido, sem data para Portugal/EEE; Perplexity Instant Buy confirmado EUA-only no seu próprio Help Center). Watch específico AI ads em Portugal: **sem novidade de estado** desde o lançamento de 24 ago — self-service da UE continua fechado (gatekept por parceiros); nota de enquadramento nova (não facto novo): comentário da indústria liga o lançamento aos poderes de fiscalização do EU AI Act, activos desde 2 ago, como ângulo de escrutínio regulatório a acompanhar. Watch específico Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, confirmado de novo via Microsoft Q&A, Fabrice Canel mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias. Terça-feira → sem weekly drafts.
+
+**Absorção (passo 1 de manutenção, antes do truncate abaixo)**: news-feed.md tinha 60 headers antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair no truncate (2026-06-24: Anthropic Claude Tag em Slack, Google Search Console Generative AI Performance Reports + toggle de opt-out, métricas de escala do Google I/O 2026 — AI Mode >1B utilizadores, AI Overviews 2,5B utilizadores, Gemini 3.5 Flash como modelo base, Personal Intelligence em ~200 países —, estudo Ahrefs 97%/137.210 domínios llms.txt, 50 domínios mais citados pelo Perplexity, melhorias do Perplexity Deep Research/Labs, estatística Cloudflare de 57,5% de tráfego bot). Quatro itens já bem absorvidos: os "Generative AI Performance Reports" e o toggle de opt-out estão em `references/metrics.md` (linhas 79, 202); a marca de >1B utilizadores mensais do AI Mode e o Gemini 3.5 Flash como modelo base estão em `references/models.md`, secção Google; o estudo 97%/137.210 domínios de llms.txt está corroborado e absorvido em `references/frameworks.md` §1 (citação cruzada com o estudo maior da Originality.ai). Dois itens **não estavam absorvidos e foram corrigidos agora**: o Claude Tag (lançamento 23 jun) estava explicitamente sinalizado como lacuna em `references/models.md` ("Interim vendor releases... e.g. Claude Tag... remain not absorbed") — adicionado agora à secção "Products and which model" da Anthropic; os 2,5 mil milhões de utilizadores mensais das AI Overviews (mesma keynote do I/O que já tinha o dado do AI Mode) foram adicionados à mesma linha de `references/models.md`. Três itens revistos e não absorvidos por não cumprirem a barra: os 50 domínios mais citados pelo Perplexity são um snapshot mensal recorrente da Ahrefs, sem valor duradouro específico face a versões mais recentes da mesma série já referenciadas noutras entradas; as melhorias do Perplexity Deep Research/Labs de jun 2026 estão superadas por evolução posterior do produto (Perplexity Computer, Agent API) já coberta em entradas mais recentes; a estatística de 57,5% de tráfego bot da Cloudflare é um número genérico de tráfego web sem mecânica GEO/AEO específica, fora do âmbito de `references/`. Personal Intelligence em ~200 países: feature de produto sem mecânica de citação, não absorvida, mesmo critério usado para features de produtividade noutras entradas. Nenhuma lacuna genuína adicional identificada. Truncado para 60 headers (2026-06-25 a 2026-08-25) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — dia sem novidades na janela de 24-48h; o bug de logging da Search Console é uma falha de reporting confirmada pela própria Google, não uma mudança de mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-08-24
 
@@ -978,34 +990,4 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - O spam update de 24 Jun penaliza directamente conteúdo gerado em escala sem qualidade editorial — reforça o argumento de pitch para B2B: qualidade e autoridade como hedge contra actualizações de spam, não apenas como best practice.
 - O estudo Similarweb valida GEO como canal de pipeline concreto: visitas vindas de recomendações AI têm engagement 2× superior. Para SaaS B2B português, justifica incluir métricas de visibilidade em AI (share of voice em ChatGPT/Gemini) no reporting de clientes — novo serviço a considerar.
 - O Google Search Console com relatório de impressões AI é a primeira fonte de dados first-party para medir exposição em AI Mode; vale integrar no onboarding de clientes como baseline de AEO — awareness, sem mudança de pitch por agora.
-
-## 2026-06-24
-
-### 🔵 Anúncios oficiais
-
-- **Anthropic — Claude Tag** — [anthropic.com](https://www.anthropic.com/news/introducing-claude-tag). Lançado a 23 Jun em beta para clientes Enterprise e Team: Claude integra-se como membro de canais Slack, constrói contexto a partir do histórico de mensagens e pode receber delegação de tarefas por qualquer membro do canal. Sem API extra — funciona directamente via menção @Claude.
-
-- **Google Search Console — Generative AI Performance Reports** — [developers.google.com](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports). Relatórios dedicados de impressões em AI Overviews e AI Mode, com cinco dimensões: impressões, páginas, países, dispositivos e datas (granularidade hourly/daily/weekly/monthly). Rollout inicial a subset de proprietários de sites no Reino Unido; expansão global sem data confirmada. Dados de cliques **não incluídos** na versão actual.
-
-- **Google — Toggle de opt-out de funcionalidades generativas** — [blog.google](https://blog.google/products-and-platforms/products/search/new-controls-website-owners/). Toggle no Search Console permite excluir um site de AI Overviews, AI Mode e AI Overviews em Discover. Opt-out não é usado como sinal de ranking nas restantes pesquisas orgânicas.
-
-- **Google I/O 2026 — Métricas de escala** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). AI Mode ultrapassou **1 bilião de utilizadores mensais**; AI Overviews tem **2,5 biliões de utilizadores activos mensais**. Modelo base actualizado para Gemini 3.5 Flash; Personal Intelligence expandida a ~200 países sem subscrição.
-
-### 📊 Estudos & dados
-
-- **97% dos ficheiros llms.txt nunca receberam um pedido** — Ahrefs, [ahrefs.com/blog/llmstxt-study](https://ahrefs.com/blog/llmstxt-study/). Análise de 137.210 domínios (Ahrefs Web Analytics, Mai 2026): ~28% tinham um llms.txt válido (~38K domínios), mas apenas ~1.100 (3%) receberam qualquer tráfego de crawlers. Nenhum major AI lab confirmou publicamente honrar o ficheiro em produção. Benefício prático actual limita-se a agentes IDE (Cursor, Cline) e documentação para developers.
-
-- **50 domínios mais citados pelo Perplexity (Jun 2026)** — Ahrefs, [ahrefs.com](https://ahrefs.com/blog/most-cited-domains-perplexity/). Análise de 3,1 milhões de queries nos EUA; rankings equivalentes publicados para Copilot e Grok no mesmo período.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Perplexity — Deep Research com Labs advancements** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog/what-we-shipped-june-13th). A 19 Jun: Deep Research integrado em Computer com command access, forking e analytics APIs com custom credit limits. A 13 Jun: Research incorpora melhorias do Labs (criação de imagens/gráficos, browsing, orquestração inteligente).
-
-- **Cloudflare — Bots representam 57,5% do tráfego HTML** — meados de 2026. Automated requests ultrapassaram tráfego humano na web; dado contextualiza a pressão crescente sobre crawl budget e gestão de robots.txt em contexto de AI crawlers.
-
-### 💡 Implicações para destaque.ai
-
-- **Search Console Gen AI Reports + opt-out toggle** são argumento de vendas imediato para clientes B2B com publicações/blogs: pela primeira vez há dados mensuráveis de visibilidade em AI Mode. Incluir "auditoria de visibilidade em AI features" no onboarding; o opt-out deve ser enquadrado como decisão estratégica (publisher vs. captura zero-click), não como protecção automática.
-- **llms.txt sem adopção de crawlers** (97% sem pedidos, 137K domínios): evitar vender implementação de llms.txt como diferenciador até há adoção confirmada pelos labs. Comunicação correcta: "pré-posicionamento técnico" — não "optimização imediata". Excepção: clientes developer-tools/SaaS ganham discoverability em IDE agents já agora.
-- **Claude Tag em Slack**: sinal de que Anthropic está a competir no espaço de ferramentas enterprise (Teams, Slack) directamente; monitorizar adoção e casos de uso B2B para avaliar se é serviço complementar ou concorrente de ferramentas internas dos clientes.
 
