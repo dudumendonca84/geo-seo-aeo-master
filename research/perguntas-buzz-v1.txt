@@ -5,7 +5,7 @@
 # meio torna a série incomparável com ela própria.
 #
 # DESENHO
-#   12 categorias, uma pergunta cada, TODAS com a mesma forma
+#   13 perguntas de categoria, uma cada, TODAS com a mesma forma
 #   ("Qual é o melhor X em Portugal?"). A forma repetida é deliberada: com
 #   a pergunta constante, a diferença entre categorias é do mercado e não
 #   da maneira de perguntar.
@@ -18,7 +18,7 @@
 #
 # COMO SE CORRE
 #   Todos os motores disponíveis (dez, contando AIO e AI Mode) × 3
-#   corridas no MESMO dia. 15 perguntas × 10 × 3 = 450 respostas.
+#   corridas no MESMO dia. 16 perguntas × 10 × 3 = 480 respostas.
 #
 #   Três corridas e não uma porque nós próprios verificámos, a 20 Ago
 #   2026, que a mesma pergunta devolve resultados diferentes de corrida
@@ -49,6 +49,11 @@ Qual é a melhor imobiliária em Portugal?
 Qual é a melhor marca de moda portuguesa?
 Qual é o melhor restaurante em Portugal?
 Quais são as melhores marcas portuguesas?
+# A pergunta sem categoria nenhuma. É a mais reveladora do conjunto: sem
+# sector que a ancore, o modelo tem de escolher o critério ele próprio —
+# tamanho, reputação, inovação, exportação — e a escolha do critério diz
+# mais sobre o que ele aprendeu do que a lista que produz.
+Qual é a melhor empresa de Portugal?
 
 # ── Controlos de formulação (mesma categoria, três formas) ────────
 # A categoria escolhida é a banca por ser aquela em que quase toda a
