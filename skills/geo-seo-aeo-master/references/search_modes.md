@@ -4,7 +4,7 @@ SINAL audits every prompt **twice** per engine. The two queries are physically s
 
 This file is the canonical contract. Consumers (`destaque-ai-tracker`, `destaque-ai-deck-builder`) parse the per-engine table below to know **which tool/feature** to enable to put each engine in `augmented` mode.
 
-Last refresh: **10 Jun 2026** (Grok augmented surface corrected — see per-engine table).
+Last refresh: **28 Aug 2026** (Mistral augmented surface corrected: search exists, on the Conversations API — see per-engine table).
 
 ---
 
@@ -52,13 +52,15 @@ Single source of truth for what consumers must enable to put each engine into `a
 | `google_aio`| Google    | n/a (always on) | AI Overviews block inside the Google SERP (DataForSEO, SerpApi fallback)                    | Consumption surface. Absence of the block is data, not failure. |
 | `google_ai_mode`| Google| n/a (always on) | Google AI Mode (DataForSEO, SerpApi fallback)                                              | Consumption surface. |
 | `copilot_bing`| Microsoft| n/a (always on)| Copilot block inside the Bing SERP (DataForSEO)                                             | Consumption surface, distinct from standalone `copilot`; never sum the two. |
-| `mistral`   | Mistral   | not supported   | No first-party search tool in the API as of Jun 2026                                       | Consumers should **skip** the augmented half of the run; record `null`, do not synthesise. |
+| `mistral`   | Mistral   | `web_search`    | **Conversations API**, `beta.conversations.start` with `tools: [{ type: "web_search" }]` — NOT `chat/completions` | **Corrected 28 Aug 2026.** This row said "not supported" and that was true only of the chat-completions endpoint. The search tool lives on the Conversations API, verified against `@mistralai/mistralai` (`ConversationRequest.tools` accepts `WebSearchTool`). The cost of the stale row: Mistral ran knowledge-only for months and scored 0% citation, which reads as "this engine ignores the brand" but is just the mode: **no engine cites in knowledge mode** (chatgpt, gemini, grok, deepseek and claude are all at 0% there). Citations come back as `tool_reference` chunks with `title` and `url`. |
 | `deepseek`  | DeepSeek  | not supported   | No first-party search tool in the API as of Jun 2026                                       | Same — skip the augmented half. |
 | `llama`     | Meta      | not supported   | Llama 4 via Groq/Together/Fireworks/Bedrock, OpenAI-compatible; no first-party search        | Same, skip the augmented half. **This is the model, not the assistant**: Meta AI in WhatsApp/Instagram/meta.ai has no public API and no SERP provider exposes it, so it is not measurable. Meta's own Llama API shut down 6 Jul 2026. |
 
 **Consumption surfaces have no knowledge mode.** `google_aio`, `google_ai_mode`, `copilot`, `copilot_bing` and `perplexity` are marked `n/a (always on)` and run the augmented half only. Marking one of them as two-mode does not produce an error: it silently doubles the provider bill and labels half the rows "training memory" for a surface that cannot answer without searching. Both happened with `copilot` until Aug 2026.
 
 Engines marked **not supported** still participate in `knowledge` mode. Consumers persist `null` for their `augmented_*` series; downstream aggregates exclude them from the augmented-mode average. The daily agent updates this table when a vendor ships native search.
+
+**A stale "not supported" row is expensive, and not in the way you would expect.** Mistral sat here from Jun to Aug 2026 after its search moved to a different endpoint. The visible cost was not a missing column: it was a *misleading* one. Mistral scored 0% citation for months, which reads as "this engine ignores the brand" and nearly got it dropped from the product. The real reading is that **no engine cites in knowledge mode**: in a 424-response sample across two clients, chatgpt, gemini, grok, deepseek and claude were all at 0% there, while the same engines ranged 7% to 14% augmented. Comparing a knowledge-only engine against two-mode engines is not a comparison. When this table marks an engine "not supported", consumers must never present its citation rate beside a two-mode engine's without saying which mode produced it.
 
 ---
 
