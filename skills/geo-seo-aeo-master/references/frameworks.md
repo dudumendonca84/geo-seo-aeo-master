@@ -319,6 +319,8 @@ Defensive practice for content owners:
 - Do not let user-generated content propagate unsanitised into pages indexed by AI crawlers.
 - Offensive use (planting injection on competitor pages, "SEO poisoning") is a legal and ethical line not to cross.
 
+**WARP (Web Agent Retrieval Poisoning), Cornell Tech.** A single injected comment on a public UGC page is enough to make deep-research AI agents cite fabricated entities in **38-62%** of generated reports — no access to the underlying model, prompts, or search engine required (`benchmarks.md` §32). Extends the checklist above: UGC-heavy pages (reviews, comments, forums) are an attack surface for third-party deep-research agents reading the client's site, not only for a site's own chatbot.
+
 ### Hallucinated negative associations
 
 Lidsky & Daves, **"Inevitable Errors: Defamation by Hallucination in AI Reasoning Models"** (Journal of Free Speech Law, 2025) — [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5362314). The pending *LTL LED v. Google* case alleges an AI Overview falsely associated the plaintiff with a state-AG lawsuit.

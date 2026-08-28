@@ -377,6 +377,49 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 32. WARP — Web Agent Retrieval Poisoning (Cornell Tech)
+
+- **URL.** https://searchengineland.com/deep-research-ai-agents-poison-ugc-480952
+- **Date.** ~24 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Method.** A single injected comment planted on a public UGC page (no access to the underlying model, prompts, or search engine required) is enough to make deep-research AI agents cite fabricated entities in their generated reports.
+- **Finding.** Fabricated-entity citation rate of **38-62%** across the deep-research agents tested.
+- **Caveat.** Cornell Tech research, not independently replicated elsewhere yet; exact agent list and sample size not carried in available coverage — treat the range as directional, not a precise average.
+- **Use.** Concrete evidence for the defensive posture already in `frameworks.md` §9 (indirect prompt injection): unsanitised UGC on a client's own pages is an attack surface for deep-research agents, not just for the site's own chatbot. See `frameworks.md` §9 for the mitigation checklist.
+
+---
+
+## 33. Walker Sands — B2B brands rank organically but are rarely cited in AI Overviews
+
+- **URL.** https://searchengineland.com/b2b-brands-rank-google-appear-ai-overviews-480954
+- **Date.** ~24 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Sample.** 828 enterprise B2B companies, 45M+ queries, March 2026.
+- **Finding.** AI Overviews appear in ~50% of queries where the tracked brands already rank organically, yet the **median brand is cited in only 3%** of those AIOs. Cybersecurity led the sample at 4.2% citation rate; professional services trailed at 2.1%.
+- **Caveat.** Vendor-run study (Walker Sands); US/English B2B sample, no PT-PT equivalent (cf. §17).
+- **Use.** The sharpest available number for the "ranking organically ≠ being cited" pitch argument specifically for B2B — pairs with §30 (DerivateX 17% AI discovery share) as two independent vendor studies converging on the same "B2B is under-cited relative to its organic footprint" conclusion.
+
+---
+
+## 34. Diagnosing and Repairing Citation Failures in GEO (arXiv 2603.09296)
+
+- **URL.** https://arxiv.org/abs/2603.09296
+- **Date.** Submitted March 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Finding.** **43%** of topically relevant, already-indexed pages receive zero AI citations despite covering the right subject matter. The paper categorizes three citation-failure modes and proposes an automated repair system.
+- **Caveat.** Academic paper, no independent replication found in later coverage; failure-mode taxonomy not reproduced here in full — treat the 43% figure as the citable headline, not the repair methodology (unverified at production scale).
+- **Use.** Directly actionable framing for audits: a client's content can be well-indexed and on-topic and still be systematically uncited — the audit should check for the specific failure modes (structural, not just topical) rather than assuming coverage equals citability.
+
+---
+
+## 35. Similarweb — AI-recommended brands see 2.5x more site visits
+
+- **URL.** https://www.searchenginejournal.com/ai-recommended-brands-saw-2-5x-more-site-visits-similarweb/580241/
+- **Date.** ~24 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Sample.** US desktop only; finance, travel and beauty verticals.
+- **Finding.** Brands cited by ChatGPT are **2.5x more likely** to receive a site visit within 7 days. AI-influenced visitors view an average of 12 pages and spend 11.8 min on-site vs. 6.5 pages / 5.6 min for non-AI traffic. 55.9% of those visits arrive via a subsequent search, not a direct ChatGPT referral click.
+- **Caveat.** US desktop, three verticals only — no B2B SaaS or PT-PT equivalent (cf. §17). The 55.9%-via-search detail matters: most of the downstream value shows up in search analytics, not in AI-referral traffic, so a client's "AI referral" line alone will understate this effect.
+- **Use.** Complements `cited_brand_clicks` in the Deck Builder table below (35% more organic clicks for cited brands, Seer Interactive) with a second, independent vendor study pointing the same direction — cite together, not as duplicates.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
