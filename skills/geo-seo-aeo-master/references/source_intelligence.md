@@ -35,6 +35,105 @@ depois de processar as auditorias (spec na secção C de
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-08-31
+
+Primeira entrada com **nove motores a citar em paralelo** e com a Meta AI
+medida como motor, não como montra. Base: três auditorias na janela, em
+duas categorias de serviços B2B em Portugal, todas em linhas mensuráveis
+(sem erro, sem mock, com `cited` preenchido e sem prefixo sentinela).
+Total: **8 456 citações** distribuídas por **3 383 domínios distintos**.
+
+Volume e dispersão por motor, com a razão citações por domínio como medida
+de reutilização (quanto mais alta, mais o motor volta às mesmas fontes):
+
+| Motor | Citações | Domínios distintos | Reutilização |
+|---|---|---|---|
+| Perplexity | 1 996 | 1 023 | 1,95 |
+| Meta AI | 1 465 | 833 | 1,76 |
+| Gemini | 1 295 | 691 | 1,87 |
+| Copilot | 966 | 672 | 1,44 |
+| Grok | 678 | 444 | 1,53 |
+| Google AI Overviews | 674 | 260 | 2,59 |
+| Google AI Mode | 621 | 246 | 2,52 |
+| ChatGPT | 458 | 196 | 2,34 |
+| Claude | 303 | 204 | 1,49 |
+
+### O que domina, por motor
+
+**As superfícies da Google citam sobretudo a própria Google.** O
+`google.com` é o domínio mais citado nas duas: 236 de 674 citações nas AI
+Overviews (35%) e 191 de 621 no AI Mode (31%). Nenhum outro motor tem
+qualquer domínio próprio perto do topo com este peso. Consequência prática
+para quem lê estes números: a contagem bruta de citações destas duas
+superfícies não é comparável com a dos outros motores sem descontar as
+auto-referências.
+
+**O YouTube é fonte de primeira linha só na família Google.** Está no top
+2 das AI Overviews (49), do AI Mode (58) e do Gemini (41). Fora dessa
+família aparece apenas na Meta AI (19) e em nenhum dos restantes cinco
+motores entra no top 8. Quem trabalha vídeo está a trabalhar para a
+Google, e quase só para ela.
+
+**A documentação de fornecedor é a espinha do ChatGPT.** Três domínios de
+documentação (`developers.google.com` 47, `learn.microsoft.com` 36,
+`help.openai.com` 14) somam 97 das 458 citações, 21% do total, e é o motor
+com a maior concentração depois das superfícies da Google. O
+`learn.microsoft.com` é transversal: lidera no Perplexity (67) e está no
+top 8 de mais quatro motores.
+
+**A Meta AI, na primeira semana medida como motor, tem um perfil que não
+se parece com nenhum outro:** `medium.com` (44) e `github.com` (43) em
+primeiro e segundo, mais `pt.wikipedia.org` (18). É o único dos nove com
+GitHub no top 8. Onde os outros vão à documentação oficial, este vai ao
+que programadores escreveram sobre ela.
+
+**O Perplexity é o único que chega a plataformas nacionais de avaliação de
+empregador**, com 30 citações de uma plataforma portuguesa de reviews de
+empresas, e é também o que mais usa Reddit (31). O Reddit aparece ainda no
+Gemini (26) e, com peso residual, nas duas superfícies Google (7 e 7).
+Fora destes quatro, não entra em nenhum top 8.
+
+**O Claude é o mais disperso e o único que vai a fontes primárias.**
+Reutilização de 1,49, a mais baixa do conjunto, e é o único com `arxiv.org`
+(5) e `en.wikipedia.org` (7) no top 8. Onde os outros procuram
+documentação de produto, este procura referência e investigação.
+
+**O LinkedIn atravessa cinco dos nove** (Perplexity, Grok, Copilot e as
+duas superfícies Google), sempre em volume médio e nunca no topo. É fundo
+de sala, não é âncora.
+
+### Aviso de método: recolha em sessão real pode citar por contágio
+
+Duas destas montras (Claude e Meta AI) são recolhidas em sessão real de
+utilizador, e isso traz um risco que a via API não tem: se a conta tiver
+memória de conversas ligada, as respostas passam a responder ao caso que a
+sessão julga estar a acompanhar, e isso muda as fontes citadas.
+
+Medido nesta janela, numa das auditorias: 28 de 50 respostas em sessão real
+registaram leitura ou criação de memória, e 21 de 48 respostas a perguntas
+que não mencionavam um determinado tema acabaram a tratar desse tema,
+contra 3 de 48 nas mesmas perguntas feitas por API a outro motor. As
+respostas mais afectadas deixaram de nomear empresas por completo e
+citaram em média 1,4 fontes, contra 4 a 19 nos motores por API na mesma
+auditoria.
+
+A leitura para quem compara vias: **um número de sessão real só é
+comparável com um número de API se a sessão estiver sem memória e com uma
+conversa nova por pergunta.** Não é detalhe operacional, é condição de
+validade, e a verificação tem de ser o primeiro passo de cada recolha e
+não uma correcção depois do facto.
+
+### Contra os playbooks
+
+Nada aqui contradiz os blocos de motor existentes. Duas observações são
+novas e ficam como observação datada de uma semana, à espera da segunda
+para poderem ser promovidas:
+
+1. A concentração em domínios próprios nas superfícies da Google, com
+   denominador medido.
+2. O perfil da Meta AI assente em plataformas de conteúdo de programadores
+   (Medium e GitHub) em vez de documentação oficial.
+
 ## 2026-08-24
 
 Terceira auditoria semanal medida neste ficheiro no mesmo universo das duas
