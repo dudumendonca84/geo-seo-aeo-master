@@ -15,19 +15,49 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Jogada recomendada:** confirmar que as capturas do Tracker em ChatGPT PT distinguem bloco patrocinado de citação orgânica (o dado SERP já faz essa distinção nos outros motores); publicar o artigo "chegaram os anúncios ao ChatGPT em Portugal" preparado desde 19 ago. A compra directa por agências/anunciantes PT continua fechada (só parceiros certificados) — ainda não há oferta de "gestão de AI ads" vendável hoje.
 **Prazo:** esta semana, até 28 de agosto.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-28
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-29
 
-🚨 Alerta no topo do feed chega ao prazo hoje (28 ago). Self-serve do OpenAI Ads Manager para anunciantes PT continua fechado — verificado hoje via `WebSearch` (fontes divergem: uma sugere abertura "na mesma semana" de 24 ago, mas a mais detalhada, Index Lab/soku.ai, confirma que só um grupo restrito de países — sem Portugal — tem acesso directo; compra em PT continua via equipa OpenAI Ads Solutions e parceiros certificados). Sem acesso a browser autenticado nesta sessão para verificação de primeira mão (mesma limitação de sessões anteriores). Sugerir ao founder confirmar se as duas jogadas do alerta original (distinção pago/orgânico no Tracker; artigo "chegaram os anúncios ao ChatGPT em Portugal") já foram executadas — a rotina não tem visibilidade sobre execução interna.
+🚨 Alerta no topo do feed continua sem confirmação de execução das duas jogadas (distinção pago/orgânico no Tracker, artigo sobre os anúncios do ChatGPT em Portugal); o prazo de 28 de agosto passou sem resposta registada. Mantém-se no topo do feed até o founder o remover.
 
-Radar LLM/IA: sem lançamento de modelo nem mudança de preço de API nova confirmada na janela.
+Radar LLM/IA: correção, não anúncio novo. `references/models.md` ainda documentava um aumento de preço do Claude Sonnet 5 (de $2/$10 para $3/$15 por milhão de tokens, previsto para 1 de setembro) que a Anthropic já tinha cancelado a 10 de agosto, tornando $2/$10 o preço permanente. Gap de 19 dias corrigido hoje.
 
-GEO/AEO: a queda de citações do Reddit no ChatGPT Search ganhou explicação parcial — Search Engine Land liga o colapso (-86,4% relativo, 3,83%→0,52% de share) ao aumento do operador `site:` no fan-out do ChatGPT (0,4%→17% das queries a 8 ago); Google AI Overviews/AI Mode mostram só declínio gradual (~11%/~30%) na mesma janela. A Search Engine Journal nota que a explicação ainda não está totalmente fechada — tratar como desenvolvimento em curso.
+GEO/AEO: sem desenvolvimento novo confirmado na janela de 24 a 48 horas, além do já registado em dias anteriores.
 
-SEO/Google: o spam update de agosto teve impacto acima do normal — dados SE Ranking via Search Engine Land (27 ago): 16,71% das URLs top-10 caíram para além da posição 100 (vs. 9,2% numa baseline de julho sem update), ~1,8× mais provável de desaparecer do top-100.
+SEO/Google: três itens. A Google vai suspender ações manuais por abuso de reputação de site no Espaço Económico Europeu a partir de 30 de agosto, por mandato da Comissão Europeia. A Google confirmou também redirecionamentos google.com/goto em links de resultados orgânicos, que dificultam scraping de SERPs. O Bing está a testar renomear "Copilot Search" para "AI Overviews" em mobile.
 
-Implicações: recomputar baselines de tracking de clientes antes de atribuir variações de tráfego de agosto a trabalho de conteúdo; ver secção de implicações abaixo para jogadas com prazo.
+Implicações: nenhuma jogada urgente esta semana, além de verificar até 1 de setembro se algum material de cliente ainda cita o aumento de preço cancelado da Anthropic, e confirmar se a stack de captura do Tracker depende de scraping directo de SERP do Google, por causa do goto.
 
 Corrida completa.
+
+## 2026-08-29
+
+### 🔵 Anúncios oficiais
+
+- **Google suspende manual actions por "site reputation abuse" no Espaço Económico Europeu** — [Search Engine Land](https://searchengineland.com/google-wont-respect-manual-actions-for-site-reputation-abuse-in-european-economic-area-486055), [Search Engine Roundtable](https://www.seroundtable.com/google-site-reputation-policy-eea-41968.html) (28 ago 2026). A partir de 30 de agosto, as ações manuais por abuso de reputação de site deixam de afectar rankings nos 27 estados-membros da UE mais Islândia, Noruega e Liechtenstein, por mandato da Comissão Europeia (escrutínio ao abrigo do DMA); as notificações continuam a ser enviadas aos sites, mas sem efeito no ranking dentro do EEE. Reino Unido, fora do EEE, mantém a aplicação normal da política.
+- **Google confirma redirecionamentos google.com/goto em links de resultados orgânicos** — [Search Engine Land](https://searchengineland.com/google-confirms-deploying-goto-url-redirects-to-search-results-links-485926) (26 ago 2026). Os links de resultados passam a apontar primeiro para google.com/goto?url=[hash] antes do destino final; a Google diz que o objectivo é dificultar scraping de SERPs por terceiros e por motores de IA. Sem impacto confirmado em ranking ou indexação; ferramentas de rank tracking reportam lag na descodificação.
+- **Anthropic — correcção: pricing do Claude Sonnet 5 é permanente em $2/$10, aumento de 1 de setembro cancelado** — [platform.claude.com/docs/en/about-claude/pricing](https://platform.claude.com/docs/en/about-claude/pricing) (anunciado 10 ago 2026; item em falta identificado e corrigido hoje). O aumento programado para $3/$15 por milhão de tokens a partir de 1 de setembro foi cancelado; $2/$10 (input/output) passa a preço standard, deixa de ser introdutório. `references/models.md` ainda documentava o aumento como pendente — corrigido nesta entrada (ver nota de absorção abaixo).
+
+### ⚙️ Mudanças nas plataformas
+
+- **Bing testa renomear "Copilot Search" para "AI Overviews"** — [Search Engine Roundtable](https://www.seroundtable.com/bing-testing-copilot-search-ai-overviews-41953.html) (~26-27 ago 2026). Teste identificado em mobile aproxima a nomenclatura da Microsoft à da Google para a caixa de resposta gerada por IA no topo dos resultados; sem confirmação de rollout total.
+
+### 💡 Implicações para destaque.ai
+
+- A suspensão de penalizações por site reputation abuse no EEE (inclui Portugal) reduz o risco imediato de ações manuais sobre parcerias white-label/branded content de clientes B2B SaaS — mas é medida regulatória e revogável, não sinal de tolerância permanente. Sem jogada com prazo; só awareness a citar se surgir objecção de cliente.
+- Os redirects google.com/goto degradam o scraping directo de SERPs por ferramentas de rank tracking — **confirmar até 4 de setembro se a stack de captura do Tracker depende de scraping directo de SERP do Google ou só de crawlers/APIs oficiais**; se depender de scraping, o goto pode introduzir lag ou falhas de parsing nos dados de clientes.
+- O erro em `references/models.md` sobre o pricing do Sonnet 5 esteve por corrigir 19 dias (10-29 ago) — **verificar até 1 de setembro se o Tracker ou o Deck Builder citam, em qualquer material voltado a cliente, o aumento de preço da Anthropic entretanto cancelado**.
+
+### 🚨 Alerta ao founder (avaliado, não accionado)
+
+Nenhum item de hoje cruza o limiar de "mudaria a agenda da semana dele": a suspensão no EEE e os redirects goto são desenvolvimentos operacionais/regulatórios sem jogada comercial imediata; a correcção de pricing é interna à skill. O alerta de 21 ago (ChatGPT Ads em Portugal) mantém-se no topo do feed, sem confirmação de execução das jogadas — ver digest acima.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para developers.google.com, anthropic.com, openai.com, www.seroundtable.com — verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes em cada item. Sem acesso a Gmail MCP nesta sessão — alerta e digest ficam no news-feed em vez de email, per regra de fallback. Candidatos investigados e **descartados por já cobertos**: update de spam de agosto e queda de citações do Reddit no ChatGPT Search (ambos já na entrada de 08-28); corte de preço GPT-5.6 Sol e Gemini 3.7 Flash no AI Mode (já absorvidos em sessões anteriores); Perplexity Portable Computer (25 ago, já descartado em 08-28 por não ter mecânica de citação nova). Watch agentic commerce: **sem novidade** — Instant Checkout da OpenAI continua descontinuado desde março; checkout agêntico da Google em AI Mode sem data para Portugal/EEE; Perplexity Instant Buy confirmado EUA-only. Watch AI ads em Portugal: **sem novidade de estado** — self-serve do OpenAI Ads Manager para PT continua fechado, compra via equipa OpenAI Ads Solutions e parceiros certificados (mesma posição do digest de 08-28). Watch Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias (candidatos já cobertos em sessões anteriores). Sábado → sem drafts semanais.
+
+**Absorção antes do truncate (passo 1 de manutenção)**: news-feed.md tinha 60 headers de data antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair (2026-06-26: lançamento do Bing Webmaster Tools AI Performance com Citation Share/Intents/Topics/Compare, estudo Ahrefs de queda 76%→38% no Top-10 de citações AIO, e Conductor AEO/GEO Benchmarks Report). O lançamento do Bing AI Performance já estava absorvido (`references/engine_playbooks.md` linha 172/299, `references/metrics.md` linha 226 — Citation Share). Dois itens **não estavam absorvidos e foram corrigidos agora**: o estudo Ahrefs 76%→38% → `references/benchmarks.md` §36; o Conductor AEO/GEO Benchmarks Report → `references/benchmarks.md` §37. `references/benchmarks.md` "Last refresh" actualizado para 29 ago 2026. Truncado para 60 headers (2026-06-27 a 2026-08-29) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — os itens do dia são uma suspensão regulatória de penalização, uma mudança de infra-estrutura de scraping da Google, e uma correcção de pricing já documentado; nenhum altera mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-08-28
 
@@ -965,21 +995,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - Os **Search Agents em background** do Google (que notificam utilizadores com citações sem pesquisa activa) alteram o modelo de descoberta B2B: estar indexado e citável passa a ser condição de visibilidade *passiva* — o cliente é encontrado mesmo sem pesquisar. Nova dimensão no pitch GEO para SaaS B2B português: optimizar para monitorização contínua por agentes, não apenas para queries pontuais.
 - O **Computer Use nativo no Gemini 3.5 Flash** (um agente opera browser, apps e Maps sem trocar de modelo) coloca a visibilidade em AI search no fluxo de decisão automatizado B2B: agentes vão pesquisar, comparar e recomendar ferramentas SaaS de forma autónoma. Awareness para incluir em materiais de pitch avançados — ainda não requer serviço novo.
 - O desbloquei parcial do **Mythos 5 (apenas EUA, Fable 5 suspenso)** confirma que a dicotomia Claude.ai produto vs. API Anthropic persiste para clientes europeus; risco residual de dependência exclusiva da API mantém-se. Sem acção imediata — continuar a monitorizar.
-
-## 2026-06-26
-
-### 🔵 Anúncios oficiais
-
-- **Bing — Webmaster Tools AI Performance: Citation Share, Intents, Topics e Compare** — [blogs.bing.com](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare). Lançado a 16 Jun em preview mundial: Citation Share calcula a percentagem de citações do site face ao total de citações para a mesma query de grounding; Intents classifica queries por tipo (Informacional, Comercial, Navigacional, Research, etc.); Topics agrupa queries em clusters temáticos; Compare sobrepõe períodos para análise de evolução histórica. Complementa directamente os relatórios equivalentes do Google Search Console (lançados a 3 Jun).
-
-### 📊 Estudos & dados
-
-- **Ahrefs — AIO citations: share do Top-10 cai de 76% para 38%** — [ahrefs.com](https://ahrefs.com/blog/ai-overview-citations-top-10/). Publicado a 2 Mar 2026; 863K SERPs e 4M URLs de AI Overviews analisadas (mais do dobro da análise anterior). Em julho 2025, 76% das citações em AIO provinham de páginas no Top-10 orgânico; na análise actual: 38% Top-10, 31,2% posições 11–100, 31% fora do Top-100. Estrutura do conteúdo e citabilidade têm agora maior peso do que rank orgânico isolado.
-
-- **Conductor — AEO/GEO Benchmarks Report 2026** — [conductor.com](https://www.conductor.com/academy/aeo-geo-benchmarks-report/). Corpus: 21,9M pesquisas Google, 17M respostas AI-generated, 100M citações AI em 13.770 domínios e 10 sectores. AI Overviews activados em 25,11% das queries; Health Care lidera (48,7%), Real Estate tem menor presença (4,48%). Tipos de conteúdo mais citados: blogs, vídeos, artigos, notícias e páginas de produto.
-
-### 💡 Implicações para destaque.ai
-
-- O Bing Citation Share (% de visibilidade por query de grounding) é uma métrica directamente accionável: clientes podem agora medir share-of-voice AI em dois motores (Google + Bing) de forma comparável — argumento sólido para propor monitorização contínua de visibilidade AI como serviço recorrente, não apenas auditoria pontual.
-- A queda 76%→38% no Top-10 AIO confirma que clientes com rankings orgânicos sólidos mas conteúdo não estruturado para citabilidade (passagens autónomas, dados com fonte, listas definidas) perdem visibilidade AI apesar do SEO; diferenciador claro para o pitch GEO da destaque.ai.
-- O Conductor report calibra a mensagem comercial: apenas 25,11% das queries disparam AIO — não é "SEO morreu" mas "o quarto das pesquisas que afecta o teu sector requer estratégia distinta" — framing mais honesto e defensável perante clientes B2B portugueses que questionem urgência.

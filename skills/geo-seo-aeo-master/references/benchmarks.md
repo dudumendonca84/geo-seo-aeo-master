@@ -420,6 +420,28 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 36. Ahrefs — AI Overview citations: Top-10 share falls from 76% to 38%
+
+- **URL.** https://ahrefs.com/blog/ai-overview-citations-top-10/
+- **Date.** Published 2 Mar 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-26, never carried into this file until now; caught during the 2026-08-29 pre-truncate absorption pass).
+- **Sample.** 863K SERPs, 4M AI Overview URLs analyzed (more than double Ahrefs' prior analysis of the same question).
+- **Finding.** The share of AIO citations coming from Top-10 organic pages fell from **76%** (Jul 2025) to **38%** (current); 31.2% now come from positions 11-100, and 31% from entirely outside the top-100.
+- **Caveat.** Ahrefs vendor study, single methodology, no independent replication carried in available coverage. Measures a different thing than §6 (BrightEdge, 54% top-10 citation share) — different sample windows and methodology; cite separately, do not treat as contradictory.
+- **Use.** Reinforces §6 and §33 (Walker Sands): organic rank alone is an increasingly weak predictor of AI citation — content structure and citability now outweigh rank position for AIO inclusion. Strengthens the GEO-vs-pure-SEO pitch.
+
+---
+
+## 37. Conductor — AEO/GEO Benchmarks Report 2026
+
+- **URL.** https://www.conductor.com/academy/aeo-geo-benchmarks-report/
+- **Date.** 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-26, never carried into this file until now; caught during the 2026-08-29 pre-truncate absorption pass).
+- **Sample.** 21.9M Google searches, 17M AI-generated answers, 100M AI citations across 13,770 domains and 10 sectors.
+- **Finding.** AI Overviews trigger on **25.11%** of queries overall. Health Care leads at 48.7% trigger rate; Real Estate lowest at 4.48%. Most-cited content types: blog posts, videos, articles, news, product pages.
+- **Caveat.** Vendor study (Conductor); sample drawn from Conductor's own client base, which may skew toward already-SEO-mature sites. No PT-PT breakdown.
+- **Use.** Calibrates the sales narrative: only ~1 in 4 queries triggers an AIO, so the pitch is "the quarter of searches relevant to your sector needs a distinct strategy," not "SEO is dead." Pair with §5 (BrightEdge presence by vertical) for sector-specific trigger rates when scoping a client audit.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -442,4 +464,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 19 Aug 2026.
+Last refresh: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry before it fell out of the 60-day truncation window).
