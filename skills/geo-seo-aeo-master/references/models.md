@@ -125,6 +125,7 @@ Claude Opus 5 pricing: $5/$25 per million input/output tokens — identical to O
 - **Google AI Mode** — Gemini 3.5 Flash globally since I/O 2026; >1B monthly users declared at I/O (AI Overviews separately declared 2.5B monthly active users at the same I/O 2026 keynote — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)). Flash-Lite routing (see above) also applies here for conversational/agentic queries. Since 14 Aug 2026, Google AI Pro/Ultra subscribers (English only) can opt into **Gemini 3.7 Flash** via the model picker — not a default change, but the first paid-tier model choice inside AI Mode itself ([Search Engine Land](https://searchengineland.com/gemini-3-7-flash-rolling-out-in-google-search-485058), 14 Aug 2026).
 - **Gemini app / Gemini Advanced** — 3.5 Pro for paid tier.
 - **Vertex AI / AI Studio** — exposes all current generation models with explicit selection.
+- **Search Agents** (launched I/O 2026, 27 Jun) — background information agent for AI Pro/Ultra subscribers; runs continuously and pushes notifications with source citations without an active query. See `frameworks.md` §5 "Passive discovery" for the GEO implication.
 
 ### GEO-relevant notes
 
