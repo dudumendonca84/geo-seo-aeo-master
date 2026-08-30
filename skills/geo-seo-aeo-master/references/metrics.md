@@ -121,6 +121,18 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 - No public inter-rater reliability data exists.
 - Treat as directional, not absolute. Useful for catching negative drift; not useful as a precise KPI.
 
+**Convenção destaque.ai — o que conta e o que NÃO conta como sentimento (30 Ago 2026).** Escrita depois de o founder olhar para uma resposta marcada `negative` e perguntar porquê. O motor tinha dito da marca, textualmente, "oferece soluções flexíveis que vão desde o Staff Augmentation puro a modelos híbridos"; nem uma palavra desfavorável. A razão gravada era: "apareces em décimo primeiro lugar entre 14 empresas, na categoria secundária e com uma entrada de uma linha".
+
+Isso é **proeminência**, não portrayal, e já está medido ao lado na mesma linha (`position`) e no share of voice. Rotulá-lo `negative` conta o mesmo problema duas vezes e conta-o com a palavra errada: o cliente lê "a IA falou mal de nós" quando o que aconteceu foi "a IA quase não falou de nós". São diagnósticos diferentes, com acções diferentes.
+
+Três regras, por ordem de precedência:
+
+1. **Sem menção não há sentimento.** Se a marca não aparece no texto, o valor é `unknown`, nunca `negative`. Não existe frase para avaliar. Ausência é taxa de citação, e já tem coluna. (Medido a 30 Ago 2026: 16 respostas em toda a base estavam `negative` com a marca ausente, uma delas com o `why` a dizer literalmente "Marca não mencionada".)
+2. **`negative` exige uma frase citável que avalie a marca.** Preço acima da concorrência, queixas, nota baixa, valência em falta, ressalva explícita ("se X não tiver vaga"). Se não se consegue colar a frase no `context_snippet`, não é `negative`.
+3. **Lugar, ordem e espaço não são sentimento.** Aparecer em décimo, fechar a lista sem descrição, ficar numa secção secundária ou ser nomeado sem números: tudo isto é `neutral` no sentimento e vive no `position`, no SoV e no `why`. O `why` deve e pode explicar a proeminência com todo o detalhe: é o campo certo para isso.
+
+Corolário para quem lê: uma marca pode ter 100% de sentimento neutro e uma posição média péssima. É um retrato coerente, e é o retrato mais comum de uma marca pequena numa categoria dominada.
+
 **Per-competitor net sentiment (Perception Map y-axis).** Same polarity, but computed for **each brand** in the category — client *and* competitors — as a net score in **-1..1**: `(positive − negative) / responses_mentioning_the_brand`. Plotted against presence (x-axis) it produces the presence × narrative quadrant (Leaders / Niche / Laggers / Controversial) that Peec and Profound expose. **Minimum base:** with few mentions (< ~5) the read is noise — **omit it** (mark "not yet measured") rather than assert a value. Directional only, subject to the caveats above.
 
 ---
