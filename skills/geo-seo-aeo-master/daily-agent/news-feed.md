@@ -15,19 +15,44 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Jogada recomendada:** confirmar que as capturas do Tracker em ChatGPT PT distinguem bloco patrocinado de citação orgânica (o dado SERP já faz essa distinção nos outros motores); publicar o artigo "chegaram os anúncios ao ChatGPT em Portugal" preparado desde 19 ago. A compra directa por agências/anunciantes PT continua fechada (só parceiros certificados) — ainda não há oferta de "gestão de AI ads" vendável hoje.
 **Prazo:** esta semana, até 28 de agosto.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-29
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-30
 
-🚨 Alerta no topo do feed continua sem confirmação de execução das duas jogadas (distinção pago/orgânico no Tracker, artigo sobre os anúncios do ChatGPT em Portugal); o prazo de 28 de agosto passou sem resposta registada. Mantém-se no topo do feed até o founder o remover.
+🚨 Alerta no topo do feed (ChatGPT Ads em Portugal, 21 ago) continua sem confirmação de execução das duas jogadas; o prazo de 28 de agosto passou há dois dias sem resposta registada. Mantém-se no topo do feed até o founder o remover.
 
-Radar LLM/IA: correção, não anúncio novo. `references/models.md` ainda documentava um aumento de preço do Claude Sonnet 5 (de $2/$10 para $3/$15 por milhão de tokens, previsto para 1 de setembro) que a Anthropic já tinha cancelado a 10 de agosto, tornando $2/$10 o preço permanente. Gap de 19 dias corrigido hoje.
+Radar LLM/IA: sem novidade — nenhum lançamento, deprecação ou mudança de preço de modelo confirmada na janela.
 
-GEO/AEO: sem desenvolvimento novo confirmado na janela de 24 a 48 horas, além do já registado em dias anteriores.
+GEO/AEO: dois itens de mecânica, ambos do Google, ambos fora da janela estrita de 24-48h mas ainda não reportados por nenhuma corrida anterior (confirmado por grep antes de escrever). AI Overviews passa a expandir dinamicamente para o estado completo em queries onde a Google decide que é mais útil, sem o clique em "Mostrar mais" — empurra os resultados orgânicos mais abaixo. O AI Mode passa a mostrar um carrossel horizontal de links para tópicos em desenvolvimento.
 
-SEO/Google: três itens. A Google vai suspender ações manuais por abuso de reputação de site no Espaço Económico Europeu a partir de 30 de agosto, por mandato da Comissão Europeia. A Google confirmou também redirecionamentos google.com/goto em links de resultados orgânicos, que dificultam scraping de SERPs. O Bing está a testar renomear "Copilot Search" para "AI Overviews" em mobile.
+SEO/Google: nenhum item novo além dos dois acima — a suspensão de site reputation abuse no EEE (registada ontem) entrou hoje em vigor, sem novidade de estado adicional.
 
-Implicações: nenhuma jogada urgente esta semana, além de verificar até 1 de setembro se algum material de cliente ainda cita o aumento de preço cancelado da Anthropic, e confirmar se a stack de captura do Tracker depende de scraping directo de SERP do Google, por causa do goto.
+Implicações: nenhuma jogada com prazo esta semana — os dois itens de hoje são awareness (erosão adicional de espaço orgânico na SERP; nova via de exposição para conteúdo fresco no AI Mode). Consultar `references/engine_playbooks.md` (google_aio, google_ai_mode) na próxima auditoria de cliente com forte presença em AIO.
 
 Corrida completa.
+
+## 2026-08-30
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google — AI Overviews expande dinamicamente para o estado completo** — [Search Engine Land](https://searchengineland.com/google-is-dynamically-expanding-ai-overviews-for-some-queries-486200), [Search Engine Roundtable](https://www.seroundtable.com/google-ai-overviews-push-ai-mode-responses-41974.html), [Search Engine Journal](https://www.searchenginejournal.com/google-expands-generative-ui-beyond-ai-mode-into-ai-overviews/586452/) (confirmado pela Google, notado pela indústria a 27 ago 2026). Em queries onde os sistemas da Google determinam maior utilidade, o AIO expande automaticamente para uma resposta completa tipo AI Mode — sem o utilizador clicar em "Mostrar mais" — com a caixa "Pergunta o que quiseres" já aberta; os resultados orgânicos ficam mais abaixo na página. A Google diz que cancela a expansão se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura, e que dados internos mostram maior utilidade percebida e mais exploração de seguimento.
+- **Google — AI Mode adiciona carrossel de links para tópicos em desenvolvimento** — [Search Engine Journal](https://www.searchenginejournal.com/google-brings-developing-topic-link-carousels-to-ai-mode/587022/), [Search Engine Roundtable](https://www.seroundtable.com/google-ai-mode-link-carousels-41947.html), [Search Engine Land](https://searchengineland.com/google-adds-link-carousels-for-developing-topics-in-ai-mode-485884) (anunciado por Robby Stein, VP Product Search, via X, ~25 ago 2026). Para perguntas sobre um tópico em desenvolvimento (notícia recente, evento a decorrer), o AI Mode passa a mostrar uma fila horizontal de links de artigos ("Preferred Sources") entre secções da resposta — a mesma funcionalidade já existia nas AI Overviews desde maio. Rollout em desktop primeiro; mobile "em breve", sem data.
+
+### 💡 Implicações para destaque.ai
+
+- A expansão dinâmica do AIO empurra ainda mais os resultados orgânicos para baixo da dobra — reforça o argumento comercial de que ranking clássico deixa de bastar como prova de visibilidade; **incluir este mecanismo no discurso de vendas desta semana como novo dado de contexto**, sem exigir mudança de serviço.
+- O carrossel de "Preferred Sources" no AI Mode para tópicos em desenvolvimento é uma via de exposição adicional, não uma citação inline — só relevante para clientes que publicam análise fresca de eventos do sector (poucos clientes B2B SaaS PT publicam neste ritmo); **sem jogada com prazo, awareness apenas**.
+- Nenhuma implicação requer alteração de scorecard do Tracker — ambos os mecanismos são apresentação/UI da resposta, não mudança de retrieval ou de peso de citação.
+
+### 🚨 Alerta ao founder (avaliado, não accionado)
+
+Nenhum item de hoje cruza o limiar de "mudaria a agenda da semana dele": ambos são mudanças de apresentação da resposta do Google, sem mecânica de retrieval/citação nova nem janela comercial a abrir/fechar. O alerta de 21 ago (ChatGPT Ads em Portugal) mantém-se no topo do feed, agora dois dias além do prazo de 28 ago sem confirmação de execução — ver digest acima.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para developers.google.com, anthropic.com, openai.com; verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes (Search Engine Land, Search Engine Roundtable, Search Engine Journal, PPC Land). Sem acesso a Gmail MCP nesta sessão — alerta e digest ficam no news-feed em vez de email, per regra de fallback. **Candidatos investigados e descartados por já cobertos**: suspensão de site reputation abuse no EEE (já em 08-29, entra em vigor hoje sem novidade de estado); redirecionamentos google.com/goto (já em 08-29); Google August 2026 Spam Update e queda de citações do Reddit no ChatGPT (já em 08-28); correcção de pricing do Claude Sonnet 5 (já em 08-29). Radar LLM/IA: sem lançamento, deprecação ou mudança de preço de modelo novo confirmada na janela — GPT-5.6 Sol/Luna, Gemini 3.7 Flash e o corte de API já absorvidos em sessões anteriores. Watch agentic commerce: **sem novidade** — checkout in-chat continua US-only nos três motores (OpenAI Instant Checkout descontinuado desde março; Google agentic checkout em AI Mode sem data PT/EEE; Perplexity Instant Buy confirmado EUA-only). Watch AI ads em Portugal: **sem novidade de estado** — self-serve do OpenAI Ads Manager para os 31 mercados europeus, incl. Portugal, continua "coming soon" sem data, compra só via equipa Ads Solutions e parceiros. Watch Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias (candidatos revistos: 2604.25707, 2605.25517, 2607.14035 — todos já cobertos em sessões anteriores). Domingo → sem drafts semanais.
+
+**Absorção antes do truncate (passo 1 de manutenção)**: news-feed.md tinha 59 headers de data antes desta entrada (chegaria a 60 com a de hoje — sem necessidade de truncar ainda, mas revista por precaução a entrada mais antiga, 2026-06-27, dado que uma futura corrida a vai eliminar em breve). Da entrada de 2026-06-27: o desbloqueio parcial do Claude Mythos 5 já estava absorvido em `references/models.md`. Dois itens **não estavam absorvidos e foram corrigidos agora**: os **Search Agents** e o "Antigravity" do Google I/O 2026 (agente de informação em background, notificação com citações sem query activa) → nova subsecção "Passive discovery" em `references/frameworks.md` §5 + linha em `references/models.md` (secção Google, Products); a mecânica de descoberta passiva por agentes é um achado durável para o pitch GEO. Dois itens revistos e não absorvidos por não cumprirem a barra (produto sem mecânica de citação, mesmo critério usado para excluir "Perplexity Personal/Portable Computer" noutras sessões): Computer Use nativo no Gemini 3.5 Flash; Perplexity Health data hub. `references/engine_playbooks.md` também actualizado hoje (blocos PT e EN de `google_aio` e `google_ai_mode`) com os dois mecanismos de plataforma da entrada de hoje — mudança de "como se aparece" no motor, per regra de manutenção do daily-prompt.md.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — os itens são mudanças de apresentação da resposta (expansão dinâmica, carrossel de fontes), não mudança de mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-08-29
 
@@ -975,23 +1000,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 
 - A remoção definitiva do GPT-4.5 consolida a linha GPT-5.x como única disponível no ChatGPT; clientes com prompts calibrados para GPT-4.5 devem ser alertados — oportunidade de contacto de suporte técnico proactivo para os que usam a API OpenAI.
 - A expansão progressiva dos GSC AI reports reforça a urgência de incluir baseline de impressões em AI Mode no onboarding de novos clientes antes de acesso generalizado tornar o exercício banal — vantagem de early adopter para SaaS B2B em Portugal.
-
-## 2026-06-27
-
-### 🔵 Anúncios oficiais
-
-- **Google I/O 2026 — Search Agents e Antigravity** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Keynote realizado hoje (27 Jun): Google lança Search Agents de informação (operação 24/7 em background, notificação push com citações de fontes) para subscritores AI Pro/Ultra; anuncia "Antigravity" — mini-apps construídas dentro do Search, com rollout nos próximos meses nos EUA. A query média em AI Mode é 3× mais longa do que uma pesquisa Google clássica; AI Mode confirmado em 1 bilião de utilizadores mensais.
-
-- **Anthropic — Mythos 5 parcialmente desbloqueado, Fable 5 continua suspenso** — [The Hill](https://thehill.com/policy/technology/5943549-anthropic-mythos-5-access/) / [9to5Mac](https://9to5mac.com/2026/06/26/anthropic-cleared-to-release-claude-mythos-5-to-over-100-us-institutions/), 26 Jun. Acordo com o governo dos EUA permite que a Anthropic disponibilize Mythos 5 a mais de 100 instituições e agências governamentais americanas. Fable 5 — modelo de uso geral — permanece suspenso ao 15.º dia após a diretiva de export control de 12 junho; negociações sobre Fable 5 em curso segundo fontes próximas do processo.
-
-- **Gemini 3.5 Flash — Computer Use integrado nativamente (preview público)** — [blog.google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/), 24 Jun. Computer Use deixa de ser modelo separado e passa a ferramenta nativa no Gemini 3.5 Flash — o mesmo modelo usado para Search grounding, function calling e Maps. Um único agente pode agora ver ecrã, pesquisar e interagir com Maps sem trocar de modelo. Score de 78,4 no benchmark OSWorld-Verified; disponível via Gemini API e Enterprise Agent Platform.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Perplexity — Health data hub em rollout para Pro/Max** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog), Jun 2026. Perplexity Health em rollout para subscritores Pro e Max: ligação segura a dados de saúde de mais de 1 milhão de prestadores de cuidados (EUA), Fitbit e Google Fit. Posiciona Perplexity como motor de pesquisa verticalmente integrado em dados pessoais, reforçando a estratégia de substituição de pesquisa activa por contexto contínuo.
-
-### 💡 Implicações para destaque.ai
-
-- Os **Search Agents em background** do Google (que notificam utilizadores com citações sem pesquisa activa) alteram o modelo de descoberta B2B: estar indexado e citável passa a ser condição de visibilidade *passiva* — o cliente é encontrado mesmo sem pesquisar. Nova dimensão no pitch GEO para SaaS B2B português: optimizar para monitorização contínua por agentes, não apenas para queries pontuais.
-- O **Computer Use nativo no Gemini 3.5 Flash** (um agente opera browser, apps e Maps sem trocar de modelo) coloca a visibilidade em AI search no fluxo de decisão automatizado B2B: agentes vão pesquisar, comparar e recomendar ferramentas SaaS de forma autónoma. Awareness para incluir em materiais de pitch avançados — ainda não requer serviço novo.
-- O desbloquei parcial do **Mythos 5 (apenas EUA, Fable 5 suspenso)** confirma que a dicotomia Claude.ai produto vs. API Anthropic persiste para clientes europeus; risco residual de dependência exclusiva da API mantém-se. Sem acção imediata — continuar a monitorizar.
