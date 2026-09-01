@@ -15,19 +15,43 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Jogada recomendada:** confirmar que as capturas do Tracker em ChatGPT PT distinguem bloco patrocinado de citação orgânica (o dado SERP já faz essa distinção nos outros motores); publicar o artigo "chegaram os anúncios ao ChatGPT em Portugal" preparado desde 19 ago. A compra directa por agências/anunciantes PT continua fechada (só parceiros certificados) — ainda não há oferta de "gestão de AI ads" vendável hoje.
 **Prazo:** esta semana, até 28 de agosto.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-08-30
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-01
 
-🚨 Alerta no topo do feed (ChatGPT Ads em Portugal, 21 ago) continua sem confirmação de execução das duas jogadas; o prazo de 28 de agosto passou há dois dias sem resposta registada. Mantém-se no topo do feed até o founder o remover.
+🚨 Alerta no topo do feed (ChatGPT Ads em Portugal, 21 ago) continua sem confirmação de execução das duas jogadas; o prazo de 28 de agosto passou há quatro dias sem resposta registada. Mantém-se no topo do feed até o founder o remover.
 
-Radar LLM/IA: sem novidade — nenhum lançamento, deprecação ou mudança de preço de modelo confirmada na janela.
+Radar LLM/IA: sem novidade — nenhum lançamento, deprecação ou mudança de preço de modelo confirmada na janela (Sonnet 5 continua em $2/$10 permanente; GPT-5.6 e Gemini 3.7 Flash sem mudança).
 
-GEO/AEO: dois itens de mecânica, ambos do Google, ambos fora da janela estrita de 24-48h mas ainda não reportados por nenhuma corrida anterior (confirmado por grep antes de escrever). AI Overviews passa a expandir dinamicamente para o estado completo em queries onde a Google decide que é mais útil, sem o clique em "Mostrar mais" — empurra os resultados orgânicos mais abaixo. O AI Mode passa a mostrar um carrossel horizontal de links para tópicos em desenvolvimento.
+GEO/AEO: um item de infraestrutura de crawling — a Cloudflare confirma que a partir de 15 de setembro passa a bloquear por defeito crawlers "mixed-use" (que combinam pesquisa, agente e treino) em páginas com anúncios, salvo opt-out do site owner. Afecta directamente a acessibilidade de ClaudeBot/GPTBot/PerplexityBot em sites com essa configuração.
 
-SEO/Google: nenhum item novo além dos dois acima — a suspensão de site reputation abuse no EEE (registada ontem) entrou hoje em vigor, sem novidade de estado adicional.
+SEO/Google: o rollout do relatório "Search Generative AI performance" e do respectivo opt-out em Search Console, iniciado em junho, chegou a 31 de agosto a todas as propriedades a nível mundial — sem mudança de âmbito (continua sem cliques/queries).
 
-Implicações: nenhuma jogada com prazo esta semana — os dois itens de hoje são awareness (erosão adicional de espaço orgânico na SERP; nova via de exposição para conteúdo fresco no AI Mode). Consultar `references/engine_playbooks.md` (google_aio, google_ai_mode) na próxima auditoria de cliente com forte presença em AIO.
+Implicações: uma jogada com prazo concreto — auditar as configurações de Cloudflare dos clientes antes de 15 de setembro. O item do Search Console é awareness accionável: já dá para confirmar a baseline de impressões AI em todos os clientes PT.
 
 Corrida completa.
+
+## 2026-09-01
+
+### ⚙️ Mudanças nas plataformas
+
+- **Cloudflare — bloqueio por defeito de crawlers "mixed-use" a partir de 15 de setembro de 2026** — [TechCrunch](https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/), [Help Net Security](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/) (anunciado 1 jul 2026, prazo de aplicação a 15 set 2026). Crawlers que combinam pesquisa, uso por agentes e treino de modelos passam a ficar bloqueados por defeito em páginas com anúncios — novos clientes, novos sites e clientes free existentes são afectados automaticamente; clientes pagos com configuração já feita mantêm-na. Site owners podem reverter o default nas definições de segurança antes do prazo.
+- **Google Search Console — rollout global concluído do relatório "Search Generative AI performance" e do respectivo opt-out** — [Search Engine Land](https://searchengineland.com/google-search-console-ai-performance-reports-and-search-generative-ai-control-rolling-out-globally-486269), [Search Engine Journal](https://www.searchenginejournal.com/google-search-console-ai-reports-rolled-out-worldwide/587836/) (confirmado 31 ago 2026). O relatório de impressões em AI Overviews/AI Mode e o controlo "Search generative AI control" (opt-out por propriedade), lançados por fases desde junho a um subconjunto de mercados, ficam agora disponíveis em todas as propriedades do Search Console a nível mundial. Sem mudança de âmbito de dados — continua sem cliques, CTR ou queries, e sem equivalente para o Gemini standalone.
+
+### 💡 Implicações para destaque.ai
+
+- O prazo de 15 de setembro da Cloudflare é acionável já: **auditar até essa data as configurações de crawler dos clientes que usam Cloudflare (sobretudo planos free/novos)** para confirmar que ClaudeBot, GPTBot e PerplexityBot não ficam bloqueados por defeito em páginas com anúncios antes de terem sequer oportunidade de citar o conteúdo.
+- O relatório de Search Console deixou de ser um privilégio de early adopter — está disponível em todas as propriedades PT desde 31 de agosto. **Incluir já esta semana a baseline de impressões AI Overviews/AI Mode no onboarding de todos os clientes activos**, sem esperar por acesso faseado (deixou de existir).
+
+### 🚨 Alerta ao founder (avaliado, não accionado)
+
+Nenhum item de hoje cruza o limiar de "mudaria a agenda da semana dele": o prazo da Cloudflare é operacional (matéria de auditoria técnica, não de pitch/venda) e a conclusão do rollout do Search Console é a consumação de um processo já registado em junho. O alerta de 21 ago (ChatGPT Ads em Portugal) mantém-se no topo do feed, agora quatro dias além do prazo de 28 ago sem confirmação de execução — ver digest acima.
+
+**Nota de integridade de dados**: `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para developers.google.com, www.searchenginejournal.com, www.seroundtable.com, www.botify.com; verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes em cada item. Sem acesso a Gmail MCP nesta sessão — alerta e digest ficam no news-feed em vez de email, per regra de fallback. **Gap de execução**: última corrida registada foi 2026-08-30 (domingo); sem corrida em 31 ago. Seguindo o precedente de 2026-07-01/2026-08-28, a cobertura de hoje cinge-se à janela de últimas 24-72h, sem backfill do dia em falta. **Candidatos investigados e descartados por já cobertos** (confirmado por grep em `news-feed.md`/`references/` antes de escrever): queda de citações do Reddit no ChatGPT Search e a explicação por operador `site:` no fan-out (já em 08-21 a 08-28, incl. o detalhe fino de -32,1% em citações de páginas de comparação, mesma família de dados Peec AI/Promptwatch); relatório TollBit de scraping desproporcional na Europa (já em 08-15, a estatística "15% de page fetchers em URLs bloqueados" é o mesmo estudo H1 2026, corte diferente do mesmo dado); Google August 2026 Spam Update (concluído, já em 08-19/08-21/08-22/08-28); directiva "Content Signals" da Cloudflare (tema de robots.txt distinto do bloqueio de crawler de hoje, já em `references/frameworks.md` §2, 6 jul); pricing do Claude Sonnet 5 e correcção do aumento cancelado (já em 08-29); redirects google.com/goto e suspensão de site reputation abuse no EEE (já em 08-29). Radar LLM/IA: sem lançamento, deprecação ou mudança de preço de modelo novo confirmado na janela — GPT-5.6, Gemini 3.7 Flash e a correcção de pricing da Anthropic já absorvidos. Watch agentic commerce: **sem novidade** — checkout in-chat continua US-only nos três motores. Watch AI ads em Portugal: **sem novidade de estado** — self-serve do OpenAI Ads Manager para os 31 mercados europeus, incl. Portugal, continua sem data confirmada, compra só via equipa Ads Solutions e parceiros certificados. Watch Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela para além da família Reddit/fan-out já coberta. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias (candidato revisto: 2607.14035, já coberto em sessões anteriores). Terça-feira → sem weekly drafts.
+
+**Absorção antes do truncate (passo 1 de manutenção)**: news-feed.md tinha 60 headers de data antes desta entrada (limiar) — revista a entrada mais antiga (2026-06-28: retirada do GPT-4.5 do ChatGPT, expansão dos GSC AI performance reports a 23 jun). Ambos os itens já estavam bem absorvidos: GPT-4.5 em `references/models.md` (tabela OpenAI, linha de retirement); a expansão dos GSC AI reports em `references/metrics.md` §"Google Search Console" (histórico completo jun→ago já documentado, incl. a conclusão de 31 ago acrescentada nesta própria entrada). Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-06-29 a 2026-09-01) depois da absorção. **Absorção adicional do dia**: item de hoje sobre o rollout global do Search Console explica um mecanismo de medição (não só "aconteceu X") — absorvido em `references/metrics.md` (nova entrada "Update 31 Aug 2026 — global rollout complete") e `references/models.md` § Google Search Console, per regra "doutrina do porquê".
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — os itens do dia são uma mudança de default de infra-estrutura de crawling (ainda não em vigor, prazo a 15 set) e a conclusão de um rollout já documentado, não uma mudança de mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-08-30
 
@@ -987,16 +1011,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - O spam update que cobre AI citation manipulation reforça o argumento comercial da destaque.ai: clientes SaaS B2B que investiram em táticas de manipulação de AI answers ficaram expostos. É argumento de pitch concreto — **mudança de pitch: enfatizar sustentabilidade e compliance GEO vs. atalhos agora classificados como spam**.
 - A posição oficial do Google (GEO/AEO = SEO) e os dados de citação (11% de sobreposição entre plataformas) confirmam que visibilidade em AI search exige estratégia multi-plataforma distinta por motor — **novo serviço potencial: AI Visibility Audit por plataforma (ChatGPT vs. Perplexity vs. AI Mode separados)**.
 - llms.txt confirmado como não prioritário pelos dados. Recursos de clientes devem ir para otimização de HTML semântico, conteúdo com dados quantitativos próprios, e presença em comunidades — **awareness: desaconselhar investimento em llms.txt como tática principal**.
-
-## 2026-06-28
-
-### ⚙️ Mudanças nas plataformas
-
-- **OpenAI — GPT-4.5 retirado do ChatGPT** — [openai.com/news](https://openai.com/news/). GPT-4.5 deixou de estar disponível no ChatGPT a 26 de junho (um dia antes do encerramento anunciado a 27 jun), incluindo em GPTs personalizados. GPT-5.2 já tinha sido removido a 12 de junho; OpenAI o3 encerra a 26 de agosto. [help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
-
-- **Google Search Console — AI performance reports alargados a mais utilizadores** — [searchengineland.com](https://searchengineland.com/google-search-console-ai-performance-reports-rolling-out-to-more-users-480867). A 23 de junho o Google confirmou expansão dos relatórios de visibilidade em AI Overviews e AI Mode (lançados a 3 de junho no UK) a um número mais alargado de proprietários de sites; progressão para acesso global sem data confirmada.
-
-### 💡 Implicações para destaque.ai
-
-- A remoção definitiva do GPT-4.5 consolida a linha GPT-5.x como única disponível no ChatGPT; clientes com prompts calibrados para GPT-4.5 devem ser alertados — oportunidade de contacto de suporte técnico proactivo para os que usam a API OpenAI.
-- A expansão progressiva dos GSC AI reports reforça a urgência de incluir baseline de impressões em AI Mode no onboarding de novos clientes antes de acesso generalizado tornar o exercício banal — vantagem de early adopter para SaaS B2B em Portugal.
