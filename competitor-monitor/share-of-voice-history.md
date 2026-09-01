@@ -128,6 +128,16 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-08-25 | AISO Hub | 0/5 | n/a | = vs 0 | 1/5 (só Claude) | Cobertura parcial; 6.ª semana consecutiva fora do top-3 do Prompt 4, sem causa pública identificável |
 | 2026-08-25 | Basicamente Digital | 0/5 | n/a | = vs 0 | 1/5 (só Claude) | Cobertura parcial; ausente do Prompt 2 esta semana |
 
+| 2026-09-01 | destaque.ai | 2/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1 (4.ª semana consecutiva), prompt 5 pos 1 (11.ª semana consecutiva) |
+| 2026-09-01 | Latigid | 1/5 | 1.0 | = aparições (era 1/5), posição melhor (1.0 vs 3.0) | 1/5 (só Claude) | Cobertura parcial; regressa ao Prompt 4 pos 1 (tinha perdido em 08-25), perde a presença no Prompt 1 |
+| 2026-09-01 | 3HASH | 1/5 | 1.0 | -1 aparição (era 2/5), posição melhor no que resta (1.0 vs 2.0) | 1/5 (só Claude) | Cobertura parcial; sai do pódio do Prompt 4 pela 1.ª vez desde que é monitorizado, mantém só Prompt 3 pos 1 |
+| 2026-09-01 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 2 |
+| 2026-09-01 | Filipe Raimundo | 1/5 | 3.0 | = aparições (era 1/5), posição pior (3.0 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; desce de pos 1 (semana de estreia) para pos 3 do Prompt 4 |
+| 2026-09-01 | AP\|Portugal | 1/5 | 1.0 | = aparições (era 1/5), posição melhor (1.0 vs 2.0) | 1/5 (só Claude) | Cobertura parcial; Prompt 2 pos 1 — 3.ª troca directa com Infinidata em semanas recentes |
+| 2026-09-01 | Infinidata | 1/5 | 2.0 | = aparições (era 1/5), posição pior (2.0 vs 1.0) | 1/5 (só Claude) | Cobertura parcial; Prompt 2 pos 2 — troca directa com AP\|Portugal |
+| 2026-09-01 | Marco Gouveia | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 1 pos 2, 3.ª semana consecutiva no mesmo slot |
+| 2026-09-01 | SEOLabs | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 2 pos 3 |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
