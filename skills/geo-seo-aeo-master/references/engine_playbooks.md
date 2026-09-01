@@ -196,7 +196,7 @@ Faz:
 
 ### google_aio
 
-Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) directamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco.
+Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) directamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco. Desde finais de Ago 2026, em queries onde os sistemas da Google determinam maior utilidade, o bloco expande dinamicamente para o estado completo (tipo AI Mode) sem o utilizador clicar em "Mostrar mais", com a caixa "Pergunta o que quiseres" já aberta — empurra os resultados orgânicos mais abaixo na página; a Google confirma que a expansão é cancelada se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura [fonte: Search Engine Land/Search Engine Roundtable, 27 ago 2026].
 
 Faz:
 1. Abre cada página-chave com um parágrafo-resposta directo, citável isolado.
@@ -213,6 +213,7 @@ Faz:
 1. Tudo o que vale para o Google AI Overviews.
 2. Abre cada secção com a resposta na primeira frase e mantém passagens autocontidas de cerca de 120 palavras.
 3. Conta com anúncios dentro da resposta nas perguntas comerciais: a citação orgânica não substitui presença paga.
+4. Para tópicos em desenvolvimento (notícia recente, evento a decorrer), o AI Mode mostra desde finais de Ago 2026 um carrossel horizontal de links de artigos ("Preferred Sources") entre secções da resposta — cobertura fresca e com autoridade declarada tem uma via extra de exposição aqui, além da citação inline [fonte: Google/Robby Stein via X, ~25 ago 2026; desktop primeiro, mobile "em breve"].
 
 ### copilot
 
@@ -323,7 +324,7 @@ Do:
 
 ### google_aio
 
-How it decides: the AI answer block at the top of Google. The organic top 10 accounts for 38% of citations [fonte: Ahrefs, Mar 2026; was 76% in Jul 2025]: rank helps, but the page's citable structure weighs ever more. Since May 2026 it includes discussion citations (Reddit, forums, blogs) directly in the answer. On local and urgent questions it tends to show the local pack (the map) instead of the block.
+How it decides: the AI answer block at the top of Google. The organic top 10 accounts for 38% of citations [fonte: Ahrefs, Mar 2026; was 76% in Jul 2025]: rank helps, but the page's citable structure weighs ever more. Since May 2026 it includes discussion citations (Reddit, forums, blogs) directly in the answer. On local and urgent questions it tends to show the local pack (the map) instead of the block. Since late Aug 2026, on queries where Google's systems determine it is most useful, the block dynamically expands to its full AI-Mode-like state without the user clicking "Show more", with the "Ask anything" box already open — pushing organic results further down the page; Google confirms the expansion is cancelled if the user has already started scrolling past it, to avoid losing their reading position [fonte: Search Engine Land/Search Engine Roundtable, 27 Aug 2026].
 
 Do:
 1. Open each key page with a direct answer paragraph that can be quoted on its own.
@@ -340,6 +341,7 @@ Do:
 1. Everything that applies to Google AI Overviews.
 2. Open each section with the answer in the first sentence and keep self-contained passages of about 120 words.
 3. Expect ads inside the answer on commercial questions: organic citation does not replace paid presence.
+4. For developing topics (breaking news, live events), AI Mode has shown since late Aug 2026 a horizontal carousel of article links ("Preferred Sources") between sections of the answer — fresh, authoritative coverage gets an extra path to exposure here, beyond inline citation [fonte: Google/Robby Stein via X, ~25 Aug 2026; desktop first, mobile "coming soon"].
 
 ### copilot
 

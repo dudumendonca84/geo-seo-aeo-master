@@ -198,6 +198,10 @@ Microsoft's **Web IQ**, launched 2 Jun 2026, is a grounding-API suite built on t
 
 Only **~11%** of cited domains appear in both ChatGPT and Perplexity (Profound, 680M citations Aug 2024 – Oct 2025, [link](https://www.tryprofound.com/blog/ai-platform-citation-patterns)). Optimising for one engine does not transfer cleanly to another. Budget accordingly.
 
+### Passive discovery: background agents that cite without an active query (Jun 2026)
+
+At I/O 2026 (27 Jun), Google launched **Search Agents** for AI Pro/Ultra subscribers — an agent that runs in the background 24/7 and pushes a notification with source citations when it finds something relevant, without the user issuing a query at that moment ([blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)). This is a distinct discovery mode from query-time retrieval: visibility depends on being *continuously* citable and monitorable, not on ranking well for a one-off search. Practical implication: being crawlable/citable is now a condition for passive discovery too — a brand can be surfaced to a user who never searched for it that day. Still early (US rollout, Pro/Ultra only); revisit as it reaches more markets and tiers.
+
 ### Content patterns that get cited (cross-engine consensus)
 
 From Aggarwal et al. plus vendor follow-ups (Profound, Ahrefs, Semrush, Qwairy):
@@ -318,6 +322,8 @@ Defensive practice for content owners:
 - Audit your pages for accidental adversarial patterns (lengthy "ignore previous instructions" copy in error states, hidden text in CSS).
 - Do not let user-generated content propagate unsanitised into pages indexed by AI crawlers.
 - Offensive use (planting injection on competitor pages, "SEO poisoning") is a legal and ethical line not to cross.
+
+**WARP (Web Agent Retrieval Poisoning), Cornell Tech.** A single injected comment on a public UGC page is enough to make deep-research AI agents cite fabricated entities in **38-62%** of generated reports — no access to the underlying model, prompts, or search engine required (`benchmarks.md` §32). Extends the checklist above: UGC-heavy pages (reviews, comments, forums) are an attack surface for third-party deep-research agents reading the client's site, not only for a site's own chatbot.
 
 ### Hallucinated negative associations
 
