@@ -82,6 +82,17 @@ cada um com o seu gatilho escrito na respectiva routine:
   anonimizadas e com N≥3, entram no bloco do motor onde funcionaram.
   Ver `routines/synthesis-weekly.md`, Pass 3.
 
+**Marcador de perguntas.** Um item pode trazer `{{perguntas:<categoria>}}`,
+e o consumidor substitui-o pelas perguntas DAQUELE cliente, daquela
+categoria, em que o motor não o cita. O item genérico "responde às
+perguntas comparativas da categoria" passa a dizer quais são, e o cliente
+deixa de ter de adivinhar (founder, 1 Set 2026: "o primeiro ponto tá vago,
+que perguntas"). A skill não as pode escrever, porque é a mesma para todos
+os clientes: escreve o marcador, e quem tem os dados dá-lhe conteúdo.
+Categorias válidas são as de `prompts.md §2`. Sem perguntas para mostrar, o
+marcador desaparece e a frase genérica fica de pé sozinha, como o
+`{{skip:…}}` desconhecido.
+
 **Marcadores de aplicabilidade.** Um item do "Faz:" pode terminar com um
 marcador `{{skip:<condição>}}` que o consumidor avalia contra o contexto do
 cliente e usa para ESCONDER o item quando a condição se verifica. O marcador
@@ -107,7 +118,7 @@ o Tracker não tem fallback para este conteúdo, e um header fora do formato
 Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fracção das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026].
 
 Faz:
-1. Responde no site às perguntas comparativas da categoria, uma pergunta por secção. Abre a via da pesquisa em semanas.
+1. Responde no site às perguntas comparativas da categoria, uma pergunta por secção. {{perguntas:direct_comparison}} Abre a via da pesquisa em semanas.
 2. Garante indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa. {{skip:bwt-connected}}
 3. Publica documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos [fonte: Semrush via Search Engine Land, Jul 2026].
 4. Procura presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
@@ -235,7 +246,7 @@ divergem são pior do que uma só.
 How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. Search runs on the Bing index and typically reads only the top 2 to 3 results per sub-query [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, small sample]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026].
 
 Do:
-1. Answer the category's comparison questions on your site, one question per section. Opens the search route in weeks.
+1. Answer the category's comparison questions on your site, one question per section. {{perguntas:direct_comparison}} Opens the search route in weeks.
 2. Keep Bing indexing healthy (Bing Webmaster Tools, IndexNow): it is the index ChatGPT search uses. {{skip:bwt-connected}}
 3. Publish verifiable, institution-grade documentation and data: in reasoning mode ChatGPT shifts citations from UGC to institutional sources, with only 25.6% domain overlap between modes [fonte: Semrush via Search Engine Land, Jul 2026].
 4. Earn presence in durable sources: press, "best of" lists, Wikipedia where eligible. Feeds training memory, in months.
