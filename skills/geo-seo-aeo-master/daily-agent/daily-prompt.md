@@ -179,6 +179,117 @@ skill aprende → os porquês do Tracker melhoram: é este o circuito.
 - EN é aceitável e preferível para fontes primárias
 - PT-PT apenas para implicações para Portugal
 
+## Passagem diária por motor (OBRIGATÓRIA, mesmo em dia sem notícias)
+
+Pedido do founder, 1 Set 2026: *"garante que a skill sempre vai conseguir
+todo dia aprender novos modos de evoluir em todos os motores, seja por
+coisas externas ou aprendizados internos"*.
+
+O que existia era reactivo: os playbooks por motor só se tocavam **quando
+aparecia uma mudança documentada de um fornecedor**. Num dia sem notícias,
+nenhum motor era revisto, e um motor sobre o qual ninguém escreve podia
+ficar meses com o mesmo texto sem que isso fosse visível em lado nenhum.
+Passa a haver uma passagem por TODOS os motores, todos os dias, e o
+silêncio passa a ficar registado como silêncio.
+
+**Como se faz.** Para cada bloco `### <engine>` de
+`references/engine_playbooks.md`, por ordem, responde a três perguntas:
+
+1. **Externo** — houve hoje alguma coisa que mude COMO SE APARECE neste
+   motor? (fontes preferidas, novo modo de pesquisa, mudança de índice,
+   rollout por mercado, peso de comunidades, formato de resposta).
+2. **Interno** — o que a nossa própria medição diz sobre este motor
+   (secção seguinte). Uma alavanca que o nosso trabalho real não consegue
+   mover é uma alavanca a rever, mesmo que um estudo a defenda.
+3. **Idade** — há quanto tempo este bloco não muda? Um bloco parado há
+   mais de 30 dias entra no digest ao founder como *motor por rever*, com
+   o número de dias. Não é um erro; é para não ficar invisível.
+
+**Escreve sempre a linha `meta:`** no topo de cada bloco que revires:
+
+```
+meta: revisto 2026-09-01 · externo: nenhuma mudança · interno: n=3, líquido +0,4 pp
+```
+
+A linha `meta:` é manutenção e **nunca chega ao cliente**: o Tracker
+remove-a ao mostrar o cartão (`stripMetaLines`). Serve para se saber, num
+relance, que motores estão a ser alimentados e quais estão parados.
+
+**Não inventes movimento.** Um dia em que nada mudou escreve-se
+`externo: nenhuma mudança` e mais nada. Reescrever prosa para o bloco
+parecer fresco é pior do que a data honesta: destrói a única coisa que
+esta passagem serve para dizer.
+
+## Aprendizagem interna (o que o nosso trabalho mediu)
+
+A skill dizia o que fazer quase toda a partir de estudos de terceiros. Os
+estudos continuam a entrar, mas deixam de ser a única voz.
+
+**Há duas leituras, e a primeira vale muito mais do que a segunda.**
+
+### 1. Mecanismo: o que o motor CITA (é esta que ensina)
+
+Um motor responde a partir das fontes que cita, e nós temos todas as
+citações gravadas, semana a semana, sobre as MESMAS perguntas. Daí sai um
+retrato do motor que não depende de sabermos o que o cliente andou a
+fazer:
+
+- **Rotação** — que fatia das fontes de um motor é nova a cada semana.
+- **Sobrevivência** — das fontes que entram numa semana, quantas ainda lá
+  estão na seguinte.
+- **Latência da casa** — quanto tempo passa entre uma página do cliente
+  existir e o motor a citar. Aqui o sujeito é a PÁGINA, e é a única
+  leitura onde se sabe exactamente o que mudou, porque a coisa que mudou é
+  o endereço.
+
+O que isto muda no conselho, e é concreto: num motor com poucas fontes
+novas por semana, entrar numa fonte rende durante meses e uma colocação
+boa paga-se sozinha; num motor onde mais de metade das fontes muda todas
+as semanas, uma peça isolada evapora-se e o que ganha é cadência. São
+conselhos opostos, e nenhum estudo publicado os dá para o nosso mercado e
+as nossas perguntas.
+
+Fonte: `comportamento_por_motor` em
+`destaque-ai-tracker/scripts/learning/export-outcomes.mts`.
+
+### 2. Resultado: ação feita, número mexeu (é fraca, e sabe-se porquê)
+
+O Tracker também exporta o que aconteceu depois de cada ação dada como
+feita: a citação nas duas semanas anteriores contra as duas seguintes.
+
+**Trata isto como a leitura fraca que é.** Numa semana mexem-se várias
+coisas ao mesmo tempo; a ação é declarada por quem a fez e não verificada;
+e a maior parte das ações nem sequer tem motor-alvo, portanto não há
+contrafactual nenhum. Duas armadilhas, as duas já apanhadas na prática:
+
+- **A deriva.** Na primeira corrida desta medição todas as dimensões
+  apareciam a subir entre 0,9 e 2,4 pontos. Não eram seis alavancas a
+  funcionar: era a marca a subir e cada ação a apanhar boleia. O número
+  que conta é o LÍQUIDO, já com a deriva descontada. Descontada, nenhuma
+  se distinguia.
+- **A ação sem alvo.** Das 34 ações dadas como feitas até 1 Set 2026, só 3
+  tinham motor. Sem alvo, a leitura é indistinguível da deriva por
+  construção.
+
+Regra: uma alavanca **nunca** entra num playbook só por esta leitura. Ela
+serve para levantar a hipótese; quem a confirma é o mecanismo (leitura 1)
+ou uma fonte primária do fornecedor.
+
+### O que fazer com o que se lê
+
+- Mecanismo claro (rotação ou sobrevivência a mudar de patamar, com pelo
+  menos 4 semanas comparáveis) → a alavanca do bloco desse motor é
+  reescrita, com `[fonte: medição interna, <n> semanas, <data>]`.
+- Resultado com líquido positivo e N ≥ 3 ações legíveis → **hipótese**,
+  escrita no `meta:` do bloco, não no texto que o cliente lê. Sobe a
+  alavanca só quando o mecanismo a acompanhar.
+- Sem base → não se escreve nada. Faltar evidência não é evidência de que
+  não funciona, e escrever "não há dados" no playbook do cliente é ruído.
+
+**O que isto nunca é.** Prova causal. Serve para ordenar hipóteses de
+trabalho. Qualquer texto que saia daqui para o cliente diz o que fazer,
+não a estatística por trás.
+
 ## Verificação de primeira mão (o que nos distingue)
 
 Quando um anúncio de plataforma abre uma funcionalidade num mercado, **não publicar a partir do comunicado**. Ir até onde a coisa deixa de funcionar, e publicar onde é que ela acaba.

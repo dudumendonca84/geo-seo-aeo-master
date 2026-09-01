@@ -25,8 +25,49 @@ lugar da categoria veio inteiro da via da pesquisa. Uma marca estabelecida
 do sector da saúde mede forte nas duas vias. A via onde a marca já ganha
 diz que alavanca puxar a seguir.
 
-**Manutenção (auto-alimentação).** Este ficheiro evolui pelos três loops da
-skill, cada um com o seu gatilho escrito na respectiva routine:
+**A fonte fica aqui, não no ecrã do cliente** (founder, 1 Set 2026:
+"continuamos a olhar estudo para dizer o que fazer... ou ao menos sem
+citarmos"). A proveniência de cada alavanca escreve-se num marcador
+`[fonte: …]` no fim da frase, e o Tracker remove-o antes de mostrar o
+cartão. Continuamos a saber de onde veio cada alavanca e quando a rever; o
+cliente lê a instrução, não a bibliografia. O marcador é explícito de
+propósito: um mecanismo que adivinhasse o que é citação dentro de um
+parêntesis acabaria a comer texto a sério.
+
+**Cada bloco começa por uma linha `meta:`**, que também não chega ao
+cliente:
+
+```
+meta: revisto AAAA-MM-DD · externo: <o que mudou, ou "nenhuma mudança"> · interno: <n=…, líquido …pp, ou "sem base">
+```
+
+É por ela que se vê que motores estão a ser alimentados e quais estão
+parados. Um bloco sem `meta:` é um bloco que ninguém revê.
+
+**Manutenção (auto-alimentação).** Este ficheiro evolui por QUATRO loops,
+cada um com o seu gatilho escrito na respectiva routine:
+
+- **passagem diária por motor** (diário, obrigatória mesmo sem notícias) —
+  todos os motores são percorridos todos os dias e a linha `meta:` é
+  reescrita, mesmo quando a resposta é "nada mudou". Antes disto, um motor
+  sobre o qual ninguém escrevesse podia ficar meses parado sem que isso
+  fosse visível. Ver `daily-agent/daily-prompt.md`, "Passagem diária por
+  motor".
+- **mecanismo medido** (diário) — o que cada motor CITA, semana a semana,
+  sobre as mesmas perguntas: que fatia das fontes é nova, quanto do que
+  entra sobrevive à semana seguinte, e quanto tempo passa entre uma página
+  existir e o motor a citar. É a leitura que ensina, porque não depende de
+  sabermos o que o cliente andou a fazer, e dá conselhos opostos conforme
+  o motor: onde as fontes mudam pouco, uma colocação rende meses; onde
+  mais de metade muda todas as semanas, uma peça isolada evapora-se e o
+  que ganha é cadência.
+- **resultado das ações** (diário, e é a leitura FRACA) — ações dadas como
+  feitas e a citação nas duas semanas anteriores contra as duas seguintes.
+  Levanta hipóteses, nunca as confirma: a ação é declarada e não
+  verificada, e sem motor-alvo não há contrafactual. Só conta com a DERIVA
+  da marca descontada (sem isso, todas as dimensões aparecem a subir e
+  nenhuma está a funcionar) e nunca entra sozinha num playbook.
+  Ver `daily-agent/daily-prompt.md`, "Aprendizagem interna".
 
 - **daily-agent** (diário) — absorve mudanças de mecanismo anunciadas pelos
   vendors (novos modos de pesquisa, mudanças de fontes preferidas, rollouts
