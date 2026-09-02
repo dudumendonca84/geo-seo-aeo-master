@@ -10,24 +10,61 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 ## 🚨 ALERTA FUNDADOR
 
-**O que aconteceu:** os anúncios do ChatGPT entraram hoje em funcionamento em Portugal e nos restantes 30 mercados do EEE + Suíça — [openai.com/index/chatgpt-ads-expands-across-europe/](https://openai.com/index/chatgpt-ads-expands-across-europe/) (19 ago 2026), data já anunciada, corroborada por [Euronews](https://www.euronews.com/next/2026/08/21/chatgpt-to-start-showing-ads-across-europe-next-week) e [Digiday](https://digiday.com/marketing/openais-ads-business-hits-europe-at-the-six-month-mark/).
-**Porque nos importa:** é o primeiro mercado pago dentro de um motor de IA a abrir em Portugal — a partir de hoje uma resposta do ChatGPT a um utilizador Free/Go em PT pode conter um bloco patrocinado por baixo da resposta.
-**Jogada recomendada:** confirmar que as capturas do Tracker em ChatGPT PT distinguem bloco patrocinado de citação orgânica (o dado SERP já faz essa distinção nos outros motores); publicar o artigo "chegaram os anúncios ao ChatGPT em Portugal" preparado desde 19 ago. A compra directa por agências/anunciantes PT continua fechada (só parceiros certificados) — ainda não há oferta de "gestão de AI ads" vendável hoje.
-**Prazo:** esta semana, até 28 de agosto.
+**O que aconteceu:** o hiato identificado a 21-28 ago fechou-se — desde 1 Set 2026 a compra self-serve de anúncios do ChatGPT (OpenAI Ads Manager) está aberta em beta a "anunciantes elegíveis" nos mesmos 31 mercados europeus onde os anúncios já corriam desde 24 ago, incl. Portugal, além do Médio Oriente, Norte de África e Índia — anunciado junto com o marco de $1 mil milhões de receita anualizada em menos de 200 dias desde o lançamento. [Digiday](https://digiday.com/media-buying/openais-chatgpt-ads-business-hits-1-billion-run-rate-as-europe-gets-self-serve-access/), corroborado por [CNBC](https://www.cnbc.com/2026/08/31/open-ai-chatgpt-ads-revenue.html), [Forbes](https://www.forbes.com/sites/gabrielalinzainescu/2026/08/31/openais-chatgpt-ads-hit-1-billion-run-rate-in-just-200-days/) e [Storyboard18](https://www.storyboard18.com/amp/advertising/chatgpt-ads-crosses-1-billion-annualised-revenue-run-rate-as-openai-expands-global-rollout-109405.htm) (31 ago-1 set 2026; `openai.com` bloqueado pelo proxy desta sessão, ver nota de integridade em 2026-09-02).
+**Porque nos importa:** até agora havia anúncios visíveis em PT mas nenhuma via de compra directa — só agências e a equipa OpenAI Ads Solutions. A partir de 1 de setembro um cliente, ou a própria destaque.ai, pode em princípio criar e gerir campanhas ChatGPT sem passar por parceiro certificado. É a primeira vez que "gestão de AI ads no ChatGPT" deixa de ser hipotética.
+**Jogada recomendada:** confirmar em primeira mão se uma conta com país Portugal chega de facto a ecrã de criação de campanha no Ads Manager (a beta pode ter filtros de elegibilidade não documentados — o precedente de 19-28 ago foi anúncio de acesso seguido de bloqueio no ecrã seguinte). Só depois de confirmado decidir se entra no pitch como oferta vendável.
+**Prazo:** até 8 de setembro (uma semana), incluindo a verificação de primeira mão.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-01
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-02
 
-🚨 Alerta no topo do feed (ChatGPT Ads em Portugal, 21 ago) continua sem confirmação de execução das duas jogadas; o prazo de 28 de agosto passou há quatro dias sem resposta registada. Mantém-se no topo do feed até o founder o remover.
+🚨 Alerta actualizado no topo do feed: self-serve do OpenAI Ads Manager abriu para a Europa (incl. Portugal), Médio Oriente, Norte de África e Índia a 1 de Setembro, junto com o marco de $1 mil milhões de receita anualizada do negócio de ads em menos de 200 dias. Fecha o hiato do alerta de 21 ago. Verificação de primeira mão (conta PT a criar campanha) ainda por fazer; prazo até 8 de Setembro.
 
-Radar LLM/IA: sem novidade — nenhum lançamento, deprecação ou mudança de preço de modelo confirmada na janela (Sonnet 5 continua em $2/$10 permanente; GPT-5.6 e Gemini 3.7 Flash sem mudança).
+Radar LLM/IA: sem novidade — nenhum lançamento, deprecação ou mudança de preço de modelo confirmada na janela (GPT-5.6 três-tiers, Claude Opus 5 e Sonnet 5, Gemini 3.1/3.5 Flash sem mudança de preço ou disponibilidade).
 
-GEO/AEO: um item de infraestrutura de crawling — a Cloudflare confirma que a partir de 15 de setembro passa a bloquear por defeito crawlers "mixed-use" (que combinam pesquisa, agente e treino) em páginas com anúncios, salvo opt-out do site owner. Afecta directamente a acessibilidade de ClaudeBot/GPTBot/PerplexityBot em sites com essa configuração.
+GEO/AEO: primeira passagem diária pelos 12 motores desde que o requisito entrou em vigor (1 Set 2026) — sem mudança de mecânica de citação/retrieval em nenhum dos 11 motores além do ChatGPT; o item do ChatGPT é comercial (compra de ads), não de retrieval orgânico.
 
-SEO/Google: o rollout do relatório "Search Generative AI performance" e do respectivo opt-out em Search Console, iniciado em junho, chegou a 31 de agosto a todas as propriedades a nível mundial — sem mudança de âmbito (continua sem cliques/queries).
+SEO/Google: nada de substância além do já registado (spam update de agosto encerrado, rollout do Search Console concluído a 31 ago).
 
-Implicações: uma jogada com prazo concreto — auditar as configurações de Cloudflare dos clientes antes de 15 de setembro. O item do Search Console é awareness accionável: já dá para confirmar a baseline de impressões AI em todos os clientes PT.
+Implicações: jogada com prazo — testar até 8 de Setembro se uma conta PT consegue de facto criar campanha no Ads Manager antes de a oferecer a clientes.
 
 Corrida completa.
+
+## 2026-09-02
+
+### 🔵 Anúncios oficiais
+
+- **OpenAI — self-serve do ChatGPT Ads Manager abre na Europa, Médio Oriente, Norte de África e Índia; negócio de ads ultrapassa $1 mil milhões de receita anualizada em menos de 200 dias** — [Digiday](https://digiday.com/media-buying/openais-chatgpt-ads-business-hits-1-billion-run-rate-as-europe-gets-self-serve-access/), [CNBC](https://www.cnbc.com/2026/08/31/open-ai-chatgpt-ads-revenue.html), [Forbes](https://www.forbes.com/sites/gabrielalinzainescu/2026/08/31/openais-chatgpt-ads-hit-1-billion-run-rate-in-just-200-days/), [Storyboard18](https://www.storyboard18.com/amp/advertising/chatgpt-ads-crosses-1-billion-annualised-revenue-run-rate-as-openai-expands-global-rollout-109405.htm), [aninews](https://aninews.in/news/business/indian-advertisers-to-get-direct-access-to-chatgpt-ads-as-openais-ad-business-hits-1-billion-annualised-run-rate20260831204648/), [bestmediainfo](https://bestmediainfo.com/mediainfo/mediainfo-digital/chatgpt-ads-crosses-1-billion-run-rate-as-self-service-access-expands-12478512) (anunciado 31 ago 2026, self-serve activo desde 1 set 2026). A partir de 1 de setembro, "eligible advertisers" podem comprar directamente via Ads Manager nos mesmos 31 mercados europeus onde os anúncios já corriam desde 24 ago (incl. Portugal), além do Médio Oriente e Norte de África; Índia com abertura faseada a 4 set (mínimo diário ₹725, ~$8). Até aqui a compra nesses mercados só corria por via de agências e da equipa OpenAI Ads Solutions. `[verificar de primeira mão]` — sem confirmação nesta sessão de que uma conta com país Portugal chega a ecrã de criação de campanha (`WebFetch` a openai.com bloqueado pelo proxy; ver nota de integridade).
+
+### 💡 Implicações para destaque.ai
+
+- Item central do dia, e é o que actualiza o alerta de 21 ago: **até 8 de setembro, testar com uma conta real se o registo no Ads Manager com país Portugal chega a ecrã de criação de campanha** (ou onde bloqueia, seguindo o procedimento de verificação de primeira mão do `daily-prompt.md`) antes de propor a qualquer cliente uma oferta de "gestão de AI ads no ChatGPT".
+- Se confirmado, é o primeiro motor de IA em que a destaque.ai poderia oferecer compra E medição no mesmo pacote — **decidir esta semana se entra no pitch como serviço novo ou fica em awareness até à próxima ronda de vendas**.
+- `references/ai_ads.md` e `references/engine_playbooks.md` (bloco `chatgpt`, PT+EN) actualizados hoje: o estado "self-serve PT fechado", registado desde 24 ago, deixa de estar correcto nesses ficheiros.
+
+### 🚨 Alerta ao founder
+
+Ver bloco 🚨 ALERTA FUNDADOR actualizado no topo do feed — o item do dia cruza o limiar ("mudaria a agenda da semana dele"): fecha o hiato de compra self-serve que o alerta de 21 ago tinha identificado como o obstáculo a uma oferta vendável. Sem Gmail MCP nesta sessão, o alerta fica no news-feed per regra de fallback.
+
+### Passagem diária por motor (12 motores, OBRIGATÓRIA)
+
+Primeira corrida desta secção desde que o requisito entrou em vigor (`engine_playbooks.md`, pedido do founder de 1 Set 2026, PR #95). Passagem pelos 12 blocos (PT+EN, 24 no total, `meta:` escrita em todos):
+
+- **chatgpt** — externo: self-serve Ads Manager abre na Europa/PT (ver acima); bloco e item 7 (PT+EN) actualizados hoje.
+- **claude, gemini, grok, deepseek, mistral, llama, perplexity, google_aio, google_ai_mode, copilot, copilot_bing** (11 motores) — externo: nenhuma mudança de mecânica de citação/retrieval identificada na janela de 24-48h, confirmado por research dedicado por motor: Grok ganhou integração mais estreita com X (session search, ligação de conta) sem mudança de mecânica de citação; Mistral Le Chat ganhou pesquisa web com citações por aspas e leitura de PDFs grandes, sem mudança de mecânica; DeepSeek sem novidade de produto ou modelo; Perplexity anunciou Hybrid Compute on Mac e o benchmark PII-TRACE (1 set 2026) — privacidade e computação local, sem mecânica de citação nova; Copilot ganhou "Deep Citations" e analytics de citação no SharePoint, ambos features do M365 Copilot empresarial (documentos internos), fora do âmbito deste bloco de pesquisa web de consumo (`copilot`/`copilot_bing`); google_aio e google_ai_mode sem novidade além da expansão dinâmica (27 ago) e do carrossel "Preferred Sources" (25 ago) já reflectidos nos blocos.
+- **interno** (todos os 12 motores) — sem acesso, nesta sessão, ao export `comportamento_por_motor` do Tracker (`destaque-ai-tracker/scripts/learning/export-outcomes.mts` não existe neste repo, é produto separado). Registado como "sem acesso a dados do Tracker nesta sessão" — distinto de "sem base" por ausência de sinal; fica marcado para quem correr a routine com acesso ao Tracker.
+- **idade** — nenhum bloco tinha linha `meta:` antes de hoje (é a primeira passagem desde que a exigência existe); a partir de agora a idade de cada bloco fica mensurável dia a dia.
+
+### Nota de integridade de dados
+
+`WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para openai.com, techstartups.com, digiday.com — verificação feita via `WebSearch` com cross-corroboração por múltiplas fontes independentes (Digiday, CNBC, Forbes, Storyboard18, aninews, bestmediainfo, techtimes, channelinsider), todas datadas 31 ago-1 set 2026 e mutuamente consistentes no facto central (self-serve abre em beta na Europa/MENA/Índia a 1 set). Nenhuma fonte nomeia Portugal fora da lista herdada dos 31 mercados de 24 ago — tratado como incluído por herança, não confirmado país a país; daí o `[verificar de primeira mão]` e o prazo do alerta. Sem acesso a Gmail MCP nesta sessão — alerta e digest ficam no news-feed em vez de email, per regra de fallback. **Candidatos investigados e descartados por fora de âmbito ou já cobertos**: Anthropic/Salesforce "Claudeforce" (26 ago) — parceria de CRM agentic, sem mecânica de citação/pesquisa, mesmo critério usado para excluir anúncios societários/enterprise da Anthropic noutras sessões; Claude beta skill/plugin security scanning para Enterprise — segurança de plataforma, fora do âmbito GEO/AEO; ChatGPT Healthcare Public Data para Clinicians (EUA) — produto vertical sem mecânica de citação; Google Search Central Live Deep Dive Europe em Barcelona (30 set-2 out) — logística de evento, sem conteúdo técnico novo; Google Search mostrando menos PDFs (bug identificado ~25 ago, já corrigido a 27 ago segundo Mueller) — glitch pontual já resolvido, sem mudança algorítmica confirmada nem dado publicado; migração automática para Google AI Max em campanhas Search a partir de 1 set — produto de Google Ads já coberto estruturalmente em `references/ai_ads.md` (linha PMax/AI Max), sem facto novo de mecânica de citação. Watch agentic commerce: **sem novidade** — checkout in-chat continua US-only nos três motores (OpenAI Instant Checkout descontinuado desde março; Google Universal Cart/UCP sem data PT/EEE; Perplexity Instant Buy EUA-only). Watch Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) e Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias (candidatos revistos: SAGEO Arena 2602.12187, já fora da janela de 30 dias; 2604.25707 e 2605.25517 já cobertos em sessões anteriores). Quarta-feira → sem drafts semanais (só sextas).
+
+### Absorção antes do truncate (passo 1 de manutenção)
+
+news-feed.md tinha 60 headers de data antes desta entrada (limiar) — revista a entrada mais antiga (2026-06-29: Google June 2026 Spam Update com extensão das spam policies a AI answer manipulation, guia oficial do Google "GEO/AEO = SEO", OtterlyAI AI Citation Economy Report 2026 com 11% de sobreposição ChatGPT/Perplexity e 52,5% de citações em plataformas de comunidade, estudo Ahrefs/SEJ de 97% dos ficheiros llms.txt sem qualquer pedido de crawler). Todos os quatro itens já estavam bem absorvidos antes desta sessão: a extensão das spam policies a AI-answer manipulation está em `references/frameworks.md` (linha 345); o guia "GEO/AEO = SEO" está reflectido em `frameworks.md` e `metrics.md`; o dado de 11% de sobreposição de citações está em `references/benchmarks.md` (linha 146) e é citado directamente em `references/engine_playbooks.md` (secção "Princípio das duas vias"); os 97% de llms.txt sem pedidos estão em `frameworks.md` (linha 28), já reforçados por Originality.ai a maior escala. Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-06-30 a 2026-09-02) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — o item do dia é uma mudança de acesso a um canal de compra de anúncios, não uma mudança de mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-09-01
 
@@ -991,23 +1028,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - **Mudança de pitch necessária**: 1B de utilizadores em AI Mode + 68% zero-click nos EUA tornam a "visibilidade em AI answers" o argumento central para clientes SaaS B2B — substituir "ranking #1 no Google" por "ser a fonte citada pela IA que os teus clientes já usam". Requer atualização de materiais de venda.
 - **llms.txt: não priorizar operacionalmente**: Google confirmou sem ambiguidade que não usa o ficheiro. Foco deve manter-se em E-E-A-T, Schema.org e freshness — 83% das citações AEO provêm de páginas atualizadas nos últimos 12 meses.
 - **Dados concretos para proposta de valor**: 3.4x mais visibilidade para early adopters AEO + 22% CTR em citações IA são métricas defensáveis para justificar investimento GEO/AEO a clientes portugueses. Awareness comercial por agora; aguardar dados PT/EU antes de construir case study local.
-
-## 2026-06-29
-
-### 🔵 Anúncios oficiais
-
-- **Google June 2026 Spam Update — rollout concluído (24-26 Jun)** — [Search Engine Land](https://searchengineland.com/google-june-2026-spam-update-done-rolling-out-481063). Segundo spam update de 2026, concluído em ~2 dias globalmente (24 jun meio-dia ET → 26 jun 14h ET). Destaque relevante para GEO/AEO: as spam policies foram alargadas para cobrir explicitamente tentativas de manipular AI answers — comprar ou inflar citações em AI Overviews/AI Mode é agora tratado sob as mesmas políticas de link schemes. Análise inicial aponta impacto em sites com conteúdo thin e redes de páginas templated (location/comparison pages); tráfego orgânico em queda de 25%+ reportado nos primeiros segmentos afetados. [Search Engine Journal](https://www.searchenginejournal.com/seo-pulse-google-spam-update-rolls-out-ai-manipulation-in-scope/580565/)
-
-- **Google publica guia oficial de AI Search: GEO/AEO = SEO** — [Search Engine Journal](https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/). Novo documento do Google define formalmente que "optimizing for generative AI search is optimizing for the search experience, and thus still SEO." Explicitamente desaconselha: llms.txt, chunking especial para AI, e schema markup específico para AI como táticas prioritárias. Reforça foco em conteúdo estruturado de qualidade e sinaliza alinhamento com as spam policies acima.
-
-### 📊 Estudos & dados
-
-- **OtterlyAI AI Citation Economy Report 2026** — [otterly.ai](https://otterly.ai/blog/the-ai-citations-report-2026/) (1M+ pontos de dados). Apenas 11% dos domínios são citados simultaneamente por ChatGPT e Perplexity — cada plataforma opera como ecossistema de citação independente. Plataformas de comunidade (Reddit, Quora) captam 52,5% das citações AI vs. 47,5% para sites de marca. 97,4% das citações provêm de earned media fora do Tier-1 tradicional.
-
-- **llms.txt: AI crawlers ignoram o ficheiro sistematicamente** — [Search Engine Journal / Ahrefs](https://www.searchenginejournal.com/97-of-llms-txt-files-got-no-requests-ahrefs-data-shows/579478/). 97% dos ficheiros llms.txt válidos (~38.000 domínios) receberam zero pedidos em maio 2026. GPTBot, ClaudeBot, PerplexityBot e OAI-SearchBot ignoram /llms.txt e consomem HTML diretamente. 78% dos ficheiros existentes foram gerados automaticamente pelo Shopify (silenciosamente, em abril/maio 2026).
-
-### 💡 Implicações para destaque.ai
-
-- O spam update que cobre AI citation manipulation reforça o argumento comercial da destaque.ai: clientes SaaS B2B que investiram em táticas de manipulação de AI answers ficaram expostos. É argumento de pitch concreto — **mudança de pitch: enfatizar sustentabilidade e compliance GEO vs. atalhos agora classificados como spam**.
-- A posição oficial do Google (GEO/AEO = SEO) e os dados de citação (11% de sobreposição entre plataformas) confirmam que visibilidade em AI search exige estratégia multi-plataforma distinta por motor — **novo serviço potencial: AI Visibility Audit por plataforma (ChatGPT vs. Perplexity vs. AI Mode separados)**.
-- llms.txt confirmado como não prioritário pelos dados. Recursos de clientes devem ir para otimização de HTML semântico, conteúdo com dados quantitativos próprios, e presença em comunidades — **awareness: desaconselhar investimento em llms.txt como tática principal**.
