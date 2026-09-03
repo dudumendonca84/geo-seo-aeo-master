@@ -357,3 +357,69 @@ prompts (perguntas novas entram no catálogo) e o Onde Focar. Fase 2
 (código): séries de procura via DataForSEO Trends/keywords numa tabela
 própria + vista no produto — e só então vai ao site como capacidade.
 
+
+## Visibility Score
+
+**Convenção destaque.ai (3 Set 2026).** O número de uma linha que abre o
+relatório do cliente: 0 a 100, "num número, como estou?". Existia desde
+sempre no código do relatório e **não estava aqui**, que é o problema que
+esta secção fecha. Uma métrica client-facing cuja definição vive só num
+consumidor não pode ser explicada pelo cérebro, não entra na leitura da
+semana, e muda sem que ninguém saiba: os pesos já foram alterados uma vez
+sem deixar rasto fora do repo do produto.
+
+**Fórmula.**
+
+```
+Visibility Score = 100 × ( w_citation × citation_rate
+                         + w_relative_sov × relative_sov
+                         + w_net_sentiment × (net_sentiment + 1) / 2 )
+```
+
+**Pesos (contrato parseável).**
+
+| component | weight |
+|---|---|
+| `citation` | 0.5 |
+| `relative_sov` | 0.3 |
+| `net_sentiment` | 0.2 |
+
+**As três parcelas, e porque são estas.**
+
+1. **`citation_rate`** (§1), metade do peso. Aparecer é a condição de
+   tudo o resto: sem menção não há quota nem retrato.
+2. **`relative_sov`**, e não o SoV absoluto: a quota do cliente a dividir
+   pela quota do líder da categoria, com a mesma atribuição fraccionária
+   do §3. Lidera = parcela cheia.
+3. **`net_sentiment`** (§7, mesma convenção do eixo do mapa de perceção),
+   mapeado de -1..1 para 0..1. Só o negativo desconta.
+
+**Porque não é o SoV absoluto, com o caso que o obrigou.** A versão
+anterior era 0,4 citação + 0,4 SoV absoluto + 0,2 percentagem de
+positivas, e dava **55 ("médio") a uma marca com 87% de citação e posição
+média 1,7**, líder declarada da sua categoria. Dois defeitos somados: o
+SoV absoluto trata 100% como alcançável, e numa categoria com dez marcas
+nomeadas não é, portanto castigava o líder pelo tamanho do bolo; e a
+percentagem de positivas fazia o neutro contar contra, quando a maioria
+das menções informativas é neutra (ver a convenção do §7: lugar, ordem e
+espaço não são sentimento).
+
+**Limitações a declarar sempre que o número for mostrado.**
+
+- É um **compósito**, e a IAB (§12) diz exatamente porquê é que compósitos
+  não se comparam entre fornecedores: cada um embrulha parcelas
+  diferentes debaixo de um nome igual. O número compara-se com o próprio
+  histórico da marca, nunca com o "visibility score" de outra ferramenta.
+- Herda todas as ressalvas das parcelas. Em particular, a parcela de
+  sentimento é direcional (§7) e a de quota é sensível à lista de
+  perguntas (§3).
+- **Mostra-se sempre decomposto.** Um veredicto de três dígitos sem as
+  três parcelas à vista é uma nota de escola, não um diagnóstico: o
+  cliente tem de ver qual das três o está a puxar para baixo, porque as
+  ações são diferentes em cada caso.
+- Uma semana sem análise não tem score. `null` não é zero: zero diz "não
+  apareces", e a verdade é "ainda ninguém leu".
+
+**Consumido por:** o relatório do prospect e o PDF (número de capa), e o
+painel do Tracker (número + as três parcelas). Implementação canónica no
+Tracker, com fallback para estes pesos quando a skill não responde.

@@ -267,6 +267,48 @@ validação em `scripts/brain/apply-jobs.mts` — coordenar com PR no Tracker.
 
 ---
 
+### Contrato 8: visibility score (o número de capa do relatório)
+
+**Path no repo:** `skills/geo-seo-aeo-master/references/metrics.md`
+
+**Raw URL:**
+```
+https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/metrics.md
+```
+
+**Estrutura consumida:**
+
+Secção `## Visibility Score`. Tabela com header:
+
+```
+| component | weight |
+```
+
+Componentes consumidos: `citation`, `relative_sov`, `net_sentiment`. Os
+três pesos somam 1. A fórmula e as ressalvas ficam na prosa da mesma
+secção: só os pesos são parseados, porque só eles entram numa conta.
+
+**Parsing contract** (Tracker, `src/lib/skill/score.ts` → `loadScoreWeights`):
+1. Fetch a URL acima
+2. Localizar `## Visibility Score`
+3. Parse da tabela com o header exacto acima; strip de backticks
+4. Aceitar só se os três componentes estiverem presentes e a soma ficar
+   a 0,001 de 1. Qualquer outra coisa → fallback hardcoded
+5. Cache 1h pelo loader partilhado
+
+**Porque existe** (3 Set 2026). O número vivia só no código do relatório.
+Uma métrica client-facing definida fora do sítio das métricas não pode
+ser explicada pelo cérebro nem entra na leitura da semana, e os pesos já
+tinham sido alterados uma vez sem deixar rasto fora do repo do produto.
+
+**Mudar um peso** muda o número de todos os clientes no fetch seguinte, sem
+deploy. É a razão de ser do contrato e é também o seu perigo: um peso
+alterado sem nota na secção é uma mudança silenciosa no ecrã de quem
+paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
+é degradação limpa e não crash.
+
+---
+
 ## Frequência de actualização
 
 | Ficheiro | Cadência | Trigger |
@@ -325,6 +367,7 @@ validação em `scripts/brain/apply-jobs.mts` — coordenar com PR no Tracker.
 | 2026-05-26 | **Triagem de PRs.** Correcções de model ID em `models.md` § Deck Builder API mappings: `claude` cost_optimized `claude-haiku-4-5-20251001`→`claude-haiku-4-5`; `grok` production `grok-4`→`grok-4.3` (grok-4 retira 15 Ago 2026). `deepseek` mantém-se `deepseek-v4-flash` (decisão de main, pro é lento). PRs stale fechados (#2, #5, #6), #9 merged (3 tracker references), #3 merged (este log). | Deck Builder picks up no próximo fetch — sem code change. Engines `chatgpt`/`copilot` em `gpt-5.5`. |
 | 2026-05-29 | **Contrato 3 (benchmarks) formalizado.** `## Deck Builder core stats` em `benchmarks.md` ganha a `key` `aio_top10_share` (54%, BrightEdge §6) consumida pelo Slide 05; `b2b_ai_answer` (82%) passa a alimentar também o Slide 10b. Antes destes slides hardcodavam os números. | Deck Builder picks up no próximo fetch — sem code change. Os números GEO dos Slides 03/05/10b passam a vir vivos da skill; fallback hardcoded mantém paridade se a tabela faltar. |
 | 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` — glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista canónica §116-130. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch — sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. |
+| 2026-09-03 | **Contrato 8 (visibility score) criado.** Nova secção `## Visibility Score` em `metrics.md`: fórmula, os três pesos numa tabela parseável, o caso que obrigou a trocar SoV absoluto por SoV relativo ao líder, e a obrigação de mostrar o número decomposto. O número existia desde sempre no código do relatório e não estava na skill. | Tracker passa a ler os pesos no fetch seguinte, com fallback hardcoded aos mesmos valores. Um peso mudado aqui muda o número de capa de todos os clientes sem deploy: alterar sempre com nota datada na secção. |
 | 2026-05-29 | **Contrato 4 estendido + Contrato 1 reforçado + drift de taxonomia decidido.** (1) `## Deck Builder method` ganha 3.ª tabela **SEO vs GEO** (`\| seo \| geo \|`), consumida pelo Slide 05 (antes hardcoded no componente). (2) Contrato 1: a tabela §3 de `prompts.md` passa a ser **parseada** (`loadPromptConfig`, zip posicional com `PROMPT_CATEGORIES`) — `generate-audit-prompts.ts` segue a distribuição viva, já não a constante. (3) **Decisão do founder:** a lista canónica das 8 dimensões é a detalhada §116-130 (technical · content · entity · authority · **social** · **authority-on-site** · measurement · positioning). `destaque-ai-deck-builder/CLAUDE.md` foi alinhado a esta lista. | Deck Builder picks up no próximo fetch. **`gap_action_mapping.md` reconciliado (SINAL v1.7):** DIMENSÃO 5 → Social & community signals, nova 6 → Authority signals on site (E-E-A-T), Measurement → 7, Positioning → 8; cadência editorial movida para a DIMENSÃO 2, UX/engagement passa a transversal. Consumido como prosa por `synthesize-deck.ts` (sem parser estrutural) — restruturação segura. |
 
 Adicionar entry sempre que algum contrato mudar.
