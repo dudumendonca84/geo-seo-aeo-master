@@ -115,7 +115,7 @@ o Tracker não tem fallback para este conteúdo, e um header fora do formato
 
 ### chatgpt
 
-meta: revisto 2026-09-02 · externo: self-serve OpenAI Ads Manager abre na Europa (incl. Portugal), MENA e Índia a 1 Set 2026 — item 7 actualizado · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança adicional desde 1 Set (self-serve Ads Manager); verificação de primeira mão PT ainda pendente, prazo 8 Set 2026 (ver alerta) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fracção das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026].
 
@@ -130,7 +130,7 @@ Faz:
 
 ### claude
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança de mecânica de citação (Anthropic lançou Claude Fable 5.1 e Mythos 5.1 a 1 Set 2026 — ver `models.md`; nenhum dos dois é default em produto de AI search) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: sobretudo memória de treino no modo base; com pesquisa activa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional].
 
@@ -142,7 +142,7 @@ Faz:
 
 ### gemini
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: liga ao ecossistema Google; o que o Google indexa e entende bem alimenta o Gemini, e os motores generativos da Google favorecem conteúdo da própria Google [fonte: Grossman et al., SIGIR 2026].
 
@@ -155,7 +155,7 @@ Faz:
 
 ### grok
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Visibility Tracker [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho — zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável.
 
@@ -167,7 +167,7 @@ Faz:
 
 ### deepseek
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: memória de treino com forte peso de fontes em inglês; cobertura pt-PT mais fina.
 
@@ -178,7 +178,7 @@ Faz:
 
 ### mistral
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: memória de treino com boa cobertura europeia. A API não expõe pesquisa de primeira parte [fonte: Jun 2026], por isso o que se mede aqui é só a memória; o produto de consumo pode pesquisar.
 
@@ -188,7 +188,7 @@ Faz:
 
 ### llama
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: corre só em memória de treino; nenhum fornecedor que aloja o Llama expõe pesquisa de primeira parte. Move-se em meses, ao ritmo dos ciclos de treino.
 
@@ -200,7 +200,7 @@ Nota: este motor é o modelo Llama, não o assistente Meta AI do WhatsApp. O ass
 
 ### perplexity
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança (Perplexity anunciou Hybrid Compute on Mac e PII-TRACE a 1 Set 2026, privacidade/compute local sem mecânica de citação nova) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança desde o Hybrid Compute on Mac / PII-TRACE de 1 Set 2026 (já reflectido no bloco) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: pesquisa sempre a web viva e cita fontes explícitas. O YouTube lidera as citações [fonte: 32,4%, Ahrefs, Jun 2026], as comunidades pesam muito (Reddit ~47% em alguns estudos de categoria; direccional) e os portais de research primária e a imprensa especializada pesam mais do que nos outros motores [fonte: 5W, Jun 2026].
 
@@ -212,7 +212,7 @@ Faz:
 
 ### google_aio
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança desde a expansão dinâmica de 27 Ago 2026 (já reflectida no bloco) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança desde a expansão dinâmica de 27 Ago 2026 (já reflectida no bloco) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) directamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco. Desde finais de Ago 2026, em queries onde os sistemas da Google determinam maior utilidade, o bloco expande dinamicamente para o estado completo (tipo AI Mode) sem o utilizador clicar em "Mostrar mais", com a caixa "Pergunta o que quiseres" já aberta — empurra os resultados orgânicos mais abaixo na página; a Google confirma que a expansão é cancelada se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura [fonte: Search Engine Land/Search Engine Roundtable, 27 ago 2026].
 
@@ -225,7 +225,7 @@ Faz:
 
 ### google_ai_mode
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança desde o carrossel "Preferred Sources" de 25 Ago 2026 (já reflectido no bloco) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança desde o carrossel "Preferred Sources" de 25 Ago 2026 (já reflectido no bloco) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o modo conversacional de pesquisa do Google; responde a quase todas as perguntas e cita ao nível da passagem. Em 80% das citações a resposta está na primeira frase do trecho extraído, e a passagem citada mediana tem ~117 palavras [fonte: Pillarbase, 15,7M citações, Jul 2026]. Nas perguntas comerciais aparecem anúncios dentro da resposta [fonte: 29% dos casos; mais de metade nas keywords de CPC alto; SE Ranking, Jun 2026].
 
@@ -237,7 +237,7 @@ Faz:
 
 ### copilot
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança (Deep Citations e SharePoint AI citation analytics são features do M365 Copilot empresarial, fora do âmbito deste bloco de pesquisa web de consumo) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança (Deep Citations e SharePoint AI citation analytics são features do M365 Copilot empresarial, fora do âmbito deste bloco de pesquisa web de consumo) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o chat da Microsoft; pesquisa via índice Bing.
 
@@ -249,7 +249,7 @@ Faz:
 
 ### copilot_bing
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: medição suspensa, sem base
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: medição suspensa, sem base
 
 O bloco Copilot dentro da página de resultados do Bing, o análogo Microsoft do AIO. **Medição suspensa; não voltar a ligar sem confirmação do fornecedor.**
 
@@ -268,7 +268,7 @@ divergem são pior do que uma só.
 
 ### chatgpt
 
-meta: revisto 2026-09-02 · externo: self-serve OpenAI Ads Manager abre na Europa (incl. Portugal), MENA e Índia a 1 Set 2026 — item 7 actualizado · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança adicional desde 1 Set (self-serve Ads Manager); verificação de primeira mão PT ainda pendente, prazo 8 Set 2026 (ver alerta) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. Search runs on the Bing index and typically reads only the top 2 to 3 results per sub-query [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, small sample]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026].
 
@@ -283,7 +283,7 @@ Do:
 
 ### claude
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança de mecânica de citação (Anthropic lançou Claude Fable 5.1 e Mythos 5.1 a 1 Set 2026 — ver `models.md`; nenhum dos dois é default em produto de AI search) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: mostly training memory in base mode; with search on it prefers institutional sources and clear documentation. It cites reference journalism more often than the other engines [fonte: 5W Citation Source Index, Jun 2026; directional].
 
@@ -295,7 +295,7 @@ Do:
 
 ### gemini
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: wired into the Google ecosystem; what Google indexes and understands well feeds Gemini, and Google's generative engines favor Google-owned content [fonte: Grossman et al., SIGIR 2026].
 
@@ -308,7 +308,7 @@ Do:
 
 ### grok
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Visibility Tracker audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today.
 
@@ -320,7 +320,7 @@ Do:
 
 ### deepseek
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: training memory weighted heavily toward English-language sources.
 
@@ -331,7 +331,7 @@ Do:
 
 ### mistral
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: training memory with good European coverage. The API exposes no first-party search [fonte: Jun 2026], so what is measured here is memory only; the consumer product can search.
 
@@ -341,7 +341,7 @@ Do:
 
 ### llama
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: runs on training memory alone; no provider hosting Llama exposes first-party search. It moves in months, at the pace of training cycles.
 
@@ -353,7 +353,7 @@ Note: this engine is the Llama model, not the Meta AI assistant it powers in Wha
 
 ### perplexity
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança (Perplexity anunciou Hybrid Compute on Mac e PII-TRACE a 1 Set 2026, privacidade/compute local sem mecânica de citação nova) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança desde o Hybrid Compute on Mac / PII-TRACE de 1 Set 2026 (já reflectido no bloco) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: always searches the live web and cites explicit sources. YouTube leads its citations [fonte: 32.4%, Ahrefs, Jun 2026], communities weigh heavily (Reddit ~47% in some category studies; directional) and primary-research portals and trade press weigh more than on other engines [fonte: 5W, Jun 2026].
 
@@ -365,7 +365,7 @@ Do:
 
 ### google_aio
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança desde a expansão dinâmica de 27 Ago 2026 (já reflectida no bloco) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança desde a expansão dinâmica de 27 Ago 2026 (já reflectida no bloco) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: the AI answer block at the top of Google. The organic top 10 accounts for 38% of citations [fonte: Ahrefs, Mar 2026; was 76% in Jul 2025]: rank helps, but the page's citable structure weighs ever more. Since May 2026 it includes discussion citations (Reddit, forums, blogs) directly in the answer. On local and urgent questions it tends to show the local pack (the map) instead of the block. Since late Aug 2026, on queries where Google's systems determine it is most useful, the block dynamically expands to its full AI-Mode-like state without the user clicking "Show more", with the "Ask anything" box already open — pushing organic results further down the page; Google confirms the expansion is cancelled if the user has already started scrolling past it, to avoid losing their reading position [fonte: Search Engine Land/Search Engine Roundtable, 27 Aug 2026].
 
@@ -378,7 +378,7 @@ Do:
 
 ### google_ai_mode
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança desde o carrossel "Preferred Sources" de 25 Ago 2026 (já reflectido no bloco) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança desde o carrossel "Preferred Sources" de 25 Ago 2026 (já reflectido no bloco) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: Google's conversational search mode; it answers almost every question and cites at passage level. In 80% of citations the answer sits in the first sentence of the extracted passage, and the median cited passage runs ~117 words [fonte: Pillarbase, 15.7M citations, Jul 2026]. On commercial questions ads appear inside the answer [fonte: 29% of cases; over half on high-CPC keywords; SE Ranking, Jun 2026].
 
@@ -390,7 +390,7 @@ Do:
 
 ### copilot
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança (Deep Citations e SharePoint AI citation analytics são features do M365 Copilot empresarial, fora do âmbito deste bloco de pesquisa web de consumo) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-03 · externo: nenhuma mudança (Deep Citations e SharePoint AI citation analytics são features do M365 Copilot empresarial, fora do âmbito deste bloco de pesquisa web de consumo) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: Microsoft's chat; searches through the Bing index.
 
@@ -402,7 +402,7 @@ Do:
 
 ### copilot_bing
 
-meta: revisto 2026-09-02 · externo: nenhuma mudança · interno: medição suspensa, sem base
+meta: revisto 2026-09-03 · externo: nenhuma mudança · interno: medição suspensa, sem base
 
 The Copilot block inside Bing's results page, Microsoft's counterpart to the AIO. **Measurement suspended; do not switch it back on without provider confirmation.**
 
