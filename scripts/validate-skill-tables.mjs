@@ -191,6 +191,45 @@ const countTableRows = (section) =>
   }
 }
 
+// --- Contrato 8: visibility score (consumido pelo Tracker, loadScoreWeights)
+//
+// O parser do Tracker cai no fallback em silêncio quando esta tabela não
+// bate certo, e é isso que torna a verificação necessária: um peso trocado
+// ou um header mudado não dá erro em lado nenhum, dá o número de ontem
+// para sempre. A soma tem de dar 1, senão o 0..100 deixa de ser 0..100.
+{
+  const name = "Contrato 8 · visibility score";
+  const body = read(`${SKILL}/references/metrics.md`);
+  if (!body) { check(name, false, "ficheiro não encontrado"); }
+  else {
+    const section = sectionContent(body, "## Visibility Score");
+    if (!section) check(name, false, "secção '## Visibility Score' ausente");
+    else if (!/\|\s*component\s*\|\s*weight\s*\|/i.test(section)) {
+      check(name, false, "header da tabela mudou — esperado: '| component | weight |'");
+    } else {
+      const pesos = {};
+      for (const linha of section.split("\n")) {
+        const t = linha.trim();
+        if (!t.startsWith("|")) continue;
+        const cells = t.split("|").slice(1, -1).map((c) => c.trim().replace(/^`|`$/g, ""));
+        if (cells.length < 2) continue;
+        if (!["citation", "relative_sov", "net_sentiment"].includes(cells[0])) continue;
+        const v = Number(cells[1].replace(",", "."));
+        if (Number.isFinite(v)) pesos[cells[0]] = v;
+      }
+      const nomes = Object.keys(pesos);
+      const soma = nomes.reduce((a, k) => a + pesos[k], 0);
+      if (nomes.length !== 3) {
+        check(name, false, `esperados 3 componentes, encontrados ${nomes.length} (${nomes.join(", ") || "nenhum"})`);
+      } else if (Math.abs(soma - 1) > 0.001) {
+        check(name, false, `os pesos somam ${soma} e têm de somar 1 — o número mudaria de escala`);
+      } else {
+        check(name, true, `3 pesos, soma 1 (citation ${pesos.citation})`);
+      }
+    }
+  }
+}
+
 let allOk = true;
 for (const r of results) {
   console.log(`${r.ok ? "✓" : "✗"} ${r.name} — ${r.detail}`);
