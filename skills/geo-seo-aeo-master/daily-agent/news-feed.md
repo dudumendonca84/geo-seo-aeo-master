@@ -15,19 +15,53 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Jogada recomendada:** confirmar em primeira mão se uma conta com país Portugal chega de facto a ecrã de criação de campanha no Ads Manager (a beta pode ter filtros de elegibilidade não documentados — o precedente de 19-28 ago foi anúncio de acesso seguido de bloqueio no ecrã seguinte). Só depois de confirmado decidir se entra no pitch como oferta vendável.
 **Prazo:** até 8 de setembro (uma semana), incluindo a verificação de primeira mão.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-02
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-03
 
-🚨 Alerta actualizado no topo do feed: self-serve do OpenAI Ads Manager abriu para a Europa (incl. Portugal), Médio Oriente, Norte de África e Índia a 1 de Setembro, junto com o marco de $1 mil milhões de receita anualizada do negócio de ads em menos de 200 dias. Fecha o hiato do alerta de 21 ago. Verificação de primeira mão (conta PT a criar campanha) ainda por fazer; prazo até 8 de Setembro.
+Radar LLM/IA: Anthropic lançou **Claude Fable 5.1** (GA) e **Claude Mythos 5.1** (acesso restrito) a 1 de Setembro — 1M tokens de contexto, 128K de output máximo, 52,6% no Terminal-Bench-Science. Preço nominal igual ao Fable 5 ($10/$50 por milhão input/output), mas leituras de cache ~75% mais baratas tornam workloads agentic típicos ~25% mais baratos na prática. Nenhum dos dois é default em produto de AI search — awareness, sem mudança de scorecard.
 
-Radar LLM/IA: sem novidade — nenhum lançamento, deprecação ou mudança de preço de modelo confirmada na janela (GPT-5.6 três-tiers, Claude Opus 5 e Sonnet 5, Gemini 3.1/3.5 Flash sem mudança de preço ou disponibilidade).
+GEO/AEO: passagem diária pelos 12 motores sem mudança de mecânica de citação/retrieval em nenhum. O bloco `claude` de `engine_playbooks.md` regista o lançamento acima como contexto, sem alterar a alavanca.
 
-GEO/AEO: primeira passagem diária pelos 12 motores desde que o requisito entrou em vigor (1 Set 2026) — sem mudança de mecânica de citação/retrieval em nenhum dos 11 motores além do ChatGPT; o item do ChatGPT é comercial (compra de ads), não de retrieval orgânico.
+SEO/Google: nada de substância nova além do já registado em dias anteriores.
 
-SEO/Google: nada de substância além do já registado (spam update de agosto encerrado, rollout do Search Console concluído a 31 ago).
-
-Implicações: jogada com prazo — testar até 8 de Setembro se uma conta PT consegue de facto criar campanha no Ads Manager antes de a oferecer a clientes.
+Implicações: nenhuma jogada nova com prazo hoje. O alerta de 1 Set (verificação de primeira mão do OpenAI Ads Manager em Portugal) continua aberto, prazo 8 de Setembro — restam 5 dias sem confirmação de execução.
 
 Corrida completa.
+
+## 2026-09-03
+
+### 🔵 Anúncios oficiais
+
+- **Anthropic lança Claude Fable 5.1 e Claude Mythos 5.1** — [anthropic.com/claude-fable-and-mythos-5-1](https://www.anthropic.com/claude-fable-and-mythos-5-1) (1 Set 2026; `WebFetch` a anthropic.com bloqueado pelo proxy desta sessão, corroborado via `WebSearch` por [MarkTechPost](https://www.marktechpost.com/2026/09/01/anthropic-releases-claude-fable-5-1-and-claude-mythos-5-1-52-6-on-terminal-bench-science-and-75-cheaper-cache-reads/) e [9to5Mac](https://9to5mac.com/2026/09/01/anthropic-upgrades-claude-with-new-fable-5-1-model-details-here/)). Fable 5.1 (GA) sucede o Fable 5: 1M tokens de contexto, 128K de output máximo, 52,6% no Terminal-Bench-Science. Mythos 5.1 sucede o Mythos 5, mas fica restrito a programas de acesso de confiança (sucessor do "Project Glasswing"), sem disponibilidade geral. Preço nominal inalterado ($10/$50 por milhão de tokens input/output, igual ao Fable 5), mas leituras de cache ~75% mais baratas tornam workloads agentic típicos ~25% mais baratos na prática — mudança de preço efectivo, per a regra Tier 1b. `references/models.md` actualizado (tabela Anthropic + notas de preço); nenhum dos dois modelos é default em produto de AI search, por isso sem mudança ao mapeamento `claude` em § Deck Builder API mappings.
+
+### 💡 Implicações para destaque.ai
+
+- Awareness apenas: Fable 5.1/Mythos 5.1 não mudam o modelo usado por nenhum produto de AI search medido (ChatGPT, Gemini, Perplexity, Copilot continuam nos seus próprios modelos) — sem acção no scorecard nem no teste multi-motor do Deck Builder, que continua a testar Claude via `claude-sonnet-5`.
+- Sem jogada nova com prazo hoje. O alerta de 1 Set (self-serve do OpenAI Ads Manager em Portugal) continua aberto — **verificar até 8 de Setembro** se uma conta PT chega a ecrã de criação de campanha, per o prazo já registado; restam 5 dias.
+
+### 🚨 Alerta ao founder (avaliado, não accionado)
+
+Nenhum item de hoje cruza o limiar de "mudaria a agenda da semana dele": o lançamento Fable 5.1/Mythos 5.1 é radar de modelo sem mudança de mecânica de citação nem de produto de AI search. O alerta de 1 Set (ChatGPT Ads Manager self-serve em Portugal) mantém-se no topo do feed, agora a meio do prazo de 8 de Setembro sem confirmação de execução — ver digest acima.
+
+### Passagem diária por motor (12 motores, OBRIGATÓRIA)
+
+Segunda corrida desta secção (primeira em 2026-09-02). Passagem pelos 12 blocos (PT+EN, 24 no total, `meta:` reescrita em todos com a data de hoje):
+
+- **claude** — externo: Anthropic lançou Fable 5.1/Mythos 5.1 (ver acima); registado no bloco como contexto — nenhum dos dois é default em produto de AI search, por isso a alavanca do bloco não muda.
+- **chatgpt, gemini, grok, deepseek, mistral, llama, perplexity, google_aio, google_ai_mode, copilot, copilot_bing** (11 motores) — externo: nenhuma mudança de mecânica de citação/retrieval identificada na janela de 24-72h, confirmado por research dedicado por motor (dois agentes de research independentes, um por tier de fonte e outro por motor). Candidatos revistos e descartados por já cobertos em dias anteriores: expansão dinâmica do Google AI Overviews e caixa "Pergunta o que quiseres" por defeito (já em 08-30); rollout mundial do relatório de AI performance na Search Console (já em 09-01); Perplexity Hybrid Compute on Mac / PII-TRACE (já em 09-02); teste de renomeação "Copilot Search" → "AI Overviews" no Bing (já em 08-29).
+- **interno** (todos os 12 motores) — sem acesso, nesta sessão, ao export `comportamento_por_motor` do Tracker (`destaque-ai-tracker/` não existe neste repo, é produto separado). Registado como "sem acesso a dados do Tracker nesta sessão".
+- **idade** — todos os 24 blocos foram revistos ontem (2026-09-02); nenhum bloco com mais de 30 dias sem revisão. Nenhum "motor por rever" a assinalar hoje.
+
+### Nota de integridade de dados
+
+Research feita por dois agentes dedicados (um por tier de fonte — Tier 1/1b/watches; outro por mecânica de motor — Tier 2-5 + passagem por engine) usando `WebSearch` com cross-corroboração, dado que `WebFetch` directo a anthropic.com, openai.com, developers.google.com, blogs.bing.com e arxiv.org continua bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`). Sem acesso a Gmail MCP nesta sessão — digest fica no news-feed em vez de email, per regra de fallback (sem item de alerta novo hoje, por isso sem bloco de alerta no digest). **Candidatos investigados e descartados por fora de âmbito** (sem mecânica de citação/GEO, mesmo critério usado para excluir "Claudeforce" e outras parcerias enterprise noutras sessões): Anthropic "Enterprise Frontier Safeguards" (1 Set 2026, monitorização de abuso em infra-estrutura do próprio cliente — segurança enterprise, não retrieval); OpenAI "Astra" a ultrapassar o limiar "Critical" de cibersegurança no Preparedness Framework (1 Set 2026, disclosure de segurança de modelo, sem produto de AI search afectado); mudança do parâmetro `quality` por defeito no Grok Imagine (geração de imagem, não pesquisa). **Candidatos descartados por já cobertos** (ver secção "Passagem diária por motor" acima para a lista completa). Watch agentic commerce: **sem novidade** — checkout in-chat continua US-only nos motores medidos, sem confirmação nova de chegada à UE/Portugal, sem mudança de spec ACP/UCP nem de atributos do Merchant Center dentro da janela. Watch AI ads em Portugal: **sem novidade de estado** — o self-serve do OpenAI Ads Manager continua na mesma posição registada a 1-2 Set (beta aberta à Europa incl. Portugal por herança de mercado, sem confirmação país-a-país); Google reafirmou (via porta-voz, fonte secundária) não ter planos divulgados de trazer anúncios do AI Mode à UE. Watch Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin) sem itens verificáveis novos na janela além do roundup #SEOFOMO de Aleyda Solis de 30 Ago (fora da janela de 24-72h, e o item central — parâmetros `goto` do Google — já coberto em 08-29). Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sem paper académico genuinamente novo em arXiv cs.IR/cs.CL na janela de 30 dias (acesso directo a arxiv.org bloqueado pelo proxy; candidatos encontrados via `WebSearch` datam de Out 2025/Jan 2026, fora da janela). Quinta-feira → sem weekly drafts (só sextas).
+
+### Absorção antes do truncate (passo 1 de manutenção)
+
+news-feed.md tinha 60 headers de data antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair (2026-06-30: Google AI Mode atinge 1B utilizadores mensais com Gemini 3.5 Flash como default, Claude Tag, preview do GPT-5.6 e retirada do GPT-4.5, estudo "AEO Statistics 2026" da omnibound.ai, estudo llms.txt de 10,13% de adopção em ~300k domínios com 408 pedidos de crawler em 500M+ eventos, estudo de 68% de zero-click nos EUA, Perplexity Deep Research expandido para Computer, Google May 2026 Core Update concluído, survey académico de arquitecturas RAG). Todos os itens duráveis já estavam bem absorvidos: Gemini 3.5 Flash default está em `references/models.md` (secção Google); Claude Tag está em `references/models.md` linha 98; GPT-5.6 e a retirada do GPT-4.5 estão em `references/models.md` (secção OpenAI); o estudo llms.txt (10,13%/300k domínios/408 pedidos) está reflectido em `references/engine_playbooks.md` linha 19; o estudo de 68% de zero-click está em `references/benchmarks.md` §31 (como o valor mais recente, 68,01%); o "AEO Statistics 2026" da omnibound.ai já está sinalizado em `references/benchmarks.md` linha 211 como fonte sem metodologia/amostra/entidade divulgada, correctamente excluído dos números citáveis. O Deep Research/Computer da Perplexity e o May Core Update são histórico de produto/algoritmo superado por entradas mais recentes, sem valor durável adicional a extrair. O survey RAG (arxiv 2506.00054) é uma categorização genérica sem achado prático distinto do já coberto em `frameworks.md` §5. Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-07-01 a 2026-09-03) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — o item do dia é um lançamento de modelo sem mudança de mecânica de retrieval, citação ou pesos de scorecard, e nenhum dos dois modelos é default em produto de AI search.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-09-02
 
@@ -995,36 +1029,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 
 **Nota de execução**: esta é a primeira entrada em `skills/geo-seo-aeo-master/daily-agent/` desde 2026-06-05 (gap de ~26 dias). Cobertura de hoje limitada às últimas 24-72h conforme o mandato do prompt — não é um backfill retroactivo do período em falta.
 
-## 2026-06-30
-
-### 🔵 Anúncios oficiais
-
-- **Google AI Mode atinge 1 mil milhão de utilizadores mensais** — [blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/). Menos de um ano após o lançamento, AI Mode ultrapassou 1B de utilizadores mensais, com queries a duplicar por trimestre; Google confirmou Gemini 3.5 Flash como novo modelo padrão no AI Mode globalmente.
-
-- **Anthropic — Claude Tag** — [anthropic.com/news](https://www.anthropic.com/news/introducing-claude-tag). Lançado a 23 junho: integração de Claude diretamente em canais Slack como membro de equipa, com capacidade de automação de tarefas colaborativas via menção @Claude.
-
-- **OpenAI — preview GPT-5.6** — [openai.com](https://openai.com/index/previewing-gpt-5-6-sol/). Preview limitado da série GPT-5.6: Sol (flagship), Terra (2x mais barato que GPT-5.5 a performance comparável) e Luna (baixo custo). GPT-4.5 retirado de ChatGPT a 26 junho.
-
-### 📊 Estudos & dados
-
-- **"AEO Statistics 2026: 55+ Data Points on Brand Visibility"** — [omnibound.ai](https://www.omnibound.ai/blog/answer-engine-optimization-aeo-statistics). 37% das queries informacionais geram agora resposta AI-generated (era 12% em janeiro 2024); early adopters AEO aparecem em 18% das respostas relevantes vs. 3% para marcas não otimizadas; CTR em citações IA: 22%, equivalente à posição 3-4 em SERP tradicional.
-
-- **llms.txt: 10% de adoção, impacto nulo em SEO** — [seranking.com](https://seranking.com/blog/llms-txt/) / [digitalapplied.com](https://www.digitalapplied.com/blog/google-llms-txt-no-seo-value-lighthouse-audit-2026). Análise de ~300.000 domínios: apenas 10.13% implementaram llms.txt; análise de 500M eventos de AI-crawlers revela que apenas 408 requests visaram o ficheiro diretamente. A 15 junho, Google atualizou o guia oficial: llms.txt não tem efeito positivo ou negativo em Search rankings ou AI Overviews.
-
-- **Zero-click searches: 68% nos EUA (jan–abr 2026)** — [realinternetsales.com](https://www.realinternetsales.com/google-ai-mode-1-billion-users-geo-statistics-2026/). Entre janeiro e abril de 2026, 68% das pesquisas Google nos EUA não geraram qualquer clique para site externo; apenas 14% dos URLs citados no AI Mode coincidem com citações do AI Overview tradicional.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Perplexity — Deep Research expandido para Computer** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog). A 19 junho: painel de comandos, thread forking, ações inline, APIs analíticas e integração de dados premium (CB Insights, PitchBook, Statista) no assistente Computer; expansão para Microsoft 365 (Word, Excel, PowerPoint, Outlook).
-
-- **Google — May 2026 Core Update concluído a 2 junho** — [searchengineland.com](https://searchengineland.com/library/platforms/google/google-algorithm-updates). Rollout de 12 dias (21 maio–2 junho); segundo core update de 2026, apenas 6 semanas após o March update. Padrão consistente: recompensa expertise demonstrada, autoridade e utilidade a nível de página.
-
-### 📄 Research académico
-
-- **"Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers"** — [arxiv.org/abs/2506.00054](https://arxiv.org/abs/2506.00054). Survey que categoriza arquiteturas RAG (retriever-centric, generator-centric, híbridas, robustness-oriented) — relevante para compreender como plataformas AEO selecionam e verificam fontes para citação em respostas geradas.
-
-### 💡 Implicações para destaque.ai
-
-- **Mudança de pitch necessária**: 1B de utilizadores em AI Mode + 68% zero-click nos EUA tornam a "visibilidade em AI answers" o argumento central para clientes SaaS B2B — substituir "ranking #1 no Google" por "ser a fonte citada pela IA que os teus clientes já usam". Requer atualização de materiais de venda.
-- **llms.txt: não priorizar operacionalmente**: Google confirmou sem ambiguidade que não usa o ficheiro. Foco deve manter-se em E-E-A-T, Schema.org e freshness — 83% das citações AEO provêm de páginas atualizadas nos últimos 12 meses.
-- **Dados concretos para proposta de valor**: 3.4x mais visibilidade para early adopters AEO + 22% CTR em citações IA são métricas defensáveis para justificar investimento GEO/AEO a clientes portugueses. Awareness comercial por agora; aguardar dados PT/EU antes de construir case study local.
