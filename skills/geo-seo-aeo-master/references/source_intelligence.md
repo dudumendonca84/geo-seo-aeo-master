@@ -35,6 +35,90 @@ depois de processar as auditorias (spec na secção C de
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-09-04 (comércio automóvel local, leitura completa da mesma semana)
+
+A entrada de 3 de Setembro foi escrita sobre uma leitura parcial da mesma
+semana (420 respostas). A leitura completa cobre 445 respostas com
+conteúdo, em 15 combinações de motor e modo, incluindo as duas superfícies
+do Google, que na entrada anterior não estavam contadas. Duas coisas mudam,
+e a primeira é uma correcção.
+
+**Correcção: o site próprio do cliente É citado, mas só numa família de
+superfícies.** A entrada anterior dizia que não aparecia em citação nenhuma
+de motor nenhum. Na leitura completa aparece em quatro respostas, todas nas
+superfícies do Google (AI Overviews e AI Mode), e em nenhuma das outras
+nove superfícies. A lição generaliza: uma conclusão sobre "o site não é
+citado por ninguém" tem de declarar que superfícies entraram na conta, e a
+ausência de uma família inteira muda o sentido da frase.
+
+**Ser fonte não é ser recomendado, e há um caso limpo.** Numa pergunta de
+recomendação local, a ficha do Google Business do próprio negócio foi a
+**primeira das dezasseis fontes** da resposta do AI Mode, e o texto
+recomendou quatro casas concorrentes sem nomear o dono da ficha que abriu a
+resposta. O motor leu a entidade e escolheu os vizinhos. É o mesmo
+mecanismo que a coluna "citação sem menção" já vinha a mostrar em B2B, aqui
+na sua forma mais crua: a fonte lida pertence à marca ausente.
+
+### Densidade de fontes por resposta, medida na mesma malha de perguntas
+
+| Motor (com pesquisa) | Fontes por resposta |
+|---|---|
+| Perplexity | 17,7 (532 em 30) |
+| Gemini | 10,6 (4 das 30 respostas sem fonte nenhuma) |
+| Copilot | 9,7 |
+| AI Overviews | 6,9 (12 das 30 respostas sem fontes) |
+| AI Mode | 5,0 |
+| Claude | 1,6 |
+
+Um factor de onze entre os extremos, na mesma pergunta e no mesmo dia. Uma
+estratégia de fontes desenhada para o Perplexity não descreve o Claude, e
+uma auditoria que mede "citações" sem dizer o motor mistura duas realidades
+diferentes.
+
+### O que domina, por tipo de fonte
+
+- **Google (as duas superfícies): o directório é do próprio Google.** Nas
+  seis perguntas de "onde" e "qual", as fichas locais do `google.com` são
+  124 de 356 fontes, e numa delas são 16 de 16. Consequência prática para
+  negócio local: nessas perguntas optimiza-se a ficha (nota, número de
+  avaliações, horário, fotos), não o site. Fora das perguntas de
+  localização, a mesma superfície passa a citar artigos de blogue dos
+  concorrentes.
+- **Perplexity: comunidade primeiro.** `reddit.com` é o domínio mais citado
+  de toda a auditoria (36 citações), acima de qualquer agregador da
+  categoria. Confirma o bloco do Perplexity em `engine_playbooks.md`.
+- **Agregadores da categoria são a espinha dorsal de quase todos os
+  restantes**: classificados, portais de stands e plataformas de avaliação.
+  O sítio próprio de cada empresa nomeada aparece quase sempre ao lado, o
+  que sugere a regra prática: o agregador põe a marca na lista, o site
+  próprio sustenta a frase que a descreve.
+- **Uma credencial de plataforma de avaliações vira linguagem de escolha.**
+  Um prémio de "melhor do país" atribuído por uma plataforma de avaliações
+  foi repetido quase palavra por palavra por quatro motores diferentes como
+  a razão declarada para escolher uma marca. Nesta semana, uma única marca
+  concentrou 28% de todas as escolhas da categoria com essa credencial. É a
+  observação mais accionável do ficheiro para negócio local: uma página de
+  prémio indexada num directório converte-se em recomendação.
+
+### Dois riscos de qualidade, medidos
+
+**Contaminação de mercado em consultas PT-PT.** Numa categoria local
+portuguesa, uma parte substancial das fontes é brasileira: 21 das 30
+respostas de um motor citam pelo menos uma fonte brasileira, e noutro 75
+das 532 fontes. O efeito não é cosmético, é jurídico: as respostas devolvem
+IPVA, Detran e prazos de garantia do Código de Defesa do Consumidor
+brasileiro a quem compra em Portugal. Para uma marca portuguesa isto é
+espaço vazio: os motores não encontraram material português suficiente.
+
+**Motores sem pesquisa inventam fichas locais.** Um motor em modo de
+memória devolveu moradas, telefones e notas do Google para stands locais
+com telefones em sequência e a mesma morada repetida para seis casas
+diferentes. Prova quantitativa da fabricação: entre os 32 nomes que esse
+motor produziu e os 38 que um motor com pesquisa produziu nas mesmas
+perguntas, **zero coincidem**. Regra operacional: nomes de negócios locais
+vindos de modo de memória não entram numa lista de concorrentes sem
+confirmação externa, e devem ser gravados com a razão à vista.
+
 ## 2026-09-03 (comércio automóvel local)
 
 Primeira entrada deste ficheiro fora do sector de consultoria B2B em
