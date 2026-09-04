@@ -342,6 +342,66 @@ The `daily-agent/news-feed.md` carries the running record between refreshes — 
 
 ---
 
+## Token prices
+
+**Single source of truth for what a call COSTS**, in the same spirit as the
+API mappings above: prose is for people, this table is for code.
+
+PORQUÊ (4 Set 2026). O Visibility Tracker mede tudo sobre a visibilidade do
+cliente e não media o próprio custo: a coluna `weekly_audits.total_cost_usd`
+esteve sempre a `null` porque nunca houve preço para multiplicar pelos
+tokens. Os preços existem neste ficheiro há meses, mas em prosa, espalhados
+por secções, com datas e promoções à mistura. Um consumidor não consegue
+ler prosa.
+
+**Uma linha por ID de modelo da API**, o mesmo ID da tabela de mappings, e
+os preços em dólares por milhão de tokens.
+
+**`?` QUER DIZER QUE NÃO SABEMOS**, e é para ser lido assim: o consumidor
+NÃO calcula custo para essa linha, e mostra o custo como indisponível em
+vez de mostrar zero. Um zero seria uma afirmação falsa sobre dinheiro, que
+é o pior tipo de número errado. Preencher estas linhas é trabalho do
+daily-agent, que já tem a regra "qualquer mudança de preço é sempre item de
+news-feed": passa a registá-la também aqui.
+
+| API model ID | input USD/1M | output USD/1M | since | source |
+|---|---|---|---|---|
+| `claude-sonnet-5` | 2.00 | 10.00 | 2026-08-10 | platform.claude.com/docs/en/about-claude/pricing (taxa permanente; o aumento para 3/15 foi cancelado a 10 Ago 2026) |
+| `claude-opus-5` | 5.00 | 25.00 | 2026-07-24 | anthropic.com/news/claude-opus-5 |
+| `claude-fable-5-1` | 10.00 | 50.00 | 2026-09-01 | anthropic.com/claude-fable-and-mythos-5-1 |
+| `gpt-5.6-sol` | 4.00 | 20.00 | 2026-08-21 | OpenAI Developer Community, corte promocional até pelo menos 21 Nov 2026; a tabela base era 5.00/30.00 |
+| `gemini-3.8-flash` | 0.75 | 3.75 | 2026-09-02 | blog.google, preço de lançamento até 31 Dez 2026; sobe para 1.50/7.50 a 1 Jan 2027 |
+| `claude-haiku-4-5` | ? | ? | | por confirmar |
+| `gpt-5.6-luna` | ? | ? | | por confirmar |
+| `gemini-3.5-flash` | ? | ? | | por confirmar |
+| `gemini-3.5-flash-lite` | ? | ? | | por confirmar |
+| `grok-4.3` | ? | ? | | por confirmar |
+| `grok-4.1-fast` | ? | ? | | por confirmar |
+| `deepseek-v4-flash` | ? | ? | | a prosa deste ficheiro diz "~$0.10 por milhão de tokens" sem separar entrada de saída, e um número que não se sabe onde aplicar não entra numa tabela de código |
+| `mistral-large-latest` | ? | ? | | por confirmar |
+| `mistral-small-latest` | ? | ? | | por confirmar |
+| `sonar-pro` | ? | ? | | por confirmar |
+| `sonar` | ? | ? | | por confirmar |
+
+### Contrato de leitura
+
+1. Localizar a secção `## Token prices`.
+2. Ler a tabela com o cabeçalho `| API model ID | input USD/1M | output USD/1M | since | source |`.
+3. Tirar as crases do ID.
+4. Uma linha com `?` em qualquer dos dois preços **não tem preço**: o
+   consumidor ignora-a e trata o custo dessa chamada como desconhecido.
+5. Sem tabela ou sem linha para o modelo, o custo é desconhecido. Nunca
+   zero, nunca um valor por omissão.
+
+### Contrato de manutenção
+
+Actualiza-se quando um fornecedor muda um preço, quando uma promoção
+começa ou acaba, e quando um modelo novo entra na tabela de mappings. A
+coluna `since` é a data a partir da qual o preço vale, e a `source` diz
+onde foi lido: sem as duas, a linha não entra.
+
+---
+
 ## Deck Builder API mappings
 
 **Single source of truth for API model IDs** used programmatically by the Deck Builder (and any other consumer that needs to call vendor APIs). The per-vendor tables above are product-name-oriented (human-friendly); this table is the machine-readable contract that maps Deck Builder engine names to exact API IDs.
