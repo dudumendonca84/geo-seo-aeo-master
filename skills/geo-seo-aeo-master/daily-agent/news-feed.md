@@ -13,19 +13,80 @@ editorial_voice: sober, primary-source-anchored, no hype
 **O que aconteceu:** o hiato identificado a 21-28 ago fechou-se — desde 1 Set 2026 a compra self-serve de anúncios do ChatGPT (OpenAI Ads Manager) está aberta em beta a "anunciantes elegíveis" nos mesmos 31 mercados europeus onde os anúncios já corriam desde 24 ago, incl. Portugal, além do Médio Oriente, Norte de África e Índia — anunciado junto com o marco de $1 mil milhões de receita anualizada em menos de 200 dias desde o lançamento. [Digiday](https://digiday.com/media-buying/openais-chatgpt-ads-business-hits-1-billion-run-rate-as-europe-gets-self-serve-access/), corroborado por [CNBC](https://www.cnbc.com/2026/08/31/open-ai-chatgpt-ads-revenue.html), [Forbes](https://www.forbes.com/sites/gabrielalinzainescu/2026/08/31/openais-chatgpt-ads-hit-1-billion-run-rate-in-just-200-days/) e [Storyboard18](https://www.storyboard18.com/amp/advertising/chatgpt-ads-crosses-1-billion-annualised-revenue-run-rate-as-openai-expands-global-rollout-109405.htm) (31 ago-1 set 2026; `openai.com` bloqueado pelo proxy desta sessão, ver nota de integridade em 2026-09-02).
 **Porque nos importa:** até agora havia anúncios visíveis em PT mas nenhuma via de compra directa — só agências e a equipa OpenAI Ads Solutions. A partir de 1 de setembro um cliente, ou a própria destaque.ai, pode em princípio criar e gerir campanhas ChatGPT sem passar por parceiro certificado. É a primeira vez que "gestão de AI ads no ChatGPT" deixa de ser hipotética.
 **Jogada recomendada:** confirmar em primeira mão se uma conta com país Portugal chega de facto a ecrã de criação de campanha no Ads Manager (a beta pode ter filtros de elegibilidade não documentados — o precedente de 19-28 ago foi anúncio de acesso seguido de bloqueio no ecrã seguinte). Só depois de confirmado decidir se entra no pitch como oferta vendável.
-**Prazo:** até 8 de setembro (uma semana), incluindo a verificação de primeira mão.
+**Prazo:** até 8 de setembro (agora só 4 dias), incluindo a verificação de primeira mão.
 
-## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-03
+**Actualização 4 Set 2026 — a contradição ficou mais confusa, não mais clara:** fontes portuguesas dedicadas (leak.pt, adclickgroup.com) encontradas hoje dizem o oposto do que este alerta assumia desde 1 Set — que os anúncios aparecem em Portugal desde 24 Ago, mas que a criação directa de campanha no Ads Manager continua fechada a anunciantes PT, self-serve descrito como "a chegar nos próximos meses", compra só via equipa OpenAI Ads Solutions ou agências parceiras. Nem a leitura de 1 Set nem esta têm confirmação de primeira mão — a página oficial com a lista de países elegíveis (help.openai.com/en/articles/20001245-ads-manager-availability) não foi acedida directamente por bloqueio de proxy nesta sessão. Isto não resolve o alerta, torna-o mais urgente: com apenas 4 dias até ao prazo e duas leituras opostas nas fontes secundárias, só um registo real em ads.openai.com com país Portugal fecha a questão.
 
-Radar LLM/IA: Anthropic lançou **Claude Fable 5.1** (GA) e **Claude Mythos 5.1** (acesso restrito) a 1 de Setembro — 1M tokens de contexto, 128K de output máximo, 52,6% no Terminal-Bench-Science. Preço nominal igual ao Fable 5 ($10/$50 por milhão input/output), mas leituras de cache ~75% mais baratas tornam workloads agentic típicos ~25% mais baratos na prática. Nenhum dos dois é default em produto de AI search — awareness, sem mudança de scorecard.
+## 📬 DIGEST (não enviado — Gmail indisponível) · 2026-09-04
 
-GEO/AEO: passagem diária pelos 12 motores sem mudança de mecânica de citação/retrieval em nenhum. O bloco `claude` de `engine_playbooks.md` regista o lançamento acima como contexto, sem alterar a alavanca.
+Alerta: o hiato do OpenAI Ads Manager em Portugal continua por resolver, e hoje ficou mais confuso, não mais claro. Fontes internacionais dizem que o self-serve abriu a 1 Set nos 31 mercados incl. Portugal; fontes portuguesas dedicadas (leak.pt, adclickgroup.com) dizem o oposto, que a criação de campanha continua fechada a anunciantes PT. Nenhuma das duas leituras tem confirmação de primeira mão. Prazo continua 8 de Setembro, restam 4 dias.
 
-SEO/Google: nada de substância nova além do já registado em dias anteriores.
+Radar LLM/IA: Google lançou Gemini 3.8 Flash e Flash Cyber (2 Set) — preço introdutório $0,75/$3,75 por milhão de tokens in/out até final do ano, sobe para $1,50/$7,50 em Jan 2027; nenhum dos dois é ainda default em AI Mode/AI Overviews. Mistral lançou Agentic Search a 20 de Agosto, nunca reportado nesta routine até hoje — o modelo passa a abrir e verificar documentos em vez de aceitar só excertos pré-cortados, accuracy no FinanceBench sobe de 26,7% para 86%; o bloco `mistral` do playbook e `models.md` estavam desactualizados a dizer que a API não pesquisa, corrigido hoje.
 
-Implicações: nenhuma jogada nova com prazo hoje. O alerta de 1 Set (verificação de primeira mão do OpenAI Ads Manager em Portugal) continua aberto, prazo 8 de Setembro — restam 5 dias sem confirmação de execução.
+GEO/AEO: um estudo da Profound, corroborado pela Search Engine Journal, mostra que Claude e Claude Code são motores de resposta distintos — Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, marcas citadas coincidem só ~20% entre os dois. O YouTube sobe para 22,9% de share nas citações do Google AI Overviews (era 20,9% em Junho).
+
+SEO/Google: ChatGPT foi designado "motor de pesquisa online de muito grande dimensão" (VLOSE) pela Comissão Europeia ao abrigo do DSA (31 Ago) — aumenta obrigações de transparência, sem mudança de mecânica de citação confirmada.
+
+Implicações: quem vende presença "no Claude" tem de ser explícito sobre qual dos dois produtos está a medir, já na próxima proposta. A contradição sobre o Ads Manager PT é o item que pede decisão do founder: sem alguém com acesso a browser normal a testar uma conta PT em ads.openai.com esta semana, a routine não consegue fechar isto sozinha antes do prazo de terça-feira.
 
 Corrida completa.
+
+## 2026-09-04
+
+### 🔵 Anúncios oficiais
+
+- **Google lança Gemini 3.8 Flash e Gemini 3.8 Flash Cyber** — [blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/) (2 Set 2026; `WebFetch` a blog.google bloqueado pelo proxy desta sessão, corroborado via `WebSearch` — DataCamp, eesel.ai, tech-insider.org). Preço introdutório $0,75/$3,75 por milhão de tokens input/output (mesma banda do 3.7 Flash) válido até 31 Dez 2026, sobe para $1,50/$7,50 a partir de 1 Jan 2027; cache de input a $0,075/milhão, sobe para $0,15/milhão em Jan 2027 — mudança de preço, item Tier 1b sempre. Nenhum dos dois modelos é ainda default em AI Mode ou AI Overviews (continuam em Gemini 3.5 Flash / Flash-Lite). `references/models.md` actualizado (tabela Google + notas de preço).
+
+### 📊 Estudos & dados
+
+- **Claude e Claude Code são motores de resposta distintos** — [Profound](https://www.tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines) (24 Ago 2026), corroborado por [Search Engine Journal](https://www.searchenginejournal.com/claude-code-rarely-searches-web-compared-claude-data/587584/) (31 Ago 2026). O Claude (claude.ai) usa pesquisa web em 93% das respostas, o Claude Code só em 13%; as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois. Explica um mecanismo (não só "aconteceu X") — absorvido em `references/frameworks.md` §5 e no bloco `claude` (PT+EN) de `references/engine_playbooks.md`, per regra da "doutrina do porquê".
+- **YouTube sobe para 22,9% de share nas citações do Google AI Overviews** — [Ahrefs](https://ahrefs.com/blog/most-cited-domains-ai-overviews/) (actualização Set 2026, 3M+ queries US; era 20,9% em Jun 2026). `references/engine_playbooks.md` (bloco `gemini`, PT+EN) actualizado.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Mistral lança "Agentic Search"** — [mistral.ai/news/agentic-search](https://mistral.ai/news/agentic-search) (20 Ago 2026 — nunca reportado nesta routine até hoje, confirmado por grep antes de escrever). A API ganha 5 operações (search/open/navigate/read/grep) que deixam o modelo abrir e verificar documentos activamente em vez de aceitar só excertos de retrieval pré-cortados; a accuracy no FinanceBench sobe de 26,7% para 86% com o modo activo. Mudança de mecânica de citação/retrieval de um vendor coberto — corrige o texto de `references/models.md` (secção Mistral) e do bloco `mistral` (PT+EN) de `references/engine_playbooks.md`, que ainda diziam "a API não expõe pesquisa de primeira parte".
+- **Microsoft confirma unificação de Copilot consumer + enterprise num "super app"** — [PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/microsoft-unifies-consumer-and-enterprise-copilot-in-push-for-single-ai-platform/) (Nadella, 29 Jul 2026; funcionalidades como Deep Research, Group Chat, Podcasts e Mico começaram a ser descontinuadas a partir de 18 Ago, rollout ainda em curso em Set 2026). Sem mudança de mecânica de citação confirmada ainda, mas a fronteira entre o bloco `copilot` (consumer) e o M365 Copilot (empresarial) pode ficar menos nítida ao longo do mês — nota de contexto adicionada ao bloco.
+- **ChatGPT designado "Very Large Online Search Engine" (VLOSE) pela Comissão Europeia** ao abrigo do Digital Services Act — [Winbuzzer](https://winbuzzer.com/2026/09/01/eu-designates-chatgpt-tougher-dsa-search-engine-scrutiny-xcxwbn/) (31 Ago 2026). Aumenta obrigações de transparência e auditoria na UE para o ChatGPT como motor de pesquisa; sem mudança de mecânica de citação confirmada. Nota de contexto adicionada ao bloco `chatgpt`.
+
+### 📄 Research académico
+
+- **"Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories"** — [arXiv:2609.01556](https://arxiv.org/abs/2609.01556v1) (Set 2026). Embedders de retrieval falham quando o conteúdo é semanticamente correcto mas formulado de forma diferente da query — Hit@1 cai a 0% no nível mais disfarçado testado, mesmo com o item certo no top-10 semântico. Insight prático: espelhar o fraseado provável das perguntas dos utilizadores pesa tanto quanto cobrir o tópico. Absorvido em `references/frameworks.md` §5.
+- **"PRO-Step: Step-level Process Reward Optimization for Retrieval-Augmented Generation"** — [arXiv:2609.01658](https://arxiv.org/abs/2609.01658) (Set 2026). Técnica de treino que reduz erro em raciocínio multi-hop em RAG; relevância indirecta — motores RAG multi-passo tendem a penalizar menos conteúdo disperso em várias páginas, mas continuam a recompensar clareza por etapa. Sem achado prático distinto o suficiente para justificar entrada própria em `frameworks.md` — registado aqui, não absorvido.
+
+### 💡 Implicações para destaque.ai
+
+- Claude vs. Claude Code medem-se separadamente: qualquer cliente que peça visibilidade "no Claude" para uso de developer tooling precisa de uma medição dedicada ao Claude Code, não da métrica do Claude consumidor — **actualizar o guião de vendas e o texto de qualquer proposta em curso já esta semana**, antes de a próxima reunião com um cliente técnico assumir os números errados.
+- O Mistral deixou de ser um motor "só memória" — o Agentic Search sobe a fasquia do que "presença citável" significa lá (o modelo agora pode abrir e ler a página inteira, não só um excerto). Para clientes onde o Mistral pesa na malha de perguntas, **rever se as páginas-pilar aguentam uma leitura completa do modelo**, não só o parágrafo-resposta do topo — sem prazo firme, entra no próximo ciclo de auditoria.
+- A contradição sobre o Ads Manager em Portugal (ver alerta) é o item accionável desta semana: **pedir a alguém com acesso a browser normal para tentar o registo real em ads.openai.com com país Portugal antes de terça-feira, 8 de Setembro** — a routine não tem browser autenticado para fechar isto sozinha, e as fontes secundárias já não concordam entre si.
+
+### 🚨 Alerta ao founder (actualizado, não novo)
+
+O bloco 🚨 ALERTA FUNDADOR no topo do feed foi actualizado hoje: a pesquisa desta sessão encontrou fontes portuguesas dedicadas que contradizem directamente a leitura de 1 Set sobre o self-serve do OpenAI Ads Manager em Portugal. Isto não é um item novo que cruza o limiar sozinho — é a mesma situação a ficar mais urgente, com o prazo a 4 dias e duas leituras opostas nas fontes secundárias. Nenhum outro item de hoje (Gemini 3.8 Flash, Agentic Search do Mistral, unificação do Copilot, designação VLOSE do ChatGPT, o estudo Claude/Claude Code) muda a agenda da semana do founder por si só.
+
+### Passagem diária por motor (12 motores, OBRIGATÓRIA)
+
+Terceira corrida desta secção. Passagem pelos 12 blocos (PT+EN, 24 no total, `meta:` reescrita em todos com a data de hoje):
+
+- **mistral** — externo: Agentic Search (20 Ago 2026, ver acima) — mudança de mecânica genuína, bloco reescrito (PT+EN) e `models.md` corrigido.
+- **claude** — externo: estudo Profound Claude vs. Claude Code (ver acima) — mecanismo novo absorvido no "Como decide" do bloco (PT+EN).
+- **gemini** — externo: Gemini 3.8 Flash/Flash Cyber (contexto, sem mudança de default) + refresh do dado YouTube 20,9%→22,9% (item 3, PT+EN).
+- **chatgpt** — externo: designação VLOSE (contexto) + contradição nova sobre o Ads Manager PT no item 7 (PT+EN) — ver alerta.
+- **copilot** — externo: unificação Copilot consumer+enterprise anunciada por Nadella (contexto, sem mudança de mecânica confirmada, PT+EN).
+- **grok, deepseek, llama, perplexity, google_aio, google_ai_mode, copilot_bing** (7 motores) — externo: nenhuma mudança de mecânica de citação/retrieval identificada na janela de 24-72h, confirmado por research dedicado por motor. Candidatos revistos e descartados por já cobertos: Hybrid Compute on Mac/PII-TRACE do Perplexity (já em 09-02); expansão dinâmica do AIO e carrossel "Preferred Sources" (já em 08-30); Grok 4.7 anunciado por Musk em post social a 2 Set (~11-12 Set esperado) — anúncio verbal sem model card, preço, ID de API ou benchmark publicado, não é lançamento confirmado, tratado como rumor a vigiar, não reportado como facto.
+- **interno** (todos os 12 motores) — sem acesso, nesta sessão, ao export `comportamento_por_motor` do Tracker (`destaque-ai-tracker/` não existe neste repo, é produto separado). Registado como "sem acesso a dados do Tracker nesta sessão".
+- **idade** — todos os 24 blocos foram revistos ontem (2026-09-03); nenhum bloco com mais de 30 dias sem revisão. Nenhum "motor por rever" a assinalar hoje.
+
+### Nota de integridade de dados
+
+Research feita por dois agentes dedicados (um por tier de fonte — Tier 1/1b/watches; outro por mecânica de motor — Tier 2-5 + passagem por engine) usando `WebSearch` com cross-corroboração. `WebFetch` directo bloqueado pelo proxy de rede desta sessão (`EGRESS_BLOCKED`) para praticamente todos os domínios tentados nesta corrida — não só a lista habitual (anthropic.com, openai.com, developers.google.com, blogs.bing.com, arxiv.org), mas também help.openai.com, ahrefs.com, mistral.ai, seroundtable.com, leak.pt, adclickgroup.com, soku.ai e en.wikipedia.org — todos os achados vêm de `WebSearch` com corroboração cruzada entre fontes independentes, nenhum de leitura directa da página primária. Sem acesso a Gmail MCP nesta sessão — digest fica no news-feed em vez de email, per regra de fallback. **Candidatos investigados e descartados por não confirmados ou fora de âmbito**: Grok 4.7 (anúncio verbal de Musk, 2 Set, sem lançamento — ver passagem por motor acima); DeepSeek-V4-Pro (GA desde 13 Ago, fora da janela, não é novidade); reconfirmação Ahrefs dos 38% de citações AIO fora do top-10 (mesmo número já absorvido em `engine_playbooks.md`, sem mudança de valor — não reportado de novo). Watch agentic commerce: **sem novidade** — checkout in-chat continua US-only nos motores medidos; a multa de €460M da Comissão Europeia à Google (DMA, 23 Jul) tem prazo de compliance a fechar na 2ª quinzena de Set 2026, pode ser bloqueio regulatório relevante a vigiar nos próximos dias, sem desenvolvimento concreto ainda. Watch AI ads em Portugal: **item central do dia** — ver alerta e secções acima. Watch Bing Webmaster Tools AI Performance API: **sem novidade** — API ainda não existe, Microsoft mantém "durante 2026" sem changelog novo. Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Britney Muller, Marie Haynes, Mike King, Rand Fishkin): só Lily Ray com item verificável novo na janela — entrevista "20 for 20" na Search Engine Land (2 Set 2026), sobre porque atalhos raramente vencem em SEO/AI search; qualitativo, sem dado novo, não citado como item próprio. Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) sem itens verificáveis específicos da janela. Sexta-feira → **drafts semanais gerados** em `drafts/2026-09-04-weekly.md`.
+
+### Absorção antes do truncate (passo 1 de manutenção)
+
+news-feed.md tinha 60 headers de data antes desta entrada (limiar) — revista a entrada mais antiga prestes a sair (2026-07-01: preview limitado de GPT-5.6 Sol/Terra/Luna via API/Codex, June 2026 spam update, estudo Ahrefs 38%/76% de sobreposição top-10↔AIO, estudo Ahrefs YouTube 20,9% de share, Perplexity Deep Research no Computer a correr em Claude Opus 4.6). Todos os itens já bem absorvidos ou superados: o preview de GPT-5.6 foi superado pelo GA completo (9 Jul 2026), já em `references/models.md` (tabela OpenAI); a estatística 38%/76% de sobreposição top-10↔AIO está em `references/engine_playbooks.md` (bloco `google_aio`, PT+EN) desde sessões anteriores, e o número foi reconfirmado hoje sem mudar (ver nota de integridade); a estatística YouTube 20,9% foi actualizada hoje para 22,9% no mesmo bloco (`gemini`), superando a entrada de julho; o June 2026 spam update é histórico de aplicação de política já superado pelos updates de Agosto (já cobertos em sessões de 08-19 a 08-28); Perplexity Deep Research no Computer com Claude Opus 4.6 é histórico de produto superado pelas versões Claude posteriores (Opus 5, Sonnet 5, Fable 5.1) já reflectidas em `models.md`. Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-07-02 a 2026-09-04) depois da absorção.
+
+Nenhum trigger de evolução metodológica (`SKILL.md` § Methodology evolution) accionado hoje — os itens do dia são um lançamento de modelo sem mudança de default, uma correcção de mecânica de um vendor de peso secundário na malha de perguntas (Mistral, já reflectida em `engine_playbooks.md`/`models.md` sem exigir reescrita do audit workflow), um estudo que separa dois produtos já tratados como distintos na prática, e uma contradição de fontes secundárias por resolver, não uma mudança confirmada de mecânica de retrieval, citação ou pesos de scorecard.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 2026-09-03
 
@@ -1002,30 +1063,4 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - Claude Sonnet 5 é o novo modelo por defeito em claude.ai — actualizado `references/models.md` (secção Anthropic + Deck Builder mapping do engine `claude`, coluna `production`). Sem mudança de mecânica de citação conhecida por agora; apenas actualização técnica de infraestrutura de auditoria, sem impacto directo no pitch a clientes.
 - O estudo Semrush/SEL confirma que otimizar só para "ser citado" no ChatGPT é insuficiente — o modo Thinking privilegia fontes institucionais e académicas, reforçando a tese de que autoridade e dados verificáveis pesam mais do que volume de conteúdo. Útil para responder a clientes que perguntam "porque é que o ChatGPT não me cita".
 - O achado da Peec AI (Deep Research lê muito mais do que cita) sugere que métricas de "share of citation" reportadas a clientes podem subestimar a exposição real da marca — vale a pena acrescentar uma nota metodológica nos relatórios GEO, sem ainda mudar a metodologia (amostra pequena, não peer-reviewed).
-
-## 2026-07-01
-
-### 🔵 Anúncios oficiais
-
-- **OpenAI — preview limitado de GPT-5.6 (Sol, Terra, Luna)** — [openai.com](https://openai.com/index/previewing-gpt-5-6-sol/). Anunciado 26 junho: Sol (flagship), Terra (performance comparável ao GPT-5.5 a metade do custo) e Luna (mais rápido/barato). Disponível apenas via API e Codex a parceiros de confiança — ainda não está no ChatGPT. Pricing por 1M tokens: Sol $5/$30 in/out, Terra $2.50/$15, Luna $1/$6. Introduz prompt caching mais previsível (cache breakpoints explícitos, vida mínima de cache de 30 min). GA prevista "nas próximas semanas".
-
-- **Google — June 2026 spam update concluído** — [Google Search Status Dashboard](https://status.search.google.com/incidents/YUX1peHev5a4fkxLDiUQ). Rollout de 24–26 junho via SpamBrain; visa scaled content abuse, cloaking, sneaky redirects e scraped content (não visa link spam nem site reputation abuse). É o braço de aplicação da expansão da política de spam de 15 maio, que passou a classificar explicitamente a manipulação de respostas de IA generativa (AI Overviews/AI Mode) como spam.
-
-### 📊 Estudos & dados
-
-- **38% das citações em AI Overviews vêm agora do top-10 orgânico (era ~76%)** — [Ahrefs](https://ahrefs.com/blog/ai-overview-citations-top-10/). Análise de 863K keywords e 4M URLs de AI Overviews mostra que a sobreposição com o ranking clássico caiu de ~76% (julho 2025) para 38% — a posição orgânica é hoje um preditor bastante mais fraco da citação em IA do que há um ano.
-
-- **YouTube lidera citações em Google AI Overviews com 20,9% de share** — [Ahrefs](https://ahrefs.com/blog/most-cited-domains-ai-overviews/). Ranking dos 50 domínios mais citados em AI Overviews, com base em mais de 3M queries US rastreadas em junho de 2026.
-
-### ⚙️ Mudanças nas plataformas
-
-- **Perplexity — Deep Research no Computer passa a correr em Claude Opus 4.6** — [perplexity.ai/changelog](https://www.perplexity.ai/changelog). Adiciona também command panel, forking de sessões e controlos enterprise (Computer Analytics API, limites de crédito personalizados).
-
-### 💡 Implicações para destaque.ai
-
-- A queda de ~76% para 38% na sobreposição entre top-10 orgânico e citações em AI Overviews confirma que otimizar apenas para ranking clássico já não garante presença nas respostas geradas — reforça o caso para tracking dedicado de citações IA nos relatórios de clientes B2B.
-- O spam update de junho, ao ligar formalmente a manipulação de AI Overviews à penalização, valida o posicionamento de GEO "branco" (dados próprios, structured data, E-E-A-T) em vez de táticas agressivas de force-fit em listicles — bom argumento de venda contra abordagens de risco da concorrência.
-- GPT-5.6 ainda em preview restrito (API/Codex, sem ChatGPT): sem impacto imediato em GEO/AEO, mas monitorizar — se Terra/Luna se tornarem default no ChatGPT Search, a economia de custo pode alterar o volume de queries com web search activo. Awareness por agora.
-
-**Nota de execução**: esta é a primeira entrada em `skills/geo-seo-aeo-master/daily-agent/` desde 2026-06-05 (gap de ~26 dias). Cobertura de hoje limitada às últimas 24-72h conforme o mandato do prompt — não é um backfill retroactivo do período em falta.
 
