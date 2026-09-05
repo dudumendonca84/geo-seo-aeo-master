@@ -442,6 +442,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 38. Kumar — Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines
+
+- **URL.** https://arxiv.org/abs/2606.20065
+- **Date.** Mar–May 2026 fieldwork (absorbed retroactively — reported in `news-feed.md` 2026-07-02, never carried into this file; caught during the 2026-09-05 pre-truncate absorption pass, 64 days after first appearing).
+- **Sample.** 100,000+ prompt responses across 100+ brands, multiple AI search engines.
+- **Finding.** ~78% of citations go to the brand's own corporate site; YouTube is the leading non-corporate cited source; listicle/"best-of" content accounts for ~21% of cited formats.
+- **Caveat.** Single-author arXiv preprint, not peer-reviewed; engine mix and exact date window not fully specified in the news-feed summary that carried it forward.
+- **Use.** Corroborates the destaque.ai pitch that owned-domain content (not third-party PR) is still the dominant lever for citation — 78% corporate-site share means a client's own site quality matters more than earned mentions for most engines. Pair with §5 (BrightEdge presence) when explaining why the audit weights on-site content so heavily.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -464,4 +475,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry before it fell out of the 60-day truncation window).
+Last refresh: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
