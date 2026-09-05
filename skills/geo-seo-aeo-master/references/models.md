@@ -44,6 +44,7 @@ When citing capabilities, **always include the model version and the date observ
 
 | Model | Released | Context | Web search | Default in |
 |---|---|---|---|---|
+| **GPT-6 Astra** (`gpt-6-astra`) | 3 Sep 2026 (limited preview) | 1.05M tokens | Not disclosed | Gated rollout: Daybreak-program enterprise/cybersecurity customers first, then Plus/Pro/Business/Enterprise + API "over the coming days" — **not yet the default anywhere**; `gpt-5.6-sol` remains the Plus/Pro/Business/Enterprise default as of this refresh |
 | **GPT-5.6 — Sol** (`gpt-5.6-sol`) | 9 Jul 2026 (GA) | 256k tokens | Yes (with tool) | ChatGPT Plus/Pro/Business/Enterprise default (regular chat) since 9 Jul 2026; gradual rollout, not yet on Free/Go |
 | **GPT-5.6 — Terra** (`gpt-5.6-terra`) | 9 Jul 2026 (GA) | 256k tokens | Yes (with tool) | ChatGPT Work default for Free/Go; selectable elsewhere. ~Sol performance at lower cost |
 | **GPT-5.6 — Luna** (`gpt-5.6-luna`) | 9 Jul 2026 (GA) | 256k tokens | Yes (with tool) | Lowest-cost GPT-5.6 variant; selectable in ChatGPT Work, API |
@@ -54,6 +55,8 @@ When citing capabilities, **always include the model version and the date observ
 | **GPT-4.5** | 2025 | 128k | Yes | **Retiring June 27 2026** — 30-day sunset announced |
 | **o1 / o1-pro** | Sept 2024 | 128k | No (reasoning only) | "Think longer" mode |
 | **o3 / o3-pro** | Jan 2026 | 200k | Yes | **Retiring August 26 2026** — 90-day sunset announced |
+
+**GPT-6 Astra launch (3 Sep 2026)** — OpenAI's first model explicitly framed as "AGI-era" and its first model rated "Critical" for cybersecurity risk under OpenAI's own preparedness framework, which is why access starts gated to Daybreak-program enterprise/cybersecurity partners before a broader Plus/Pro/Business/Enterprise/API rollout. 128K max output tokens, text+image input, knowledge cutoff 30 Apr 2026, pricing $10/$50 per million input/output tokens. Headline capability is autonomous "computer use" (browsing, file/code work, long-running agent tasks) — reports 72.6% on an OSWorld 2.0 offline subset vs. 65.7% for GPT-5.6 Sol. **No disclosed change to ChatGPT Search's retrieval, source-ranking, or citation mechanics** — this is a capability/model release, not a confirmed GEO-mechanic change, and the Deck Builder `chatgpt` mapping is left unchanged (`gpt-5.6-sol` still what real users encounter by default) until the rollout actually displaces it. Minor credibility wrinkle worth noting: the official blog post published ~2h later than OpenAI's own stated time, and OpenAI revised some published benchmark numbers the following day. Source: [openai.com/index/gpt-6-astra](https://openai.com/index/gpt-6-astra/) (3 Sep 2026; `WebFetch` blocked by this session's proxy, corroborated via `WebSearch` — Bloomberg, CNBC, Fortune, VentureBeat).
 
 ### Products and which model
 

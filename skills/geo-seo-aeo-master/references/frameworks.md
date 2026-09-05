@@ -210,6 +210,12 @@ A structural-retrieval study found that embedders used in retrieval pipelines ca
 
 At I/O 2026 (27 Jun), Google launched **Search Agents** for AI Pro/Ultra subscribers — an agent that runs in the background 24/7 and pushes a notification with source citations when it finds something relevant, without the user issuing a query at that moment ([blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)). This is a distinct discovery mode from query-time retrieval: visibility depends on being *continuously* citable and monitorable, not on ranking well for a one-off search. Practical implication: being crawlable/citable is now a condition for passive discovery too — a brand can be surfaced to a user who never searched for it that day. Still early (US rollout, Pro/Ultra only); revisit as it reaches more markets and tiers.
 
+### Citation counts undercount real exposure (Jul 2026, absorbed retroactively Sep 2026)
+
+Log-level analysis of ChatGPT Deep Research (~1,240 source records) found the agent reads far more pages than it ends up citing — it follows internal links and reads image alt text, and typically only the top 2-3 Bing results per sub-query make it into the read set at all ([Peec AI](https://peec.ai/blog/how-chatgpt-deep-research-reads-your-site-what-the-logs-reveal), Jun 2026; caveat: small sample, informal methodology, not peer-reviewed). Practical implication: "share of citation" as reported to clients is a floor, not a ceiling, on real model exposure — worth a methodological caveat in reports, not (yet) a metric change, given the sample size.
+
+A separate position paper on GEO governance ([Wen et al., arXiv:2606.12439](https://arxiv.org/abs/2606.12439)) argues the same low-contestability dynamic creates two risks worth naming to clients: influence concentration (a handful of sources feed most answers on a topic) and undisclosed commercial influence in the evidence an engine cites. Argumentative, not empirical — flagged here as context for the "why GEO governance matters" conversation, not as an audit input.
+
 ### Content patterns that get cited (cross-engine consensus)
 
 From Aggarwal et al. plus vendor follow-ups (Profound, Ahrefs, Semrush, Qwairy):
