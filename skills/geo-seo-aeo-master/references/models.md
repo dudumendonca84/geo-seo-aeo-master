@@ -232,6 +232,7 @@ Perplexity uses a multi-model architecture: user can select per-query.
 
 | Model | Released | Open weights | Notes |
 |---|---|---|---|
+| **DeepSeek V4-Pro** | 13 Aug 2026 | Yes | GA upgrade over V4; not yet reflected in the Deck Builder mapping below (still `deepseek-v4-flash`) |
 | **DeepSeek V4** | Mar 2026 | Yes | Frontier-tier reasoning at fraction of frontier cost |
 | **DeepSeek V3.5** | Dec 2025 | Yes | Earlier reasoning model |
 | **DeepSeek R1** | Jan 2025 | Yes | Pure reasoning, no tools |
@@ -240,6 +241,7 @@ Perplexity uses a multi-model architecture: user can select per-query.
 
 - Tracked by Profound, Goodie and Semrush AI Toolkit among monitored engines.
 - China-based; geographic/regulatory considerations for some clients.
+- A "DeepSeek-V4-Flash-Vision-Exp" multimodal variant was reported by weak secondary sources around 1 Sep 2026 — not corroborated against deepseek.com or api-docs.deepseek.com (unreachable this session), not treated as confirmed.
 
 ---
 

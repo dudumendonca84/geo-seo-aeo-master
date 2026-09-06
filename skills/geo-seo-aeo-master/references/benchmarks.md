@@ -453,6 +453,26 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
+## 39. Semrush — AI-visibility and conversion by channel
+
+- **URL.** https://searchengineland.com/semrush-is-bringing-ai-visibility-under-the-spotlight-487137
+- **Date.** 4 Sep 2026.
+- **Sample.** Semrush analysis of 500+ high-value marketing/SEO topics; WebFetch to searchengineland.com blocked this session, cross-corroborated via WebSearch only — treat as moderate confidence pending direct read.
+- **Finding.** Over a third of consumers now start a search in an AI tool rather than a traditional search engine; visitors arriving via AI-search channels convert 4.4x more often than organic-search visitors on the same sites.
+- **Caveat.** Vendor study (Semrush); "high-value" topic selection and conversion definition not independently verified; single-article source, no underlying methodology paper located.
+- **Use.** The conversion multiple (4.4x) is a sharper sales argument than raw visibility share for clients who ask "why does AI-search traffic matter if the volume is still small" — pairs with §30/§37 for the B2B-specific version of the same argument.
+
+## 40. Ten Speed / Peec AI — content-type citation share at the B2B evaluation stage
+
+- **URL.** https://www.searchenginejournal.com/product-pages-get-24-of-ai-citations-reddit-youtube-4/587560/
+- **Date.** Reported early Sep 2026 (exact publish date not confirmed this session; WebFetch to searchenginejournal.com blocked).
+- **Sample.** 7,000+ citations across 220 B2B evaluation-stage prompts, drawn from Peec AI's citation-monitoring data across ChatGPT, Perplexity, Claude and Gemini, for Ten Speed's own client base.
+- **Finding.** Brand-controlled content (product pages, articles, homepage) accounts for 88% of citations at the evaluation stage of a B2B buying journey; product pages alone get roughly 6x the citation volume of Reddit; Reddit and YouTube combined account for only ~4% of citations at this stage, against a 24% share for product pages.
+- **Caveat.** Explicitly disclosed by the study itself: the dataset is limited to Ten Speed's own B2B SaaS/professional-services client base, not a universal benchmark — funnel-stage-specific (evaluation, not awareness), so it should not be read as "UGC doesn't matter" across the whole journey.
+- **Use.** Directly relevant to destaque.ai's B2B SaaS book: at the evaluation stage, the actionable lever for a client is their own product/comparison pages, not Reddit seeding — corrects a common client assumption that "getting into Reddit threads" is the fastest GEO win. Caveat the funnel-stage scope when citing to a client.
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
@@ -475,4 +495,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
+Last refresh: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
