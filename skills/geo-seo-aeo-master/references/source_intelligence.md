@@ -81,6 +81,47 @@ disso, e a leitura fácil ("o motor traduz") era falsa: a causa estava na
 chamada. Antes de atribuir comportamento de língua a um motor, confirmar
 que a chamada declara o mercado.
 
+## A fonte não é da categoria: é de quem pergunta (7 Set 2026)
+
+Uma medição de fontes que junta todas as perguntas da semana responde à
+pergunta errada. A categoria não lê: lêem pessoas, e a pesquisa que o
+motor formula depende de quem está do outro lado.
+
+Medido na destaque.ai, semana de 7 de Setembro de 2026, 134 perguntas
+repartidas por quatro personas, modo com pesquisa:
+
+| Persona | Domínios distintos | Ligações |
+|---|---|---|
+| Comprador | 971 | 2219 |
+| CMO | 393 | 723 |
+| Decisor técnico | 390 | 739 |
+| CEO/fundador | 343 | 572 |
+
+O número que importa não é o tamanho de cada lista: é a **sobreposição
+entre elas**. Um domínio que aparece numa persona e em mais nenhuma é uma
+porta para essa pessoa, e o conteúdo que a abre não é o mesmo que abre as
+outras. É o argumento mais concreto que este método tem contra escrever
+"para a categoria".
+
+**A consequência para um plano de ação.** Uma ação sem persona diz
+"publica sobre X". Com persona diz "publica sobre X para o decisor
+técnico, que é quem lê o domínio onde a categoria aparece e a marca não".
+A segunda tem destinatário, e por isso tem tom, canal, formato e um sítio
+onde ser distribuída.
+
+**Duas cautelas, e as duas são de honestidade.**
+
+- **Uma persona só não se reparte.** Um negócio local mede-se todo com
+  "cliente local": repartir daria a lista geral com outro título, e tudo
+  apareceria como exclusivo. Nesse caso a vista não existe, e diz-se.
+- **Pergunta sem persona não é uma persona chamada "geral".** Fica de
+  fora da contagem. Metê-la como grupo inflacionaria a exclusividade de
+  todos os outros.
+
+A mesma conta serve para repartir por motor, e é a mesma implementação
+(`agruparFontes`, no executor). Duas contas para a mesma pergunta acabam
+sempre com dois números no mesmo ecrã.
+
 ## Semanas
 
 <!-- A Routine acrescenta aqui: ## YYYY-MM-DD, um bloco por motor com
