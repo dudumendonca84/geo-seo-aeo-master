@@ -1,6 +1,6 @@
 ---
 name: tracker-forensics
-description: Análise forense dos dados do Visibility Tracker da destaque.ai — citações por motor, tipos de fonte, directórios, superfícies de sessão real, tráfego atribuído a IA. Usar quando alguém pedir para procurar padrões, correlações ou "coisas bizarras" nos dados de auditoria; quando quiser saber que tipo de fonte cada motor cita; quando for preciso decidir se um número aguenta ser publicado ou posto numa proposta; ou antes de transformar uma consulta pontual numa página recorrente do produto. Contém o mapa das tabelas, a taxonomia de fontes, consultas prontas, e as armadilhas que já produziram conclusões falsas.
+description: Análise forense dos dados do Visibility Tracker da destaque.ai — citações por motor, tipos de fonte, directórios, superfícies de sessão real, pesquisas internas do motor, tráfego atribuído a IA. Usar quando alguém pedir para procurar padrões, correlações ou "coisas bizarras" nos dados de auditoria; quando quiser saber que tipo de fonte cada motor cita ou o que ele pesquisou antes de responder; quando for preciso decidir se um número aguenta ser publicado ou posto numa proposta; ou antes de transformar uma consulta pontual numa página recorrente do produto. Contém o mapa das tabelas, o crivo de cinco perguntas, a taxonomia de fontes, consultas prontas, e as armadilhas que já produziram conclusões falsas.
 ---
 
 # tracker-forensics
@@ -12,8 +12,13 @@ já caímos.
 
 **Princípio único, do qual tudo o resto decorre:** um número que vai para
 uma proposta é uma promessa. Antes de o escrever, tem de sobreviver às
-quatro perguntas da secção *O crivo*. A maior parte não sobrevive, e é
+cinco perguntas da secção *O crivo*. A maior parte não sobrevive, e é
 melhor descobri-lo aqui do que numa reunião.
+
+**Este ficheiro tem de acompanhar o esquema.** Uma análise escrita contra
+colunas que já mudaram não dá erro: dá um número a menos, em silêncio. A
+secção *O que mudou na medição* existe para isso, e a 7 de Setembro de
+2026 três instruções deste ficheiro estavam a mandar ler a coluna errada.
 
 ## Onde estão os dados
 
@@ -22,12 +27,12 @@ Supabase `finzjovasqhxtkntbods`, esquema `tracker`. Tudo filtrado por
 
 | O que | Tabela | Notas |
 |---|---|---|
-| Respostas dos motores | `audit_responses` | uma linha por (prompt × motor × modo). `raw_citations` é `jsonb`: lista de `{url, title, domain}` |
+| Respostas dos motores | `audit_responses` | uma linha por (prompt × motor × modo). `raw_citations` é `jsonb`: lista de `{url, title, domain, cited?, query?}`. Ver *O que mudou na medição* |
 | A auditoria | `weekly_audits` | `client_id`, `week_start`, `status`. Liga-se por `weekly_audit_id` |
 | Perguntas | `prompts` | `active`, `prompt_text` |
 | Concorrentes | `competitors` | `bucket` — `peer` vs `adjacent_*`, decidido pela Routine |
 | Sessão real (montras) | `ui_observations` | claude.ai, meta.ai, ChatGPT app, Rufus. Uma linha por item; sem item, linha só com a resposta |
-| Fontes da sessão real | `ui_observation_sources` | `scope='answer'`. **Convenção: citadas têm `source_name` (título); apenas lidas têm-no a nulo** |
+| Fontes da sessão real | `ui_observation_sources` | `scope='answer'`. **Tem coluna `cited` desde a migração 0109 (Set 2026): usa-a. A convenção antiga do `source_name` está morta** |
 | Pesquisa Google | `gsc_daily`, `gsc_pages`, `gsc_queries` | cliques da PESQUISA, nunca de IA |
 | Analytics | `ga4_daily`, `ga4_ai_daily` | `ga4_ai_daily.source` já classificado |
 
@@ -48,7 +53,7 @@ where cl.name = '<cliente>'
 
 ## O crivo
 
-Quatro perguntas. Um número que falhe uma delas não sai daqui.
+Cinco perguntas. Um número que falhe uma delas não sai daqui.
 
 **1. O denominador mexeu-se?** É a armadilha número um, e apanhou-nos a
 25 Ago 2026: as citações próprias da destaque.ai passaram de 2 para 153 em
@@ -71,6 +76,22 @@ nulo significa *não medido* e é indistinguível de *não havia*. As 221
 linhas do carrossel anteriores a 25 Ago têm `sponsored` nulo — não servem
 de linha de base para medir o arranque dos anúncios. Quando o extractor
 OLHA para uma coisa, tem de gravar `false`, não deixar nulo.
+
+**5. Este nome é também uma palavra comum?** Acrescentada a 7 Set 2026
+depois de a resposta ser sim treze vezes. `NOS` é *nos*, `ERA` é *era*,
+`FLAG` é *flag*, `ISTO` é *isto*, `Continente` é *continente*. Das 11
+respostas com menção gravada à NOS, **9 eram a preposição** ("popular nos
+20-35 anos", "nos 50 melhores hospitais da Europa"), e a NOS aparecia como
+marca mencionada numa pergunta sobre supermercados.
+
+A correcção está em código (`AMBIGUAS` em `lib/brands/mentions.ts`: essas
+marcas contam só na grafia exacta) mas o crivo continua a precisar dela,
+porque uma consulta SQL escrita à mão com `ilike '%nos%'` não passa por
+essa função. **E a regra não é sobre a caixa das letras**: a primeira
+tentativa foi "maiúsculas só contam em maiúsculas" e teria apagado 21
+menções verdadeiras, porque as respostas escrevem "Empresas como Kwan,
+PrimeIT, Aubay" e "NTT Data, Capgemini". O discriminador é ser palavra
+comum, e essa lista não se deriva: lista-se.
 
 ## Taxonomia de fontes
 
@@ -149,14 +170,62 @@ gravou as fontes que tinha encontrado. Errado no valor e no sujeito.
 Corrigido na origem pela migração 0079 do Tracker, que recusa uma resposta
 augmented escrita à mão sem fontes e sem explicação. **Lição para o crivo:
 antes de citar um número sobre o comportamento de um motor, confirmar QUEM
-escreveu a linha** — a latência e os tokens dizem-no: a API preenche-os
-sempre, quem escreve à mão deixa-os a zero. Nunca misturar
+escreveu a linha.** Isso deixou de se inferir: `audit_responses.source` é
+declarada (`api` | `routine` | `observatory`) desde 27 Ago 2026, e
+`analyzed_by` diz que modelo LEU a resposta. A latência e as fichas servem
+de confirmação e já não de resposta, porque as linhas da sessão real
+também não têm latência de API e são medição legítima. Nunca misturar
 `audit_responses` (API) com `ui_observations` (aplicação) no mesmo total —
 são vias diferentes, e a diferença entre elas é que é o achado.
 
-**Citadas contra lidas.** Em `ui_observation_sources`, a única marca que as
-distingue é o `source_name` estar preenchido. Não há coluna booleana; quem
-escrever uma consulta sem saber isto conta tudo como citado.
+**Citadas contra lidas.** Havia uma convenção frágil (o `source_name`
+preenchido) e passou a haver uma coluna: `ui_observation_sources.cited`
+desde a migração 0109, e `cited` dentro de cada objecto de
+`audit_responses.raw_citations`. **Usa a coluna.** E lê o nulo como nulo:
+`cited` ausente quer dizer que o fornecedor não separa as duas listas, não
+que a fonte não foi citada. Hoje separam o ChatGPT, o Grok, o Gemini e o
+Perplexity; o Claude só quando pesquisa fora do `code_execution`.
+
+## O que mudou na medição (Set 2026)
+
+Cinco colunas novas, e cada uma responde a uma pergunta que antes não se
+podia fazer. Estão aqui porque uma análise escrita contra o esquema antigo
+não dá erro: dá um número a menos, em silêncio.
+
+| Coluna | Pergunta que passa a ter resposta |
+|---|---|
+| `audit_responses.source` | quem escreveu esta linha: a API, a Routine, ou a sessão real? |
+| `audit_responses.analyzed_by` | que modelo a leu? |
+| `audit_responses.search_queries` | que pesquisas o MODELO formulou a partir da nossa pergunta? |
+| `raw_citations[].cited` | leu, ou sustentou a resposta nela? |
+| `raw_citations[].query` | qual das pesquisas dele trouxe esta fonte? |
+
+**Três camadas que não se confundem**, e confundi-las é a maneira mais
+fácil de escrever um número errado com os dados novos:
+
+1. **Procurou** (`search_queries`): a marca aparece nas pesquisas dele.
+   Estar na lista de candidatos vem ANTES de ser encontrado.
+2. **Encontrou** (`raw_citations`, ou `raw_citations[].query` para saber em
+   que sub-pergunta): a marca está nas fontes.
+3. **Usou** (`cited = true`): a resposta sustentou-se nela.
+
+Uma marca pode estar nas três, em duas, ou só na primeira, e cada
+combinação aponta para trabalho diferente. Ver `gap_action_mapping.md` §
+"A jornada de pesquisa" na skill do método.
+
+**Resposta vazia não é "não te citaram".** O DeepSeek gastava as fichas a
+raciocinar e devolvia zero letras, sem `error`. Uma consulta que filtre só
+por `error is null` conta essas como respostas onde a marca não aparece.
+São 115 declaradas na migração 0106, e o filtro certo é o
+`measurableRows`, que exclui vazias, erros e mocks. Se estiveres a contar
+respostas em SQL, replica-o: `coalesce(response_text,'') <> ''`.
+
+**Custo.** `audit_responses.cost_usd` traz o valor DECLARADO pelo
+fornecedor quando ele o dá (hoje só o Perplexity); quando não vem,
+multiplica-se pela tabela `## Token prices` de `models.md`. Três modelos
+têm preço que depende de alguma coisa (o DeepSeek da hora, o Grok do
+tamanho do contexto, o Perplexity do número de pedidos), portanto um custo
+calculado nesses é um PISO e diz-se isso.
 
 ## Camada preditiva
 
