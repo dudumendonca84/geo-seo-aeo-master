@@ -457,10 +457,10 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 - **URL.** https://searchengineland.com/semrush-is-bringing-ai-visibility-under-the-spotlight-487137
 - **Date.** 4 Sep 2026.
-- **Sample.** Semrush analysis of 500+ high-value marketing/SEO topics; WebFetch to searchengineland.com blocked this session, cross-corroborated via WebSearch only — treat as moderate confidence pending direct read.
-- **Finding.** Over a third of consumers now start a search in an AI tool rather than a traditional search engine; visitors arriving via AI-search channels convert 4.4x more often than organic-search visitors on the same sites.
-- **Caveat.** Vendor study (Semrush); "high-value" topic selection and conversion definition not independently verified; single-article source, no underlying methodology paper located.
-- **Use.** The conversion multiple (4.4x) is a sharper sales argument than raw visibility share for clients who ask "why does AI-search traffic matter if the volume is still small" — pairs with §30/§37 for the B2B-specific version of the same argument.
+- **Sample.** Semrush analysis of 500+ high-value marketing/SEO topics (1,094 categories analyzed for the ownership stat below); WebFetch to searchengineland.com blocked this session, cross-corroborated via WebSearch only — treat as moderate confidence pending direct read.
+- **Finding.** Over a third of consumers now start a search in an AI tool rather than a traditional search engine; visitors arriving via AI-search channels convert 4.4x more often than organic-search visitors on the same sites. **Added 07 Sep 2026, same source article, found on a second pass:** only 15.2% of the 1,094 categories analyzed have a "clear owner" in AI search — 85% remain contestable, i.e. no single brand dominates the AI answer yet.
+- **Caveat.** Vendor study (Semrush); "high-value" topic selection, conversion definition and "clear owner" threshold not independently verified; single-article source, no underlying methodology paper located.
+- **Use.** The conversion multiple (4.4x) is a sharper sales argument than raw visibility share for clients who ask "why does AI-search traffic matter if the volume is still small" — pairs with §30/§37 for the B2B-specific version of the same argument. The 85%-contestable figure is a distinct, separately usable argument: for most prospects, the category is not yet settled, which is a stronger opener than "you're behind" — it supports a first-mover framing instead of a catch-up framing.
 
 ## 40. Ten Speed / Peec AI — content-type citation share at the B2B evaluation stage
 
@@ -470,6 +470,24 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Finding.** Brand-controlled content (product pages, articles, homepage) accounts for 88% of citations at the evaluation stage of a B2B buying journey; product pages alone get roughly 6x the citation volume of Reddit; Reddit and YouTube combined account for only ~4% of citations at this stage, against a 24% share for product pages.
 - **Caveat.** Explicitly disclosed by the study itself: the dataset is limited to Ten Speed's own B2B SaaS/professional-services client base, not a universal benchmark — funnel-stage-specific (evaluation, not awareness), so it should not be read as "UGC doesn't matter" across the whole journey.
 - **Use.** Directly relevant to destaque.ai's B2B SaaS book: at the evaluation stage, the actionable lever for a client is their own product/comparison pages, not Reddit seeding — corrects a common client assumption that "getting into Reddit threads" is the fastest GEO win. Caveat the funnel-stage scope when citing to a client.
+
+## 41. Fractl/Search Engine Land — 1 million keywords, redistributed not reduced demand
+
+- **URL.** https://searchengineland.com/what-1-million-keywords-reveal-about-ais-impact-on-search-481474
+- **Date.** 2 Jul 2026. Absorbed 07 Sep 2026 (daily-agent truncate-before-absorb pass — this study sat in `news-feed.md` unabsorbed for 67 days before today).
+- **Sample.** Fractl/Search Engine Land analysis of 1,010,848 high-volume keywords (10k+ searches/month), 379 brands, 8 verticals.
+- **Finding.** 29% of high-volume search demand is in decline, but a near-equivalent volume is growing in other categories — total demand is being redistributed across categories, not shrinking overall.
+- **Caveat.** Aggregate, cross-vertical figure; the 29%/equivalent-growth split will not hold evenly per individual vertical or client category.
+- **Use.** Reframes client reporting away from "total traffic" toward tracking which specific query categories are gaining vs. losing share — a client with declining total search volume may simply be in a shrinking category while demand grows elsewhere, which changes the recommended response (content pivot vs. technical fix).
+
+## 42. Search Engine Journal / Bocconi University — AI search grows without displacing Google, except in query volume
+
+- **URL.** https://www.searchenginejournal.com/google-chatgpt-audience-search-queries-clicks/588200/
+- **Date.** 4 Sep 2026.
+- **Sample.** Similarweb audience-overlap tracking (Sep 2025 → May 2026) plus a separate Bocconi University household-level study.
+- **Finding.** 95% of ChatGPT users also show up in Google's audience — a figure that hasn't moved from Sep 2025 to May 2026 — even as generative-AI platform visits grew 70% YoY (Similarweb). Separately, Bocconi University found a 9.4% drop in traditional search queries among households with ChatGPT Search access.
+- **Caveat.** These are two different measures, not one contradicting the other: audience overlap (do the same people use both) stayed flat, while query volume per household (how often they search Google) fell for the subset with ChatGPT Search access. Read together they say people aren't leaving Google, but are searching it less per session once they have an AI alternative.
+- **Use.** Corrects the client-facing narrative "Google traffic is being replaced" — audience isn't leaving, query volume is softening at the margin. Supports pitching AI-search visibility as additive coverage, not a defensive replacement for SEO; the 9.4% query-volume figure is the one number worth watching over time as a leading indicator, not the overlap figure.
 
 ---
 
@@ -495,4 +513,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
+Last refresh: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
