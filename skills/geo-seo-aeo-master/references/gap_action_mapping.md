@@ -654,6 +654,116 @@ auditoria semanal (antes/depois no prompt visado).
 
 ---
 
+## A jornada de pesquisa: o que o motor faz ANTES de responder
+
+Escrito a 7 Set 2026. Estes patterns leem-se sobre a jornada medida em
+`export-pending` (campo `jornada`) e sobre as consultas internas por
+pergunta. **A contagem está em código; o julgamento está aqui.** Nenhum
+limiar abaixo é derivado dos dados: são escolhas, e por isso estão
+escritas onde se podem discutir e mudar sem um deploy.
+
+O que se mede, e o que cada coisa quer dizer:
+
+| Campo | Pergunta a que responde |
+|---|---|
+| `procuradoPeloNome` / `respostasComPesquisa` | a marca está na lista de candidatos que o motor traz de casa? |
+| `leuENaoCitou` | encontrou o site e passou-lhe à frente? |
+| `repeticao.sobreposicaoMediana` | os motores vão pelo mesmo caminho, ou cada um pelo seu? |
+| `termosEstranhos` | que vocabulário entrou nas pesquisas e não veio de nenhuma pergunta nossa? |
+
+**Nada disto se lê quando `respostasComPesquisa` é baixo.** Abaixo de 20
+respostas com consultas expostas, a semana não sustenta nenhum destes
+patterns: diz-se que não há base e não se abre acção nenhuma. Só três
+fornecedores expõem consultas (OpenAI, Google, xAI), portanto o
+denominador é sempre uma fatia da semana.
+
+### Pattern: nunca procurado pelo nome (`procuradoPeloNome` = 0)
+
+O motor pesquisou dezenas de vezes e nunca escreveu o nome da marca. Não
+está no conjunto de candidatos: não é uma questão de a página estar bem
+ou mal, porque a página nunca chega a ser considerada.
+
+**Dimensão: authority (4) e entity (3), nunca technical.** A acção é ser
+nomeado onde o motor lê: imprensa Tier-1, listas e comparativos de
+terceiros, comunidade. Um item Wikidata e um artigo Wikipédia atacam a
+mesma falha por outro lado.
+
+**Não propor trabalho on-page para esta falha.** É o erro clássico e é
+caro: melhora uma página que ninguém vai buscar.
+
+### Pattern: procurado pelo nome mas não citado
+
+O contrário, e a acção é oposta. O motor foi verificar a marca e o que
+encontrou não chegou. Aqui sim é conteúdo e prova: página que responda à
+pergunta concreta, dados próprios, terceiros que confirmem o que a marca
+diz de si.
+
+Quando `leuENaoCitou` também é alto, isto está confirmado por duas vias:
+ele procurou, encontrou, leu, e escolheu outra coisa. **É o achado mais
+accionável que esta metodologia produz**, porque elimina indexação e
+descoberta da lista de causas.
+
+### Pattern: os motores não se repetem (`sobreposicaoMediana` < 0,25)
+
+Cada motor vai por seu lado na mesma pergunta. Consequência dura para o
+plano: **uma acção não serve todos**, e um plano escrito como se servisse
+gasta esforço a metade.
+
+Acção: priorizar por motor, com o bloco desse motor em
+`engine_playbooks.md`, e dizer ao cliente que a subida vai ser desigual.
+
+### Pattern: os motores repetem-se (`sobreposicaoMediana` > 0,6)
+
+Convergem no mesmo vocabulário e nas mesmas fontes. Uma peça bem colocada
+mexe em vários ao mesmo tempo, e o plano deve concentrar em vez de
+espalhar. É também o cenário em que um domínio dominante vale mais: se
+todos passam por lá, estar lá é a alavanca.
+
+### Pattern: termo estranho que é OUTRO SENTIDO do mesmo nome
+
+O nome da categoria colide com outro domínio de conhecimento. Medido na
+destaque.ai: "quanto custa uma auditoria GEO" gerou `"auditoria
+geotecnica" preco` e `quanto custa "auditoria de barragem"`.
+
+**Dimensão: positioning (8), não technical.** A acção é colar o termo à
+categoria certa em texto que o motor leia: uma página que defina o termo
+sem ambiguidade, e presença em fontes onde o termo já aparece com o
+sentido certo. Nenhuma quantidade de schema resolve uma desambiguação.
+
+### Pattern: termo estranho que é a TRADUÇÃO do nosso vocabulário
+
+Medido na mesma semana, e foi a surpresa: os termos estranhos mais
+frequentes da destaque.ai não eram erros. Eram `engine` (63 consultas),
+`generative` (62), `agency` (22), `consultancy`, `pricing`, `visibility`.
+As perguntas estão em português e dizem "GEO"; o motor expande para
+"Generative Engine Optimization" em inglês e pesquisa nessa língua.
+
+**Isto não é um problema, é uma instrução.** A prova tem de existir na
+língua em que ele procura. Uma marca portuguesa cujo site só diz "GEO"
+em português está a competir por evidência inglesa que não produziu.
+
+**Dimensão: content (2).** Acção: a página canónica da categoria carrega
+os dois termos, o português e o inglês por extenso, e pelo menos uma peça
+de prova (caso, dados, comparativo) existe em inglês.
+
+**Cuidado ao ler:** uma tradução do nosso próprio vocabulário NÃO se
+reporta como associação errada. Distinguem-se com uma pergunta: este
+termo é o mesmo conceito noutra língua, ou é outro conceito? Em dúvida,
+não se abre acção.
+
+### Pattern: termo estranho que é um MERCADO que não é o nosso
+
+`AI search optimization agency Portugal Brazil` numa pergunta portuguesa.
+É por aí que entram concorrentes de outro país na medição, e explica um
+nome que aparece do nada na lista de concorrentes.
+
+**Dimensão: positioning (8).** Acção: reforçar os sinais de mercado
+(morada, moeda, língua, casos locais, `hreflang`) e, no relatório,
+declarar que aquele concorrente veio de outra geografia em vez de o
+apresentar como rival direto.
+
+---
+
 ## Patterns transversais (cross-dimensional)
 
 ### Pattern: Citation rate <10% em todos os motores
@@ -689,4 +799,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 29 May 2026.
+Last refresh: 7 Set 2026 (secção nova: a jornada de pesquisa).
