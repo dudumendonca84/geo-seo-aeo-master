@@ -81,6 +81,57 @@ disso, e a leitura fácil ("o motor traduz") era falsa: a causa estava na
 chamada. Antes de atribuir comportamento de língua a um motor, confirmar
 que a chamada declara o mercado.
 
+## A consulta interna é o mapa de associações do motor (7 Set 2026)
+
+Entre a pergunta do utilizador e a resposta há um passo que não se vê: o
+modelo reescreve a pergunta em consultas suas. Medi-lo muda o diagnóstico,
+porque é a única parte da cadeia que mostra o que o motor **já pensava**
+antes de ir ver.
+
+Medido na destaque.ai, 7 de Setembro de 2026, motor Gemini, pergunta "que
+consultora de GEO em Portugal tem casos de sucesso comprovados": nove
+consultas, e seis nomeiam uma marca.
+
+```
+"UniK SEO" "GEO" case study OR "caso de estudo" OR "sucesso"
+"Latigid" "GEO" caso de sucesso OR "sucesso"
+"Marco Gouveia" "GEO" caso de sucesso OR "sucesso"
+"destaque.ai" GEO Portugal
+"Which Agencies in Portugal Help Brands Appear in ChatGPT Answers" "Index Lab"
+consultora GEO Portugal
+```
+
+**Ser procurado pelo nome é uma métrica diferente de ser citado, e vem
+antes dela.** O motor tem uma lista de candidatos antes de pesquisar. Quem
+está nela é verificado; quem não está não pode ser encontrado, por melhor
+que a página esteja. As duas falhas pedem trabalho oposto:
+
+| O que se mede | O que falta | O que fazer |
+|---|---|---|
+| não é procurado pelo nome | notoriedade | ser nomeado onde o motor lê: imprensa, comunidade, terceiros |
+| é procurado e não é citado | prova | página que responda à pergunta, e terceiros que confirmem |
+
+**Segunda leitura: a desambiguação falha, e mede-se.** Para "quanto custa
+uma auditoria GEO", duas das seis consultas do Gemini foram `"auditoria
+geotecnica" preco` e `quanto custa "auditoria de barragem"`. Um terço do
+orçamento de pesquisa gasto em engenharia civil. Quando o nome da
+categoria colide com outro sentido, a correção é de posicionamento (colar
+o termo à categoria em texto que o motor leia) e nunca de SEO técnico.
+
+**Terceira: o mercado escorrega.** `AI search optimization agency Portugal
+Brazil` numa pergunta portuguesa. É assim que um concorrente de outro país
+entra numa medição nacional sem ninguém dar por isso.
+
+**Quem expõe as consultas.** OpenAI (Responses API, `action.query`),
+Google (`webSearchQueries`) e xAI. O Claude expõe-as quando pesquisa
+directamente e não quando pesquisa de dentro do `code_execution`.
+Perplexity, Mistral, DeepSeek e as superfícies do Google não as devolvem:
+**campo vazio não é "não pesquisou"**.
+
+O que é contagem (que marcas aparecem, que termos se repetem) faz-se em
+código. O que é juízo (esta associação está errada, esta adjacência vale a
+pena reclamar) é leitura humana, ou da Routine com este ficheiro na mão.
+
 ## A fonte não é da categoria: é de quem pergunta (7 Set 2026)
 
 Uma medição de fontes que junta todas as perguntas da semana responde à
