@@ -11,6 +11,43 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-09-07 — Sétima execução (vs. 24 ago — a rotina voltou a saltar uma semana, 31 ago)
+
+**Score global:** 73/100 (Bom, em melhoria marginal — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 24 ago: +1.** A comparação cobre duas semanas, não uma: não existe commit `audit: 2026-08-31 destaque.ai SINAL self-audit` — 2ª falta em 4 execuções (a 1ª foi 17 ago). O critério de verificação escrito na auditoria anterior ("as próximas 2-3 execuções sem hiato") falhou logo a seguir — o item PROCESS sobe a P0.
+
+**Score por categoria (delta vs. 24 ago):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 87/100 | 0 |
+| Performance / CWV | N/D | — |
+| SEO On-Page | 95/100 | +1 |
+| Schema / dados estruturados | 98/100 | +1 |
+| Optimização de imagens | 75/100 | +1 |
+| GEO técnica | 91/100 | −3 |
+| Conteúdo & topical authority | 96/100 | +1 |
+| Entidade / brand foundation | 85/100 | +3 |
+| Autoridade & digital PR | 20/100 | 0 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 50/100 | +2 |
+
+**Nota sobre o Δ global de +1:** esconde um movimento maior em ambas as direcções do que o número sugere. GEO técnica desce (−3) por um achado novo e concreto: o `llms.txt` descreve `/en/about` como "consultancy", contradizendo a própria página, que já diz "software company" — a fonte mais provável do problema de convergência de descrição de entidade que este Routine acompanha desde 24 ago. Entidade sobe (+3) pelo estatuto confirmado de OpenAI Select Partner (com schema `ProgramMembership`) e pela confirmação externa do endereço físico completo da Tuasunt, Lda. Medição sobe ligeiramente (+2) apesar de mais grupos de erro no total (7 vs. 4) — a composição mudou: o erro de campo da DataForSEO parece ter sido corrigido (fallback tratado para SerpApi em vez de crash), o Gemini não teve nova ocorrência na janela de 7 dias (não confirmado resolvido), mas surgiu um rate-limit novo no Mistral (104 ocorrências) e um bug de serialização React em `/prompts`. Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 0. Nenhum item do backlog atingiu confirmação suficiente para DONE — o item da DataForSEO desceu de P1 para P2 (assinatura de erro melhorada, mas exige duas confirmações seguidas antes de fechar, depois de ter sido marcado "resolvido" prematuramente em 10 ago) e permanece IN PROGRESS.
+
+**Items novos detectados:** 6 — 1 P0 (GEO/ENTITY — `llms.txt` descreve `/en/about` como "consultancy", achado de alta confiança e esforço mínimo), 1 P1 (STRATEGIC — BE VISIBLE, concorrente novo com sobreposição de ICP quase total), 1 P1 (MEASUREMENT — bug de serialização React em `/site`/`/prompts`), 1 P2 (MEASUREMENT — rate-limit novo no Mistral, 104 ocorrências), 1 P3 (STRATEGIC — colisão de "AEO" com "Authorized Economic Operator" em inglês), 1 P3 (CONTENT — meta description de `/sobre` não reforça "empresa de software"). Adicionalmente, o item PROCESS de 24 ago subiu de P1 para P0 (2ª falta confirmada) e o item STRATEGIC de Marco Gouveia foi reconfirmado pela 3ª auditoria seguida, agora incluindo Francisco Paredes como segundo consultor individual concorrente.
+
+**Mudanças materiais observadas:**
+- **Processo: 2ª falta de execução em 4 semanas, agora com padrão, não incidente.** Confirmado por comparação directa com a rotina `audit: source-intel` (correu normalmente nas mesmas semanas) e com a rotina diária (sem falhas visíveis) — a falta é específica a este Routine.
+- **Achado técnico mais accionável da semana: `llms.txt` desactualizado numa linha que a própria destaque.ai controla.** A descrição de `/en/about` em `llms.txt` ainda diz "consultancy"; a página real já diz "software company" desde a correcção de 24 ago. Correcção de 15-30 minutos, causa provável directa (não só correlação) do problema de convergência de entidade.
+- **Concorrência: achado mais forte desde que este Routine começou a testar.** BE VISIBLE, com posicionamento e ICP quase idênticos aos da destaque.ai (B2B SaaS PT, seed a Series B), encontrado em duas pesquisas distintas. Marco Gouveia reconfirmado pela 3ª semana a vencer ou empatar em recomendações locais; Francisco Paredes junta-se como segundo concorrente-pessoa.
+- **Teste multi-motor com metodologia mais modesta (27 pesquisas `WebSearch` directas desta sessão, não sub-agentes dedicados) mas resultado comparável:** destaque.ai apareceu em 7/21 mandatórios (33%, igual a 24 ago), creditada em 3/21 (14%, sobe de 2/21). Achado novo: colisão de "AEO" com "Authorized Economic Operator" em inglês (`LR2`), distinta da já conhecida colisão de "GEO" com geodesia (reconfirmada pela 3ª vez em `GD6`). Zero alucinações, zero menções negativas — protocolo de crise não accionado.
+- **Medição: composição de erros mudou, não a fila em si.** DataForSEO com assinatura de erro mais branda (fallback tratado); Gemini sem ocorrência na janela de 7 dias pela primeira vez em 9 semanas (não confirmado); Mistral com rate-limit novo (104 ocorrências, pico concentrado, não esgotamento sustido); bug de código novo (serialização React) em `/prompts`.
+- **Produto: trabalho real nas duas semanas, incluindo uma correcção de estilo da casa.** Estudo novo público ("mapa das empresas de Portugal", 616 respostas, 10 assistentes, dataset CC BY 4.0) com edição EN; estatuto OpenAI Select Partner confirmado e schematizado (`ProgramMembership`), e deliberadamente recolhido do herói para o rodapé — decisão de sobriedade editorial feita sem ser pedida; Acordo Ortográfico de 1990 aplicado de forma consistente; menu móvel reduzido de "parede de palavras" a 5 itens; paridade bilingue fechada em `/ai-ads` e `/comercio-agentico` (PT); a métrica "share of recommendation" (SoR) nomeada formalmente, distinta de "share of voice". Zero deploys de produção ao site principal desde 01 set — fim de um pico, não um hiato, mas a vigiar na próxima execução.
+
+**Reconciliação playbooks:** sem divergências novas identificadas por esta auditoria — o mecanismo Peec.ai (ChatGPT também consulta a Google) e a separação indexação/AI-grounding do Bing, ambos relevantes a `engine_playbooks.md`, já tinham sido absorvidos pelo daily-agent nas suas próprias corridas (2026-09-04, 2026-09-06) antes desta execução chegar à secção 6b. Nenhuma edição adicional feita nesta auditoria.
+
 ### 2026-08-24 — Sexta execução (vs. 10 ago — a rotina saltou 17 ago)
 
 **Score global:** 72/100 (Bom, em melhoria real — 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 10 ago: +3.** Primeira subida líquida em quatro execuções, mas a comparação é contra uma auditoria de há duas semanas: não existe commit `audit: 2026-08-17 destaque.ai SINAL self-audit` — ver novo item PROCESS.
