@@ -677,6 +677,36 @@ patterns: diz-se que não há base e não se abre acção nenhuma. Só três
 fornecedores expõem consultas (OpenAI, Google, xAI), portanto o
 denominador é sempre uma fatia da semana.
 
+### Pattern: o leque da pergunta, e as sub-perguntas sem dono
+
+Uma pergunta do catálogo vira seis a nove pesquisas do motor, e cada uma
+traz o seu lote de páginas. Quando o fornecedor faz o par entre a pesquisa
+e as fontes dela (hoje ChatGPT e Grok), o campo `leque` de cada resposta
+diz `sub_perguntas`, `encontrado_em`, e a lista `sem_ti` com quem está no
+lugar da marca.
+
+**É a acção mais concreta que esta metodologia produz, e por uma razão de
+forma: o título da peça vem escrito.** "Não apareces em «que agência de
+GEO recomendam»" é um diagnóstico. "Das nove pesquisas em que ele partiu
+essa pergunta, não apareces em «GEO case study Portugal» nem em «agência
+GEO preço», e nessas está a 3HASH e a UniK SEO" é um plano editorial com
+sete títulos e a concorrência identificada por título.
+
+**Dimensão: content (2).** Uma peça por sub-pergunta sem dono, começando
+pelas que trouxeram mais páginas: são as que o motor levou mais a sério, e
+onde estar de fora custa mais.
+
+**Duas cautelas.**
+
+- **Ser encontrado no leque não é ser citado.** São camadas: procurou
+  (as consultas), encontrou (o leque), usou (a citação). Uma marca pode
+  estar nas fontes de cinco sub-perguntas e não aparecer no texto de
+  nenhuma, e aí o problema mudou outra vez de sítio: é prova, não
+  cobertura.
+- **`leque` ausente não é "não te encontrou".** O Gemini devolve as
+  consultas e os pedaços em listas separadas e nunca diz qual veio de
+  qual. Uma resposta sem `leque` fica de fora desta leitura.
+
 ### Pattern: nunca procurado pelo nome (`procuradoPeloNome` = 0)
 
 O motor pesquisou dezenas de vezes e nunca escreveu o nome da marca. Não
