@@ -380,17 +380,17 @@ news-feed": passa a registá-la também aqui.
 | `claude-fable-5-1` | 10.00 | 50.00 | 2026-09-01 | anthropic.com/claude-fable-and-mythos-5-1 |
 | `gpt-5.6-sol` | 4.00 | 20.00 | 2026-08-21 | OpenAI Developer Community, corte promocional até pelo menos 21 Nov 2026; a tabela base era 5.00/30.00 |
 | `gemini-3.8-flash` | 0.75 | 3.75 | 2026-09-02 | blog.google, preço de lançamento até 31 Dez 2026; sobe para 1.50/7.50 a 1 Jan 2027 |
-| `claude-haiku-4-5` | ? | ? | | por confirmar |
-| `gpt-5.6-luna` | ? | ? | | por confirmar |
-| `gemini-3.5-flash` | ? | ? | | por confirmar |
-| `gemini-3.5-flash-lite` | ? | ? | | por confirmar |
-| `grok-4.3` | ? | ? | | por confirmar |
-| `grok-4.1-fast` | ? | ? | | por confirmar |
-| `deepseek-v4-flash` | ? | ? | | a prosa deste ficheiro diz "~$0.10 por milhão de tokens" sem separar entrada de saída, e um número que não se sabe onde aplicar não entra numa tabela de código |
-| `mistral-large-latest` | ? | ? | | por confirmar |
-| `mistral-small-latest` | ? | ? | | por confirmar |
-| `sonar-pro` | ? | ? | | por confirmar |
-| `sonar` | ? | ? | | por confirmar |
+| `claude-haiku-4-5` | 1.00 | 5.00 | 2025-10-15 | anthropic.com/news/claude-haiku-4-5 e platform.claude.com/docs/en/about-claude/pricing |
+| `gpt-5.6-luna` | 0.20 | 1.20 | 2026-07-30 | corte de 80% face a 1.00/6.00; confirmado em OpenRouter, pricepertoken e getapipulse a 7 Set 2026 |
+| `gemini-3.5-flash` | 1.50 | 9.00 | 2026-05-19 | preço de lançamento; confirmado em OpenRouter, devtk e pricepertoken a 7 Set 2026. Cache de entrada a 0.15 |
+| `gemini-3.5-flash-lite` | 0.30 | 2.50 | | OpenRouter e eesel a 7 Set 2026. Houve subida de preço em 2026 e não se apurou a data: por isso `since` fica vazio |
+| `grok-4.3` | 1.25 | 2.50 | | OpenRouter, requesty e pricepertoken a 7 Set 2026. ATENÇÃO: a partir de 200K tokens de contexto passa a 2.50/5.00, e as nossas chamadas com pesquisa já passaram os 200K |
+| `grok-4.1-fast` | 0.20 | 0.50 | | pricepertoken e Artificial Analysis a 7 Set 2026 |
+| `deepseek-v4-flash` | 0.44 | 1.32 | 2026-08-16 | PREÇO DE PICO. A DeepSeek passou a cobrar por hora a 16 Ago 2026: pico 0.44/1.32 (01:00-04:00 e 06:00-10:00 UTC), fora de pico 0.22/0.66. A auditoria semanal corre às 07:00 UTC, dentro do pico, por isso é o de pico que fica aqui; uma corrida fora dessas horas custa metade e esta tabela sobrestima-a |
+| `mistral-large-latest` | 0.50 | 1.50 | | Mistral Large 3. pricepertoken e aipricing a 7 Set 2026 |
+| `mistral-small-latest` | 0.15 | 0.60 | 2026-06 | Mistral Small 4. A MENOS FIRME DA TABELA: sem acesso à página do fornecedor, os agregadores dividem-se entre 0.15/0.60 (OpenRouter, tokencost, gate.ai) e 0.10/0.30 (outros). Fica o par mais citado, e a divergência é de 50% |
+| `sonar-pro` | 3.00 | 15.00 | | pricepertoken, cloudzero e burnwise a 7 Set 2026. INCOMPLETO DE PROPÓSITO: há ainda uma taxa por pedido de 6 a 14 dólares por mil pedidos, consoante o tamanho do contexto de pesquisa, que estas duas colunas não sabem exprimir. Ver a nota sobre custo declarado abaixo |
+| `sonar` | 1.00 | 1.00 | | mesmas fontes. A mesma taxa por pedido, aqui de 5 a 12 dólares por mil |
 
 ### Contrato de leitura
 
@@ -401,6 +401,28 @@ news-feed": passa a registá-la também aqui.
    consumidor ignora-a e trata o custo dessa chamada como desconhecido.
 5. Sem tabela ou sem linha para o modelo, o custo é desconhecido. Nunca
    zero, nunca um valor por omissão.
+6. **O custo declarado pelo fornecedor ganha a esta tabela.** Quando a
+   resposta da API traz o custo da chamada, é esse que se grava, e esta
+   tabela nem se lê. Hoje só o Perplexity o faz (`usage.cost.total_cost`,
+   0,00975 dólares numa chamada medida a 5 Set 2026), e é exactamente
+   onde a multiplicação falharia: as duas colunas de preço não conhecem
+   a taxa por pedido de 6 a 14 dólares por mil, que na nossa utilização
+   pesa mais do que os tokens. Medido vence calculado.
+
+### O que estas duas colunas não conseguem dizer
+
+Três linhas da tabela têm um preço que depende de alguma coisa, e o
+número que lá está é uma escolha declarada, não a verdade inteira:
+
+- **`deepseek-v4-flash` depende da HORA.** Pico e fora de pico diferem
+  para o dobro. Fica o de pico, porque é quando a auditoria corre.
+- **`grok-4.3` depende do TAMANHO DO CONTEXTO.** Acima de 200K tokens
+  duplica, e as chamadas com pesquisa passam lá. Um custo calculado com
+  a linha de cima é um mínimo, não uma estimativa.
+- **`sonar-pro` e `sonar` dependem do NÚMERO DE PEDIDOS.** Ver o ponto 6.
+
+Um consumidor que queira ser rigoroso mostra estes três como piso e não
+como custo. Nenhum deles deve aparecer a um cliente sem essa ressalva.
 
 ### Contrato de manutenção
 
