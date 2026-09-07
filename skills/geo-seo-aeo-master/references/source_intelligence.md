@@ -29,6 +29,58 @@ depois de processar as auditorias (spec na secção C de
 - Truncar para as últimas 12 semanas; antes de truncar, confirmar que o
   durável foi promovido ou registado.
 
+## A medida mudou de forma a 5 de Setembro de 2026
+
+Até aqui, uma "fonte citada" era o que cada adapter conseguisse apanhar, e
+isso NÃO era a mesma coisa em motores diferentes: o Claude e o Gemini
+gravavam a lista de resultados da pesquisa, o ChatGPT e o Grok gravavam as
+referências do texto. O mesmo nome de coluna para duas medidas opostas, e
+quem comparasse motores comparava coisas diferentes.
+
+Passaram a ser três medidas separadas, e a distinção entre as duas
+primeiras é a coisa mais accionável que esta metodologia produz.
+
+| Medida | O que é | Para que serve |
+|---|---|---|
+| **Lida** | a pesquisa devolveu-a ao motor | a marca **existe** para o motor |
+| **Citada** | a resposta usou-a | a marca **convenceu** o motor |
+| **Consulta** | como o motor reescreveu a pergunta | explica as duas de cima |
+
+**Lida e não citada é um diagnóstico, não uma ausência.** Uma página que
+esteve nos resultados e não foi usada foi encontrada e preterida: o
+problema é autoridade ou é conteúdo que não responde, e não indexação.
+Dizer "não apareces" a quem está nessa lista manda fazer o trabalho
+errado.
+
+**O que cada fornecedor dá**, medido a 5 de Setembro de 2026 contra as
+APIs reais, e não a partir de documentação:
+
+| Motor | Consulta | Lidas | Citadas |
+|---|---|---|---|
+| ChatGPT | sim | sim, com `include: web_search_call.action.sources` | sim |
+| Grok | sim | sim, em `action.sources` | sim |
+| Gemini | sim, `webSearchQueries` | sim, `groundingChunks` | sim, `groundingSupports` |
+| Claude | sim | sim | derivadas das ligações do texto |
+| Perplexity | não expõe | sim, `search_results` | sim, `citations` |
+| DeepSeek | não pesquisa | — | — |
+| Mistral | pesquisa, com tecto de 20/dia | — | — |
+| Google AIO, AI Mode, Copilot | a consulta é nossa | não expõem | sim |
+
+Duas notas que evitam conclusões erradas sobre os motores:
+
+**O Claude chama a pesquisa de dentro de código.** Escreve um programa
+Python com `await web_search(...)`, lê os resultados como dados e depois
+redige. O mecanismo de citação da API não se aplica a isso, e por isso as
+citadas derivam-se das ligações que ele escreve no texto, em markdown. Não
+é inferência sobre o modelo: é o que está na resposta.
+
+**O país de quem pergunta tem de ser declarado.** A ferramenta de pesquisa
+da OpenAI assume `country: "US"` quando ninguém diz o contrário, e nós não
+dizíamos. Uma pergunta portuguesa era pesquisada em inglês por causa
+disso, e a leitura fácil ("o motor traduz") era falsa: a causa estava na
+chamada. Antes de atribuir comportamento de língua a um motor, confirmar
+que a chamada declara o mercado.
+
 ## Semanas
 
 <!-- A Routine acrescenta aqui: ## YYYY-MM-DD, um bloco por motor com
