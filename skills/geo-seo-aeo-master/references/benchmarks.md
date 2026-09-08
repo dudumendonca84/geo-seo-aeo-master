@@ -489,6 +489,24 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Caveat.** These are two different measures, not one contradicting the other: audience overlap (do the same people use both) stayed flat, while query volume per household (how often they search Google) fell for the subset with ChatGPT Search access. Read together they say people aren't leaving Google, but are searching it less per session once they have an AI alternative.
 - **Use.** Corrects the client-facing narrative "Google traffic is being replaced" — audience isn't leaving, query volume is softening at the margin. Supports pitching AI-search visibility as additive coverage, not a defensive replacement for SEO; the 9.4% query-volume figure is the one number worth watching over time as a leading indicator, not the overlap figure.
 
+## 43. SE Ranking — paid ads in Google AI Mode don't buy organic citation or ranking
+
+- **URL.** SE Ranking, "AI Mode shows ads on 1 in 3 queries" (via Search Engine Land summary; both WebFetch-blocked this session, found via WebSearch).
+- **Date.** Data collected 30 Jun 2026; absorbed 08 Sep 2026.
+- **Sample.** 50,032 commercial keywords across 20 niches, US Google AI Mode.
+- **Finding.** Ads appeared on 29.45% of commercial queries in AI Mode. Of the domains running those ads, only 11.53% also appeared among AI Mode's cited (organic) sources for the same keyword, and only 2.32% of the advertised URLs also ranked organically — paid and organic visibility in AI Mode are close to statistically independent.
+- **Caveat.** US-only dataset, single vendor methodology, not independently replicated; commercial-keyword sample may not generalize to informational queries.
+- **Use.** Direct evidence for the "paid ≠ organic, buy both separately" pitch in `references/ai_ads.md` — a client running AI Mode ads should not expect that spend to lift their AI Overviews/AI Mode citation rate. Cite alongside the ai_ads.md "dois campos" framing when a client asks whether ad spend substitutes for GEO work in Google's surfaces.
+
+## 44. Agarwal &amp; Sen (SSRN) — AI Overviews cut clicks, but not because the lost clicks were lower quality
+
+- **URL.** https://www.searchenginejournal.com/google-ai-overviews-study-finds-lost-clicks-werent-lower-quality/581298/ (SSRN working paper, authors Saharsh Agarwal and Ananya Sen).
+- **Date.** Reported 2 Jul 2026; absorbed 08 Sep 2026 (daily-agent truncate-before-absorb pass — this study sat in `news-feed.md` unabsorbed for 65 days before today, since the 2026-07-05 entry).
+- **Sample.** Randomized-attribution field experiment measuring organic click behavior on SERPs with vs. without an AI Overview present.
+- **Finding.** AI Overviews cut organic clicks by 39.8% when present. No measurable difference in bounce rate, return-to-SERP rate, or time-on-site between the clicks that were "lost" to the AI Overview and the clicks that survived — i.e. the eliminated clicks were not disproportionately low-quality traffic.
+- **Caveat.** SSRN working paper, not yet peer-reviewed at time of reporting; single study, not yet independently replicated.
+- **Use.** Directly undercuts Google's public justification that clicks displaced by AI Overviews are mostly low-value — useful when a client cites that framing to downplay the traffic impact of AIO on their category. Pairs with §41 (Fractl/SEL redistributed demand) to argue clicks are being reduced in real terms, not merely reallocated to better-fit queries.
+
 ---
 
 ## Deck Builder core stats
@@ -513,4 +531,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
+Last refresh: 8 Sep 2026 (added §43, SE Ranking study on AI Mode ads not buying organic citation/ranking, absorbed from the 2026-09-08 news-feed entry; added §44, Agarwal &amp; Sen SSRN field study on AI Overviews click loss, absorbed from the 2026-07-05 news-feed entry before it fell out of the 60-day truncation window). Previous: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
