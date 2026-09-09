@@ -541,7 +541,7 @@ Two columns per engine:
 | `claude` | Anthropic | `claude-sonnet-5` | `claude-haiku-4-5` |
 | `gemini` | Google | `gemini-3.5-flash` | `gemini-3.5-flash-lite` |
 | `perplexity` | Perplexity | `sonar-pro` | `sonar` |
-| `copilot` | Microsoft (Azure OpenAI) | `gpt-5.5` | `gpt-5.5` |
+| `copilot` | Microsoft (consumption surface via SerpApi; the Azure OpenAI IDs here are the model behind it, not what consumers call) | `gpt-5.5` | `gpt-5.5` |
 | `mistral` | Mistral | `mistral-large-latest` | `mistral-small-latest` |
 | `grok` | xAI | `grok-4.3` | `grok-4.1-fast` |
 | `deepseek` | DeepSeek | `deepseek-v4-flash` | `deepseek-v4-flash` |
@@ -584,4 +584,4 @@ The daily-agent (`daily-agent/daily-prompt.md`) is instructed to update this tab
 
 ---
 
-Last refresh: 02 Jul 2026.
+Last refresh: 09 Sep 2026 (`## Tracker buyer defaults`, env override removed, Mistral back to large). Vendor tables refreshed 07 Sep 2026 (see the entries at the top).

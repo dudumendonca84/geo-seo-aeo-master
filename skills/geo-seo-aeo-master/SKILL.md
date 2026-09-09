@@ -582,7 +582,7 @@ The skill exists partly to prevent these:
 
 ## Deck Builder method (client-facing)
 
-> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/method.ts` → `loadMethod`) pelos Slides 06 (glossário) e 07 (8 dimensões) do deck público. PT-PT client-facing. Resumo parseável da lista canónica em `## Methodology — SINAL` (§ Scope — holistic, §116-130) — **fonte única**; mudar aqui propaga ao deck em ≤1h, sem deploy. Adicionar uma linha é seguro; mudar o cabeçalho das tabelas parte o parser (ver INTERFACES.md Contrato 4). Fallback hardcoded no deck mantém paridade offline.
+> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/method.ts` → `loadMethod`) pelos Slides 06 (glossário) e 07 (8 dimensões) do deck público. PT-PT client-facing. Resumo parseável da lista canónica em `## Methodology — SINAL` (§ "Scope of the methodology — holistic, not just technical") — **fonte única**; mudar aqui propaga ao deck em ≤1h, sem deploy. Adicionar uma linha é seguro; mudar o cabeçalho das tabelas parte o parser (ver INTERFACES.md Contrato 4). Fallback hardcoded no deck mantém paridade offline.
 
 SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
 

@@ -4,7 +4,7 @@ Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('filter_c
 
 The cost of getting this wrong is high: false positives (e.g. Latigid counted as destaque.ai's competitor) inflate the competitor set, dilute SoV calculations, and lead to misallocated action plans. False negatives (real competitors filtered out) under-state the threat surface.
 
-Last refresh: 25 May 2026.
+Last refresh: 09 Sep 2026 (`competitors_mentioned` is every named brand; the bucket does the filtering).
 
 ---
 
@@ -137,8 +137,15 @@ Learned from production (the "dono: ChatGPT" incident, July 2026): when the
 extraction instruction reads "all other brands mentioned", the analyser
 faithfully lists the answer engines and the tools the answer talks *about* —
 and every downstream aggregate (SoV, territory ownership, co-mention chips)
-inherits the garbage. `competitors_mentioned` is strictly **brands the
-client's buyer could hire or buy instead of the client**. Never extract:
+inherits the garbage. `competitors_mentioned` is **every brand named in the answer that is not an
+answer engine, a tool the answer talks about, or a media outlet**; whether it
+competes for the same purchase is the BUCKET's job (`peer` vs
+`adjacent_*`), decided afterwards in `filter_competitors`. Corrected 09 Sep
+2026 (Tracker CLAUDE.md, lesson 20): with the stricter reading, the Mistral
+card showed zero competitors in 54 answers while 41 of them named a listed
+brand, one of them SEMrush and Ahrefs in the same paragraph. Not recording a
+named brand tells the client nobody was named when three were. Never
+extract:
 
 1. **Answer engines and their vendors/products** — ChatGPT, GPT-x, OpenAI,
    Claude, Anthropic, Gemini, Google, Bard, AI Overviews, AI Mode, Grok, xAI,

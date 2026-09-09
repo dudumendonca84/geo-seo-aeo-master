@@ -266,6 +266,10 @@ Faz:
 3. Liga o "AI Performance" do Bing Webmaster Tools e usa o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação [fonte: Jun 2026]. É a única telemetria first-party de citações de IA. {{skip:bwt-connected}}
 4. Mantém versão EN actualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
 
+### meta_ai
+
+A Meta AI (WhatsApp, Instagram, meta.ai) responde a partir do Llama com pesquisa própria e **não expõe API nem fontes**: o que se mede é o que uma pessoa vê numa sessão real, e o que aparece nas respostas é o que a Meta indexa da web aberta. Aparecer aqui é ter a marca dita com o nome certo nas páginas que a Meta lê: a própria, as fichas de diretórios, a Wikipédia quando existe, e a imprensa. Sem citações visíveis, o sinal que conta é o nome no texto, e a ausência é o dado.
+
 ### copilot_bing
 
 meta: revisto 2026-09-09 · externo: nenhuma mudança ao estado de suspensão · interno: medição suspensa, sem base
@@ -420,6 +424,10 @@ Do:
 2. Publish clear comparative content, with declared authority on the site.
 3. Connect Bing Webmaster Tools "AI Performance" and use Citation Share and Compare to measure the citation-rate effect of each content or schema change [fonte: Jun 2026]. It is the only first-party telemetry of AI citations. {{skip:bwt-connected}}
 4. Keep an up-to-date EN version of pillar pages: the effect on AI-answer presence is evident in Copilot too [fonte: Search Engine Land, Aug 2026]. {{skip:en-site}}
+
+### meta_ai
+
+Meta AI (WhatsApp, Instagram, meta.ai) answers from Llama with its own retrieval and **exposes neither an API nor sources**: what gets measured is what a person sees in a real session, and what shows up in answers is what Meta indexes from the open web. Showing up here means having the brand named correctly on the pages Meta reads: your own, directory listings, Wikipedia where it exists, and the press. With no visible citations, the signal that counts is the name in the text, and absence is the datum.
 
 ### copilot_bing
 

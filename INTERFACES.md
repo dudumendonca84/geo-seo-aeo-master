@@ -4,7 +4,7 @@
 >
 > **Primeira acção em qualquer sessão**: ler este ficheiro antes de fazer qualquer alteração que possa afectar contratos.
 >
-> **Last interface review:** 23 May 2026.
+> **Last interface review:** 09 Sep 2026 (pente fino: contratos 9 a 12 acrescentados, listas de motores alinhadas, `tracker_weekly` na tabela de tiers).
 
 ---
 
@@ -51,7 +51,7 @@ https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/
 
 **Estrutura consumida:**
 - **§ 1 Princípios** — meta-rules para escrever prompts (persona, contexto, intent, etc.)
-- **§ 2 Categorias canónicas** — 5 categorias: `generic_category`, `direct_comparison`, `local_recommendation`, `feature_specific`, `price_comparison`
+- **§ 2 Categorias** — 5 categorias consumidas pelo Deck Builder e pelo Tracker: `generic_category`, `direct_comparison`, `local_recommendation`, `feature_specific`, `price_comparison`. A 6.ª, `transactional` (§2.6, 18 Ago 2026), está na skill e **ainda não tem consumidor**: o `CATEGORY_LITERALS` do Tracker tem 5, e a coluna `prompts.category` da base também. Entra nos dois quando um cliente B2C a precisar.
 - **§ 3 Distribuição por tier** — tabela markdown com distribuição de prompts por audit tier (free: 5, diagnostic: 30)
 
 **Estrutura interna (não para Deck Builder):**
@@ -95,7 +95,7 @@ Bloco `## Deck Builder API mappings` no fim do ficheiro. Tabela com header:
 | Deck engine | Vendor | production | cost_optimized |
 ```
 
-Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copilot`, `mistral`, `grok`, `deepseek`, `meta`.
+Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copilot`, `mistral`, `grok`, `deepseek`, `llama` (era `meta` até 4 Ago 2026; é o modelo, não o assistente).
 
 **Parsing contract para Deck Builder:**
 1. Fetch a URL acima
@@ -106,6 +106,7 @@ Engines actualmente listados: `chatgpt`, `claude`, `gemini`, `perplexity`, `copi
    - `free` → coluna `cost_optimized`
    - `diagnostic` → coluna `production`
    - `premium` (futuro) → coluna `production`
+   - `tracker_weekly` (Tracker) → **`## Tracker buyer defaults`** (Contrato 9) quando a secção tem o motor; senão coluna `production`
 6. Se fetch ≠ 200 OU parse falhar → usar fallback hardcoded em código
 
 ---
@@ -161,7 +162,7 @@ Secção `## Deck Builder method` no fim do ficheiro. Contém:
 - a tabela **8 dimensões** com header `| n | dimensao | foco |`;
 - a tabela **SEO vs GEO** com header `| seo | geo |`.
 
-É o resumo client-facing (PT-PT) da lista canónica em `## Methodology — SINAL` (§ Scope — holistic, §116-130). Fonte única — o deck **não** reescreve o método.
+É o resumo client-facing (PT-PT) da lista canónica em `## Methodology — SINAL` (§ "Scope of the methodology — holistic, not just technical"). Fonte única — o deck **não** reescreve o método.
 
 **Parsing contract para Deck Builder** (`src/lib/skill/method.ts` → `loadMethod`):
 1. Fetch a URL acima; localizar `## Deck Builder method`; cortar até ao próximo `## `
@@ -190,11 +191,12 @@ Bloco `## Per-engine augmentation feature` no meio do ficheiro. Tabela com heade
 | Deck engine | Vendor | augmented mode | API surface | Notes |
 ```
 
-Engines listados: os mesmos do Contrato 2 (`chatgpt`, `claude`, `gemini`, `grok`, `perplexity`, `copilot`, `mistral`, `deepseek`, `meta`). Coluna 3 (`augmented mode`) declara *como* activar o modo augmented:
+Engines listados: os do Contrato 2 (`chatgpt`, `claude`, `gemini`, `grok`, `perplexity`, `copilot`, `mistral`, `deepseek`, `llama`) mais as superfícies de consumo (`google_aio`, `google_ai_mode`, `copilot_bing`) e a observada (`meta_ai`). Coluna 3 (`augmented mode`) declara *como* activar o modo augmented:
 
 - `web_search` / `google_search` / `live_search` / etc → consumer activa a tool/feature nativa correspondente do vendor
 - `n/a (always on)` → engine só tem modo augmented (Perplexity); skip do half `knowledge`
-- `not supported` → engine só tem modo knowledge; skip do half `augmented`, persistir `null` nas séries augmented
+- `not supported`, `off`, `capped` → engine só tem modo knowledge nesta corrida; skip do half `augmented`, persistir `null` nas séries augmented (o `off`/`capped` do Mistral, 28 Ago 2026, lê-se exatamente como `not supported`)
+- `n/a (observed)` → superfície observada de uma sessão real (`meta_ai`); não há chamada nenhuma
 
 **Parsing contract** (consumers — Deck Builder e Tracker, `src/lib/skill/searchModes.ts`):
 1. Fetch a URL acima
@@ -309,6 +311,26 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 ---
 
+### Contrato 9: Tracker buyer defaults (o modelo que o Tracker chama)
+
+**Producer:** `references/models.md`, secção `## Tracker buyer defaults`, tabela com header `| Engine | Buyer model | Plan measured | Tracker calls | Why different |`.
+**Consumer:** `destaque-ai-tracker/src/lib/skill/models.ts` (`parseBuyerDefaults`) → `pickModel` no tier `tracker_weekly`.
+**Contrato:** `Tracker calls` é o ID a invocar; `Buyer model` é o que o cliente ouve; IDs diferentes exigem razão na última coluna. Motor ausente cai na coluna `production` do Contrato 2. Não há variável de ambiente por cima (decisão de 9 Set 2026): a única outra origem é o fallback em código quando a skill está inacessível, e o cartão do motor mostra `recurso`.
+
+### Contrato 10: Token prices (o custo de uma chamada)
+
+**Producer:** `references/models.md`, secção `## Token prices`, tabela `| API model ID | input USD/1M | output USD/1M | since | source |`.
+**Consumer:** `destaque-ai-tracker/src/lib/skill/precos.ts` (`parseTokenPrices`, `custoDaChamada`) → `weekly_audits.total_cost_usd`.
+**Contrato:** `?` num preço = custo desconhecido (nunca zero); o custo declarado pelo fornecedor na resposta (Perplexity) ganha à tabela. **Os cabeçalhos procuram-se no início de linha** (`indiceDaSeccao`): citar `## Token prices` em prosa antes da secção já deixou a tabela vazia (9 Set 2026).
+
+### Contrato 11: catálogo §4 (as perguntas da destaque.ai)
+
+**Producer:** `references/prompts.md` § 4. **Consumer:** `destaque-ai-tracker/scripts/seed-destaque-prompts.mts` via `parsePromptsCatalogue`. Subsecção `### 4.X \`categoria\`` dá a categoria a todas as linhas; subsecção sem crase (§4.6, cross-category) leva a categoria por linha na coluna "Categoria principal". O antigo "só self-audit, não exportado" deixou de ser verdade quando o seed nasceu.
+
+### Contrato 12: o pacote do agente e o monitor de concorrentes
+
+**Consumer:** `destaque-ai-tracker/src/lib/agent/cerebro.ts` lê `SKILL.md`, `references/gap_action_mapping.md`, `references/benchmarks.md` e `daily-agent/news-feed.md` (cortado a ~40k caracteres na fronteira de uma entrada) como sistema do agente do cliente; `src/lib/skill/market-monitor.ts` lê `competitor-monitor/*`. Prosa, sem parser estrutural: mudar títulos é seguro, apagar um ficheiro deixa o agente sem essa peça e declara-o em `result.skill`.
+
 ## Frequência de actualização
 
 | Ficheiro | Cadência | Trigger |
@@ -363,11 +385,12 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 | Data | Mudança | Impacto |
 |---|---|---|
 | 2026-05-23 | Inicialização — prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
+| 2026-09-09 | **Pente fino.** Contratos 9 (buyer defaults), 10 (token prices), 11 (catálogo §4) e 12 (pacote do agente) escritos; env override dos modelos removida; listas de motores com `llama` e as superfícies; `tracker_weekly` na tabela de tiers; `competitors_mentioned` redefinido em `competitor_filtering.md` (toda a marca nomeada). Nota: a linha de 2026-09-03 abaixo está fora de ordem cronológica e fica onde está, para não reescrever histórico. | Tracker: `pickModel` sem env; parsers de secção por início de linha. |
 | 2026-05-24 | `dudumendonca84/destaque-ai-ops` criado como **private consumer downstream** — memória operacional privada (clientes, propostas, learnings) que consome a metodologia SINAL via `SKILL.md` (§ Methodology + § Audit workflow), `references/prompts.md` (catálogo segmento) e `references/models.md` (lock-in modelos por engine). Fluxo private → public mediado por camada de anonimização (`learnings/`) e futura Routine `synthesis-weekly`. Counterpart documentation: `INTERFACES.md` em `destaque-ai-ops`. | Nenhum impacto a contratos públicos existentes. Implicação para esta repo: mudanças materiais a § Audit workflow / scorecard / 4 horizontes em `SKILL.md` devem sinalizar potencial follow-up em `destaque-ai-ops/templates/` (private; sessões públicas não veem, mas registar no `methodology-changelog.md` ajuda a tracker). |
 | 2026-05-26 | **Triagem de PRs.** Correcções de model ID em `models.md` § Deck Builder API mappings: `claude` cost_optimized `claude-haiku-4-5-20251001`→`claude-haiku-4-5`; `grok` production `grok-4`→`grok-4.3` (grok-4 retira 15 Ago 2026). `deepseek` mantém-se `deepseek-v4-flash` (decisão de main, pro é lento). PRs stale fechados (#2, #5, #6), #9 merged (3 tracker references), #3 merged (este log). | Deck Builder picks up no próximo fetch — sem code change. Engines `chatgpt`/`copilot` em `gpt-5.5`. |
 | 2026-05-29 | **Contrato 3 (benchmarks) formalizado.** `## Deck Builder core stats` em `benchmarks.md` ganha a `key` `aio_top10_share` (54%, BrightEdge §6) consumida pelo Slide 05; `b2b_ai_answer` (82%) passa a alimentar também o Slide 10b. Antes destes slides hardcodavam os números. | Deck Builder picks up no próximo fetch — sem code change. Os números GEO dos Slides 03/05/10b passam a vir vivos da skill; fallback hardcoded mantém paridade se a tabela faltar. |
-| 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` — glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista canónica §116-130. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch — sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. |
+| 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` — glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista da secção "Scope of the methodology — holistic" do SKILL.md. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch — sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. |
 | 2026-09-03 | **Contrato 8 (visibility score) criado.** Nova secção `## Visibility Score` em `metrics.md`: fórmula, os três pesos numa tabela parseável, o caso que obrigou a trocar SoV absoluto por SoV relativo ao líder, e a obrigação de mostrar o número decomposto. O número existia desde sempre no código do relatório e não estava na skill. | Tracker passa a ler os pesos no fetch seguinte, com fallback hardcoded aos mesmos valores. Um peso mudado aqui muda o número de capa de todos os clientes sem deploy: alterar sempre com nota datada na secção. |
-| 2026-05-29 | **Contrato 4 estendido + Contrato 1 reforçado + drift de taxonomia decidido.** (1) `## Deck Builder method` ganha 3.ª tabela **SEO vs GEO** (`\| seo \| geo \|`), consumida pelo Slide 05 (antes hardcoded no componente). (2) Contrato 1: a tabela §3 de `prompts.md` passa a ser **parseada** (`loadPromptConfig`, zip posicional com `PROMPT_CATEGORIES`) — `generate-audit-prompts.ts` segue a distribuição viva, já não a constante. (3) **Decisão do founder:** a lista canónica das 8 dimensões é a detalhada §116-130 (technical · content · entity · authority · **social** · **authority-on-site** · measurement · positioning). `destaque-ai-deck-builder/CLAUDE.md` foi alinhado a esta lista. | Deck Builder picks up no próximo fetch. **`gap_action_mapping.md` reconciliado (SINAL v1.7):** DIMENSÃO 5 → Social & community signals, nova 6 → Authority signals on site (E-E-A-T), Measurement → 7, Positioning → 8; cadência editorial movida para a DIMENSÃO 2, UX/engagement passa a transversal. Consumido como prosa por `synthesize-deck.ts` (sem parser estrutural) — restruturação segura. |
+| 2026-05-29 | **Contrato 4 estendido + Contrato 1 reforçado + drift de taxonomia decidido.** (1) `## Deck Builder method` ganha 3.ª tabela **SEO vs GEO** (`\| seo \| geo \|`), consumida pelo Slide 05 (antes hardcoded no componente). (2) Contrato 1: a tabela §3 de `prompts.md` passa a ser **parseada** (`loadPromptConfig`, zip posicional com `PROMPT_CATEGORIES`) — `generate-audit-prompts.ts` segue a distribuição viva, já não a constante. (3) **Decisão do founder:** a lista das 8 dimensões é a detalhada em SKILL.md § "Scope of the methodology — holistic" (technical · content · entity · authority · **social** · **authority-on-site** · measurement · positioning). `destaque-ai-deck-builder/CLAUDE.md` foi alinhado a esta lista. | Deck Builder picks up no próximo fetch. **`gap_action_mapping.md` reconciliado (SINAL v1.7):** DIMENSÃO 5 → Social & community signals, nova 6 → Authority signals on site (E-E-A-T), Measurement → 7, Positioning → 8; cadência editorial movida para a DIMENSÃO 2, UX/engagement passa a transversal. Consumido como prosa por `synthesize-deck.ts` (sem parser estrutural) — restruturação segura. |
 
 Adicionar entry sempre que algum contrato mudar.

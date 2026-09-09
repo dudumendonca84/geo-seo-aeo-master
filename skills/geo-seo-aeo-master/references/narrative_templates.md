@@ -4,7 +4,7 @@ Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('generate
 
 These are not boilerplate. They are *structural skeletons* — the data fills them. The editorial voice is enforced via the principles in `SKILL.md` §115 (Economist register, no hype). The templates here are about *what to say in what order*, not phrasing.
 
-Last refresh: 25 May 2026.
+Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
 
 ---
 
@@ -267,4 +267,4 @@ The template skeleton above is filled deterministically where data is structured
 
 These templates evolve with feedback from real client work. The first two months of destaque.ai self-audit will be the calibration period; templates may tighten after.
 
-Last refresh: 25 May 2026.
+Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).

@@ -7,7 +7,7 @@
 > **Raw URL para Deck Builder:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/gap_action_mapping.md`
 
-**Last refresh:** 29 May 2026 — reconciliado para a taxonomia canónica §116-130 (DIMENSÃO 5 = Social & community signals, 6 = Authority signals on site / E-E-A-T; Measurement→7, Positioning→8; cadência editorial movida para DIMENSÃO 2; UX/engagement passa a pattern transversal). Roadmap: alimentar com patterns reais dos engagements à medida que a destaque.ai acumula clientes (loop 3: `destaque-ai-ops/learnings/` → synthesis-weekly Routine → updates aqui).
+**Last refresh:** 29 May 2026 — reconciliado para a taxonomia de SKILL.md § "Scope of the methodology — holistic" (DIMENSÃO 5 = Social & community signals, 6 = Authority signals on site / E-E-A-T; Measurement→7, Positioning→8; cadência editorial movida para DIMENSÃO 2; UX/engagement passa a pattern transversal). Roadmap: alimentar com patterns reais dos engagements à medida que a destaque.ai acumula clientes (loop 3: `destaque-ai-ops/learnings/` → synthesis-weekly Routine → updates aqui).
 
 ---
 
@@ -173,7 +173,7 @@ Editorial calendar trimestral. Mínimo 2 publicações de qualidade/mês. Distri
 Setup 1-2 semanas; sustained 8-15h/semana.
 
 #### Impacto típico
-Cadência editorial é foundation — sem ela, as outras alavancas de conteúdo perdem força. Não é palanca isolada, é hygiene. (A §116-130 inclui "editorial calendar discipline" nesta dimensão.)
+Cadência editorial é foundation — sem ela, as outras alavancas de conteúdo perdem força. Não é palanca isolada, é hygiene. (A secção "Scope of the methodology" do SKILL.md inclui "editorial calendar discipline" nesta dimensão.)
 
 ---
 

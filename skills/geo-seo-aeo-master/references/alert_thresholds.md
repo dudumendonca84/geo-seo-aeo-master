@@ -4,7 +4,7 @@ Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('generate
 
 The cost of getting this wrong is alert fatigue. Five "minor change" alerts a week and the client stops reading the email. The bar for an alert is **a change a senior practitioner would call out unprompted in a Monday meeting**.
 
-Last refresh: 25 May 2026.
+Last refresh: 09 Sep 2026 (§9 Território renumbered; override table name corrected).
 
 ---
 
@@ -152,7 +152,7 @@ No emoji. No exclamation marks. No "urgent action required" boilerplate. The sev
 
 ## 8. Override mechanism
 
-Clients can adjust thresholds via `tracker_clients.alert_thresholds_override` (JSONB). The override is **multiplicative** on the defaults above — e.g. `{ "cr_decrease_critical_pp": 1.5 }` means CR critical fires at ≥ 10.5 pp instead of 7 pp. The override applies only to that client. The defaults stay canonical here.
+Clients can adjust thresholds via a JSONB override column on the Tracker's clients table (`alert_thresholds_override`; not created yet as of 09 Sep 2026, so today the defaults apply to everyone; the old text named a `tracker_clients` table that never existed). The override is **multiplicative** on the defaults above — e.g. `{ "cr_decrease_critical_pp": 1.5 }` means CR critical fires at ≥ 10.5 pp instead of 7 pp. The override applies only to that client. The defaults stay canonical here.
 
 For internal use (destaque.ai self-audit), no override — eat your own dog food at full sensitivity.
 
@@ -172,7 +172,7 @@ Thresholds are calibrated to ~30 prompts × 7 engines × 1 week (Perplexity augm
 
 Last calibration check: 25 May 2026, using destaque.ai self-audit baseline data.
 
-## 8. Território — alertas de invasão (event-based, semana vs semana anterior)
+## 9. Território — alertas de invasão (event-based, semana vs semana anterior)
 
 Comparação por pergunta entre auditorias consecutivas. Não suprimidos (são
 eventos, §3-style). Os três tipos, com os `type` canónicos usados pelo Tracker:

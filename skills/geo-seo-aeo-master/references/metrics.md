@@ -60,6 +60,20 @@ across the prompt set. Some tools weight by response position (à la Princeton's
 
 ---
 
+## 3b. Share of Recommendation (SoR)
+
+**Definition (destaque.ai, 31 Aug 2026).** Of the CHOICES the engines make in a category, how many are the brand's. A mention can be one name in a list of ten; a recommendation is the engine singling the brand out above the others it names.
+
+**What counts as a choice** (fixed in writing before re-reading 616 answers in "Um mapa das empresas de Portugal"; full text in `destaque-ai-tracker/routines/tracker-brain.md`): a place in an order, a verdict on a single named criterion, or the closing sentence. Belonging to a set ("os três grandes") is not a choice; a niche superlative ("líder mundial em cortiça") is not either. In doubt, it is not.
+
+**Formula.** Same convention as SoV, on purpose: inside each answer the brand is worth `1 / n` of the brands chosen in that answer, then averaged. Denominator = answers that choose SOMEONE; an answer that chooses nobody has no pie to split and does not lower anyone's number. Judged answers with nobody chosen → `null`, not zero.
+
+Companion metric, **recommendation rate** = brand's choices / answers that NAME the brand: "when I appear, am I the answer or the scenery". A brand can have a low SoR from being rarely named and convert very well; the action that asks for is a different one.
+
+**`null` is not zero.** Everything measured before 31 Aug 2026 has no choice judgement and stays `null`. Implementation: `computeShareOfRecommendation` and `computeRecommendationRate` in the Tracker; per-competitor counts live on the same `competitor_sov` row (migration 0095).
+
+---
+
 ## 4. Position 0 / featured snippet rate
 
 **Definition.** Share of queries where the brand wins the classic featured snippet box (still tracked in Search Console as position 1.0 in the "Web" search type).
@@ -278,7 +292,7 @@ A working measurement stack for a B2B SaaS PT-PT engagement:
 5. **PT-PT-specific evidence is thin.** Most public benchmarks are US-English. Peec AI is currently the most credible vendor for non-English tracking; expect to triangulate.
 6. The "click era is over" narrative is partly true (AIO collapses CTR where it appears) and partly hype (the remaining ~50% of Google queries still trigger no AIO per BrightEdge). For B2B Tech specifically, AIO presence is ~82% — the impact is upper-bound for destaque.ai's likely vertical.
 
-Last refresh: 23 May 2026.
+Last refresh: 09 Sep 2026 (§3b Share of Recommendation added; Visibility Score 03 Sep; sentiment convention 30 Aug).
 
 ## Custo de Entrada (prompt / business-line difficulty)
 
