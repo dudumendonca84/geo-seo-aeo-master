@@ -1,4 +1,4 @@
-# Commerce playbooks — como um produto aparece, superfície a superfície
+# Commerce playbooks: como um produto aparece, superfície a superfície
 
 Referência do `geo-seo-aeo-master`, para clientes que vendem produtos. O
 irmão de `engine_playbooks.md`, mas ao nível do **produto** em vez da marca.
@@ -36,7 +36,7 @@ O que a prova estabelece, então:
 1. Memória e pesquisa recomendam produtos diferentes na mesma categoria, o
    que já era a tese das duas vias, agora visível ao nível do produto.
 2. Os blocos do Google Shopping não coincidem com nenhum dos dois em
-   referência exacta, o que desaconselha usá-los como espelho de outra
+   referência exata, o que desaconselha usá-los como espelho de outra
    superfície.
 3. O carrossel da app mudou entre duas corridas com minutos de intervalo,
    com outro retalhista citado.
@@ -46,22 +46,21 @@ dia, uma categoria, um mercado. Sugere mecanismos. Não quantifica nada, e
 não serve para afirmar percentagens de sobreposição, nossas ou de
 terceiros.
 
-**Os cartões têm selecção, e alguns vêm pré-marcados** (verificado de
+**Os cartões têm seleção, e alguns vêm pré-marcados** (verificado de
 primeira mão, 20 Ago 2026, PT, sessão anónima). Cada cartão do carrossel
-tem um controlo de selecção no canto. Ao seleccionar, os produtos entram
+tem um controlo de seleção no canto. Ao seleccionar, os produtos entram
 como contexto da pergunta seguinte (aparecem no campo de escrita, com ×
 para remover) e surgem três atalhos: **Comparar**, **Mais detalhes**,
 **Similar**.
 
-Não é checkout — é a fase de **comparação** do funil, dentro da conversa.
+Não é checkout: é a fase de **comparação** do funil, dentro da conversa.
 Consequências para o método:
 
 1. Há duas eliminatórias, não uma. Aparecer no carrossel é a primeira;
    estar seleccionado para comparação é a segunda.
 2. Numa observação, dois dos três cartões vinham **pré-marcados**. Quem
    vem pré-marcado entra na comparação sem intervenção do utilizador.
-   Que produtos vêm pré-marcados, e com que critério, está por apurar —
-   e é a pergunta com mais consequência comercial nesta superfície.
+   Que produtos vêm pré-marcados, e com que critério, está por apurar: e é a pergunta com mais consequência comercial nesta superfície.
 3. Métrica nova, que nenhuma ferramenta do mercado tem: dos produtos do
    cliente que aparecem, quantos vêm pré-seleccionados.
 
@@ -83,11 +82,10 @@ Numa resposta inteiramente em PT, as descrições dos cartões estavam em
 inglês ("Wireless headphones with active noise cancellation"), o que
 identifica a origem: dados de produto de feed, não texto gerado. Reforça
 que o caminho para esta superfície passa pelo feed (Merchant Center), não
-por publicar mais artigos — e sugere uma vantagem barata para quem tiver
+por publicar mais artigos: e sugere uma vantagem barata para quem tiver
 o feed em português.
 
-**O painel de fontes de um produto cita sobretudo fontes estrangeiras —
-mesmo em pergunta portuguesa** (verificado de primeira mão, 21 Ago 2026,
+**O painel de fontes de um produto cita sobretudo fontes estrangeiras: mesmo em pergunta portuguesa** (verificado de primeira mão, 21 Ago 2026,
 PT, sessão anónima). Ao abrir "Mais detalhes" de um cartão (Krups
 Nespresso Essenza Mini, pergunta em PT sobre máquinas de café), o painel
 "O que estão as pessoas a dizer" citou 5 fontes com sentimento por fonte:
@@ -97,22 +95,22 @@ textual em inglês de um utilizador). Três das cinco são **holandesas** e
 nenhuma é portuguesa. Consequências:
 
 1. A camada que justifica o produto ao comprador PT está a ser escrita
-   por avaliações de outros mercados — reforça o padrão dos decisores
+   por avaliações de outros mercados: reforça o padrão dos decisores
    estrangeiros com evidência ao nível do produto, não só da resposta.
 2. Reddit confirma-se como fonte de opinião citada dentro da superfície
-   de compra, com transcrição directa do utilizador.
+   de compra, com transcrição direta do utilizador.
 3. Para retalhistas e marcas PT, ter avaliações citáveis em sítios
    portugueses de análise é espaço por ocupar: hoje o painel vai
    buscá-las a Coolblue e Tweakers.
 
-Uma observação, um produto, uma pergunta — sugere o mecanismo, não
+Uma observação, um produto, uma pergunta: sugere o mecanismo, não
 quantifica. A repetição no observatório é que dirá se o padrão segura.
 
 **O carrossel aparece sem sessão iniciada** (verificado de primeira mão,
 20 Ago 2026, PT). Tem duas consequências para a medição:
 
 1. Não é preciso conta para observar, e uma sessão anónima não tem
-   memória nem personalização — mede-se o que um comprador qualquer vê,
+   memória nem personalização: mede-se o que um comprador qualquer vê,
    não o que o histórico de alguém condiciona. Observar com conta
    iniciada introduz um viés que tem de ser declarado.
 2. Para o lojista, significa que a superfície de compra está aberta a
@@ -120,14 +118,14 @@ quantifica. A repetição no observatório é que dirá se o padrão segura.
    descartar o carrossel como nicho de utilizadores registados.
 
 **Por confirmar, e é o teste que falta:** repetir a resposta **com pesquisa
-activa** e comparar o texto dela com o carrossel da mesma corrida. Se
+ativa** e comparar o texto dela com o carrossel da mesma corrida. Se
 nomearem os mesmos produtos, o carrossel é a apresentação visual de algo
 legível por vias normais. Se nomearem outros, a lacuna de medição no
 comércio é estrutural e tem de ser dita nas propostas.
 
 ---
 
-## Superfície 1 — Texto dos modelos (os sete motores)
+## Superfície 1: Texto dos modelos (os sete motores)
 
 **Como decide.** Por duas vias, como qualquer motor. Pela memória, nomeia
 famílias que aprendeu a associar à categoria: na verificação acima, e
@@ -154,10 +152,10 @@ fóruns.
 
 ---
 
-## Superfície 2 — Google Shopping (fichas gratuitas e patrocinadas)
+## Superfície 2: Google Shopping (fichas gratuitas e patrocinadas)
 
 **Como decide.** Dados de comerciante. É a superfície mais mecânica das
-três e a mais directamente accionável.
+três e a mais diretamente accionável.
 
 **Faz:**
 
@@ -177,18 +175,18 @@ três e a mais directamente accionável.
    serviços de comparação de preços, e nesses casos quem controla os dados
    é o intermediário. É uma alavanca que quase ninguém audita.
 
-**Ritmo.** Dias. É a superfície onde uma correcção se vê mais depressa.
+**Ritmo.** Dias. É a superfície onde uma correção se vê mais depressa.
 
 ---
 
-## Superfície 3 — Carrossel da aplicação do ChatGPT
+## Superfície 3: Carrossel da aplicação do ChatGPT
 
 **Como decide.** Pela evidência de 20 Ago 2026, monta-se a partir de
 páginas web recuperadas pela pesquisa, e não de um catálogo de compras. O
 assistente deixou o rasto: `utm_source=chatgpt.com` numa página de
 **categoria filtrada por marca e por cor** de um retalhista português.
 
-Consequência directa observada: nessa página, vinte produtos declarados
+Consequência direta observada: nessa página, vinte produtos declarados
 como `ItemList` com `ListItem`, e **nenhum `Product`**. Sem preço, marca ou
 categoria ligados a cada item, o modelo teve de inferir o que pertencia a
 quê, e apresentou um aspirador como ferro de passar.
@@ -199,7 +197,7 @@ quê, e apresentou um aspirador como ferro de passar.
    categoria. Sem distribuição não há carrossel.
 2. Exigir ao canal dados estruturados por item nas páginas de listagem:
    cada `ListItem` com um `Product` dentro, com `name`, `brand`,
-   `category` e `offers`. É correcção de um dia para quem tem acesso ao
+   `category` e `offers`. É correção de um dia para quem tem acesso ao
    template.
 3. Ter uma página só daquele produto, que diga o que a coisa é antes de
    dizer o quanto é boa. Dá ao modelo uma fonte sem ambiguidade para
@@ -246,9 +244,9 @@ Escrito de propósito, para não ser preenchido com suposição:
   alta ou baixa **em Portugal**. Há medições de terceiros a apontar para
   alta (Search Engine Land, Mar 2026); não as confirmámos e não as usamos
   como premissa.
-- De onde vem exactamente a classificação por estrelas que o carrossel
+- De onde vem exatamente a classificação por estrelas que o carrossel
   mostra, quando o fabricante e o retalhista publicam números diferentes.
-- Se a correcção dos dados estruturados numa página de listagem muda o que
+- Se a correção dos dados estruturados numa página de listagem muda o que
   o carrossel devolve, e em quanto tempo.
 
 Protocolo para responder à segunda: vinte perguntas, quatro categorias,

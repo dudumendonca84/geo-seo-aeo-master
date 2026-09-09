@@ -14,6 +14,14 @@ Hoje é {{TODAY}}.
 - **⏰ WATCH ESPECÍFICO — AI ads (anúncios dentro de respostas/assistentes de IA).** Estado a 18 Ago 2026: OpenAI avisou utilizadores EEA (email, 15 Ago) de que anúncios chegam ao ChatGPT Free/Go "ainda este mês", não personalizados (tópico, localização, dispositivo, hora, língua; OpenAI Ireland como controller); Reino Unido vivo desde 6 Jun 2026; Google com formato de shopping ads no AI Mode desde 11 Fev 2026 (EUA primeiro); Microsoft com ads no Copilot + Brand Agents (Jan 2026); Perplexity com sponsored follow-ups. Vigiar: (1) primeiro anúncio visível no ChatGPT em Portugal — no dia, entry destacada + acção para o site (artigo "chegaram os anúncios ao ChatGPT em PT") e para o Tracker (marcar pago vs orgânico nas superfícies capturadas); (2) abertura do canal de compra de anúncios da OpenAI a anunciantes/agências na UE; (3) chegada dos formatos de IA do Google Ads e Microsoft Advertising à UE; (4) research sobre efeito dos ads na composição das respostas orgânicas (se anúncios deslocam citações). A destaque.ai está a posicionar-se como especialista em AI ads em PT — este watch alimenta esse serviço. **O mapa completo por motor vive em `references/ai_ads.md`: qualquer gatilho disparado actualiza esse ficheiro (secção do motor + tabela-resumo, com data) além do news-feed.**
 - **⏰ WATCH ESPECÍFICO — API do Bing Webmaster Tools AI Performance.** O painel (preview 9 Fev 2026) é a única telemetria first-party de citações Copilot/Bing AI e NÃO tem API — confirmado pela Microsoft em learn.microsoft.com/en-us/answers (Jul 2026). O Tracker tem o import manual desactivado como ritual (decisão do founder: "tem que ser automático") e a `BING_WEBMASTER_API_KEY` já guardada na Vercel à espera. No dia em que blogs.bing.com/search (ou a doc da Webmaster API) anunciar acesso programático ao AI Performance: entry destacada no news-feed com o link primário + marcar como **acção para o Tracker** (ligar o endpoint substitui o import manual — `src/lib/bwt/` já tem parser e tabela `bwt_ai_daily` prontos).
 
+
+## Regra editorial de tudo o que escreves aqui (9 Set 2026)
+
+- **Sem travessões** (`—`) em texto nenhum: onde apetecer um, usa dois pontos, ponto final ou parêntesis. Pedido do founder a 25 Ago 2026.
+- **Acordo Ortográfico de 1990** em tudo o que é português: ação, atual, direto, objetivo, projeto, setor, aspeto, otimização. Secção, facto, contacto, carácter e característica NÃO mudam em português europeu; um nome próprio nunca se corrige ("Seguro Directo").
+- As palavras **"canónico"** e **"controlo"** não se escrevem: "oficial", "de referência", "a versão que fica"; "linha de base".
+- `node scripts/validate-skill-tables.mjs` falha se um travessão ou "canónic" entrar nos blocos que o cliente lê (§ Deck Builder method, playbooks PT, narrative_templates, gap_action_mapping).
+
 ## Fontes prioritárias (por tier)
 
 ### TIER 1 — Fontes primárias (obrigatório verificar todas)

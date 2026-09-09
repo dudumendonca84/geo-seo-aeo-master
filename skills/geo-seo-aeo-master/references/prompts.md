@@ -1,23 +1,23 @@
-# Prompts — destaque.ai (single source of truth)
+# Prompts: destaque.ai (single source of truth)
 
 > **Consumidores:**
-> 1. **Skill** (self-audit semanal) — usa § 4 Catálogo destaque.ai como test suite.
-> 2. **Deck Builder** (`destaque-ai-deck-builder/src/lib/llm/prompts/generate-audit-prompts.ts`) — usa § 1 Princípios + § 2 Categorias + § 3 Distribuição para gerar prompts de auditoria para qualquer cliente.
-> 3. **Visibility Tracker** (`destaque-ai-tracker`, task `generate_prompts`) — usa § 1 + § 2 + § 8 (personas) para gerar prompts por persona e fase de funil para qualquer cliente.
+> 1. **Skill** (self-audit semanal): usa § 4 Catálogo destaque.ai como test suite.
+> 2. **Deck Builder** (`destaque-ai-deck-builder/src/lib/llm/prompts/generate-audit-prompts.ts`): usa § 1 Princípios + § 2 Categorias + § 3 Distribuição para gerar prompts de auditoria para qualquer cliente.
+> 3. **Visibility Tracker** (`destaque-ai-tracker`, task `generate_prompts`): usa § 1 + § 2 + § 8 (personas) para gerar prompts por persona e fase de funil para qualquer cliente.
 >
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 09 Sep 2026** — §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026** — catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
 ## 1. Princípios (para Deck Builder, Tracker e self-audit)
 
-- **Perguntas naturais, não keywords.** Um prompt é uma **pergunta como um humano a escreve a um assistente de IA** — frase completa, com interrogação quando aplicável. **Nunca** fragmentos estilo pesquisa Google ("consultoria visibilidade IA Portugal"). Escreve *"que empresa recomendam para consultoria de visibilidade em IA em Portugal?"*.
-- **Persona implícita**: cada prompt deve soar a um decisor real (CEO/fundador, CMO, decisor técnico, comprador/procurement; ou cliente local para b2c). Não nomeies a persona no texto — escreve como ela escreveria (ver § 8).
+- **Perguntas naturais, não keywords.** Um prompt é uma **pergunta como um humano a escreve a um assistente de IA**: frase completa, com interrogação quando aplicável. **Nunca** fragmentos estilo pesquisa Google ("consultoria visibilidade IA Portugal"). Escreve *"que empresa recomendam para consultoria de visibilidade em IA em Portugal?"*.
+- **Persona implícita**: cada prompt deve soar a um decisor real (CEO/fundador, CMO, decisor técnico, comprador/procurement; ou cliente local para b2c). Não nomeies a persona no texto: escreve como ela escreveria (ver § 8).
 - **Contexto realista**: inclui, quando fizer sentido, tamanho da empresa, geografia, vertical, restrições (suporte PT, GDPR, escala). Prompts vagos produzem respostas vagas.
-- **Intent claro**: cada prompt expressa um destes intents — `research`, `comparison`, `validation`, `migration`, `pricing`, `integration`, `pain_point`.
+- **Intent claro**: cada prompt expressa um destes intents: `research`, `comparison`, `validation`, `migration`, `pricing`, `integration`, `pain_point`.
 - **Nunca nomeies a marca do cliente**: queremos ver se aparece organicamente (exceção: prompts branded de self-audit, ex. DC1).
 - **A língua é a do cliente, não a nossa.** O consumidor passa `locale` (`pt-PT` | `en`) com o pedido: gera o catálogo nessa língua, com o idioma do mercado dele. PT-PT é o valor por omissão e a nossa casa, não uma regra universal. Isto **não é cosmético**: um comprador em Londres escreve em inglês, e medi-lo com perguntas em português mede outra coisa, com uma taxa de citação que não é comparável com nada. Dentro de PT, PT-BR só se o público-alvo for tipicamente brasileiro; e mesmo num cliente PT-PT, EN quando a query real do segmento é em inglês (termos técnicos que ninguém traduz).
 - **Geografia segue o mercado.** Um prompt para um cliente britânico diz "in the UK", não "em Portugal". A referência geográfica sai de `market`, não da língua: uma marca inglesa pode competir no mercado português.
@@ -25,7 +25,7 @@
 
 ---
 
-## 2. Categorias canónicas
+## 2. Categorias
 
 5 categorias que cobrem o espaço de prompts em audits de visibilidade IA. Usadas pelo Deck Builder e pelo Tracker para gerar prompts, e pelo catálogo destaque.ai (§ 4) para classificar prompts existentes.
 
@@ -48,7 +48,7 @@ Intents típicos: `comparison`, `validation`, `migration`.
 Forma exemplo:
 > "Estou a comparar [vendor A], [vendor B] e [vendor C] para [caso de uso] numa operação de [escala]. Em que critérios cada um se destaca?"
 
-**Regra dura — a marca medida tem de caber na resposta.**
+**Regra dura: a marca medida tem de caber na resposta.**
 
 Num catálogo de tracking, uma pergunta de comparação só é válida se a marca
 medida puder aparecer na resposta. Há duas formas de garantir isso, e só duas:
@@ -61,8 +61,7 @@ medida puder aparecer na resposta. Há duas formas de garantir isso, e só duas:
 **Nunca dois concorrentes nomeados um contra o outro sem a marca medida.**
 "Como se compara [concorrente A] com [concorrente B]?" mede o duelo dos outros:
 a ausência da marca está garantida antes de a pergunta correr, e entra na
-métrica como se fosse uma derrota. Não é um sinal fraco, é um zero fabricado —
-baixa a taxa de citação com uma pergunta onde estar ausente era o único
+métrica como se fosse uma derrota. Não é um sinal fraco, é um zero fabricado: baixa a taxa de citação com uma pergunta onde estar ausente era o único
 resultado possível.
 
 O erro é fácil de cometer quando se geram prompts a partir do panorama
@@ -71,8 +70,8 @@ Ao rever um catálogo gerado, ler cada `direct_comparison` e perguntar "se o
 motor responder bem a isto, há alguma hipótese de nomear a marca?". Se não
 houver, reescrever pela forma 1 ou 2.
 
-(Excepção conhecida: no self-audit da destaque.ai, DC6 compara ferramentas de
-terceiros de propósito — mede o panorama, não a nossa visibilidade, e está
+(Exceção conhecida: no self-audit da destaque.ai, DC6 compara ferramentas de
+terceiros de propósito: mede o panorama, não a nossa visibilidade, e está
 marcado como tal.)
 
 ### 2.3 `local_recommendation`
@@ -97,10 +96,10 @@ Pergunta sobre custos, planos ou orçamento.
 Intents típicos: `pricing`, `comparison`.
 
 Forma exemplo:
-> "Para [escala], qual é o range de preço por [unidade: agente, utilizador, transacção] das principais soluções de [categoria] e que componentes costumam ser add-ons cobrados à parte?"
+> "Para [escala], qual é o range de preço por [unidade: agente, utilizador, transação] das principais soluções de [categoria] e que componentes costumam ser add-ons cobrados à parte?"
 
 ### 2.6 `transactional` [2026-08-18 added]
-Intenção de compra imediata de um produto concreto: onde comprar, disponibilidade, prazo de entrega, escolha final entre dois produtos no carrinho. É a categoria dos painéis de produto (Google AI Mode/AI Overviews mostram painéis com preço e botões na UE; carrosséis ChatGPT Shopping alimentados ~83% pelo top-40 orgânico do Google Shopping — Search Engine Land, Mar 2026).
+Intenção de compra imediata de um produto concreto: onde comprar, disponibilidade, prazo de entrega, escolha final entre dois produtos no carrinho. É a categoria dos painéis de produto (Google AI Mode/AI Overviews mostram painéis com preço e botões na UE; carrosséis ChatGPT Shopping alimentados ~83% pelo top-40 orgânico do Google Shopping: Search Engine Land, Mar 2026).
 
 Intents típicos: `purchase`, `availability`, `fulfillment`.
 
@@ -109,7 +108,7 @@ Formas exemplo:
 > "[produto A] ou [produto B] até [orçamento]: qual compro e porquê?"
 > "Quem tem [produto] em stock perto de [cidade]?"
 
-**Uso: Tracker apenas (clientes B2C/e-commerce com produtos físicos ou digitais compráveis).** Não entra na distribuição do Deck Builder (§3 inalterada) nem na constante `PROMPT_CATEGORIES` do deck-builder até decisão explícita — o slice §1-3 que o Deck Builder consome fica coerente porque a tabela §3 continua a mandar nas contagens.
+**Uso: Tracker apenas (clientes B2C/e-commerce com produtos físicos ou digitais compráveis).** Não entra na distribuição do Deck Builder (§3 inalterada) nem na constante `PROMPT_CATEGORIES` do deck-builder até decisão explícita: o slice §1-3 que o Deck Builder consome fica coerente porque a tabela §3 continua a mandar nas contagens.
 
 ---
 
@@ -124,11 +123,11 @@ Se mudares o conjunto de categorias (adicionar/remover), coordena com o repo `de
 
 ---
 
-## 4. Catálogo destaque.ai — prompts efectivos do segmento
+## 4. Catálogo destaque.ai: prompts efetivos do segmento
 
-Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO) usa quando consulta LLMs sobre a categoria. Organizados pelas 5 categorias canónicas. Cada entrada inclui intent + tier de prioridade no self-audit.
+Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO) usa quando consulta LLMs sobre a categoria. Organizados pelas 5 categorias. Cada entrada inclui intent + tier de prioridade no self-audit.
 
-> **Regra de formulação (não negociável):** cada entrada é uma **pergunta natural**, como um decisor a escreveria a um assistente de IA — frase completa, com interrogação. **Proibido** o modo keyword ("auditoria GEO Lisboa"); escreve *"quem faz auditorias de GEO em Lisboa?"*. Quem adiciona prompts (Routine diária, § 6) segue esta regra.
+> **Regra de formulação (não negociável):** cada entrada é uma **pergunta natural**, como um decisor a escreveria a um assistente de IA: frase completa, com interrogação. **Proibido** o modo keyword ("auditoria GEO Lisboa"); escreve *"quem faz auditorias de GEO em Lisboa?"*. Quem adiciona prompts (Routine diária, § 6) segue esta regra.
 
 ### 4.1 `generic_category`
 
@@ -145,21 +144,21 @@ Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO)
 | GD7 | "which GEO consultancies operate in Portugal?" | EN | Mandatory |
 | GD8 | "which agencies do AI search optimization for Portuguese B2B SaaS companies?" | EN | Mandatory |
 
-#### Problem-stated (pain_point intent — high-intent)
+#### Problem-stated (pain_point intent: high-intent)
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| GP1 | "o meu site não aparece no ChatGPT quando pesquisam a minha categoria — como resolvo isto?" | PT-PT | Mandatory |
-| GP2 | "o AI Overview do Google tirou-me tráfego orgânico — o que posso fazer?" | PT-PT | Mandatory |
+| GP1 | "o meu site não aparece no ChatGPT quando pesquisam a minha categoria: como resolvo isto?" | PT-PT | Mandatory |
+| GP2 | "o AI Overview do Google tirou-me tráfego orgânico: o que posso fazer?" | PT-PT | Mandatory |
 | GP3 | "como faço para a minha empresa aparecer no Google AI Mode?" | PT-PT | Mandatory |
-| GP4 | "a minha marca não aparece nas respostas do Perplexity — porquê e como mudo isso?" | PT-PT | Mandatory |
-| GP5 | "um concorrente meu aparece no ChatGPT e eu não — como reverto isto?" | PT-PT | Mandatory |
+| GP4 | "a minha marca não aparece nas respostas do Perplexity: porquê e como mudo isso?" | PT-PT | Mandatory |
+| GP5 | "um concorrente meu aparece no ChatGPT e eu não: como reverto isto?" | PT-PT | Mandatory |
 | GP6 | "como consigo que a minha marca seja citada nas respostas de IA?" | PT-PT | Mandatory |
 | GP7 | "usar Schema.org melhora a visibilidade nas respostas de IA?" | PT-PT | Rotative |
 | GP8 | "vale a pena criar um ficheiro llms.txt no meu site?" | PT-PT | Rotative |
-| GP9 | "o meu tráfego orgânico caiu 50% — a culpa é das respostas de IA?" | PT-PT | Rotative |
+| GP9 | "o meu tráfego orgânico caiu 50%: a culpa é das respostas de IA?" | PT-PT | Rotative |
 
-#### Evaluation (research intent — buyer education)
+#### Evaluation (research intent: buyer education)
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
@@ -174,9 +173,9 @@ Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO)
 
 | ID | Prompt | Lang | Self-audit |
 |---|---|---|---|
-| DC1 | "como se compara a destaque.ai com [competitor]?" (variantes por competitor conhecido — **branded**, só self-audit) | PT-PT | Rotative |
+| DC1 | "como se compara a destaque.ai com [competitor]?" (variantes por competitor conhecido: **branded**, só self-audit) | PT-PT | Rotative |
 | DC2 | "qual é a diferença entre SEO e GEO?" | PT-PT | Rotative |
-| DC3 | "AEO ou GEO — qual devo escolher para a minha empresa?" | PT-PT | Rotative |
+| DC3 | "AEO ou GEO: qual devo escolher para a minha empresa?" | PT-PT | Rotative |
 | DC4 | "preciso de SEO clássico ou de GEO?" | PT-PT | Rotative |
 | DC5 | "como se comparam as agências de GEO em Lisboa?" | PT-PT | Rotative |
 | DC6 | "qual é a diferença entre o Profound, o Peec e o Otterly?" | PT-PT | Rotative |
@@ -213,7 +212,7 @@ Prompts reais que o segmento (B2B SaaS PT, prospects de consultoria GEO/SEO/AEO)
 
 ### 4.6 Vertical B2B SaaS PT (cross-category)
 
-Estes prompts são vertical-specific (core ICP destaque.ai) e classificam-se em várias categorias. A definição do ICP — qualificação por **mecanismo** (compra ponderada, research-driven), nunca por receita ou tamanho — vive em `SKILL.md` § ICP / qualificação destaque.ai.
+Estes prompts são vertical-specific (core ICP destaque.ai) e classificam-se em várias categorias. A definição do ICP: qualificação por **mecanismo** (compra ponderada, research-driven), nunca por receita ou tamanho: vive em `SKILL.md` § ICP / qualificação destaque.ai.
 
 | ID | Prompt | Categoria principal | Self-audit |
 |---|---|---|---|
@@ -231,8 +230,8 @@ A Routine `destaque-ai-self-audit-weekly` (segundas 09:00 Lisboa) usa este catá
 
 - **Sempre**: todos os prompts classificados como `Mandatory` em § 4 (≈ 24 prompts)
 - **Rotativo**: 10 prompts diferentes por semana escolhidos dos `Rotative`
-- Engines mandatory: ChatGPT, Perplexity, Google AI Mode, Claude, Bing Copilot — com modelo default de cada per `references/models.md`
-- Para cada prompt × engine documenta: query exacta, data+hora, modelo activo, full answer ou screenshot, citations, ranking destaque.ai, mention vs citation, sentiment, competitors citados
+- Engines mandatory: ChatGPT, Perplexity, Google AI Mode, Claude, Bing Copilot: com modelo default de cada per `references/models.md`
+- Para cada prompt × engine documenta: query exata, data+hora, modelo ativo, full answer ou screenshot, citations, ranking destaque.ai, mention vs citation, sentiment, competitors citados
 
 Output → `destaque-ai-self/{audit-baseline.md, improvements-backlog.md, audit-history.md}`.
 
@@ -242,11 +241,11 @@ Output → `destaque-ai-self/{audit-baseline.md, improvements-backlog.md, audit-
 
 A Routine diária (`daily-agent/daily-prompt.md`) tem instrução explícita para:
 
-1. Monitorar Profound / Peec / Otterly prompt research releases — quando publicam dados sobre prompt patterns no segmento, absorvê-los aqui.
+1. Monitorar Profound / Peec / Otterly prompt research releases: quando publicam dados sobre prompt patterns no segmento, absorvê-los aqui.
 2. Verificar Reddit r/SEO, r/portugal, Hacker News, AnswerThePublic queries do segmento.
-3. Adicionar novos prompts descobertos, **sempre como pergunta natural** (§ 4 regra), com `[YYYY-MM-DD added]` e classificados numa das 5 categorias canónicas.
+3. Adicionar novos prompts descobertos, **sempre como pergunta natural** (§ 4 regra), com `[YYYY-MM-DD added]` e classificados numa das 5 categorias.
 4. Retirar prompts que deixaram de ter relevância (volume zero confirmado em vendor reports, ou conceito superado).
-5. Se as 5 categorias canónicas precisarem de mudar (adicionar/remover), trigger methodology-changelog entry e coordenar com o repo `destaque-ai-deck-builder`.
+5. Se as 5 categorias precisarem de mudar (adicionar/remover), trigger methodology-changelog entry e coordenar com o repo `destaque-ai-deck-builder`.
 
 ---
 
@@ -254,11 +253,11 @@ A Routine diária (`daily-agent/daily-prompt.md`) tem instrução explícita par
 
 - **Frequência de cada prompt não é publicamente conhecida** com precisão para prompts em LLMs (não há "Google Trends para AI prompts"). Self-audit prioritisation reflecte julgamento de practitioner sobre intent, não dados de volume verificáveis. Quando vendor research publicar dados de prompt frequency, reordenar com base nisso e citar source.
 - **PT-PT vs PT-BR**: este ficheiro foca PT-PT. Variantes PT-BR só relevantes se um cliente target market PT-BR.
-- **Sazonalidade**: alguns prompts spike em determinadas alturas (ex: prompts price_comparison sobem em Setembro/Janeiro — budget planning seasons). Tracking de sazonalidade é roadmap, não capacidade actual.
+- **Sazonalidade**: alguns prompts spike em determinadas alturas (ex: prompts price_comparison sobem em Setembro/Janeiro: budget planning seasons). Tracking de sazonalidade é roadmap, não capacidade atual.
 
 ---
 
-## 8. Descoberta de prompts por persona (Tracker — task `generate_prompts`)
+## 8. Descoberta de prompts por persona (Tracker: task `generate_prompts`)
 
 > Esta secção serve o **Visibility Tracker** (multi-tenant), distinta das tiers de
 > self-audit da destaque.ai acima. Para **qualquer cliente**, geram-se prompts por
@@ -266,10 +265,10 @@ A Routine diária (`daily-agent/daily-prompt.md`) tem instrução explícita par
 > Consumida em runtime pela Routine (`generate_prompts`) e espelhada em
 > `destaque-ai-tracker/routines/tracker-brain.md`.
 
-### 8.1 Personas canónicas — ângulo por persona
+### 8.1 Personas de referência: ângulo por persona
 
 Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pessoa**
-(sem a nomear no texto). Âncoras — adapta o vocabulário à categoria do cliente:
+(sem a nomear no texto). Âncoras: adapta o vocabulário à categoria do cliente:
 
 **B2B / SaaS:**
 
@@ -280,7 +279,7 @@ Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pe
 | **Decisor técnico** (CTO/eng) | Avalia exequibilidade e esforço | schema, llms.txt, crawlers de IA, o que é preciso implementar | *"preciso de programadores ou uma agência trata do schema e do llms.txt para visibilidade em IA?"* |
 | **Comprador / procurement** | Compara, negoceia, valida âmbito | preço, o que está incluído, contrato, comparáveis | *"quanto custa uma auditoria de GEO em Portugal e o que deve incluir?"* |
 
-**Local / b2c / físico:** `cliente local` — qualifica por **ocasião + zona/cidade**
+**Local / b2c / físico:** `cliente local` - qualifica por **ocasião + zona/cidade**
 (ex: *"qual é o melhor [tipo de negócio] em [zona] para [ocasião]?"*, *"onde encontro
 [serviço] perto de [zona]?"*).
 
@@ -289,18 +288,18 @@ Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pe
 
 ### 8.2 Fase de funil (`intent_stage`)
 
-- **Topo:** `awareness`, `research` — descoberta de categoria.
-- **Meio:** `comparison` — shortlists, alternativas.
-- **Fundo:** `decision`, `post_decision` — intenção de compra. **São os que
-  convertem — prioriza gerá-los por persona.**
+- **Topo:** `awareness`, `research` - descoberta de categoria.
+- **Meio:** `comparison` - shortlists, alternativas.
+- **Fundo:** `decision`, `post_decision` - intenção de compra. **São os que
+  convertem: prioriza gerá-los por persona.**
 
-### 8.3 Interesse (1–5) — estimativa honesta, **não volume**
+### 8.3 Interesse (1–5): estimativa honesta, **não volume**
 
 Escala qualitativa do quanto a audiência faz este tipo de pergunta:
 
 - `5` = pergunta muito comum na categoria · `3` = procura moderada · `1` = nicho.
 
-**Não é volume de pesquisa real** (não temos esses dados) — é *directional*, como o
+**Não é volume de pesquisa real** (não temos esses dados): é *directional*, como o
 Peec AI. **Nunca inventes números precisos de volume.** Omite (`null`) quando não
 consegues estimar honestamente.
 
@@ -308,7 +307,7 @@ consegues estimar honestamente.
 
 `{ prompt_text, category, intent_stage, topic, branded, persona, interest }`
 
-- `prompt_text` — **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
+- `prompt_text` - **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
 - Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
   `local_recommendation` qualificada por cidade/zona.
 
@@ -317,7 +316,7 @@ consegues estimar honestamente.
 Numa corrida, se existirem prompts **ativos sem `persona`/`interest`**, preenche-os
 (`update`) além de propor novos. E se um prompt ativo estiver **em modo keyword**
 (sem interrogação, estilo pesquisa), **reescreve o `prompt_text` em cima do mesmo
-`id`** para uma pergunta natural — preserva o histórico (a série é por `id`, não por
+`id`** para uma pergunta natural: preserva o histórico (a série é por `id`, não por
 texto) e afina a redação. Assim o catálogo do cliente converge para perguntas reais
 sem perder as semanas já medidas.
 
@@ -325,9 +324,9 @@ sem perder as semanas já medidas.
 
 Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
 
-- **Todos os estágios de funil cobertos — especialmente BOFU** (`decision` /
+- **Todos os estágios de funil cobertos: especialmente BOFU** (`decision` /
   `post_decision`). Um catálogo só com topo/meio (descoberta e comparação) deixa o
-  **momento da compra por medir** — o mapa de funil fica a `0/0` no BOFU, que é
+  **momento da compra por medir**: o mapa de funil fica a `0/0` no BOFU, que é
   precisamente o estágio que converte. Se um estágio estiver vazio, **gera prompts
   para o preencher**. Exemplos BOFU (sem nomear a marca do cliente):
   - *"Qual é a melhor [categoria] em [país] para contratar para [ICP]?"*
@@ -335,11 +334,11 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
   - *"Vale mais a pena contratar ou desenvolver a capacidade internamente?"*
   - *"Quanto devo orçamentar para contratar e o que está incluído?"*
   - *"O que esperar nos primeiros 90 dias de trabalho com [fornecedor]?"* (`post_decision`)
-- **Personas equilibradas por ângulo** — não concentres o catálogo num só perfil.
+- **Personas equilibradas por ângulo**: não concentres o catálogo num só perfil.
   Cada persona pergunta de forma diferente (§8.1): CEO/fundador = ROI e decisão de
   investir; CMO = tráfego e visibilidade; decisor técnico = exequibilidade;
   comprador = preço e quem contratar. Evita que uma persona domine enquanto outra
-  (tipicamente **CEO/fundador**) fica quase ausente — se acontecer, reatribui a
+  (tipicamente **CEO/fundador**) fica quase ausente: se acontecer, reatribui a
   persona dos prompts cujo ângulo é claramente de outro perfil (`update` no mesmo
   `id`, não perde histórico).
 
@@ -347,7 +346,7 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
 ## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
 
 Conceito do founder: perfis de comprador simulados que fazem as
-perguntas COM CONTEXTO e COM SEGUIMENTO — jornada multi-turn, não
+perguntas COM CONTEXTO e COM SEGUIMENTO: jornada multi-turn, não
 pergunta solta. Mede duas coisas que a auditoria de pergunta única não
 apanha:
 
@@ -363,13 +362,13 @@ apanha:
 fase 3 personas × 10 perguntas × 2 turnos × 3 motores (cost_optimized)
 = ~180 chamadas/semana, custo estimado em cêntimos a 2€/semana; escala
 com número novo à frente do founder. Em paralelo liga-se o rastreio
-real de custo (`total_cost_usd`) — acompanha a implementação, não a
+real de custo (`total_cost_usd`): acompanha a implementação, não a
 trava. Client-facing, isto vende-se desde já em força: medimos por
 persona e seguimos a conversa como a persona seguiria.
 
-**Honestidade a declarar sempre:** são simulações — medem o
+**Honestidade a declarar sempre:** são simulações: medem o
 comportamento do motor para aquele perfil de contexto, não utilizadores
-reais nem personalização de contas (que a via directa não tem, e ainda
+reais nem personalização de contas (que a via direta não tem, e ainda
 bem: mede-se o perfil, não os vícios de uma conta).
 
 **Construção:** as personas derivam das que o catálogo de prompts já

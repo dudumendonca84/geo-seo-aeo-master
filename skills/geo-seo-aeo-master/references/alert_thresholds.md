@@ -1,4 +1,4 @@
-# Alert thresholds — what warrants surfacing
+# Alert thresholds: what warrants surfacing
 
 Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('generate_alerts', {…})`) to decide which week-over-week changes deserve an alert row in `tracker_alerts`, an email digest entry, or a banner on the dashboard.
 
@@ -18,7 +18,7 @@ Three bands. The band drives the channel (banner vs email vs digest-only) and th
 | `notable` | A change worth knowing about and discussing on the next call. Not necessarily actionable this week. | Email + digest |
 | `informational` | A movement that fits the pattern but doesn't itself demand action. Useful for trendlines. | Digest only |
 
-Below `informational` is **noise** — do not create an alert.
+Below `informational` is **noise**: do not create an alert.
 
 ## 2. Metric thresholds (per-prompt and aggregate)
 
@@ -40,7 +40,7 @@ Use the **stricter** of pp and rel for `critical` and `notable` (both conditions
 | Decrease | Δ ≤ −5 pp | Δ ≤ −3 pp | Δ ≤ −1.5 pp |
 | Increase | Δ ≥ +5 pp | Δ ≥ +3 pp | Δ ≥ +1.5 pp |
 
-SoV moves are inherently more meaningful than CR moves — they reflect *relative* position. Lower thresholds.
+SoV moves are inherently more meaningful than CR moves: they reflect *relative* position. Lower thresholds.
 
 ### Average position (lower is better)
 
@@ -72,25 +72,24 @@ These fire on the boolean event itself, not on a metric delta.
 | **Client drops out of the top-5 SoV** when it was in the top-5 last week | `critical` |
 | **Client drops out of the top-3 SoV** | `critical` |
 | **Client falls below SoV ≥ 5% on a prompt where it was ≥ 15% last week** | `critical` |
-| **A prompt's response set becomes degenerate** (the same 1–2 brands in 100% of responses) | `notable` — propose prompt rotation |
+| **A prompt's response set becomes degenerate** (the same 1–2 brands in 100% of responses) | `notable` - propose prompt rotation |
 | **An engine returns refusals or rate-limit errors on ≥ 25% of prompts** | `notable` for ops, not for the client view |
 | **A new peer-classified brand appears for the first time** (after `competitor_filtering` clears it) | `notable` |
 | **An ambiguous mention spike** (≥ 10% of total mentions flagged ambiguous) | `informational` for the client; surface to ops |
-| **`models.md` indicates a default model changed** since the last audit | `informational` — annotate that this week's comparison is not fully comparable |
-| **Negative mention that meets the crisis bar** (see §3.1) | `critical` — `type: negative_mention`, carries the crisis payload |
+| **`models.md` indicates a default model changed** since the last audit | `informational` - annotate that this week's comparison is not fully comparable |
+| **Negative mention that meets the crisis bar** (see §3.1) | `critical` - `type: negative_mention`, carries the crisis payload |
 
-### 3.1 Negative mention — crisis trigger and payload
+### 3.1 Negative mention: crisis trigger and payload
 
 The sentiment thresholds in §2 measure the *mix* drifting. This event is
 different: it fires on **individual responses** where the engine says
-something materially damaging or false about the brand — the case SKILL.md
+something materially damaging or false about the brand: the case SKILL.md
 § Crisis-response protocol exists for.
 
 Fire `negative_mention` when, in the current audit, a response (a) mentions
-or cites the client brand AND (b) makes a concrete negative claim about it —
-an accusation, a factual error, an association with a failure or scandal.
+or cites the client brand AND (b) makes a concrete negative claim about it: an accusation, a factual error, an association with a failure or scandal.
 General unfavourable comparison ("X é mais barato que a marca") is **not**
-a crisis — that is ordinary competition, covered by §2. When in doubt,
+a crisis: that is ordinary competition, covered by §2. When in doubt,
 do not fire; a false crisis alarm costs more credibility than a missed one.
 
 The alert `details` JSONB must carry everything step 1 of the protocol
@@ -110,7 +109,7 @@ needs, so the client never has to reconstruct the evidence:
 `grounded` decides the response path (step 3 vs 4 of the protocol): grounded
 → the work is with the source publisher; hallucinated → vendor feedback +
 canonical statement on the owned domain. One alert per distinct claim, not
-per response — the same accusation across 5 engines is ONE crisis with the
+per response: the same accusation across 5 engines is ONE crisis with the
 engine list in details.
 
 ## 4. Cumulative / trend-based alerts
@@ -138,23 +137,23 @@ Each metric is computed both **per engine** and **aggregated across engines** (m
 
 Once an alert fires for a metric, suppress alerts of equal or lower severity on the **same metric** for the next 2 weeks unless the metric crosses a higher band. Otherwise a slow slide generates one alert per week and clients tune out.
 
-Exception: event-based alerts (§3) are not suppressed — those fire each time the event occurs.
+Exception: event-based alerts (§3) are not suppressed: those fire each time the event occurs.
 
 ## 7. Tone and copy
 
-Alert bodies follow the editorial voice of the skill — sober, primary-source-anchored, no hype. Templates:
+Alert bodies follow the editorial voice of the skill: sober, primary-source-anchored, no hype. Templates:
 
-- **Critical**, decrease: *"Citation rate caiu de X% para Y% (Δ −Z pp) na semana de DD/MM. Maior contribuição: motor M, categoria C. Detalhe e proposta de acção no relatório semanal."*
+- **Critical**, decrease: *"Citation rate caiu de X% para Y% (Δ −Z pp) na semana de DD/MM. Maior contribuição: motor M, categoria C. Detalhe e proposta de ação no relatório semanal."*
 - **Critical**, new competitor in top-3: *"Marca B entra no top-3 SoV pela primeira vez (S%). Categoria mais afectada: C. Análise no relatório semanal."*
-- **Notable**, sustained slide: *"SoV em descida há 4 semanas (Δ acumulado −X pp). Trajectória ainda não crítica, mas merece tema na próxima call."*
+- **Notable**, sustained slide: *"SoV em descida há 4 semanas (Δ acumulado −X pp). Trajetória ainda não crítica, mas merece tema na próxima call."*
 
 No emoji. No exclamation marks. No "urgent action required" boilerplate. The severity tag carries the urgency.
 
 ## 8. Override mechanism
 
-Clients can adjust thresholds via a JSONB override column on the Tracker's clients table (`alert_thresholds_override`; not created yet as of 09 Sep 2026, so today the defaults apply to everyone; the old text named a `tracker_clients` table that never existed). The override is **multiplicative** on the defaults above — e.g. `{ "cr_decrease_critical_pp": 1.5 }` means CR critical fires at ≥ 10.5 pp instead of 7 pp. The override applies only to that client. The defaults stay canonical here.
+Clients can adjust thresholds via a JSONB override column on the Tracker's clients table (`alert_thresholds_override`; not created yet as of 09 Sep 2026, so today the defaults apply to everyone; the old text named a `tracker_clients` table that never existed). The override is **multiplicative** on the defaults above: e.g. `{ "cr_decrease_critical_pp": 1.5 }` means CR critical fires at ≥ 10.5 pp instead of 7 pp. The override applies only to that client. The defaults stay canonical here.
 
-For internal use (destaque.ai self-audit), no override — eat your own dog food at full sensitivity.
+For internal use (destaque.ai self-audit), no override: eat your own dog food at full sensitivity.
 
 ## 9. What is deliberately not an alert
 
@@ -168,24 +167,24 @@ To keep the bar high:
 
 ## 10. Maintenance
 
-Thresholds are calibrated to ~30 prompts × 7 engines × 1 week (Perplexity augmented-only). If the prompt count or engine count changes materially, recalibrate — variance at 10 prompts × 3 engines is much higher than at 30 × 7, and the same pp thresholds would fire too often.
+Thresholds are calibrated to ~30 prompts × 7 engines × 1 week (Perplexity augmented-only). If the prompt count or engine count changes materially, recalibrate: variance at 10 prompts × 3 engines is much higher than at 30 × 7, and the same pp thresholds would fire too often.
 
 Last calibration check: 25 May 2026, using destaque.ai self-audit baseline data.
 
-## 9. Território — alertas de invasão (event-based, semana vs semana anterior)
+## 9. Território: alertas de invasão (event-based, semana vs semana anterior)
 
 Comparação por pergunta entre auditorias consecutivas. Não suprimidos (são
-eventos, §3-style). Os três tipos, com os `type` canónicos usados pelo Tracker:
+eventos, §3-style). Os três tipos, com os `type` oficiais usados pelo Tracker:
 
-- **`territory_invasion`** — um concorrente passa a ser citado numa pergunta em
+- **`territory_invasion`**: um concorrente passa a ser citado numa pergunta em
   que na semana anterior só o cliente era citado. `notable`; **`critical`** se a
   pergunta for de intenção de compra (`decision`/`post_decision`).
-- **`bofu_newcomer`** — marca nova (primeira vez no tracking) aparece numa
+- **`bofu_newcomer`**: marca nova (primeira vez no tracking) aparece numa
   pergunta `decision`/`post_decision`. `notable`.
-- **`territory_claimed`** — pergunta que estava livre (nenhuma marca citada)
+- **`territory_claimed`**: pergunta que estava livre (nenhuma marca citada)
   passa a ter dono ≠ cliente. `notable`.
 
-Copy: nomeia a pergunta e a marca, com contagens reais — *"[NOTÁVEL] A marca B
+Copy: nomeia a pergunta e a marca, com contagens reais: *"[NOTÁVEL] A marca B
 passou a ser citada em 'pergunta X' (2 de 7 motores), onde na semana passada só
 tu aparecias."* A resposta natural a qualquer um destes é o pattern «Território
 livre» do `gap_action_mapping.md` (defender ou flanquear).

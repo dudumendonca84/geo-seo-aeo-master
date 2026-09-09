@@ -1,13 +1,13 @@
 # Gap → action mapping (SINAL)
 
 > **Consumidores:**
-> 1. **Deck Builder** (`src/lib/llm/synthesize-deck.ts`, futuro Step 12) — lê este ficheiro e mapeia findings do audit + SINAL scan para acções fundamentadas com mecanismo, esforço e impacto típico.
-> 2. **Operador humano** — quick reference quando escreve manualmente um diagnóstico.
+> 1. **Deck Builder** (`src/lib/llm/synthesize-deck.ts`, futuro Step 12): lê este ficheiro e mapeia findings do audit + SINAL scan para ações fundamentadas com mecanismo, esforço e impacto típico.
+> 2. **Operador humano**: quick reference quando escreve manualmente um diagnóstico.
 >
 > **Raw URL para Deck Builder:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/gap_action_mapping.md`
 
-**Last refresh:** 29 May 2026 — reconciliado para a taxonomia de SKILL.md § "Scope of the methodology — holistic" (DIMENSÃO 5 = Social & community signals, 6 = Authority signals on site / E-E-A-T; Measurement→7, Positioning→8; cadência editorial movida para DIMENSÃO 2; UX/engagement passa a pattern transversal). Roadmap: alimentar com patterns reais dos engagements à medida que a destaque.ai acumula clientes (loop 3: `destaque-ai-ops/learnings/` → synthesis-weekly Routine → updates aqui).
+**Last refresh:** 29 May 2026: reconciliado para a taxonomia de SKILL.md § "Scope of the methodology: holistic" (DIMENSÃO 5 = Social & community signals, 6 = Authority signals on site / E-E-A-T; Measurement→7, Positioning→8; cadência editorial movida para DIMENSÃO 2; UX/engagement passa a pattern transversal). Roadmap: alimentar com patterns reais dos engagements à medida que a destaque.ai acumula clientes (loop 3: `destaque-ai-ops/learnings/` → synthesis-weekly Routine → updates aqui).
 
 ---
 
@@ -16,7 +16,7 @@
 Cada padrão tem:
 - **Pattern.** Sinal observável no audit ou scan (citation rate distribution, finding type, etc.).
 - **Hipóteses.** Causas prováveis ordenadas por prevalência observada (com `%` quando há base empírica; sem `%` quando é judgement de practitioner).
-- **Acção.** O que fazer.
+- **Ação.** O que fazer.
 - **Esforço.** Tempo/effort estimado.
 - **Impacto típico.** Lift esperado e prazo, com fonte sempre que disponível.
 - **Fonte primária.** Quando a hipótese tem evidência pública, citada.
@@ -25,17 +25,17 @@ Princípio SINAL: **não inventar `+X% em Y semanas` sem fonte.** Se a relação
 
 ## Regra de especificidade: nomear o sítio
 
-**"Postar no Reddit" não é uma acção. "Responder no r/X, que alimentou 3 das 5 fontes do painel Y esta semana" é.** Toda a acção off-site (comunidade, PR, podcasts, YouTube, comparadores) nomeia o sítio exacto, e o sítio vem dos dados, por esta ordem:
+**"Postar no Reddit" não é uma ação. "Responder no r/X, que alimentou 3 das 5 fontes do painel Y esta semana" é.** Toda a ação off-site (comunidade, PR, podcasts, YouTube, comparadores) nomeia o sítio exato, e o sítio vem dos dados, por esta ordem:
 
-1. **Fontes medidas do próprio cliente.** O Tracker regista as fontes que alimentam cada resposta da categoria do cliente (grafo de fontes semanal, fontes dos painéis do carrossel, menções de comunidade recolhidas). O subreddit, o canal de YouTube, o comparador ou o fórum a recomendar é o que **já aparece a alimentar as respostas** onde o cliente devia estar — porque é aí que os motores comprovadamente vão buscar.
+1. **Fontes medidas do próprio cliente.** O Tracker regista as fontes que alimentam cada resposta da categoria do cliente (grafo de fontes semanal, fontes dos painéis do carrossel, menções de comunidade recolhidas). O subreddit, o canal de YouTube, o comparador ou o fórum a recomendar é o que **já aparece a alimentar as respostas** onde o cliente devia estar: porque é aí que os motores comprovadamente vão buscar.
 2. **Fontes medidas da categoria.** Se o cliente ainda não tem histórico, usar as fontes das respostas onde os concorrentes dele são citados, na mesma malha de perguntas.
 3. **Benchmarks públicos** (Reddit ~47% das top citations da Perplexity, YouTube ~14%) só como fallback, sempre etiquetados como genéricos, e sempre com a nota de que a primeira semana de medição substitui o genérico pelo específico.
 
-Formato da acção: sítio nomeado + evidência de porquê esse sítio (quantas respostas da malha ele alimentou, em que motores) + o que publicar lá. Acção off-site sem sítio nomeado é rascunho, não entra em narrativa nem em relatório.
+Formato da ação: sítio nomeado + evidência de porquê esse sítio (quantas respostas da malha ele alimentou, em que motores) + o que publicar lá. Ação off-site sem sítio nomeado é rascunho, não entra em narrativa nem em relatório.
 
 ---
 
-## DIMENSÃO 1 — Technical foundation
+## DIMENSÃO 1: Technical foundation
 
 ### Pattern: Gemini citation 0% mas outros motores >5%
 
@@ -44,14 +44,14 @@ Formato da acção: sítio nomeado + evidência de porquê esse sítio (quantas 
 2. **Schema.org Organization incompleto ou ausente** (~35% dos casos)
 3. **Conteúdo client-side rendered sem HTML útil** (~15% dos casos)
 
-#### Acção
+#### Ação
 Verifica robots.txt para `User-agent: Google-Extended`; adiciona `Organization` JSON-LD com `name`, `url`, `logo`, `sameAs` mínimo 3 entries; se SSR/SPA, configura prerender ou SSR para Googlebot.
 
 #### Esforço
 30 min - 4h (depende da plataforma).
 
 #### Impacto típico
-Sem dado público específico para Gemini lift. Schema enriquece entity recognition em todos os motores (Princeton GEO Aggarwal et al. — entity richness é uma das 9 categorias avaliadas).
+Sem dado público específico para Gemini lift. Schema enriquece entity recognition em todos os motores (Princeton GEO Aggarwal et al.: entity richness é uma das 9 categorias avaliadas).
 
 ---
 
@@ -60,14 +60,14 @@ Sem dado público específico para Gemini lift. Schema enriquece entity recognit
 #### Hipóteses
 1. Não publicado por desconhecimento.
 
-#### Acção
+#### Ação
 Publicar `/llms.txt` no root seguindo spec (Answer.AI / llmstxt.org).
 
 #### Esforço
 20 min.
 
 #### Impacto típico
-**Near-zero em citation directa** (Otterly Nov 2025: AI bots consumem `/llms.txt` em <0.5% das requests). Publica para hygiene de docs, não promete inferência lift. Se vendor blog atribui +20% citation rate a llms.txt, **flag como vendor self-interest**.
+**Near-zero em citation direta** (Otterly Nov 2025: AI bots consumem `/llms.txt` em <0.5% das requests). Publica para hygiene de docs, não promete inferência lift. Se vendor blog atribui +20% citation rate a llms.txt, **flag como vendor self-interest**.
 
 #### Fonte
 Otterly server-log study Nov 2025; Reboot Online; SE Ranking ~300k domains.
@@ -81,14 +81,14 @@ Otterly server-log study Nov 2025; Reboot Online; SE Ranking ~300k domains.
 2. JS render-blocking.
 3. Sem CDN ou origin distante do target market.
 
-#### Acção
+#### Ação
 Image optimization (next/image, WebP/AVIF), defer non-critical JS, Cloudflare CDN com edge em LIS.
 
 #### Esforço
 4-12h.
 
 #### Impacto típico
-LCP <2.5s é threshold Google "good". Improvement directo de Core Web Vitals + impacto indirecto em organic ranking. **Não há lift directo conhecido em citation rate** — performance é hygiene, não palanca primária GEO.
+LCP <2.5s é threshold Google "good". Improvement direto de Core Web Vitals + impacto indirecto em organic ranking. **Não há lift direto conhecido em citation rate**: performance é hygiene, não palanca primária GEO.
 
 #### Fonte
 Google Search Quality Rater Guidelines (Sept 2025 revisão).
@@ -100,19 +100,19 @@ Google Search Quality Rater Guidelines (Sept 2025 revisão).
 #### Hipóteses
 1. Agência anterior "implementou schema sem tocar no site" via GTM.
 
-#### Acção
+#### Ação
 Diagnóstico imediato: o GTM injecta por JavaScript, e os crawlers de IA
-(GPTBot, ClaudeBot, PerplexityBot) NÃO executam JS — verificado em
+(GPTBot, ClaudeBot, PerplexityBot) NÃO executam JS: verificado em
 experiência própria (19 Ago 2026) e por experiência controlada externa
 (Search Engine Land, Ago 2026). O Googlebot vê; a camada de IA não.
 Consequência: schema via GTM é invisível para os motores que decidem
-respostas. Correcção: mover o JSON-LD para o HTML servido (template,
-plugin, middleware) — nunca "optimizar" a camada de IA por tag manager.
+respostas. Correção: mover o JSON-LD para o HTML servido (template,
+plugin, middleware): nunca "otimizar" a camada de IA por tag manager.
 Argumento comercial honesto: conseguimos mostrar ao cliente, no site
 dele, que o schema pago à agência anterior nunca foi lido pela IA.
 
 #### Esforço
-Diagnóstico: minutos (fetch sem JS). Correcção: depende da plataforma.
+Diagnóstico: minutos (fetch sem JS). Correção: depende da plataforma.
 
 #### Fonte
 Experiência própria 19 Ago 2026; Search Engine Land (experiência de 41
@@ -120,16 +120,16 @@ dias, links só-em-JS invisíveis a GPTBot/Bingbot), Ago 2026.
 
 ---
 
-## DIMENSÃO 2 — Content & topical authority
+## DIMENSÃO 2: Content & topical authority
 
 ### Pattern: Sem original statistics publicadas
 
 #### Hipóteses
 1. Brand não tem dataset proprietary (early-stage).
-2. Tem dados mas não publica (extracção lenta, dpto. legal cauteloso).
+2. Tem dados mas não publica (extração lenta, dpto. legal cauteloso).
 
-#### Acção
-Publicar 1 original-data report/quarter. Não precisa ser massivo — survey de 50 prospects, análise de logs próprios, comparison study.
+#### Ação
+Publicar 1 original-data report/quarter. Não precisa ser massivo: survey de 50 prospects, análise de logs próprios, comparison study.
 
 #### Esforço
 2-4 semanas (1 quarter recorrente).
@@ -148,7 +148,7 @@ Aggarwal et al., "GEO: Generative Engine Optimization", arXiv 2311.09735 (KDD 20
 1. Brand evita falar de concorrentes por cultura.
 2. Não tem editorial focus.
 
-#### Acção
+#### Ação
 Publicar páginas comparison vs top 3 alternatives. Honest assessment, não pitch comercial. Inclui pricing, integration matrix, when-to-choose-which.
 
 #### Esforço
@@ -166,18 +166,18 @@ Páginas comparison ranqueiam bem em comparison-intent queries (LLM intent stage
 2. Recursos limitados.
 3. Foco em product, não em content.
 
-#### Acção
+#### Ação
 Editorial calendar trimestral. Mínimo 2 publicações de qualidade/mês. Distribuição via LinkedIn, newsletter, podcast guesting.
 
 #### Esforço
 Setup 1-2 semanas; sustained 8-15h/semana.
 
 #### Impacto típico
-Cadência editorial é foundation — sem ela, as outras alavancas de conteúdo perdem força. Não é palanca isolada, é hygiene. (A secção "Scope of the methodology" do SKILL.md inclui "editorial calendar discipline" nesta dimensão.)
+Cadência editorial é foundation: sem ela, as outras alavancas de conteúdo perdem força. Não é palanca isolada, é hygiene. (A secção "Scope of the methodology" do SKILL.md inclui "editorial calendar discipline" nesta dimensão.)
 
 ---
 
-## DIMENSÃO 3 — Entity & brand foundation
+## DIMENSÃO 3: Entity & brand foundation
 
 ### Pattern: Sem Wikidata QID
 
@@ -185,14 +185,14 @@ Cadência editorial é foundation — sem ela, as outras alavancas de conteúdo 
 1. Não criado.
 2. Criado mas em estado "draft" / sem suficientes claims para survive deletion.
 
-#### Acção
+#### Ação
 Criar QID na Wikidata.org. Mínimo: `instance of` (Q4830453 commercial organization), `country` (Q45 Portugal), `inception` (year), `official website`, `industry`. Cita fontes externas (LinkedIn, Crunchbase, imprensa).
 
 #### Esforço
 1-2h (criação + verificação por editores Wikidata).
 
 #### Impacto típico
-QID é referência canónica para Google Knowledge Panel e LLMs. Sem QID, identity disambiguation é frágil. **Impacto difícil de medir isoladamente** — é foundation, não alavanca.
+QID é referência oficial para Google Knowledge Panel e LLMs. Sem QID, identity disambiguation é frágil. **Impacto difícil de medir isoladamente**: é foundation, não alavanca.
 
 #### Fonte
 Wikidata:Notability/Organizations.
@@ -206,16 +206,16 @@ Wikidata:Notability/Organizations.
 2. Atinge mas ninguém escreveu.
 3. Tentou criar mas rejeitado (auto-promo / fontes insuficientes).
 
-#### Acção
+#### Ação
 1. Avaliar notability (Wikipedia:Notability/Organizations). Bar PT: cobertura sustained em pelo menos 2 fontes independentes Tier-1.
 2. Se passa: draft em PT-PT com tom neutro, cita Tier-1 PT media coverage, submete via Articles for Creation.
-3. Não inflaciona — Wikipedia rejeita peacock language.
+3. Não inflaciona: Wikipedia rejeita peacock language.
 
 #### Esforço
 5-15h (draft) + 1-6 meses (review + edits).
 
 #### Impacto típico
-Wikipedia é uma das fontes mais citadas por ChatGPT (~14% top citation share — Profound). Articles em PT-PT criam surface area específica para queries em Portugal.
+Wikipedia é uma das fontes mais citadas por ChatGPT (~14% top citation share: Profound). Articles em PT-PT criam surface area específica para queries em Portugal.
 
 #### Fonte
 Profound 680M citation analysis.
@@ -227,7 +227,7 @@ Profound 680M citation analysis.
 #### Hipóteses
 1. Schema implementado por dev sem brand context.
 
-#### Acção
+#### Ação
 Adicionar URLs: LinkedIn company page, GitHub org (se aplicável), Crunchbase, X/Twitter, Wikidata, Producthunt, perfis dos fundadores no LinkedIn.
 
 #### Esforço
@@ -241,11 +241,11 @@ Adicionar URLs: LinkedIn company page, GitHub org (se aplicável), Crunchbase, X
 ### Pattern: Sem perfil LinkedIn company ou GitHub org
 
 #### Hipóteses
-1. Stage muito early — fundadores postam pessoalmente.
+1. Stage muito early: fundadores postam pessoalmente.
 2. Decisão consciente focar uma plataforma.
 
-#### Acção
-Criar perfis em LinkedIn e (se SaaS técnico) GitHub. Não exige posting cadence forte — basta presença reconhecível.
+#### Ação
+Criar perfis em LinkedIn e (se SaaS técnico) GitHub. Não exige posting cadence forte: basta presença reconhecível.
 
 #### Esforço
 1-2h criação inicial.
@@ -255,26 +255,26 @@ Presença básica desbloqueia `sameAs` references e melhora entity disambiguatio
 
 ---
 
-## DIMENSÃO 4 — Authority & digital PR
+## DIMENSÃO 4: Authority & digital PR
 
 ### Pattern: 0 menções Tier-1 PT media em 12 meses
 
 #### Hipóteses
-1. No outreach program activo.
+1. No outreach program ativo.
 2. Outreach mal direccionado (PR generalista, não vertical-specific).
 3. Brand não tem story angle interessante para journalists.
 
-#### Acção
+#### Ação
 1. List 6 Tier-1 PT outlets: Observador, ECO, Público, Expresso, Dinheiro Vivo, Jornal de Negócios.
 2. Identificar 1-2 journalists por outlet que cobrem vertical do client.
-3. Pitch baseado em data, story, ou opinion piece — nunca press release puro.
+3. Pitch baseado em data, story, ou opinion piece: nunca press release puro.
 4. Cadência: 3-6 meses para primeiro hit; sustained coverage exige relacionamento de 12-18 meses.
 
 #### Esforço
 1-2 dias setup, depois 2-4h/semana sustained.
 
 #### Impacto típico
-**Branded anchor text correlaciona com AI Overview presence at r=0.527** (Ahrefs 75k brands) — outperforming domain rating. Tier-1 PT coverage gera branded anchors orgânicos.
+**Branded anchor text correlaciona com AI Overview presence at r=0.527** (Ahrefs 75k brands): outperforming domain rating. Tier-1 PT coverage gera branded anchors orgânicos.
 
 #### Fonte
 Ahrefs research: https://ahrefs.com/blog/llm-citations/
@@ -287,9 +287,9 @@ Ahrefs research: https://ahrefs.com/blog/llm-citations/
 1. Founder/team não considera podcasting estratégico.
 2. Não sabe que podcasts existem no segmento.
 
-#### Acção
+#### Ação
 1. List 10-15 podcasts B2B/SaaS PT (Pessoa Comum, Próxima Paragem, Bumba na Fofinha business eps, Mensageiros, etc.).
-2. Drafta pitch específico por podcast — referencing episodes específicos.
+2. Drafta pitch específico por podcast: referencing episodes específicos.
 3. Target: 2-3 appearances/quarter sustained.
 4. Maximiza re-uso: clip vídeo, blog summary cross-link, LinkedIn post.
 
@@ -307,7 +307,7 @@ Podcasts geram backlinks autoritativos + transcript indexável (alguns motores c
 1. Listicles dominados por agências established com SEO/PR pessoal forte.
 2. Comparison content creators não conhecem o brand.
 
-#### Acção
+#### Ação
 Outreach personalizado a curadores de listicles (Clutch, G2, Capterra para SaaS; bloggers de vertical). Oferecer dados, case study, ou interview para inclusion.
 
 #### Esforço
@@ -318,7 +318,7 @@ Top-X listicles têm presence forte em comparison-intent queries (LLM intent_sta
 
 ---
 
-## DIMENSÃO 5 — Social & community signals
+## DIMENSÃO 5: Social & community signals
 
 ### Pattern: Ausente das comunidades que os motores sobre-citam (Reddit, HN, Stack Overflow)
 
@@ -327,14 +327,14 @@ Top-X listicles têm presence forte em comparison-intent queries (LLM intent_sta
 2. Receio de participação não-promocional.
 3. A vertical discute em plataformas que não foram identificadas.
 
-#### Acção
-Nomear os 2-3 subreddits / comunidades exactos (regra de especificidade acima): primeiro os que o grafo de fontes do Tracker mostra a alimentar as respostas da categoria do cliente, depois os que alimentam as respostas onde os concorrentes são citados; Hacker News, Stack Overflow, Discords e fóruns PT entram quando os dados os mostram. O mesmo para YouTube: o canal ou formato que os motores citam na categoria, não "fazer vídeos". Participação genuína — responder a perguntas, partilhar dados próprios, nunca spam. Para SaaS técnico, presença no GitHub com repos/docs públicos.
+#### Ação
+Nomear os 2-3 subreddits / comunidades exatos (regra de especificidade acima): primeiro os que o grafo de fontes do Tracker mostra a alimentar as respostas da categoria do cliente, depois os que alimentam as respostas onde os concorrentes são citados; Hacker News, Stack Overflow, Discords e fóruns PT entram quando os dados os mostram. O mesmo para YouTube: o canal ou formato que os motores citam na categoria, não "fazer vídeos". Participação genuína: responder a perguntas, partilhar dados próprios, nunca spam. Para SaaS técnico, presença no GitHub com repos/docs públicos.
 
 #### Esforço
 2-4h/semana sustained.
 
 #### Impacto típico
-Reddit é ~47% das top citations da Perplexity; YouTube ~14% — estas plataformas são citadas directamente pelos motores. Presença genuína cria surface area citável. Sem fonte a isolar o lift por marca individual; relação correlacional.
+Reddit é ~47% das top citations da Perplexity; YouTube ~14%: estas plataformas são citadas diretamente pelos motores. Presença genuína cria surface area citável. Sem fonte a isolar o lift por marca individual; relação correlacional.
 
 #### Fonte
 Profound citation-share analysis; breakdowns de fontes da Perplexity.
@@ -347,14 +347,14 @@ Profound citation-share analysis; breakdowns de fontes da Perplexity.
 1. Conteúdo publicado pela página corporativa, não por pessoas.
 2. Sem cadência de autoria pessoal.
 
-#### Acção
+#### Ação
 Estabelecer 1-2 autores nomeados (founder, head of X) com posts regulares de ângulo dados/opinião que outros re-partilham e citam. Ligar os perfis ao `Organization.sameAs` (ver DIMENSÃO 3).
 
 #### Esforço
 1-2h/semana por autor.
 
 #### Impacto típico
-Posts re-citados alimentam branded mentions e anchors orgânicos. Indirecto sobre citation — relacionado com o r=0.527 branded-anchor da Ahrefs (ver DIMENSÃO 4).
+Posts re-citados alimentam branded mentions e anchors orgânicos. Indirecto sobre citation: relacionado com o r=0.527 branded-anchor da Ahrefs (ver DIMENSÃO 4).
 
 ---
 
@@ -362,34 +362,34 @@ Posts re-citados alimentam branded mentions e anchors orgânicos. Indirecto sobr
 
 #### Hipóteses
 1. Código fechado por opção comercial, sem repos auxiliares (SDKs, exemplos, integrações).
-2. Org GitHub existe mas sem actividade visível há >12 meses.
+2. Org GitHub existe mas sem atividade visível há >12 meses.
 
-#### Acção
+#### Ação
 Criar org GitHub com 1-2 repos públicos: SDK do produto, exemplos de integração, documentação técnica em markdown, ou um eval/benchmark próprio. README sóbrio, LICENSE clara, releases versionados. Ligar ao `Organization.sameAs` (DIMENSÃO 3).
 
 #### Esforço
 1-2 dias setup + 1-2h/semana de manutenção.
 
 #### Impacto típico
-GitHub é fonte directa em queries técnicas: o Code Interpreter do ChatGPT, Claude com web search e Perplexity dev resolvem nomes de bibliotecas e padrões através dele. Sem estudo a isolar lift por marca; relação correlacional com presença em queries "como integrar X" e "alternativas a Y SDK".
+GitHub é fonte direta em queries técnicas: o Code Interpreter do ChatGPT, Claude com web search e Perplexity dev resolvem nomes de bibliotecas e padrões através dele. Sem estudo a isolar lift por marca; relação correlacional com presença em queries "como integrar X" e "alternativas a Y SDK".
 
 ---
 
 ### Pattern: Plataformas citadas pelos motores onde a marca pode registar-se e não está
 
 #### Hipóteses
-1. A plataforma nunca foi identificada como fonte da categoria — só a auditoria a revela.
+1. A plataforma nunca foi identificada como fonte da categoria: só a auditoria a revela.
 2. Presença tratada como canal de leads "não prioritário", quando na prática é um domínio que os motores leem para responder à categoria.
-3. Perfil existe mas incompleto ou desactualizado, sem entidade consistente.
+3. Perfil existe mas incompleto ou desatualizado, sem entidade consistente.
 
-#### Acção
-Para cada domínio citado pelos motores nas perguntas da categoria que seja uma **plataforma de registo legítimo** — marketplace de serviços (ex.: zaask.pt), directório da categoria, plataforma de reviews, comunidade com perfis de empresa, mapas — e onde a marca não tem presença: criar ou reclamar o perfil com entidade consistente (mesmo nome, mesma descrição, NAP quando aplicável, link ao site) e ligar ao `Organization.sameAs` quando a plataforma dá URL pública de perfil (DIMENSÃO 3). Exclusões: domínios de concorrentes; imprensa (imprensa é outreach da DIMENSÃO 4, não registo); plataformas onde a presença exigiria afirmações falsas. O perfil é sempre verdadeiro e completo, nunca veículo de links — manipular citações de IA é spam ao abrigo da política da Google (Jun 2026).
+#### Ação
+Para cada domínio citado pelos motores nas perguntas da categoria que seja uma **plataforma de registo legítimo**: marketplace de serviços (ex.: zaask.pt), diretório da categoria, plataforma de reviews, comunidade com perfis de empresa, mapas: e onde a marca não tem presença: criar ou reclamar o perfil com entidade consistente (mesmo nome, mesma descrição, NAP quando aplicável, link ao site) e ligar ao `Organization.sameAs` quando a plataforma dá URL pública de perfil (DIMENSÃO 3). Exclusões: domínios de concorrentes; imprensa (imprensa é outreach da DIMENSÃO 4, não registo); plataformas onde a presença exigiria afirmações falsas. O perfil é sempre verdadeiro e completo, nunca veículo de links: manipular citações de IA é spam ao abrigo da política da Google (Jun 2026).
 
 #### Esforço
 1-2h por plataforma, uma vez, mais manutenção ligeira.
 
 #### Impacto típico
-A marca passa a existir dentro de domínios que os motores já leem para a categoria — mais barato do que tentar substituí-los como fonte. Exemplo interno: zaask.pt citado 3× pelo Gemini na pergunta de preços da categoria GEO (auditoria destaque.ai, 27 Jul 2026). Correlacional; sem estudo público a isolar o lift por marca.
+A marca passa a existir dentro de domínios que os motores já leem para a categoria: mais barato do que tentar substituí-los como fonte. Exemplo interno: zaask.pt citado 3× pelo Gemini na pergunta de preços da categoria GEO (auditoria destaque.ai, 27 Jul 2026). Correlacional; sem estudo público a isolar o lift por marca.
 
 #### Fonte
 Auditorias do Visibility Tracker (citações por domínio, fonte primária interna); consistente com os breakdowns de citation-share por plataforma (Profound, Perplexity).
@@ -404,27 +404,27 @@ com matemática à vista.
 
 #### Hipóteses
 1. Causa operacional real, visível nos temas das queixas (a vista de
-   reputação já as destila) — reviews são sintoma antes de serem número.
+   reputação já as destila): reviews são sintoma antes de serem número.
 2. Volume baixo: os satisfeitos calados são maioria e ninguém lhes pede.
 3. Negativas antigas a pesar num perfil parado (recência conta para
    modelos e para leitores).
 
-#### Acção
-1. **A matemática primeiro**: calcular e mostrar o número exacto — "de
+#### Ação
+1. **A matemática primeiro**: calcular e mostrar o número exato: "de
    3,5 com 80 reviews para 4,3 são ~N avaliações 5 estrelas; ao ritmo
-   actual, X meses; com sistema, Y". Aritmética sobre dados já
+   atual, X meses; com sistema, Y". Aritmética sobre dados já
    recolhidos; é o argumento de venda e a meta do plano.
 2. **Causa antes do volume**: se os temas de queixa apontam operação
-   (atendimento, tempo de espera), a correcção operacional precede o
-   pedido de reviews — dizê-lo ao cliente é obrigatório, mesmo que não
+   (atendimento, tempo de espera), a correção operacional precede o
+   pedido de reviews: dizê-lo ao cliente é obrigatório, mesmo que não
    seja o que quer ouvir. Encher um balde furado não é serviço.
 3. **Sistema de pedido universal**: pedir avaliação a TODOS os clientes,
-   sistematicamente (QR à mesa, SMS/email pós-visita com link directo).
+   sistematicamente (QR à mesa, SMS/email pós-visita com link direto).
    Peça pronta: o cartão/QR, o texto do SMS, o momento do pedido.
-4. **Responder a 100% das reviews**, novas e antigas relevantes — pacote
+4. **Responder a 100% das reviews**, novas e antigas relevantes: pacote
    de respostas prontas por tema, no tom da casa (deliverable do
    Preparar).
-5. Perfil vivo: fotos, horários, menu, posts — recência em tudo.
+5. Perfil vivo: fotos, horários, menu, posts: recência em tudo.
 
 #### Linhas vermelhas (não negociáveis)
 Nunca comprar reviews; nunca review gating (filtrar só satisfeitos para
@@ -434,17 +434,17 @@ parceiro, é passivo.
 
 #### Esforço
 Setup 1-2 semanas; sistema contínuo. Reversão típica: meses, não
-semanas — dizer o prazo real.
+semanas: dizer o prazo real.
 
 #### Impacto típico
-Directo no que os motores locais leem (rating, volume, recência, taxa
+Direto no que os motores locais leem (rating, volume, recência, taxa
 de resposta alimentam Google Maps/AI Mode e as recomendações locais).
 Sem estudo público que isole lift por marca; a prova é o antes/depois
 do próprio cliente no registo causal.
 
 ---
 
-## DIMENSÃO 6 — Authority signals on site (E-E-A-T)
+## DIMENSÃO 6: Authority signals on site (E-E-A-T)
 
 ### Pattern: Conteúdo sem autores declarados (sem `Person` schema)
 
@@ -452,14 +452,14 @@ do próprio cliente no registo causal.
 1. Artigos publicados sem byline.
 2. Bylines sem schema estruturado / sem `sameAs`.
 
-#### Acção
+#### Ação
 Adicionar `Person` schema a cada autor com `name`, `jobTitle`, `sameAs` (LinkedIn, ORCID quando aplicável) e bio com credenciais e experiência nomeada (a perna "Experience" do E-E-A-T). Ligar cada artigo ao autor via `author`.
 
 #### Esforço
 2-4h setup + 10 min por artigo novo.
 
 #### Impacto típico
-As Search Quality Rater Guidelines (revisão Set 2025) avaliam E-E-A-T e passaram a incluir AI Overviews no workflow do rater. Sem lift directo isolado em citation — é sinal de qualidade, não palanca.
+As Search Quality Rater Guidelines (revisão Set 2025) avaliam E-E-A-T e passaram a incluir AI Overviews no workflow do rater. Sem lift direto isolado em citation: é sinal de qualidade, não palanca.
 
 #### Fonte
 Google Search Quality Rater Guidelines (Set 2025).
@@ -473,14 +473,14 @@ Google Search Quality Rater Guidelines (Set 2025).
 2. O byline diz "Equipa X" e o schema nomeia um indivíduo que não aparece em lado nenhum.
 3. Migração de CMS deixou o schema a apontar para um autor que já não escreve lá.
 
-#### Como detectar
+#### Como detetar
 Extrair o `author` do JSON-LD e procurar esse nome no HTML com os `<script>` removidos. Se o nome não estiver no corpo visível, o sinal contradiz-se a si próprio. Um comando chega:
 
 ```
 curl -s URL | python3 -c "import sys,re; h=sys.stdin.read(); print('Nome' in re.sub(r'<script.*?</script>','',h,flags=re.S))"
 ```
 
-#### Acção
+#### Ação
 Fazer coincidir os dois. O nome marcado tem de ser o nome impresso, e a assinatura visível deve ligar aos mesmos perfis que estão no `sameAs` do schema, para leitor e motor poderem confirmar a mesma coisa pelas mesmas vias. Quando o autor é mesmo a organização, usar `Organization` no `author` e assinar com a organização; misturar os dois é que não serve.
 
 #### Esforço
@@ -501,17 +501,17 @@ Google Search Central, structured data para `Article` (regra do author name coin
 2. A página do método fala em "a nossa abordagem" sem uma única pessoa associada.
 3. As credenciais existem (certificações, anos, publicações) mas vivem só no LinkedIn de alguém.
 
-#### Acção
+#### Ação
 Atribuir o método a uma pessoa concreta, com `Person` schema e credenciais nomeadas, na própria página do método e não só no "Sobre". Um método com autor é uma entidade que um motor pode ligar a uma pessoa verificável noutras fontes; um método anónimo é uma afirmação de marketing. Quando houver, ligar a outputs públicos: papers com DOI, talks, dataset publicado.
 
 #### Esforço
 2-3h para a página do método; 30 min por credencial que precise de prova pública.
 
 #### Impacto típico
-Reforça a perna "Experience" do E-E-A-T, que é a mais difícil de simular e a que distingue consultoria de conteúdo genérico. Sem fonte a isolar lift; é sinal de qualidade acumulado, não palanca directa.
+Reforça a perna "Experience" do E-E-A-T, que é a mais difícil de simular e a que distingue consultoria de conteúdo genérico. Sem fonte a isolar lift; é sinal de qualidade acumulado, não palanca direta.
 
 #### Nota de auditoria
-Este pattern nasceu de uma auditoria à própria destaque.ai, em Agosto de 2026: o schema dos artigos declarava `author: Person` e as páginas assinavam "Por destaque.ai". Vale a pena correr o comando de detecção acima em qualquer cliente que tenha blog, porque a contradição é invisível a olho nu e frequente.
+Este pattern nasceu de uma auditoria à própria destaque.ai, em Agosto de 2026: o schema dos artigos declarava `author: Person` e as páginas assinavam "Por destaque.ai". Vale a pena correr o comando de deteção acima em qualquer cliente que tenha blog, porque a contradição é invisível a olho nu e frequente.
 
 ---
 
@@ -521,7 +521,7 @@ Este pattern nasceu de uma auditoria à própria destaque.ai, em Agosto de 2026:
 1. Clientes não autorizam divulgação.
 2. Resultados não medidos / não registados.
 
-#### Acção
+#### Ação
 Publicar case studies com cliente nomeado (ou anonimizado com métricas reais): problema → intervenção → resultado quantificado, com citação verificável do cliente sempre que possível.
 
 #### Esforço
@@ -536,27 +536,27 @@ Casos verificáveis suportam claims em decision-stage queries e a perna "Trust" 
 
 #### Hipóteses
 1. Fotos + nomes mas sem credenciais nem experiência declarada.
-2. Bios em prosa sem schema (`Person` + `sameAs`) — leitura humana funciona, knowledge-graph extraction não.
+2. Bios em prosa sem schema (`Person` + `sameAs`): leitura humana funciona, knowledge-graph extraction não.
 
-#### Acção
+#### Ação
 Reescrever bios com: credenciais nomeadas (universidade, certificações reconhecidas), anos de experiência específica no domínio, 2-3 outputs públicos (papers, talks, posts citados) e `Person` schema com `sameAs` para LinkedIn / ORCID / Google Scholar / X. Lidar com a perna "Experience" do E-E-A-T explicitamente.
 
 #### Esforço
 4-6h pela página inteira; 30 min por bio nova depois.
 
 #### Impacto típico
-About/Team é frequentemente das primeiras URLs visitadas por crawlers em audit de marca; sem signals E-E-A-T cria gap em decision-stage queries. Sem fonte a isolar lift por componente — é sinal de qualidade, não palanca directa.
+About/Team é frequentemente das primeiras URLs visitadas por crawlers em audit de marca; sem signals E-E-A-T cria gap em decision-stage queries. Sem fonte a isolar lift por componente: é sinal de qualidade, não palanca direta.
 
 ---
 
-## DIMENSÃO 7 — Measurement & feedback
+## DIMENSÃO 7: Measurement & feedback
 
 ### Pattern: Sem GA4 AI channel tracking
 
 #### Hipóteses
 1. GA4 default channels não distinguem AI referrals.
 
-#### Acção
+#### Ação
 Configurar channel group custom em GA4 que captura UTMs de AI (`utm_source` contendo `chatgpt.com`, `perplexity.ai`, etc.) + referrers conhecidos.
 
 #### Esforço
@@ -572,21 +572,21 @@ Não move citation rate. Crítico para attribution e ROI demonstration ao client
 #### Hipóteses
 1. Site não verificado em BWT.
 
-#### Acção
+#### Ação
 Verifica site em Bing Webmaster Tools. Acede ao AI Performance dashboard (public preview desde 9 Feb 2026). Telemetria real de Copilot citations + Bing AI grounding.
 
 #### Esforço
 30 min setup.
 
 #### Impacto típico
-Não move citation rate. Crítico para measurement honesty — Bing telemetry é a única first-party AI search data publicamente disponível em 2026.
+Não move citation rate. Crítico para measurement honesty: Bing telemetry é a única first-party AI search data publicamente disponível em 2026.
 
 #### Fonte
 Microsoft Bing Webmaster Tools docs.
 
 ---
 
-## DIMENSÃO 8 — Strategic positioning
+## DIMENSÃO 8: Strategic positioning
 
 ### Pattern: Citation rate forte em awareness mas <5% em decision-stage queries
 
@@ -595,14 +595,14 @@ Microsoft Bing Webmaster Tools docs.
 2. Brand não publica BOFU content (case studies, ROI calculators, comparison vs alternatives).
 3. Concorrentes têm BOFU coverage forte.
 
-#### Acção
+#### Ação
 Auditar funnel coverage por intent_stage. Producir BOFU content: detailed case studies com nomes, métricas, screenshots; comparison vs alternatives; ROI calculator interactive.
 
 #### Esforço
 6-10 semanas para BOFU library mínima.
 
 #### Impacto típico
-Decision-stage queries têm conversion rate 10x awareness. Citation aqui é where ROI lives. Sem fonte isolando o lift de BOFU content em LLM citations — campo emergente.
+Decision-stage queries têm conversion rate 10x awareness. Citation aqui é where ROI lives. Sem fonte isolando o lift de BOFU content em LLM citations: campo emergente.
 
 ---
 
@@ -612,8 +612,8 @@ Decision-stage queries têm conversion rate 10x awareness. Citation aqui é wher
 1. Concorrente publica páginas "X vs <brand>" e ranqueia.
 2. Concorrente tem mais comparison content em geral.
 
-#### Acção
-Estratégia "defend & attack": publicar próprias páginas "brand vs <concorrente>" — honest, factual. LLMs citam ambas se ambas existem.
+#### Ação
+Estratégia "defend & attack": publicar próprias páginas "brand vs <concorrente>": honest, factual. LLMs citam ambas se ambas existem.
 
 #### Esforço
 1 semana por página comparison (incluindo research da concorrência).
@@ -623,11 +623,11 @@ Comparison-intent queries são high-conversion. Sem fonte isolando o impacto.
 
 ---
 
-### Pattern: Território livre — perguntas e ângulos sem dono nas respostas de IA
+### Pattern: Território livre: perguntas e ângulos sem dono nas respostas de IA
 
-#### Como detectar (evidência da auditoria, não intuição)
+#### Como detetar (evidência da auditoria, não intuição)
 1. **Perguntas sem dono**: prompts onde nenhuma marca é recomendada de forma
-   consistente — a IA responde genericamente porque não tem candidato. As de
+   consistente: a IA responde genericamente porque não tem candidato. As de
    fundo-de-funil (`decision`/`post_decision`) são as vitórias mais baratas.
 2. **Ângulos por reclamar**: dos perfis e excertos dos concorrentes, mapear que
    atributos já têm dono ("prova social" = X, "preço" = Y) e quais ninguém
@@ -636,19 +636,19 @@ Comparison-intent queries são high-conversion. Sem fonte isolando o impacto.
 3. **Fontes sem dono**: domínios que os motores citam na categoria onde nenhum
    concorrente domina a co-ocorrência e o cliente está ausente.
 
-#### Acção
+#### Ação
 Reclamar 1 ângulo livre de cada vez, na ordem: (1) publicar a página/conteúdo
 citável que responde às perguntas sem dono desse ângulo (BOFU primeiro);
 (2) plantar presença nas fontes sem dono que os motores já citam;
 (3) alinhar o positioning statement do site e da entidade (schema, About) com
-o ângulo reclamado. Regra: **flanquear, não atacar de frente** — nunca
+o ângulo reclamado. Regra: **flanquear, não atacar de frente**: nunca
 escolher um ângulo já dominado por um peer forte.
 
 #### Esforço
 2-4 semanas por ângulo (conteúdo + 2-3 fontes).
 
 #### Impacto típico
-Perguntas sem dono não exigem destronar ninguém — o custo de entrada é o mais
+Perguntas sem dono não exigem destronar ninguém: o custo de entrada é o mais
 baixo do catálogo. Sem estudo público a quantificar; evidência é a própria
 auditoria semanal (antes/depois no prompt visado).
 
@@ -673,7 +673,7 @@ O que se mede, e o que cada coisa quer dizer:
 
 **Nada disto se lê quando `respostasComPesquisa` é baixo.** Abaixo de 20
 respostas com consultas expostas, a semana não sustenta nenhum destes
-patterns: diz-se que não há base e não se abre acção nenhuma. Só três
+patterns: diz-se que não há base e não se abre ação nenhuma. Só três
 fornecedores expõem consultas (OpenAI, Google, xAI), portanto o
 denominador é sempre uma fatia da semana.
 
@@ -685,7 +685,7 @@ e as fontes dela (hoje ChatGPT e Grok), o campo `leque` de cada resposta
 diz `sub_perguntas`, `encontrado_em`, e a lista `sem_ti` com quem está no
 lugar da marca.
 
-**É a acção mais concreta que esta metodologia produz, e por uma razão de
+**É a ação mais concreta que esta metodologia produz, e por uma razão de
 forma: o título da peça vem escrito.** "Não apareces em «que agência de
 GEO recomendam»" é um diagnóstico. "Das nove pesquisas em que ele partiu
 essa pergunta, não apareces em «GEO case study Portugal» nem em «agência
@@ -713,7 +713,7 @@ O motor pesquisou dezenas de vezes e nunca escreveu o nome da marca. Não
 está no conjunto de candidatos: não é uma questão de a página estar bem
 ou mal, porque a página nunca chega a ser considerada.
 
-**Dimensão: authority (4) e entity (3), nunca technical.** A acção é ser
+**Dimensão: authority (4) e entity (3), nunca technical.** A ação é ser
 nomeado onde o motor lê: imprensa Tier-1, listas e comparativos de
 terceiros, comunidade. Um item Wikidata e um artigo Wikipédia atacam a
 mesma falha por outro lado.
@@ -723,7 +723,7 @@ caro: melhora uma página que ninguém vai buscar.
 
 ### Pattern: procurado pelo nome mas não citado
 
-O contrário, e a acção é oposta. O motor foi verificar a marca e o que
+O contrário, e a ação é oposta. O motor foi verificar a marca e o que
 encontrou não chegou. Aqui sim é conteúdo e prova: página que responda à
 pergunta concreta, dados próprios, terceiros que confirmem o que a marca
 diz de si.
@@ -736,10 +736,10 @@ descoberta da lista de causas.
 ### Pattern: os motores não se repetem (`sobreposicaoMediana` < 0,25)
 
 Cada motor vai por seu lado na mesma pergunta. Consequência dura para o
-plano: **uma acção não serve todos**, e um plano escrito como se servisse
+plano: **uma ação não serve todos**, e um plano escrito como se servisse
 gasta esforço a metade.
 
-Acção: priorizar por motor, com o bloco desse motor em
+Ação: priorizar por motor, com o bloco desse motor em
 `engine_playbooks.md`, e dizer ao cliente que a subida vai ser desigual.
 
 ### Pattern: os motores repetem-se (`sobreposicaoMediana` > 0,6)
@@ -755,7 +755,7 @@ O nome da categoria colide com outro domínio de conhecimento. Medido na
 destaque.ai: "quanto custa uma auditoria GEO" gerou `"auditoria
 geotecnica" preco` e `quanto custa "auditoria de barragem"`.
 
-**Dimensão: positioning (8), não technical.** A acção é colar o termo à
+**Dimensão: positioning (8), não technical.** A ação é colar o termo à
 categoria certa em texto que o motor leia: uma página que defina o termo
 sem ambiguidade, e presença em fontes onde o termo já aparece com o
 sentido certo. Nenhuma quantidade de schema resolve uma desambiguação.
@@ -772,14 +772,14 @@ As perguntas estão em português e dizem "GEO"; o motor expande para
 língua em que ele procura. Uma marca portuguesa cujo site só diz "GEO"
 em português está a competir por evidência inglesa que não produziu.
 
-**Dimensão: content (2).** Acção: a página canónica da categoria carrega
+**Dimensão: content (2).** Ação: a página oficial da categoria carrega
 os dois termos, o português e o inglês por extenso, e pelo menos uma peça
 de prova (caso, dados, comparativo) existe em inglês.
 
 **Cuidado ao ler:** uma tradução do nosso próprio vocabulário NÃO se
 reporta como associação errada. Distinguem-se com uma pergunta: este
 termo é o mesmo conceito noutra língua, ou é outro conceito? Em dúvida,
-não se abre acção.
+não se abre ação.
 
 ### Pattern: termo estranho que é um MERCADO que não é o nosso
 
@@ -787,7 +787,7 @@ não se abre acção.
 É por aí que entram concorrentes de outro país na medição, e explica um
 nome que aparece do nada na lista de concorrentes.
 
-**Dimensão: positioning (8).** Acção: reforçar os sinais de mercado
+**Dimensão: positioning (8).** Ação: reforçar os sinais de mercado
 (morada, moeda, língua, casos locais, `hreflang`) e, no relatório,
 declarar que aquele concorrente veio de outra geografia em vez de o
 apresentar como rival direto.
@@ -798,11 +798,11 @@ apresentar como rival direto.
 
 ### Pattern: Citation rate <10% em todos os motores
 
-Indica fragilidade em múltiplas dimensões simultaneamente. Não fazer "fix it all" — priorizar:
-1. Entity (Wikidata QID + sameAs + Wikipedia se notability) — H1
-2. Technical (Schema.org Organization + robots.txt + llms.txt) — H1
-3. Authority (digital PR Tier-1 + 2-3 podcast appearances) — H2-H3
-4. Content (original statistics + comparison content) — H2-H3
+Indica fragilidade em múltiplas dimensões simultaneamente. Não fazer "fix it all": priorizar:
+1. Entity (Wikidata QID + sameAs + Wikipedia se notability): H1
+2. Technical (Schema.org Organization + robots.txt + llms.txt): H1
+3. Authority (digital PR Tier-1 + 2-3 podcast appearances): H2-H3
+4. Content (original statistics + comparison content): H2-H3
 
 ### Pattern: Citation rate alto mas position avg >4
 
@@ -810,20 +810,20 @@ Brand é citado mas em segundo plano consistente. Indica concorrente dominante. 
 
 ### Pattern: Citation rate disparado num motor, baixo nos outros
 
-Comum em brand com presença forte numa community específica que esse motor sobre-pondera (ex: Reddit-heavy → Perplexity boost). Não generalizável — auditar fonte específica.
+Comum em brand com presença forte numa community específica que esse motor sobre-pondera (ex: Reddit-heavy → Perplexity boost). Não generalizável: auditar fonte específica.
 
 ### Pattern: Bounce >70%, time on site <30s (UX & engagement)
 
-Não é dimensão GEO top-level — UX/engagement não é input directo a citation. Impacta a conversão depois de o utilizador chegar (ROI da campanha), não a citation rate em si. Hipóteses: landing page desalinhada com intent, LCP >4s, cookie consent invasivo. Acção: A/B test do hero, cookie consent compliance-minimal, fix LCP (ver DIMENSÃO 1). Relevante para o ROI da campanha GEO, reportar separado das métricas de citação.
+Não é dimensão GEO top-level: UX/engagement não é input direto a citation. Impacta a conversão depois de o utilizador chegar (ROI da campanha), não a citation rate em si. Hipóteses: landing page desalinhada com intent, LCP >4s, cookie consent invasivo. Ação: A/B test do hero, cookie consent compliance-minimal, fix LCP (ver DIMENSÃO 1). Relevante para o ROI da campanha GEO, reportar separado das métricas de citação.
 
 ---
 
 ## Manutenção
 
 Este ficheiro evolui via:
-- **Loop 2 self-audit** — patterns observados no próprio destaque.ai audit semanal.
-- **Loop 3 client learnings** — patterns anonimizados de `destaque-ai-ops/learnings/` (futuro, via synthesis-weekly Routine).
-- **Daily-agent absorção** — novos studies/papers (ex: Aggarwal follow-ups, BrightEdge updates) podem adicionar patterns ou refinar impacto típico de existentes.
+- **Loop 2 self-audit**: patterns observados no próprio destaque.ai audit semanal.
+- **Loop 3 client learnings**: patterns anonimizados de `destaque-ai-ops/learnings/` (futuro, via synthesis-weekly Routine).
+- **Daily-agent absorção**: novos studies/papers (ex: Aggarwal follow-ups, BrightEdge updates) podem adicionar patterns ou refinar impacto típico de existentes.
 
 Cada update adiciona entry em `methodology-changelog.md` se mudar padrões existentes (não apenas adicionar novos).
 

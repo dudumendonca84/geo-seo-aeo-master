@@ -1,8 +1,8 @@
-# Narrative templates — editorial structure for Tracker outputs
+# Narrative templates: editorial structure for Tracker outputs
 
 Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('generate_narrative', {…})`) to produce the prose blocks the client actually reads: weekly "Top 3 changes", weekly "Next actions", monthly digest, and quarterly review. Used by the Deck Builder for proposal copy that summarises baseline findings.
 
-These are not boilerplate. They are *structural skeletons* — the data fills them. The editorial voice is enforced via the principles in `SKILL.md` §115 (Economist register, no hype). The templates here are about *what to say in what order*, not phrasing.
+These are not boilerplate. They are *structural skeletons*: the data fills them. The editorial voice is enforced via the principles in `SKILL.md` §115 (Economist register, no hype). The templates here are about *what to say in what order*, not phrasing.
 
 Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
 
@@ -17,7 +17,7 @@ Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
 ### Structure per item
 
 ```
-[Direction marker] [Metric] [Magnitude] — [Where it happened]
+[Direction marker] [Metric] [Magnitude]: [Where it happened]
 [Implication or context]. [Source / drill-down pointer].
 ```
 
@@ -43,10 +43,10 @@ Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
 
 - Speculating about *causes* the data cannot support ("provavelmente porque o concorrente publicou X").
 - Generic encouragement ("continue o bom trabalho"). Not the voice.
-- Recommending action *inside* this block — actions live in the next block.
+- Recommending action *inside* this block: actions live in the next block.
 - Showing 3 items when fewer than 3 changes are notable. If only 2 critical changes happened, the third item must be marked `informational` or omitted with the note "Sem terceira mudança notável esta semana." Padding erodes trust.
 
-## 2. Weekly "Próximas acções" (next 1-2 weeks)
+## 2. Weekly "Próximas ações" (next 1-2 weeks)
 
 **When**: same email / banner as Top 3 changes.
 **Length**: 3 actions max, 1-2 sentences each.
@@ -55,7 +55,7 @@ Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
 ### Structure per action
 
 ```
-[Action verb + object] — [Owner] · [Effort] · [Horizon]
+[Action verb + object]: [Owner] · [Effort] · [Horizon]
 [One sentence on why this is the action now]. [Evidence reference].
 ```
 
@@ -68,33 +68,33 @@ Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
 
 ### Worked example
 
-> **Adicionar `llms.txt` e `llms-full.txt`** — equipa do cliente · S · H1
-> Coberto em `gap_action_mapping.md §1`. Robots.txt já permite ClaudeBot e GPTBot; falta o ficheiro de índice. Não promete subida de citação — frame de docs hygiene.
+> **Adicionar `llms.txt` e `llms-full.txt`**: equipa do cliente · S · H1
+> Coberto em `gap_action_mapping.md §1`. Robots.txt já permite ClaudeBot e GPTBot; falta o ficheiro de índice. Não promete subida de citação: frame de docs hygiene.
 >
-> **Publicar página comparativa destaque.ai vs 3HASH** — destaque.ai · M · H2
-> A descida em *direct_comparison* desta semana é o gatilho directo. Ver `gap_action_mapping.md §2`.
+> **Publicar página comparativa destaque.ai vs 3HASH**: destaque.ai · M · H2
+> A descida em *direct_comparison* desta semana é o gatilho direto. Ver `gap_action_mapping.md §2`.
 >
-> **Criar QID no Wikidata** — destaque.ai · S · H1
+> **Criar QID no Wikidata**: destaque.ai · S · H1
 > Pré-requisito para Knowledge Panel a médio prazo; não tem ainda. Ver `gap_action_mapping.md §3`.
 
 ### Anti-patterns
 
-- Listing 8 actions. The cap of 3 is intentional — clients act on what's prioritised, not on what's catalogued.
+- Listing 8 actions. The cap of 3 is intentional: clients act on what's prioritised, not on what's catalogued.
 - Repeating actions from the previous week without explicit acknowledgement ("ainda pendente da semana anterior").
 - Generic actions detached from this week's specific data ("publicar mais conteúdo").
 
-## 2b. Weekly bet (`weekly_bet`) — required
+## 2b. Weekly bet (`weekly_bet`): required
 
 One forward-looking suggestion per weekly narrative, born from the
 accumulated patterns (`market_models.md`): the unclaimed opening and the
 move that captures it. Contract:
 
-- Stored as `summary.narrative.weekly_bet` — a string, 1-3 sentences,
+- Stored as `summary.narrative.weekly_bet` - a string, 1-3 sentences,
   in the client's language. The email digest and Slack deliver it
   automatically.
 - Structure inside the prose: the opening (what the pattern shows, with
   its data slice), then the move ("vale a pena X esta semana").
-- Always directional — "o padrão sugere", never a certainty — and never
+- Always directional: "o padrão sugere", never a certainty: and never
   a repeat of a next_action already listed: the bet is the unsolicited
   one, the thing the client did not ask about.
 - A weekly narrative without a `weekly_bet` is incomplete.
@@ -102,7 +102,7 @@ move that captures it. Contract:
 ### Worked example
 
 > Três respostas de motores diferentes citaram esta semana o
-> diretorio-b2b.pt, que há um mês não aparecia — e nenhum concorrente
+> diretorio-b2b.pt, que há um mês não aparecia: e nenhum concorrente
 > tem lá presença. O padrão sugere uma fonte a ganhar peso na categoria:
 > vale a pena garantir a entrada este mês, antes que deixe de estar
 > livre.
@@ -111,7 +111,7 @@ move that captures it. Contract:
 
 **When**: first Monday of each month.
 **Length**: ~600 words, ~3-4 sections.
-**Audience**: the client's executive sponsor (CIO, Head of Marketing, founder) — *not* the operational owner of each action.
+**Audience**: the client's executive sponsor (CIO, Head of Marketing, founder): *not* the operational owner of each action.
 
 ### Structure
 
@@ -127,23 +127,23 @@ Comparison to baseline if there is one (e.g. proposta inicial). Engine breakdown
 
 ## O que mudou
 
-[2-3 paragraphs. The 3-5 most material changes during the month — pull from weekly Top 3 archives.
+[2-3 paragraphs. The 3-5 most material changes during the month: pull from weekly Top 3 archives.
 Don't repeat the weekly format; synthesise into narrative. Each material change ties to a Dimension.]
 
-## Acções concluídas neste mês
+## Ações concluídas neste mês
 
 [Bulleted list. Items the client team or destaque.ai marked completed in the audit history.
-Empty list is acceptable — say "Nenhuma acção H1 concluída este mês" and flag for the next call.]
+Empty list is acceptable: say "Nenhuma ação H1 concluída este mês" and flag for the next call.]
 
 ## Próximas 4 semanas
 
-[3-4 actions, horizon mix. This is a recapping of weekly Próximas acções, but consolidated
-to the executive level — no "this Tuesday", more "in the next 4 weeks".]
+[3-4 actions, horizon mix. This is a recapping of weekly Próximas ações, but consolidated
+to the executive level: no "this Tuesday", more "in the next 4 weeks".]
 
 ## Anexo metodológico
 
 [Two sentences. "Auditoria semanal com 30 prompts × 7 motores LLM (X total chamadas).
-Métricas calculadas conforme `metrics.md` da skill canónica. Dados crus disponíveis em /history."]
+Métricas calculadas conforme `metrics.md` da skill oficial. Dados crus disponíveis em /history."]
 ```
 
 ### Voice for this block
@@ -159,11 +159,11 @@ The executive sponsor is reading on a phone between meetings. Cut every adjectiv
 ### Structure
 
 ```
-## Q{{n}} — {{period_label}}
+## Q{{n}}: {{period_label}}
 
 ### 1. Movimento agregado
 [Citation rate, SoV, position trajectory over 13 weeks. Three charts (CR / SoV / position).
-One paragraph framing the quarter — was it growth, defence, plateau, recovery?]
+One paragraph framing the quarter: was it growth, defence, plateau, recovery?]
 
 ### 2. Concorrentes
 [Who moved up, who moved down. Use the peer set from `competitor_filtering.md`, not the
@@ -174,7 +174,7 @@ adjacent buckets. Two paragraphs.]
 "nada material" with what that means. The 8-dimension scan is the structural rigour
 that distinguishes a quarterly from a monthly.]
 
-### 4. Acções concluídas e em curso
+### 4. Ações concluídas e em curso
 [Inventory. Acknowledge what shipped, what slipped, what blocked.]
 
 ### 5. Hipóteses para o próximo trimestre
@@ -183,14 +183,14 @@ movimento em direct_comparison até semana 6 do trimestre." Hypotheses, not prom
 
 ### 6. Anexo
 [Methodology note (same as monthly). Plus a single paragraph on any methodology change
-in the quarter — e.g. "Em semana 7 mudou o modelo default do motor Google de
+in the quarter: e.g. "Em semana 7 mudou o modelo default do motor Google de
 gemini-3.5-flash para gemini-3.5-flash-2 conforme `models.md`. Comparações
 intra-trimestre marcadas em /history."]
 ```
 
 ### Voice for this block
 
-This is the only template that allows *strategic framing*. The weekly and monthly are descriptive; the quarterly synthesises. But synthesis still anchors to evidence — no "we believe", instead "the data shows X, which is consistent with Y, suggesting Z to test next".
+This is the only template that allows *strategic framing*. The weekly and monthly are descriptive; the quarterly synthesises. But synthesis still anchors to evidence: no "we believe", instead "the data shows X, which is consistent with Y, suggesting Z to test next".
 
 ## 5. Proposal copy (Deck Builder)
 
@@ -201,7 +201,7 @@ This is the only template that allows *strategic framing*. The weekly and monthl
 ### Diagnostic findings block
 
 ```
-## Estado actual em {{audit_date}}
+## Estado atual em {{audit_date}}
 
 Citation rate global: {{cr_value}} ({{cr_band}}).
 Share of voice contra peer set: {{sov_value}} (posição {{rank}}/{{peer_count_plus_one}}).
@@ -210,7 +210,7 @@ Sentiment dominante: {{sentiment_label}}.
 Maior fragilidade observada: {{weakest_dimension}}.
 Maior força observada: {{strongest_dimension}}.
 
-[2-3 sentences contextualising — link to one observation from gap_action_mapping.md.]
+[2-3 sentences contextualising: link to one observation from gap_action_mapping.md.]
 ```
 
 ### Action plan block
@@ -244,7 +244,7 @@ These apply to every block above:
 The orchestrator passes a context object to `askWithSkill('generate_narrative', {…})` with:
 
 ```yaml
-client: { name, domain, sector, country, language, peer_set }
+client: { name, domain, setor, country, language, peer_set }
 period: { type: weekly|monthly|quarterly|proposal, week_start, week_end }
 metrics:
   current:  { cr, sov, position, sentiment_mix, by_engine, by_category }

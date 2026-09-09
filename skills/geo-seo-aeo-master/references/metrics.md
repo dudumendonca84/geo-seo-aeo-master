@@ -1,24 +1,24 @@
-# Metrics and measurement — May 2026
+# Metrics and measurement: May 2026
 
-Reference for `geo-seo-aeo-master`. Definitions, formulas, measurement methods and **honest caveats** for the metrics that actually matter in GEO/AEO/SEO work. Methodology disputes are noted in line — different tools measure these metrics differently and the absolute numbers are not directly comparable across vendors.
+Reference for `geo-seo-aeo-master`. Definitions, formulas, measurement methods and **honest caveats** for the metrics that actually matter in GEO/AEO/SEO work. Methodology disputes are noted in line: different tools measure these metrics differently and the absolute numbers are not directly comparable across vendors.
 
 ---
 
-## Per-response why (`why`) — required in analyze_response
+## Per-response why (`why`): required in analyze_response
 
 Every analysed response carries a 1-2 sentence explanation, in the
 client's language, of why the engine cited whom it cited. One rule:
-**only evidence present in that row** — the cited sources (who appears
+**only evidence present in that row**: the cited sources (who appears
 in them, who does not), the mode (knowledge = model memory; augmented =
 what live search returned), who is mentioned, and what the text says.
 Never guess the model's internal mechanism; when the row has no
 evidence that explains the choice, the `why` says exactly that. This is
-what separates an explanation from a horoscope — and it is the honest
+what separates an explanation from a horoscope: and it is the honest
 version of the "ask the AI why" features the market sells.
 
 ## 1. Citation rate / share of citations
 
-**Definition.** Percentage of LLM responses, for a defined prompt set, that include a citation (clickable source link or footnote) pointing to the target domain. Distinct from "mention" — a citation requires an explicit source reference.
+**Definition.** Percentage of LLM responses, for a defined prompt set, that include a citation (clickable source link or footnote) pointing to the target domain. Distinct from "mention": a citation requires an explicit source reference.
 
 **Measurement.** Run a fixed prompt set against target engines (ChatGPT, Perplexity, Google AIO/AI Mode, Copilot, Gemini, Claude) on a recurring schedule; parse response objects for citation arrays; compute `cited_responses / total_responses`. Tools: Profound, Peec AI, Otterly, Ahrefs Brand Radar, Semrush AI Toolkit.
 
@@ -37,7 +37,7 @@ version of the "ask the AI why" features the market sells.
 
 **Caveats.**
 - Ambiguous brand names (common dictionary words) inflate counts.
-- Ahrefs' ~75,000-brand analysis found brand mentions correlate with AI Overview presence ~3× more strongly than backlinks ([Ahrefs](https://ahrefs.com/blog/llm-citations/)). Correlational. Ahrefs benefits commercially from "branded signal matters" narrative — read as directional.
+- Ahrefs' ~75,000-brand analysis found brand mentions correlate with AI Overview presence ~3× more strongly than backlinks ([Ahrefs](https://ahrefs.com/blog/llm-citations/)). Correlational. Ahrefs benefits commercially from "branded signal matters" narrative: read as directional.
 
 ---
 
@@ -51,7 +51,7 @@ SoV = brand_mentions / Σ(brand_mentions + competitor_mentions)
 ```
 across the prompt set. Some tools weight by response position (à la Princeton's PAWC, see §10).
 
-**Convenção destaque.ai (unificada 02 Ago 2026).** Nos produtos destaque.ai (Tracker e Deck Builder), o conjunto de marcas do denominador restringe-se ao **cliente + concorrentes directos (peers)** — marcas adjacentes (seguradoras, plataformas, consultoras de outra categoria) ficam fora. Atribuição fraccionária intra-resposta (1/nº de marcas do conjunto presentes na resposta), média sobre as respostas que nomeiam pelo menos uma marca do conjunto; presença do cliente pela flag `cited` do analisador, presença dos peers por `competitors_mentioned` normalizado (sem acentos). Implementação canónica: `computeShareOfVoice(rows, clientName, peerNames)` no Tracker. Um SoV sobre todas as marcas extraídas é outra métrica e deve ser rotulado como tal.
+**Convenção destaque.ai (unificada 02 Ago 2026).** Nos produtos destaque.ai (Tracker e Deck Builder), o conjunto de marcas do denominador restringe-se ao **cliente + concorrentes diretos (peers)**: marcas adjacentes (seguradoras, plataformas, consultoras de outra categoria) ficam fora. Atribuição fraccionária intra-resposta (1/nº de marcas do conjunto presentes na resposta), média sobre as respostas que nomeiam pelo menos uma marca do conjunto; presença do cliente pela flag `cited` do analisador, presença dos peers por `competitors_mentioned` normalizado (sem acentos). Implementação oficial: `computeShareOfVoice(rows, clientName, peerNames)` no Tracker. Um SoV sobre todas as marcas extraídas é outra métrica e deve ser rotulado como tal.
 
 **Caveats.**
 - **Highly sensitive to prompt-list choice.** Two tools with different default prompts produce different SoV for the same brand.
@@ -90,15 +90,15 @@ Companion metric, **recommendation rate** = brand's choices / answers that NAME 
 
 **Measurement (May 2026).** GSC does **not** allow filtering by AI Overview / AI Mode. AIO and AI Mode clicks/impressions are folded into the "Web" search type aggregate ([Search Engine Land](https://searchengineland.com/google-ai-mode-traffic-data-search-console-457076)). The only practical proxy: compare impression deltas pre/post AIO rollout per keyword (noisy).
 
-**Update (Jun 2026).** Google launched a dedicated "Search Generative AI performance" report in Search Console ([Google Search Central Blog](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports), 3 Jun 2026), giving a real filtered view — impressions by page/country/device/date inside AI Overviews, AI Mode and generative Discover. Still no click, CTR or query data, and rollout expanded from an initial UK-only subset through June to more markets (US, India, Switzerland reported by late Jun). Applies to AIO/AI Mode only — Gemini standalone still has no equivalent report ([Search Engine Land](https://searchengineland.com/measure-brand-visibility-gemini-484116), 3 Aug 2026). The pre/post impression-delta proxy above remains the fallback for click-level or Gemini-standalone estimates.
+**Update (Jun 2026).** Google launched a dedicated "Search Generative AI performance" report in Search Console ([Google Search Central Blog](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports), 3 Jun 2026), giving a real filtered view: impressions by page/country/device/date inside AI Overviews, AI Mode and generative Discover. Still no click, CTR or query data, and rollout expanded from an initial UK-only subset through June to more markets (US, India, Switzerland reported by late Jun). Applies to AIO/AI Mode only: Gemini standalone still has no equivalent report ([Search Engine Land](https://searchengineland.com/measure-brand-visibility-gemini-484116), 3 Aug 2026). The pre/post impression-delta proxy above remains the fallback for click-level or Gemini-standalone estimates.
 
 December 2025: GSC added natural-language report configuration ([Google blog](https://developers.google.com/search/blog/2025/12/ai-powered-configuration)). UI improvement, no new metric.
 
 **Known data quality issue.** Google disclosed in a changelog (3 April 2026) that GSC over-reported impressions from **13 May 2025** through early April 2026. Any YoY analysis crossing that window is contaminated. Annotate dashboards.
 
-**Known data quality issue (2).** A second, separate bug hit the "Search Generative AI performance" report specifically: impressions under-reported for data from **13 Aug 2026** onward. John Mueller confirmed it as a logging-only issue, not a real AI-visibility drop ([Search Engine Land](https://searchengineland.com/google-search-console-generative-ai-performance-report-in-search-data-bug-485215), [Search Engine Roundtable](https://www.seroundtable.com/google-search-console-performance-reports-drop-41884.html), ~17-20 Aug 2026 — verified via `WebSearch` cross-corroboration, `WebFetch` to the primary sources blocked by this session's network proxy). Any client showing a sudden AI-citation-impression drop starting mid-Aug 2026 should be checked against this before being read as a real change; no fix-confirmed date found yet.
+**Known data quality issue (2).** A second, separate bug hit the "Search Generative AI performance" report specifically: impressions under-reported for data from **13 Aug 2026** onward. John Mueller confirmed it as a logging-only issue, not a real AI-visibility drop ([Search Engine Land](https://searchengineland.com/google-search-console-generative-ai-performance-report-in-search-data-bug-485215), [Search Engine Roundtable](https://www.seroundtable.com/google-search-console-performance-reports-drop-41884.html), ~17-20 Aug 2026: verified via `WebSearch` cross-corroboration, `WebFetch` to the primary sources blocked by this session's network proxy). Any client showing a sudden AI-citation-impression drop starting mid-Aug 2026 should be checked against this before being read as a real change; no fix-confirmed date found yet.
 
-**Update (31 Aug 2026) — global rollout complete.** The phased rollout that began in June reached all sites worldwide: both the "Search Generative AI performance" report and the paired "Search generative AI control" (the property-level opt-out, see also `models.md` § Google Search Console) are now available in every Search Console property, not just the earlier UK/US/India/Switzerland subset ([Search Engine Land](https://searchengineland.com/google-search-console-ai-performance-reports-and-search-generative-ai-control-rolling-out-globally-486269), [Search Engine Journal](https://www.searchenginejournal.com/google-search-console-ai-reports-rolled-out-worldwide/587836/)). No change to the report's scope (still impressions only, no clicks/CTR/query data, still no equivalent for Gemini standalone). Practical effect for audits: every client property, including PT-only ones, now has this baseline available — stop treating its absence as a reason to skip the AI-impressions check in onboarding.
+**Update (31 Aug 2026): global rollout complete.** The phased rollout that began in June reached all sites worldwide: both the "Search Generative AI performance" report and the paired "Search generative AI control" (the property-level opt-out, see also `models.md` § Google Search Console) are now available in every Search Console property, not just the earlier UK/US/India/Switzerland subset ([Search Engine Land](https://searchengineland.com/google-search-console-ai-performance-reports-and-search-generative-ai-control-rolling-out-globally-486269), [Search Engine Journal](https://www.searchenginejournal.com/google-search-console-ai-reports-rolled-out-worldwide/587836/)). No change to the report's scope (still impressions only, no clicks/CTR/query data, still no equivalent for Gemini standalone). Practical effect for audits: every client property, including PT-only ones, now has this baseline available: stop treating its absence as a reason to skip the AI-impressions check in onboarding.
 
 **Practical workaround.** Pair GSC keyword-level impressions with a third-party AIO presence checker (Profound, SerpAPI) to derive an indicative AIO impression share.
 
@@ -106,7 +106,7 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 
 ## 6. AI-attributed traffic
 
-**Definition.** Sessions originating from an LLM interface — chatgpt.com, perplexity.ai, copilot.microsoft.com, gemini.google.com, claude.ai, you.com.
+**Definition.** Sessions originating from an LLM interface: chatgpt.com, perplexity.ai, copilot.microsoft.com, gemini.google.com, claude.ai, you.com.
 
 **Measurement (GA4).** Captures these as referral traffic when the Referer header survives. As of June 2025, ChatGPT began appending `utm_source=chatgpt.com` to citation links ([MarTech](https://martech.org/how-ga4-records-traffic-from-perplexity-comet-and-chatgpt-atlas/)).
 
@@ -137,9 +137,9 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 - No public inter-rater reliability data exists.
 - Treat as directional, not absolute. Useful for catching negative drift; not useful as a precise KPI.
 
-**Convenção destaque.ai — o que conta e o que NÃO conta como sentimento (30 Ago 2026).** Escrita depois de o founder olhar para uma resposta marcada `negative` e perguntar porquê. O motor tinha dito da marca, textualmente, "oferece soluções flexíveis que vão desde o Staff Augmentation puro a modelos híbridos"; nem uma palavra desfavorável. A razão gravada era: "apareces em décimo primeiro lugar entre 14 empresas, na categoria secundária e com uma entrada de uma linha".
+**Convenção destaque.ai: o que conta e o que NÃO conta como sentimento (30 Ago 2026).** Escrita depois de o founder olhar para uma resposta marcada `negative` e perguntar porquê. O motor tinha dito da marca, textualmente, "oferece soluções flexíveis que vão desde o Staff Augmentation puro a modelos híbridos"; nem uma palavra desfavorável. A razão gravada era: "apareces em décimo primeiro lugar entre 14 empresas, na categoria secundária e com uma entrada de uma linha".
 
-Isso é **proeminência**, não portrayal, e já está medido ao lado na mesma linha (`position`) e no share of voice. Rotulá-lo `negative` conta o mesmo problema duas vezes e conta-o com a palavra errada: o cliente lê "a IA falou mal de nós" quando o que aconteceu foi "a IA quase não falou de nós". São diagnósticos diferentes, com acções diferentes.
+Isso é **proeminência**, não portrayal, e já está medido ao lado na mesma linha (`position`) e no share of voice. Rotulá-lo `negative` conta o mesmo problema duas vezes e conta-o com a palavra errada: o cliente lê "a IA falou mal de nós" quando o que aconteceu foi "a IA quase não falou de nós". São diagnósticos diferentes, com ações diferentes.
 
 Três regras, por ordem de precedência:
 
@@ -149,7 +149,7 @@ Três regras, por ordem de precedência:
 
 Corolário para quem lê: uma marca pode ter 100% de sentimento neutro e uma posição média péssima. É um retrato coerente, e é o retrato mais comum de uma marca pequena numa categoria dominada.
 
-**Per-competitor net sentiment (Perception Map y-axis).** Same polarity, but computed for **each brand** in the category — client *and* competitors — as a net score in **-1..1**: `(positive − negative) / responses_mentioning_the_brand`. Plotted against presence (x-axis) it produces the presence × narrative quadrant (Leaders / Niche / Laggers / Controversial) that Peec and Profound expose. **Minimum base:** with few mentions (< ~5) the read is noise — **omit it** (mark "not yet measured") rather than assert a value. Directional only, subject to the caveats above.
+**Per-competitor net sentiment (Perception Map y-axis).** Same polarity, but computed for **each brand** in the category: client *and* competitors: as a net score in **-1..1**: `(positive − negative) / responses_mentioning_the_brand`. Plotted against presence (x-axis) it produces the presence × narrative quadrant (Leaders / Niche / Laggers / Controversial) that Peec and Profound expose. **Minimum base:** with few mentions (< ~5) the read is noise: **omit it** (mark "not yet measured") rather than assert a value. Directional only, subject to the caveats above.
 
 ---
 
@@ -159,7 +159,7 @@ Corolário para quem lê: uma marca pode ter 100% de sentimento neutro e uma pos
 
 **Formula.** `coverage = prompts_with_brand / total_prompts_in_set`
 
-**Caveat.** Most meaningful when the prompt set is exhaustive and audited. Profound's "Prompt Volumes" feature attempts to weight prompts by actual search demand; other tools weight equally, which over-represents long-tail prompts that no real user issues.
+**Caveat.** Most meaningful when the prompt set is exhaustive and audited. Profound's "Prompt Volumes" feature attempts to weight prompts by atual search demand; other tools weight equally, which over-represents long-tail prompts that no real user issues.
 
 ---
 
@@ -199,7 +199,7 @@ Aggarwal et al., KDD 2024 ([arXiv 2311.09735](https://arxiv.org/abs/2311.09735))
 4. `schema.org/Organization` JSON-LD validated via Rich Results Test.
 5. `Organization.sameAs` populated with LinkedIn, GitHub, X, Crunchbase URLs.
 
-**Caveat.** No public causal study links Knowledge Graph presence to LLM citation rate. Ahrefs' 75k-brand correlation work shows branded search volume (r=0.334) and branded anchor text (r=0.527) outperform domain rating as predictors. Knowledge graph is plausibly an instance of the same "entity strength" latent factor — directionally supported, not causally proven.
+**Caveat.** No public causal study links Knowledge Graph presence to LLM citation rate. Ahrefs' 75k-brand correlation work shows branded search volume (r=0.334) and branded anchor text (r=0.527) outperform domain rating as predictors. Knowledge graph is plausibly an instance of the same "entity strength" latent factor: directionally supported, not causally proven.
 
 ---
 
@@ -207,61 +207,61 @@ Aggarwal et al., KDD 2024 ([arXiv 2311.09735](https://arxiv.org/abs/2311.09735))
 
 **Definition.** IAB's cross-vendor measurement standard, "Measuring Visibility in the AI Era" (released 3-4 Aug 2026, [IAB](https://www.iab.com/guidelines/measuring-visibility-in-the-ai-era/)). First attempt at a shared vocabulary across the 20+ commercial AI-visibility tools, organised as a causal hierarchy:
 
-1. **Presence** — does the brand/publisher appear in an AI response at all.
-2. **Prominence** — where and how prominently it appears (position, citation vs. mention, density).
-3. **Portrayal** — in what context and with what accuracy (sentiment, factual correctness — overlaps with §7 above).
-4. **Persuasion** — downstream effect on user behaviour/trust (least measurable of the four; mostly aspirational as of this release).
+1. **Presence**: does the brand/publisher appear in an AI response at all.
+2. **Prominence**: where and how prominently it appears (position, citation vs. mention, density).
+3. **Portrayal**: in what context and with what accuracy (sentiment, factual correctness: overlaps with §7 above).
+4. **Persuasion**: downstream effect on user behaviour/trust (least measurable of the four; mostly aspirational as of this release).
 
 **Two-tier data-quality classification.** IAB distinguishes "decision-grade" data (methodology disclosed, reproducible, suitable for budget/strategy decisions) from "directional" data (useful for spotting trends, not for hard decisions). No named vendor has yet been independently certified against this bar; treat it as a standard to evaluate vendors against, not a certification any tool currently holds.
 
 **Why it matters.** Prior to this release there was no shared framework: every vendor's "visibility score" bundled different combinations of §1-§9 above under one number, making cross-vendor comparison meaningless. Only 16% of brands formally track AI visibility at all ([ppc.land](https://ppc.land/only-16-of-brands-track-ai-visibility-as-iab-sets-measurement-standard/), citing IAB data), so the standard is arriving early in the category's maturity curve.
 
-**Use in client work.** Map destaque.ai reporting sections to Presence/Prominence/Portrayal/Persuasion where practical — it gives clients an industry-recognised vocabulary instead of an in-house one. Persuasion has no reliable measurement method yet (see §6 AI-attributed traffic caveats); do not claim to measure it directly.
+**Use in client work.** Map destaque.ai reporting sections to Presence/Prominence/Portrayal/Persuasion where practical: it gives clients an industry-recognised vocabulary instead of an in-house one. Persuasion has no reliable measurement method yet (see §6 AI-attributed traffic caveats); do not claim to measure it directly.
 
-**Caveat.** Released 3-4 Aug 2026 — too early for independent scrutiny of the methodology itself or for vendor adoption data. Revisit in Q4 2026.
+**Caveat.** Released 3-4 Aug 2026: too early for independent scrutiny of the methodology itself or for vendor adoption data. Revisit in Q4 2026.
 
 ---
 
-## Measurement tools — current state (May 2026)
+## Measurement tools: current state (May 2026)
 
 ### Google Search Console
 
 - Performance report (Web) **aggregates** AIO and AI Mode impressions/clicks into standard totals. No filter for AIO/AI Mode.
-- Dec 2025: added "AI-powered configuration" — natural-language report setup. UI improvement only.
-- **Jun 2026: dedicated "Search Generative AI performance" report** launched — filtered impressions (page/country/device/date) for AIO, AI Mode and generative Discover, no clicks/CTR/query data yet. Rolled out beyond initial UK-only subset through the month. No equivalent exists for Gemini standalone as of Aug 2026.
-- **31 Aug 2026: rollout complete worldwide** — see full note with sources further up this section (§ "Update (31 Aug 2026) — global rollout complete"). Report + opt-out control both live on every property globally, not a market subset.
-- **AI features opt-out toggle — effective 4 days after being set.** Google made the existing per-site opt-out control (disables AI Overviews, AI Mode and generative Discover surfacing for that property) actually binding from **17 Jun 2026** ([Google Search Central](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)); settings made before that date had no effect. Does not touch classic organic rankings — it only removes the property from AI-surface eligibility. Audit implication: confirm the toggle is **off** for clients whose transactional queries convert better via AI Mode than classic organic (vendor data, e.g. ConvertMate GEO Benchmark 2026, reports ~4.4× — treat as directional, not verified independently) before recommending any other GEO work; flipping it on is a one-line way to opt a site out of the whole citation surface.
+- Dec 2025: added "AI-powered configuration": natural-language report setup. UI improvement only.
+- **Jun 2026: dedicated "Search Generative AI performance" report** launched: filtered impressions (page/country/device/date) for AIO, AI Mode and generative Discover, no clicks/CTR/query data yet. Rolled out beyond initial UK-only subset through the month. No equivalent exists for Gemini standalone as of Aug 2026.
+- **31 Aug 2026: rollout complete worldwide**: see full note with sources further up this section (§ "Update (31 Aug 2026): global rollout complete"). Report + opt-out control both live on every property globally, not a market subset.
+- **AI features opt-out toggle: effective 4 days after being set.** Google made the existing per-site opt-out control (disables AI Overviews, AI Mode and generative Discover surfacing for that property) actually binding from **17 Jun 2026** ([Google Search Central](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)); settings made before that date had no effect. Does not touch classic organic rankings: it only removes the property from AI-surface eligibility. Audit implication: confirm the toggle is **off** for clients whose transactional queries convert better via AI Mode than classic organic (vendor data, e.g. ConvertMate GEO Benchmark 2026, reports ~4.4×: treat as directional, not verified independently) before recommending any other GEO work; flipping it on is a one-line way to opt a site out of the whole citation surface.
 - Data quality issue: over-reported impressions 13 May 2025 → early April 2026.
 - Practical use: still essential for keyword-level impression and CTR baselines; complement with vendor AIO checkers.
 
 ### GA4
 
-- Default Channel Group still treats LLM domains as **Referral** — no native "AI" channel.
+- Default Channel Group still treats LLM domains as **Referral**: no native "AI" channel.
 - Recommended custom channel group ("AI" with regex covering LLM domains).
 - Attribution is systematically incomplete; treat as a lower bound.
 
-### Bing Webmaster Tools — AI Performance
+### Bing Webmaster Tools: AI Performance
 
 Public preview launched **9 February 2026** ([Bing blog](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)).
 
 Exposes:
 - Citation counts across Copilot and Bing AI summaries.
 - Cited-pages breakdown.
-- **Grounding queries** — Bing's reformulated query before retrieval (rare first-party signal of how the engine internally rewrites user queries).
+- **Grounding queries**: Bing's reformulated query before retrieval (rare first-party signal of how the engine internally rewrites user queries).
 
 Data goes back ~3 months (to Nov 2025).
 
-**June 2026 expansion — four new capabilities** ([Bing Search Blog](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare), 16 Jun 2026 — live worldwide in preview; gap recovery, missed during this routine's 5 Jun–1 Jul execution gap):
-- **Citation Share** — the site's share of total citations for a specific grounding query (e.g. 3 of 10 citations = 30% share). Observational only; does not show competitor domains or traffic share.
-- **Intents** — grounding queries classified into broader categories (Informational, Commercial, Navigational, Learn and Solve, Research, Creation, Local, etc.).
-- **Topics** — citations grouped by subject area.
-- **Compare** — track how citation patterns change over time, to measure the impact of content updates, new structured data, or editorial changes on AI visibility.
+**June 2026 expansion: four new capabilities** ([Bing Search Blog](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare), 16 Jun 2026: live worldwide in preview; gap recovery, missed during this routine's 5 Jun–1 Jul execution gap):
+- **Citation Share**: the site's share of total citations for a specific grounding query (e.g. 3 of 10 citations = 30% share). Observational only; does not show competitor domains or traffic share.
+- **Intents**: grounding queries classified into broader categories (Informational, Commercial, Navigational, Learn and Solve, Research, Creation, Local, etc.).
+- **Topics**: citations grouped by subject area.
+- **Compare**: track how citation patterns change over time, to measure the impact of content updates, new structured data, or editorial changes on AI visibility.
 
 **Critical gap.** Shows citations, not clicks. Cannot measure traffic outcome from Copilot citations directly. **This is currently the only first-party AI citation telemetry from a major engine.** Recommend enabling for every client. The Compare feature (above) is the closest first-party equivalent to a before/after audit-impact measurement currently available from any engine.
 
 ### Browser referrer behavior
 
-- Chromium browsers ship `strict-origin-when-cross-origin` as default Referrer-Policy since Chrome 85 (2020); incognito mode does **not** change this — referrer info (origin only) is still sent on cross-site navigations.
+- Chromium browsers ship `strict-origin-when-cross-origin` as default Referrer-Policy since Chrome 85 (2020); incognito mode does **not** change this: referrer info (origin only) is still sent on cross-site navigations.
 - Many LLM interfaces use `noreferrer` link rels or open in new windows that strip Referer entirely. This is the dominant attribution loss, not browser mode.
 
 ### Vendor visibility platforms
@@ -278,8 +278,8 @@ A working measurement stack for a B2B SaaS PT-PT engagement:
 2. **GA4 with custom AI channel group** for lower-bound AI-attributed traffic.
 3. **Bing Webmaster Tools AI Performance** for first-party Copilot citation telemetry.
 4. **One monitoring tool** (Peec AI recommended for EU/PT context) for citation rate, SoV, brand mention rate across major engines.
-5. **Monthly manual prompt audit** — fixed list of 20-50 category-defining prompts run against ChatGPT, Claude, Perplexity, Google AI Mode by hand. Document who appears, ranking, sentiment. This catches things vendor tools miss.
-6. **Wikidata + Knowledge Panel monitoring** — quarterly check that the brand's Wikidata item is populated and Google Knowledge Panel renders.
+5. **Monthly manual prompt audit**: fixed list of 20-50 category-defining prompts run against ChatGPT, Claude, Perplexity, Google AI Mode by hand. Document who appears, ranking, sentiment. This catches things vendor tools miss.
+6. **Wikidata + Knowledge Panel monitoring**: quarterly check that the brand's Wikidata item is populated and Google Knowledge Panel renders.
 
 ---
 
@@ -288,15 +288,15 @@ A working measurement stack for a B2B SaaS PT-PT engagement:
 1. The "57% click reduction", "58% click reduction" and "46.7% click reduction" figures describe similar phenomena measured differently. They are **not interchangeable**. Name the source and date when citing.
 2. All current AI-referral traffic measurements are **lower bounds** due to Referer-header loss.
 3. No major engine (Google, OpenAI, Anthropic, Perplexity) publishes server-side citation data. Bing is the exception, since 9 Feb 2026.
-4. All vendor "visibility" platforms infer citation share from sampled prompting — selection bias toward whatever prompts the tool's defaults include.
+4. All vendor "visibility" platforms infer citation share from sampled prompting: selection bias toward whatever prompts the tool's defaults include.
 5. **PT-PT-specific evidence is thin.** Most public benchmarks are US-English. Peec AI is currently the most credible vendor for non-English tracking; expect to triangulate.
-6. The "click era is over" narrative is partly true (AIO collapses CTR where it appears) and partly hype (the remaining ~50% of Google queries still trigger no AIO per BrightEdge). For B2B Tech specifically, AIO presence is ~82% — the impact is upper-bound for destaque.ai's likely vertical.
+6. The "click era is over" narrative is partly true (AIO collapses CTR where it appears) and partly hype (the remaining ~50% of Google queries still trigger no AIO per BrightEdge). For B2B Tech specifically, AIO presence is ~82%: the impact is upper-bound for destaque.ai's likely vertical.
 
 Last refresh: 09 Sep 2026 (§3b Share of Recommendation added; Visibility Score 03 Sep; sentiment convention 30 Aug).
 
 ## Custo de Entrada (prompt / business-line difficulty)
 
-Founder's concept, 23 Aug 2026 — the LLM analogue of SEO keyword
+Founder's concept, 23 Aug 2026: the LLM analogue of SEO keyword
 difficulty, computable from data the Tracker already measures. Answers
 the executive question "which line do I attack first, and why".
 
@@ -314,7 +314,7 @@ Computed per prompt and aggregated per business line, from four drivers:
 4. **Weekly stability.** Same answer every week = locked in; volatile
    answers = contested, window open.
 
-**Output contract:** a band — `baixo | médio | alto` — plus the drivers
+**Output contract:** a band: `baixo | médio | alto` - plus the drivers
 written out with the evidence ("alto: a CUF aparece em 82% das
 respostas desta linha, ancorada em 3 fontes que se repetem, maioria em
 modo memória"). NEVER a decimal score: false precision on four ordinal
@@ -331,22 +331,20 @@ category, not comparable across categories.
 
 Pergunta do founder (23 Ago 2026). Estado honesto: nenhum vendor
 publica volume de prompts por tema; não há firehose. Quem vender
-"prompt volume" exacto está a extrapolar painel — usar, rotulado
+"prompt volume" exato está a extrapolar painel: usar, rotulado
 direccional. Os proxies reais, por ordem de utilidade:
 
-1. **Google Trends** — o melhor proxy de procura por tema (a procura
+1. **Google Trends**: o melhor proxy de procura por tema (a procura
    transfere-se para os assistentes com cauda mais conversacional).
-2. **Clickstream panels** — Semrush (estudo de 17 meses/mil milhões de
+2. **Clickstream panels**: Semrush (estudo de 17 meses/mil milhões de
    linhas US, Abr 2026) e Similarweb: tendências agregadas de uso e
    referrals; datasets à venda. Painel ≠ censo; EUA ≠ PT.
-3. **GSC do cliente** — impressões em AI Overviews por query: procura
+3. **GSC do cliente**: impressões em AI Overviews por query: procura
    real da marca nas superfícies de IA, primária e gratuita.
-4. **Estudos de uso dos vendors** (OpenAI, Anthropic Economic Index) —
-   categorias agregadas, contexto apenas.
+4. **Estudos de uso dos vendors** (OpenAI, Anthropic Economic Index): categorias agregadas, contexto apenas.
 
-**O activo próprio ("Tendências da camada de decisão"):** o Trends mede
-o que se pergunta; nós medimos o que se RESPONDE, semana a semana —
-perguntas que ganham/perdem carrossel, fontes que sobem, marcas que
+**O ativo próprio ("Tendências da camada de decisão"):** o Trends mede
+o que se pergunta; nós medimos o que se RESPONDE, semana a semana: perguntas que ganham/perdem carrossel, fontes que sobem, marcas que
 entram, e as perguntas emergentes nas comunidades do cliente (as
 perguntas de hoje nos fóruns são os prompts de amanhã; a recolha de
 comunidade já as apanha). Quatro sinais juntos: procura (Trends),
@@ -355,12 +353,12 @@ perguntas emergentes (comunidade). Fonte de camada 2 para o Onde Focar.
 
 **Consolidador da procura (founder, 24 Ago: "precisamos ver o que se
 pergunta, nem que sejamos os consolidadores de todas as fontes").**
-Estado honesto: os ingredientes existem, o prato não — construir. Task
+Estado honesto: os ingredientes existem, o prato não: construir. Task
 mensal do cérebro, por categoria de cliente ("O que se pergunta"):
 
 1. Queries reais do GSC do cliente (tabela `gsc_queries`), com
-   impressões AI Overviews — a procura que a marca já apanha.
-2. Perguntas emergentes na comunidade recolhida (fóruns, reviews) — os
+   impressões AI Overviews: a procura que a marca já apanha.
+2. Perguntas emergentes na comunidade recolhida (fóruns, reviews): os
    prompts de amanhã, com citação e data.
 3. Google Trends por termos da categoria + números de painel públicos
    (Semrush/Similarweb), sempre rotulados direccionais.
@@ -369,7 +367,7 @@ Saída: as ~10 perguntas em crescimento na categoria, a fonte de cada
 uma, e quais já têm dono nas respostas medidas. Alimenta a rotação de
 prompts (perguntas novas entram no catálogo) e o Onde Focar. Fase 2
 (código): séries de procura via DataForSEO Trends/keywords numa tabela
-própria + vista no produto — e só então vai ao site como capacidade.
+própria + vista no produto: e só então vai ao site como capacidade.
 
 
 ## Visibility Score
@@ -435,5 +433,5 @@ espaço não são sentimento).
   apareces", e a verdade é "ainda ninguém leu".
 
 **Consumido por:** o relatório do prospect e o PDF (número de capa), e o
-painel do Tracker (número + as três parcelas). Implementação canónica no
+painel do Tracker (número + as três parcelas). Implementação oficial no
 Tracker, com fallback para estes pesos quando a skill não responde.

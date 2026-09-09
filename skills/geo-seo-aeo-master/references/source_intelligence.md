@@ -1,9 +1,9 @@
-# Source intelligence — o que os motores citam, medido por nós
+# Source intelligence: o que os motores citam, medido por nós
 
 Referência do `geo-seo-aeo-master`. Evidência empírica semanal, extraída das
 auditorias reais do Visibility Tracker: que tipos de fonte cada motor cita,
 como isso varia por categoria de pergunta, e o que se mantém estável semana
-a semana. É o complemento medido dos `engine_playbooks.md` — os playbooks
+a semana. É o complemento medido dos `engine_playbooks.md` - os playbooks
 dizem o método; este ficheiro diz o que as NOSSAS medições mostram.
 
 **Quem escreve:** a Routine do cérebro do Tracker, uma vez por semana,
@@ -62,8 +62,8 @@ APIs reais, e não a partir de documentação:
 | Gemini | sim, `webSearchQueries` | sim, `groundingChunks` | sim, `groundingSupports` |
 | Claude | sim | sim | derivadas das ligações do texto |
 | Perplexity | não expõe | sim, `search_results` | sim, `citations` |
-| DeepSeek | não pesquisa | — | — |
-| Mistral | pesquisa, com tecto de 20/dia | — | — |
+| DeepSeek | não pesquisa |: |: |
+| Mistral | pesquisa, com tecto de 20/dia |: |: |
 | Google AIO, AI Mode, Copilot | a consulta é nossa | não expõem | sim |
 
 Duas notas que evitam conclusões erradas sobre os motores:
@@ -124,7 +124,7 @@ entra numa medição nacional sem ninguém dar por isso.
 
 **Quem expõe as consultas.** OpenAI (Responses API, `action.query`),
 Google (`webSearchQueries`) e xAI. O Claude expõe-as quando pesquisa
-directamente e não quando pesquisa de dentro do `code_execution`.
+diretamente e não quando pesquisa de dentro do `code_execution`.
 Perplexity, Mistral, DeepSeek e as superfícies do Google não as devolvem:
 **campo vazio não é "não pesquisou"**.
 
@@ -185,9 +185,9 @@ A entrada de 3 de Setembro foi escrita sobre uma leitura parcial da mesma
 semana (420 respostas). A leitura completa cobre 445 respostas com
 conteúdo, em 15 combinações de motor e modo, incluindo as duas superfícies
 do Google, que na entrada anterior não estavam contadas. Duas coisas mudam,
-e a primeira é uma correcção.
+e a primeira é uma correção.
 
-**Correcção: o site próprio do cliente É citado, mas só numa família de
+**Correção: o site próprio do cliente É citado, mas só numa família de
 superfícies.** A entrada anterior dizia que não aparecia em citação nenhuma
 de motor nenhum. Na leitura completa aparece em quatro respostas, todas nas
 superfícies do Google (AI Overviews e AI Mode), e em nenhuma das outras
@@ -221,7 +221,7 @@ diferentes.
 
 ### O que domina, por tipo de fonte
 
-- **Google (as duas superfícies): o directório é do próprio Google.** Nas
+- **Google (as duas superfícies): o diretório é do próprio Google.** Nas
   seis perguntas de "onde" e "qual", as fichas locais do `google.com` são
   124 de 356 fontes, e numa delas são 16 de 16. Consequência prática para
   negócio local: nessas perguntas optimiza-se a ficha (nota, número de
@@ -242,7 +242,7 @@ diferentes.
   a razão declarada para escolher uma marca. Nesta semana, uma única marca
   concentrou 28% de todas as escolhas da categoria com essa credencial. É a
   observação mais accionável do ficheiro para negócio local: uma página de
-  prémio indexada num directório converte-se em recomendação.
+  prémio indexada num diretório converte-se em recomendação.
 
 ### Dois riscos de qualidade, medidos
 
@@ -265,7 +265,7 @@ confirmação externa, e devem ser gravados com a razão à vista.
 
 ## 2026-09-03 (comércio automóvel local)
 
-Primeira entrada deste ficheiro fora do sector de consultoria B2B em
+Primeira entrada deste ficheiro fora do setor de consultoria B2B em
 GEO/IA que preencheu todas as anteriores: uma auditoria de onboarding
 (semana 1) num negócio local de venda de carros usados em Portugal,
 `audience_type` local/físico. Trinta perguntas por motor, a maioria
@@ -287,7 +287,7 @@ nomeiam fazem-no a partir de conhecimento próprio ou de agregadores
 
 **Perplexity** apoia-se sobretudo em `reddit.com`, `auto.pt`, `carmine.pt`
 e `standvirtual.com`, por esta ordem: o mesmo padrão de dispersão por
-sites de agregação já registado no sector de consultoria, mas aqui com
+sites de agregação já registado no setor de consultoria, mas aqui com
 Reddit à frente de tudo. Cita ainda `g1.globo.com` (site de notícias
 brasileiro) numa resposta sobre preços de crédito automóvel em Portugal:
 é um sinal de mistura de mercado PT/BR na pesquisa deste motor para esta
@@ -297,20 +297,20 @@ memória de outros dois motores (ver abaixo).
 **Gemini** cita `carmine.pt` como agregador principal, seguido de
 `reddit.com`, e depois vários domínios de stands individuais
 (`caetano.pt`, `sobarroso.pt`, `anjuscar.com`, `matrizauto.pt`,
-`santogal.pt`): ao contrário do sector de consultoria, onde o Gemini
+`santogal.pt`): ao contrário do setor de consultoria, onde o Gemini
 citava sobretudo sites de agência, aqui a maior parte das citações são os
 próprios sites dos concorrentes do cliente, o que faz sentido numa
 categoria de "recomenda-me um stand" em vez de "explica-me um conceito".
 
 **Google AI Overviews e AI Mode** citam sobretudo `google.com` (a própria
 Google, incluindo mapas de resultados de pesquisa) e `youtube.com`, tal
-como no sector de consultoria: confirma, num sector totalmente
+como no setor de consultoria: confirma, num setor totalmente
 diferente, o padrão já registado de auto-referência forte nas duas
 superfícies da Google.
 
 **Copilot** cita `standvirtual.com`, `auto.pt` e `carmine.pt`: os três
 maiores agregadores nacionais de anúncios de automóveis, e nenhum site de
-agência ou consultoria (não existe essa categoria neste sector).
+agência ou consultoria (não existe essa categoria neste setor).
 
 **ChatGPT** destaca-se por citar `clientebancario.bportugal.pt`, o sítio
 de proteção ao consumidor bancário do Banco de Portugal, numa resposta
@@ -336,17 +336,17 @@ noutras perguntas em modo memória desta mesma auditoria, responderam com
 documentos e instituições brasileiras (CRLV, DETRAN, Renavam) a uma
 pergunta sobre o mercado português): ali o motor confunde o país, aqui
 inventa entidades que nunca existiram em nenhum país. Fica registado como
-observação de uma semana, num sector novo neste ficheiro; sem segunda
+observação de uma semana, num setor novo neste ficheiro; sem segunda
 leitura ainda para aplicar a regra das duas auditorias.
 
 ### Limitações desta entrada
 
-Primeira semana de um sector novo (comércio local, não B2B/SaaS), uma
+Primeira semana de um setor novo (comércio local, não B2B/SaaS), uma
 única auditoria, sem clientes anteriores para comparar. Os números por
 tipo de fonte (agência/documentação/UGC) não se aplicam bem a este
-sector: a maioria das citações são sites de concorrentes ou agregadores
+setor: a maioria das citações são sites de concorrentes ou agregadores
 nacionais, categorias que os `engine_playbooks.md` descrevem sobretudo
-para o sector B2B. Uma segunda auditoria deste ou de outro cliente local
+para o setor B2B. Uma segunda auditoria deste ou de outro cliente local
 permitirá confirmar se os padrões acima (auto-referência da Google,
 dispersão do Perplexity por agregadores, o achado de nomes inventados do
 Mistral) se repetem antes de qualquer proposta de edição aos blocos de
@@ -438,7 +438,7 @@ A leitura para quem compara vias: **um número de sessão real só é
 comparável com um número de API se a sessão estiver sem memória e com uma
 conversa nova por pergunta.** Não é detalhe operacional, é condição de
 validade, e a verificação tem de ser o primeiro passo de cada recolha e
-não uma correcção depois do facto.
+não uma correção depois do facto.
 
 ### Contra os playbooks
 
@@ -454,8 +454,8 @@ para poderem ser promovidas:
 ## 2026-08-24
 
 Terceira auditoria semanal medida neste ficheiro no mesmo universo das duas
-anteriores: sector de consultoria de visibilidade em IA/SEO em Portugal, uma
-única auditoria activa. Base: 756 respostas, 754 mensuráveis (sem erro, sem
+anteriores: setor de consultoria de visibilidade em IA/SEO em Portugal, uma
+única auditoria ativa. Base: 756 respostas, 754 mensuráveis (sem erro, sem
 mock, com `cited` preenchido e sem prefixo sentinela), contra 754 também na
 semana passada. Em modo de pesquisa (augmented), os oito motores/superfícies
 devolveram citações em 405 das 432 respostas augmented possíveis (54
@@ -472,7 +472,7 @@ explica por mudança do conjunto medido.
 Esta entrada traz ainda, no fim, uma leitura retrospectiva de duas semanas
 anteriores (2026-07-27 e 2026-08-03) que nunca tinham sido escritas aqui e
 que são as primeiras com vários clientes em simultâneo. Ficam em secção
-própria e agregadas, sem domínios nem sectores, por regra de privacidade.
+própria e agregadas, sem domínios nem setores, por regra de privacidade.
 
 ### chatgpt
 
@@ -487,7 +487,7 @@ domínio de documentação oficial da Google concentra agora 19,1% de todas as
 citações do motor (47 das 246), depois de 17,9% (38 de 212) e 15,4%. Três
 leituras, subida monótona de quase quatro pontos percentuais. A taxa de
 domínios únicos desce pela terceira vez seguida, 39,8%, 37,3%, 30,1%. A
-direcção é inequívoca neste nicho: o ChatGPT reutiliza cada vez menos
+direção é inequívoca neste nicho: o ChatGPT reutiliza cada vez menos
 domínios e apoia-se cada vez mais no mesmo punhado de documentação de
 fornecedor.
 
@@ -507,14 +507,14 @@ a segundo mais concentrado.
 
 Por tipo: 96,3% sites de agência/consultoria de nicho, 2,4% imprensa de
 martech, 1,2% investigação primária, 0% documentação oficial/institucional,
-0% UGC, 0% vídeo, 0% directórios.
+0% UGC, 0% vídeo, 0% diretórios.
 
 Confirma-se, em segunda leitura, a contradição registada na entrada anterior.
 O bloco do motor descreve o Claude, em modo de pesquisa, a preferir fontes
 institucionais e documentação clara e a citar jornalismo de referência mais
 do que os outros motores. Nas duas semanas medidas o peso institucional é o
 mais baixo dos oito motores (1,2% e agora 0,0%) e a imprensa citada não é
-jornalismo de referência. Duas auditorias consecutivas, mesma direcção: a
+jornalismo de referência. Duas auditorias consecutivas, mesma direção: a
 regra das duas auditorias está cumprida para este ponto.
 
 Nota de instrumentação, importante para quem reler estes números: o adaptador
@@ -530,7 +530,7 @@ achado sobre o motor.
 
 52 respostas com citações (de 54), 748 citações, 450 domínios únicos (60,2%
 únicos). Por tipo: 84,2% sites de agência/consultoria de nicho, 4,7% vídeo
-(youtube.com), 3,1% imprensa de martech, 2,7% directórios de reviews, 2,5%
+(youtube.com), 3,1% imprensa de martech, 2,7% diretórios de reviews, 2,5%
 UGC/social, 2,1% auto-referência de motor de busca, 0,3% documentação
 oficial, 0,3% investigação primária, 0,1% registos oficiais.
 
@@ -538,7 +538,7 @@ O bloco do motor regista o YouTube como fonte de peso. Continua presente e
 continua a ser o domínio isolado mais citado a seguir aos de agência, mas
 desce pela terceira semana seguida: 9,1%, 7,0%, 4,7% das citações do motor,
 o que em valor absoluto são 68, 51 e 35 citações. Três leituras, descida
-monótona, quase a metade do ponto de partida. Confirma a direcção do
+monótona, quase a metade do ponto de partida. Confirma a direção do
 playbook (YouTube presente e relevante) e desmente-lhe a magnitude neste
 nicho, com uma tendência clara e não um ruído.
 
@@ -552,9 +552,9 @@ cinco pontos percentuais.
 `NO_AIO_TEXT`, o que é dado e não falha), 401 citações, 231 domínios únicos
 (57,6% únicos). Por tipo: 79,8% sites de agência/consultoria de nicho, 11,7%
 vídeo, 4,7% UGC/social (Reddit e LinkedIn), 1,5% imprensa de martech, 1,5%
-documentação oficial, 0,5% directórios, 0,2% auto-referência.
+documentação oficial, 0,5% diretórios, 0,2% auto-referência.
 
-O ponto do playbook sobre citar discussões directamente na resposta continua
+O ponto do playbook sobre citar discussões diretamente na resposta continua
 verdadeiro mas enfraquece: UGC a 8,3%, 8,2% e agora 4,7% nas três leituras.
 Duas semanas de estabilidade seguidas de uma queda de metade. Uma queda
 isolada não desfaz duas confirmações; fica como observação a vigiar, não
@@ -569,7 +569,7 @@ volume desce 9%, número de domínios únicos praticamente igual (231 contra
 47 respostas com citações (de 54), 434 citações, 246 domínios únicos (56,7%
 únicos). Por tipo: 76,5% sites de agência/consultoria de nicho, 13,4% vídeo,
 5,1% UGC/social, 2,1% imprensa de martech, 1,2% documentação oficial, 0,9%
-auto-referência, 0,5% directórios, 0,5% investigação primária.
+auto-referência, 0,5% diretórios, 0,5% investigação primária.
 
 É o motor que mais recua esta semana em volume: 434 citações contra 606, uma
 queda de 28%, e 246 domínios únicos contra 370, uma queda de 34%. O número de
@@ -589,7 +589,7 @@ Continua sem forma de medir aqui o comprimento médio da passagem citada
 
 54 respostas com citações (de 54), 296 citações, 203 domínios únicos (68,6%
 únicos). Por tipo: 90,5% sites de agência/consultoria de nicho, 3,4% imprensa
-de martech, 2,0% documentação oficial, 1,7% directórios de reviews, 1,4%
+de martech, 2,0% documentação oficial, 1,7% diretórios de reviews, 1,4%
 UGC/social, 0,7% investigação primária, 0,3% auto-referência, 0% vídeo.
 
 **Zero citações de x.com ou twitter.com pela terceira semana consecutiva**,
@@ -607,11 +607,11 @@ volume sobe 28%, dispersão praticamente igual.
 54 respostas com citações (de 54), 529 citações, 382 domínios únicos (72,2%
 únicos, o mais disperso dos oito pela terceira semana seguida). Por tipo:
 95,5% sites de agência/consultoria de nicho, 1,1% UGC/social (LinkedIn), 0,9%
-imprensa de martech, 0,8% directórios de reviews, 0,6% vídeo, 0,6% registos
+imprensa de martech, 0,8% diretórios de reviews, 0,6% vídeo, 0,6% registos
 oficiais, 0,4% documentação oficial, 0,2% auto-referência.
 
 Curiosidade que vale registar: 529 citações esta semana e 529 na semana
-passada, número exactamente igual. Com 376 e 382 domínios únicos, e uma
+passada, número exatamente igual. Com 376 e 382 domínios únicos, e uma
 composição por tipo que varia menos de dois pontos percentuais em todas as
 categorias, é o motor mais previsível dos oito.
 
@@ -628,7 +628,7 @@ peso relevante.
 54 respostas com citações (de 54), 1 024 citações, 574 domínios únicos (56,1%
 únicos). Por tipo: 90,2% sites de agência/consultoria de nicho, 3,6%
 UGC/social (Reddit e LinkedIn), 2,5% documentação oficial, 2,0% imprensa de
-martech, 0,8% vídeo, 0,6% directórios de reviews, 0,1% registos oficiais,
+martech, 0,8% vídeo, 0,6% diretórios de reviews, 0,1% registos oficiais,
 0,1% auto-referência, 0,1% investigação primária.
 
 Comparado com 2026-08-17 (1 022 citações, 577 domínios únicos, 56,5%
@@ -641,7 +641,7 @@ categoria". Medimos vídeo a 5,6%, 1,0% e agora 0,8%, e UGC a 4,8%, 5,0% e
 agora 3,6%. Três leituras, todas uma ordem de grandeza abaixo. A leitura
 mantém-se: não é contradição do motor, é sinal de que a magnitude do
 benchmark depende do nicho da pergunta, e que num nicho B2B em português com
-pouca comunidade activa o Perplexity dispersa-se por sites de agência.
+pouca comunidade ativa o Perplexity dispersa-se por sites de agência.
 
 ### Padrões por categoria de pergunta
 
@@ -656,19 +656,19 @@ apontar no mesmo sentido, com pouca variação de magnitude. Perguntas de "como
 funciona X" puxam para fontes institucionais; perguntas de preço e de
 recomendação local não.
 
-O peso conjunto de vídeo e UGC continua mais alto na comparação directa
+O peso conjunto de vídeo e UGC continua mais alto na comparação direta
 (11,1%, era 13,8%) e mais baixo na recomendação local (3,2%, era 3,9%). A
 ordem das cinco categorias nesta métrica é a mesma nas duas semanas. A
 funcionalidade específica sobe de 7,9% para 9,2% e mantém-se, como na semana
 passada, mais perto da comparação de preço (4,9%) do que da comparação
-directa: confirma-se que o emparelhamento entre funcionalidade específica e
-comparação directa observado em 2026-08-10 não se repete.
+direta: confirma-se que o emparelhamento entre funcionalidade específica e
+comparação direta observado em 2026-08-10 não se repete.
 
 ### Domínios estáveis e domínios rotativos
 
-Primeira leitura desta métrica no ficheiro. Para cada motor, que fracção dos
+Primeira leitura desta métrica no ficheiro. Para cada motor, que fração dos
 domínios citados esta semana já tinha sido citada na semana anterior, e que
-fracção do volume de citações desta semana vem desses domínios repetidos.
+fração do volume de citações desta semana vem desses domínios repetidos.
 
 | motor | domínios únicos | repetidos | % domínios repetidos | % volume de repetidos |
 |---|---|---|---|---|
@@ -699,10 +699,10 @@ citam muitos domínios, mas citam repetidamente os mesmos muitos domínios. Ler
 
 Estas duas semanas nunca tinham sido escritas aqui. São as primeiras com
 várias auditorias em simultâneo e, ao contrário das entradas acima, cobrem
-sectores diferentes do de consultoria em IA/SEO. Por regra de privacidade
+setores diferentes do de consultoria em IA/SEO. Por regra de privacidade
 deste ficheiro, e porque a categoria de pergunta sozinha identificaria os
 clientes, aqui só vão tipos de fonte e mecanismos: sem domínios, sem
-sectores, sem números por cliente. Base: 2 124 respostas mensuráveis em
+setores, sem números por cliente. Base: 2 124 respostas mensuráveis em
 2026-07-27 e 2 578 em 2026-08-03. A comparação foi restringida aos quatro
 clientes presentes nas duas semanas, para que a diferença não seja apenas
 composição da amostra.
@@ -715,41 +715,41 @@ representa perda de evidência.
 
 O que este universo mostra e o outro não mostrava:
 
-**O peso dos directórios e agregadores é uma propriedade do sector, não do
-motor.** No Copilot, os directórios valem 14,3% das citações nas duas semanas
+**O peso dos diretórios e agregadores é uma propriedade do setor, não do
+motor.** No Copilot, os diretórios valem 14,3% das citações nas duas semanas
 deste universo, contra 0,8% a 2,8% nas três semanas do universo de
 consultoria. O mesmo motor, a mesma metodologia, dez vezes mais peso de
-directórios. Onde existem agregadores de comparação maduros, o Copilot
+diretórios. Onde existem agregadores de comparação maduros, o Copilot
 apoia-se neles de forma estável; onde não existem, cai para sites de empresa.
-Isto qualifica o bloco do motor: a instrução prática não é "optimizar para
-directórios", é "verificar primeiro se o sector tem directórios que o índice
+Isto qualifica o bloco do motor: a instrução prática não é "otimizar para
+diretórios", é "verificar primeiro se o setor tem diretórios que o índice
 do Bing reconheça".
 
 **A auto-referência do Google AIO cresce e é o maior movimento das duas
 semanas.** Citações alojadas em propriedades do próprio Google passam de
 13,6% para 22,4% do total do motor, quase nove pontos percentuais em uma
 semana. No universo de consultoria a mesma métrica ficou entre 0,2% e 3,4%.
-Vale acompanhar: se se confirmar, é um mecanismo com consequência directa
+Vale acompanhar: se se confirmar, é um mecanismo com consequência direta
 para atribuição de tráfego.
 
-**O Grok volta a ser o mais rotativo, noutro sector.** Nestas duas semanas,
+**O Grok volta a ser o mais rotativo, noutro setor.** Nestas duas semanas,
 68,7% do volume de citações do Grok vem de domínios repetidos, o valor mais
 baixo dos sete motores medidos (Copilot 94,6%, Google AI Mode 90,6%, ChatGPT
 83,7%, Perplexity 78,5%, Google AIO 78,1%, Gemini 76,8%). O mesmo achado
 apareceu no universo de consultoria, com magnitudes diferentes e a mesma
-ordem no fim da tabela. Dois universos independentes, mesma direcção: é a
+ordem no fim da tabela. Dois universos independentes, mesma direção: é a
 evidência mais transferível desta entrada.
 
 **Respostas que citam a marca apoiam-se noutro tipo de fonte.** Agregando os
 oito motores em 2026-08-03: nas respostas em que a marca auditada é citada, a
-imprensa vale 4,7% das citações e os directórios 4,6%; nas respostas em que
-não é citada, a imprensa vale 1,3% e os directórios 3,1%, e a documentação
+imprensa vale 4,7% das citações e os diretórios 4,6%; nas respostas em que
+não é citada, a imprensa vale 1,3% e os diretórios 3,1%, e a documentação
 oficial sobe de 2,7% para 4,6%. Dito de outra forma, a presença de imprensa e
-de directórios na resposta acompanha a presença da marca, e a presença de
+de diretórios na resposta acompanha a presença da marca, e a presença de
 documentação institucional acompanha a sua ausência. É correlação numa
-semana, não causalidade, e a direcção da seta não está estabelecida: pode ser
-que citar directórios traga a marca, ou que perguntas que já chamam a marca
-sejam as que chamam directórios. Fica como hipótese a testar com um segundo
+semana, não causalidade, e a direção da seta não está estabelecida: pode ser
+que citar diretórios traga a marca, ou que perguntas que já chamam a marca
+sejam as que chamam diretórios. Fica como hipótese a testar com um segundo
 par de semanas multi-cliente.
 
 **O Claude nestas semanas.** Em 2026-07-27 nenhuma das 159 respostas
@@ -770,7 +770,7 @@ e no Grok. Sem números específicos, por regra de privacidade deste ficheiro.
 
 Oito motores com pelo menos duas leituras, sete com três. Os mais estáveis
 semana a semana em volume, dispersão e composição são o Copilot (529 citações
-nas duas semanas, exactamente) e o Perplexity (1 024 contra 1 022). O menos
+nas duas semanas, exatamente) e o Perplexity (1 024 contra 1 022). O menos
 estável é o Claude, que perde metade do volume e mais de metade da dispersão,
 seguido do Google AI Mode, que perde 28% do volume.
 
@@ -800,13 +800,13 @@ em `methodology-changelog.md`.
 Um quarto candidato, a concentração crescente do ChatGPT num domínio de
 documentação de fornecedor, tem três leituras monótonas mas mede um único
 domínio num único nicho. Fica como observação datada até haver leitura
-equivalente noutro sector.
+equivalente noutro setor.
 
 ## 2026-08-17
 
 Segunda auditoria semanal medida neste ficheiro, mesmo universo da semana
-anterior: sector de consultoria de visibilidade em IA/SEO em Portugal, uma
-única auditoria activa. Base: 756 respostas, todas sem erro e com `cited`
+anterior: setor de consultoria de visibilidade em IA/SEO em Portugal, uma
+única auditoria ativa. Base: 756 respostas, todas sem erro e com `cited`
 preenchido (a semana passada eram 755 sem erro e 752 com `cited`). Em modo
 de pesquisa (augmented), os oito motores/superfícies devolveram citações em
 418 das 432 respostas augmented possíveis (54 perguntas por motor), num
@@ -825,7 +825,7 @@ medição, não como achado sobre o motor.
 51 respostas com citações (de 54), 212 citações, 79 domínios únicos (37,3%
 de taxa de domínios únicos). Por tipo: 64,6% sites de agência/consultoria
 de nicho, 30,2% documentação oficial/institucional, 3,8% investigação
-primária (arxiv.org), 0,5% UGC, 0,5% directórios de reviews, 0,5% imprensa
+primária (arxiv.org), 0,5% UGC, 0,5% diretórios de reviews, 0,5% imprensa
 de martech.
 
 Confirma o bloco do motor: um único domínio de documentação oficial da
@@ -836,7 +836,7 @@ mantém-se e reforça-se.
 Comparado com 2026-08-10 (54 respostas, 201 citações, 80 domínios únicos,
 39,8% únicos): número de citações sobe ligeiramente, taxa de domínios
 únicos desce dois pontos percentuais, e o peso institucional sobe de 28,4%
-para 30,2%. Direcção estável, concentração a aumentar.
+para 30,2%. Direção estável, concentração a aumentar.
 
 ### claude
 
@@ -848,7 +848,7 @@ Google AI Mode).
 
 Por tipo: 93,9% sites de agência/consultoria de nicho, 3,1% imprensa de
 martech, 1,2% investigação primária, 1,2% documentação oficial/
-institucional, 0,6% directórios de reviews.
+institucional, 0,6% diretórios de reviews.
 
 O bloco do motor descreve o Claude, em modo de pesquisa, a preferir fontes
 institucionais e documentação clara, e a citar jornalismo de referência mais
@@ -864,7 +864,7 @@ fica registado para confirmar ou contradizer na próxima entrada.
 50 respostas com citações (de 54), 731 citações, 402 domínios únicos (55,0%
 únicos). Por tipo: 80,7% sites de agência/consultoria de nicho, 7,0% vídeo
 (youtube.com), 4,7% UGC/social, 3,3% documentação oficial, 2,5% imprensa de
-martech, 1,6% directórios de reviews, 0,3% investigação primária.
+martech, 1,6% diretórios de reviews, 0,3% investigação primária.
 
 Confirma o bloco do motor: o YouTube continua o domínio isolado mais citado
 a seguir aos de agência, embora a magnitude desça de 9,1% para 7,0%.
@@ -879,10 +879,10 @@ de 2,5% para 4,7%.
 51 respostas com citações (de 54), 440 citações, 229 domínios únicos (52,0%
 únicos). Por tipo: 70,5% sites de agência/consultoria de nicho, 13,4%
 vídeo, 8,2% UGC/social (Reddit e LinkedIn), 5,0% documentação oficial, 1,8%
-imprensa de martech, 0,9% directórios de reviews, 0,2% investigação
+imprensa de martech, 0,9% diretórios de reviews, 0,2% investigação
 primária.
 
-Confirma outra vez o ponto do playbook sobre citar discussões directamente
+Confirma outra vez o ponto do playbook sobre citar discussões diretamente
 na resposta: UGC praticamente empatado com a semana passada, 8,2% contra
 8,3%.
 
@@ -896,7 +896,7 @@ domínios únicos. Vídeo sobe de 12,1% para 13,4%; peso institucional sobe de
 53 respostas com citações (de 54), 606 citações, 370 domínios únicos (61,1%
 únicos). Por tipo: 79,0% sites de agência/consultoria de nicho, 9,6% vídeo,
 5,1% UGC/social, 3,3% imprensa de martech, 2,3% documentação oficial, 0,7%
-directórios de reviews.
+diretórios de reviews.
 
 Continua sem forma de medir aqui o comprimento médio da passagem citada
 (~117 palavras no benchmark do playbook): não é campo do `raw_citations`,
@@ -910,7 +910,7 @@ Comparado com 2026-08-10 (54 respostas, 573 citações, 336 domínios únicos,
 
 54 respostas com citações, 232 citações, 164 domínios únicos (70,7%
 únicos). Por tipo: 86,2% sites de agência/consultoria de nicho, 4,3%
-imprensa de martech, 3,0% documentação oficial, 2,6% directórios de
+imprensa de martech, 3,0% documentação oficial, 2,6% diretórios de
 reviews, 2,2% UGC/social, 1,3% investigação primária, 0,4% vídeo. Zero
 citações de x.com ou twitter.com, outra vez, tanto no conjunto completo
 como nos domínios mais citados.
@@ -930,7 +930,7 @@ virtualmente sem variação.
 
 54 respostas com citações (de 54), 529 citações, 376 domínios únicos (71,1%
 únicos, o mais disperso dos oito). Por tipo: 93,4% sites de
-agência/consultoria de nicho, 2,8% directórios de reviews, 1,7% UGC/social
+agência/consultoria de nicho, 2,8% diretórios de reviews, 1,7% UGC/social
 (LinkedIn), 0,8% documentação oficial, 0,8% imprensa de martech, 0,6%
 vídeo.
 
@@ -945,7 +945,7 @@ Comparado com 2026-08-10 (53 respostas, 522 citações, 369 domínios únicos,
 
 54 respostas com citações, 1 022 citações, 577 domínios únicos (56,5%
 únicos). Por tipo: 88,0% sites de agência/consultoria de nicho, 4,8%
-UGC/social (Reddit e LinkedIn), 2,8% directórios de reviews, 2,6%
+UGC/social (Reddit e LinkedIn), 2,8% diretórios de reviews, 2,6%
 documentação oficial, 1,0% vídeo, 0,6% imprensa de martech, 0,2%
 investigação primária.
 
@@ -959,7 +959,7 @@ a magnitude do benchmark depende do nicho da pergunta.
 
 Comparado com 2026-08-10 (54 respostas, 1 041 citações, 589 domínios
 únicos, 56,6% únicos): volume e dispersão praticamente idênticos. UGC
-estável, 4,8% nas duas semanas, exactamente. Vídeo é o que mais mexe, 5,6%
+estável, 4,8% nas duas semanas, exatamente. Vídeo é o que mais mexe, 5,6%
 para 1,0%.
 
 ### Padrões por categoria de pergunta
@@ -975,13 +975,13 @@ semana passada e mais de cinco vezes a média das outras quatro categorias
 força a leitura de que perguntas de "como funciona X" puxam mais para
 fontes institucionais do que perguntas de preço ou de recomendação.
 
-O peso conjunto de vídeo e UGC nas perguntas de comparação directa
+O peso conjunto de vídeo e UGC nas perguntas de comparação direta
 mantém-se elevado, 15,4% (era 16,2%); mas nas perguntas de funcionalidade
 específica caiu a metade, 8,0% esta semana contra 16,0% na anterior, ficando
 agora mais perto da comparação de preço (6,5%, era 7,4%) do que da
-comparação directa. A recomendação local continua a categoria com menor
+comparação direta. A recomendação local continua a categoria com menor
 peso de vídeo e UGC, 3,9% (era 4,4%). A segunda metade do padrão da semana
-passada, funcionalidade específica a par da comparação directa em vídeo e
+passada, funcionalidade específica a par da comparação direta em vídeo e
 UGC, não se repete; fica como observação a confirmar, não como leitura
 assente.
 
@@ -1012,9 +1012,9 @@ nicho, apesar do bloco do motor descrever peso invulgar dado a esse sinal.
 
 Primeira entrada deste ficheiro. A evidência desta semana vem de uma
 auditoria semanal única (os restantes clientes desta base estavam
-inactivos), num sector de consultoria de visibilidade em IA/SEO em
+inactivos), num setor de consultoria de visibilidade em IA/SEO em
 Portugal. Os números abaixo descrevem esse universo; generalizar a outros
-sectores precisa de mais semanas e mais clientes. Sem semana anterior para
+setores precisa de mais semanas e mais clientes. Sem semana anterior para
 comparar, não há leitura de estabilidade ainda: fica como referência para a
 próxima entrada.
 
@@ -1033,7 +1033,7 @@ documentação oficial da Google respondeu sozinho por 15,4% de todas as
 citações do motor). Por tipo: 66,2% sites de agência/consultoria de nicho,
 28,4% documentação oficial/institucional (Google Developers, OpenAI Help,
 Bing, Google Support), 3,5% investigação primária (arxiv.org), 1,0% UGC,
-1,0% directórios de reviews.
+1,0% diretórios de reviews.
 
 Confirma o bloco do motor: preferência por fontes institucionais em modo de
 pesquisa, e uma reutilização concentrada de poucos domínios, coerente com
@@ -1046,7 +1046,7 @@ semana têm `raw_citations` vazio em todas. A via augmented do Claude nesta
 auditoria foi gerada por síntese na Routine, na subscrição Max (ver
 `routines/tracker-brain.md`, secção A.2b), e não por uma chamada de
 pesquisa instrumentada, por isso não há URLs para medir. Sem evidência de
-selecção de fontes do Claude esta semana; a lacuna é da pipeline, não do
+seleção de fontes do Claude esta semana; a lacuna é da pipeline, não do
 motor.
 
 ### gemini
@@ -1058,7 +1058,7 @@ UGC/social, 2,4% documentação oficial, 2,4% imprensa de martech.
 O bloco do motor regista o YouTube a 20,9% das citações do AI Overviews
 (Ahrefs). Aqui, no Gemini enquanto assistente e não no bloco AIO, medimos
 9,1%: mais baixo, mas o benchmark citado é de outro produto e não
-necessariamente da mesma categoria de pergunta. Confirma a direcção, YouTube
+necessariamente da mesma categoria de pergunta. Confirma a direção, YouTube
 presente e relevante, não confirma a magnitude.
 
 ### google_aio
@@ -1068,7 +1068,7 @@ presente e relevante, não confirma a magnitude.
 (Reddit e LinkedIn juntos), 1,7% imprensa de martech, 1,2% documentação
 oficial.
 
-Confirma o ponto do playbook sobre citar discussões directamente na
+Confirma o ponto do playbook sobre citar discussões diretamente na
 resposta: Reddit e LinkedIn somam 8,3% das citações deste motor, mais peso
 do que no Gemini assistente e no ChatGPT.
 
@@ -1088,7 +1088,7 @@ para a próxima entrada.
 54 respostas, 233 citações, 163 domínios únicos (70,0% únicos, o segundo
 motor mais disperso). Por tipo: 88,8% sites de agência/consultoria de
 nicho, 3,4% documentação oficial, 3,4% imprensa de martech, 2,1%
-UGC/social, 1,7% directórios de reviews. Zero citações de x.com ou
+UGC/social, 1,7% diretórios de reviews. Zero citações de x.com ou
 twitter.com, tanto no conjunto completo como nos domínios mais citados.
 
 Contradiz, nesta leitura, a ênfase do bloco do motor em sinais do X:
@@ -1100,7 +1100,7 @@ registado para verificar na próxima entrada.
 
 53 respostas, 522 citações, 369 domínios únicos (70,7% únicos, o motor mais
 disperso). Por tipo: 94,1% sites de agência/consultoria de nicho, 2,5%
-UGC/social (quase todo LinkedIn), 1,0% directórios de reviews, 1,0%
+UGC/social (quase todo LinkedIn), 1,0% diretórios de reviews, 1,0%
 documentação oficial, 0,8% vídeo, 0,8% imprensa de martech.
 
 Confirma a base do bloco do motor, índice Bing e conteúdo comparativo.
@@ -1118,7 +1118,7 @@ O bloco do motor regista o YouTube a 32,4% e o Reddit a "cerca de 47% nalguns
 estudos de categoria" (direccional). Aqui medimos bem abaixo de ambos: vídeo
 a 5,6%, UGC a 4,8%. Leitura mais provável: os benchmarks citados no playbook
 são genéricos, e neste nicho específico, consultoria B2B em GEO/IA, com
-pouca comunidade activa em português sobre o tema, o Perplexity dispersa-se
+pouca comunidade ativa em português sobre o tema, o Perplexity dispersa-se
 por dezenas de sites de agência em vez de concentrar em YouTube e Reddit.
 Não é uma contradição do motor, é sinal de que a magnitude do benchmark
 depende do nicho da pergunta.
@@ -1132,7 +1132,7 @@ perguntas sobre uma funcionalidade específica são a categoria com mais peso
 de documentação oficial, 8,2% das citações da categoria, mais do triplo da
 média das outras quatro categorias (2,4%): perguntas de "como funciona X"
 puxam mais para fontes institucionais do que perguntas de preço ou de
-recomendação. As perguntas de comparação directa e as de funcionalidade
+recomendação. As perguntas de comparação direta e as de funcionalidade
 específica são as duas categorias com maior peso conjunto de vídeo e UGC,
 16,2% e 16,0% das citações respectivamente, bem acima da recomendação local
 (4,4%) e da comparação de preço (7,4%).

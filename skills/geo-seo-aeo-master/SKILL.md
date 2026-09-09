@@ -582,7 +582,7 @@ The skill exists partly to prevent these:
 
 ## Deck Builder method (client-facing)
 
-> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/method.ts` → `loadMethod`) pelos Slides 06 (glossário) e 07 (8 dimensões) do deck público. PT-PT client-facing. Resumo parseável da lista canónica em `## Methodology — SINAL` (§ "Scope of the methodology — holistic, not just technical") — **fonte única**; mudar aqui propaga ao deck em ≤1h, sem deploy. Adicionar uma linha é seguro; mudar o cabeçalho das tabelas parte o parser (ver INTERFACES.md Contrato 4). Fallback hardcoded no deck mantém paridade offline.
+> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/method.ts` → `loadMethod`) pelos Slides 06 (glossário) e 07 (8 dimensões) do deck público. PT-PT client-facing. Resumo parseável da lista oficial em `## Methodology: SINAL` (§ "Scope of the methodology: holistic, not just technical"): **fonte única**; mudar aqui propaga ao deck em ≤1h, sem deploy. Adicionar uma linha é seguro; mudar o cabeçalho das tabelas parte o parser (ver INTERFACES.md Contrato 4). Fallback hardcoded no deck mantém paridade offline.
 
 SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
 
@@ -590,9 +590,9 @@ SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
 
 | sigla | nome | definicao |
 |---|---|---|
-| SEO | Search Engine Optimization | Pesquisa clássica — Google, Bing. A base sobre a qual o GEO se constrói. |
-| GEO | Generative Engine Optimization | Aparecer em respostas geradas por IA — ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot. |
-| AEO | Answer Engine Optimization | Otimizar para resposta directa — featured snippets, voz, AI Overviews. |
+| SEO | Search Engine Optimization | Pesquisa clássica: Google, Bing. A base sobre a qual o GEO se constrói. |
+| GEO | Generative Engine Optimization | Aparecer em respostas geradas por IA: ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot. |
+| AEO | Answer Engine Optimization | Otimizar para resposta direta: featured snippets, voz, AI Overviews. |
 
 ### 8 dimensões (client-facing)
 
@@ -602,14 +602,14 @@ SINAL: Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.
 | 2 | Conteúdo e autoridade temática | Clusters de tópicos, cadência editorial, dados e estatísticas próprias. |
 | 3 | Entidade e marca | Wikidata, Wikipedia, Knowledge Panel, sameAs, consistência NAP. |
 | 4 | Autoridade e PR digital | Cobertura Tier-1, podcasts, conferências, qualidade do link graph. |
-| 5 | Sinais sociais e comunidade | LinkedIn, GitHub, Reddit, X — plataformas que a IA cita. |
+| 5 | Sinais sociais e comunidade | LinkedIn, GitHub, Reddit, X: plataformas que a IA cita. |
 | 6 | Sinais de autoridade no site | Autores com schema Person, sinais E-E-A-T, casos verificáveis. |
 | 7 | Medição e feedback | GSC, GA4 (canal IA), Bing AI Performance, auditorias mensais. |
 | 8 | Posicionamento estratégico | Share-of-voice, estratégia no-click, mapeamento ao funil. |
 
 ### SEO vs GEO (client-facing)
 
-O GEO assenta sobre o SEO — substrato vs camada de citabilidade. Contraste para o deck:
+O GEO assenta sobre o SEO: substrato vs camada de citabilidade. Contraste para o deck:
 
 | seo | geo |
 |---|---|
@@ -618,4 +618,4 @@ O GEO assenta sobre o SEO — substrato vs camada de citabilidade. Contraste par
 | Palavras-chave e backlinks | Estrutura, autoridade e citabilidade |
 | Medes posições no Google | Medes menções nos motores de IA |
 
-As acções saem num plano de 4 horizontes (semana 1-2 · 3-6 · 7-12 · 90+ dias).
+As ações saem num plano de 4 horizontes (semana 1-2 · 3-6 · 7-12 · 90+ dias).

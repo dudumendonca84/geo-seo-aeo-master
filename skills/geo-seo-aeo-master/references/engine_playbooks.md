@@ -16,13 +16,13 @@ pela mistura das duas:
   ranking orgânico, schema, fontes que o motor prefere citar.
   Semanas a propagar. (llms.txt saiu da lista: dois estudos independentes
   não encontram efeito nas citações e os crawlers de IA rastreiam o HTML
-  directamente — SE Ranking ~300k domínios e Limy.AI 500M+ visitas de bots,
+  diretamente — SE Ranking ~300k domínios e Limy.AI 500M+ visitas de bots,
   Ago 2026.)
 
 Evidência interna (auditoria destaque.ai, semana 2026-07-27): marca nova sem
 entidade externa = 0/324 citações em memória e 20/270 em pesquisa — o 2º
 lugar da categoria veio inteiro da via da pesquisa. Uma marca estabelecida
-do sector da saúde mede forte nas duas vias. A via onde a marca já ganha
+do setor da saúde mede forte nas duas vias. A via onde a marca já ganha
 diz que alavanca puxar a seguir.
 
 **A fonte fica aqui, não no ecrã do cliente** (founder, 1 Set 2026:
@@ -71,7 +71,7 @@ cada um com o seu gatilho escrito na respectiva routine:
 
 - **daily-agent** (diário) — absorve mudanças de mecanismo anunciadas pelos
   vendors (novos modos de pesquisa, mudanças de fontes preferidas, rollouts
-  por mercado) directamente nos blocos abaixo.
+  por mercado) diretamente nos blocos abaixo.
   Ver `daily-agent/daily-prompt.md`, ponto "Mudanças no funcionamento dos vendors".
 - **self-audit semanal** (segundas) — o prompt-test multi-engine ao próprio
   destaque.ai é evidência empírica: quando o observado contradiz uma alavanca
@@ -103,7 +103,7 @@ o mesmo para toda a gente, e é suposto ser. O que não é igual é o resultado
 dele: na semana de 31 Ago 2026, nas perguntas de um stand de automóveis o
 ChatGPT citava deco.proteste.pt, gov.pt e diariodarepublica.pt; nas de uma
 consultora de GEO citava developers.google.com e os sites dos concorrentes
-directos. A skill descreve o mecanismo, o Tracker mede o resultado, e o
+diretos. A skill descreve o mecanismo, o Tracker mede o resultado, e o
 cartão passa a ter as duas coisas. Conta-se por PERGUNTAS distintas e não
 por citações: uma resposta que cita a mesma página quatro vezes não prova
 mais do que uma que a cita uma vez. Sem fontes medidas o marcador
@@ -132,28 +132,28 @@ o Tracker não tem fallback para este conteúdo, e um header fora do formato
 
 ### chatgpt
 
-meta: revisto 2026-09-09 · externo: sem mecanismo novo (o teste da Peec.ai de 4 Set mantém-se sem segunda fonte); Ads Manager PT — o prazo original (8 Set) passou ontem sem resolução e hoje não há dado novo de nenhum dos dois lados; `WebFetch` a help.openai.com/en/articles/20001245 e ads.openai.com verificado directamente nesta sessão e continua bloqueado (`EGRESS_BLOCKED`); GPT-6 Astra continua em rollout faseado (desde 3-4 Set) sem mudança de mecânica de citação divulgada · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: sem mecanismo novo (o teste da Peec.ai de 4 Set mantém-se sem segunda fonte); Ads Manager PT: o prazo original (8 Set) passou ontem sem resolução e hoje não há dado novo de nenhum dos dois lados; `WebFetch` a help.openai.com/en/articles/20001245 e ads.openai.com verificado diretamente nesta sessão e continua bloqueado (`EGRESS_BLOCKED`); GPT-6 Astra continua em rollout faseado (desde 3-4 Set) sem mudança de mecânica de citação divulgada · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fracção das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026]. Um teste comportamental (Malte Landwehr via Peec.ai, 4 Set 2026) sugere que o ChatGPT também consulta a Google para fundamentar algumas respostas, não só o Bing — um site sem tráfego registou um pico de referral no Search Console da Google especificamente nos dias em que só o ChatGPT o consultava; fonte única, metodologia informal, tratar como pista, não facto assente. {{fontes}}
+Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fração das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026]. Um teste comportamental (Malte Landwehr via Peec.ai, 4 Set 2026) sugere que o ChatGPT também consulta a Google para fundamentar algumas respostas, não só o Bing: um site sem tráfego registou um pico de referral no Search Console da Google especificamente nos dias em que só o ChatGPT o consultava; fonte única, metodologia informal, tratar como pista, não facto assente. {{fontes}}
 
 Faz:
 1. Responde no site às perguntas comparativas da categoria, uma pergunta por secção. {{perguntas:direct_comparison}} Abre a via da pesquisa em semanas.
 2. Garante indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa. {{skip:bwt-connected}}
 3. Publica documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos [fonte: Semrush via Search Engine Land, Jul 2026].
 4. Procura presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
-5. Mantém uma versão EN actualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desactualizada desempenha pior do que não ter nenhuma [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+5. Mantém uma versão EN atualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desatualizada desempenha pior do que não ter nenhuma [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
 6. Usa o mesmo nome e a mesma descrição da marca em todas as fontes.
-7. Separa conquistado de comprado desde já: os anúncios do ChatGPT entram em 31 mercados europeus (EEE e Suíça) a 24 de Ago 2026, nos planos Free e Go, com Plus/Pro/Business/Enterprise/Education sem anúncios. Não são personalizados no arranque (tema da conversa, localização geral, tipo de dispositivo). Aparecem por baixo da resposta, identificados. Sobre a compra self-serve pelo OpenAI Ads Manager: fontes internacionais (Digiday, CNBC, Forbes) dizem que abriu em beta a 1 Set 2026 nos mesmos 31 mercados (incl. Portugal por herança da lista); fontes portuguesas dedicadas (leak.pt, adclickgroup.com, início de Set 2026) dizem o contrário — os anúncios aparecem, mas a criação directa de campanha continua fechada a anunciantes PT, self-serve descrito como "a chegar nos próximos meses", compra só via equipa OpenAI Ads Solutions ou agências parceiras. **Actualização 7 Set 2026:** a página de elegibilidade da própria OpenAI (help.openai.com/en/articles/20001245) aparenta ter mudado o estado de Portugal para "Available" a 2 Set 2026, segundo dois rastreadores independentes (soku.ai, Unite.AI) que reportam 52 países agora activos — mas a imprensa portuguesa dedicada não actualizou a sua leitura desde então. **Actualização 8 Set 2026 — prazo original chega sem resolução:** dois dados novos reforçam, sem confirmar, o lado "ainda fechado": a Cosmo5 (parceira oficial designada pela OpenAI para a fase alfa em PT/ES) está ela própria ainda só "a preparar" a sua primeira activação doméstica; e uma segunda marca PT, a Robbialac, comprou anúncios no ChatGPT via a agência Social Animals, não por registo directo — o segundo caso PT confirmado, depois da Continente, e o segundo sem tocar no self-serve. Continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha ou a ser bloqueada nele. Medir a linha de base conquistada ANTES de haver pago continua a ser o que torna o relatório seguinte interpretável, independentemente de qual leitura se confirmar. [fonte: OpenAI, aviso a utilizadores europeus 15 Ago 2026; Digiday, Dataconomy, TechXplore, 19 Ago 2026; CNBC, Forbes, Digiday, 31 Ago–1 Set 2026; leak.pt e adclickgroup.com, início Set 2026; soku.ai e Unite.AI, 2 Set 2026; briefing.pt sobre a Cosmo5 e a Robbialac/Social Animals, Set 2026 — verificação de primeira mão continua pendente, ver alerta]
+7. Separa conquistado de comprado desde já: os anúncios do ChatGPT entram em 31 mercados europeus (EEE e Suíça) a 24 de Ago 2026, nos planos Free e Go, com Plus/Pro/Business/Enterprise/Education sem anúncios. Não são personalizados no arranque (tema da conversa, localização geral, tipo de dispositivo). Aparecem por baixo da resposta, identificados. Sobre a compra self-serve pelo OpenAI Ads Manager: fontes internacionais (Digiday, CNBC, Forbes) dizem que abriu em beta a 1 Set 2026 nos mesmos 31 mercados (incl. Portugal por herança da lista); fontes portuguesas dedicadas (leak.pt, adclickgroup.com, início de Set 2026) dizem o contrário: os anúncios aparecem, mas a criação direta de campanha continua fechada a anunciantes PT, self-serve descrito como "a chegar nos próximos meses", compra só via equipa OpenAI Ads Solutions ou agências parceiras. **Atualização 7 Set 2026:** a página de elegibilidade da própria OpenAI (help.openai.com/en/articles/20001245) aparenta ter mudado o estado de Portugal para "Available" a 2 Set 2026, segundo dois rastreadores independentes (soku.ai, Unite.AI) que reportam 52 países agora ativos: mas a imprensa portuguesa dedicada não atualizou a sua leitura desde então. **Atualização 8 Set 2026: prazo original chega sem resolução:** dois dados novos reforçam, sem confirmar, o lado "ainda fechado": a Cosmo5 (parceira oficial designada pela OpenAI para a fase alfa em PT/ES) está ela própria ainda só "a preparar" a sua primeira activação doméstica; e uma segunda marca PT, a Robbialac, comprou anúncios no ChatGPT via a agência Social Animals, não por registo direto: o segundo caso PT confirmado, depois da Continente, e o segundo sem tocar no self-serve. Continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha ou a ser bloqueada nele. Medir a linha de base conquistada ANTES de haver pago continua a ser o que torna o relatório seguinte interpretável, independentemente de qual leitura se confirmar. [fonte: OpenAI, aviso a utilizadores europeus 15 Ago 2026; Digiday, Dataconomy, TechXplore, 19 Ago 2026; CNBC, Forbes, Digiday, 31 Ago–1 Set 2026; leak.pt e adclickgroup.com, início Set 2026; soku.ai e Unite.AI, 2 Set 2026; briefing.pt sobre a Cosmo5 e a Robbialac/Social Animals, Set 2026: verificação de primeira mão continua pendente, ver alerta]
 
 ### claude
 
 meta: revisto 2026-09-09 · externo: nenhuma mudança de mecânica confirmada (docs/changelog Anthropic revistos hoje, sem novidade) · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: sobretudo memória de treino no modo base; com pesquisa activa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional]. Claude (claude.ai) e Claude Code são motores de resposta distintos, não a mesma coisa em superfícies diferentes: o Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, e as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois [fonte: Profound, 24 Ago 2026, corroborado por Search Engine Journal, 31 Ago 2026]. Este bloco descreve o Claude consumidor (claude.ai); optimizar para aqui não garante nada de visibilidade no Claude Code. {{fontes}}
+Como decide: sobretudo memória de treino no modo base; com pesquisa ativa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional]. Claude (claude.ai) e Claude Code são motores de resposta distintos, não a mesma coisa em superfícies diferentes: o Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, e as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois [fonte: Profound, 24 Ago 2026, corroborado por Search Engine Journal, 31 Ago 2026]. Este bloco descreve o Claude consumidor (claude.ai); otimizar para aqui não garante nada de visibilidade no Claude Code. {{fontes}}
 
 Faz:
 1. Mantém a entidade consistente: sameAs no schema, descrições estáveis em todas as plataformas.
-2. Escreve páginas que expliquem o que a marca faz em linguagem directa, factual, sem promessas infladas.
+2. Escreve páginas que expliquem o que a marca faz em linguagem direta, factual, sem promessas infladas.
 3. Publica conteúdo técnico citável: documentação, dados, comparações verificáveis.
 4. Procura cobertura em imprensa de referência: é o perfil de fonte que este motor mais cita.
 5. Não presumas que uma boa presença no Claude se transfere para o Claude Code: se um cliente pede visibilidade especificamente no Claude Code (uso interno de developer tooling), é uma medição à parte, com pesquisa web ligada em muito menos respostas.
@@ -166,48 +166,48 @@ Como decide: liga ao ecossistema Google; o que o Google indexa e entende bem ali
 
 Faz:
 1. Cuida do SEO clássico: top-10 orgânico nas perguntas comparativas é o bilhete de entrada.
-2. Completa o schema.org do site e mantém a ficha Google (Business Profile) actualizada por localização.
+2. Completa o schema.org do site e mantém a ficha Google (Business Profile) atualizada por localização.
 3. Cria presença no YouTube: é o domínio mais citado nas respostas de IA da Google [fonte: 22,9% das citações do AI Overviews, Ahrefs, Set 2026; era 20,9% em Jun 2026].
 4. Declara autoria: autores com nome e credenciais nas páginas-chave.
 5. Mede a visibilidade aqui com ferramentas terceiras: as menções de marca nas respostas do Gemini não aparecem no Search Console nem no GA4 [fonte: Search Engine Land, Ago 2026].
 
 ### grok
 
-meta: revisto 2026-09-09 · externo: nenhuma mudança — Grok 4.7 continua anúncio verbal de Musk, data reportada 12 Set 2026, ainda sem model card, preço ou API (docs.x.ai e x.ai/news revistos hoje, sem mudança face a ontem) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: nenhuma mudança: Grok 4.7 continua anúncio verbal de Musk, data reportada 12 Set 2026, ainda sem model card, preço ou API (docs.x.ai e x.ai/news revistos hoje, sem mudança face a ontem) · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Visibility Tracker [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho — zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
+Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Visibility Tracker [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
 
 Faz:
-1. Mantém presença activa e citável no X, com reacção rápida aos temas da categoria — alavanca de marca geral, mesmo sem citação directa confirmada neste nicho.
+1. Mantém presença ativa e citável no X, com reação rápida aos temas da categoria: alavanca de marca geral, mesmo sem citação direta confirmada neste nicho.
 2. Garante que o site valida o que afirmas nas redes: cada afirmação com página correspondente.
 3. Publica com frequência: o recente pesa mais aqui do que nos outros motores.
-4. Não contes com o X como canal de citação garantido no Grok para esta categoria: prioriza o site e fontes indexadas antes de investir tempo em X à espera de citação directa.
+4. Não contes com o X como canal de citação garantido no Grok para esta categoria: prioriza o site e fontes indexadas antes de investir tempo em X à espera de citação direta.
 
 ### deepseek
 
-meta: revisto 2026-09-09 · externo: correcção ao registo — o "DeepSeek-V4-Flash-Vision-Exp" descrito em dias anteriores como candidato não corroborado está confirmado: API viva desde 21 Ago 2026, pesos abertos (licença MIT) no Hugging Face desde 31 Ago 2026, 284B totais/13B activos (MoE), contexto de 1M tokens — sem mudança de mecânica de citação divulgada · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: correção ao registo: o "DeepSeek-V4-Flash-Vision-Exp" descrito em dias anteriores como candidato não corroborado está confirmado: API viva desde 21 Ago 2026, pesos abertos (licença MIT) no Hugging Face desde 31 Ago 2026, 284B totais/13B ativos (MoE), contexto de 1M tokens: sem mudança de mecânica de citação divulgada · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: memória de treino com forte peso de fontes em inglês; cobertura pt-PT mais fina.
 
 Faz:
-1. Publica versão EN das páginas-chave da marca e mantém-na actualizada: uma página EN desactualizada desempenha pior do que não ter nenhuma, porque os modelos a tratam como canónica [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
-2. Entra em directórios e listas internacionais da categoria.
+1. Publica versão EN das páginas-chave da marca e mantém-na atualizada: uma página EN desatualizada desempenha pior do que não ter nenhuma, porque os modelos a tratam como oficial [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+2. Entra em diretórios e listas internacionais da categoria.
 3. Usa um nome de marca sem ambiguidade linguística nas fontes EN.
 
 ### mistral
 
 meta: revisto 2026-09-09 · externo: nenhuma mudança desde o "Agentic Search" de 20 Ago 2026 (já reflectido no bloco); changelog docs.mistral.ai revisto hoje (OCR 4.1 GA, sem ligação a mecânica de pesquisa/citação) · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: memória de treino com boa cobertura europeia, mas desde 20 Ago 2026 a API já não é só memória — o "Agentic Search" dá ao modelo 5 operações (search/open/navigate/read/grep) que abrem e verificam documentos activamente em vez de aceitar só excertos de retrieval pré-cortados; a accuracy no FinanceBench sobe de 26,7% para 86% com o modo activo [fonte: mistral.ai/news/agentic-search, 20 Ago 2026]. O texto anterior deste bloco ("a API não expõe pesquisa de primeira parte") deixou de ser correcto — corrigido hoje. {{fontes}}
+Como decide: memória de treino com boa cobertura europeia, mas desde 20 Ago 2026 a API já não é só memória: o "Agentic Search" dá ao modelo 5 operações (search/open/navigate/read/grep) que abrem e verificam documentos activamente em vez de aceitar só excertos de retrieval pré-cortados; a accuracy no FinanceBench sobe de 26,7% para 86% com o modo ativo [fonte: mistral.ai/news/agentic-search, 20 Ago 2026]. O texto anterior deste bloco ("a API não expõe pesquisa de primeira parte") deixou de ser correto: corrigido hoje. {{fontes}}
 
 Faz:
-1. Trabalha as alavancas de memória: entidade consistente, imprensa durável, presença em fontes europeias da categoria — continuam a valer para o modo base.
+1. Trabalha as alavancas de memória: entidade consistente, imprensa durável, presença em fontes europeias da categoria: continuam a valer para o modo base.
 2. Mantém conteúdo comparativo e ranking orgânico: vale para o produto de consumo e para os restantes motores augmented.
-3. Estrutura páginas para verificação activa, não só para recuperação: com o Agentic Search o modelo pode abrir e ler o documento inteiro antes de responder, por isso a resposta directa tem de aguentar-se quando o modelo confere a fonte, não só quando a recupera.
+3. Estrutura páginas para verificação ativa, não só para recuperação: com o Agentic Search o modelo pode abrir e ler o documento inteiro antes de responder, por isso a resposta direta tem de aguentar-se quando o modelo confere a fonte, não só quando a recupera.
 
 ### llama
 
-meta: revisto 2026-09-09 · externo: nenhuma mudança de mecânica confirmada para o Llama aberto; ver `models.md` (secção Meta) sobre a nova linha fechada "Muse Spark" da Meta Superintelligence Labs — sem impacto no mapping deste motor · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: nenhuma mudança de mecânica confirmada para o Llama aberto; ver `models.md` (secção Meta) sobre a nova linha fechada "Muse Spark" da Meta Superintelligence Labs: sem impacto no mapping deste motor · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: corre só em memória de treino; nenhum fornecedor que aloja o Llama expõe pesquisa de primeira parte. Move-se em meses, ao ritmo dos ciclos de treino.
 
@@ -231,12 +231,12 @@ Faz:
 
 ### google_aio
 
-meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AIO em si — a 8 Set 2026 a Google lançou na EEA um redesenho de SERP para cumprir uma ordem DMA (unidades de agregador/fornecedor para queries de hotel, voo, transporte e produto, após multa de €460M a 23 Jul; cross-corroborado SEJ/SEL/Skift/SE Roundtable). A Comissão Europeia mantém "diálogo em curso" sobre se isto se estende ao AI Overviews; sem confirmação de que o bloco AIO mudou de mecânica hoje. Fora do ICP central (agregadores de viagens/produto, não B2B SaaS) — registado como watch, `Faz:` não alterado · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AIO em si: a 8 Set 2026 a Google lançou na EEA um redesenho de SERP para cumprir uma ordem DMA (unidades de agregador/fornecedor para queries de hotel, voo, transporte e produto, após multa de €460M a 23 Jul; cross-corroborado SEJ/SEL/Skift/SE Roundtable). A Comissão Europeia mantém "diálogo em curso" sobre se isto se estende ao AI Overviews; sem confirmação de que o bloco AIO mudou de mecânica hoje. Fora do ICP central (agregadores de viagens/produto, não B2B SaaS): registado como watch, `Faz:` não alterado · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) directamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco. Desde finais de Ago 2026, em queries onde os sistemas da Google determinam maior utilidade, o bloco expande dinamicamente para o estado completo (tipo AI Mode) sem o utilizador clicar em "Mostrar mais", com a caixa "Pergunta o que quiseres" já aberta — empurra os resultados orgânicos mais abaixo na página; a Google confirma que a expansão é cancelada se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura [fonte: Search Engine Land/Search Engine Roundtable, 27 ago 2026]. {{fontes}}
+Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) diretamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco. Desde finais de Ago 2026, em queries onde os sistemas da Google determinam maior utilidade, o bloco expande dinamicamente para o estado completo (tipo AI Mode) sem o utilizador clicar em "Mostrar mais", com a caixa "Pergunta o que quiseres" já aberta: empurra os resultados orgânicos mais abaixo na página; a Google confirma que a expansão é cancelada se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura [fonte: Search Engine Land/Search Engine Roundtable, 27 ago 2026]. {{fontes}}
 
 Faz:
-1. Abre cada página-chave com um parágrafo-resposta directo, citável isolado.
+1. Abre cada página-chave com um parágrafo-resposta direto, citável isolado.
 2. Mantém o SEO clássico saudável, o schema completo e as fichas Google por localização, para as perguntas locais.
 3. Permite o Google-Extended no robots.txt: sites que o bloqueiam são significativamente menos recuperados pelo AI Overviews [fonte: Grossman et al., SIGIR 2026].
 4. Está presente em comunidades da categoria: o bloco passou a citar discussões [fonte: Google, Mai 2026].
@@ -244,7 +244,7 @@ Faz:
 
 ### google_ai_mode
 
-meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AI Mode em si — mesmo redesenho DMA de 8 Set 2026 descrito no bloco google_aio (unidades de agregador/fornecedor, EEA, hotel/voo/transporte/produto); CE mantém "diálogo em curso" sobre extensão ao AI Mode, sem confirmação hoje. Candidato anterior de mudança nos ads do AI Mode com datas internamente inconsistentes mantém-se sem segunda fonte — não corroborado, não tratado como facto · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AI Mode em si: mesmo redesenho DMA de 8 Set 2026 descrito no bloco google_aio (unidades de agregador/fornecedor, EEA, hotel/voo/transporte/produto); CE mantém "diálogo em curso" sobre extensão ao AI Mode, sem confirmação hoje. Candidato anterior de mudança nos ads do AI Mode com datas internamente inconsistentes mantém-se sem segunda fonte: não corroborado, não tratado como facto · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o modo conversacional de pesquisa do Google; responde a quase todas as perguntas e cita ao nível da passagem. Em 80% das citações a resposta está na primeira frase do trecho extraído, e a passagem citada mediana tem ~117 palavras [fonte: Pillarbase, 15,7M citações, Jul 2026]. Nas perguntas comerciais aparecem anúncios dentro da resposta [fonte: 29% dos casos; mais de metade nas keywords de CPC alto; SE Ranking, Jun 2026]. {{fontes}}
 
@@ -252,19 +252,19 @@ Faz:
 1. Tudo o que vale para o Google AI Overviews.
 2. Abre cada secção com a resposta na primeira frase e mantém passagens autocontidas de cerca de 120 palavras.
 3. Conta com anúncios dentro da resposta nas perguntas comerciais: a citação orgânica não substitui presença paga.
-4. Para tópicos em desenvolvimento (notícia recente, evento a decorrer), o AI Mode mostra desde finais de Ago 2026 um carrossel horizontal de links de artigos ("Preferred Sources") entre secções da resposta — cobertura fresca e com autoridade declarada tem uma via extra de exposição aqui, além da citação inline [fonte: Google/Robby Stein via X, ~25 ago 2026; desktop primeiro, mobile "em breve"].
+4. Para tópicos em desenvolvimento (notícia recente, evento a decorrer), o AI Mode mostra desde finais de Ago 2026 um carrossel horizontal de links de artigos ("Preferred Sources") entre secções da resposta: cobertura fresca e com autoridade declarada tem uma via extra de exposição aqui, além da citação inline [fonte: Google/Robby Stein via X, ~25 ago 2026; desktop primeiro, mobile "em breve"].
 
 ### copilot
 
 meta: revisto 2026-09-09 · externo: nenhuma mudança desde a separação indexação/AI-grounding absorvida a 6 Set 2026; changelogs Microsoft de Set 2026 revistos hoje são focados em enterprise (SharePoint/OneDrive, Copilot Notebooks), sem mudança ao Copilot consumer · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: é o chat da Microsoft; pesquisa via índice Bing. A Microsoft está a unificar o Copilot consumer com o Copilot enterprise (M365) numa única superfície — a fronteira entre "assistente pessoal" e "produtividade empresarial" que hoje separa este bloco do M365 Copilot pode ficar menos nítida ao longo de Set 2026; sem mudança confirmada na mecânica de retrieval/citação por agora, mas vale a pena revisitar este bloco quando o rollout terminar [fonte: PYMNTS, 29 Jul 2026]. A Microsoft descreve a indexação e o "AI grounding" como sistemas agora explicitamente separados: uma página pode continuar indexada no Bing e ainda assim ser filtrada da resposta do Copilot — explica quedas de citação que não correspondem a nenhuma queda de indexação [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", 6 Mai 2026]. {{fontes}}
+Como decide: é o chat da Microsoft; pesquisa via índice Bing. A Microsoft está a unificar o Copilot consumer com o Copilot enterprise (M365) numa única superfície: a fronteira entre "assistente pessoal" e "produtividade empresarial" que hoje separa este bloco do M365 Copilot pode ficar menos nítida ao longo de Set 2026; sem mudança confirmada na mecânica de retrieval/citação por agora, mas vale a pena revisitar este bloco quando o rollout terminar [fonte: PYMNTS, 29 Jul 2026]. A Microsoft descreve a indexação e o "AI grounding" como sistemas agora explicitamente separados: uma página pode continuar indexada no Bing e ainda assim ser filtrada da resposta do Copilot: explica quedas de citação que não correspondem a nenhuma queda de indexação [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", 6 Mai 2026]. {{fontes}}
 
 Faz:
-1. Garante indexação saudável no Bing: Bing Webmaster Tools activo e IndexNow ligado. {{skip:bwt-connected}}
+1. Garante indexação saudável no Bing: Bing Webmaster Tools ativo e IndexNow ligado. {{skip:bwt-connected}}
 2. Publica conteúdo comparativo claro, com autoridade declarada no site.
 3. Liga o "AI Performance" do Bing Webmaster Tools e usa o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação [fonte: Jun 2026]. É a única telemetria first-party de citações de IA. {{skip:bwt-connected}}
-4. Mantém versão EN actualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+4. Mantém versão EN atualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
 
 ### meta_ai
 
