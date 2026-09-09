@@ -351,6 +351,65 @@ The `daily-agent/news-feed.md` carries the running record between refreshes — 
 
 ---
 
+## Tracker buyer defaults
+
+**Single source of truth for WHICH MODEL THE TRACKER CALLS**, and for which
+product tier that model represents. Read at runtime by
+`destaque-ai-tracker`; the Deck Builder does not read this section.
+
+Why a section of its own, and not a third column on the mappings table
+above (09 Sep 2026, founder: *"eu não vou ficar mudando no Vercel os
+modelos na mão, tem que ser automático"*):
+
+- `production` and `cost_optimized` are about **our** cost tiers. This is a
+  different axis: **what the buyer actually meets**. Since GPT-5.6, a paid
+  ChatGPT user and a free one get different models, so "the ChatGPT model"
+  is no longer one thing.
+- Until today the Tracker's ChatGPT model came from a Vercel env var
+  (`TRACKER_MODEL_CHATGPT`), invisible to everyone: it ran `gpt-5.6-luna`
+  while this file said `gpt-5.6-sol`, and `gpt-5.6-luna` is a cheap API
+  variant that **no ChatGPT user of any tier ever meets**. A measurement
+  decision was living in a place nobody reads.
+
+| Engine | Buyer model | Plan measured | Tracker calls | Why different |
+|---|---|---|---|---|
+| `chatgpt` | `gpt-5.5-instant` | ChatGPT Free/Go default | `gpt-5.5-instant` | — |
+| `claude` | `claude-sonnet-5` | Claude Free/Pro default | `claude-sonnet-5` | — |
+| `gemini` | `gemini-3.5-flash` | AI Overviews / AI Mode routing | `gemini-3.5-flash` | — |
+| `grok` | `grok-4.3` | grok.com default | `grok-4.3` | — |
+| `deepseek` | `deepseek-v4-flash` | chat.deepseek.com default | `deepseek-v4-flash` | — |
+| `perplexity` | `sonar-pro` | Perplexity default answer engine | `sonar-pro` | — |
+| `mistral` | `mistral-large-latest` | Le Chat default | `mistral-small-latest` | **Declared exception.** The large generates 9.2 output tokens/s against 77-92 for every other engine we measure; 50 prompts became hours, and the Congruent audit failed 28 of 28 on timeout (28 Aug 2026, founder: *"50 small, segue"*). Revisit if Mistral throughput changes |
+
+### Reading contract
+
+1. Locate `## Tracker buyer defaults`.
+2. Read the table with header `| Engine | Buyer model | Plan measured | Tracker calls | Why different |`.
+3. Strip backticks from the IDs. **`Tracker calls` is the ID to invoke**;
+   `Buyer model` is what the client is told is being measured.
+4. An engine missing from this table falls back to the `## Deck Builder API
+   mappings` row for the audit tier. A missing section means the old
+   behaviour applies whole.
+5. Where `Tracker calls` differs from `Buyer model`, the difference is a
+   deliberate operational exception and the reason belongs in the last
+   column. A blank reason with different IDs is a bug in this file.
+
+### Maintenance
+
+Changing what the Tracker calls is a commit here, never an environment
+variable. The env override (`TRACKER_MODEL_<ENGINE>`) stays as an emergency
+hatch for an ID that does not exist at the vendor, and the Tracker engine
+card shows an `env` badge whenever one is in force, so it can never again
+be invisible.
+
+**`gpt-5.5-instant` has no row in `## Token prices`.** That is deliberate
+and not an oversight: the price was not found in a primary source. The
+consumer treats the cost as unknown rather than assuming one, per the
+reading contract of that section.
+
+---
+
+
 ## Token prices
 
 **Single source of truth for what a call COSTS**, in the same spirit as the
