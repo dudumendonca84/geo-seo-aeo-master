@@ -427,10 +427,15 @@ and better luck.
 ### Maintenance
 
 Changing what the Tracker calls is a commit here, never an environment
-variable. The env override (`TRACKER_MODEL_<ENGINE>`) stays as an emergency
-hatch for an ID that does not exist at the vendor, and the Tracker engine
-card shows an `env` badge whenever one is in force, so it can never again
-be invisible.
+variable. **There is no env override any more** (09 Sep 2026, second
+revision of the day): `TRACKER_MODEL_<ENGINE>` used to be kept as an
+"emergency hatch", and in the same day it was first mistaken for dead and
+then silently ignored by the new table while the engine card still showed
+an `env` badge. A hatch nobody can see, or that looks live and is not, is
+worse than none. An ID that does not exist at the vendor is fixed here,
+with a commit, which the Tracker picks up within the hour. The only other
+state is "the skill was unreachable and the in-code fallback ran", and the
+engine card shows a `recurso` badge when that is the case.
 
 **`gpt-5.5-instant` has no row in `## Token prices`.** That is deliberate
 and not an oversight: the price was not found in a primary source. The
