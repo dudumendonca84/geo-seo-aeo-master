@@ -379,7 +379,37 @@ modelos na mão, tem que ser automático"*):
 | `grok` | `grok-4.3` | grok.com default | `grok-4.3` | — |
 | `deepseek` | `deepseek-v4-flash` | chat.deepseek.com default | `deepseek-v4-flash` | — |
 | `perplexity` | `sonar-pro` | Perplexity default answer engine | `sonar-pro` | — |
-| `mistral` | `mistral-large-latest` | Le Chat default | `mistral-small-latest` | **Declared exception.** The large generates 9.2 output tokens/s against 77-92 for every other engine we measure; 50 prompts became hours, and the Congruent audit failed 28 of 28 on timeout (28 Aug 2026, founder: *"50 small, segue"*). Revisit if Mistral throughput changes |
+| `mistral` | `mistral-large-latest` | Le Chat default | `mistral-large-latest` | — (see the note below: this row was the `small` from 28 Aug to 09 Sep 2026) |
+
+### The `mistral` row went back to the large (09 Sep 2026)
+
+Kept as a note rather than in the table's last column, because the two IDs
+now match and the contract below reserves that column for a live exception.
+Written down so the trade-off is not re-learnt from scratch.
+
+**What was measured on 28 Aug 2026, and still stands.** `mistral-large-latest`
+generates **9.2 output tokens/s**; every other engine we measure runs 77-92
+(deepseek 91.7, claude 79.0, grok 78.8, gemini 78.1, chatgpt 78.0, perplexity
+77.2). It is not writing more: DeepSeek writes 1,647 tokens in 18 s, the large
+writes 1,807 in 195 s. Fifty prompts became hours, the search half averaged
+137 s per call and never got past 12 of 50, and the Congruent audit of 27 Aug
+failed **28 of 28 on timeout** while the other twelve engines had zero errors.
+The `small` was the answer then (founder: *"50 small, segue"*).
+
+**Why the founder reversed it (09 Sep 2026, *"vamos voltar o mistral para o
+large"*).** The `small` is not what a Le Chat user meets, and this whole
+section exists to measure what the buyer meets. A fast measurement of the
+wrong model is not a measurement.
+
+**What is different now, and what is not.** The per-call ceiling is 240 s,
+chosen against calls that actually passed (175-192 s), and a timeout is now
+retried with backoff instead of dying on the first attempt. A call that still
+exceeds it lands in the row's `error` column, so a slow week shows up as
+missing measurements rather than as silence, and the gap rerun can fill it
+without paying for the rest. What has **not** changed is the 9.2 tokens/s: if
+the audit starts leaving Mistral rows unmeasured, this is the cause, and the
+choice is between the `small` and a longer ceiling, not between the `small`
+and better luck.
 
 ### Reading contract
 
