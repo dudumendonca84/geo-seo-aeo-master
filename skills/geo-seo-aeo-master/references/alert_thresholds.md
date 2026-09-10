@@ -1,10 +1,10 @@
 # Alert thresholds: what warrants surfacing
 
-Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('generate_alerts', {…})`) to decide which week-over-week changes deserve an alert row in `tracker_alerts`, an email digest entry, or a banner on the dashboard.
+Reference for `geo-seo-aeo-master`. Used by the Tracker to decide which week-over-week changes deserve a row in `tracker.alerts`, an email digest entry, or a banner on the dashboard. Who applies each section is stated in § "Who computes what" at the end: the numeric thresholds (§2) and the suppression window (§6) are read from this file and computed in Tracker code at the close of every week (contract 13 in `INTERFACES.md`); the event, trend and territory alerts (§3, §4, §11) are the Routine's judgement.
 
 The cost of getting this wrong is alert fatigue. Five "minor change" alerts a week and the client stops reading the email. The bar for an alert is **a change a senior practitioner would call out unprompted in a Monday meeting**.
 
-Last refresh: 09 Sep 2026 (§9 Território renumbered; override table name corrected).
+Last refresh: 10 Sep 2026 (§2 and §6 become a parse contract, computed in Tracker code; override column created; Território renumbered to §11).
 
 ---
 
@@ -151,7 +151,7 @@ No emoji. No exclamation marks. No "urgent action required" boilerplate. The sev
 
 ## 8. Override mechanism
 
-Clients can adjust thresholds via a JSONB override column on the Tracker's clients table (`alert_thresholds_override`; not created yet as of 09 Sep 2026, so today the defaults apply to everyone; the old text named a `tracker_clients` table that never existed). The override is **multiplicative** on the defaults above: e.g. `{ "cr_decrease_critical_pp": 1.5 }` means CR critical fires at ≥ 10.5 pp instead of 7 pp. The override applies only to that client. The defaults stay canonical here.
+Clients can adjust thresholds via the JSONB column `tracker.clients.alert_thresholds_override` (Tracker migration 0120, 10 Sep 2026; the old text named a `tracker_clients` table that never existed). The override is **multiplicative** on the defaults above: e.g. `{ "cr_decrease_critical_pp": 1.5 }` means CR critical fires at ≥ 10.5 pp instead of 7 pp. Keys follow `<metric>_<direction>_<band>_<unit>` (`cr_decrease_notable_rel`, `sov_increase_critical_pp`, `position_worsens_notable_ranks`, `sentiment_critical_abs_share`, `suppression_weeks`); the full list is `CHAVES_DE_OVERRIDE` in the Tracker's `src/lib/alerts/limiares.ts`, and an unknown key is ignored and reported, never silently applied. The override applies only to that client. The defaults stay the reference here: change a number in §2 and every client without an override follows at the next weekly close, no deploy.
 
 For internal use (destaque.ai self-audit), no override: eat your own dog food at full sensitivity.
 
@@ -171,7 +171,7 @@ Thresholds are calibrated to ~30 prompts × 7 engines × 1 week (Perplexity augm
 
 Last calibration check: 25 May 2026, using destaque.ai self-audit baseline data.
 
-## 9. Território: alertas de invasão (event-based, semana vs semana anterior)
+## 11. Território: alertas de invasão (event-based, semana vs semana anterior)
 
 Comparação por pergunta entre auditorias consecutivas. Não suprimidos (são
 eventos, §3-style). Os três tipos, com os `type` oficiais usados pelo Tracker:
@@ -188,3 +188,18 @@ Copy: nomeia a pergunta e a marca, com contagens reais: *"[NOTÁVEL] A marca B
 passou a ser citada em 'pergunta X' (2 de 7 motores), onde na semana passada só
 tu aparecias."* A resposta natural a qualquer um destes é o pattern «Território
 livre» do `gap_action_mapping.md` (defender ou flanquear).
+
+## 12. Who computes what (parse contract, 10 Sep 2026)
+
+Until 10 Sep 2026 nothing compared a number with another: the Tracker stored whatever severity label the Routine wrote. A threshold is arithmetic, and arithmetic lives in code (Tracker `CLAUDE.md`, anti-duplication principle). The number keeps living here.
+
+| Section | Who applies it | How |
+|---|---|---|
+| §2 Metric thresholds (CR, SoV, position, sentiment) | **Tracker code**, at the close of every week (`src/lib/alerts/limiares.ts`) | The four tables are parsed at runtime (`src/lib/skill/alertas.ts`), cached 1 h, with a fallback snapshot of this file. Types written: `cr_drop`, `cr_rise`, `sov_drop`, `sov_rise`, `position_worse`, `position_better`, `sentiment_negative`. Any alert the Routine writes with one of these types is replaced by the computed one, and the replacement is reported. |
+| §6 Suppression | **Tracker code** | The number of weeks is parsed from the sentence "for the next N weeks". |
+| §8 Override | **Tracker code** | Column `clients.alert_thresholds_override`, multiplicative. |
+| §3 Event-based, §3.1 Negative mention, §4 Cumulative, §11 Território | **Routine** (`routines/tracker-brain.md`, step 5) | Judgement over text and history; not suppressed. |
+| §5 Per-engine escalation | Not implemented as such | The computed CR alert names the engine with the largest contribution in `details.engine`; per-engine alerts stay with the Routine. |
+| §7 Tone and copy | Both | The code uses the templates above, in the client's language (PT-PT or EN). |
+
+**Parse contract.** The Tracker reads, by heading at the start of a line: `### Citation rate (CR)`, `### Share of Voice (SoV)`, `### Average position`, `### Sentiment` (each with rows `| Decrease |` / `| Increase |`, or `| Worsens |` / `| Improves |`, and cells of the form `Δ ≤ −7 pp **or** ≤ −25% rel`, `Δ ≤ −5 pp`, `Δ ≥ +1.5 ranks`; the sentiment table's `critical` row with `≥ 10 pp` and `crosses 20%`, its `notable` row with `≥ 5 pp`), and `## 6. Time-bounded suppression` (the phrase `for the next N weeks`). Renaming a heading or a row label sends every client to the fallback snapshot, which `validate-skill-tables.mjs` (contract 13) refuses before commit.

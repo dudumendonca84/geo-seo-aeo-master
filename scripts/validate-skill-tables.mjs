@@ -235,6 +235,28 @@ let allOk = true;
 // --- Contrato editorial: nada do que a skill escreve leva travessões nem "canónico"
 // (Tracker CLAUDE.md, regras 8 e 11; pedido do founder a 25 Ago e 9 Set 2026).
 // Alargado à skill inteira a 10 Set 2026. Ficam de fora só os registos diários
+// --- Contrato 13: alert thresholds (consumido por parseAlertThresholds no Tracker)
+{
+  const name = "Contrato 13 · alert thresholds";
+  const body = read(`${SKILL}/references/alert_thresholds.md`);
+  if (!body) { check(name, false, "ficheiro não encontrado"); }
+  else {
+    const linhas = body.split("\n");
+    const temCabecalho = (h) => linhas.some((l) => l.trimEnd() === h || (l.startsWith(h) && !/[\p{L}\d]/u.test(l.charAt(h.length))));
+    const faltas = [];
+    for (const h of ["### Citation rate (CR)", "### Share of Voice (SoV)", "### Average position", "### Sentiment", "## 6. Time-bounded suppression"]) {
+      if (!temCabecalho(h)) faltas.push(`cabeçalho '${h}'`);
+    }
+    for (const r of ["| Decrease |", "| Increase |", "| Worsens |", "| Improves |"]) {
+      if (!body.includes(r)) faltas.push(`linha '${r}'`);
+    }
+    if (!/\d+\s*pp\s*\*\*or\*\*\s*≤\s*[−\-]?\d+%\s*rel/.test(body)) faltas.push("célula da CR sem 'pp **or** % rel'");
+    if (!/crosses\s*\d+%/.test(body)) faltas.push("linha de sentimento sem 'crosses N%'");
+    if (!/for the next \d+ weeks?/.test(body)) faltas.push("§6 sem 'for the next N weeks'");
+    check(name, faltas.length === 0, faltas.length === 0 ? "§2 e §6 parseáveis" : `Tracker cai no recurso: ${faltas.join("; ")}`);
+  }
+}
+
 // (news-feed, execution-log, drafts/), que são histórico e não copy.
 {
   const name = "Contrato editorial · skill inteira";
