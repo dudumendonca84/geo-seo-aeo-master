@@ -1,4 +1,4 @@
-# Claim verification — comparing what the AI says against the brand's truth
+# Claim verification: comparing what the AI says against the brand's truth
 
 Reference for the Tracker task `verify_claims` (Clipping IA, fidelity
 layer). Consumed at runtime.
@@ -15,10 +15,10 @@ selling the brand badly to every buyer who asks.
 
 Two inputs, in order of authority:
 
-1. **`brand_facts`** — statements the client entered and owns: reference
+1. **`brand_facts`**: statements the client entered and owns: reference
    prices, positioning claims, operating facts (locations, hours, markets
    served), named credentials.
-2. **The product catalogue** (Merchant Center, when connected) — titles,
+2. **The product catalogue** (Merchant Center, when connected): titles,
    availability, and approval state of real products.
 
 **The hard rule: no fact, no finding.** If the AI states something the
@@ -51,7 +51,7 @@ company.
 - **Opinion.** "Probably not the best for beginners" is a judgement. Track
   it as sentiment in the weekly narrative, never as a fact check.
 - **Anything sourced from the client's own outdated public page.** Then
-  the finding is against the page, and the action is to fix the page —
+  the finding is against the page, and the action is to fix the page.
   say so in the note.
 
 ---
@@ -65,12 +65,12 @@ the likely cause and the fix.
 
 Cause is what makes this actionable. The three that recur:
 
-1. **Stale index** — the engine read an old page of the brand's. Fix: the
+1. **Stale index**: the engine read an old page of the brand's. Fix: the
    page, then request re-crawl (Bing Webmaster / IndexNow are fastest).
-2. **Third-party source wrong** — a directory, review site or article
+2. **Third-party source wrong**: a directory, review site or article
    carries the wrong figure and the engine trusts it. Fix: correct at
    source, which is a PR action, not a technical one.
-3. **Memory, not search** — the answer came from training with no live
+3. **Memory, not search**: the answer came from training with no live
    read. Fix: only entity and durable-authority work moves this, on the
    months horizon. Say so; do not promise a quick correction.
 
@@ -79,7 +79,7 @@ Cause is what makes this actionable. The three that recur:
 ## 4. Tone in the client-facing output
 
 Same register as everything else: numbers, no alarm. "O ChatGPT indicou
-89 €/mês; o preço em vigor é 129 €/mês desde Março" — not "erro grave na
+89 €/mês; o preço em vigor é 129 €/mês desde Março": not "erro grave na
 descrição da marca". One line of consequence, one line of action, the
 horizon on which the fix lands. When the cause is the brand's own
 outdated page, say that plainly; the client fixes it in an afternoon and

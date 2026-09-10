@@ -1,6 +1,6 @@
-# Frameworks, standards and mechanics — May 2026
+# Frameworks, standards and mechanics: May 2026
 
-Reference for `geo-seo-aeo-master`. Every non-trivial claim cites a primary source. Where evidence is contested or thin, this is stated. Field is moving fast — see `daily-agent/news-feed.md` for updates after the maintenance date of this file.
+Reference for `geo-seo-aeo-master`. Every non-trivial claim cites a primary source. Where evidence is contested or thin, this is stated. Field is moving fast: see `daily-agent/news-feed.md` for updates after the maintenance date of this file.
 
 ---
 
@@ -16,7 +16,7 @@ Required structure:
 - Optional H2 sections, each with a markdown list of `[Title](URL): description`.
 - Optional `## Optional` section for content that can be skipped under tight context budgets.
 
-Companion file `llms-full.txt` concatenates actual content (not just links). Used by Cloudflare, Vercel, Anthropic for their developer docs ([Cloudflare](https://developers.cloudflare.com/llms.txt), [Anthropic](https://docs.anthropic.com/llms.txt), [Vercel](https://vercel.com/docs/llms-full.txt)).
+Companion file `llms-full.txt` concatenates atual content (not just links). Used by Cloudflare, Vercel, Anthropic for their developer docs ([Cloudflare](https://developers.cloudflare.com/llms.txt), [Anthropic](https://docs.anthropic.com/llms.txt), [Vercel](https://vercel.com/docs/llms-full.txt)).
 
 ### Adoption status (Jul 2026)
 
@@ -31,11 +31,11 @@ Companion file `llms-full.txt` concatenates actual content (not just links). Use
 
 A community-maintained convention with growing publisher adoption but **no confirmed consumption by frontier LLMs in inference paths**. Useful as documentation hygiene and for agent-tool ecosystems that explicitly fetch it (some IDE agents). Not a substitute for structured data, server-rendered HTML, and classical SEO for visibility in ChatGPT Search, Perplexity, Google AI Overviews or Copilot.
 
-Practical posture for destaque.ai clients: **publish it, do not promise inference impact.** A complete `llms.txt` plus `llms-full.txt` is a low-cost signal of technical hygiene that pays off if any inference-path consumption materialises. Make sure the URL count matches the sitemap — a `llms.txt` declaring 20 URLs while the sitemap holds 182 is worse than nothing (in-house audit of congruent.pt, 22 May 2026).
+Practical posture for destaque.ai clients: **publish it, do not promise inference impact.** A complete `llms.txt` plus `llms-full.txt` is a low-cost signal of technical hygiene that pays off if any inference-path consumption materialises. Make sure the URL count matches the sitemap: a `llms.txt` declaring 20 URLs while the sitemap holds 182 is worse than nothing (in-house audit of congruent.pt, 22 May 2026).
 
 ---
 
-## 2. AI crawlers — `robots.txt` matrix (May 2026)
+## 2. AI crawlers: `robots.txt` matrix (May 2026)
 
 Each vendor distinguishes **training crawls** (asynchronous, bulk, blockable without removing the brand from the answer engine) from **real-time user-triggered fetches** (synchronous, tied to a user query; blocking these removes the brand from the answer engine).
 
@@ -91,9 +91,9 @@ Cloudflare published a report (4 Aug 2025) alleging Perplexity used undeclared/r
 | `cohere-ai` | Cohere | Training |
 | `Diffbot` | Diffbot | Knowledge-graph crawl |
 
-### Cloudflare "Content Signals" robots.txt extension — no effect confirmed (Jul 2026)
+### Cloudflare "Content Signals" robots.txt extension: no effect confirmed (Jul 2026)
 
-Cloudflare's "Content Signals" policy extends `robots.txt` with three declarable preferences (`search`, `ai-input`, `ai-train`) letting site owners state intent for how crawled content may be used. John Mueller (Google) confirmed on-record, 6 Jul 2026, that the directive has "no effect whatsoever" on any crawler — including Google's own — and that Google does not consume it, nor `llms.txt` / `llms-author.txt`, for crawling or ranking decisions ([Search Engine Roundtable](https://www.seroundtable.com/google-cloudflare-content-signals-41631.html)). Same posture as §1: an unenforced declaration of intent, not a technical control.
+Cloudflare's "Content Signals" policy extends `robots.txt` with three declarable preferences (`search`, `ai-input`, `ai-train`) letting site owners state intent for how crawled content may be used. John Mueller (Google) confirmed on-record, 6 Jul 2026, that the directive has "no effect whatsoever" on any crawler: including Google's own: and that Google does not consume it, nor `llms.txt` / `llms-author.txt`, for crawling or ranking decisions ([Search Engine Roundtable](https://www.seroundtable.com/google-cloudflare-content-signals-41631.html)). Same posture as §1: an unenforced declaration of intent, not a technical control.
 
 ### Practical pattern for B2B SaaS
 
@@ -111,9 +111,9 @@ Allow: /
 
 Decide deliberately on **training** crawlers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Bytespider`, `CCBot`). The training/answer distinction is the GEO-relevant decision. A B2B SaaS that wants discovery should normally allow both; a publisher that wants payment for training data should block training while allowing answer-engine real-time agents.
 
-The Congruent case (in-house audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` — leaving silent gaps.
+The Congruent case (in-house audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` - leaving silent gaps.
 
-**Empirical confirmation for `Google-Extended` (SIGIR '26, Jul 2026).** Grossman et al., "How Generative AI Disrupts Search" ([arXiv:2604.27790](https://arxiv.org/abs/2604.27790), formally published at SIGIR '26, Melbourne, 20–24 Jul 2026; see `benchmarks.md` §27), find that sites disallowing `Google-Extended` are significantly less likely to be retrieved by Google AI Overviews, even when the content is otherwise crawlable and accessible. This is the first controlled empirical evidence — not just vendor guidance — that the training/answer-engine distinction above has a measurable, engine-specific effect for Google: blocking `Google-Extended` is not a neutral "opt out of training only" choice, it carries a real AIO-visibility cost.
+**Empirical confirmation for `Google-Extended` (SIGIR '26, Jul 2026).** Grossman et al., "How Generative AI Disrupts Search" ([arXiv:2604.27790](https://arxiv.org/abs/2604.27790), formally published at SIGIR '26, Melbourne, 20–24 Jul 2026; see `benchmarks.md` §27), find that sites disallowing `Google-Extended` are significantly less likely to be retrieved by Google AI Overviews, even when the content is otherwise crawlable and accessible. This is the first controlled empirical evidence: not just vendor guidance: that the training/answer-engine distinction above has a measurable, engine-specific effect for Google: blocking `Google-Extended` is not a neutral "opt out of training only" choice, it carries a real AIO-visibility cost.
 
 ---
 
@@ -132,19 +132,19 @@ JSON-LD remains the format recommended by Google and the one major AI engines (B
 | `Course` / `CourseInstance` / `educationalCredentialAwarded` | Required for Google Courses rich results and for LLMs to extract modality / certification. | Entire catalogues without `Course` (Congruent: 169 cursos sem schema) |
 | `JobPosting` | Required for Google Jobs and for LLMs to surface vacancies. | `validThrough`, `hiringOrganization.sameAs` missing |
 | `Event` | Date, location, recurrence. | `eventStatus` and `eventAttendanceMode` post-pandemic |
-| `Organization` + `sameAs` | Entity disambiguation; `sameAs` links to Wikidata, LinkedIn, Crunchbase, GitHub feed knowledge-graph linking. | `sameAs` empty — the single most common B2B gap. Without `sameAs` no Knowledge Panel. |
+| `Organization` + `sameAs` | Entity disambiguation; `sameAs` links to Wikidata, LinkedIn, Crunchbase, GitHub feed knowledge-graph linking. | `sameAs` empty: the single most common B2B gap. Without `sameAs` no Knowledge Panel. |
 | `WebSite` + `potentialAction` (SearchAction) | Sitelinks search box rich result. | `potentialAction` missing |
 | `Person` | `jobTitle`, `worksFor`, `sameAs` → supports E-E-A-T author signals. | No author pages at all |
 | `BreadcrumbList` | Site structure signal. | Missing in templated pages |
 | `ClaimReview` / `Claim` | Fact-check markup; high-trust signal for verification queries. | Only used by news orgs |
 
-### Review/AggregateRating — fake and incentivized reviews prohibited (Jul 2026)
+### Review/AggregateRating: fake and incentivized reviews prohibited (Jul 2026)
 
-Google updated the Review snippet structured-data documentation (24 Jul 2026) with an explicit guideline: "Don't include fake or undisclosed incentivized reviews on your page or in your structured data markup" ([developers.google.com](https://developers.google.com/search/docs/appearance/structured-data/review-snippet), reported by [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)). Examples given: reviews not based on a genuine experience, and reviews exchanged for money/discounts/vouchers/free products without clear, prominent disclosure of the incentive. This tightens (does not replace) the existing `AggregateRating` guidance in the table above — clients with testimonial/review sections should confirm their markup and underlying review-collection process comply before the next technical audit; not yet clear whether this is enforced by automated re-crawls or by manual action only.
+Google updated the Review snippet structured-data documentation (24 Jul 2026) with an explicit guideline: "Don't include fake or undisclosed incentivized reviews on your page or in your structured data markup" ([developers.google.com](https://developers.google.com/search/docs/appearance/structured-data/review-snippet), reported by [Search Engine Land](https://searchengineland.com/google-says-dont-include-fake-or-undisclosed-incentivized-reviews-in-review-snippet-structured-data-483456)). Examples given: reviews not based on a genuine experience, and reviews exchanged for money/discounts/vouchers/free products without clear, prominent disclosure of the incentive. This tightens (does not replace) the existing `AggregateRating` guidance in the table above: clients with testimonial/review sections should confirm their markup and underlying review-collection process comply before the next technical audit; not yet clear whether this is enforced by automated re-crawls or by manual action only.
 
-### NLWeb — open protocol for natural-language site queries (Jun 2026)
+### NLWeb: open protocol for natural-language site queries (Jun 2026)
 
-Announced at Microsoft Build 2026 and led by R.V. Guha (co-creator of Schema.org), **NLWeb** is an open protocol letting any site accept natural-language queries — from humans or AI agents — without custom development, built on top of existing structured data ([Microsoft Source](https://news.microsoft.com/source/features/company-news/introducing-nlweb-bringing-conversational-interfaces-directly-to-the-web/)). It is early-stage (no adoption or citation-impact data yet, unlike the `llms.txt` null results above) but directionally significant: it treats well-formed Schema.org markup as the substrate for conversational retrieval rather than just rich-result eligibility. Track for adoption signals before recommending implementation; the types-table above (`Organization`, `Product`, `FAQPage`, etc.) is the same foundation NLWeb consumes, so clients with clean schema are already positioned to adopt it cheaply if it gains traction.
+Announced at Microsoft Build 2026 and led by R.V. Guha (co-creator of Schema.org), **NLWeb** is an open protocol letting any site accept natural-language queries: from humans or AI agents: without custom development, built on top of existing structured data ([Microsoft Source](https://news.microsoft.com/source/features/company-news/introducing-nlweb-bringing-conversational-interfaces-directly-to-the-web/)). It is early-stage (no adoption or citation-impact data yet, unlike the `llms.txt` null results above) but directionally significant: it treats well-formed Schema.org markup as the substrate for conversational retrieval rather than just rich-result eligibility. Track for adoption signals before recommending implementation; the types-table above (`Organization`, `Product`, `FAQPage`, etc.) is the same foundation NLWeb consumes, so clients with clean schema are already positioned to adopt it cheaply if it gains traction.
 
 ### The Ahrefs schema null result (May 2026)
 
@@ -167,11 +167,11 @@ Framework remains Experience, Expertise, Authoritativeness, Trustworthiness, wit
 
 - Renamed YMYL category "Society" → "Government, Civics & Society".
 - Added an explicit chapter on how raters should evaluate AI Overviews (the rated unit can now be an AI-synthesised answer, not just a page). First time AI-generated SERP features are formally part of the rater workflow.
-- Tightened guidance on scaled content abuse, expired-domain abuse and site-reputation abuse — all now explicitly cover AI-generated mass content.
+- Tightened guidance on scaled content abuse, expired-domain abuse and site-reputation abuse: all now explicitly cover AI-generated mass content.
 
 ### Relevance to GEO
 
-E-E-A-T is not directly a ranking signal — it is a rubric raters use to evaluate quality, which informs Google's quality-signal training data. Because Google AI Overviews and AI Mode draw from the same Search index and quality signals as classical Search, E-E-A-T pressures (named authors, declared experience, verifiable credentials, transparent publishing entity, accurate citations) propagate into which pages are *eligible* to be cited in AI Overviews.
+E-E-A-T is not directly a ranking signal: it is a rubric raters use to evaluate quality, which informs Google's quality-signal training data. Because Google AI Overviews and AI Mode draw from the same Search index and quality signals as classical Search, E-E-A-T pressures (named authors, declared experience, verifiable credentials, transparent publishing entity, accurate citations) propagate into which pages are *eligible* to be cited in AI Overviews.
 
 For Perplexity, ChatGPT Search and Copilot, "E-E-A-T" is not their stated rubric, but they all use overlapping proxies: domain authority, citation graph, freshness, named authorship and entity recognition. Treat E-E-A-T as a useful umbrella concept that maps approximately onto how every major answer engine ranks source trustworthiness.
 
@@ -185,16 +185,16 @@ All five systems below use a variant of **retrieve → rank → generate → cit
 |---|---|---|---|
 | **ChatGPT Search** | Bing index + OpenAI crawl | ~7.9 cit/answer (Profound, 118k answers) | Wikipedia ~47.9% of top citations; Reddit prominent. Web search enabled on only ~34.5% of queries (Semrush clickstream, Feb 2026, [link](https://www.semrush.com/blog/chatgpt-search-insights/)) |
 | **Perplexity** | Own crawl (`PerplexityBot`) + real-time (`Perplexity-User`) + index partners | ~21.9 cit/answer | Reddit ~46.7% of top citations; ~14% YouTube; G2/review platforms |
-| **Google AI Overviews / AI Mode** | Google index | Median cited page ~14 months old (recency not strongly predictive) | YouTube now most-cited domain; **query fan-out** — a single AIO is decomposed into sub-queries, so pages outside top-3 of any one query can still cite |
-| **Claude (web search)** | Brave Search | Lower citation count; conservative — claims sourced when uncertain, others left uncited | API requires citations to be shown to end users when surfacing search results ([Anthropic web-search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)) |
+| **Google AI Overviews / AI Mode** | Google index | Median cited page ~14 months old (recency not strongly predictive) | YouTube now most-cited domain; **query fan-out**: a single AIO is decomposed into sub-queries, so pages outside top-3 of any one query can still cite |
+| **Claude (web search)** | Brave Search | Lower citation count; conservative: claims sourced when uncertain, others left uncited | API requires citations to be shown to end users when surfacing search results ([Anthropic web-search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)) |
 | **Bing Copilot** | Bing index | Format similar to ChatGPT Search | First-party citation telemetry now exposed via Bing Webmaster Tools "AI Performance" dashboard (public preview 9 Feb 2026, [Bing blog](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)) |
 | **Gemini (Gemini Advanced + AI Mode)** | Google index, Gemini reasoning | Verbose; cites less densely than Perplexity | Strong YouTube/Reddit pull |
 
 ### Bing Copilot / ChatGPT Search share a retrieval backend: Web IQ (Jun 2026)
 
-Microsoft's **Web IQ**, launched 2 Jun 2026, is a grounding-API suite built on the Bing index but designed for AI agents rather than human searchers — it prioritises fast information extraction over classic result ranking ([Search Engine Land](https://searchengineland.com/microsoft-releases-web-iq-powered-by-bing-but-designed-for-how-ai-agents-search-479194)). It currently powers both Microsoft Copilot and OpenAI's ChatGPT Search, with expansion to other platforms announced. Practical implication: Bing-index optimisation (the standard already in the table above) is not just a Copilot lever — it is shared retrieval infrastructure for ChatGPT Search too, reinforcing Bing indexing hygiene as a cross-engine, not single-engine, investment.
+Microsoft's **Web IQ**, launched 2 Jun 2026, is a grounding-API suite built on the Bing index but designed for AI agents rather than human searchers: it prioritises fast information extraction over classic result ranking ([Search Engine Land](https://searchengineland.com/microsoft-releases-web-iq-powered-by-bing-but-designed-for-how-ai-agents-search-479194)). It currently powers both Microsoft Copilot and OpenAI's ChatGPT Search, with expansion to other platforms announced. Practical implication: Bing-index optimisation (the standard already in the table above) is not just a Copilot lever: it is shared retrieval infrastructure for ChatGPT Search too, reinforcing Bing indexing hygiene as a cross-engine, not single-engine, investment.
 
-**Update, 07 Sep 2026 — ChatGPT also grounds against Google, not only Bing/Web IQ.** A controlled test (Malte Landwehr, via [Peec.ai](https://peec.ai/blog/chatgpt-built-its-own-search-index), 4 Sep 2026) found a zero-traffic site received a Google Search Console referral spike specifically on days ChatGPT queried it — direct behavioral evidence that ChatGPT still queries Google to ground some answers, alongside the Bing/Web IQ path above. The same post reports Bing turning up inside ChatGPT Deep Research's SSE event stream. Single-source, informal methodology (one site, not peer-reviewed) — treat as a lead, not a settled fact, but it changes the practical advice: Bing indexing hygiene is necessary but this suggests it is not sufficient on its own for ChatGPT visibility — classic Google indexing health is worth checking too, not assuming it's irrelevant because ChatGPT "uses Bing."
+**Update, 07 Sep 2026: ChatGPT also grounds against Google, not only Bing/Web IQ.** A controlled test (Malte Landwehr, via [Peec.ai](https://peec.ai/blog/chatgpt-built-its-own-search-index), 4 Sep 2026) found a zero-traffic site received a Google Search Console referral spike specifically on days ChatGPT queried it: direct behavioral evidence that ChatGPT still queries Google to ground some answers, alongside the Bing/Web IQ path above. The same post reports Bing turning up inside ChatGPT Deep Research's SSE event stream. Single-source, informal methodology (one site, not peer-reviewed): treat as a lead, not a settled fact, but it changes the practical advice: Bing indexing hygiene is necessary but this suggests it is not sufficient on its own for ChatGPT visibility: classic Google indexing health is worth checking too, not assuming it's irrelevant because ChatGPT "uses Bing."
 
 ### Cross-engine domain overlap is low
 
@@ -202,39 +202,39 @@ Only **~11%** of cited domains appear in both ChatGPT and Perplexity (Profound, 
 
 ### Claude and Claude Code are distinct answer engines (Sep 2026)
 
-Same vendor, same brand name, very different citation behavior. Claude (claude.ai) uses web search in **93%** of answers; Claude Code, the developer-tooling product, only in **13%**. Brands cited for the identical prompt overlap only **~20%** between the two ([Profound](https://www.tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines), 24 Aug 2026, corroborated by [Search Engine Journal](https://www.searchenginejournal.com/claude-code-rarely-searches-web-compared-claude-data/587584/), 31 Aug 2026). Practical implication: "we're visible in Claude" and "we're visible in Claude Code" are two different, largely uncorrelated claims — a client asking specifically about developer-tooling visibility needs a separate measurement, not an assumption that consumer-Claude presence transfers. This is the same lesson as the low cross-engine overlap above, but inside a single vendor's own product family — the boundary that matters is not always "which company," it can be "which product."
+Same vendor, same brand name, very different citation behavior. Claude (claude.ai) uses web search in **93%** of answers; Claude Code, the developer-tooling product, only in **13%**. Brands cited for the identical prompt overlap only **~20%** between the two ([Profound](https://www.tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines), 24 Aug 2026, corroborated by [Search Engine Journal](https://www.searchenginejournal.com/claude-code-rarely-searches-web-compared-claude-data/587584/), 31 Aug 2026). Practical implication: "we're visible in Claude" and "we're visible in Claude Code" are two different, largely uncorrelated claims: a client asking specifically about developer-tooling visibility needs a separate measurement, not an assumption that consumer-Claude presence transfers. This is the same lesson as the low cross-engine overlap above, but inside a single vendor's own product family: the boundary that matters is not always "which company," it can be "which product."
 
-### Literal phrasing matters as much as topic coverage — surface-form bias in retrieval (Sep 2026)
+### Literal phrasing matters as much as topic coverage: surface-form bias in retrieval (Sep 2026)
 
-A structural-retrieval study found that embedders used in retrieval pipelines can fail hard when content is semantically correct but phrased differently from the query — Hit@1 drops to **0%** at the most disguised phrasing level tested, even with the correct item ranked in the semantic top 10 ([arXiv:2609.01556](https://arxiv.org/abs/2609.01556v1), Sep 2026). Directional, not GEO-specific research (the benchmark spans math and agent trajectories), but the mechanism is the same one retrieval-augmented answer engines run on. Practical implication: mirroring the likely literal phrasing of user questions on the page (not just covering the topic conceptually) is a retrieval-stage lever, separate from and additive to the citation-stage levers already in this file (statistics, named quotes, question-answer structure).
+A structural-retrieval study found that embedders used in retrieval pipelines can fail hard when content is semantically correct but phrased differently from the query: Hit@1 drops to **0%** at the most disguised phrasing level tested, even with the correct item ranked in the semantic top 10 ([arXiv:2609.01556](https://arxiv.org/abs/2609.01556v1), Sep 2026). Directional, not GEO-specific research (the benchmark spans math and agent trajectories), but the mechanism is the same one retrieval-augmented answer engines run on. Practical implication: mirroring the likely literal phrasing of user questions on the page (not just covering the topic conceptually) is a retrieval-stage lever, separate from and additive to the citation-stage levers already in this file (statistics, named quotes, question-answer structure).
 
 ### Passive discovery: background agents that cite without an active query (Jun 2026)
 
-At I/O 2026 (27 Jun), Google launched **Search Agents** for AI Pro/Ultra subscribers — an agent that runs in the background 24/7 and pushes a notification with source citations when it finds something relevant, without the user issuing a query at that moment ([blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)). This is a distinct discovery mode from query-time retrieval: visibility depends on being *continuously* citable and monitorable, not on ranking well for a one-off search. Practical implication: being crawlable/citable is now a condition for passive discovery too — a brand can be surfaced to a user who never searched for it that day. Still early (US rollout, Pro/Ultra only); revisit as it reaches more markets and tiers.
+At I/O 2026 (27 Jun), Google launched **Search Agents** for AI Pro/Ultra subscribers: an agent that runs in the background 24/7 and pushes a notification with source citations when it finds something relevant, without the user issuing a query at that moment ([blog.google](https://blog.google/products-and-platforms/products/search/search-io-2026/)). This is a distinct discovery mode from query-time retrieval: visibility depends on being *continuously* citable and monitorable, not on ranking well for a one-off search. Practical implication: being crawlable/citable is now a condition for passive discovery too: a brand can be surfaced to a user who never searched for it that day. Still early (US rollout, Pro/Ultra only); revisit as it reaches more markets and tiers.
 
 ### Citation counts undercount real exposure (Jul 2026, absorbed retroactively Sep 2026)
 
-Log-level analysis of ChatGPT Deep Research (~1,240 source records) found the agent reads far more pages than it ends up citing — it follows internal links and reads image alt text, and typically only the top 2-3 Bing results per sub-query make it into the read set at all ([Peec AI](https://peec.ai/blog/how-chatgpt-deep-research-reads-your-site-what-the-logs-reveal), Jun 2026; caveat: small sample, informal methodology, not peer-reviewed). Practical implication: "share of citation" as reported to clients is a floor, not a ceiling, on real model exposure — worth a methodological caveat in reports, not (yet) a metric change, given the sample size.
+Log-level analysis of ChatGPT Deep Research (~1,240 source records) found the agent reads far more pages than it ends up citing: it follows internal links and reads image alt text, and typically only the top 2-3 Bing results per sub-query make it into the read set at all ([Peec AI](https://peec.ai/blog/how-chatgpt-deep-research-reads-your-site-what-the-logs-reveal), Jun 2026; caveat: small sample, informal methodology, not peer-reviewed). Practical implication: "share of citation" as reported to clients is a floor, not a ceiling, on real model exposure: worth a methodological caveat in reports, not (yet) a metric change, given the sample size.
 
-A separate position paper on GEO governance ([Wen et al., arXiv:2606.12439](https://arxiv.org/abs/2606.12439)) argues the same low-contestability dynamic creates two risks worth naming to clients: influence concentration (a handful of sources feed most answers on a topic) and undisclosed commercial influence in the evidence an engine cites. Argumentative, not empirical — flagged here as context for the "why GEO governance matters" conversation, not as an audit input.
+A separate position paper on GEO governance ([Wen et al., arXiv:2606.12439](https://arxiv.org/abs/2606.12439)) argues the same low-contestability dynamic creates two risks worth naming to clients: influence concentration (a handful of sources feed most answers on a topic) and undisclosed commercial influence in the evidence an engine cites. Argumentative, not empirical: flagged here as context for the "why GEO governance matters" conversation, not as an audit input.
 
 ### Content patterns that get cited (cross-engine consensus)
 
 From Aggarwal et al. plus vendor follow-ups (Profound, Ahrefs, Semrush, Qwairy):
 
-1. **Strong organic ranking on the underlying index** — Bing for ChatGPT/Copilot; Google for AIO/AI Mode. BrightEdge: **54%** of AIO citations come from URLs ranking in organic top-10 for the same query ([BrightEdge](https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio)).
-2. **Original statistics** — replace qualitative claims with numbers. Largest single intervention in Aggarwal et al.
-3. **Named-source quotations** — direct quotes attributed to recognized authorities.
-4. **Dense entity coverage** — pages mentioning 15+ recognized entities are cited ~4.8× more often (Profound; vendor data, directional).
-5. **Clear question-answer structure** — matching headings, atomic answer blocks of ~40-80 words.
-6. **Recent `dateModified`** — directionally helpful but **not** a primary lever (median cited age ~14 months).
+1. **Strong organic ranking on the underlying index**: Bing for ChatGPT/Copilot; Google for AIO/AI Mode. BrightEdge: **54%** of AIO citations come from URLs ranking in organic top-10 for the same query ([BrightEdge](https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio)).
+2. **Original statistics**: replace qualitative claims with numbers. Largest single intervention in Aggarwal et al.
+3. **Named-source quotations**: direct quotes attributed to recognized authorities.
+4. **Dense entity coverage**: pages mentioning 15+ recognized entities are cited ~4.8× more often (Profound; vendor data, directional).
+5. **Clear question-answer structure**: matching headings, atomic answer blocks of ~40-80 words.
+6. **Recent `dateModified`**: directionally helpful but **not** a primary lever (median cited age ~14 months).
 7. **Declared author with credentials, recognised publishing entity.**
-8. **Server-rendered HTML** — content must be in the initial HTML, not hydrated by JavaScript.
+8. **Server-rendered HTML**: content must be in the initial HTML, not hydrated by JavaScript.
 
 What does **not** predict citation strongly (vendor and academic studies):
 - Domain Rating / Authority (Ahrefs).
 - Reading-grade level (Ahrefs).
-- Page-load speed (Ahrefs) — though it predicts ranking, which predicts citation indirectly.
+- Page-load speed (Ahrefs): though it predicts ranking, which predicts citation indirectly.
 - Schema markup added retroactively to heavily-cited pages (Ahrefs May 2026).
 - Keyword stuffing (Aggarwal: neutral-to-negative).
 
@@ -242,7 +242,7 @@ What does **not** predict citation strongly (vendor and academic studies):
 
 ## 6. The Princeton GEO paper
 
-Aggarwal, Murahari, Rajpurohit, Kalyan, Narasimhan, Deshpande, **"GEO: Generative Engine Optimization"** — arXiv [2311.09735](https://arxiv.org/abs/2311.09735), KDD 2024 ([ACM](https://dl.acm.org/doi/10.1145/3637528.3671900)).
+Aggarwal, Murahari, Rajpurohit, Kalyan, Narasimhan, Deshpande, **"GEO: Generative Engine Optimization"**: arXiv [2311.09735](https://arxiv.org/abs/2311.09735), KDD 2024 ([ACM](https://dl.acm.org/doi/10.1145/3637528.3671900)).
 
 Introduces **GEO-bench** (10,000 queries across 8 domains) and tests 9 content-modification tactics against a Bing-Chat-emulating engine. Two metrics:
 
@@ -253,11 +253,11 @@ Introduces **GEO-bench** (10,000 queries across 8 domains) and tests 9 content-m
 
 | Rank | Method | Effect on PAWC |
 |---|---|---|
-| 1 | **Statistics Addition** — replace qualitative claims with numbers | up to **+40.6%** |
-| 2 | **Quotation Addition** — direct quotes from named sources | ~**+28%** |
-| 3 | **Cite Sources** — inline citations | meaningful positive |
-| 4 | **Fluency Optimization** — cleaner prose | meaningful positive |
-| 5 | **Authoritative Tone** — assertive, confident | meaningful positive |
+| 1 | **Statistics Addition**: replace qualitative claims with numbers | up to **+40.6%** |
+| 2 | **Quotation Addition**: direct quotes from named sources | ~**+28%** |
+| 3 | **Cite Sources**: inline citations | meaningful positive |
+| 4 | **Fluency Optimization**: cleaner prose | meaningful positive |
+| 5 | **Authoritative Tone**: assertive, confident | meaningful positive |
 | 6 | Easy-to-Understand (simplified language) | smaller positive |
 | 7 | Unique Words (lexical variety) | smaller positive |
 | 8 | Technical Terms (domain jargon) | smaller positive |
@@ -271,21 +271,21 @@ Introduces **GEO-bench** (10,000 queries across 8 domains) and tests 9 content-m
 
 ### What to say to clients
 
-"Statistics, named-source quotations and inline citations are the most evidence-backed content interventions for AI search visibility. The Princeton headline numbers (~+40% PAWC) are from the original 2023 benchmark and should not be quoted as expected 2026 lifts — but the *direction* (numbers and named sources beat adjectives) is robust across all follow-up work."
+"Statistics, named-source quotations and inline citations are the most evidence-backed content interventions for AI search visibility. The Princeton headline numbers (~+40% PAWC) are from the original 2023 benchmark and should not be quoted as expected 2026 lifts: but the *direction* (numbers and named sources beat adjectives) is robust across all follow-up work."
 
 ### Official recognition by Google (Jun 2026)
 
-On 5 June 2026, Google added a "Generative AI fundamentals" section to Search Central, with a guide titled "Optimizing your website for generative AI features on Google Search" ([digitalapplied.com](https://www.digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026)). Official quote: *"optimizing for generative AI search is optimizing for the search experience, and thus still SEO."* Useful to close the "is GEO just a fad" objection in conservative B2B sales cycles — Google itself now frames it as an extension of SEO, not a separate discipline.
+On 5 June 2026, Google added a "Generative AI fundamentals" section to Search Central, with a guide titled "Optimizing your website for generative AI features on Google Search" ([digitalapplied.com](https://www.digitalapplied.com/blog/google-official-seo-docs-generative-ai-optimization-june-2026)). Official quote: *"optimizing for generative AI search is optimizing for the search experience, and thus still SEO."* Useful to close the "is GEO just a fad" objection in conservative B2B sales cycles: Google itself now frames it as an extension of SEO, not a separate discipline.
 
 ### Follow-up papers (2025-2026)
 
 - **Chen, Wang et al.** "Generative Engine Optimization: How to Dominate AI Search", arXiv [2509.08919](https://arxiv.org/abs/2509.08919), Sept 2025. Large-scale controlled experiments across verticals, languages, paraphrases. **Finds a systematic bias toward earned media over brand-owned sources.**
-- **"From Citation Selection to Citation Absorption"** — arXiv [2604.25707](https://arxiv.org/html/2604.25707v2). Distinguishes *being cited* from *being absorbed into the generated text*; high-influence pages contain dense, structured "evidence containers" reusable across multiple answer segments.
-- **"Characterizing Web Search in The Age of Generative AI"** — arXiv [2510.11560](https://arxiv.org/html/2510.11560v1). Organic Google results stable (~10 links/query); generative rankings fluctuate significantly across model/index updates.
-- **"News Source Citing Patterns in AI Search Systems"** — arXiv [2507.05301](https://arxiv.org/html/2507.05301v1). Comparative study across ChatGPT, Copilot, Perplexity, Google AI.
-- **"GhostCite"** — arXiv [2602.06718](https://arxiv.org/abs/2602.06718). Quantifies citation hallucination rates across 13 SOTA LLMs.
+- **"From Citation Selection to Citation Absorption"**: arXiv [2604.25707](https://arxiv.org/html/2604.25707v2). Distinguishes *being cited* from *being absorbed into the generated text*; high-influence pages contain dense, structured "evidence containers" reusable across multiple answer segments.
+- **"Characterizing Web Search in The Age of Generative AI"**: arXiv [2510.11560](https://arxiv.org/html/2510.11560v1). Organic Google results stable (~10 links/query); generative rankings fluctuate significantly across model/index updates.
+- **"News Source Citing Patterns in AI Search Systems"**: arXiv [2507.05301](https://arxiv.org/html/2507.05301v1). Comparative study across ChatGPT, Copilot, Perplexity, Google AI.
+- **"GhostCite"**: arXiv [2602.06718](https://arxiv.org/abs/2602.06718). Quantifies citation hallucination rates across 13 SOTA LLMs.
 
-Continue monitoring arXiv `cs.IR` and `cs.CL` — the field publishes actively.
+Continue monitoring arXiv `cs.IR` and `cs.CL` - the field publishes actively.
 
 ---
 
@@ -294,7 +294,7 @@ Continue monitoring arXiv `cs.IR` and `cs.CL` — the field publishes actively.
 LLMs do not "read" pages the way Googlebot ranks them. Retrieval-augmented systems ground generation in entity-anchored knowledge: structured data, Wikidata items, knowledge-graph nodes, consistently corroborated mentions across the open web.
 
 - **Wikidata / Wikipedia as corroboration layer.** Kalicube treats Wikidata as the primary third-party corroboration source within its "Understandability" phase. Knowledge Panels and Google's grounded answers can appear days after a Wikipedia article or weeks after a well-built Wikidata item ([Kalicube](https://kalicube.com/learning-spaces/faq-list/seo-glossary/knowledge-sources-in-entity-seo-what-you-need-to-know/)).
-- **Topical authority outranks domain authority.** In Profound's analysis, topical authority correlates with AI citation at r≈0.41 vs r≈0.18 for domain authority ([Digital Bloom — Profound report](https://thedigitalbloom.com/learn/2025-ai-citation-llm-visibility-report/)). Vendor data, directional.
+- **Topical authority outranks domain authority.** In Profound's analysis, topical authority correlates with AI citation at r≈0.41 vs r≈0.18 for domain authority ([Digital Bloom: Profound report](https://thedigitalbloom.com/learn/2025-ai-citation-llm-visibility-report/)). Vendor data, directional.
 - **Brand search volume correlates with citation at r≈0.33** ([Profound](https://thedigitalbloom.com/learn/2025-ai-citation-llm-visibility-report/)). Effectively "digital PR for LLMs."
 - **Branded anchor text** at r=0.527 and **branded search volume** at r=0.334 outperform domain rating as predictors of AIO presence in Ahrefs' analysis of ~75,000 brands ([Ahrefs](https://ahrefs.com/blog/llm-citations/)).
 
@@ -316,13 +316,13 @@ Public evidence for PT-PT specifically is **thin**. What is known:
 
 - **LLMs reason in English internally.** Multilingual models route through English-aligned representations even for non-English inputs ([arXiv 2502.15603](https://arxiv.org/pdf/2502.15603)). Entity recognition is stronger when the entity has English Wikidata/Wikipedia coverage.
 - **Portuguese benchmarks are Brazilian-skewed.** Open Portuguese LLM Leaderboard's nine benchmarks are PT-BR ([arXiv 2603.12872](https://arxiv.org/pdf/2603.12872)). PT-PT dialectal performance is weaker on most models; expect citation quirks (PT-BR sources cited for PT-PT queries).
-- **Factual quality varies by language.** "Facts Do Care About Your Language" ([arXiv 2506.03051](https://arxiv.org/pdf/2506.03051)) shows asymmetric answer quality across languages — lower-resource languages get more hallucinations and weaker grounding.
+- **Factual quality varies by language.** "Facts Do Care About Your Language" ([arXiv 2506.03051](https://arxiv.org/pdf/2506.03051)) shows asymmetric answer quality across languages: lower-resource languages get more hallucinations and weaker grounding.
 
 ### Strategy for PT-PT B2B SaaS
 
-1. Bilingual EN/PT-PT versions of canonical entity pages. EN is *not* optional — it is the substrate.
+1. Bilingual EN/PT-PT versions of canonical entity pages. EN is *not* optional: it is the substrate.
 2. Wikidata item with both Portuguese variants and English labels (`pt`, `pt-pt`, `pt-br`, `en` labels).
-3. Court PT-language coverage on high-authority sources (Observador, ECO, Público, Expresso, Dinheiro Vivo, Jornal de Negócios) — corroboration breadth in-language is what moves the entity graph for PT-PT queries.
+3. Court PT-language coverage on high-authority sources (Observador, ECO, Público, Expresso, Dinheiro Vivo, Jornal de Negócios): corroboration breadth in-language is what moves the entity graph for PT-PT queries.
 4. Use `hreflang` rigorously. `pt-PT`, `en-GB` (not `en-US` for EU clients), `x-default`. Audit for body-text language drift (PT page with EN headings is a common gap; Congruent had this).
 5. Acknowledge to clients that this is a documented evidence gap, not a known-known.
 
@@ -339,13 +339,13 @@ Defensive practice for content owners:
 - Do not let user-generated content propagate unsanitised into pages indexed by AI crawlers.
 - Offensive use (planting injection on competitor pages, "SEO poisoning") is a legal and ethical line not to cross.
 
-**WARP (Web Agent Retrieval Poisoning), Cornell Tech.** A single injected comment on a public UGC page is enough to make deep-research AI agents cite fabricated entities in **38-62%** of generated reports — no access to the underlying model, prompts, or search engine required (`benchmarks.md` §32). Extends the checklist above: UGC-heavy pages (reviews, comments, forums) are an attack surface for third-party deep-research agents reading the client's site, not only for a site's own chatbot.
+**WARP (Web Agent Retrieval Poisoning), Cornell Tech.** A single injected comment on a public UGC page is enough to make deep-research AI agents cite fabricated entities in **38-62%** of generated reports: no access to the underlying model, prompts, or search engine required (`benchmarks.md` §32). Extends the checklist above: UGC-heavy pages (reviews, comments, forums) are an attack surface for third-party deep-research agents reading the client's site, not only for a site's own chatbot.
 
 ### Hallucinated negative associations
 
-Lidsky & Daves, **"Inevitable Errors: Defamation by Hallucination in AI Reasoning Models"** (Journal of Free Speech Law, 2025) — [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5362314). The pending *LTL LED v. Google* case alleges an AI Overview falsely associated the plaintiff with a state-AG lawsuit.
+Lidsky & Daves, **"Inevitable Errors: Defamation by Hallucination in AI Reasoning Models"** (Journal of Free Speech Law, 2025): [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5362314). The pending *LTL LED v. Google* case alleges an AI Overview falsely associated the plaintiff with a state-AG lawsuit.
 
-**Germany, first concrete rulings (2026).** Unlike the still-pending US case above, Germany has produced actual decisions. The Munich Regional Court ruled (28 May 2026) that Google is directly liable for a false claim an AI Overview generated about two Munich-based publishers, treating the AI Overview as Google's own speech rather than a neutral aggregation of third-party results. Germany's media regulator (ZAK) followed on 14 Jul 2026, ruling that Google's AI Overviews and Perplexity's answers operate as publisher content — not neutral conduits — stripping them of the EU Digital Services Act's standard platform liability exemption; the first such media-law ruling worldwide ([Tech Times](https://www.techtimes.com/articles/320790/20260716/germany-strips-ai-search-its-eu-liability-shield-worlds-first-media-ruling.htm); [The Decoder](https://the-decoder.com/germany-puts-googles-ai-overviews-and-perplexity-under-media-law-in-first-of-its-kind-ruling/)). No equivalent ruling in Portugal/EU-wide yet — treat as an early signal for regulated-industry clients (fintech, health, legal), not as settled EU law.
+**Germany, first concrete rulings (2026).** Unlike the still-pending US case above, Germany has produced atual decisions. The Munich Regional Court ruled (28 May 2026) that Google is directly liable for a false claim an AI Overview generated about two Munich-based publishers, treating the AI Overview as Google's own speech rather than a neutral aggregation of third-party results. Germany's media regulator (ZAK) followed on 14 Jul 2026, ruling that Google's AI Overviews and Perplexity's answers operate as publisher content: not neutral conduits: stripping them of the EU Digital Services Act's standard platform liability exemption; the first such media-law ruling worldwide ([Tech Times](https://www.techtimes.com/articles/320790/20260716/germany-strips-ai-search-its-eu-liability-shield-worlds-first-media-ruling.htm); [The Decoder](https://the-decoder.com/germany-puts-googles-ai-overviews-and-perplexity-under-media-law-in-first-of-its-kind-ruling/)). No equivalent ruling in Portugal/EU-wide yet: treat as an early signal for regulated-industry clients (fintech, health, legal), not as settled EU law.
 
 Practical mitigation:
 1. Monitor brand mentions in LLM outputs at regular intervals (monthly minimum; weekly for high-profile clients).
@@ -358,14 +358,14 @@ The model may attribute a claim to the brand that the brand never made. Monitori
 
 ### Google spam policies apply to AI Overviews / AI Mode (Jun 2026)
 
-Google confirmed its existing spam policies (link schemes, cloaking, scaled content abuse, etc.) apply to AI Overviews and AI Mode surfaces, not just classic organic results, with an explicit warning against manipulating citations or paying for placement in AI-generated answers ([Search Engine Land](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298), 3 Jun 2026). No enforcement case publicly documented yet — treat as a policy statement, not evidence of active penalization mechanics for AI surfaces specifically.
+Google confirmed its existing spam policies (link schemes, cloaking, scaled content abuse, etc.) apply to AI Overviews and AI Mode surfaces, not just classic organic results, with an explicit warning against manipulating citations or paying for placement in AI-generated answers ([Search Engine Land](https://searchengineland.com/google-search-console-ai-performance-reports-and-controls-to-block-your-content-in-ai-responses-479298), 3 Jun 2026). No enforcement case publicly documented yet: treat as a policy statement, not evidence of active penalization mechanics for AI surfaces specifically.
 
-**What to say to clients:** "citation hacking" or link-scheme tactics adapted for AI search carry the same penalty risk as classic organic spam — a reason to stay on white-hat, content-structure-first GEO tactics rather than manipulation shortcuts.
+**What to say to clients:** "citation hacking" or link-scheme tactics adapted for AI search carry the same penalty risk as classic organic spam: a reason to stay on white-hat, content-structure-first GEO tactics rather than manipulation shortcuts.
 
 ---
 
 ## 10. Maintenance
 
-This file is updated on substantive change to the field, not on a schedule. The `daily-agent/news-feed.md` carries the running record of changes — consult both when answering "what's new?" questions. When the news-feed accumulates a material shift (e.g. a new crawler family from a major vendor, a Google announcement on AIO mechanics, a peer-reviewed paper that overturns Aggarwal), this file is updated in a single commit with the source citation.
+This file is updated on substantive change to the field, not on a schedule. The `daily-agent/news-feed.md` carries the running record of changes: consult both when answering "what's new?" questions. When the news-feed accumulates a material shift (e.g. a new crawler family from a major vendor, a Google announcement on AIO mechanics, a peer-reviewed paper that overturns Aggarwal), this file is updated in a single commit with the source citation.
 
 Maintained for: destaque.ai. Last refresh: 11 Aug 2026.

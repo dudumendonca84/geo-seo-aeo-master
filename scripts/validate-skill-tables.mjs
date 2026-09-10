@@ -232,30 +232,38 @@ const countTableRows = (section) =>
 
 let allOk = true;
 
-// --- Contrato editorial: o que o cliente lê não leva travessões nem "canónico"
+// --- Contrato editorial: nada do que a skill escreve leva travessões nem "canónico"
 // (Tracker CLAUDE.md, regras 8 e 11; pedido do founder a 25 Ago e 9 Set 2026).
+// Alargado à skill inteira a 10 Set 2026. Ficam de fora só os registos diários
+// (news-feed, execution-log, drafts/), que são histórico e não copy.
 {
-  const name = "Contrato editorial · blocos client-facing";
-  const alvos = [];
-  const skill = read(`${SKILL}/SKILL.md`) ?? "";
-  const metodo = skill.slice(Math.max(0, skill.indexOf("## Deck Builder method")));
-  alvos.push(["SKILL.md § Deck Builder method", metodo]);
-  const pb = read(`${SKILL}/references/engine_playbooks.md`) ?? "";
-  const a = pb.indexOf("## Deck Builder/Tracker playbooks\n");
-  const b = pb.indexOf("## Deck Builder/Tracker playbooks (EN)");
-  alvos.push(["engine_playbooks.md (bloco PT)", a >= 0 && b > a ? pb.slice(a, b) : ""]);
-  alvos.push(["narrative_templates.md", read(`${SKILL}/references/narrative_templates.md`) ?? ""]);
-  alvos.push(["gap_action_mapping.md", read(`${SKILL}/references/gap_action_mapping.md`) ?? ""]);
+  const name = "Contrato editorial · skill inteira";
+  const { readdirSync, statSync } = await import("node:fs");
+  const ficheiros = [];
+  const walk = (dir) => {
+    for (const nome of readdirSync(dir)) {
+      const p = `${dir}/${nome}`;
+      if (statSync(p).isDirectory()) walk(p);
+      else if (nome.endsWith(".md") && !/news-feed\.md$|execution-log\.md$/.test(nome) && !p.includes("/drafts/")) ficheiros.push(p);
+    }
+  };
+  walk(SKILL);
+  ficheiros.push("INTERFACES.md");
   const faltas = [];
-  for (const [rotulo, texto] of alvos) {
-    const linhas = texto.split("\n");
-    linhas.forEach((l, i) => {
-      if (l.includes("—")) faltas.push(`${rotulo}:${i + 1} travessão`);
-      if (/canónic/i.test(l)) faltas.push(`${rotulo}:${i + 1} "canónico"`);
+  for (const f of ficheiros) {
+    const texto = read(f) ?? "";
+    let emCodigo = false;
+    texto.split("\n").forEach((l, i) => {
+      if (l.trim().startsWith("```")) { emCodigo = !emCodigo; return; }
+      if (emCodigo) return;
+      const semCodigo = l.replace(/`[^`]*`/g, "");
+      if (semCodigo.includes("—")) faltas.push(`${f}:${i + 1} travessão`);
+      if (/canónic/i.test(semCodigo)) faltas.push(`${f}:${i + 1} "canónico"`);
     });
   }
-  check(name, faltas.length === 0, faltas.length === 0 ? "sem travessões nem \"canónico\"" : faltas.slice(0, 8).join("; "));
+  check(name, faltas.length === 0, faltas.length === 0 ? `sem travessões nem "canónico" em ${ficheiros.length} ficheiros` : `${faltas.length}: ` + faltas.slice(0, 6).join("; "));
 }
+
 
 for (const r of results) {
   console.log(`${r.ok ? "✓" : "✗"} ${r.name} — ${r.detail}`);

@@ -1,4 +1,4 @@
-# Search modes — knowledge vs augmented
+# Search modes: knowledge vs augmented
 
 SINAL audits every prompt **twice** per engine. The two queries are physically separate API calls and produce two distinct measurements that must be reported side-by-side, never blended.
 
@@ -12,10 +12,10 @@ Last refresh: **28 Aug 2026** (Mistral augmented surface corrected, then measure
 
 A B2B SaaS brand has two distinct exposures to large language models:
 
-1. **What the model "knows" without searching.** Reflects training-corpus penetration. Slow to move — measured in months. Important because *some* user surfaces still run training-only (offline assistants, embedded copilots without browsing, older API integrations, mobile keyboards).
-2. **What the model cites when it actually searches.** Reflects current crawlable web presence. Fast to move — measured in days. Important because *most* consumer surfaces today (ChatGPT browse, Gemini grounding, Perplexity, Copilot, Claude with web tool) put the model in this mode by default.
+1. **What the model "knows" without searching.** Reflects training-corpus penetration. Slow to move: measured in months. Important because *some* user surfaces still run training-only (offline assistants, embedded copilots without browsing, older API integrations, mobile keyboards).
+2. **What the model cites when it actually searches.** Reflects current crawlable web presence. Fast to move: measured in days. Important because *most* consumer surfaces today (ChatGPT browse, Gemini grounding, Perplexity, Copilot, Claude with web tool) put the model in this mode by default.
 
-A single number conflating the two is a lie. A brand can be **invisible in training but well-cited via search** (recent launch, strong technical content, weak entity foundation) or **strong in training but poorly cited via search** (well-known legacy brand whose site no longer indexes well). The editorial direction is opposite in each case — and `gap_action_mapping.md` selects different patterns accordingly.
+A single number conflating the two is a lie. A brand can be **invisible in training but well-cited via search** (recent launch, strong technical content, weak entity foundation) or **strong in training but poorly cited via search** (well-known legacy brand whose site no longer indexes well). The editorial direction is opposite in each case: and `gap_action_mapping.md` selects different patterns accordingly.
 
 This is why SINAL formalises two modes and persists them separately. The Profound / Peec convention is the same; we adopt it.
 
@@ -31,7 +31,7 @@ Metric naming: `knowledge_cr` (citation rate), `knowledge_sov` (share of voice),
 
 ### `augmented`
 
-The engine is called with its **native search / grounding feature enabled** (see per-engine table below). Output is generated from a tool-augmented response — the engine retrieves live web context and weaves it into the answer. Variance week-on-week reflects the open web's volatility, not the model.
+The engine is called with its **native search / grounding feature enabled** (see per-engine table below). Output is generated from a tool-augmented response: the engine retrieves live web context and weaves it into the answer. Variance week-on-week reflects the open web's volatility, not the model.
 
 Metric naming: `augmented_cr`, `augmented_sov`, `augmented_position`.
 
@@ -39,21 +39,21 @@ Metric naming: `augmented_cr`, `augmented_sov`, `augmented_position`.
 
 ## Per-engine augmentation feature
 
-Single source of truth for what consumers must enable to put each engine into `augmented` mode. The parse anchor is the H2 above; the table headers below are part of the contract — do not rename.
+Single source of truth for what consumers must enable to put each engine into `augmented` mode. The parse anchor is the H2 above; the table headers below are part of the contract: do not rename.
 
 | Deck engine | Vendor    | augmented mode  | API surface (May/Jun 2026)                                                                 | Notes |
 |-------------|-----------|-----------------|--------------------------------------------------------------------------------------------|-------|
 | `chatgpt`   | OpenAI    | `web_search`    | Responses API, `tools: [{ type: "web_search" }]`                                           | Native since Apr 2025; recommended over the older `browsing` plugin path. |
 | `claude`    | Anthropic | `web_search`    | Messages API, `tools: [{ type: "web_search_20260209", name: "web_search" }]`               | Current tool version (adds dynamic filtering); the older `web_search_20250305` still works. On `claude-sonnet-4-6` / `claude-opus-4-7`+; Haiku family limited. |
 | `gemini`    | Google    | `google_search` | `generateContent` with `tools: [{ google_search: {} }]`                                    | Returns `groundingMetadata` with citation URIs in the response. |
-| `grok`      | xAI       | `web_search`    | Responses API (`/v1/responses`), `tools: [{ type: "web_search" }]`                          | **Corrected 10 Jun 2026.** The old Live Search `search_parameters: { mode: "on" }` on chat completions was **retired 2026-01-12 (HTTP 410)**; use the Responses API `web_search` tool. Scope via `tools[].filters` (allowed/excluded domains). Source: xAI Live Search docs (field finding) — confirm against xAI's live docs before relying. |
+| `grok`      | xAI       | `web_search`    | Responses API (`/v1/responses`), `tools: [{ type: "web_search" }]`                          | **Corrected 10 Jun 2026.** The old Live Search `search_parameters: { mode: "on" }` on chat completions was **retired 2026-01-12 (HTTP 410)**; use the Responses API `web_search` tool. Scope via `tools[].filters` (allowed/excluded domains). Source: xAI Live Search docs (field finding): confirm against xAI's live docs before relying. |
 | `perplexity`| Perplexity| n/a (always on) | `sonar*` models are search-grounded by definition                                          | `augmented` is the only mode; `knowledge` is **not measurable**. Consumers should skip Perplexity for the knowledge half of the run. |
 | `copilot`   | Microsoft | n/a (always on) | Standalone Copilot surface, read as a consumption surface (SerpApi `bing_copilot`)          | **Consumption surface, not a model.** Copilot always searches the web; there is no knowledge mode to measure. Running both halves issues the *same* request twice: in a 35-prompt audit, 29 of 35 pairs came back byte-identical and 34 of 35 agreed on the citation (CUF, Aug 2026). The Azure OpenAI `data_sources` path is a different integration and is **not** what the Tracker measures. |
 | `google_aio`| Google    | n/a (always on) | AI Overviews block inside the Google SERP (DataForSEO, SerpApi fallback)                    | Consumption surface. Absence of the block is data, not failure. |
 | `google_ai_mode`| Google| n/a (always on) | Google AI Mode (DataForSEO, SerpApi fallback)                                              | Consumption surface. |
 | `copilot_bing`| Microsoft| n/a (always on)| Copilot block inside the Bing SERP (DataForSEO)                                             | Consumption surface, distinct from standalone `copilot`; never sum the two. **PAUSED in the Tracker since 07 Aug 2026** (`PAUSED_SURFACES`): DataForSEO returned an empty block in 65 of 65 answers; the row stays so the history keeps its label. Re-enable only when the smoke returns real content. |
-| `mistral`   | Mistral   | `web_search`, off (capped) | **Conversations API**, `beta.conversations.start` with `tools: [{ type: "web_search" }]` — NOT `chat/completions` | **Corrected 28 Aug 2026, then measured the same day.** The row said "not supported", which was true only of the chat-completions endpoint. The tool lives on the Conversations API (`ConversationRequest.tools` accepts `WebSearchTool`) and citations come back as `tool_reference` chunks with `title` and `url`. **The tool carries its own quota, invisible in the account console and absent from the docs:** the response headers declare `x-ratelimit-limit-web-search-day: 20` and `x-ratelimit-limit-web-search-minute: 3`. Twenty searches a day, three a minute, separate from the model's token and request limits, and the account had credit left when it refused. Read the headers, do not infer the ceiling from behaviour. **The mode column reads `off` while the cap stands**: the tool exists, so "not supported" would be false, and twenty searches a day cannot fill a 50-prompt weekly audit, so leaving it on ships a half-measured column. Consumers must treat `off` / `capped` in this column exactly as they treat "not supported": run the knowledge half only. Revisit when the vendor raises the ceiling. |
-| `deepseek`  | DeepSeek  | not supported   | No first-party search tool in the API as of Jun 2026                                       | Same — skip the augmented half. |
+| `mistral`   | Mistral   | `web_search`, off (capped) | **Conversations API**, `beta.conversations.start` with `tools: [{ type: "web_search" }]` - NOT `chat/completions` | **Corrected 28 Aug 2026, then measured the same day.** The row said "not supported", which was true only of the chat-completions endpoint. The tool lives on the Conversations API (`ConversationRequest.tools` accepts `WebSearchTool`) and citations come back as `tool_reference` chunks with `title` and `url`. **The tool carries its own quota, invisible in the account console and absent from the docs:** the response headers declare `x-ratelimit-limit-web-search-day: 20` and `x-ratelimit-limit-web-search-minute: 3`. Twenty searches a day, three a minute, separate from the model's token and request limits, and the account had credit left when it refused. Read the headers, do not infer the ceiling from behaviour. **The mode column reads `off` while the cap stands**: the tool exists, so "not supported" would be false, and twenty searches a day cannot fill a 50-prompt weekly audit, so leaving it on ships a half-measured column. Consumers must treat `off` / `capped` in this column exactly as they treat "not supported": run the knowledge half only. Revisit when the vendor raises the ceiling. |
+| `deepseek`  | DeepSeek  | not supported   | No first-party search tool in the API as of Jun 2026                                       | Same: skip the augmented half. |
 | `meta_ai`   | Meta      | n/a (observed)  | Meta AI in WhatsApp/Instagram/meta.ai, recorded from a real session (`ui_observations` → `audit_responses`, engine `meta_ai`, `augmented`, model `meta.ai`) | **Observed surface, not an API call.** Measured by the Tracker since 27 Aug 2026 through the observatory bridge; there is no knowledge half. Never counted as an extra engine in public copy: it is the assistant, `llama` below is the model. |
 | `llama`     | Meta      | not supported   | Llama 4 via Groq/Together/Fireworks/Bedrock, OpenAI-compatible; no first-party search        | Same, skip the augmented half. **This is the model, not the assistant**: Meta AI in WhatsApp/Instagram/meta.ai has no public API and no SERP provider exposes it, so it is not measurable. Meta's own Llama API shut down 6 Jul 2026. |
 
@@ -72,7 +72,7 @@ Engines marked **not supported** still participate in `knowledge` mode. Consumer
 1. **For each prompt × engine, perform up to two API calls.** Skip the augmented call if the table marks the engine as not supported. Skip the knowledge call for Perplexity (always-on search).
 2. **Persist both responses separately.** Schema must carry a `search_mode` column with values `knowledge` or `augmented`. Composite uniqueness keys must include it.
 3. **Compute metrics per mode.** `citation_rate`, `share_of_voice`, `position_avg` exist twice in every audit summary: once with the `knowledge_` prefix, once with `augmented_`.
-4. **Report both in client-facing surfaces.** The Tracker dashboard and the deck cover slide both show the two side-by-side. Editorial copy should reference the gap when material (e.g., "knowledge CR 14% vs augmented 38% — entity recall is the bottleneck, not web presence").
+4. **Report both in client-facing surfaces.** The Tracker dashboard and the deck cover slide both show the two side-by-side. Editorial copy should reference the gap when material (e.g., "knowledge CR 14% vs augmented 38%: entity recall is the bottleneck, not web presence").
 5. **Cost accounting.** Augmented mode is materially more expensive (additional tool calls, longer outputs). Budget at **2-3×** the knowledge-mode token cost as a planning estimate; measure for real.
 
 ---

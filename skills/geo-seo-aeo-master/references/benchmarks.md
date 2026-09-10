@@ -1,10 +1,10 @@
-# Benchmarks — May 2026
+# Benchmarks: May 2026
 
 Public studies with hard numbers and verifiable sources. Each entry: source / URL / date / sample / finding / caveat. Vendor-published data is flagged. **No fabricated statistics.** Where a number is widely circulated but the original methodology is missing, it is flagged in §11 ("stats not to cite").
 
 ---
 
-## 1. Pew Research — click behaviour with AI Overviews
+## 1. Pew Research: click behaviour with AI Overviews
 
 - **URL.** https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/
 - **Date.** 22 July 2025.
@@ -16,31 +16,31 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
   - 26% ended their session after seeing an AI summary vs 16% without.
 - **Caveat.** US-only, single-month panel, browsing telemetry (not server-side). Google publicly disputed the methodology ([PPC.land coverage](https://ppc.land/google-disputes-pew-study-showing-ai-overviews-reduce-clicks-by-half/)).
 
-## 2. Ahrefs — AI Overviews CTR impact
+## 2. Ahrefs: AI Overviews CTR impact
 
 - **URL.** https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/
 - **Date.** Updated Feb 2026 (original March 2025 at [ahrefs.com/blog/ai-overviews-reduce-clicks](https://ahrefs.com/blog/ai-overviews-reduce-clicks/)).
 - **Sample.** 300,000 keywords (150k with AIO, 150k informational without); GSC aggregated CTR.
-- **Finding.** Top-ranking page CTR is **58% lower** when an AIO is present (Feb 2026 update). The earlier March 2025 version reported **34.5%** — the methodology is similar; the gap reflects deeper AIO penetration.
+- **Finding.** Top-ranking page CTR is **58% lower** when an AIO is present (Feb 2026 update). The earlier March 2025 version reported **34.5%**: the methodology is similar; the gap reflects deeper AIO penetration.
 - **Caveat.** GSC's May 2025 – April 2026 impression over-reporting affects the denominator. Ahrefs has not republished post-correction.
 
-## 3. Ahrefs — brand mention vs backlink correlation
+## 3. Ahrefs: brand mention vs backlink correlation
 
 - **URL.** https://ahrefs.com/blog/llm-citations/
 - **Date.** 2025.
 - **Sample.** ~75,000 brands.
 - **Finding.** Brand mentions correlate with AI Overview presence ~**3:1** over backlinks. Branded anchor text: **r = 0.527**. Branded search volume: **r = 0.334**. Both above domain rating.
-- **Caveat.** Correlational. Ahrefs' products benefit commercially from "branded signal matters" narrative — read as directional.
+- **Caveat.** Correlational. Ahrefs' products benefit commercially from "branded signal matters" narrative: read as directional.
 
-## 4. Ahrefs — schema null result (May 2026)
+## 4. Ahrefs: schema null result (May 2026)
 
 - **URL.** https://ahrefs.com/blog/schema-ai-citations/
 - **Date.** Published May 2026.
 - **Sample.** 1,885 pages with newly-added schema vs 4,000 controls. Aug 2025 – Mar 2026.
 - **Finding.** No meaningful citation uplift; **AI Overviews showed a small but statistically significant 4.6% decline** for schema-added pages.
-- **Caveat.** Test pages were already heavily cited. Schema may still matter for cold-start pages and for Bing/Copilot (per Microsoft's own statements). Do not over-generalise to "schema doesn't work" — see `frameworks.md` §3 for the nuance.
+- **Caveat.** Test pages were already heavily cited. Schema may still matter for cold-start pages and for Bing/Copilot (per Microsoft's own statements). Do not over-generalise to "schema doesn't work": see `frameworks.md` §3 for the nuance.
 
-## 5. BrightEdge — AI Overview presence by vertical
+## 5. BrightEdge: AI Overview presence by vertical
 
 - **URL.** https://www.brightedge.com/resources/weekly-ai-search-insights/ai-overviews-one-year-presence-size-citing (see also [ALM Corp coverage](https://almcorp.com/blog/google-ai-overviews-surge-9-industries/)).
 - **Date.** Tracking mid-2025 to early 2026.
@@ -53,7 +53,7 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
   - Healthcare: 72% → 88%.
 - **Caveat.** BrightEdge query universe biased toward client industries; "presence" is binary, not weighted by query volume. Vendor data.
 
-## 6. BrightEdge — citation source composition
+## 6. BrightEdge: citation source composition
 
 - **URL.** https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio
 - **Date.** Late 2025.
@@ -61,7 +61,7 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
 - **Caveat.** Vendor data, methodology summary only. Specific keyword set not published.
 - **Use.** The single most important number in this file for client conversations. Classic SEO still feeds AIO. GEO is an *extension* of SEO, not a substitute.
 
-## 7. Semrush — ChatGPT clickstream traffic
+## 7. Semrush: ChatGPT clickstream traffic
 
 - **URL.** https://www.semrush.com/blog/chatgpt-search-insights/ (release: https://www.semrush.com/news/379285-new-semrush-study-reveals-chatgpt-search-trends-insights-from-80-million-clickstream-records/)
 - **Date.** Updated Feb 2026 (covering Oct 2024 – Feb 2026).
@@ -73,15 +73,15 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
   - ChatGPT enables web search on **34.5%** of queries (Feb 2026) vs 46% in late 2024.
 - **Caveat.** US-only panel, clickstream under-counts mobile and signed-out users.
 
-## 8. Similarweb — AI referral volumes (top 1000 sites)
+## 8. Similarweb: AI referral volumes (top 1000 sites)
 
-- **URL.** https://techcrunch.com/2025/07/25/ai-referrals-to-top-websites-were-up-357-year-over-year-in-june-reaching-1-13b/ — Similarweb industry data
+- **URL.** https://techcrunch.com/2025/07/25/ai-referrals-to-top-websites-were-up-357-year-over-year-in-june-reaching-1-13b/ - Similarweb industry data
 - **Date.** June 2025 data, published July 2025.
 - **Finding.** AI platforms generated **1.13 billion** referral visits to the top 1,000 websites in June 2025, **+357% YoY**.
-- **Context.** Google search referred ~191 billion in the same period — AI ≈ **0.6% of Google's volume**.
+- **Context.** Google search referred ~191 billion in the same period: AI ≈ **0.6% of Google's volume**.
 - **Caveat.** "Top 1,000 sites" is a long-tail blind spot. Volumes extrapolated from Similarweb's panel.
 
-## 9. Similarweb — AI chatbot market share
+## 9. Similarweb: AI chatbot market share
 
 - **URL.** https://www.similarweb.com/ (snapshot data, secondary coverage [Vertu](https://vertu.com/lifestyle/ai-chatbot-market-share-2026-chatgpt-drops-to-68-as-google-gemini-surges-to-18-2)).
 - **Date.** 16 January 2026 snapshot.
@@ -90,7 +90,7 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
   - Gemini **22%**, up from 5.3%.
 - **Caveat.** Traffic share ≠ active-user share. In-app usage not captured.
 
-## 10. NetElixir — generative AI ecommerce traffic
+## 10. NetElixir: generative AI ecommerce traffic
 
 - **URL.** https://www.netelixir.com/post/beyond-the-hype-the-real-roi-of-generative-ai-in-the-future-of-search ([Digital Commerce 360 coverage](https://www.digitalcommerce360.com/2026/01/13/generative-ai-online-holiday-shopping-traffic-2025/))
 - **Date.** Holiday 2025 data, published Jan 2026.
@@ -102,9 +102,9 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
   - Nov-Dec 2025 AI referrals **+693% YoY**.
 - **Caveat.** Vendor data from a small client base; off a very low 2024 baseline, so percentages are dramatic but absolute volumes remain small relative to organic.
 
-## 11. Aggarwal et al. — Princeton GEO paper (academic foundation)
+## 11. Aggarwal et al.: Princeton GEO paper (academic foundation)
 
-- **URL.** https://arxiv.org/abs/2311.09735 — KDD 2024: https://dl.acm.org/doi/10.1145/3637528.3671900
+- **URL.** https://arxiv.org/abs/2311.09735 - KDD 2024: https://dl.acm.org/doi/10.1145/3637528.3671900
 - **Date.** First posted Nov 2023; KDD 2024; v3 revisions through 2024.
 - **Sample.** GEO-bench, 10,000 queries across 8 domains.
 - **Findings.** Best methods (Statistics Addition, Quotation Addition, Cite Sources) lifted **Position-Adjusted Word Count** by up to **40.6%** and **Subjective Impression** by **~28%** over baseline. Keyword Stuffing was neutral-to-negative.
@@ -112,7 +112,7 @@ Public studies with hard numbers and verifiable sources. Each entry: source / UR
 
 See `frameworks.md` §6 for the full 9-method ranking and follow-up papers.
 
-## 12. Pew Research — ChatGPT adoption
+## 12. Pew Research: ChatGPT adoption
 
 - **URL.** https://www.pewresearch.org/short-reads/2025/06/25/34-of-us-adults-have-used-chatgpt-about-double-the-share-in-2023/
 - **Date.** 25 June 2025.
@@ -122,7 +122,7 @@ See `frameworks.md` §6 for the full 9-method ranking and follow-up papers.
   - Work use among employed adults: **28%** (up 20 points).
 - **Caveat.** US-only; "ever used" is a low bar.
 
-## 13. Seer Interactive — AIO CTR recovery study
+## 13. Seer Interactive: AIO CTR recovery study
 
 - **URL.** https://searchengineland.com/google-ai-overviews-ctr-recovery-study-475566 (original: [Seer Interactive](https://www.seerinteractive.com/insights/how-ai-overviews-are-impacting-ctr-5-initial-takeaways))
 - **Date.** Jan 2025 – Feb 2026.
@@ -133,7 +133,7 @@ See `frameworks.md` §6 for the full 9-method ranking and follow-up papers.
   - Being cited inside AIO: **+120% clicks per impression** vs same SERP uncited.
 - **Caveat.** Seer is an agency selling related services. This is the strongest publicly available longitudinal dataset on AIO CTR effects but not third-party-audited.
 
-## 14. Profound — citation patterns (680M citations)
+## 14. Profound: citation patterns (680M citations)
 
 - **URL.** https://www.tryprofound.com/blog/ai-platform-citation-patterns
 - **Date.** Covers Aug 2024 – Oct 2025.
@@ -143,11 +143,11 @@ See `frameworks.md` §6 for the full 9-method ranking and follow-up papers.
   - Perplexity: ~21.9 citations/answer.
   - Wikipedia ~47.9% of top citations on ChatGPT.
   - Reddit ~46.7% of top citations on Perplexity; ~14% YouTube.
-  - **Only ~11% of cited domains appear in both ChatGPT and Perplexity** — cross-engine portability is poor.
+  - **Only ~11% of cited domains appear in both ChatGPT and Perplexity**: cross-engine portability is poor.
   - Pages mentioning 15+ recognised entities are cited ~**4.8×** more often.
 - **Caveat.** Vendor data. Profound benefits commercially from "AI visibility is measurable and complex" narrative.
 
-## 15. Bing Webmaster Tools — AI Performance dashboard
+## 15. Bing Webmaster Tools: AI Performance dashboard
 
 - **URL.** https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview
 - **Date launched.** 9 February 2026 (public preview).
@@ -163,22 +163,22 @@ See `frameworks.md` §6 for the full 9-method ranking and follow-up papers.
 
 | Paper | Finding |
 |---|---|
-| [arXiv 2509.08919](https://arxiv.org/abs/2509.08919) — Chen, Wang et al., "Generative Engine Optimization: How to Dominate AI Search" (Sept 2025) | Systematic bias **toward earned media over brand-owned sources** in AI Search systems. |
-| [arXiv 2604.25707](https://arxiv.org/html/2604.25707v2) — "From Citation Selection to Citation Absorption" | High-influence pages contain dense, structured "evidence containers" reusable across multiple answer segments. Distinguishes *being cited* from *being absorbed into the generated text*. |
-| [arXiv 2510.11560](https://arxiv.org/html/2510.11560v1) — "Characterizing Web Search in The Age of Generative AI" | Organic Google results stable (~10 links/query); generative rankings fluctuate significantly across model and index updates. |
-| [arXiv 2507.05301](https://arxiv.org/html/2507.05301v1) — "News Source Citing Patterns in AI Search Systems" | Comparative citation behavior across ChatGPT, Copilot, Perplexity, Google AI for news sources. |
-| [arXiv 2602.06718](https://arxiv.org/abs/2602.06718) — "GhostCite" | Quantifies citation hallucination rates across 13 SOTA LLMs. |
-| [arXiv 2607.14035](https://arxiv.org/html/2607.14035v1) — "Optimizing Visibility in Generative Engines: A Critical Survey of GEO (2023–2026)" (Jul 2026) | Reviews 45 studies; frames GEO as a multi-stage, partially-observable pipeline (activation, crawl/index, retrieval, rerank, citation, prominence, factual absorption, fidelity, user behaviour) rather than a single ranking task — the foundational GEO paper's gains are conditional on the source already being present in a fixed context, not universal. |
+| [arXiv 2509.08919](https://arxiv.org/abs/2509.08919) - Chen, Wang et al., "Generative Engine Optimization: How to Dominate AI Search" (Sept 2025) | Systematic bias **toward earned media over brand-owned sources** in AI Search systems. |
+| [arXiv 2604.25707](https://arxiv.org/html/2604.25707v2) - "From Citation Selection to Citation Absorption" | High-influence pages contain dense, structured "evidence containers" reusable across multiple answer segments. Distinguishes *being cited* from *being absorbed into the generated text*. |
+| [arXiv 2510.11560](https://arxiv.org/html/2510.11560v1) - "Characterizing Web Search in The Age of Generative AI" | Organic Google results stable (~10 links/query); generative rankings fluctuate significantly across model and index updates. |
+| [arXiv 2507.05301](https://arxiv.org/html/2507.05301v1) - "News Source Citing Patterns in AI Search Systems" | Comparative citation behavior across ChatGPT, Copilot, Perplexity, Google AI for news sources. |
+| [arXiv 2602.06718](https://arxiv.org/abs/2602.06718) - "GhostCite" | Quantifies citation hallucination rates across 13 SOTA LLMs. |
+| [arXiv 2607.14035](https://arxiv.org/html/2607.14035v1) - "Optimizing Visibility in Generative Engines: A Critical Survey of GEO (2023–2026)" (Jul 2026) | Reviews 45 studies; frames GEO as a multi-stage, partially-observable pipeline (activation, crawl/index, retrieval, rerank, citation, prominence, factual absorption, fidelity, user behaviour) rather than a single ranking task: the foundational GEO paper's gains are conditional on the source already being present in a fixed context, not universal. |
 
 ---
 
-## B2B SaaS GEO — honest inventory of case studies
+## B2B SaaS GEO: honest inventory of case studies
 
 Public, controlled case studies are **scarce**. What exists is mostly vendor-published.
 
 - **HubSpot.** Semrush's AI Visibility Index places HubSpot third in Business & Professional Services at **15.4% SoV**, behind Google (23.2%) and Zoho (16.7%) ([MarTech](https://martech.org/b2b-saas-leader-hubspot-wins-ai-visibility/)). Methodology disclosed; HubSpot did not commission. Observational, not a controlled intervention study.
 
-- **Grow and Convert — survey software client.** Documents a "Topic-Based GEO" approach reaching "100+ high-buying-intent topics" surfaced in AI search ([source](https://www.growandconvert.com/ai/b2b-saas-ai-visibility-case-study/)). **No before/after metrics**, no third-party verification. Vendor self-publishing — conflict of interest.
+- **Grow and Convert: survey software client.** Documents a "Topic-Based GEO" approach reaching "100+ high-buying-intent topics" surfaced in AI search ([source](https://www.growandconvert.com/ai/b2b-saas-ai-visibility-case-study/)). **No before/after metrics**, no third-party verification. Vendor self-publishing: conflict of interest.
 
 - **Seer Interactive (above, §13).** The strongest publicly available dataset on AIO CTR effects. Seer is an agency selling related services.
 
@@ -188,7 +188,7 @@ As of May 2026 there is **no canonical, third-party-audited B2B SaaS GEO case st
 
 ---
 
-## 17. Portugal / PT-PT — documented evidence gap
+## 17. Portugal / PT-PT: documented evidence gap
 
 There is no publicly available study with hard numbers for:
 - AIO presence rates on PT-PT queries.
@@ -202,7 +202,7 @@ The closest proxies are Peec AI's published material (positioned as the European
 
 ---
 
-## 18. Stats commonly cited but NOT independently verified — DO NOT USE
+## 18. Stats commonly cited but NOT independently verified: DO NOT USE
 
 These appear in vendor blogs and listicles without primary methodology. Do not cite them in client deliverables.
 
@@ -210,40 +210,40 @@ These appear in vendor blogs and listicles without primary methodology. Do not c
 |---|---|---|
 | "AI Overviews market is US$365.4M in 2026 with 42.9% CAGR" | Multiple GEO listicles (e.g. [omnibound.ai](https://www.omnibound.ai/blog/generative-engine-optimization-statistics)) | No primary methodology, no sample, no commissioning body |
 | "AI-referred visitors convert at 14.2% vs Google's 2.8%" | Secondary blogs (e.g. [aperitifagency](https://aperitifagency.com.au/blog/how-to-track-ai-referral-traffic-in-ga4/)) | Original measurement source unclear; ratio implausibly high without context |
-| "BrightEdge: Google Search usage up 49% one year into AI Overviews" | [BrightEdge press release](https://www.brightedge.com/news/press-releases/one-year-google-ai-overviews-brightedge-data-reveals-google-search-usage) | PR release exists, methodology behind figure undisclosed — vendor claim |
-| "FAQ schema gives 28-40% more citations" | Many "AEO 101" posts | No controlled study — extrapolated from Aggarwal et al. without disclosure |
+| "BrightEdge: Google Search usage up 49% one year into AI Overviews" | [BrightEdge press release](https://www.brightedge.com/news/press-releases/one-year-google-ai-overviews-brightedge-data-reveals-google-search-usage) | PR release exists, methodology behind figure undisclosed: vendor claim |
+| "FAQ schema gives 28-40% more citations" | Many "AEO 101" posts | No controlled study: extrapolated from Aggarwal et al. without disclosure |
 | "ChatGPT will overtake Google in 2026" | Listicles | Counterfactual; Similarweb shows Google referring ~191B/mo vs AI's ~1.13B (~170× more) |
 
 When confronted with such a stat by a client, the response is: *"That number circulates widely but lacks a primary methodology. Here is what we can verify instead: [cite §5, §7, §13 above]."*
 
 ---
 
-## 19. Clovion — AI brand recommendation churn after a follow-up question
+## 19. Clovion: AI brand recommendation churn after a follow-up question
 
 - **URL.** https://www.searchenginejournal.com/62-of-ai-brand-recommendations-vanish-after-one-buyer-question-new-clovion-data/581469/
 - **Date.** Published ~9 Jul 2026.
 - **Sample.** 69,120 multi-turn conversations across Claude, ChatGPT and Gemini, 36 B2B software/fintech categories. Opening question (e.g. "best CRM tools?") followed by one realistic buyer follow-up.
 - **Findings.**
   - Repeating the exact same question keeps ~90% of the original brand list intact.
-  - Adding one ordinary buyer detail ("for a small team") keeps only ~28% — **62% of the brands from the first answer are gone by the second answer**.
+  - Adding one ordinary buyer detail ("for a small team") keeps only ~28%: **62% of the brands from the first answer are gone by the second answer**.
   - "For a large enterprise" produces near-identical churn (~72% either way) vs ~10% for a verbatim repeat.
 - **Caveat.** Vendor-run study (Clovion sells AI visibility tracking); methodology not independently peer-reviewed. Directionally consistent with the general finding that single-prompt AI visibility snapshots are unstable (cf. §16 chunking/retrieval variance literature).
-- **Use.** Concrete number to justify tracking methodology built around realistic follow-up questions, not single-prompt snapshots — relevant to how destaque.ai should design AI-visibility audits for B2B SaaS clients.
+- **Use.** Concrete number to justify tracking methodology built around realistic follow-up questions, not single-prompt snapshots: relevant to how destaque.ai should design AI-visibility audits for B2B SaaS clients.
 
 ---
 
-## 20. Perplexity WANDR — research-agent grounding benchmark
+## 20. Perplexity WANDR: research-agent grounding benchmark
 
 - **URL.** https://research.perplexity.ai/articles/wandr-benchmark-evaluating-research-agents-that-must-search-wide-and-deep
 - **Date.** Published 14 Jul 2026. Open-sourced under Apache 2.0.
 - **Sample.** 500 research tasks requiring 170,495 source-verified evidence records; graded by re-fetching each cited page rather than against a static gold set.
-- **Findings.** The strongest system tested — Perplexity's own "Search as Code" agent (announced ~31 May 2026, see news-feed entry) — scores only **0.363 soft-F1 / 0.133 hard-F1**: full credit on roughly 1 in 7 submitted evidence records.
+- **Findings.** The strongest system tested: Perplexity's own "Search as Code" agent (announced ~31 May 2026, see news-feed entry): scores only **0.363 soft-F1 / 0.133 hard-F1**: full credit on roughly 1 in 7 submitted evidence records.
 - **Caveat.** Vendor-published (Perplexity benchmarking its own product), but notable for disclosing a weak result about itself rather than a favourable one; not independently peer-reviewed.
-- **Use.** Concrete, source-disclosed number for how far current agentic research/grounding still is from reliable evidence-backed synthesis — useful to temper client expectations about "AI citation accuracy" and to reinforce continuous multi-run tracking over single-snapshot audits.
+- **Use.** Concrete, source-disclosed number for how far current agentic research/grounding still is from reliable evidence-backed synthesis: useful to temper client expectations about "AI citation accuracy" and to reinforce continuous multi-run tracking over single-snapshot audits.
 
 ---
 
-## 21. YouGov — trust gap between AI assistants and search engines
+## 21. YouGov: trust gap between AI assistants and search engines
 
 - **URL.** https://yougov.com/en-us/reports/55071-us-websearch-ai-report-2026 ("Searching for answers: how AI is changing online discovery in 2026"); SEO framing via [Search Engine Journal](https://www.searchenginejournal.com/only-28-of-americans-trust-ai-search-and-that-gap-is-your-seo-opening/581913/) (15 Jul 2026).
 - **Date.** US fieldwork ~8 Jul 2026; part of a 19-market study with per-market cuts staggered through July 2026 (UK/India/Australia not yet reviewed here).
@@ -252,11 +252,11 @@ When confronted with such a stat by a client, the response is: *"That number cir
   - Only **28%** trust an AI assistant's answer, vs **70%** for a search engine and **76%** for a maps app.
   - Among respondents who do use AI in search, **22%** still click through to a supplied link vs **17%** who stop at the AI answer.
 - **Caveat.** US cut only; do not extrapolate the exact percentages to PT/EU markets without the corresponding country cut.
-- **Use.** Concrete trust-gap number showing the click-through behaviour has not disappeared even where AI answers are trusted less — supports selling "citation + click" presence rather than citation alone.
+- **Use.** Concrete trust-gap number showing the click-through behaviour has not disappeared even where AI answers are trusted less: supports selling "citation + click" presence rather than citation alone.
 
 ---
 
-## 22. DeltaV Digital — citation patterns by page type and industry
+## 22. DeltaV Digital: citation patterns by page type and industry
 
 - **URL.** https://www.deltavdigital.com/resources/reports/ai-citation-study/
 - **Date.** Data window 14 Apr–13 Jul 2026; DeltaV's first original GEO research release.
@@ -264,12 +264,12 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Findings.**
   - The page type that wins citations varies sharply by industry: listicles capture **61%** of citations for a B2B technology-services vertical, homepages **55%** for a local-services brand, program pages **53%** in higher education.
   - Comparison pages ("X vs Y") are cited **~45% more often per retrieval** than the dataset average, despite being rarely produced.
-- **Caveat.** Single agency's client portfolio via a single tracking tool (Peec AI) — not independently replicated, industry categories are the agency's own client mix, not a representative sample.
-- **Use.** Concrete, per-vertical evidence against applying one generic GEO content template to every client — corroborates the existing comparison-content recommendation in `gap_action_mapping.md` (Dimensão 2) rather than changing it.
+- **Caveat.** Single agency's client portfolio via a single tracking tool (Peec AI): not independently replicated, industry categories are the agency's own client mix, not a representative sample.
+- **Use.** Concrete, per-vertical evidence against applying one generic GEO content template to every client: corroborates the existing comparison-content recommendation in `gap_action_mapping.md` (Dimensão 2) rather than changing it.
 
 ---
 
-## 23. SE Ranking — Google AI Mode ad presence by commercial intent
+## 23. SE Ranking: Google AI Mode ad presence by commercial intent
 
 - **URL.** https://seranking.com/blog/google-ai-mode-ads/; secondary coverage via [Search Engine Land](https://searchengineland.com/google-ai-mode-ads-reach-queries-study-482475) (17 Jul 2026).
 - **Date.** Data collected 30 Jun 2026; published ~14 Jul 2026.
@@ -279,162 +279,162 @@ When confronted with such a stat by a client, the response is: *"That number cir
   - **71.1%** of ad-triggering responses showed two ads simultaneously; 28.9% showed one.
   - Ad presence scales with CPC: **24.33%** on sub-$2 keywords rising to **53.56%** at $10+.
   - Highest-ad vertical: Pets (**72.38%**); lowest: Healthcare (**2.64%**).
-- **Caveat.** Single-vendor study (SE Ranking), US-only, single snapshot day (30 Jun) — SE Ranking itself notes AI Mode results vary across sessions, so the true rate may be higher.
-- **Use.** Concrete, recent evidence that Google is monetizing AI Mode aggressively in high-CPC commercial categories — reinforces selling "citation + paid" presence to B2B SaaS clients rather than treating GEO/AI Mode visibility as a free replacement for paid search.
+- **Caveat.** Single-vendor study (SE Ranking), US-only, single snapshot day (30 Jun): SE Ranking itself notes AI Mode results vary across sessions, so the true rate may be higher.
+- **Use.** Concrete, recent evidence that Google is monetizing AI Mode aggressively in high-CPC commercial categories: reinforces selling "citation + paid" presence to B2B SaaS clients rather than treating GEO/AI Mode visibility as a free replacement for paid search.
 
 ---
 
-## 24. CITETRACE (Seo, Jeong, Kim, Jang, Lee) — structural citation failures in search-augmented LLMs
+## 24. CITETRACE (Seo, Jeong, Kim, Jang, Lee): structural citation failures in search-augmented LLMs
 
 - **URL.** https://arxiv.org/abs/2605.28565
-- **Date.** Submitted 27 May 2026 (arXiv 2605.28565) — gap recovery, not captured by this routine until 20 Jul 2026.
+- **Date.** Submitted 27 May 2026 (arXiv 2605.28565): gap recovery, not captured by this routine until 20 Jul 2026.
 - **Sample.** CITETRACE dataset: 11,200 real-world queries from 28 communities, paired with 112,000 responses from 10 models across 5 providers, yielding 761,495 evaluable citation pairs. Three-dimension scoring framework: intent-purpose alignment, source suitability, answer-source fidelity.
 - **Findings.** Systematic pattern named "Verified Misguidance" (VM): models cite real, accessible sources yet fail along one or more dimensions, producing a fidelity-suitability trade-off (faithful models select inappropriate sources and vice versa). **30.6%** of citations distort their source; **27.1%** originate from domain-inappropriate sources; at the response level, up to **90%** of users encounter at least one such citation.
 - **Caveat.** Pre-print, authors' own 3-dimension scoring methodology, no independent replication found yet.
-- **Use.** Strong quantitative evidence that citation presence ≠ citation fidelity — reinforces (does not replace) the existing distinction between "being cited" and "being represented accurately" already built into destaque.ai's audit approach. Does not introduce a new auditable per-site dimension; no scorecard change triggered.
+- **Use.** Strong quantitative evidence that citation presence ≠ citation fidelity: reinforces (does not replace) the existing distinction between "being cited" and "being represented accurately" already built into destaque.ai's audit approach. Does not introduce a new auditable per-site dimension; no scorecard change triggered.
 
 ---
 
-## 25. Capraro, Marcoccia & Quattrociocchi — AI advice suppresses willingness to say "I don't know"
+## 25. Capraro, Marcoccia & Quattrociocchi: AI advice suppresses willingness to say "I don't know"
 
 - **URL.** https://arxiv.org/abs/2607.13562
 - **Date.** Submitted 15 Jul 2026 (arXiv 2607.13562); covered by [The Register](https://www.theregister.com/ai-and-ml/2026/07/19/using-ai-makes-people-less-likely-to-admit-they-dont-know-something/5274567), 19 Jul 2026.
 - **Sample.** 5 experiments, 3,132 participants (4 preregistered, 1 direct replication); questions engineered so AI advice given was wrong (e.g. film trivia), isolating AI *use* from AI *accuracy*.
-- **Findings.** Mere access to AI advice — whether actively requested or just displayed — collapsed willingness to say "I don't know" from **44% to 3%**, dropped accuracy from **27% to 9%**, and raised confidence from **30% to 76%**. Monetary incentives for accuracy only partially recovered the effect (suspension of judgment: 3% → 8%; accuracy: 9% → 16%, still below the 27% baseline).
+- **Findings.** Mere access to AI advice: whether actively requested or just displayed: collapsed willingness to say "I don't know" from **44% to 3%**, dropped accuracy from **27% to 9%**, and raised confidence from **30% to 76%**. Monetary incentives for accuracy only partially recovered the effect (suspension of judgment: 3% → 8%; accuracy: 9% → 16%, still below the 27% baseline).
 - **Caveat.** Lab experiment on trivia questions (film details); authors argue findings generalise across domains, but no field replication yet in a commercial AI-search context.
-- **Use.** Reinforces (does not replace) the trust-vs-behaviour gap already logged in §21 (YouGov, 28% trust AI search) — confidence in an AI answer rises sharply even when the answer is wrong, so "the AI said so" is not a reliable proxy for the user having verified anything. Useful to explain to clients why citation ≠ persuasion-with-scrutiny; no scorecard or pitch change triggered.
+- **Use.** Reinforces (does not replace) the trust-vs-behaviour gap already logged in §21 (YouGov, 28% trust AI search): confidence in an AI answer rises sharply even when the answer is wrong, so "the AI said so" is not a reliable proxy for the user having verified anything. Useful to explain to clients why citation ≠ persuasion-with-scrutiny; no scorecard or pitch change triggered.
 
 ---
 
-## 26. Semrush — topical authority and category ownership in AI search
+## 26. Semrush: topical authority and category ownership in AI search
 
 - **URL.** https://searchengineland.com/topical-authority-ai-search-482875
 - **Date.** Published 22 Jul 2026 (Search Engine Land, reporting Semrush data).
 - **Sample.** 1,094 US categories, 5 prompts per category, monthly snapshots Jan–Jun 2026 in ChatGPT; 220k+ domains, 50k+ brands, 600k+ citations, 220k+ URLs tracked.
 - **Findings.** Only **15.2%** of categories had a clear "owner" brand by Jun 2026; **53.7%** remained open fields with several contenders for the top spot. The largest-volume categories are the *least* likely to have a settled owner.
-- **Caveat.** Vendor study (Semrush); ChatGPT-only, US-only categories — no confirmation the same consolidation pattern holds in Perplexity, AI Overviews, or PT-PT categories.
-- **Use.** Quantifies the "open field" opportunity for B2B categories not yet consolidated in AI search — supports the destaque.ai first-mover pitch for clients entering categories before a competitor locks in citation dominance. No scorecard change triggered.
+- **Caveat.** Vendor study (Semrush); ChatGPT-only, US-only categories: no confirmation the same consolidation pattern holds in Perplexity, AI Overviews, or PT-PT categories.
+- **Use.** Quantifies the "open field" opportunity for B2B categories not yet consolidated in AI search: supports the destaque.ai first-mover pitch for clients entering categories before a competitor locks in citation dominance. No scorecard change triggered.
 
 ---
 
-## 27. Grossman et al. — How Generative AI Disrupts Search: An Empirical Study of Google Search, Gemini, and AI Overviews
+## 27. Grossman et al.: How Generative AI Disrupts Search: An Empirical Study of Google Search, Gemini, and AI Overviews
 
 - **URL.** https://arxiv.org/abs/2604.27790
-- **Date.** Submitted Apr 2026 (arXiv 2604.27790) — gap recovery, not captured by this routine until formal publication at SIGIR '26 (Melbourne, 20–24 Jul 2026).
+- **Date.** Submitted Apr 2026 (arXiv 2604.27790): gap recovery, not captured by this routine until formal publication at SIGIR '26 (Melbourne, 20–24 Jul 2026).
 - **Sample.** Public benchmark of 11,500 real user queries (adapted/extended from prior query collections for broader localised-intent and syntactic-form coverage); paired retrieval from Google Search (SERP), Google AI Overviews, and Gemini. Dataset and scripts public on [GitHub](https://github.com/rag24/AIO).
-- **Findings.** AI Overviews are generated for **51.5%** of representative real-user queries — but generation rate swings from **17.4%** (Amazon Retail-style queries) to **94.6%** (ELI5 queries). Each engine returns a similar *number* of sources per answer (Gemini 9.68, AIO 9.24, classic SERP 8.75), but the *overlap* between which sources each engine returns is low — attributed to differing retrieval methodology, not differing volume. Classic Google Search is significantly more likely to surface institutional/government/education domains; generative engines (AIO, Gemini) are significantly more likely to surface Google-owned content. **Actionable finding**: sites that disallow `Google-Extended` are significantly less likely to be retrieved by AI Overviews, despite the content being otherwise accessible. For debate/controversial queries, 33.4% of AIO summaries open with a direct affirmative or negative stance.
+- **Findings.** AI Overviews are generated for **51.5%** of representative real-user queries: but generation rate swings from **17.4%** (Amazon Retail-style queries) to **94.6%** (ELI5 queries). Each engine returns a similar *number* of sources per answer (Gemini 9.68, AIO 9.24, classic SERP 8.75), but the *overlap* between which sources each engine returns is low: attributed to differing retrieval methodology, not differing volume. Classic Google Search is significantly more likely to surface institutional/government/education domains; generative engines (AIO, Gemini) are significantly more likely to surface Google-owned content. **Actionable finding**: sites that disallow `Google-Extended` are significantly less likely to be retrieved by AI Overviews, despite the content being otherwise accessible. For debate/controversial queries, 33.4% of AIO summaries open with a direct affirmative or negative stance.
 - **Caveat.** Preprint dates to Apr 2026 (only reached this routine via its SIGIR '26 formal publication in Jul 2026); single research group's crawl methodology; US/English query set, no confirmed PT-PT replication.
-- **Use.** First empirical evidence tying a specific robots.txt directive (`Google-Extended`) to AIO retrieval odds — upgrades the existing `frameworks.md` §2 recommendation (allow answer-engine crawlers, decide deliberately on training crawlers) from best-practice reasoning to measured effect, specifically for Google. Reinforces (does not change) the audit weight already given to robots.txt in the audit workflow (§7).
+- **Use.** First empirical evidence tying a specific robots.txt directive (`Google-Extended`) to AIO retrieval odds: upgrades the existing `frameworks.md` §2 recommendation (allow answer-engine crawlers, decide deliberately on training crawlers) from best-practice reasoning to measured effect, specifically for Google. Reinforces (does not change) the audit weight already given to robots.txt in the audit workflow (§7).
 
 ---
 
-## 28. Search Engine Land — AI retrievability audit of 71 local businesses
+## 28. Search Engine Land: AI retrievability audit of 71 local businesses
 
 - **URL.** https://searchengineland.com/ai-search-cant-verify-business-fix-483376
 - **Date.** Published 24 Jul 2026.
 - **Sample.** 71 verified businesses across food & beverage, retail, professional services, technology, agriculture, health care, accommodation and golf (single-region audit; region not specified as US/CA in the piece beyond the sample composition).
 - **Method.** Points-based diagnostic adapted from Google's E-E-A-T rater framework, retooled to score how AI retrieval systems (rather than classic Search) can verify and extract a business's identity.
-- **Findings.** Average business in the sample had **84%** of its identity "leaked" — i.e., unverifiable by AI systems despite being true. **17%** of the 71 businesses had no AI-retrievable digital presence at all (unreadable site, dead domain, or equivalent).
+- **Findings.** Average business in the sample had **84%** of its identity "leaked": i.e., unverifiable by AI systems despite being true. **17%** of the 71 businesses had no AI-retrievable digital presence at all (unreadable site, dead domain, or equivalent).
 - **Caveat.** Single-author methodology, not independently replicated; small sample (71); scoring framework is proprietary to the piece, not a published academic instrument.
-- **Use.** First concretely-scored "identity leak" framing found in the wild — useful as a diagnostic vocabulary for destaque.ai's own audit narrative (distinct from, but complementary to, the existing E-E-A-T § 4 discussion and the `sameAs`/entity gaps already tracked in `frameworks.md` §3 and §7). No scorecard change triggered — the underlying signals (schema, `sameAs`, NAP consistency, crawlable content) are already in the audit workflow; this is a new way to narrate the same gaps to prospects.
+- **Use.** First concretely-scored "identity leak" framing found in the wild: useful as a diagnostic vocabulary for destaque.ai's own audit narrative (distinct from, but complementary to, the existing E-E-A-T § 4 discussion and the `sameAs`/entity gaps already tracked in `frameworks.md` §3 and §7). No scorecard change triggered: the underlying signals (schema, `sameAs`, NAP consistency, crawlable content) are already in the audit workflow; this is a new way to narrate the same gaps to prospects.
 
 ---
 
-## 29. Iturra-Bocaz & Galuščáková — A Reproducibility Study of Metacognitive Retrieval-Augmented Generation
+## 29. Iturra-Bocaz & Galuščáková: A Reproducibility Study of Metacognitive Retrieval-Augmented Generation
 
 - **URL.** https://arxiv.org/abs/2604.19899
-- **Date.** Submitted Apr 2026 (arXiv 2604.19899) — gap recovery, not captured by this routine until formal publication at SIGIR '26 (Melbourne, 20–24 Jul 2026).
+- **Date.** Submitted Apr 2026 (arXiv 2604.19899): gap recovery, not captured by this routine until formal publication at SIGIR '26 (Melbourne, 20–24 Jul 2026).
 - **Authors.** Gabriel Iturra-Bocaz, Petra Galuščáková (IAI Group, University of Stavanger). Code: [github.com/iai-group/sigir2026-metarag](https://github.com/iai-group/sigir2026-metarag).
 - **Method.** Independent reproduction of MetaRAG (a metacognitive RAG architecture that self-evaluates retrieval sufficiency across rounds) under its original experimental setup, extended with (i) PointWise vs. ListWise reranking after each retrieval round and (ii) a head-to-head comparison against SIM-RAG (lightweight critic model gates when retrieval stops).
-- **Findings.** MetaRAG's *relative* improvement over standard RAG and reasoning-only baselines reproduces, and reranking (especially ListWise) adds a further substantial gain — but *absolute* scores come in lower than the original paper reported, which the authors attribute to closed-source LLM version drift, missing implementation details, and prompts the original authors did not release. MetaRAG also proved more robust than SIM-RAG once extended with the same retrieval features.
-- **Caveat.** Single independent reproduction, not a multi-lab replication; the gap between relative and absolute reproducibility is itself the finding — no specific percentage-point figures are given in available coverage, so none are asserted here.
-- **Use.** A concrete, dated caution against taking any single paper's *absolute* RAG/GEO benchmark numbers as durable ground truth — closed-source model drift alone can move them. Reinforces the sourcing discipline already applied throughout this file (caveats, sample sizes, "no independent replication" flags) rather than introducing a new claim to cite to clients. No scorecard or methodology change triggered.
+- **Findings.** MetaRAG's *relative* improvement over standard RAG and reasoning-only baselines reproduces, and reranking (especially ListWise) adds a further substantial gain: but *absolute* scores come in lower than the original paper reported, which the authors attribute to closed-source LLM version drift, missing implementation details, and prompts the original authors did not release. MetaRAG also proved more robust than SIM-RAG once extended with the same retrieval features.
+- **Caveat.** Single independent reproduction, not a multi-lab replication; the gap between relative and absolute reproducibility is itself the finding: no specific percentage-point figures are given in available coverage, so none are asserted here.
+- **Use.** A concrete, dated caution against taking any single paper's *absolute* RAG/GEO benchmark numbers as durable ground truth: closed-source model drift alone can move them. Reinforces the sourcing discipline already applied throughout this file (caveats, sample sizes, "no independent replication" flags) rather than introducing a new claim to cite to clients. No scorecard or methodology change triggered.
 
 ---
 
-## 30. DerivateX — The State of AI Visibility in B2B SaaS: 2026 Benchmark Report
+## 30. DerivateX: The State of AI Visibility in B2B SaaS: 2026 Benchmark Report
 
 - **URL.** https://derivatex.agency/report/ai-visibility-b2b-saas-2026/
-- **Date.** Published ~17 Jun 2026 (absorbed here retroactively — was reported in `news-feed.md` 2026-06-17 but never carried into this file until now).
+- **Date.** Published ~17 Jun 2026 (absorbed here retroactively: was reported in `news-feed.md` 2026-06-17 but never carried into this file until now).
 - **Sample.** 50 B2B SaaS companies, 1,400 buyer-intent prompts run across ChatGPT, Perplexity, Claude and Gemini.
 - **Findings.**
   - Average "AI Presence Score" of **56.9/100**, with **44% of companies scoring below 50**.
   - AI search now accounts for **17% of B2B SaaS brand discovery**, up from ~4% in 2025.
-  - Claude is the most selective engine — **88% mention rate** vs. **100% on both ChatGPT and Gemini** for the same brand set.
-- **Caveat.** Vendor-run study (DerivateX sells AI-visibility services); methodology and scoring formula for "AI Presence Score" not independently audited. US/English-market sample — no confirmation the 17%/4% discovery-share trend generalizes to PT-PT or EU B2B SaaS (cf. §17, the Portugal evidence gap).
-- **Use.** The clearest publicly available quantified argument for "you are already invisible in AI search and it is getting worse relative to classic discovery" — pairs with §17's caveat that no PT-PT-specific version of this number exists yet, so cite as a US benchmark directionally, not as a Portugal-verified figure.
+  - Claude is the most selective engine: **88% mention rate** vs. **100% on both ChatGPT and Gemini** for the same brand set.
+- **Caveat.** Vendor-run study (DerivateX sells AI-visibility services); methodology and scoring formula for "AI Presence Score" not independently audited. US/English-market sample: no confirmation the 17%/4% discovery-share trend generalizes to PT-PT or EU B2B SaaS (cf. §17, the Portugal evidence gap).
+- **Use.** The clearest publicly available quantified argument for "you are already invisible in AI search and it is getting worse relative to classic discovery": pairs with §17's caveat that no PT-PT-specific version of this number exists yet, so cite as a US benchmark directionally, not as a Portugal-verified figure.
 
 ---
 
-## 31. SparkToro/Similarweb — zero-click search share (US, 2026)
+## 31. SparkToro/Similarweb: zero-click search share (US, 2026)
 
 - **URL.** https://searchengineland.com/google-zero-click-searches-2026-study-479717
-- **Date.** Published ~19 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-21, never carried into this file until now).
+- **Date.** Published ~19 Jun 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-21, never carried into this file until now).
 - **Sample.** Similarweb clickstream panel, desktop + mobile web, US Google searches Jan–Apr 2026.
-- **Finding.** 68.01% of US Google searches produced zero clicks to any result — up from 60.45% in 2024 (+7.56pp in two years). AI Overviews present in >20% of searches; when present, CTR to organic results drops ~60%.
-- **Caveat.** Clickstream-panel extrapolation (methodology not independently audited), US-only, no PT-PT equivalent published (cf. §17). Distinct from — and consistent with — the AIO-specific CTR drop in §1 (58% lower top-ranking CTR when an AIO is present, Feb 2026).
-- **Use.** Headline "search without clicking is now the majority behavior" framing — complements §1's AIO-specific figure with an overall zero-click baseline.
+- **Finding.** 68.01% of US Google searches produced zero clicks to any result: up from 60.45% in 2024 (+7.56pp in two years). AI Overviews present in >20% of searches; when present, CTR to organic results drops ~60%.
+- **Caveat.** Clickstream-panel extrapolation (methodology not independently audited), US-only, no PT-PT equivalent published (cf. §17). Distinct from: and consistent with: the AIO-specific CTR drop in §1 (58% lower top-ranking CTR when an AIO is present, Feb 2026).
+- **Use.** Headline "search without clicking is now the majority behavior" framing: complements §1's AIO-specific figure with an overall zero-click baseline.
 
 ---
 
-## 32. WARP — Web Agent Retrieval Poisoning (Cornell Tech)
+## 32. WARP: Web Agent Retrieval Poisoning (Cornell Tech)
 
 - **URL.** https://searchengineland.com/deep-research-ai-agents-poison-ugc-480952
-- **Date.** ~24 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Date.** ~24 Jun 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-25, never carried into this file until now).
 - **Method.** A single injected comment planted on a public UGC page (no access to the underlying model, prompts, or search engine required) is enough to make deep-research AI agents cite fabricated entities in their generated reports.
 - **Finding.** Fabricated-entity citation rate of **38-62%** across the deep-research agents tested.
-- **Caveat.** Cornell Tech research, not independently replicated elsewhere yet; exact agent list and sample size not carried in available coverage — treat the range as directional, not a precise average.
+- **Caveat.** Cornell Tech research, not independently replicated elsewhere yet; exact agent list and sample size not carried in available coverage: treat the range as directional, not a precise average.
 - **Use.** Concrete evidence for the defensive posture already in `frameworks.md` §9 (indirect prompt injection): unsanitised UGC on a client's own pages is an attack surface for deep-research agents, not just for the site's own chatbot. See `frameworks.md` §9 for the mitigation checklist.
 
 ---
 
-## 33. Walker Sands — B2B brands rank organically but are rarely cited in AI Overviews
+## 33. Walker Sands: B2B brands rank organically but are rarely cited in AI Overviews
 
 - **URL.** https://searchengineland.com/b2b-brands-rank-google-appear-ai-overviews-480954
-- **Date.** ~24 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Date.** ~24 Jun 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-25, never carried into this file until now).
 - **Sample.** 828 enterprise B2B companies, 45M+ queries, March 2026.
 - **Finding.** AI Overviews appear in ~50% of queries where the tracked brands already rank organically, yet the **median brand is cited in only 3%** of those AIOs. Cybersecurity led the sample at 4.2% citation rate; professional services trailed at 2.1%.
 - **Caveat.** Vendor-run study (Walker Sands); US/English B2B sample, no PT-PT equivalent (cf. §17).
-- **Use.** The sharpest available number for the "ranking organically ≠ being cited" pitch argument specifically for B2B — pairs with §30 (DerivateX 17% AI discovery share) as two independent vendor studies converging on the same "B2B is under-cited relative to its organic footprint" conclusion.
+- **Use.** The sharpest available number for the "ranking organically ≠ being cited" pitch argument specifically for B2B: pairs with §30 (DerivateX 17% AI discovery share) as two independent vendor studies converging on the same "B2B is under-cited relative to its organic footprint" conclusion.
 
 ---
 
 ## 34. Diagnosing and Repairing Citation Failures in GEO (arXiv 2603.09296)
 
 - **URL.** https://arxiv.org/abs/2603.09296
-- **Date.** Submitted March 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Date.** Submitted March 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-25, never carried into this file until now).
 - **Finding.** **43%** of topically relevant, already-indexed pages receive zero AI citations despite covering the right subject matter. The paper categorizes three citation-failure modes and proposes an automated repair system.
-- **Caveat.** Academic paper, no independent replication found in later coverage; failure-mode taxonomy not reproduced here in full — treat the 43% figure as the citable headline, not the repair methodology (unverified at production scale).
-- **Use.** Directly actionable framing for audits: a client's content can be well-indexed and on-topic and still be systematically uncited — the audit should check for the specific failure modes (structural, not just topical) rather than assuming coverage equals citability.
+- **Caveat.** Academic paper, no independent replication found in later coverage; failure-mode taxonomy not reproduced here in full: treat the 43% figure as the citable headline, not the repair methodology (unverified at production scale).
+- **Use.** Directly actionable framing for audits: a client's content can be well-indexed and on-topic and still be systematically uncited: the audit should check for the specific failure modes (structural, not just topical) rather than assuming coverage equals citability.
 
 ---
 
-## 35. Similarweb — AI-recommended brands see 2.5x more site visits
+## 35. Similarweb: AI-recommended brands see 2.5x more site visits
 
 - **URL.** https://www.searchenginejournal.com/ai-recommended-brands-saw-2-5x-more-site-visits-similarweb/580241/
-- **Date.** ~24 Jun 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-25, never carried into this file until now).
+- **Date.** ~24 Jun 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-25, never carried into this file until now).
 - **Sample.** US desktop only; finance, travel and beauty verticals.
 - **Finding.** Brands cited by ChatGPT are **2.5x more likely** to receive a site visit within 7 days. AI-influenced visitors view an average of 12 pages and spend 11.8 min on-site vs. 6.5 pages / 5.6 min for non-AI traffic. 55.9% of those visits arrive via a subsequent search, not a direct ChatGPT referral click.
-- **Caveat.** US desktop, three verticals only — no B2B SaaS or PT-PT equivalent (cf. §17). The 55.9%-via-search detail matters: most of the downstream value shows up in search analytics, not in AI-referral traffic, so a client's "AI referral" line alone will understate this effect.
-- **Use.** Complements `cited_brand_clicks` in the Deck Builder table below (35% more organic clicks for cited brands, Seer Interactive) with a second, independent vendor study pointing the same direction — cite together, not as duplicates.
+- **Caveat.** US desktop, three verticals only: no B2B SaaS or PT-PT equivalent (cf. §17). The 55.9%-via-search detail matters: most of the downstream value shows up in search analytics, not in AI-referral traffic, so a client's "AI referral" line alone will understate this effect.
+- **Use.** Complements `cited_brand_clicks` in the Deck Builder table below (35% more organic clicks for cited brands, Seer Interactive) with a second, independent vendor study pointing the same direction: cite together, not as duplicates.
 
 ---
 
-## 36. Ahrefs — AI Overview citations: Top-10 share falls from 76% to 38%
+## 36. Ahrefs: AI Overview citations: Top-10 share falls from 76% to 38%
 
 - **URL.** https://ahrefs.com/blog/ai-overview-citations-top-10/
-- **Date.** Published 2 Mar 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-26, never carried into this file until now; caught during the 2026-08-29 pre-truncate absorption pass).
+- **Date.** Published 2 Mar 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-26, never carried into this file until now; caught during the 2026-08-29 pre-truncate absorption pass).
 - **Sample.** 863K SERPs, 4M AI Overview URLs analyzed (more than double Ahrefs' prior analysis of the same question).
 - **Finding.** The share of AIO citations coming from Top-10 organic pages fell from **76%** (Jul 2025) to **38%** (current); 31.2% now come from positions 11-100, and 31% from entirely outside the top-100.
-- **Caveat.** Ahrefs vendor study, single methodology, no independent replication carried in available coverage. Measures a different thing than §6 (BrightEdge, 54% top-10 citation share) — different sample windows and methodology; cite separately, do not treat as contradictory.
-- **Use.** Reinforces §6 and §33 (Walker Sands): organic rank alone is an increasingly weak predictor of AI citation — content structure and citability now outweigh rank position for AIO inclusion. Strengthens the GEO-vs-pure-SEO pitch.
+- **Caveat.** Ahrefs vendor study, single methodology, no independent replication carried in available coverage. Measures a different thing than §6 (BrightEdge, 54% top-10 citation share): different sample windows and methodology; cite separately, do not treat as contradictory.
+- **Use.** Reinforces §6 and §33 (Walker Sands): organic rank alone is an increasingly weak predictor of AI citation: content structure and citability now outweigh rank position for AIO inclusion. Strengthens the GEO-vs-pure-SEO pitch.
 
 ---
 
-## 37. Conductor — AEO/GEO Benchmarks Report 2026
+## 37. Conductor: AEO/GEO Benchmarks Report 2026
 
 - **URL.** https://www.conductor.com/academy/aeo-geo-benchmarks-report/
-- **Date.** 2026 (absorbed retroactively — reported in `news-feed.md` 2026-06-26, never carried into this file until now; caught during the 2026-08-29 pre-truncate absorption pass).
+- **Date.** 2026 (absorbed retroactively: reported in `news-feed.md` 2026-06-26, never carried into this file until now; caught during the 2026-08-29 pre-truncate absorption pass).
 - **Sample.** 21.9M Google searches, 17M AI-generated answers, 100M AI citations across 13,770 domains and 10 sectors.
 - **Finding.** AI Overviews trigger on **25.11%** of queries overall. Health Care leads at 48.7% trigger rate; Real Estate lowest at 4.48%. Most-cited content types: blog posts, videos, articles, news, product pages.
 - **Caveat.** Vendor study (Conductor); sample drawn from Conductor's own client base, which may skew toward already-SEO-mature sites. No PT-PT breakdown.
@@ -442,76 +442,76 @@ When confronted with such a stat by a client, the response is: *"That number cir
 
 ---
 
-## 38. Kumar — Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines
+## 38. Kumar: Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines
 
 - **URL.** https://arxiv.org/abs/2606.20065
-- **Date.** Mar–May 2026 fieldwork (absorbed retroactively — reported in `news-feed.md` 2026-07-02, never carried into this file; caught during the 2026-09-05 pre-truncate absorption pass, 64 days after first appearing).
+- **Date.** Mar–May 2026 fieldwork (absorbed retroactively: reported in `news-feed.md` 2026-07-02, never carried into this file; caught during the 2026-09-05 pre-truncate absorption pass, 64 days after first appearing).
 - **Sample.** 100,000+ prompt responses across 100+ brands, multiple AI search engines.
 - **Finding.** ~78% of citations go to the brand's own corporate site; YouTube is the leading non-corporate cited source; listicle/"best-of" content accounts for ~21% of cited formats.
 - **Caveat.** Single-author arXiv preprint, not peer-reviewed; engine mix and exact date window not fully specified in the news-feed summary that carried it forward.
-- **Use.** Corroborates the destaque.ai pitch that owned-domain content (not third-party PR) is still the dominant lever for citation — 78% corporate-site share means a client's own site quality matters more than earned mentions for most engines. Pair with §5 (BrightEdge presence) when explaining why the audit weights on-site content so heavily.
+- **Use.** Corroborates the destaque.ai pitch that owned-domain content (not third-party PR) is still the dominant lever for citation: 78% corporate-site share means a client's own site quality matters more than earned mentions for most engines. Pair with §5 (BrightEdge presence) when explaining why the audit weights on-site content so heavily.
 
 ---
 
-## 39. Semrush — AI-visibility and conversion by channel
+## 39. Semrush: AI-visibility and conversion by channel
 
 - **URL.** https://searchengineland.com/semrush-is-bringing-ai-visibility-under-the-spotlight-487137
 - **Date.** 4 Sep 2026.
-- **Sample.** Semrush analysis of 500+ high-value marketing/SEO topics (1,094 categories analyzed for the ownership stat below); WebFetch to searchengineland.com blocked this session, cross-corroborated via WebSearch only — treat as moderate confidence pending direct read.
-- **Finding.** Over a third of consumers now start a search in an AI tool rather than a traditional search engine; visitors arriving via AI-search channels convert 4.4x more often than organic-search visitors on the same sites. **Added 07 Sep 2026, same source article, found on a second pass:** only 15.2% of the 1,094 categories analyzed have a "clear owner" in AI search — 85% remain contestable, i.e. no single brand dominates the AI answer yet.
+- **Sample.** Semrush analysis of 500+ high-value marketing/SEO topics (1,094 categories analyzed for the ownership stat below); WebFetch to searchengineland.com blocked this session, cross-corroborated via WebSearch only: treat as moderate confidence pending direct read.
+- **Finding.** Over a third of consumers now start a search in an AI tool rather than a traditional search engine; visitors arriving via AI-search channels convert 4.4x more often than organic-search visitors on the same sites. **Added 07 Sep 2026, same source article, found on a second pass:** only 15.2% of the 1,094 categories analyzed have a "clear owner" in AI search: 85% remain contestable, i.e. no single brand dominates the AI answer yet.
 - **Caveat.** Vendor study (Semrush); "high-value" topic selection, conversion definition and "clear owner" threshold not independently verified; single-article source, no underlying methodology paper located.
-- **Use.** The conversion multiple (4.4x) is a sharper sales argument than raw visibility share for clients who ask "why does AI-search traffic matter if the volume is still small" — pairs with §30/§37 for the B2B-specific version of the same argument. The 85%-contestable figure is a distinct, separately usable argument: for most prospects, the category is not yet settled, which is a stronger opener than "you're behind" — it supports a first-mover framing instead of a catch-up framing.
+- **Use.** The conversion multiple (4.4x) is a sharper sales argument than raw visibility share for clients who ask "why does AI-search traffic matter if the volume is still small": pairs with §30/§37 for the B2B-specific version of the same argument. The 85%-contestable figure is a distinct, separately usable argument: for most prospects, the category is not yet settled, which is a stronger opener than "you're behind": it supports a first-mover framing instead of a catch-up framing.
 
-## 40. Ten Speed / Peec AI — content-type citation share at the B2B evaluation stage
+## 40. Ten Speed / Peec AI: content-type citation share at the B2B evaluation stage
 
 - **URL.** https://www.searchenginejournal.com/product-pages-get-24-of-ai-citations-reddit-youtube-4/587560/
 - **Date.** Reported early Sep 2026 (exact publish date not confirmed this session; WebFetch to searchenginejournal.com blocked).
 - **Sample.** 7,000+ citations across 220 B2B evaluation-stage prompts, drawn from Peec AI's citation-monitoring data across ChatGPT, Perplexity, Claude and Gemini, for Ten Speed's own client base.
 - **Finding.** Brand-controlled content (product pages, articles, homepage) accounts for 88% of citations at the evaluation stage of a B2B buying journey; product pages alone get roughly 6x the citation volume of Reddit; Reddit and YouTube combined account for only ~4% of citations at this stage, against a 24% share for product pages.
-- **Caveat.** Explicitly disclosed by the study itself: the dataset is limited to Ten Speed's own B2B SaaS/professional-services client base, not a universal benchmark — funnel-stage-specific (evaluation, not awareness), so it should not be read as "UGC doesn't matter" across the whole journey.
-- **Use.** Directly relevant to destaque.ai's B2B SaaS book: at the evaluation stage, the actionable lever for a client is their own product/comparison pages, not Reddit seeding — corrects a common client assumption that "getting into Reddit threads" is the fastest GEO win. Caveat the funnel-stage scope when citing to a client.
+- **Caveat.** Explicitly disclosed by the study itself: the dataset is limited to Ten Speed's own B2B SaaS/professional-services client base, not a universal benchmark: funnel-stage-specific (evaluation, not awareness), so it should not be read as "UGC doesn't matter" across the whole journey.
+- **Use.** Directly relevant to destaque.ai's B2B SaaS book: at the evaluation stage, the actionable lever for a client is their own product/comparison pages, not Reddit seeding: corrects a common client assumption that "getting into Reddit threads" is the fastest GEO win. Caveat the funnel-stage scope when citing to a client.
 
-## 41. Fractl/Search Engine Land — 1 million keywords, redistributed not reduced demand
+## 41. Fractl/Search Engine Land: 1 million keywords, redistributed not reduced demand
 
 - **URL.** https://searchengineland.com/what-1-million-keywords-reveal-about-ais-impact-on-search-481474
-- **Date.** 2 Jul 2026. Absorbed 07 Sep 2026 (daily-agent truncate-before-absorb pass — this study sat in `news-feed.md` unabsorbed for 67 days before today).
+- **Date.** 2 Jul 2026. Absorbed 07 Sep 2026 (daily-agent truncate-before-absorb pass: this study sat in `news-feed.md` unabsorbed for 67 days before today).
 - **Sample.** Fractl/Search Engine Land analysis of 1,010,848 high-volume keywords (10k+ searches/month), 379 brands, 8 verticals.
-- **Finding.** 29% of high-volume search demand is in decline, but a near-equivalent volume is growing in other categories — total demand is being redistributed across categories, not shrinking overall.
+- **Finding.** 29% of high-volume search demand is in decline, but a near-equivalent volume is growing in other categories: total demand is being redistributed across categories, not shrinking overall.
 - **Caveat.** Aggregate, cross-vertical figure; the 29%/equivalent-growth split will not hold evenly per individual vertical or client category.
-- **Use.** Reframes client reporting away from "total traffic" toward tracking which specific query categories are gaining vs. losing share — a client with declining total search volume may simply be in a shrinking category while demand grows elsewhere, which changes the recommended response (content pivot vs. technical fix).
+- **Use.** Reframes client reporting away from "total traffic" toward tracking which specific query categories are gaining vs. losing share: a client with declining total search volume may simply be in a shrinking category while demand grows elsewhere, which changes the recommended response (content pivot vs. technical fix).
 
-## 42. Search Engine Journal / Bocconi University — AI search grows without displacing Google, except in query volume
+## 42. Search Engine Journal / Bocconi University: AI search grows without displacing Google, except in query volume
 
 - **URL.** https://www.searchenginejournal.com/google-chatgpt-audience-search-queries-clicks/588200/
 - **Date.** 4 Sep 2026.
 - **Sample.** Similarweb audience-overlap tracking (Sep 2025 → May 2026) plus a separate Bocconi University household-level study.
-- **Finding.** 95% of ChatGPT users also show up in Google's audience — a figure that hasn't moved from Sep 2025 to May 2026 — even as generative-AI platform visits grew 70% YoY (Similarweb). Separately, Bocconi University found a 9.4% drop in traditional search queries among households with ChatGPT Search access.
+- **Finding.** 95% of ChatGPT users also show up in Google's audience: a figure that hasn't moved from Sep 2025 to May 2026: even as generative-AI platform visits grew 70% YoY (Similarweb). Separately, Bocconi University found a 9.4% drop in traditional search queries among households with ChatGPT Search access.
 - **Caveat.** These are two different measures, not one contradicting the other: audience overlap (do the same people use both) stayed flat, while query volume per household (how often they search Google) fell for the subset with ChatGPT Search access. Read together they say people aren't leaving Google, but are searching it less per session once they have an AI alternative.
-- **Use.** Corrects the client-facing narrative "Google traffic is being replaced" — audience isn't leaving, query volume is softening at the margin. Supports pitching AI-search visibility as additive coverage, not a defensive replacement for SEO; the 9.4% query-volume figure is the one number worth watching over time as a leading indicator, not the overlap figure.
+- **Use.** Corrects the client-facing narrative "Google traffic is being replaced": audience isn't leaving, query volume is softening at the margin. Supports pitching AI-search visibility as additive coverage, not a defensive replacement for SEO; the 9.4% query-volume figure is the one number worth watching over time as a leading indicator, not the overlap figure.
 
-## 43. SE Ranking — paid ads in Google AI Mode don't buy organic citation or ranking
+## 43. SE Ranking: paid ads in Google AI Mode don't buy organic citation or ranking
 
 - **URL.** SE Ranking, "AI Mode shows ads on 1 in 3 queries" (via Search Engine Land summary; both WebFetch-blocked this session, found via WebSearch).
 - **Date.** Data collected 30 Jun 2026; absorbed 08 Sep 2026.
 - **Sample.** 50,032 commercial keywords across 20 niches, US Google AI Mode.
-- **Finding.** Ads appeared on 29.45% of commercial queries in AI Mode. Of the domains running those ads, only 11.53% also appeared among AI Mode's cited (organic) sources for the same keyword, and only 2.32% of the advertised URLs also ranked organically — paid and organic visibility in AI Mode are close to statistically independent.
+- **Finding.** Ads appeared on 29.45% of commercial queries in AI Mode. Of the domains running those ads, only 11.53% also appeared among AI Mode's cited (organic) sources for the same keyword, and only 2.32% of the advertised URLs also ranked organically: paid and organic visibility in AI Mode are close to statistically independent.
 - **Caveat.** US-only dataset, single vendor methodology, not independently replicated; commercial-keyword sample may not generalize to informational queries.
-- **Use.** Direct evidence for the "paid ≠ organic, buy both separately" pitch in `references/ai_ads.md` — a client running AI Mode ads should not expect that spend to lift their AI Overviews/AI Mode citation rate. Cite alongside the ai_ads.md "dois campos" framing when a client asks whether ad spend substitutes for GEO work in Google's surfaces.
+- **Use.** Direct evidence for the "paid ≠ organic, buy both separately" pitch in `references/ai_ads.md` - a client running AI Mode ads should not expect that spend to lift their AI Overviews/AI Mode citation rate. Cite alongside the ai_ads.md "dois campos" framing when a client asks whether ad spend substitutes for GEO work in Google's surfaces.
 
-## 44. Agarwal &amp; Sen (SSRN) — AI Overviews cut clicks, but not because the lost clicks were lower quality
+## 44. Agarwal &amp; Sen (SSRN): AI Overviews cut clicks, but not because the lost clicks were lower quality
 
 - **URL.** https://www.searchenginejournal.com/google-ai-overviews-study-finds-lost-clicks-werent-lower-quality/581298/ (SSRN working paper, authors Saharsh Agarwal and Ananya Sen).
-- **Date.** Reported 2 Jul 2026; absorbed 08 Sep 2026 (daily-agent truncate-before-absorb pass — this study sat in `news-feed.md` unabsorbed for 65 days before today, since the 2026-07-05 entry).
+- **Date.** Reported 2 Jul 2026; absorbed 08 Sep 2026 (daily-agent truncate-before-absorb pass: this study sat in `news-feed.md` unabsorbed for 65 days before today, since the 2026-07-05 entry).
 - **Sample.** Randomized-attribution field experiment measuring organic click behavior on SERPs with vs. without an AI Overview present.
-- **Finding.** AI Overviews cut organic clicks by 39.8% when present. No measurable difference in bounce rate, return-to-SERP rate, or time-on-site between the clicks that were "lost" to the AI Overview and the clicks that survived — i.e. the eliminated clicks were not disproportionately low-quality traffic.
+- **Finding.** AI Overviews cut organic clicks by 39.8% when present. No measurable difference in bounce rate, return-to-SERP rate, or time-on-site between the clicks that were "lost" to the AI Overview and the clicks that survived: i.e. the eliminated clicks were not disproportionately low-quality traffic.
 - **Caveat.** SSRN working paper, not yet peer-reviewed at time of reporting; single study, not yet independently replicated.
-- **Use.** Directly undercuts Google's public justification that clicks displaced by AI Overviews are mostly low-value — useful when a client cites that framing to downplay the traffic impact of AIO on their category. Pairs with §41 (Fractl/SEL redistributed demand) to argue clicks are being reduced in real terms, not merely reallocated to better-fit queries.
+- **Use.** Directly undercuts Google's public justification that clicks displaced by AI Overviews are mostly low-value: useful when a client cites that framing to downplay the traffic impact of AIO on their category. Pairs with §41 (Fractl/SEL redistributed demand) to argue clicks are being reduced in real terms, not merely reallocated to better-fit queries.
 
 ---
 
 ## Deck Builder core stats
 
-> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL — nenhuma estatística sem fonte. Actualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser — ver INTERFACES.md.
+> **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
 
 | key | value | caption | source | url | date |
 |---|---|---|---|---|---|

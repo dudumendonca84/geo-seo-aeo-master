@@ -1,26 +1,26 @@
-# Engine playbooks — como aparecer em cada motor
+# Engine playbooks: como aparecer em cada motor
 
 Referência do `geo-seo-aeo-master`. Um bloco por motor/superfície: como o
 motor decide quem aparece e que alavancas do SINAL puxar. Consumido em
 runtime pelo Visibility Tracker (secção "Como aparecer aqui" nos cartões dos
-Motores) — ver contrato em `INTERFACES.md`.
+Motores): ver contrato em `INTERFACES.md`.
 
 **Princípio das duas vias.** Cada motor responde por uma de duas vias, ou
 pela mistura das duas:
 
-- **Memória (knowledge)** — o que o modelo aprendeu no treino. Alavancas de
+- **Memória (knowledge)**: o que o modelo aprendeu no treino. Alavancas de
   longo prazo: entidade (Wikidata, Wikipedia, Knowledge Panel), imprensa
   durável, dados originais citados por terceiros. Meses a propagar.
-- **Pesquisa (augmented)** — o que o motor encontra na web no momento.
+- **Pesquisa (augmented)**: o que o motor encontra na web no momento.
   Alavancas de ciclo curto: conteúdo comparativo que responde à pergunta,
   ranking orgânico, schema, fontes que o motor prefere citar.
   Semanas a propagar. (llms.txt saiu da lista: dois estudos independentes
   não encontram efeito nas citações e os crawlers de IA rastreiam o HTML
-  diretamente — SE Ranking ~300k domínios e Limy.AI 500M+ visitas de bots,
+  diretamente: SE Ranking ~300k domínios e Limy.AI 500M+ visitas de bots,
   Ago 2026.)
 
 Evidência interna (auditoria destaque.ai, semana 2026-07-27): marca nova sem
-entidade externa = 0/324 citações em memória e 20/270 em pesquisa — o 2º
+entidade externa = 0/324 citações em memória e 20/270 em pesquisa: o 2º
 lugar da categoria veio inteiro da via da pesquisa. Uma marca estabelecida
 do setor da saúde mede forte nas duas vias. A via onde a marca já ganha
 diz que alavanca puxar a seguir.
@@ -47,13 +47,13 @@ parados. Um bloco sem `meta:` é um bloco que ninguém revê.
 **Manutenção (auto-alimentação).** Este ficheiro evolui por QUATRO loops,
 cada um com o seu gatilho escrito na respectiva routine:
 
-- **passagem diária por motor** (diário, obrigatória mesmo sem notícias) —
+- **passagem diária por motor** (diário, obrigatória mesmo sem notícias).
   todos os motores são percorridos todos os dias e a linha `meta:` é
   reescrita, mesmo quando a resposta é "nada mudou". Antes disto, um motor
   sobre o qual ninguém escrevesse podia ficar meses parado sem que isso
   fosse visível. Ver `daily-agent/daily-prompt.md`, "Passagem diária por
   motor".
-- **mecanismo medido** (diário) — o que cada motor CITA, semana a semana,
+- **mecanismo medido** (diário): o que cada motor CITA, semana a semana,
   sobre as mesmas perguntas: que fatia das fontes é nova, quanto do que
   entra sobrevive à semana seguinte, e quanto tempo passa entre uma página
   existir e o motor a citar. É a leitura que ensina, porque não depende de
@@ -61,7 +61,7 @@ cada um com o seu gatilho escrito na respectiva routine:
   o motor: onde as fontes mudam pouco, uma colocação rende meses; onde
   mais de metade muda todas as semanas, uma peça isolada evapora-se e o
   que ganha é cadência.
-- **resultado das ações** (diário, e é a leitura FRACA) — ações dadas como
+- **resultado das ações** (diário, e é a leitura FRACA): ações dadas como
   feitas e a citação nas duas semanas anteriores contra as duas seguintes.
   Levanta hipóteses, nunca as confirma: a ação é declarada e não
   verificada, e sem motor-alvo não há contrafactual. Só conta com a DERIVA
@@ -69,16 +69,16 @@ cada um com o seu gatilho escrito na respectiva routine:
   nenhuma está a funcionar) e nunca entra sozinha num playbook.
   Ver `daily-agent/daily-prompt.md`, "Aprendizagem interna".
 
-- **daily-agent** (diário) — absorve mudanças de mecanismo anunciadas pelos
+- **daily-agent** (diário): absorve mudanças de mecanismo anunciadas pelos
   vendors (novos modos de pesquisa, mudanças de fontes preferidas, rollouts
   por mercado) diretamente nos blocos abaixo.
   Ver `daily-agent/daily-prompt.md`, ponto "Mudanças no funcionamento dos vendors".
-- **self-audit semanal** (segundas) — o prompt-test multi-engine ao próprio
+- **self-audit semanal** (segundas): o prompt-test multi-engine ao próprio
   destaque.ai é evidência empírica: quando o observado contradiz uma alavanca
-  listada, corrige-a. Uma semana não derruba uma alavanca — precisa de duas
+  listada, corrige-a. Uma semana não derruba uma alavanca: precisa de duas
   auditorias seguidas ou de fonte primária do vendor.
   Ver `routines/destaque-ai-self-audit-weekly.md`, ponto 7.
-- **synthesis-weekly** (sextas) — alavancas validadas em engagements reais,
+- **synthesis-weekly** (sextas): alavancas validadas em engagements reais,
   anonimizadas e com N≥3, entram no bloco do motor onde funcionaram.
   Ver `routines/synthesis-weekly.md`, Pass 3.
 
@@ -114,16 +114,16 @@ motor que corre só em memória não tem fontes para mostrar.
 marcador `{{skip:<condição>}}` que o consumidor avalia contra o contexto do
 cliente e usa para ESCONDER o item quando a condição se verifica. O marcador
 nunca aparece ao cliente (o consumidor remove-o sempre do texto). Condições
-definidas: `en-site` — esconder quando o site/locale do cliente já é inglês
-(um "publica versão EN" a um cliente EN é ruído); `bwt-connected` — esconder
+definidas: `en-site` - esconder quando o site/locale do cliente já é inglês
+(um "publica versão EN" a um cliente EN é ruído); `bwt-connected` - esconder
 quando o cliente já tem o Bing Webmaster Tools ligado no Tracker (recomendar
-ligar o que já está ligado é o achado que destrói a confiança — o consumidor
+ligar o que já está ligado é o achado que destrói a confiança: o consumidor
 avalia com os dados de integração que já tem). Condição desconhecida =
 mostrar o item na mesma, sem o marcador (fail-open). A regra vive aqui na
 skill; o código só avalia.
 
 Cada alteração de substância regista-se no `methodology-changelog.md`.
-Estatísticas só com fonte — sem estudo, dizê-lo. Qualquer routine que edite
+Estatísticas só com fonte: sem estudo, dizê-lo. Qualquer routine que edite
 este ficheiro corre `node scripts/validate-skill-tables.mjs` antes de commit:
 o Tracker não tem fallback para este conteúdo, e um header fora do formato
 `### <engine_key>` faz a secção desaparecer dos cartões em silêncio.
@@ -285,15 +285,15 @@ Faz: o mesmo do copilot. Quando a medição voltar, a presença aqui herda o tra
 ## Deck Builder/Tracker playbooks (EN)
 
 Espelho inglês do bloco acima, para clientes cujo `locale` é `en`. Mesmas
-chaves, mesma ordem, mesma substância — o que muda é a língua, não o método.
+chaves, mesma ordem, mesma substância: o que muda é a língua, não o método.
 Quando uma alavanca mudar em cima, muda aqui também: duas versões que
 divergem são pior do que uma só.
 
 ### chatgpt
 
-meta: revisto 2026-09-09 · externo: no new mechanism (the Sep 4 Peec.ai test remains uncorroborated by a second source); Ads Manager PT — the original deadline (Sep 8) passed yesterday unresolved, and today brings no new data from either side; `WebFetch` to help.openai.com/en/articles/20001245 and ads.openai.com was tried directly in this session and remains blocked (`EGRESS_BLOCKED`); GPT-6 Astra remains in phased rollout (since Sep 3-4) with no disclosed change to citation mechanics · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: no new mechanism (the Sep 4 Peec.ai test remains uncorroborated by a second source); Ads Manager PT: the original deadline (Sep 8) passed yesterday unresolved, and today brings no new data from either side; `WebFetch` to help.openai.com/en/articles/20001245 and ads.openai.com was tried directly in this session and remains blocked (`EGRESS_BLOCKED`); GPT-6 Astra remains in phased rollout (since Sep 3-4) with no disclosed change to citation mechanics · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. Search runs on the Bing index and typically reads only the top 2 to 3 results per sub-query [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, small sample]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026]. A behavioral test (Malte Landwehr via Peec.ai, Sep 4 2026) suggests ChatGPT also queries Google to ground some answers, not only Bing — a zero-traffic site logged a Google Search Console referral spike specifically on days only ChatGPT was querying it; single source, informal methodology, treat as a lead rather than settled fact. {{fontes}}
+How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. Search runs on the Bing index and typically reads only the top 2 to 3 results per sub-query [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, small sample]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026]. A behavioral test (Malte Landwehr via Peec.ai, Sep 4 2026) suggests ChatGPT also queries Google to ground some answers, not only Bing: a zero-traffic site logged a Google Search Console referral spike specifically on days only ChatGPT was querying it; single source, informal methodology, treat as a lead rather than settled fact. {{fontes}}
 
 Do:
 1. Answer the category's comparison questions on your site, one question per section. {{perguntas:direct_comparison}} Opens the search route in weeks.
@@ -302,7 +302,7 @@ Do:
 4. Earn presence in durable sources: press, "best of" lists, Wikipedia where eligible. Feeds training memory, in months.
 5. Keep an up-to-date EN version of pillar pages: it raises presence in answers, but a stale EN page performs worse than none [fonte: Search Engine Land, Aug 2026]. {{skip:en-site}}
 6. Use the same brand name and description across every source.
-7. Separate earned from paid starting now: ChatGPT ads roll out to 31 European markets (EEA and Switzerland) on Aug 24, 2026, on Free and Go plans, with Plus/Pro/Business/Enterprise/Education staying ad-free. Not personalized at launch (conversation topic, general location, device type). Shown below the answer, labeled. On self-serve buying through OpenAI Ads Manager: international sources (Digiday, CNBC, Forbes) say it opened in beta on Sep 1, 2026 across the same 31 markets (incl. Portugal, inherited from that list); dedicated Portuguese sources (leak.pt, adclickgroup.com, early Sep 2026) say the opposite — ads are visible, but direct campaign creation is still closed to PT advertisers, self-serve described as "coming in the following months," buying still only through the OpenAI Ads Solutions team or certified agencies. **Update Sep 7, 2026:** OpenAI's own eligibility page (help.openai.com/en/articles/20001245) appears to have flipped Portugal's status to "Available" on Sep 2, 2026, per two independent trackers (soku.ai, Unite.AI) reporting 52 countries now active — but dedicated Portuguese press hasn't updated its reading since then. **Update Sep 8, 2026 — the original deadline arrives unresolved:** two new data points reinforce, without confirming, the "still closed" reading: OpenAI's own designated PT/ES alpha-phase partner (Cosmo5) is itself still only "preparing" its first domestic activation; and a second PT brand, Robbialac, bought ChatGPT ads via agency Social Animals, not through direct registration — the second confirmed PT case, after Continente, and the second to bypass self-serve. Still no first-hand case, from either side, of a PT account reaching or being blocked at the campaign-creation screen. Measuring the earned baseline BEFORE paid exists remains what makes the next report interpretable, whichever reading turns out correct. [fonte: OpenAI, notice to EU users Aug 15 2026; Digiday, Dataconomy, TechXplore, Aug 19 2026; CNBC, Forbes, Digiday, Aug 31–Sep 1 2026; leak.pt and adclickgroup.com, early Sep 2026; soku.ai and Unite.AI, Sep 2 2026; briefing.pt on Cosmo5 and Robbialac/Social Animals, Sep 2026 — first-hand verification still pending, see alert]
+7. Separate earned from paid starting now: ChatGPT ads roll out to 31 European markets (EEA and Switzerland) on Aug 24, 2026, on Free and Go plans, with Plus/Pro/Business/Enterprise/Education staying ad-free. Not personalized at launch (conversation topic, general location, device type). Shown below the answer, labeled. On self-serve buying through OpenAI Ads Manager: international sources (Digiday, CNBC, Forbes) say it opened in beta on Sep 1, 2026 across the same 31 markets (incl. Portugal, inherited from that list); dedicated Portuguese sources (leak.pt, adclickgroup.com, early Sep 2026) say the opposite: ads are visible, but direct campaign creation is still closed to PT advertisers, self-serve described as "coming in the following months," buying still only through the OpenAI Ads Solutions team or certified agencies. **Update Sep 7, 2026:** OpenAI's own eligibility page (help.openai.com/en/articles/20001245) appears to have flipped Portugal's status to "Available" on Sep 2, 2026, per two independent trackers (soku.ai, Unite.AI) reporting 52 countries now active: but dedicated Portuguese press hasn't updated its reading since then. **Update Sep 8, 2026: the original deadline arrives unresolved:** two new data points reinforce, without confirming, the "still closed" reading: OpenAI's own designated PT/ES alpha-phase partner (Cosmo5) is itself still only "preparing" its first domestic activation; and a second PT brand, Robbialac, bought ChatGPT ads via agency Social Animals, not through direct registration: the second confirmed PT case, after Continente, and the second to bypass self-serve. Still no first-hand case, from either side, of a PT account reaching or being blocked at the campaign-creation screen. Measuring the earned baseline BEFORE paid exists remains what makes the next report interpretable, whichever reading turns out correct. [fonte: OpenAI, notice to EU users Aug 15 2026; Digiday, Dataconomy, TechXplore, Aug 19 2026; CNBC, Forbes, Digiday, Aug 31–Sep 1 2026; leak.pt and adclickgroup.com, early Sep 2026; soku.ai and Unite.AI, Sep 2 2026; briefing.pt on Cosmo5 and Robbialac/Social Animals, Sep 2026: first-hand verification still pending, see alert]
 
 ### claude
 
@@ -332,19 +332,19 @@ Do:
 
 ### grok
 
-meta: revisto 2026-09-09 · externo: nenhuma mudança — Grok 4.7 continua anúncio verbal de Musk, data reportada 12 Set 2026, ainda sem model card, preço ou API (docs.x.ai e x.ai/news revistos hoje, sem mudança face a ontem) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: nenhuma mudança: Grok 4.7 continua anúncio verbal de Musk, data reportada 12 Set 2026, ainda sem model card, preço ou API (docs.x.ai e x.ai/news revistos hoje, sem mudança face a ontem) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Visibility Tracker audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today. {{fontes}}
 
 Do:
-1. Keep an active, quotable presence on X, reacting quickly to category topics — a general brand lever, even without confirmed direct citation in this niche.
+1. Keep an active, quotable presence on X, reacting quickly to category topics: a general brand lever, even without confirmed direct citation in this niche.
 2. Make the site back up what you claim on social: every claim with a matching page.
 3. Publish often: recency counts for more here than on other engines.
 4. Do not count on X as a guaranteed citation channel in Grok for this category: prioritise the site and indexed sources over X presence built purely to chase direct citation.
 
 ### deepseek
 
-meta: revisto 2026-09-09 · externo: correcção ao registo — o "DeepSeek-V4-Flash-Vision-Exp" descrito em dias anteriores como candidato não corroborado está confirmado: API viva desde 21 Ago 2026, pesos abertos (licença MIT) no Hugging Face desde 31 Ago 2026, 284B totais/13B activos (MoE), contexto de 1M tokens — sem mudança de mecânica de citação divulgada · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: correção ao registo: o "DeepSeek-V4-Flash-Vision-Exp" descrito em dias anteriores como candidato não corroborado está confirmado: API viva desde 21 Ago 2026, pesos abertos (licença MIT) no Hugging Face desde 31 Ago 2026, 284B totais/13B ativos (MoE), contexto de 1M tokens: sem mudança de mecânica de citação divulgada · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: training memory weighted heavily toward English-language sources.
 
@@ -357,16 +357,16 @@ Do:
 
 meta: revisto 2026-09-09 · externo: nenhuma mudança desde o "Agentic Search" de 20 Ago 2026 (já reflectido no bloco); changelog docs.mistral.ai revisto hoje (OCR 4.1 GA, sem ligação a mecânica de pesquisa/citação) · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: training memory with good European coverage, but since Aug 20, 2026 the API is no longer memory-only — "Agentic Search" gives the model 5 operations (search/open/navigate/read/grep) that actively open and verify documents instead of accepting only pre-cut retrieval chunks; FinanceBench accuracy rises from 26.7% to 86% with the mode active [fonte: mistral.ai/news/agentic-search, Aug 20, 2026]. This block's previous text ("the API exposes no first-party search") is no longer correct — corrected today. {{fontes}}
+How it decides: training memory with good European coverage, but since Aug 20, 2026 the API is no longer memory-only: "Agentic Search" gives the model 5 operations (search/open/navigate/read/grep) that actively open and verify documents instead of accepting only pre-cut retrieval chunks; FinanceBench accuracy rises from 26.7% to 86% with the mode active [fonte: mistral.ai/news/agentic-search, Aug 20, 2026]. This block's previous text ("the API exposes no first-party search") is no longer correct: corrected today. {{fontes}}
 
 Do:
-1. Work the memory levers: a consistent entity, durable press, presence in European sources for the category — still valid.
+1. Work the memory levers: a consistent entity, durable press, presence in European sources for the category: still valid.
 2. Keep comparative content and organic ranking healthy: it counts for the consumer product and for the other augmented engines.
 3. Structure pages for active verification, not just retrieval: with Agentic Search the model can open and read the whole document before answering, so the direct-answer paragraph has to hold up when the model checks the source, not only when it retrieves it.
 
 ### llama
 
-meta: revisto 2026-09-09 · externo: nenhuma mudança de mecânica confirmada para o Llama aberto; ver `models.md` (secção Meta) sobre a nova linha fechada "Muse Spark" da Meta Superintelligence Labs — sem impacto no mapping deste motor · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: nenhuma mudança de mecânica confirmada para o Llama aberto; ver `models.md` (secção Meta) sobre a nova linha fechada "Muse Spark" da Meta Superintelligence Labs: sem impacto no mapping deste motor · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: runs on training memory alone; no provider hosting Llama exposes first-party search. It moves in months, at the pace of training cycles.
 
@@ -390,9 +390,9 @@ Do:
 
 ### google_aio
 
-meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AIO em si — a 8 Set 2026 a Google lançou na EEA um redesenho de SERP para cumprir uma ordem DMA (unidades de agregador/fornecedor para queries de hotel, voo, transporte e produto, após multa de €460M a 23 Jul; cross-corroborado SEJ/SEL/Skift/SE Roundtable). A Comissão Europeia mantém "diálogo em curso" sobre se isto se estende ao AI Overviews; sem confirmação de que o bloco AIO mudou de mecânica hoje. Fora do ICP central (agregadores de viagens/produto, não B2B SaaS) — registado como watch, `Faz:` não alterado · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AIO em si: a 8 Set 2026 a Google lançou na EEA um redesenho de SERP para cumprir uma ordem DMA (unidades de agregador/fornecedor para queries de hotel, voo, transporte e produto, após multa de €460M a 23 Jul; cross-corroborado SEJ/SEL/Skift/SE Roundtable). A Comissão Europeia mantém "diálogo em curso" sobre se isto se estende ao AI Overviews; sem confirmação de que o bloco AIO mudou de mecânica hoje. Fora do ICP central (agregadores de viagens/produto, não B2B SaaS): registado como watch, `Faz:` não alterado · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: the AI answer block at the top of Google. The organic top 10 accounts for 38% of citations [fonte: Ahrefs, Mar 2026; was 76% in Jul 2025]: rank helps, but the page's citable structure weighs ever more. Since May 2026 it includes discussion citations (Reddit, forums, blogs) directly in the answer. On local and urgent questions it tends to show the local pack (the map) instead of the block. Since late Aug 2026, on queries where Google's systems determine it is most useful, the block dynamically expands to its full AI-Mode-like state without the user clicking "Show more", with the "Ask anything" box already open — pushing organic results further down the page; Google confirms the expansion is cancelled if the user has already started scrolling past it, to avoid losing their reading position [fonte: Search Engine Land/Search Engine Roundtable, 27 Aug 2026]. {{fontes}}
+How it decides: the AI answer block at the top of Google. The organic top 10 accounts for 38% of citations [fonte: Ahrefs, Mar 2026; was 76% in Jul 2025]: rank helps, but the page's citable structure weighs ever more. Since May 2026 it includes discussion citations (Reddit, forums, blogs) directly in the answer. On local and urgent questions it tends to show the local pack (the map) instead of the block. Since late Aug 2026, on queries where Google's systems determine it is most useful, the block dynamically expands to its full AI-Mode-like state without the user clicking "Show more", with the "Ask anything" box already open: pushing organic results further down the page; Google confirms the expansion is cancelled if the user has already started scrolling past it, to avoid losing their reading position [fonte: Search Engine Land/Search Engine Roundtable, 27 Aug 2026]. {{fontes}}
 
 Do:
 1. Open each key page with a direct answer paragraph that can be quoted on its own.
@@ -403,7 +403,7 @@ Do:
 
 ### google_ai_mode
 
-meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AI Mode em si — mesmo redesenho DMA de 8 Set 2026 descrito no bloco google_aio (unidades de agregador/fornecedor, EEA, hotel/voo/transporte/produto); CE mantém "diálogo em curso" sobre extensão ao AI Mode, sem confirmação hoje. Candidato anterior de mudança nos ads do AI Mode com datas internamente inconsistentes mantém-se sem segunda fonte — não corroborado, não tratado como facto · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-09-09 · externo: candidato a mudança, não confirmado para o AI Mode em si: mesmo redesenho DMA de 8 Set 2026 descrito no bloco google_aio (unidades de agregador/fornecedor, EEA, hotel/voo/transporte/produto); CE mantém "diálogo em curso" sobre extensão ao AI Mode, sem confirmação hoje. Candidato anterior de mudança nos ads do AI Mode com datas internamente inconsistentes mantém-se sem segunda fonte: não corroborado, não tratado como facto · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: Google's conversational search mode; it answers almost every question and cites at passage level. In 80% of citations the answer sits in the first sentence of the extracted passage, and the median cited passage runs ~117 words [fonte: Pillarbase, 15.7M citations, Jul 2026]. On commercial questions ads appear inside the answer [fonte: 29% of cases; over half on high-CPC keywords; SE Ranking, Jun 2026]. {{fontes}}
 
@@ -411,13 +411,13 @@ Do:
 1. Everything that applies to Google AI Overviews.
 2. Open each section with the answer in the first sentence and keep self-contained passages of about 120 words.
 3. Expect ads inside the answer on commercial questions: organic citation does not replace paid presence.
-4. For developing topics (breaking news, live events), AI Mode has shown since late Aug 2026 a horizontal carousel of article links ("Preferred Sources") between sections of the answer — fresh, authoritative coverage gets an extra path to exposure here, beyond inline citation [fonte: Google/Robby Stein via X, ~25 Aug 2026; desktop first, mobile "coming soon"].
+4. For developing topics (breaking news, live events), AI Mode has shown since late Aug 2026 a horizontal carousel of article links ("Preferred Sources") between sections of the answer: fresh, authoritative coverage gets an extra path to exposure here, beyond inline citation [fonte: Google/Robby Stein via X, ~25 Aug 2026; desktop first, mobile "coming soon"].
 
 ### copilot
 
 meta: revisto 2026-09-09 · externo: nenhuma mudança desde a separação indexação/AI-grounding absorvida a 6 Set 2026; changelogs Microsoft de Set 2026 revistos hoje são focados em enterprise (SharePoint/OneDrive, Copilot Notebooks), sem mudança ao Copilot consumer · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: Microsoft's chat; searches through the Bing index. Microsoft is unifying consumer Copilot with enterprise (M365) Copilot into a single surface — the boundary between "personal assistant" and "enterprise productivity" that today separates this block from M365 Copilot may blur over the course of Sep 2026; no confirmed change to retrieval/citation mechanics yet, but this block is worth revisiting once the rollout completes [fonte: PYMNTS, Jul 29, 2026]. Microsoft now describes indexing and "AI grounding" as explicitly separate systems: a page can stay indexed on Bing and still be filtered out of Copilot's answer — this explains citation drops that don't correspond to any indexing drop [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", May 6, 2026]. {{fontes}}
+How it decides: Microsoft's chat; searches through the Bing index. Microsoft is unifying consumer Copilot with enterprise (M365) Copilot into a single surface: the boundary between "personal assistant" and "enterprise productivity" that today separates this block from M365 Copilot may blur over the course of Sep 2026; no confirmed change to retrieval/citation mechanics yet, but this block is worth revisiting once the rollout completes [fonte: PYMNTS, Jul 29, 2026]. Microsoft now describes indexing and "AI grounding" as explicitly separate systems: a page can stay indexed on Bing and still be filtered out of Copilot's answer: this explains citation drops that don't correspond to any indexing drop [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", May 6, 2026]. {{fontes}}
 
 Do:
 1. Keep Bing indexing healthy: Bing Webmaster Tools connected and IndexNow on. {{skip:bwt-connected}}

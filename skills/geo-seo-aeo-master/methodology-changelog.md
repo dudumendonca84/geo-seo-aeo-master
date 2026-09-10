@@ -1,6 +1,6 @@
 # SINAL methodology changelog
 
-**SINAL** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.*
+**SINAL**: *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs.*
 
 Audit trail of how SINAL has evolved. Evolution criteria are defined in `SKILL.md` § Methodology evolution.
 
@@ -8,30 +8,30 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
-## 2026-08-24 — Engine playbook `grok`: peso ao X corrigido por evidência interna de duas semanas
+## 2026-08-24: Engine playbook `grok`: peso ao X corrigido por evidência interna de duas semanas
 
-**Trigger.** Reconciliação semanal do self-audit (ponto 6b) sobre `source_intelligence.md`: duas auditorias consecutivas do Visibility Tracker (2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal) mediram zero citações de x.com/twitter.com nas respostas de pesquisa do Grok, em ambas as semanas — satisfaz a regra das duas auditorias para corrigir um bloco sem depender de fonte primária do vendor. **Change.** Bloco `grok` (PT e EN) em `references/engine_playbooks.md`: "Como decide"/"How it decides" passa a atribuir o peso a X à documentação do fornecedor (não a facto observado) e regista a contradição medida, com datas e fonte; item novo em "Faz"/"Do" recomenda não contar com o X como canal de citação garantido nesta categoria. A alavanca de manter presença no X não foi removida — mantém-se como sinal de marca geral, não como aposta de citação directa neste nicho. Sem alteração a `llama`, `copilot_bing` nem aos restantes blocos.
+**Trigger.** Reconciliação semanal do self-audit (ponto 6b) sobre `source_intelligence.md`: duas auditorias consecutivas do Visibility Tracker (2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal) mediram zero citações de x.com/twitter.com nas respostas de pesquisa do Grok, em ambas as semanas: satisfaz a regra das duas auditorias para corrigir um bloco sem depender de fonte primária do vendor. **Change.** Bloco `grok` (PT e EN) em `references/engine_playbooks.md`: "Como decide"/"How it decides" passa a atribuir o peso a X à documentação do fornecedor (não a facto observado) e regista a contradição medida, com datas e fonte; item novo em "Faz"/"Do" recomenda não contar com o X como canal de citação garantido nesta categoria. A alavanca de manter presença no X não foi removida: mantém-se como sinal de marca geral, não como aposta de citação direta neste nicho. Sem alteração a `llama`, `copilot_bing` nem aos restantes blocos.
 
 ---
 
-## 2026-08-08 — Engine playbooks: formato accionável + sincronização com o news-feed
+## 2026-08-08: Engine playbooks: formato accionável + sincronização com o news-feed
 
-**Trigger.** Founder feedback no cartão "Como evoluir" do Tracker (a prosa corrida não dizia o que fazer) + directiva de garantir que a skill sabe o estado actual de cada motor. **Change (formato).** Cada bloco de motor (PT e EN) passa a "Como decide:" (mecanismo) + "Faz:" (acções imperativas numeradas, uma por linha, sem hard-wrap para renderizar limpo com `pre-line`). Travessões removidos dos blocos renderizados (regra client-facing). **Change (substância)** — cruzamento sistemático com o news-feed (precedência do mais fresco):
+**Trigger.** Founder feedback no cartão "Como evoluir" do Tracker (a prosa corrida não dizia o que fazer) + directiva de garantir que a skill sabe o estado atual de cada motor. **Change (formato).** Cada bloco de motor (PT e EN) passa a "Como decide:" (mecanismo) + "Faz:" (ações imperativas numeradas, uma por linha, sem hard-wrap para renderizar limpo com `pre-line`). Travessões removidos dos blocos renderizados (regra client-facing). **Change (substância)**: cruzamento sistemático com o news-feed (precedência do mais fresco):
 
-- `google_aio`: stat superada substituída — top-10 orgânico explica 38% das citações (Ahrefs, Mar 2026; era 76% Jul 2025), no lugar dos ~54% BrightEdge; + Google-Extended no robots.txt (SIGIR 2026), citações de discussões na resposta (Google, Mai 2026), aviso listicles/spam policy (Lily Ray + Google, Jun 2026).
-- `chatgpt`: pesquisa corre sobre o índice Bing e lê top 2-3 resultados por sub-pergunta (SEL Jun 2026; Peec AI Jul 2026); 28,3% das páginas mais citadas sem visibilidade orgânica (Ahrefs Q1 2026); modo de raciocínio desloca citações para fontes institucionais (Semrush Jul 2026); páginas-pilar EN actualizadas (SEL Ago 2026).
+- `google_aio`: stat superada substituída: top-10 orgânico explica 38% das citações (Ahrefs, Mar 2026; era 76% Jul 2025), no lugar dos ~54% BrightEdge; + Google-Extended no robots.txt (SIGIR 2026), citações de discussões na resposta (Google, Mai 2026), aviso listicles/spam policy (Lily Ray + Google, Jun 2026).
+- `chatgpt`: pesquisa corre sobre o índice Bing e lê top 2-3 resultados por sub-pergunta (SEL Jun 2026; Peec AI Jul 2026); 28,3% das páginas mais citadas sem visibilidade orgânica (Ahrefs Q1 2026); modo de raciocínio desloca citações para fontes institucionais (Semrush Jul 2026); páginas-pilar EN atualizadas (SEL Ago 2026).
 - `perplexity`: YouTube lidera citações (32,4%, Ahrefs Jun 2026) ao lado do peso Reddit; ghost citations 52% (Writesonic Jul 2026); research primária/trade press (5W Jun 2026).
 - `gemini`: YouTube 20,9% das citações AIO (Ahrefs); favorecimento de conteúdo Google (SIGIR 2026); menções não aparecem em GSC/GA4 (SEL Ago 2026).
 - `google_ai_mode`: specs de passagem (resposta na 1ª frase em 80%, mediana ~117 palavras, Pillarbase Jul 2026); anúncios dentro da resposta (SE Ranking Jun 2026).
-- `mistral`: corrigida a implicação de via de pesquisa medível — API sem pesquisa first-party (search_modes.md), medição só memória.
-- `claude`: perfil jornalismo de referência (5W Jun 2026). `copilot`: Citation Share/Compare no AI Performance (Bing Jun 2026). `deepseek`: caveat página EN desactualizada.
-- Preâmbulo: llms.txt retirado da lista de alavancas (SE Ranking ~300k domínios + Limy.AI 500M visitas de bots, Ago 2026: sem efeito, crawlers lêem o HTML directamente).
+- `mistral`: corrigida a implicação de via de pesquisa medível: API sem pesquisa first-party (search_modes.md), medição só memória.
+- `claude`: perfil jornalismo de referência (5W Jun 2026). `copilot`: Citation Share/Compare no AI Performance (Bing Jun 2026). `deepseek`: caveat página EN desatualizada.
+- Preâmbulo: llms.txt retirado da lista de alavancas (SE Ranking ~300k domínios + Limy.AI 500M visitas de bots, Ago 2026: sem efeito, crawlers lêem o HTML diretamente).
 
 Sem alterações: `grok`, `llama`, `copilot_bing` (o bloco de suspensão DataForSEO 5 Ago 2026 é o facto mais fresco).
 
 ---
 
-## 2026-08-03 — Superfícies de consumo passam a always-on na tabela de modos
+## 2026-08-03: Superfícies de consumo passam a always-on na tabela de modos
 
 A tabela `## Per-engine augmentation feature` de `references/search_modes.md` sobrepõe-se ao fallback do código no consumidor (`{...fallback, ...tabela}`), por isso uma linha errada não dá erro: duplica chamadas ao fornecedor e rotula metade das linhas como "memória de treino" numa superfície que pesquisa sempre.
 
@@ -41,33 +41,33 @@ Era o caso do `copilot`, marcado `(varies)`: corria dois modos e emitia o MESMO 
 - `google_aio`, `google_ai_mode` e `copilot_bing` passam a constar da tabela, também always-on. Estavam ausentes e funcionavam só por cair no fallback do código.
 - Nota explícita: superfícies de consumo não têm modo memória.
 
-Contrato 5 adicionado ao `scripts/validate-skill-tables.mjs`: exige que as cinco always-on estejam na tabela e marcadas como tal. Sem isto o modo de falha é silencioso e a factura só aparece no fim do mês.
+Contrato 5 adicionado ao `scripts/validate-skill-tables.mjs`: exige que as cinco always-on estejam na tabela e marcadas como tal. Sem isto o modo de falha é silencioso e a fatura só aparece no fim do mês.
 
-## 2026-08-03 — Filtragem de concorrentes: classificação por tipo antes do teste
+## 2026-08-03: Filtragem de concorrentes: classificação por tipo antes do teste
 
-O teste das quatro perguntas continua correcto mas era lento de aplicar e o cérebro re-derivava-o todas as semanas, com drift. Adicionadas três secções a `references/competitor_filtering.md`:
+O teste das quatro perguntas continua correto mas era lento de aplicar e o cérebro re-derivava-o todas as semanas, com drift. Adicionadas três secções a `references/competitor_filtering.md`:
 
-- **§2b Tipos que nunca são peers**, seja qual for o sector: fundações e institutos de investigação, redes só de diagnóstico ou laboratório, seguradoras, prestadores públicos, directórios e agregadores, media, e ferramentas de co-compra. Classificar por tipo primeiro, correr as quatro perguntas só no que sobra. Cada linha traz o erro real que teria evitado, incluindo a Fundação Champalimaud classificada como concorrente directo de uma rede hospitalar, onde um 4,8 de um centro de investigação fazia um 3,75 parecer derrota.
-- **§2c Onde o conjunto de peers se usa e onde não**: peers-only em Share of Voice, pódio, confronto directo e reputação local; todos os buckets nas listagens e dossiers, com etiqueta. Errar aqui não dá erro, dá um número silenciosamente falso.
+- **§2b Tipos que nunca são peers**, seja qual for o sector: fundações e institutos de investigação, redes só de diagnóstico ou laboratório, seguradoras, prestadores públicos, diretórios e agregadores, media, e ferramentas de co-compra. Classificar por tipo primeiro, correr as quatro perguntas só no que sobra. Cada linha traz o erro real que teria evitado, incluindo a Fundação Champalimaud classificada como concorrente direto de uma rede hospitalar, onde um 4,8 de um centro de investigação fazia um 3,75 parecer derrota.
+- **§2c Onde o conjunto de peers se usa e onde não**: peers-only em Share of Voice, pódio, confronto direto e reputação local; todos os buckets nas listagens e dossiers, com etiqueta. Errar aqui não dá erro, dá um número silenciosamente falso.
 - **§2d As decisões ficam**: um bucket com `status = 'confirmed'` é decisão do operador e o cérebro não a re-deriva. Evidência nova que a contrarie regista-se nas notas da corrida, não se troca em silêncio.
 
 Contrapartida no Tracker: `src/lib/competitors/scope.ts` passa a ser o sítio único que define o âmbito de cada superfície, depois de a regra estar aplicada em cinco ficheiros e ausente noutros vinte.
 
-## 2026-08-03 — Engine playbooks: auto-alimentação ligada nos três loops
+## 2026-08-03: Engine playbooks: auto-alimentação ligada nos três loops
 
-O `references/engine_playbooks.md` afirmava evoluir por três loops, mas só o daily-agent tinha gatilho escrito. Ligados os outros dois: o self-audit semanal actualiza um bloco `### <engine>` quando o prompt-test multi-engine contradiz uma alavanca listada (regra de confirmação: duas auditorias seguidas ou fonte primária do vendor, para uma semana atípica não derrubar conhecimento válido); a synthesis-weekly passa a ter os playbooks como destino para alavancas validadas em engagements reais (N≥3, anonimizadas). O parágrafo de manutenção do ficheiro passa a nomear a routine e o ponto exacto de cada loop.
+O `references/engine_playbooks.md` afirmava evoluir por três loops, mas só o daily-agent tinha gatilho escrito. Ligados os outros dois: o self-audit semanal atualiza um bloco `### <engine>` quando o prompt-test multi-engine contradiz uma alavanca listada (regra de confirmação: duas auditorias seguidas ou fonte primária do vendor, para uma semana atípica não derrubar conhecimento válido); a synthesis-weekly passa a ter os playbooks como destino para alavancas validadas em engagements reais (N≥3, anonimizadas). O parágrafo de manutenção do ficheiro passa a nomear a routine e o ponto exato de cada loop.
 
-Contrato 6 adicionado ao `scripts/validate-skill-tables.mjs` (verifica o header do bloco, as 11 keys de motor e blocos sem texto). Motivo: o Tracker consome este ficheiro sem fallback hardcoded, logo um header fora do formato faz a secção "Como aparecer aqui" desaparecer de todos os cartões em silêncio — e agora há três routines autónomas a escrever no ficheiro.
+Contrato 6 adicionado ao `scripts/validate-skill-tables.mjs` (verifica o header do bloco, as 11 keys de motor e blocos sem texto). Motivo: o Tracker consome este ficheiro sem fallback hardcoded, logo um header fora do formato faz a secção "Como aparecer aqui" desaparecer de todos os cartões em silêncio: e agora há três routines autónomas a escrever no ficheiro.
 
-## 2026-08-02 — Share of Voice unificado (peers-only)
+## 2026-08-02: Share of Voice unificado (peers-only)
 
-O rótulo "Share of Voice" cobria três fórmulas (todas as marcas no summary; só peers no deck; presença simples no dossier). Unificado na convenção peers-only fraccionária — ver §3 de `references/metrics.md`. O dossier de concorrente passa a rotular a sua métrica como "Presença". Efeito esperado: SoV do cartão principal sobe (denominador menor) no primeiro recompute após a mudança.
+O rótulo "Share of Voice" cobria três fórmulas (todas as marcas no summary; só peers no deck; presença simples no dossier). Unificado na convenção peers-only fraccionária: ver §3 de `references/metrics.md`. O dossier de concorrente passa a rotular a sua métrica como "Presença". Efeito esperado: SoV do cartão principal sobe (denominador menor) no primeiro recompute após a mudança.
 
-## 2026-05-29 — SINAL v1.7 — Taxonomia das 8 dimensões reconciliada (§116-130 canónica) + método exposto ao deck
+## 2026-05-29: SINAL v1.7: Taxonomia das 8 dimensões reconciliada (§116-130 oficial) + método exposto ao deck
 
-**Trigger.** Ligação dos Slides 05/06/07 do deck à skill (método deixa de ser hardcoded) expôs um drift interno: duas listas de 8 dimensões coexistiam — a detalhada e citada em `SKILL.md` § Scope (§116-130) vs a taxonomia usada no resumo, no `destaque-ai-deck-builder/CLAUDE.md` e em `gap_action_mapping.md`.
+**Trigger.** Ligação dos Slides 05/06/07 do deck à skill (método deixa de ser hardcoded) expôs um drift interno: duas listas de 8 dimensões coexistiam: a detalhada e citada em `SKILL.md` § Scope (§116-130) vs a taxonomia usada no resumo, no `destaque-ai-deck-builder/CLAUDE.md` e em `gap_action_mapping.md`.
 
-**Decisão do founder.** A lista **canónica** é a detalhada §116-130:
+**Decisão do founder.** A lista **oficial** é a detalhada §116-130:
 1. Technical foundation · 2. Content & topical authority · 3. Entity & brand foundation · 4. Authority & digital PR · 5. **Social & community signals** · 6. **Authority signals on site (E-E-A-T)** · 7. Measurement & feedback · 8. Strategic positioning.
 
 A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica deprecada como partição top-level.
@@ -79,37 +79,37 @@ A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica d
 
 **`gap_action_mapping.md` reconciliado** (decisão do founder "reconcilia e realoca"). DIMENSÃO 5 passou de "UX & engagement" para **Social & community signals**; nova DIMENSÃO 6 **Authority signals on site (E-E-A-T)**; Measurement → 7, Strategic positioning → 8. A cadência editorial (antiga DIMENSÃO 8 Operational excellence) foi movida para a DIMENSÃO 2 (Content, "editorial calendar discipline"); o pattern de UX/engagement passou a transversal (não-citação, ROI). Os patterns de Social e E-E-A-T foram redigidos a partir da prosa §116-130.
 
-**SINAL v1.7.** A taxonomia canónica (§116-130) não mudou — o que mudou foi o alinhamento dos ficheiros derivados a ela. Mas o `gap_action_mapping.md` foi reestruturado e ganhou patterns novos (Social, E-E-A-T): mudança a padrões existentes, logo version bump conforme a regra de manutenção do próprio ficheiro.
+**SINAL v1.7.** A taxonomia oficial (§116-130) não mudou: o que mudou foi o alinhamento dos ficheiros derivados a ela. Mas o `gap_action_mapping.md` foi reestruturado e ganhou patterns novos (Social, E-E-A-T): mudança a padrões existentes, logo version bump conforme a regra de manutenção do próprio ficheiro.
 
 ---
 
-## 2026-05-26 — Deck Builder API mappings — 2 model ID corrections (PR #4 reconciled)
+## 2026-05-26: Deck Builder API mappings: 2 model ID corrections (PR #4 reconciled)
 
-**Trigger.** Triagem de PRs abertos. PR #4 (base 0d3bdac, antiga) sinalizou 3 fragilidades de model IDs; 2 ainda válidas vs estado actual de main, 1 obsoleta.
+**Trigger.** Triagem de PRs abertos. PR #4 (base 0d3bdac, antiga) sinalizou 3 fragilidades de model IDs; 2 ainda válidas vs estado atual de main, 1 obsoleta.
 
-**Source.** Vendor docs (Anthropic, xAI) + reconciliação contra `models.md` actual.
+**Source.** Vendor docs (Anthropic, xAI) + reconciliação contra `models.md` atual.
 
 **Changes (aplicadas fresh a main, não via merge do PR #4 para evitar regressão):**
 - `claude` cost_optimized: `claude-haiku-4-5-20251001` → **`claude-haiku-4-5`** (alias durável, remove fragilidade date-stamp).
-- `grok` production: `grok-4` → **`grok-4.3`** (grok-4 deprecated, retira 15 Ago 2026; grok-4.3 é o flagship cost-efficient actual).
+- `grok` production: `grok-4` → **`grok-4.3`** (grok-4 deprecated, retira 15 Ago 2026; grok-4.3 é o flagship cost-efficient atual).
 
 **NÃO aplicada (obsoleta):**
-- PR #4 propunha `deepseek` production `deepseek-v4` → `deepseek-v4-pro`. Rejeitada: main já moveu deliberadamente deepseek para `deepseek-v4-flash` (commit #13 — "pro é demasiado lento"). A decisão flash de main prevalece.
+- PR #4 propunha `deepseek` production `deepseek-v4` → `deepseek-v4-pro`. Rejeitada: main já moveu deliberadamente deepseek para `deepseek-v4-flash` (commit #13: "pro é demasiado lento"). A decisão flash de main prevalece.
 
-**PR #4 fechado** (não merged — base antiga regrediria deepseek + daily-prompt.md). Net-new válido aplicado aqui.
+**PR #4 fechado** (não merged: base antiga regrediria deepseek + daily-prompt.md). Net-new válido aplicado aqui.
 
-**Sem version bump SINAL.** Correcção de content em references/, não evolução de método. Versão permanece v1.6.
+**Sem version bump SINAL.** Correção de content em references/, não evolução de método. Versão permanece v1.6.
 
 ---
 
-## 2026-05-25 — SINAL v1.6 — `gap_action_mapping.md` adicionado
+## 2026-05-25: SINAL v1.6: `gap_action_mapping.md` adicionado
 
-**Trigger.** Deck Builder PR #5 do roadmap (Step 12 deck-by-AI) precisa de mapping concreto entre findings de audit/scan e acções fundamentadas. Founder direction explícita: deck deve cobrir 8 dimensões SINAL, não apenas technical.
+**Trigger.** Deck Builder PR #5 do roadmap (Step 12 deck-by-AI) precisa de mapping concreto entre findings de audit/scan e ações fundamentadas. Founder direction explícita: deck deve cobrir 8 dimensões SINAL, não apenas technical.
 
-**Source.** Internal product direction; SKILL.md § Methodology — SINAL § Scope (holistic).
+**Source.** Internal product direction; SKILL.md § Methodology: SINAL § Scope (holistic).
 
 **Changes:**
-- New file `references/gap_action_mapping.md` — patterns por dimensão (8 dimensões SINAL × 1-3 patterns iniciais cada) mapeando observable signals para acção concreta com effort + impacto típico + fonte primária.
+- New file `references/gap_action_mapping.md` - patterns por dimensão (8 dimensões SINAL × 1-3 patterns iniciais cada) mapeando observable signals para ação concreta com effort + impacto típico + fonte primária.
 - Cobertura inicial:
   - Dim 1 (Technical): 3 patterns (Gemini 0%, llms.txt, performance)
   - Dim 2 (Content): 2 patterns (original stats, comparative)
@@ -123,30 +123,30 @@ A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica d
 
 **Effect.** Step 12 do Deck Builder pode (futuro PR) consumir este ficheiro e gerar action plan fundamentado por horizonte. Each pattern inclui fonte primária quando há evidência pública (Aggarwal et al., Ahrefs, Profound, Otterly, etc.); declara honestamente quando não há.
 
-**Maintenance.** Loop 2 (self-audit semanal) e Loop 3 (synthesis-weekly de `destaque-ai-ops/learnings/` — futuro) alimentam novos patterns à medida que destaque.ai acumula client engagements reais.
+**Maintenance.** Loop 2 (self-audit semanal) e Loop 3 (synthesis-weekly de `destaque-ai-ops/learnings/` - futuro) alimentam novos patterns à medida que destaque.ai acumula client engagements reais.
 
 ---
 
-## 2026-05-23 — SINAL v1.4 — Prompt intelligence layer added
+## 2026-05-23: SINAL v1.4: Prompt intelligence layer added
 
-**Trigger.** Founder direction: skill deve evoluir também nos prompts — saber quais prompts canónicos o segmento usa, não só fixar uma query intuição-based no audit.
+**Trigger.** Founder direction: skill deve evoluir também nos prompts: saber quais prompts oficiais o segmento usa, não só fixar uma query intuição-based no audit.
 
 **Source.** Internal product direction.
 
 **Changes:**
-- New file `references/prompts.md` — prompt intelligence canonical landscape para o segmento destaque.ai (B2B SaaS PT). 7 tiers de prompts (Discovery, Comparison, Evaluation, Problem-stated, Pricing, Technical, Vertical SaaS PT). 30+ prompts seed com tier classification.
+- New file `references/prompts.md` - prompt intelligence canonical landscape para o segmento destaque.ai (B2B SaaS PT). 7 tiers de prompts (Discovery, Comparison, Evaluation, Problem-stated, Pricing, Technical, Vertical SaaS PT). 30+ prompts seed com tier classification.
 - `daily-agent/daily-prompt.md`:
   - Nova bullet de monitoring para prompt patterns research (Profound, Peec, Otterly publications; AnswerThePublic; Reddit r/SEO threads; sales call patterns)
-  - Matriz de absorção expandida com row para "Novo prompt canónico do segmento ou shift em existente → prompts.md Tier apropriado"
-- `routines/destaque-ai-self-audit-weekly.md` actualizado para usar prompts.md como test suite em vez de query hard-coded. Rotação Tier 2/3/5/6 (10 prompts/semana) + Tier 1/4/7 (mandatory cada semana).
-- `SKILL.md` file index actualizado com prompts.md.
-- `README.md` file tree actualizado.
+  - Matriz de absorção expandida com row para "Novo prompt oficial do segmento ou shift em existente → prompts.md Tier apropriado"
+- `routines/destaque-ai-self-audit-weekly.md` atualizado para usar prompts.md como test suite em vez de query hard-coded. Rotação Tier 2/3/5/6 (10 prompts/semana) + Tier 1/4/7 (mandatory cada semana).
+- `SKILL.md` file index atualizado com prompts.md.
+- `README.md` file tree atualizado.
 
 **Effect.** O self-audit semanal passa a medir share-of-voice real do destaque.ai contra um conjunto representativo de prompts (não só uma intuição-based). Permite tracking longitudinal de SoV per prompt tier. Informa content strategy: cada prompt em prompts.md vira candidato a "resposta que destaque.ai deve owned".
 
 ---
 
-## 2026-05-23 — SINAL v1.3 — Gaps fechados + acronym formalisation
+## 2026-05-23: SINAL v1.3: Gaps fechados + acronym formalisation
 
 **Trigger.** Founder direction: ensure methodology is best-in-class and most recent; name the model.
 
@@ -154,19 +154,19 @@ A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica d
 
 **Changes:**
 
-*Naming.* Methodology formally named **SINAL** — *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs*. PT-PT acronym, semantic fit with "signal" (SEO/search vocabulary), sober and memorable. All references in `SKILL.md`, `README.md`, `destaque-ai-self/audit-baseline.md` updated.
+*Naming.* Methodology formally named **SINAL**: *Sistema Integrado destaque.ai de Notabilidade em AI search e LLMs*. PT-PT acronym, semantic fit with "signal" (SEO/search vocabulary), sober and memorable. All references in `SKILL.md`, `README.md`, `destaque-ai-self/audit-baseline.md` updated.
 
 *Gaps closed (audit-workflow additions as sub-bullets in existing sections):*
-- §7 GEO técnica — added **multimodal grounding** (image/video schema, transcript discipline, multimodal prompt test). Relevant since Gemini 3.5 and GPT-5 ship image-citing behavior.
-- §9 Entity and brand foundation — added **local presence** sub-section (Google Business Profile, Bing Places, Apple Maps, Páginas Amarelas / pai.pt for PT, OpenStreetMap, address-consistency hygiene). Critical for clients with on-site presence in Portugal.
-- §13 Measurement — added **conversion attribution beyond rankings** (GA4 funnel from AI-channel to signup/demo/paid, cohort analysis vs organic; reference NetElixir holiday 2025 ~1.2× conversion rate caveat).
-- §14 Strategic positioning — added **crisis-response protocol** for negative or hallucinated brand mentions in LLM outputs (document, classify as grounded vs hallucinated, escalation path, vendor feedback channels, canonical-statement publication on owned domain). Reference: Lidsky & Daves SSRN paper + *LTL LED v. Google* precedent.
+- §7 GEO técnica: added **multimodal grounding** (image/video schema, transcript discipline, multimodal prompt test). Relevant since Gemini 3.5 and GPT-5 ship image-citing behavior.
+- §9 Entity and brand foundation: added **local presence** sub-section (Google Business Profile, Bing Places, Apple Maps, Páginas Amarelas / pai.pt for PT, OpenStreetMap, address-consistency hygiene). Critical for clients with on-site presence in Portugal.
+- §13 Measurement: added **conversion attribution beyond rankings** (GA4 funnel from AI-channel to signup/demo/paid, cohort analysis vs organic; reference NetElixir holiday 2025 ~1.2× conversion rate caveat).
+- §14 Strategic positioning: added **crisis-response protocol** for negative or hallucinated brand mentions in LLM outputs (document, classify as grounded vs hallucinated, escalation path, vendor feedback channels, canonical-statement publication on owned domain). Reference: Lidsky & Daves SSRN paper + *LTL LED v. Google* precedent.
 
-*Tagline.* "Notabilidade em AI search. Método SINAL — destaque.ai."
+*Tagline.* "Notabilidade em AI search. Método SINAL: destaque.ai."
 
 ---
 
-## 2026-05-23 — SINAL v1.2 — Methodology evolution protocol formalised
+## 2026-05-23: SINAL v1.2: Methodology evolution protocol formalised
 
 **Trigger.** Founder direction: methodology itself must evolve with the field.
 
@@ -177,7 +177,7 @@ A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica d
 
 ---
 
-## 2026-05-23 — SINAL v1.1 — Holistic scope made explicit
+## 2026-05-23: SINAL v1.1: Holistic scope made explicit
 
 **Trigger.** Founder feedback: methodology is not just technical; it is **everything that contributes to ranking #1 or being cited in AI search**.
 
@@ -188,7 +188,7 @@ A taxonomia alternativa (5 = UX & engagement, 8 = Operational excellence) fica d
 
 ---
 
-## 2026-05-23 — SINAL v1.0 — Codified
+## 2026-05-23: SINAL v1.0: Codified
 
 **Trigger.** Initial codification of the destaque.ai methodology as a synthesis of world-class sources (academic / industry primary / vendor primary docs / practical audit traditions) applied to B2B SaaS in Portugal with PT-PT contextual relevance.
 
