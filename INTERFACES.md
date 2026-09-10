@@ -12,7 +12,7 @@
 
 ```
 ┌──────────────────────────────────────┐
-│  geo-seo-aeo-master (this repo)      │  ← skill canónica destaque.ai
+│  geo-seo-aeo-master (this repo)      │  ← skill oficial destaque.ai
 │  - SKILL.md (método SINAL)           │
 │  - references/ (knowledge)           │
 │  - daily-agent/ (auto-updates)       │
