@@ -507,8 +507,17 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Caveat.** SSRN working paper, not yet peer-reviewed at time of reporting; single study, not yet independently replicated.
 - **Use.** Directly undercuts Google's public justification that clicks displaced by AI Overviews are mostly low-value: useful when a client cites that framing to downplay the traffic impact of AIO on their category. Pairs with §41 (Fractl/SEL redistributed demand) to argue clicks are being reduced in real terms, not merely reallocated to better-fit queries.
 
----
 
+## 45. Search Engine Land / Peec AI: 83% of ChatGPT carousel products come from Google Shopping's top 40
+
+- **URL.** https://searchengineland.com/new-finding-chatgpt-sources-83-of-its-carousel-products-from-google-shopping-via-shopping-query-fan-outs-470723
+- **Date.** March 2026 (absorbed 10 Sep 2026: the number was cited on the destaque.ai site and in `prompts.md` §2.6 since August without a row here, which the rule "every statistic comes from benchmarks.md" does not allow).
+- **Sample.** Peec AI data: 40,000+ ChatGPT carousel products matched against 200,000 organic Shopping results from each of Google and Bing; prompts diversified across branded/non-branded, with and without price, ten product verticals (apparel, baby, beauty, electronics, home improvement, home & kitchen, office, pets, sports, toys). Authors Tom Wells and Malte Landwehr (Peec AI).
+- **Finding.** **83%** of ChatGPT carousel products appear in Google's top-40 organic Shopping results for the same query; only **11%** match Bing, almost all of those also present on Google. The mechanism the authors describe is shopping query fan-out: ChatGPT issues shopping queries and reads Google Shopping's organic results.
+- **Caveat.** Vendor data (Peec AI), single study, US-centric queries; the pipe can be cut by Google at any time (later coverage in 2026 reports changes to what ChatGPT can read). Treat the mechanism as current and the percentage as directional.
+- **Use.** Product visibility in ChatGPT carousels is a Google Merchant Center feed problem before it is a content problem: feed completeness, freshness and organic Shopping rank. Basis for `prompts.md` §2.6 (`transactional`), the site's /comercio-agentico page and the agentic-commerce playbook.
+
+---
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
@@ -518,9 +527,9 @@ When confronted with such a stat by a client, the response is: *"That number cir
 | `b2b_ai_answer` | 82% | das pesquisas em tech B2B já acionam uma resposta de IA | BrightEdge, 2026 (36% → 82% em 12 meses) | https://www.brightedge.com/resources/weekly-ai-search-insights/ai-overviews-one-year-presence-size-citing | 2026-02-01 |
 | `aio_click_share` | ~1% | dos utilizadores clica numa fonte dentro de uma AI Overview | Pew Research, Jul 2025 (CTR 8% vs 15%) | https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/ | 2025-07-22 |
 | `cited_brand_clicks` | 35% | mais cliques orgânicos para marcas citadas em respostas de IA | Seer Interactive, 2026 (2,43 mil milhões de impressões) | https://www.seerinteractive.com/insights | 2026-01-01 |
-| `aio_top10_share` | 54% | das citações em AI Overviews vêm de URLs no top-10 orgânico | BrightEdge, 2025 (rank overlap, 16 meses) | https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio | 2025-11-01 |
+| `aio_top10_share` | 38% | das citações em AI Overviews vêm de URLs no top-10 orgânico | Ahrefs, Mar 2026 (863 mil SERPs, 4 milhões de URLs) | https://ahrefs.com/blog/ai-overview-citations-top-10/ | 2026-03-02 |
 
-Cada linha cruza com a secção detalhada acima: `b2b_ai_answer` → §5 (BrightEdge presence), `aio_click_share` → §1 (Pew click behaviour), `cited_brand_clicks` → §13 (Seer CTR recovery), `aio_top10_share` → §6 (BrightEdge citation source composition). Não adicionar stats da §18 (não verificados).
+Cada linha cruza com a secção detalhada acima: `b2b_ai_answer` → §5 (BrightEdge presence), `aio_click_share` → §1 (Pew click behaviour), `cited_brand_clicks` → §13 (Seer CTR recovery), `aio_top10_share` → §36 (Ahrefs, Mar 2026; até 10 Set 2026 apontava para §6, BrightEdge 2025, 54%: a amostra da Ahrefs é dez vezes maior e um ano mais recente, e o número é o que o deck diz hoje). Não adicionar stats da §18 (não verificados).
 
 ---
 

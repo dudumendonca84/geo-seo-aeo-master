@@ -8,6 +8,24 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-09-10: Limiares de alerta calculados em código, referência do top-10 em AI Overviews atualizada, entradas em falta desde 24 Ago
+
+**Trigger.** Revisão pente fino de 9 Set e análise crítica de 10 Set 2026 (itens C44, 51, 52): o changelog parou a 24 Ago enquanto o método mudou quatro vezes.
+
+**O que mudou, com a data em que mudou.**
+
+- **31 Ago 2026: Share of Recommendation** (`references/metrics.md` §3b). Aparecer não é ser escolhido: o SoR divide as escolhas da categoria com a mesma convenção do SoV (1/n por resposta, depois média), e o critério de escolha (lugar numa ordem, veredicto por critério com um nome só, ou a frase de fecho) vem do estudo "Um mapa das empresas de Portugal". `null` antes dessa data, nunca zero.
+- **3 Set 2026: Visibility Score** (`references/metrics.md` § Visibility Score, contrato 8). Os três pesos passam a viver numa tabela parseável; o SoV entra relativo ao líder e não absoluto.
+- **7 Set 2026: `source_intelligence.md` redefinido** como evidência empírica das auditorias, lida pela reconciliação semanal dos playbooks.
+- **9 Set 2026: o modelo que o Tracker chama vive na skill** (`references/models.md` § Tracker buyer defaults, contrato 9); a variável de ambiente que o decidia deixou de existir; o Mistral volta ao large.
+- **10 Set 2026: os limiares de alerta são um contrato de parse** (`references/alert_thresholds.md` §12, contrato 13). O §2 e o §6 são lidos pelo Tracker no fecho de cada semana e calculados em código; a Routine fica com eventos, tendências e território. Mudar um número na tabela muda o que dispara para todos os clientes, sem deploy.
+- **10 Set 2026: `aio_top10_share` passa de 54% (BrightEdge 2025) para 38% (Ahrefs, Mar 2026, 863 mil SERPs)** na tabela `## Deck Builder core stats` de `benchmarks.md`. O §36 já dizia que os dois estudos medem coisas diferentes; o deck público mostrava o mais antigo e mais pequeno. O Slide 05 do deck muda no fetch seguinte.
+- **10 Set 2026: `benchmarks.md` §45** (Search Engine Land / Peec AI, 83% dos produtos do carrossel do ChatGPT vêm do top-40 do Google Shopping): o número era citado no site e em `prompts.md` §2.6 sem linha aqui.
+
+**Secções alteradas.** `references/alert_thresholds.md` (§8, §11, §12), `references/benchmarks.md` (§45, core stats), `references/metrics.md` (§3b, Visibility Score), `references/models.md` (buyer defaults; cabeçalho e histórico de refresh arrumados a 10 Set), `SKILL.md` (§ Methodology evolution: "12-category scorecard", era "7-category" desde a v1.0), `INTERFACES.md` (contratos 8, 9, 13).
+
+---
+
 ## 2026-08-24: Engine playbook `grok`: peso ao X corrigido por evidência interna de duas semanas
 
 **Trigger.** Reconciliação semanal do self-audit (ponto 6b) sobre `source_intelligence.md`: duas auditorias consecutivas do Visibility Tracker (2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal) mediram zero citações de x.com/twitter.com nas respostas de pesquisa do Grok, em ambas as semanas: satisfaz a regra das duas auditorias para corrigir um bloco sem depender de fonte primária do vendor. **Change.** Bloco `grok` (PT e EN) em `references/engine_playbooks.md`: "Como decide"/"How it decides" passa a atribuir o peso a X à documentação do fornecedor (não a facto observado) e regista a contradição medida, com datas e fonte; item novo em "Faz"/"Do" recomenda não contar com o X como canal de citação garantido nesta categoria. A alavanca de manter presença no X não foi removida: mantém-se como sinal de marca geral, não como aposta de citação direta neste nicho. Sem alteração a `llama`, `copilot_bing` nem aos restantes blocos.

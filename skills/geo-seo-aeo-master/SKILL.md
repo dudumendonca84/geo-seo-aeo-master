@@ -335,7 +335,7 @@ The methodology has to **adapt to a moving field**. What worked in 2024 (schema-
 
 6. **A previously-tracked metric becomes obsolete or a new one becomes canonical.** Example: if `llms.txt` ever gets confirmed inference-path consumption by a major LLM, it moves from "publish but don't promise" to a weighted audit item.
 
-7. **The 7-category scorecard itself needs to expand or rebalance.** Example: if "Entity coverage" (Wikidata, Knowledge Panel, sameAs depth) becomes the single highest-weighted predictor of citation, it may need to be a standalone category rather than nested under "SEO Técnico" or "Conteúdo & E-E-A-T".
+7. **The 12-category scorecard itself needs to expand or rebalance.** Example: if "Entity coverage" (Wikidata, Knowledge Panel, sameAs depth) becomes the single highest-weighted predictor of citation, it may need to be a standalone category rather than nested under "SEO Técnico" or "Conteúdo & E-E-A-T".
 
 **How methodology evolution is recorded:**
 

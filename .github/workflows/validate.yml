@@ -1,0 +1,21 @@
+# Os contratos parseáveis da skill validam-se em TODOS os pushes e PRs, e
+# não só nos commits das routines (10 Set 2026). O routine-automerge só
+# corria em branches claude/* com prefixo daily:/audit:; os commits
+# humanos de 9 Set entraram em main sem validação. O que os produtos leem
+# em runtime não pode depender de quem fez o commit.
+name: validate-skill
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/validate-skill-tables.mjs
