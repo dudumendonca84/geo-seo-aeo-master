@@ -359,7 +359,7 @@ modelos na mão, tem que ser automático"*):
 
 | Engine | Buyer model | Plan measured | Tracker calls | Why different |
 |---|---|---|---|---|
-| `chatgpt` | `gpt-5.5-instant` | ChatGPT Free/Go default | `gpt-5.5-instant` |: |
+| `chatgpt` | `gpt-5.6-luna` | ChatGPT Free/Go default | `gpt-5.6-luna` |: (see the note below: this row said `gpt-5.5-instant` until 11 Sep 2026, and OpenAI no longer serves it) |
 | `claude` | `claude-sonnet-5` | Claude Free/Pro default | `claude-sonnet-5` |: |
 | `gemini` | `gemini-3.5-flash` | AI Overviews / AI Mode routing | `gemini-3.5-flash` |: |
 | `grok` | `grok-4.3` | grok.com default | `grok-4.3` |: |
@@ -423,10 +423,35 @@ with a commit, which the Tracker picks up within the hour. The only other
 state is "the skill was unreachable and the in-code fallback ran", and the
 engine card shows a `recurso` badge when that is the case.
 
-**`gpt-5.5-instant` has no row in the Token prices table below.** That is deliberate
-and not an oversight: the price was not found in a primary source. The
-consumer treats the cost as unknown rather than assuming one, per the
-reading contract of that section.
+### The `chatgpt` row 404'd in production (11 Sep 2026)
+
+**A tabela mandava chamar um modelo que a OpenAI já não serve.** A primeira
+auditoria a correr depois de esta secção passar a decidir devolveu
+`404 The model 'gpt-5.5-instant' does not exist or you do not have access to
+it` em **32 de 32 chamadas** do ChatGPT (Congruent, semana de 14 Set). O
+cartão do motor ia a zero e o custo da semana perdia o motor mais caro.
+
+**A contradição estava dentro deste ficheiro, em três sítios:**
+
+| Onde | O que dizia | Data |
+|---|---|---|
+| esta tabela | `gpt-5.5-instant` | 09 Set |
+| o caveat da tabela de mappings | "free/Go still default to `gpt-5.5-instant`" | 11 Jul |
+| o histórico de refreshes | "**GPT-5.6 Luna** the default for Free/Go users" | 10 Ago |
+
+A 10 de Agosto a mudança foi registada no histórico e **nem a tabela nem o
+caveat foram actualizados**. Ficaram os três a coexistir, e a tabela é a
+única que o código lê.
+
+**A LIÇÃO, e é para o daily-agent:** registar uma mudança de modelo no
+histórico não é absorvê-la. Um default novo muda TRÊS sítios neste ficheiro,
+e o que decide é a tabela. Uma nota de refresh que diz "o default passou a
+X" e deixa a tabela em Y é uma contradição que só se descobre quando uma
+auditoria paga devolve 404.
+
+Não foi descoberta antes porque nenhuma auditoria correu entre 09 Set 18:18
+(quando esta secção passou a mandar) e 11 Set 14:17. Antes disso, uma
+variável de ambiente na Vercel punha `gpt-5.6-luna` e tapava o erro.
 
 ---
 
@@ -534,7 +559,7 @@ Two columns per engine:
 
 **Caveat: `llama` row (04 Aug 2026):** the engine key was `meta` with Llama 3.1 IDs; renamed to `llama` and moved to Llama 4, and the vendor column now says "third-party hosts" on purpose. Meta's own Llama API (llama.developer.meta.com) shut down on 6 Jul 2026, so the models are reachable only through Groq, Together, Fireworks, Bedrock and similar, all OpenAI-compatible. **This row is the MODEL, not the assistant.** Meta AI as a consumer surface (WhatsApp, Instagram, meta.ai) has no public API and no SERP provider exposes it, so it is not measurable today; a consumer must not label a Llama API call as "Meta AI", because the assistant carries its own system prompt, retrieval and guardrails and answers differently. Ungrounded: none of the third-party hosts expose a first-party web-search tool on the chat endpoint, so this engine runs training-memory only.
 
-**Caveat: `chatgpt` row (11 Jul 2026):** with GPT-5.6's launch, ChatGPT's default is tier-dependent for the first time (previously a single model served all tiers). `gpt-5.6-sol` reflects the Plus/Pro/Business/Enterprise default; free/Go ChatGPT users still default to `gpt-5.5-instant` as of this refresh. The `production` value above is calibrated to the paid-diagnostic-audit rationale in the Tier assignment table below, not to the free-tier product experience.
+**Caveat: `chatgpt` row (11 Jul 2026):** with GPT-5.6's launch, ChatGPT's default is tier-dependent for the first time (previously a single model served all tiers). `gpt-5.6-sol` reflects the Plus/Pro/Business/Enterprise default. **O free/Go passou a `gpt-5.6-luna` a 6 Ago 2026** (ver o refresh de 10 Ago); esta frase dizia `gpt-5.5-instant` e ficou um mês por corrigir, o que levou a tabela `## Tracker buyer defaults` a mandar chamar um modelo que a OpenAI já não serve. The `production` value above is calibrated to the paid-diagnostic-audit rationale in the Tier assignment table below, not to the free-tier product experience.
 
 ### Tier assignment (Deck Builder)
 
