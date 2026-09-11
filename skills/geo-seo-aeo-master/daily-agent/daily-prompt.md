@@ -156,13 +156,40 @@ Além do news-feed, TODA a corrida termina com um email ao founder
   título `## 📬 DIGEST (não enviado — Gmail indisponível)` e di-lo na
   resposta da corrida.
 
-- **Layout**: HTML de email (htmlBody), largura 600px, cabeçalho com o
-  wordmark (destaque em fundo #FACC15), secções com etiqueta mono em
-  maiúsculas, jogadas destacadas com fundo #fef3c7. Simples e legível
-  no telemóvel.
+### Como se manda, e o erro que já aconteceu
+
+O `send_message` do Gmail MCP tem DOIS campos de conteúdo, e a diferença
+entre eles é a diferença entre um email e um monte de marcação à vista:
+
+- **`body` leva TEXTO SIMPLES.** Sempre. Nunca HTML.
+- **`htmlBody` leva o HTML.** É este que o Gmail desenha.
+
+**Preenche os dois, todos os dias.** O `htmlBody` é o que se vê; o `body`
+é a versão em texto do mesmo digest, e existe para o dia em que alguma
+coisa correr mal com o outro.
+
+**O QUE CORREU MAL (11 Set 2026).** O digest desse dia chegou ao founder
+com o `<div style="max-width:600px...">` inteiro escrito como texto no
+ecrã, tags e todas, do princípio ao fim. A causa: o HTML foi posto em
+`body` em vez de `htmlBody`. O Gmail fez o que devia, porque `body` é
+texto e texto mostra-se tal como está. A instrução de usar `htmlBody` já
+estava escrita aqui desde sempre, e uma regra escrita não obriga ninguém:
+por isso passa a estar escrita com o nome do campo, com o que acontece
+quando se troca, e com a verificação abaixo.
+
+**A verificação, antes de carregar em enviar:** se o texto que vais pôr
+em `body` tem um `<` seguido de uma letra, está errado. Esse conteúdo é
+do `htmlBody`, e o `body` leva o mesmo digest em prosa, sem marcação.
+
+- **Layout do `htmlBody`**: largura 600px, cabeçalho com o wordmark
+  (destaque em fundo #FACC15), secções com etiqueta mono em maiúsculas,
+  jogadas destacadas com fundo #fef3c7. Simples e legível no telemóvel.
+- **Assunto**: exactamente `[destaque.ai] Digest diário · YYYY-MM-DD`. O
+  de 11 Set saiu como "Digest destaque.ai · 2026-09-11", que é outro
+  formato: quem filtra a caixa de entrada por assunto perde-o.
 - **Fontes SEMPRE**: cada item termina com o link da fonte (ou fontes),
   visível e clicável ("Fonte: Search Engine Land"). Item sem fonte não
-  entra no email.
+  entra no email. No `body` em texto, o link vai por extenso.
 
 Tom: sócio de estratégia, sóbrio, sem travessão, máximo ~400 palavras.
 
