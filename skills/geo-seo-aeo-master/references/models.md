@@ -488,7 +488,7 @@ news-feed": passa a registá-la também aqui.
 | `gpt-5.6-luna` | 0.20 | 1.20 | 2026-07-30 | corte de 80% face a 1.00/6.00; confirmado em OpenRouter, pricepertoken e getapipulse a 7 Set 2026 |
 | `gemini-3.5-flash` | 1.50 | 9.00 | 2026-05-19 | preço de lançamento; confirmado em OpenRouter, devtk e pricepertoken a 7 Set 2026. Cache de entrada a 0.15 |
 | `gemini-3.5-flash-lite` | 0.30 | 2.50 | | OpenRouter e eesel a 7 Set 2026. Houve subida de preço em 2026 e não se apurou a data: por isso `since` fica vazio |
-| `grok-4.3` | 1.25 | 2.50 | | OpenRouter, requesty e pricepertoken a 7 Set 2026. ATENÇÃO: a partir de 200K tokens de contexto passa a 2.50/5.00, e as nossas chamadas com pesquisa já passaram os 200K |
+| `grok-4.3` | 1.25 | 2.50 | | OpenRouter, requesty e pricepertoken a 7 Set 2026. A partir de 200K tokens de contexto passa a 2.50/5.00; medido a 11 Set 2026, nenhuma das nossas chamadas lá chega (máximo 70.440 de entrada em 363 chamadas), por isso este par é o que se paga |
 | `grok-4.1-fast` | 0.20 | 0.50 | | pricepertoken e Artificial Analysis a 7 Set 2026 |
 | `deepseek-v4-flash` | 0.44 | 1.32 | 2026-08-16 | PREÇO DE PICO. A DeepSeek passou a cobrar por hora a 16 Ago 2026: pico 0.44/1.32 (01:00-04:00 e 06:00-10:00 UTC), fora de pico 0.22/0.66. A auditoria semanal corre às 07:00 UTC, dentro do pico, por isso é o de pico que fica aqui; uma corrida fora dessas horas custa metade e esta tabela sobrestima-a |
 | `mistral-large-latest` | 0.50 | 1.50 | | Mistral Large 3. pricepertoken e aipricing a 7 Set 2026 |
@@ -521,8 +521,12 @@ número que lá está é uma escolha declarada, não a verdade inteira:
 - **`deepseek-v4-flash` depende da HORA.** Pico e fora de pico diferem
   para o dobro. Fica o de pico, porque é quando a auditoria corre.
 - **`grok-4.3` depende do TAMANHO DO CONTEXTO.** Acima de 200K tokens
-  duplica, e as chamadas com pesquisa passam lá. Um custo calculado com
-  a linha de cima é um mínimo, não uma estimativa.
+  duplica. **As nossas chamadas NÃO passam lá**, e isto esteve escrito ao
+  contrário até 11 Set 2026: medidas as 363 chamadas das semanas de 7 e 14
+  de Setembro, **zero** passam os 200K, a média das chamadas com pesquisa
+  é de 26 mil tokens de entrada e o máximo visto são 70.440. A linha de
+  cima é o custo, não um piso. Quem escreveu "já passaram os 200K" não
+  mediu, e era uma afirmação sobre dinheiro (lição 2 do Tracker).
 - **`sonar-pro` e `sonar` dependem do NÚMERO DE PEDIDOS.** Ver o ponto 6.
 
 Um consumidor que queira ser rigoroso mostra estes três como piso e não
