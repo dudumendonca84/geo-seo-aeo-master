@@ -518,6 +518,26 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Use.** Product visibility in ChatGPT carousels is a Google Merchant Center feed problem before it is a content problem: feed completeness, freshness and organic Shopping rank. Basis for `prompts.md` §2.6 (`transactional`), the site's /comercio-agentico page and the agentic-commerce playbook.
 
 ---
+
+## 46. Ahrefs: self-promotional content only gets cited when the brand is already a plausible answer
+
+- **URL.** https://ahrefs.com/blog/self-promotional-content-ai-seo-experiment/
+- **Date.** 6 Jul 2026 (absorbed 11 Sep 2026, before falling out of the 60-day truncation window: reported in `news-feed.md` 2026-07-07, never carried into this file until now).
+- **Sample.** Controlled experiment, Feb-May 2026, ChatGPT/Gemini/Perplexity/Copilot: Ahrefs launched its own conference, "Evolve," and tracked citation rate for two related query sets before/after.
+- **Finding.** After launching "Evolve", Ahrefs is cited in **66.4%** of answers to "best SEO conferences 2026" but only **15.8%** of answers to "best marketing conferences 2026": self-promotional content only converts to citation when the brand is already a plausible answer for that specific category, not for an adjacent one.
+- **Caveat.** Vendor's own experiment (Ahrefs), single brand, single case; no independent replication found.
+- **Use.** Direct evidence against selling GEO content production as a substitute for category authority: a client without prior standing in a category should not expect a new content push alone to produce citation there. Pairs with §38 (Kumar: brand authority dominates citation share) and the destaque.ai pitch to prioritise topical authority before product-page content.
+
+## 47. Varga: per-entity hallucinated-mention rate is highest for mid-tier brands
+
+- **URL.** https://arxiv.org/abs/2606.21595
+- **Date.** 19 Jun 2026 (absorbed 11 Sep 2026, before falling out of the 60-day truncation window: reported in `news-feed.md` 2026-07-07, never carried into this file until now).
+- **Sample.** Per-entity bias mapping across brand tiers; single-author arXiv preprint, not peer-reviewed, exact sample size not carried forward in the original news-feed summary.
+- **Finding.** Brands well-known enough for a model to "pattern-complete" but under-represented in training data have a higher fabricated-mention rate (**52.7%**) than very well-known brands (**37.9%**).
+- **Caveat.** Single-author preprint, not peer-reviewed; treat the mechanism (mid-tier brands are the highest hallucination risk) as directional, the exact percentages as unverified pending a second source.
+- **Use.** Concrete argument for structured-data upsell (Schema.org, Wikidata/knowledge-graph consistency) targeted specifically at mid-sized PT B2B brands: known enough to be pattern-completed, under-represented enough to be misdescribed. Awareness for now; evaluate as a named service line for clients in this exact tier.
+
+---
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
@@ -540,4 +560,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 8 Sep 2026 (added §43, SE Ranking study on AI Mode ads not buying organic citation/ranking, absorbed from the 2026-09-08 news-feed entry; added §44, Agarwal &amp; Sen SSRN field study on AI Overviews click loss, absorbed from the 2026-07-05 news-feed entry before it fell out of the 60-day truncation window). Previous: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
+Last refresh: 11 Sep 2026 (added §46, Ahrefs self-promotional-content experiment, and §47, Varga per-entity hallucination-rate preprint, both absorbed from the 2026-07-07 news-feed entry immediately before it fell out of the 60-day truncation window). Previous: 8 Sep 2026 (added §43, SE Ranking study on AI Mode ads not buying organic citation/ranking, absorbed from the 2026-09-08 news-feed entry; added §44, Agarwal &amp; Sen SSRN field study on AI Overviews click loss, absorbed from the 2026-07-05 news-feed entry before it fell out of the 60-day truncation window). Previous: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
