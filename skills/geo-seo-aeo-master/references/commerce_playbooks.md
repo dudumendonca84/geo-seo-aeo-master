@@ -177,6 +177,8 @@ três e a mais diretamente accionável.
 
 **Ritmo.** Dias. É a superfície onde uma correção se vê mais depressa.
 
+**Nova telemetria (9 Set 2026).** O Merchant Center passou a ter três secções novas dentro de "AI Performance Insights": intenção de pesquisa em IA, termos de pesquisa em IA e atributos conversacionais (relevantaudience.com, Search Engine Land, `WebFetch` bloqueado, cross-corroborado via `WebSearch`). Continua o rollout regional iniciado em Jul 2026: ainda não confirmado para contas PT nesta sessão. Se confirmado disponível para um cliente PT, passa a primeira telemetria first-party desta superfície equivalente ao que o Bing Webmaster Tools é para o Copilot: a confirmar por acesso direto a uma conta Merchant Center.
+
 ---
 
 ## Superfície 3: Carrossel da aplicação do ChatGPT
