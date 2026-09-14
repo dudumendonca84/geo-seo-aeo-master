@@ -53,39 +53,52 @@ inoperacional desde 11 de setembro"*, com 100 ocorrências de 404 e 23 de
 429, *"nenhum cliente do Tracker recebe leitura real do ChatGPT desde essa
 data"*.
 
-A base diz outra coisa. Nos catorze dias anteriores, **todas as linhas de
-auditoria de todos os motores têm 5 erros no total**, e os cinco são do
-DeepSeek. O ChatGPT tem 439 linhas em `gpt-5.6-luna` e 41 em `gpt-5.6-sol`,
-**zero erros**. A semana de 14 Set está completa nos dois clientes: 50 e 54
-respostas na metade `knowledge`. O 404 do `gpt-5.5-instant` foi um incidente
-de 11 Set, corrigido nesse mesmo dia na tabela `## Tracker buyer defaults`, e
-as chamadas seguintes passaram.
+**A auditoria tinha razão, e a primeira versão desta secção dizia o
+contrário.** Fica o erro escrito porque ele é a lição.
 
-O que a auditoria leu foram REGISTOS de tentativas, incluindo as que foram
-repetidas com sucesso a seguir. Um 404 num log e uma medição em falta são
-coisas diferentes.
+Eu contei as linhas com a coluna `error` preenchida, vi cinco em catorze dias
+(todas do DeepSeek) e escrevi que o ChatGPT tinha zero erros. A coluna estava
+certa e a pergunta estava errada: **uma chamada que falhou e foi substituída
+pela resposta da semana anterior tem `error` a null**. A falha vive noutro
+sítio, em `carried_from_week` e `carried_error`, e o próprio componente do
+ecrã diz isso por extenso: *"contar só os erros dizia 0 falhas num motor que
+falhou três vezes e foi reposto três vezes"*.
 
-**A regra, e vale para qualquer afirmação sobre o produto vivo:**
+O que a base diz, quando se lhe faz a pergunta certa, na semana de 14 Set:
 
-1. **A fonte de verdade é `tracker.audit_responses`, não os logs.** Antes de
-   escrever que um motor está em baixo, conta as linhas dele nas últimas
-   semanas e quantas têm `error` preenchido. Sem essa contagem, não há
-   achado: há uma hipótese.
+| Cliente | Motor | Linhas repostas | Erro que as causou |
+|---|---|---|---|
+| Congruent | `chatgpt` knowledge | **50 de 50** | 404 `gpt-5.5-instant` |
+| Congruent | `perplexity` augmented | 23 | 429 rate limit |
+| Congruent | `google_aio` | 11 | operação abortada |
+| Congruent | `grok` | 5 | 180 s sem resposta |
+| destaque.ai | `chatgpt` knowledge | 13 | **429 no credits remaining** |
+
+Ou seja: a metade `knowledge` do ChatGPT da Congruent nesta semana é, por
+inteiro, a resposta da semana anterior, e a conta da OpenAI ficou sem saldo a
+meio da corrida de 11 Set.
+
+**As regras, e a primeira é a que eu próprio falhei:**
+
+1. **A fonte de verdade é `tracker.audit_responses`, e são DUAS colunas.**
+   `error` diz que a linha falhou e ficou sem resposta; `carried_from_week`
+   com `carried_error` diz que falhou e foi tapada com a semana anterior. Ler
+   só a primeira dá um relatório verde sobre um motor que não respondeu uma
+   única vez. As duas contam-se sempre, e é o que o cartão do motor faz.
 2. **"Não houve chamada" não é "a chamada falhou".** Se não correu auditoria
    na janela (por exemplo, porque a semana foi medida adiantada), o motor não
    está partido: está à espera. Diz-se qual das duas é.
-3. **Ocorrências e utilizadores num log não são clientes afetados.** Um
-   número de log só vira impacto depois de se mostrar que perguntas de que
-   cliente ficaram sem resposta gravada.
+3. **Ocorrências e utilizadores num log não são clientes afetados.** O número
+   de log vira impacto quando se mostra que perguntas de que cliente ficaram
+   sem medição própria: é aí que a contagem de repostas entra.
 4. **Um erro de saldo ou de quota confirma-se no painel do fornecedor**, e
-   diz-se que foi lá que se confirmou. É o único caso em que o log é o
-   primeiro sinal legítimo, porque a falta de saldo só se manifesta na
-   chamada seguinte.
+   diz-se que foi lá que se confirmou. A linha reposta prova que aconteceu;
+   só o painel prova que ainda está a acontecer.
 
-O custo de não ter esta regra: o achado número um da semana mandava o
-founder a correr atrás de uma avaria que não existia, enquanto o achado
-número dois, que era real e estava sinalizado há sete dias, continuava por
-aplicar.
+O custo desta, medido: a auditoria dizia a verdade e eu contradisse-a com uma
+consulta incompleta. Se o founder não tivesse olhado para o cartão do motor e
+perguntado "não devia estar assim, certo?", a conta da OpenAI continuava sem
+saldo e a semana seguinte repetia o buraco.
 
 ## O que já está decidido não se redecide
 
