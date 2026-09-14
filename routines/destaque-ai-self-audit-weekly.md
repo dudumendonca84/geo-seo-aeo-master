@@ -45,6 +45,67 @@ Hoje é {{TODAY}}. Vais fazer uma self-audit semanal ao site destaque.ai (https:
 Tom: sóbrio Economist style. Sem hype. Sem buzzwords ("game-changer", "revolutionary", "10x"). Números concretos com unidade e data. Honesto sobre o que destaque.ai ainda não tem feito — não inventar urgência. Caveats explícitos quando dados não verificáveis (ex: PageSpeed Insights rate-limited; manual prompt-test em determinado engine não accessível por geo-restriction). Crisis-response protocol (SKILL.md §14) aplica-se se for detectada menção negativa hallucinated em qualquer LLM.
 
 
+## Antes de declarar um motor em baixo (14 Set 2026)
+
+A corrida de 14 de Setembro abriu com este achado, em primeiro lugar e
+marcado como o mais grave: *"O motor ChatGPT do Visibility Tracker está
+inoperacional desde 11 de setembro"*, com 100 ocorrências de 404 e 23 de
+429, *"nenhum cliente do Tracker recebe leitura real do ChatGPT desde essa
+data"*.
+
+A base diz outra coisa. Nos catorze dias anteriores, **todas as linhas de
+auditoria de todos os motores têm 5 erros no total**, e os cinco são do
+DeepSeek. O ChatGPT tem 439 linhas em `gpt-5.6-luna` e 41 em `gpt-5.6-sol`,
+**zero erros**. A semana de 14 Set está completa nos dois clientes: 50 e 54
+respostas na metade `knowledge`. O 404 do `gpt-5.5-instant` foi um incidente
+de 11 Set, corrigido nesse mesmo dia na tabela `## Tracker buyer defaults`, e
+as chamadas seguintes passaram.
+
+O que a auditoria leu foram REGISTOS de tentativas, incluindo as que foram
+repetidas com sucesso a seguir. Um 404 num log e uma medição em falta são
+coisas diferentes.
+
+**A regra, e vale para qualquer afirmação sobre o produto vivo:**
+
+1. **A fonte de verdade é `tracker.audit_responses`, não os logs.** Antes de
+   escrever que um motor está em baixo, conta as linhas dele nas últimas
+   semanas e quantas têm `error` preenchido. Sem essa contagem, não há
+   achado: há uma hipótese.
+2. **"Não houve chamada" não é "a chamada falhou".** Se não correu auditoria
+   na janela (por exemplo, porque a semana foi medida adiantada), o motor não
+   está partido: está à espera. Diz-se qual das duas é.
+3. **Ocorrências e utilizadores num log não são clientes afetados.** Um
+   número de log só vira impacto depois de se mostrar que perguntas de que
+   cliente ficaram sem resposta gravada.
+4. **Um erro de saldo ou de quota confirma-se no painel do fornecedor**, e
+   diz-se que foi lá que se confirmou. É o único caso em que o log é o
+   primeiro sinal legítimo, porque a falta de saldo só se manifesta na
+   chamada seguinte.
+
+O custo de não ter esta regra: o achado número um da semana mandava o
+founder a correr atrás de uma avaria que não existia, enquanto o achado
+número dois, que era real e estava sinalizado há sete dias, continuava por
+aplicar.
+
+## O que já está decidido não se redecide
+
+Na mesma corrida, o `Organization.sameAs` perdeu a entrada Wikidata e o
+achado diz que *"pode ser remoção deliberada ou perda acidental, não
+decidível só pelo schema"*.
+
+É decidível, e está escrito. O item `Q140043087` foi **apagado a 11 de Agosto
+de 2026, às 20:40 UTC**, por não cumprir a política de notabilidade: zero
+sitelinks, zero referências, único contribuidor o próprio. Está no CLAUDE.md
+do Tracker (lição 10) e no código, onde o `checkWikidata` separa quatro casos
+(encontrado, 404 apagado, fundido noutro item, sem resposta) precisamente
+para que "não existe" não seja dito das três maneiras.
+
+**Antes de marcar um achado como não decidível, procurar no repo** (`grep` no
+CLAUDE.md do Tracker e no `methodology-changelog.md`) se a decisão já foi
+tomada. Um achado que reabre o que já está fechado gasta a atenção de quem o
+lê e, pior, convida a refazer o erro: recriar aquele item sem referências
+públicas primeiro leva a nova eliminação.
+
 ## Descrição-alvo da entidade (métrica desde 24 Ago 2026)
 
 Em cada corrida, perguntar aos motores medidos "o que é a destaque.ai"
