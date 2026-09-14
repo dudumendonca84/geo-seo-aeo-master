@@ -45,6 +45,80 @@ Hoje é {{TODAY}}. Vais fazer uma self-audit semanal ao site destaque.ai (https:
 Tom: sóbrio Economist style. Sem hype. Sem buzzwords ("game-changer", "revolutionary", "10x"). Números concretos com unidade e data. Honesto sobre o que destaque.ai ainda não tem feito — não inventar urgência. Caveats explícitos quando dados não verificáveis (ex: PageSpeed Insights rate-limited; manual prompt-test em determinado engine não accessível por geo-restriction). Crisis-response protocol (SKILL.md §14) aplica-se se for detectada menção negativa hallucinated em qualquer LLM.
 
 
+## Antes de declarar um motor em baixo (14 Set 2026)
+
+A corrida de 14 de Setembro abriu com este achado, em primeiro lugar e
+marcado como o mais grave: *"O motor ChatGPT do Visibility Tracker está
+inoperacional desde 11 de setembro"*, com 100 ocorrências de 404 e 23 de
+429, *"nenhum cliente do Tracker recebe leitura real do ChatGPT desde essa
+data"*.
+
+**A auditoria tinha razão, e a primeira versão desta secção dizia o
+contrário.** Fica o erro escrito porque ele é a lição.
+
+Eu contei as linhas com a coluna `error` preenchida, vi cinco em catorze dias
+(todas do DeepSeek) e escrevi que o ChatGPT tinha zero erros. A coluna estava
+certa e a pergunta estava errada: **uma chamada que falhou e foi substituída
+pela resposta da semana anterior tem `error` a null**. A falha vive noutro
+sítio, em `carried_from_week` e `carried_error`, e o próprio componente do
+ecrã diz isso por extenso: *"contar só os erros dizia 0 falhas num motor que
+falhou três vezes e foi reposto três vezes"*.
+
+O que a base diz, quando se lhe faz a pergunta certa, na semana de 14 Set:
+
+| Cliente | Motor | Linhas repostas | Erro que as causou |
+|---|---|---|---|
+| Congruent | `chatgpt` knowledge | **50 de 50** | 404 `gpt-5.5-instant` |
+| Congruent | `perplexity` augmented | 23 | 429 rate limit |
+| Congruent | `google_aio` | 11 | operação abortada |
+| Congruent | `grok` | 5 | 180 s sem resposta |
+| destaque.ai | `chatgpt` knowledge | 13 | **429 no credits remaining** |
+
+Ou seja: a metade `knowledge` do ChatGPT da Congruent nesta semana é, por
+inteiro, a resposta da semana anterior, e a conta da OpenAI ficou sem saldo a
+meio da corrida de 11 Set.
+
+**As regras, e a primeira é a que eu próprio falhei:**
+
+1. **A fonte de verdade é `tracker.audit_responses`, e são DUAS colunas.**
+   `error` diz que a linha falhou e ficou sem resposta; `carried_from_week`
+   com `carried_error` diz que falhou e foi tapada com a semana anterior. Ler
+   só a primeira dá um relatório verde sobre um motor que não respondeu uma
+   única vez. As duas contam-se sempre, e é o que o cartão do motor faz.
+2. **"Não houve chamada" não é "a chamada falhou".** Se não correu auditoria
+   na janela (por exemplo, porque a semana foi medida adiantada), o motor não
+   está partido: está à espera. Diz-se qual das duas é.
+3. **Ocorrências e utilizadores num log não são clientes afetados.** O número
+   de log vira impacto quando se mostra que perguntas de que cliente ficaram
+   sem medição própria: é aí que a contagem de repostas entra.
+4. **Um erro de saldo ou de quota confirma-se no painel do fornecedor**, e
+   diz-se que foi lá que se confirmou. A linha reposta prova que aconteceu;
+   só o painel prova que ainda está a acontecer.
+
+O custo desta, medido: a auditoria dizia a verdade e eu contradisse-a com uma
+consulta incompleta. Se o founder não tivesse olhado para o cartão do motor e
+perguntado "não devia estar assim, certo?", a conta da OpenAI continuava sem
+saldo e a semana seguinte repetia o buraco.
+
+## O que já está decidido não se redecide
+
+Na mesma corrida, o `Organization.sameAs` perdeu a entrada Wikidata e o
+achado diz que *"pode ser remoção deliberada ou perda acidental, não
+decidível só pelo schema"*.
+
+É decidível, e está escrito. O item `Q140043087` foi **apagado a 11 de Agosto
+de 2026, às 20:40 UTC**, por não cumprir a política de notabilidade: zero
+sitelinks, zero referências, único contribuidor o próprio. Está no CLAUDE.md
+do Tracker (lição 10) e no código, onde o `checkWikidata` separa quatro casos
+(encontrado, 404 apagado, fundido noutro item, sem resposta) precisamente
+para que "não existe" não seja dito das três maneiras.
+
+**Antes de marcar um achado como não decidível, procurar no repo** (`grep` no
+CLAUDE.md do Tracker e no `methodology-changelog.md`) se a decisão já foi
+tomada. Um achado que reabre o que já está fechado gasta a atenção de quem o
+lê e, pior, convida a refazer o erro: recriar aquele item sem referências
+públicas primeiro leva a nova eliminação.
+
 ## Descrição-alvo da entidade (métrica desde 24 Ago 2026)
 
 Em cada corrida, perguntar aos motores medidos "o que é a destaque.ai"
