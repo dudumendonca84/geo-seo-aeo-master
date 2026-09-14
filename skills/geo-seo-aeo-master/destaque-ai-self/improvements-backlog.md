@@ -5,7 +5,7 @@
 Cada item segue este formato:
 
 ```
-### YYYY-MM-DD added — [Categoria] — Título curto
+### YYYY-MM-DD added: [Categoria]: Título curto
 - **Prioridade:** P0 / P1 / P2 / P3
 - **Esforço:** 30min / 2h / 1 dia / 1 semana
 - **Origem:** auditoria semanal X / news-feed entry Y / pedido externo
@@ -48,7 +48,37 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto: a rotina voltou a saltar uma semana (31 ago), 2ª falta em 4 execuções: item PROCESS sobe a P0. GEO: achado novo: `llms.txt` tem uma linha desatualizada ("consultancy") que contradiz a própria página `/en/about`, causa provável direta do problema de convergência de entidade. STRATEGIC: concorrente novo com sobreposição de ICP quase total (BE VISIBLE) e um segundo consultor individual (Francisco Paredes). MEASUREMENT: Mistral com rate-limit novo, DataForSEO com assinatura de erro melhorada (não confirmada resolvida), Gemini sem nova ocorrência na janela de 7 dias (não confirmado resolvido), bug novo de serialização React.)_
+_(Atualizado 14 setembro 2026: oitava execução do Routine, primeira semana consecutiva sem hiato desde a escalada do item PROCESS a 07 set. MEASUREMENT: achado mais sério da semana: o motor ChatGPT do Visibility Tracker está inoperacional desde 11 set por duas causas simultâneas (ID de modelo inválido `gpt-5.5-instant` + sem créditos OpenAI em `gpt-5.6-sol`), sobe a P0; Perplexity com duas assinaturas de falha distintas (rate-limit + quota). GEO/ENTITY: a correção do `llms.txt` ("consultancy") continua por aplicar 2ª semana, agora confirmada a alimentar uma resposta sintetizada real (`DC1`). ENTITY: `Organization.sameAs` perdeu a entrada Wikidata (de 4 para 3), causa (deliberada ou acidental) por confirmar. BACKLINKS: primeira citação de imprensa PT confirmada em 9 semanas (Marketeer, 2 artigos). STRATEGIC: BE VISIBLE reclassificado como agência internacional (Londres/Ostende/Lisboa/Cebu, não par português puro); Francisco Paredes corrigido para Porto, não Lisboa; concorrente novo SEO Alive; mais 5 nomes novos encontrados em pesquisa dedicada (AWISEE, SmartLinks, DivSync Digital, Digiton.ai, BeFound); terceira colisão do acrónimo GEO confirmada ("Global Employer of Record").)_
+
+### 2026-09-14 added: MEASUREMENT: Tracker: motor ChatGPT inoperacional desde 11 set, duas causas simultâneas
+- **Prioridade:** P0
+- **Esforço:** 1-2h (diagnóstico/correção do ID de modelo) + 30min (reposição de crédito OpenAI)
+- **Origem:** auditoria semanal 2026-09-14 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias)
+- **Estado:** TODO
+- **Descrição:** Duas falhas independentes, ambas desde 11 set 2026, ambas no motor ChatGPT: (a) `chatgpt/gpt-5.5-instant (knowledge)` e `(augmented)` a falhar com `404 The model gpt-5.5-instant does not exist or you do not have access to it` (50+50 ocorrências, 7 utilizadores, 14:17–14:28 UTC); (b) `chatgpt/gpt-5.6-sol (knowledge)` e `(augmented)`: o modelo de produção per `models.md`: a falhar com `429 You have no credits remaining` (13+10 ocorrências, 2 utilizadores, mesma janela). Resultado: nenhum cliente do Tracker recebe leitura real do ChatGPT desde 11 set, por dois motivos que não se resolvem com a mesma ação.
+- **Ação:** (a) Confirmar se `gpt-5.5-instant` é um ID válido na conta OpenAI usada pelo Tracker ou se foi descontinuado/nunca existiu; corrigir o ID de modelo no código. (b) Repor crédito na conta OpenAI associada a `gpt-5.6-sol` (billing).
+- **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de nenhuma das duas assinaturas numa janela de 7 dias.
+- **Notes:** O mais grave de toda a auditoria: não é um achado sobre o site público, é uma falha operacional no produto vivo, a decorrer há pelo menos 3 dias antes desta auditoria.
+
+### 2026-09-14 added: MEASUREMENT: Tracker: Perplexity com duas assinaturas de falha distintas
+- **Prioridade:** P1
+- **Esforço:** 1-2h (diagnóstico: pode ser quota a rever e/ou throttling a implementar)
+- **Origem:** auditoria semanal 2026-09-14 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias)
+- **Estado:** TODO
+- **Descrição:** `perplexity/sonar-pro (augmented) failed: 429 Request rate limit exceeded` (44 ocorrências, 7 utilizadores, até 11 set 16:00 UTC) e, separadamente, `perplexity/sonar-pro (augmented) failed: 401 You exceeded your current quota` (6 ocorrências, 1 utilizador, desde 03 ago: assinatura mais antiga e distinta, já vista antes, ainda sem resolução).
+- **Ação:** Confirmar se o rate-limit é volume concentrado (throttling/retry-backoff a implementar) e se a quota de 401 é limite de plano a rever (billing).
+- **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de nenhuma das duas assinaturas numa janela de 7 dias.
+- **Notes:** Duas assinaturas distintas no mesmo motor, uma delas (401) já com 6 semanas em aberto sem correção.
+
+### 2026-09-14 added: ENTITY/SCHEMA: Organization.sameAs perdeu a entrada Wikidata
+- **Prioridade:** P1
+- **Esforço:** 1-2h (investigação) + variável (repor ou substituir)
+- **Origem:** auditoria semanal 2026-09-14 (extração programática do JSON-LD da homepage, comparada com a confirmação direta de 2026-08-10)
+- **Estado:** TODO
+- **Descrição:** `Organization.sameAs` mostra hoje 3 entradas (LinkedIn, Crunchbase, Clutch); a auditoria de 10 ago tinha confirmado diretamente 4, incluindo um URL do Wikidata associado ao QID Q140043087. Esse QID não aparece em nenhuma página amostrada esta semana, e uma pesquisa dedicada a "Eduardo Mendonça destaque.ai Wikidata"/Q140043087 não encontra nenhum item correspondente: só homónimos sem relação. Duas leituras igualmente plausíveis: remoção deliberada (o QID nunca correspondeu de facto a esta entidade, correção honesta) ou perda acidental numa mudança de schema recente.
+- **Ação:** Confirmar com o founder se a remoção foi deliberada. Se sim, procurar/criar o item Wikidata correto antes de o linkar de novo. Se acidental, repor o link antigo só depois de confirmar que o QID é válido.
+- **Verificação:** `Organization.sameAs` reflete uma decisão consciente (com ou sem Wikidata, mas não por omissão); próxima auditoria confirma estabilidade.
+- **Notes:** Achado de alta confiança (comparação direta de duas extrações programáticas, 10 ago vs. 14 set); a causa exata não é decidível só pelo schema.
 
 ### 2026-08-24 added: PROCESS: Routine semanal saltou a semana de 17 agosto sem registo
 - **Prioridade:** P0 (subida de P1: o critério de verificação definido nesta auditoria falhou logo na execução seguinte: 31 ago também ficou sem registo)
@@ -58,7 +88,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** Não existe nenhum commit `audit: 2026-08-17 destaque.ai SINAL self-audit` nem `audit: 2026-08-31 destaque.ai SINAL self-audit` no histórico: duas faltas em quatro execuções desde a baseline de 13 jul (50% nas últimas quatro semanas). A rotina distinta `audit: source-intel` correu normalmente em 24 e 31 ago (`cc6590f`) e a rotina diária `daily:` correu todos os dias sem falha visível na mesma janela: não é uma falha geral de agendamento do repositório, é específica a este Routine. O critério de verificação desta auditoria escrito a 24 ago ("as próximas 2-3 execuções ocorrem em semanas consecutivas sem hiato") falhou já na execução imediatamente a seguir.
 - **Ação:** Confirmar se o agendamento (CronCreate ou equivalente) do Routine `destaque-ai-self-audit-weekly` está ativo e correctamente configurado para segundas-feiras 09:00 Lisboa; comparar a configuração deste Routine com a de `source-intel` (que não falhou nas mesmas semanas) para identificar a diferença; considerar um sentinela que assinale ao founder se segunda-feira passar sem o commit `audit:` correspondente.
 - **Verificação:** As próximas 2-3 execuções ocorrem em semanas consecutivas sem hiato: critério repetido, agora com histórico de já ter falhado uma vez.
-- **Notes:** Risco direto para a comparabilidade de toda a série de `audit-history.md`, agora confirmado a materializar-se duas vezes, não apenas um risco teórico.
+- **Notes:** Risco direto para a comparabilidade de toda a série de `audit-history.md`, agora confirmado a materializar-se duas vezes, não apenas um risco teórico. **Atualização 2026-09-14:** a execução de hoje corre exatamente 7 dias depois da anterior (07 set): primeira semana consecutiva sem hiato desde a escalada a P0. O critério de verificação exige 2-3 execuções seguidas: esta é a primeira das 2-3; ainda não é suficiente para fechar o item, mas é progresso real, não apenas mais uma reafirmação do problema.
 
 ### 2026-09-07 added: GEO/ENTITY: llms.txt descreve /en/about como "consultancy", contradizendo a própria página ("software company")
 - **Prioridade:** P0
@@ -68,7 +98,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** A entrada em `llms.txt` para `/en/about` diz: "Who destaque.ai is: a Generative Engine Optimization consultancy based in Lisbon, Portugal." A página real, obtida por fetch direto nesta auditoria, abre com: "destaque.ai is a Portuguese GEO (Generative Engine Optimization) software company: we measure and build brand presence in AI answers...": a correção de posicionamento feita à homepage a 24 ago ("software company", não "consultancy") já chegou à página `/en/about` real, mas não chegou ao resumo dessa página no `llms.txt`. É plausivelmente uma causa direta (não apenas correlacionada) do problema de convergência de descrição de entidade que a auditoria de 24 ago começou a acompanhar: se um motor de IA lê o `llms.txt` (desenhado precisamente para isso) em vez do HTML completo, está a ser alimentado com a categorização errada por uma fonte própria da destaque.ai.
 - **Ação:** Corrigir a linha da secção "English" em `llms.txt` que resume `/en/about`, trocando "consultancy" por "software company" (ou reformulação equivalente), alinhando com o texto real da página.
 - **Verificação:** `llms.txt` e `/en/about` descrevem a empresa de forma consistente; próxima auditoria confirma.
-- **Notes:** Achado de alta confiança (comparação direta de dois textos, sem inferência) e esforço mínimo: bom candidato a resolver antes da próxima execução.
+- **Notes:** Achado de alta confiança (comparação direta de dois textos, sem inferência) e esforço mínimo: bom candidato a resolver antes da próxima execução. **Atualização 2026-09-14: 2ª semana em aberto, sem correção aplicada apesar de ~10 commits de produção na mesma janela.** Achado novo e mais grave: o teste multi-motor desta semana (`DC1`, "como se compara a destaque.ai com BE VISIBLE?") devolveu uma síntese que chama à destaque.ai "a Generative Engine Optimization consultancy": a mesma categorização errada, agora confirmada a ser lida e repetida numa resposta de pesquisa real, não apenas um risco teórico de um ficheiro que "podia" ser lido.
 
 ### 2026-09-07 added: STRATEGIC: Concorrente novo (BE VISIBLE) com sobreposição de ICP quase total
 - **Prioridade:** P1
@@ -78,7 +108,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** BE VISIBLE (`bevisibleagency.com`) descreve-se como "consultoria de SEO e GEO para empresas B2B SaaS... transformando respostas de assistentes de IA em pipeline qualificado", trabalhando "equipas de B2B SaaS de seed a Series B": o mesmo ICP declarado da destaque.ai (`SKILL.md` § ICP / qualificação destaque.ai), nunca antes visto por este Routine em sete execuções. Encontrado em duas pesquisas distintas (`GD3`, `V1`), o que sugere presença consolidada, não um resultado isolado.
 - **Ação:** Passar BE VISIBLE pelo teste de 4 perguntas de `competitor_filtering.md` §1: candidato forte a `peer` direto dado o mecanismo e ICP coincidentes.
 - **Verificação:** `competitor_filtering.md` reflecte a classificação; re-testar `GD3`/`V1` numa próxima execução.
-- **Notes:** Junta-se a Marco Gouveia, AISO Hub, UniK SEO, Luso AI, Infinidata, Latigid e Francisco Paredes (ver item seguinte) na lista de candidatos a classificar formalmente: a lista continua a crescer sem que a classificação tenha sido feita, ver item de 27 jul abaixo.
+- **Notes:** Junta-se a Marco Gouveia, AISO Hub, UniK SEO, Luso AI, Infinidata, Latigid e Francisco Paredes (ver item seguinte) na lista de candidatos a classificar formalmente: a lista continua a crescer sem que a classificação tenha sido feita, ver item de 27 jul abaixo. **Atualização 2026-09-14: reclassificação necessária, não só confirmação.** `bevisibleagency.com` descreve-se agora como "global GEO agency" com escritórios em Londres, Ostende (Bélgica), Lisboa e Cebu (Filipinas): sede efetiva em Londres, não uma agência portuguesa pura. O ICP mantém-se quase idêntico, mas isto muda o enquadramento de "par português direto" para "concorrente internacional com presença em Lisboa". Achado lateral: numa pesquisa branded direta ("destaque.ai vs. BE VISIBLE", prompt `DC1`), a destaque.ai devolveu 8 URLs próprios e o BE VISIBLE zero: o footprint de conteúdo indexado da destaque.ai domina claramente nesta comparação.
 
 ### 2026-09-07 added: MEASUREMENT: Tracker: rate-limit novo no Mistral (429), durante a própria auditoria
 - **Prioridade:** P2
@@ -108,7 +138,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** A pesquisa devolveu exclusivamente empresas de "Authorized Economic Operator" (certificação aduaneira/logística): nenhum resultado sobre Answer Engine Optimization. Achado análogo à colisão já conhecida de "GEO" com geodesia/topografia em português (reconfirmada pela 3ª semana em `GD6`), mas em inglês e com o acrónimo "AEO".
 - **Ação:** Avaliar se vale a pena reforçar "Answer Engine Optimization" por extenso (não só o acrónimo) em conteúdo EN dirigido, particularmente `/en/faq` e `/en/glossary`, onde o termo já é definido mas pode não estar suficientemente denso para desambiguar em pesquisa aberta.
 - **Verificação:** Re-testar `LR2` numa próxima execução.
-- **Notes:** Primeira confirmação desta colisão específica por este Routine: só uma pesquisa até agora, tratar como achado a confirmar, não como padrão estabelecido (regra de duas auditorias antes de agir com convicção, per precedente do achado "GEO vs. geodesia").
+- **Notes:** Primeira confirmação desta colisão específica por este Routine: só uma pesquisa até agora, tratar como achado a confirmar, não como padrão estabelecido (regra de duas auditorias antes de agir com convicção, per precedente do achado "GEO vs. geodesia"). **Atualização 2026-09-14: `LR2` reconfirmado pela 2ª vez** (AEO Consulting Ltd, EmasConsultors, Morley Consulting, GRC Customs: todas conformidade aduaneira). **Terceira colisão distinta do acrónimo "GEO" descoberta**: o prompt `V3` ("vale a pena fazer outsourcing de GEO numa empresa de software em Portugal?") resolveu inteiramente para "Global Employer of Record" (outsourcing de RH/payroll: ensun.io, Ascendix, Newxel, Accelerance): zero relevância a Generative Engine Optimization. Três eixos de colisão confirmados agora: geodesia/topografia (PT, 4ª semana), "Authorized Economic Operator" (EN, 2ª semana), "Global Employer of Record" (EN, 1ª semana).
 
 ### 2026-08-24 added: STRATEGIC: Consultor individual (Marco Gouveia) venceu destaque.ai em 2 recomendações diretas
 - **Prioridade:** P1
@@ -118,7 +148,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** Em `LR1` ("quem faz auditorias de GEO em Lisboa?"), destaque.ai aparece nos resultados brutos mas a resposta sintetizada nomeia primeiro Marco Gouveia (`marcogouveia.pt/consultor-geo`), com preços explícitos: reconfirmado 07 set, agora com destaque.ai também nomeada em segundo lugar na síntese (melhoria face a 24 ago, quando só aparecia nos resultados brutos). Em `LR3` ("que consultor de GEO recomendam para uma fintech em Lisboa?", rotativo em 07 set), o mesmo padrão: Marco Gouveia primeiro com preço, destaque.ai nomeada a seguir com a metodologia SINAL citada pelo nome. **3ª auditoria seguida com evidência de Marco Gouveia a vencer ou empatar diretamente com destaque.ai em pesquisas de recomendação local**: deixa de ser um achado pontual.
 - **Ação:** Passar Marco Gouveia pelo teste de 4 perguntas de `competitor_filtering.md` §1; avaliar se o padrão de preço explícito na resposta ("a partir de 3.000€") é algo que destaque.ai devia também expor de forma citável.
 - **Verificação:** `competitor_filtering.md` reflecte a classificação; re-testar `LR1`/`LR3` numa próxima execução.
-- **Notes:** Junta-se a AISO Hub/UniK SEO, Luso AI, Infinidata, Latigid, BE VISIBLE e Francisco Paredes (novo em 07 set, consultor independente SEO técnico + GEO) na lista de candidatos a classificar: a lista cresceu de 2 (20 jul) para 9 nomes em sete execuções sem que a classificação formal tenha sido feita.
+- **Notes:** Junta-se a AISO Hub/UniK SEO, Luso AI, Infinidata, Latigid, BE VISIBLE e Francisco Paredes (novo em 07 set, consultor independente SEO técnico + GEO) na lista de candidatos a classificar: a lista cresceu de 2 (20 jul) para 9 nomes em sete execuções sem que a classificação formal tenha sido feita. **Atualização 2026-09-14:** pricing reconfirmado e mais preciso: auditoria de GEO a partir de €3.000, consultoria contínua a partir de €1.000/mês (era só "a partir de 3.000€"). Esta semana `LR1` não devolveu nem Marco Gouveia nem destaque.ai (ver Secção 7 do audit-baseline: instabilidade de pesquisa sob o método proxy, não leitura de que ele deixou de aparecer). **Correção de geografia para Francisco Paredes: confirmado sediado no Porto, não em Lisboa** como o contexto de execuções anteriores sugeria: histórico com Sport Zone, Continente Online (MC), atualmente Nestlé. **Concorrente novo encontrado esta semana: SEO Alive** (prompt `V5`, posicionamento explícito de GEO para SaaS). Mais cinco nomes nunca antes vistos surgiram em pesquisa de research dedicada (não no teste de prompts): AWISEE (agência internacional, fundada em Estocolmo, reclama escritório em Lisboa, página dedicada "B2B SEO Agency Portugal"), SmartLinks, DivSync Digital, Digiton.ai, BeFound: nenhum classificado. **A lista já não é sustentável como "a confirmar na próxima execução": é trabalho represado, ver recomendação de Horizonte 2 no audit-baseline desta semana.**
 
 ### 2026-08-24 added: ENTITY: destaque.ia.br: empresa brasileira de nome quase idêntico, risco de confusão de marca em EN
 - **Prioridade:** P2
@@ -128,7 +158,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** A pesquisa pela descrição de destaque.ai em inglês trouxe aos resultados **destaque.ia.br** ("Destaque.ia: Rankeie no Google e seja citado pelo ChatGPT, sem trabalho manual"), uma empresa brasileira não relacionada, com nome quase idêntico e categoria adjacente (SEO/GEO automatizado). Não é uma menção negativa nem alucinada: protocolo de crise não aplicável: mas é um risco real de confusão de marca em pesquisas EN, nunca antes detectado por este Routine.
 - **Ação:** Confirmar se destaque.ia.br é uma marca registada ou apenas um domínio ativo; avaliar se vale a pena reforçar a distinção (ex. mencionar explicitamente "Lisboa, Portugal" logo no primeiro parágrafo EN, já presente parcialmente).
 - **Verificação:** Vigiar se a confusão persiste ou se agrava nas próximas execuções do teste de entidade.
-- **Notes:** Baixa urgência por agora: vigilância, não crise.
+- **Notes:** Baixa urgência por agora: vigilância, não crise. **Atualização 2026-09-14:** destaque.ia.br continua ativo (posicionamento agora explicitamente automatizado: "sem trabalho manual", 8-20+ páginas/mês, reescrita automática se não estiver top-20 ao fim de 3 semanas). Superfície alargada: mais dois nomes no mesmo espaço semântico encontrados esta semana: "Destaque IA: Soluções Inteligentes" (`destaqueia.com.br`) e uma página do Facebook "Destaque. IA | Porto". Sem evidência de confusão real já ocorrida; continua vigilância, não crise.
 
 ### 2026-08-24 added: ENTITY/STRATEGIC: Convergência da descrição de entidade por motor: baseline dia 1, "consultoria" não "software"
 - **Prioridade:** P1
@@ -148,7 +178,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** A meta description de `/sobre` diz "Operação especializada em Generative Engine Optimization": não está errada, mas também não usa "empresa de software", a formulação já consistente na homepage, no `llms.txt` PT e no JSON-LD da própria página `/sobre` (`Organization.description`, `WebPage.description`). Inconsistência menor, mas no mesmo eixo do achado maior desta semana (finding 2, `llms.txt` `/en/about`).
 - **Ação:** Atualizar a meta description de `/sobre` para reflectir "empresa de software" ou formulação equivalente, alinhada com o resto do site.
 - **Verificação:** Meta description de `/sobre` consistente com a homepage e o JSON-LD da mesma página.
-- **Notes:** Baixo risco, baixa urgência: item de higiene, não de correção de erro.
+- **Notes:** Baixo risco, baixa urgência: item de higiene, não de correção de erro. **Atualização 2026-09-14:** 2ª semana em aberto, confirmado sem alteração por fetch direto.
 
 ### 2026-08-03 added: MEASUREMENT: Tracker: quota SerpApi esgotada + erro de campo DataForSEO, 3 motores degradados agora
 - **Prioridade:** P1 (descida de P0: sintoma agudo não recorreu; DataForSEO continua instável por outra via, ver Notes)
@@ -159,17 +189,37 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Prioridade:** P2 (descida de P1: o sintoma que justificava P1, o erro de campo não tratado, não recorreu nesta janela; a falha remanescente já tem fallback funcional)
 - **Ação:** Confirmar em duas execuções seguidas que `Invalid Field: 'language_name'` não volta antes de marcar DONE: a "resolução" de 10 ago revelou-se prematura, não repetir o mesmo erro de leitura.
 - **Verificação:** `mcp__Vercel__get_runtime_errors` para o projeto não mostra novas ocorrências de `Invalid Field: 'language_name'` num período de 7 dias, confirmado em pelo menos duas execuções consecutivas.
-- **Notes:** Já foi marcado prematuramente como resolvido uma vez (10 ago): por isso a barra de verificação agora exige duas confirmações seguidas, não uma.
+- **Notes:** Já foi marcado prematuramente como resolvido uma vez (10 ago): por isso a barra de verificação agora exige duas confirmações seguidas, não uma. **Atualização 2026-09-14:** a assinatura `[surfaces] DataForSEO falhou, a cair para SerpApi: Internal SE Server Error` continua sem a assinatura antiga (`Invalid Field`), mas o volume cumulativo cresce (35 ocorrências desde 31 jul, era 22 em 07 set): o fallback funciona, mas a falha de origem do fornecedor não desaparece.
 
 ### 2026-08-10 added: MEASUREMENT: Tracker: crédito de API esgotado no Gemini, 9 semanas
 - **Prioridade:** P0
 - **Esforço:** 30min-1h (top-up de billing): o mais barato de toda esta lista
 - **Origem:** auditoria semanal 2026-08-10 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias); reconfirmado 2026-08-24; revisto 2026-09-07
 - **Estado:** TODO
-- **Descrição:** **Gemini** (`RESOURCE_EXHAUSTED — Your prepayment credits are depleted`) falha por falta de crédito pré-pago na conta do fornecedor, não por erro de código: afecta `gemini/gemini-3.5-flash` em modo knowledge e augmented. Ativo desde 23 jun 2026. **Atualização 2026-09-07:** primeira execução em que a janela de 7 dias consultada (31 ago–07 set) não mostra nenhuma ocorrência nova: a última registada pela ferramenta é 31 ago 09:39 UTC, antes do início desta janela. Não confirma resolução (pode ser ausência de tráfego que accionasse a chamada, não crédito reposto), mas é o primeiro sinal desta natureza em nove semanas de item aberto.
+- **Descrição:** **Gemini** (`RESOURCE_EXHAUSTED: Your prepayment credits are depleted`) falha por falta de crédito pré-pago na conta do fornecedor, não por erro de código: afecta `gemini/gemini-3.5-flash` em modo knowledge e augmented. Ativo desde 23 jun 2026. **Atualização 2026-09-07:** primeira execução em que a janela de 7 dias consultada (31 ago–07 set) não mostra nenhuma ocorrência nova: a última registada pela ferramenta é 31 ago 09:39 UTC, antes do início desta janela. Não confirma resolução (pode ser ausência de tráfego que accionasse a chamada, não crédito reposto), mas é o primeiro sinal desta natureza em nove semanas de item aberto.
 - **Ação:** Confirmar diretamente (billing da conta Google AI Studio) se o crédito foi reposto, ou se a ausência de erro é coincidência de baixo tráfego. Considerar ligar isto ao cron `ops-health` (mergeado 24 ago) como verificação de saldo, não só de auditorias em falta.
 - **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de `RESOURCE_EXHAUSTED` para o Gemini num período de 7 dias: critério já cumprido nesta execução; falta a confirmação direta de billing ou uma segunda janela sem ocorrência antes de fechar o item.
-- **Notes:** O item mais antigo em aberto de toda a auditoria e também o mais barato de resolver: sinalizado como tal em pelo menos 3 execuções consecutivas sem ação confirmada. Distinto do item de DataForSEO acima (fornecedor de dados de busca, não de LLM) e do item novo de Mistral (rate-limit de pico, não esgotamento sustido).
+- **Notes:** O item mais antigo em aberto de toda a auditoria e também o mais barato de resolver: sinalizado como tal em pelo menos 3 execuções consecutivas sem ação confirmada. Distinto do item de DataForSEO acima (fornecedor de dados de busca, não de LLM) e do item novo de Mistral (rate-limit de pico, não esgotamento sustido). **Atualização 2026-09-14: 2ª janela consecutiva sem nenhuma ocorrência** (a lista de 13 grupos de erro desta semana não inclui Gemini de todo). Reforça a hipótese de crédito reposto, ainda sem confirmação direta de billing: mas nota-se que o motor mais grave desta semana passou a ser o ChatGPT (ver item MEASUREMENT P0 novo), não o Gemini.
+
+### 2026-09-14 added: CONTENT: /en com menos cobertura de imagem do que a homepage PT
+- **Prioridade:** P3
+- **Esforço:** 30min-1h
+- **Origem:** auditoria semanal 2026-09-14 (fetch direto e extração programática de `/` e `/en`)
+- **Estado:** TODO
+- **Descrição:** A homepage PT tem 2 imagens (dashboard do Tracker + selo OpenAI Select Partner); `/en` tem apenas 1 (só o selo). Gap de paridade multimodal entre as duas línguas, pequeno mas mensurável.
+- **Ação:** Adicionar o dashboard do Tracker (ou equivalente) à homepage `/en`.
+- **Verificação:** `/en` mostra 2 imagens, com `ImageObject` se aplicável.
+- **Notes:** Baixo risco, achado novo desta semana.
+
+### 2026-09-14 added: MEASUREMENT: Tracker: timeouts novos no Grok, bug de serialização numérica isolado
+- **Prioridade:** P3
+- **Esforço:** 1-2h (diagnóstico de ambos)
+- **Origem:** auditoria semanal 2026-09-14 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias)
+- **Estado:** TODO
+- **Descrição:** Dois achados de baixo volume, nunca vistos antes por este Routine: (a) `grok/grok-4.3 (knowledge)` e `(augmented)` a falhar com "tempo esgotado... sem resposta em 180s" (3+2 ocorrências, 11 set); (b) `Error: unsupported number: -1.9064433873226668e+21`, rota `/api/opportunities/export`, 1 ocorrência, 11 set: provável bug de serialização numérica.
+- **Ação:** Investigar ambos; baixo volume não implica baixa prioridade de diagnóstico se recorrerem.
+- **Verificação:** Sem novas ocorrências numa janela de 7 dias.
+- **Notes:** Baixo volume, primeira vez visto: tratar como watch, não como incêndio.
 
 ### 2026-08-03 added: MEASUREMENT: Tracker: BING_OAUTH_CLIENT_ID em falta
 - **Prioridade:** P2
@@ -219,7 +269,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** O header `content-security-policy-report-only` está presente e bem configurado, mas em modo Report-Only não bloqueia nada de facto. Confirmado byte-idêntico na política (mesmo conteúdo do header) nas execuções de 2026-07-20, 2026-07-27, 2026-08-03 e 2026-08-10.
 - **Ação:** Confirmar que a política atual não quebra nenhum recurso legítimo, depois substituir o header por `Content-Security-Policy` (enforced) com a mesma política.
 - **Verificação:** `curl -sI https://www.destaque.ai/` devolve `content-security-policy` (não `-report-only`) e o site continua a funcionar sem erros de consola relacionados com CSP.
-- **Notes:** Baixo risco. Sem progresso em 5 semanas.
+- **Notes:** Baixo risco. **Atualização 2026-09-14:** reconfirmado ainda Report-Only em todas as respostas amostradas (`/`, `robots.txt`, `sitemap.xml`, `llms.txt`), política igual à de execuções anteriores; sem progresso há várias semanas seguidas.
 
 ### 2026-07-13 added: ENTITY: Confirmar perfis sameAs populados
 - **Prioridade:** P1 (não re-verificado esta semana: fora da amostra mais estreita de 2026-08-03)
@@ -266,7 +316,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Esforço:** 30min-2h
 - **Origem:** auditoria semanal 2026-08-10; reconfirmado 2026-08-24
 - **Estado:** TODO
-- **Descrição:** Sem via de medição de CWV há várias semanas. `mcp__Vercel__get_web_analytics` no projeto `destaque-ai` reconfirmado em 24 ago (desta vez com parâmetros de data no formato correto) a devolver `404 Not Found — "Web Analytics not found"` - a funcionalidade continua desligada. PageSpeed Insights não foi sequer tentável nesta sessão em 24 ago (sem via de acesso disponível pelas ferramentas desta execução).
+- **Descrição:** Sem via de medição de CWV há várias semanas. `mcp__Vercel__get_web_analytics` no projeto `destaque-ai` reconfirmado em 24 ago (desta vez com parâmetros de data no formato correto) a devolver `404 Not Found: "Web Analytics not found"` - a funcionalidade continua desligada. PageSpeed Insights não foi sequer tentável nesta sessão em 24 ago (sem via de acesso disponível pelas ferramentas desta execução).
 - **Ação:** Ativar Vercel Web Analytics (ou Speed Insights) no projeto `destaque-ai` no dashboard Vercel: é uma opção de configuração, não requer código.
 - **Verificação:** `mcp__Vercel__get_web_analytics` devolve dados em vez de 404, ou PSI devolve resposta válida na próxima execução.
 - **Notes:** Reconfirmado desligado pela 2ª vez com prova formal (não apenas repetição da recomendação de Horizonte 1).
@@ -329,7 +379,7 @@ _(Atualizado 07 setembro 2026: sétima execução do Routine, mas vs. 24 agosto:
 - **Descrição:** Nenhuma menção a destaque.ai ou Eduardo Mendonça encontrada em Observador, ECO, Público, Expresso, Jornal de Negócios, Dinheiro Vivo (confirmado até 27 jul; não re-verificado 03 ago).
 - **Ação:** Iniciar pipeline de digital PR de forma orgânica, usando os estudos originais como gancho.
 - **Verificação:** Primeira peça Tier-1 publicada.
-- **Notes:** Expectável para empresa fundada em 2025: horizonte 3-4, não urgente.
+- **Notes:** Expectável para empresa fundada em 2025: horizonte 3-4, não urgente. **Atualização 2026-09-14: primeira citação de imprensa PT verificável em 9 semanas de tentativas, ainda que não Tier-1.** A Marketeer construiu pelo menos dois artigos à volta do estudo próprio "mapa das empresas de Portugal" (marketeer.sapo.pt/as-marcas-portuguesas-que-a-ia-nomeia-e-as-que-realmente-recomenda/ e um segundo artigo relacionado), citando a distinção "nomeada" vs. "escolhida" (share of recommendation) por nome. Marketeer não é uma das seis publicações Tier-1 desta metodologia (essas continuam em zero), mas é prova real de que os estudos próprios geram cobertura de terceiros verificável. Data exata não confirmada de forma independente (a "3 de setembro" citada num commit interno não bate com o texto do artigo, que só situa o estudo subjacente em "final de agosto"). Ação recomendada: identificar 2-3 publicações adicionais de marketing/negócios para pitch direto usando os estudos como gancho, e confirmar a data exata da Marketeer.
 
 ## Items DONE (últimas 4 semanas, por rastreabilidade)
 
