@@ -33,6 +33,71 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 **Actualização 13 Set 2026: oitava sessão consecutiva sem caso de primeira mão, mas um detalhe novo reenquadra (sem resolver) o papel da Cosmo5:** as duas marcas PT já confirmadas (Continente, Robbialac) não compraram anúncios no ChatGPT através da Cosmo5, a parceira alfa que a própria OpenAI designou para Portugal e Espanha: compraram através das suas próprias agências de meios habituais: a Continente via **Arena Media** e a Robbialac via **Social Animals** (briefing.pt, corroborado por Marketeer; `WebFetch` bloqueado, achado via `WebSearch`). Isto sugere que o caminho real para uma marca PT comprar anúncios no ChatGPT pode já ser "pedir à agência de meios habitual" em vez de "esperar pela Cosmo5": mas continua a ser compra mediada por agência, não self-serve, e **continua sem existir, de nenhum dos dois lados, um único caso em primeira mão** de conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, ou a ser bloqueada nele. Um segundo lote de sites portugueses (ruadebaixo.com, boomer.pt, juntando-se aos já conhecidos Infinidata/Let's Make It Digital/e-konomista.pt/marketeer.sapo.pt/TugaTech) repetiu hoje a alegação de acesso self-serve aberto desde 31 Ago 2026, de novo sem nenhum caso real descrito: mesmo tratamento de sempre, sem valor probatório novo. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
 
+**Actualização 14 Set 2026: nona sessão consecutiva sem caso de primeira mão, mais agregadores a repetir a mesma alegação sem caso:** pesquisa dirigida de hoje não encontrou nenhum caso novo em primeira mão de nenhum dos dois lados. Um lote adicional de agregadores internacionais (LocalAds, Index Lab, digitalapplied.com, e um segundo artigo do próprio soku.ai) repetiu a leitura já conhecida ("Available" desde 2 Set, 52 países), sem acrescentar nenhum caso real de conta PT a completar o registo: mesmo padrão de sempre, sem valor probatório novo. `WebFetch` directo a help.openai.com/en/articles/20001245-ads-manager-availability e a ads.openai.com continua bloqueado (`EGRESS_BLOCKED`). O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
+
+## 🚨 ALERTA FUNDADOR: Cloudflare passa a bloquear por omissão crawlers de treino/agente em páginas com anúncios, a partir de amanhã (15 Set 2026)
+
+**O que aconteceu:** a Cloudflare confirma (anúncio de Jul 2026, a entrar em vigor amanhã) que domínios novos, clientes novos e todos os clientes existentes no tier Free passam a ter os crawlers de categoria Training e Agent bloqueados por omissão em qualquer página com anúncios; os crawlers de categoria Search continuam permitidos por omissão. Um crawler multi-função (Googlebot, Bingbot, Applebot) fica bloqueado também se o Training for bloqueado. Não foi possível ler blog.cloudflare.com directamente nesta sessão (`WebFetch` bloqueado), mas a leitura está corroborada por 9+ fontes independentes sem nenhuma a contradizer, incl. TechCrunch e Engadget, que cobriram o anúncio original em Jul 2026.
+**Porque nos importa:** isto muda o que um `robots.txt` permissivo garante: um cliente atrás da Cloudflare, no tier Free ou num domínio criado depois de amanhã, com anúncios na página, pode ver os seus crawlers de IA bloqueados na camada de CDN mesmo com o `robots.txt` a autorizar tudo. É uma alteração de metodologia de auditoria (registada hoje em `methodology-changelog.md` e aplicada em `references/frameworks.md`; a prosa em `SKILL.md` § Audit workflow fica pendente de uma sessão com mandato para a editar directamente, ver nota abaixo), e pode já estar a afectar clientes correntes que estejam nestas condições.
+**Jogada recomendada:** para qualquer cliente activo cujo DNS/CDN seja Cloudflare, verificar hoje ou amanhã a definição em Security → Bots → AI Crawl Control (permitir explicitamente Training/Agent se a intenção for continuar visível em ChatGPT/Claude/Perplexity); a janela de opt-out fecha amanhã.
+**Prazo:** amanhã, 15 Set 2026 (a janela de opt-out fecha nessa data; depois disso a mudança já se aplica aos clientes elegíveis).
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-14
+
+🚨 Alerta: a Cloudflare confirma o bloqueio por omissão de crawlers de treino/agente em páginas com anúncios a partir de amanhã (15 Set), para domínios novos, clientes novos e tier Free: sobrepõe-se a um `robots.txt` permissivo na camada de CDN. Acção recomendada hoje/amanhã: verificar a definição AI Crawl Control em qualquer cliente activo atrás da Cloudflare. Ver bloco no topo do feed.
+
+Radar LLM/IA: a migração do DeepSeek executou-se como agendado (04:00 UTC hoje): `deepseek-v4-pro` e o já retirado `deepseek-v4-flash` respondem agora com o V4.1-Flash (`deepseek-flash`); actualizado o mapping do Deck Builder. Grok 4.7 continua por lançar, sem novidade além do já sabido. Sem mudança de modelo default em ChatGPT, Claude, Gemini, Copilot ou Mistral.
+
+GEO/AEO: lacuna de metodologia encontrada e corrigida na passagem diária por motor: a "generative UI" da Google (layouts interactivos, quizzes) chegou também ao AI Overviews por volta de 19-20 Ago 2026, não só ao AI Mode, e nunca tinha sido absorvida no playbook; corrigido hoje. Sem estudo novo com amostra/metodologia verificável nesta janela (uma alegação atribuída a um estudo Wynter não foi possível confirmar e não entrou no feed).
+
+SEO/Google: sem mecanismo novo confirmado hoje além do já registado.
+
+Ads Manager PT: nona sessão consecutiva sem caso de primeira mão de nenhum dos dois lados; mais agregadores a repetir a mesma alegação sem caso novo.
+
+Implicações: (1) Cloudflare é a prioridade da semana: verificar clientes na CDN antes de amanhã; (2) confirmar o mapping DeepSeek no próximo fetch do Deck Builder; (3) sem jogada nova de conteúdo hoje.
+
+Corrida completa.
+
+## 2026-09-14
+
+### ⚙️ Mudanças nas plataformas
+
+- **Cloudflare confirma bloqueio por omissão de crawlers de treino/agente em páginas com anúncios, a partir de 15 Set 2026 (amanhã)**: domínios novos, clientes novos e todos os clientes existentes no tier Free passam a ter os crawlers de categoria Training e Agent bloqueados por omissão em qualquer página com anúncios; Search continua permitido por omissão. Um crawler multi-função (Googlebot, Bingbot, Applebot) fica bloqueado também se o Training for bloqueado. Site owners podem desactivar a definição em Security antes do prazo. Upgrade de "watch corroborado" (12 Set) para "confirmado por corroboração cruzada" hoje: `WebFetch` directo a blog.cloudflare.com continua bloqueado (`EGRESS_BLOCKED`), mas 9+ fontes independentes sem nenhuma a contradizer, incl. [TechCrunch](https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/) e [Engadget](https://www.engadget.com/2207360/cloudflare-will-filter-out-web-crawlers-that-serve-ai-companies/), que cobriram o anúncio original em Jul 2026. **[verificar de primeira mão]**: ler blog.cloudflare.com directamente assim que o proxy desta sessão o permitir, para confirmar o texto exacto. Absorvido em `references/frameworks.md` §2 (secção reescrita) e `methodology-changelog.md` (entrada 2026-09-14): é um gatilho de evolução metodológica aplicado, não só um item de news-feed. **Nota de processo**: a prosa correspondente em `SKILL.md` §7 do audit workflow e § Methodology evolution gatilho 5 fica pendente: um commit `daily:` que toque `SKILL.md` está fora dos caminhos permitidos por `.github/workflows/routine-automerge.yml` e travaria o automerge de toda a corrida de hoje. Fica registado em `methodology-changelog.md` para uma sessão com mandato para editar `SKILL.md` directamente aplicar a prosa.
+- **DeepSeek: migração executada como agendado**: desde as 04:00 UTC de hoje, `deepseek-v4-pro` responde com o DeepSeek-V4.1-Flash (`deepseek-flash`), à tarifa do Flash, "até o V4.1-Pro lançar" (termos da própria DeepSeek, citados por agregadores); o `deepseek-v4-flash` antigo já estava encaminhado para lá desde 10 Set 2026. `WebFetch` directo a api-docs.deepseek.com continua bloqueado; corroborado por 5+ fontes secundárias independentes (rastreadores de changelog, apidog, benchlm.ai, shattered.io) convergentes na mesma cadeia de encaminhamento e datas. Absorvido em `references/models.md` (secção DeepSeek + Deck Builder API mappings, coluna `deepseek` actualizada de `deepseek-v4-flash` para `deepseek-flash`) e no bloco `deepseek` de `engine_playbooks.md` (PT+EN).
+- **Ads Manager PT: nona sessão consecutiva sem caso de primeira mão** (ver actualização completa no bloco 🚨 ALERTA FUNDADOR no topo do feed): mais agregadores internacionais (LocalAds, Index Lab, digitalapplied.com, segundo artigo do soku.ai) repetem a leitura "Available desde 2 Set, 52 países" sem nenhum caso real de conta PT associado. Sem valor probatório novo.
+
+### 📄 Lacuna de metodologia corrigida (passagem diária por motor)
+
+- **Google AI Overviews ganhou "generative UI" (layouts visuais interactivos, quizzes de prática) por volta de 19-20 Ago 2026, não só o AI Mode**: nunca tinha sido absorvido no playbook `google_aio`. Achado durante a passagem diária de hoje, não notícia da janela de 24-48h: sinalizado como tal para não sugerir movimento que não houve hoje. Fonte: [Search Engine Journal](https://www.searchenginejournal.com/google-expands-generative-ui-beyond-ai-mode-into-ai-overviews/586452/), corroborado por techwyse.com e storyboard18.com (`WebFetch` bloqueado). Absorvido em `references/engine_playbooks.md`, bloco `google_aio` (PT+EN): novo item 6 em "Faz:"/"Do:" sobre estruturar conteúdo instrucional em passos discretos.
+
+### 💡 Implicações para destaque.ai
+
+- O bloqueio da Cloudflare é a jogada da semana: qualquer cliente activo cujo DNS/CDN seja Cloudflare precisa de uma verificação da definição AI Crawl Control hoje ou amanhã, antes de a janela de opt-out fechar (15 Set); um `robots.txt` já auditado como correcto deixa de ser garantia sozinho para esse cliente.
+- A migração do DeepSeek não muda o pitch para clientes B2B SaaS em Portugal (relevância APAC baixa), mas o Deck Builder já aponta ao ID correcto (`deepseek-flash`) a partir do próximo fetch: sem acção adicional.
+- Sem jogada nova de conteúdo/pitch a partir da lacuna do Google AI Overviews: é awareness de superfície para clientes com conteúdo instrucional/comparativo, sem prazo.
+
+### 🚨 Alerta ao founder
+
+Item novo e material hoje: o bloqueio da Cloudflare (ver bloco 🚨 ALERTA FUNDADOR: Cloudflare no topo do feed), pelo prazo apertado (amanhã) e por poder já afectar clientes correntes atrás da Cloudflare. O alerta já aberto (Ads Manager PT) foi actualizado com a "Actualização 14 Set 2026": nona sessão sem caso de primeira mão, sem escalar.
+
+### Passagem diária por motor (13 motores, OBRIGATÓRIA)
+
+Todos os 13 blocos de `references/engine_playbooks.md` (PT+EN) revistos hoje, linha `meta:` reescrita em todos. Dois só com achados de substância: `google_aio` (generative UI, ver acima) e `deepseek` (migração executada, ver acima). Os restantes onze (`chatgpt`, `claude`, `gemini`, `grok`, `mistral`, `llama`, `perplexity`, `google_ai_mode`, `copilot`, `meta_ai`, `copilot_bing`) sem mudança de mecânica confirmada hoje: revisão rápida documentada em cada `meta:`, sem inventar movimento onde não houve. Nenhum bloco parado há mais de 30 dias (todos revistos diariamente desde pelo menos 8 Set).
+
+### Aprendizagem interna
+
+Sem acesso aos dados de exportação do Tracker nesta sessão (mesma limitação de sessões anteriores): sem leitura de mecanismo nem de resultado hoje.
+
+### Verificação de primeira mão
+
+O item Cloudflare está sinalizado `[verificar de primeira mão]` acima: é candidato a leitura directa assim que o proxy de rede desta sessão o permitir, dado o peso prático (audit workflow) da alegação.
+
+### Manutenção
+
+Research feito com `WebSearch` (12 pesquisas dirigidas cobrindo Tier 1/1b, watches específicos e a passagem por motor) mais duas tentativas de `WebFetch` directo (openai.com, blog.cloudflare.com): ambas bloqueadas (`EGRESS_BLOCKED`), mesmo padrão de sessões anteriores. Um candidato descartado por não ser verificável: uma alegação atribuída a "Wynter, 2026" (68% dos compradores B2B começam a pesquisa num chatbot de IA) não teve amostra, metodologia nem confirmação directa em nenhuma pesquisa adicional: possível artefacto da camada de sumarização do `WebSearch`; não incorporado, per critério de exclusão "sem dados verificáveis". Um segundo candidato (Search Engine Land, "25 milhões de impressões, 42 clientes", CTR -61% AIO/+35% orgânico citado/+91% pago citado) tem os mesmos números já absorvidos em `benchmarks.md` §13 (Seer Interactive): tratado como o mesmo estudo reapresentado, não uma fonte nova, e não duplicado.
+
+**Absorção (passo 1 de manutenção, antes do truncate)**: news-feed.md tinha 61 headers de data com esta entrada (um acima do limiar de 60): revista a única entrada prestes a sair no truncate (2026-07-10: GPT-Live e a GA do GPT-5.6). Ambos os itens já estavam bem absorvidos: GPT-Live está em `references/models.md` linha 56 (secção OpenAI), a GA do GPT-5.6 está reflectida em todo o `models.md` desde sessões muito anteriores, e o paper académico da entrada (arXiv:2606.20065, benchmark multi-marca) já está em `references/benchmarks.md` (URL na entrada). Nenhuma lacuna genuína identificada. Truncado para 60 headers (2026-07-11 a 2026-09-14) depois da absorção.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-13
 
 Radar LLM/IA: DeepSeek-V4.1-Flash confirmado hoje por nome de domínio oficial (deepseek.com/en/news/deepseek-v4-1-flash/), não apenas por agregadores; migração de todo o tráfego `deepseek-v4-pro` mantém-se agendada para amanhã (04:00 UTC, 14 Set), a confirmar na próxima corrida. Grok 4.7 continua por lançar: Musk (11 Set) atribuiu o atraso a um problema de treino por reforço (penalização excessiva de respostas longas), não a nova data; Grok 4.6 continua o modelo de produção.
@@ -1330,16 +1395,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - Sem mudança de metodologia de auditoria necessária hoje; o Deck Builder continua a testar via `production` (fidelidade ao tier pago), que é a escolha correta para auditorias diagnostic/premium pagas.
 
 **Nota de integridade de dados**: GPT-Live (8 jul), a expansão do relatório de performance AI generativa do Search Console a mais países (EUA/Índia/Suíça) e o estudo SSRN sobre quebra de 39,8% em cliques com AI Overviews já estão cobertos nas entradas de 2026-07-09, 2026-07-04 e 2026-07-05 respectivamente — não repetidos aqui para evitar repackaging. A entrada de 2026-07-10 foi, mais uma vez, escrita por engano no caminho errado (`daily-agent/news-feed.md` na raiz, não `skills/geo-seo-aeo-master/daily-agent/`) — mesmo erro já sinalizado nas entradas de 02, 03, 04, 08 e 09 de julho. O único item genuinamente novo e ainda não absorvido nessa entrada mal colocada era o GPT-5.6 em preview (26 jun); a informação foi verificada de novo e absorvida correctamente aqui já como GA (9 jul), com detalhe adicional (defaults por tier, IDs de API) confirmado nesta pesquisa. A divergência entre as duas árvores persiste sem correcção estrutural — recomenda-se fortemente, numa próxima sessão com mandato para tal, remover ou redirecionar a cópia da raiz (`daily-agent/`, e as restantes pastas raiz `references/`, `SKILL.md`, `competitor-monitor/`, `destaque-ai-self/`, `routines/`, que também parecem duplicados legados face à estrutura canónica em `skills/geo-seo-aeo-master/` confirmada em `README.md`) para impedir que runs futuros continuem a escrever no caminho errado.
-
-## 2026-07-10
-
-### ⚙️ Mudanças nas plataformas
-- **OpenAI — GPT-Live** (8 jul 2026) — Nova família de modelos de voz full-duplex (GPT-Live-1 para planos pagos, GPT-Live-1-mini para o plano gratuito) a substituir a experiência de voz do ChatGPT; conversas por voz passam a integrar pesquisa web, memória e widgets visuais, em rollout para iOS, Android e web. https://openai.com/index/introducing-gpt-live/
-- **OpenAI — GPT-5.6** (9 jul 2026) — Disponibilidade geral da nova família de modelos (Sol, Terra, Luna) no ChatGPT, ChatGPT Work, Codex e API, com rollout global nas 24h seguintes ao anúncio. https://help.openai.com/articles/11909943
-
-### 📄 Research académico
-- **Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines** — arXiv:2606.20065 (jun 2026). Mediu mais de 100 mil respostas de prompts para 100+ marcas entre março e maio de 2026, propondo uma metodologia replicável de benchmark de visibilidade de marca em motores de pesquisa generativos. https://arxiv.org/abs/2606.20065
-
-### 💡 Implicações para destaque.ai
-- O GPT-Live acrescenta pesquisa web e memória à voz do ChatGPT — a superfície de "answer engines" a monitorizar alarga-se para além do texto; por agora é awareness, mas justifica manter GPT-Live na lista de motores a testar assim que a adoção em Portugal for relevante.
-- A metodologia do arXiv:2606.20065 (100+ marcas, 100 mil respostas) é um exemplo replicável de benchmark de visibilidade multi-marca — útil como referência técnica para justificar a robustez metodológica dos relatórios de AI visibility da destaque.ai perante clientes mais técnicos. Sem mudança de serviço, só awareness.

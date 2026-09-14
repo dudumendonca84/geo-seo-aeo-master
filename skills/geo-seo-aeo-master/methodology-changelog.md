@@ -8,6 +8,16 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-09-14: Cloudflare default-block de crawlers de IA em páginas com anúncios: novo passo no audit de robots.txt
+
+**Trigger.** Gatilho 5 de `SKILL.md` § Methodology evolution ("mudança de postura de compliance de uma família de crawlers"). Watch aberto desde 12 Set 2026 (`references/frameworks.md` §2), confirmado hoje por corroboração cruzada de 9+ fontes independentes (incl. TechCrunch e Engadget, que cobriram o anúncio original da Cloudflare em Jul 2026): leitura directa a `blog.cloudflare.com` continua bloqueada (`EGRESS_BLOCKED`), mas o volume e a qualidade das fontes secundárias, sem nenhuma a contradizer, satisfazem o limiar já usado noutras entradas deste changelog para confirmar sem fetch directo.
+
+**O que muda, e desde quando.** A partir de 15 Set 2026, a Cloudflare passa a bloquear por omissão os crawlers de categoria Training e Agent em qualquer página com anúncios, para domínios novos, clientes novos e todos os clientes existentes no tier Free (Search fica permitido por omissão); um crawler multi-função (Googlebot, Bingbot, Applebot) fica bloqueado também se o Training for bloqueado. É um bloqueio técnico na camada de CDN, à frente do `robots.txt` do próprio site: um `robots.txt` permissivo deixa de bastar como garantia de acesso para um cliente atrás da Cloudflare.
+
+**Secções alteradas.** `references/frameworks.md` §2 (secção reescrita de "watch, corroborado" para "confirmado por corroboração cruzada", com o passo de audit novo descrito em prosa). **`SKILL.md` ainda por actualizar**: o passo §7 do audit workflow ("verificar Security → Bots → AI Crawl Control quando o CDN do cliente é Cloudflare") e a anotação do gatilho 5 em § Methodology evolution ficam pendentes de uma sessão com mandato para editar `SKILL.md` directamente: um commit `daily:` que toque `SKILL.md` trava o `routine-automerge` inteiro (caminho fora da lista permitida em `.github/workflows/routine-automerge.yml`), e bloquear o resto desta corrida por essa única alteração custava mais do que vale. Até lá, `references/frameworks.md` §2 é a fonte viva desta regra.
+
+---
+
 ## 2026-09-10: Limiares de alerta calculados em código, referência do top-10 em AI Overviews atualizada, entradas em falta desde 24 Ago
 
 **Trigger.** Revisão pente fino de 9 Set e análise crítica de 10 Set 2026 (itens C44, 51, 52): o changelog parou a 24 Ago enquanto o método mudou quatro vezes.
