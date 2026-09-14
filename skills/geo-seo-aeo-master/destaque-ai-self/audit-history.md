@@ -11,6 +11,43 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-09-14: Oitava execução (vs. 07 set: primeira semana consecutiva sem hiato desde a escalada do item PROCESS a P0)
+
+**Score global:** 72/100 (Bom, com um recuo marginal que esconde movimento maior nos dois sentidos: 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 07 set: −1.** Primeira execução exatamente 7 dias depois da anterior desde a escalada do item PROCESS.
+
+**Score por categoria (delta vs. 07 set):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 87/100 | 0 |
+| Performance / CWV | N/D |: |
+| SEO On-Page | 94/100 | −1 |
+| Schema / dados estruturados | 95/100 | −3 |
+| Otimização de imagens | 74/100 | −1 |
+| GEO técnica | 88/100 | −3 |
+| Conteúdo & topical authority | 97/100 | +1 |
+| Entidade / brand foundation | 83/100 | −2 |
+| Autoridade & digital PR | 30/100 | +10 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 38/100 | −12 |
+
+**Nota sobre o Δ global de −1:** o número esconde o achado mais sério de toda a série até agora: o motor ChatGPT do Visibility Tracker está inoperacional desde 11 set por duas causas simultâneas e independentes (ID de modelo inválido `gpt-5.5-instant` + sem créditos OpenAI em `gpt-5.6-sol`, o modelo de produção), o que empurra Medição para −12. GEO técnica desce (−3) porque a correção do `llms.txt` sinalizada há 7 dias continua por aplicar, e esta semana confirma-se pela primeira vez que a linha errada está a alimentar uma resposta sintetizada real (`DC1`). Schema desce (−3) porque `Organization.sameAs` perdeu a entrada Wikidata (de 4 para 3), causa por confirmar. Entidade desce (−2) pela mesma razão mais uma superfície de confusão de marca alargada. Do lado positivo: Autoridade & PR sobe (+10) pela primeira citação de imprensa PT verificável em 9 semanas (Marketeer, 2 artigos sobre o estudo próprio "mapa das empresas de Portugal"); Conteúdo sobe (+1) com o `sitemap.xml` a crescer de 76 para 82 URLs. Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 0. Nenhum item do backlog atingiu confirmação suficiente para DONE: os dois fixes triviais sinalizados há 7 dias (`llms.txt`, meta description de `/sobre`) continuam por aplicar.
+
+**Items novos detectados:** 5 itens discretos de backlog: 1 P0 (MEASUREMENT: motor ChatGPT do Tracker inoperacional por duas causas simultâneas), 2 P1 (MEASUREMENT: Perplexity com duas assinaturas de falha distintas; ENTITY/SCHEMA: `Organization.sameAs` perdeu a entrada Wikidata), 1 P3 (CONTENT: `/en` com menos cobertura de imagem do que a homepage PT), 1 P3 (MEASUREMENT: timeouts novos no Grok + bug de serialização numérica isolado). Adicionalmente, atualizações materiais a 8 items existentes: o item P0 do `llms.txt` (2ª semana em aberto, agora com evidência de impacto real via `DC1`); o item PROCESS (primeira semana consecutiva sem hiato, progresso parcial); o item BACKLINKS de zero cobertura Tier-1 (primeira citação de imprensa PT verificável, ainda que não Tier-1 proper); o item STRATEGIC de BE VISIBLE (reclassificado de par português a agência internacional); o item STRATEGIC de Marco Gouveia (pricing mais preciso, mais Francisco Paredes corrigido para Porto e SEO Alive como concorrente novo); o item ENTITY de destaque.ia.br (superfície alargada, mais dois nomes); o item STRATEGIC da colisão "GEO"/AEO (terceiro eixo de colisão confirmado: "Global Employer of Record"); os items MEASUREMENT de DataForSEO (volume a crescer) e Gemini (2ª janela consecutiva limpa).
+
+**Mudanças materiais observadas:**
+- **Produto: o motor ChatGPT do Visibility Tracker está inoperacional desde 11 set, por duas falhas que não têm relação uma com a outra.** Um ID de modelo inexistente (`gpt-5.5-instant`, 404) e uma conta OpenAI sem crédito no modelo de produção (`gpt-5.6-sol`, 429) falham em simultâneo: nenhum cliente recebe leitura real do ChatGPT desde essa data. É o achado mais grave desta série até agora precisamente por ser operacional, não de conteúdo: afeta o produto vivo, não apenas o site público.
+- **GEO técnica: a correção mais barata da auditoria (15-30min) continua por aplicar 2ª semana, e agora tem prova de impacto real.** O teste multi-motor desta semana confirma que a linha desatualizada do `llms.txt` está a ser lida e repetida numa síntese de pesquisa real (`DC1`: "destaque.ai is a Generative Engine Optimization consultancy").
+- **Entidade: `Organization.sameAs` perdeu a ligação ao Wikidata que estava confirmada há 5 semanas**, e a pesquisa desta semana não encontra nenhum item Wikidata ligado à destaque.ai ou a Eduardo Mendonça: pode ser correção deliberada (o QID nunca correspondeu) ou perda acidental; não decidível só pelo schema.
+- **Autoridade & PR: primeira citação de imprensa portuguesa verificável em 9 semanas de tentativas.** A Marketeer construiu pelo menos dois artigos à volta do estudo próprio "mapa das empresas de Portugal", citando a métrica "share of recommendation" por nome. Não é Tier-1 per a definição desta metodologia, mas é a primeira prova externa de que os estudos próprios geram cobertura real.
+- **Concorrência: reclassificação, não só reconfirmação.** BE VISIBLE deixa de ser lido como "par português direto": é agora uma agência internacional (Londres/Ostende/Lisboa/Cebu) com presença em Lisboa. Numa pesquisa branded direta contra este concorrente, a destaque.ai domina por completo (8 URLs próprios vs. zero). Francisco Paredes corrigido para Porto, não Lisboa. Concorrente novo: SEO Alive. Mais cinco nomes nunca antes vistos (AWISEE, SmartLinks, DivSync Digital, Digiton.ai, BeFound): o panorama competitivo continua a encher-se mais depressa do que a classificação formal consegue acompanhar.
+- **Teste multi-motor: taxa de crédito desce (2/31, 6%, vs. 4/27, 15%, há 7 dias), mas com sinal explícito de instabilidade do método proxy**, não de regressão real: dois prompts que tinham dado crédito há 7 dias perderam também qualquer sinal de concorrência local, consistente com ruído de pesquisa semana-a-semana, não um padrão confirmado com um único ponto adicional. Terceira colisão de acrónimo "GEO" confirmada ("Global Employer of Record", RH/payroll), juntando-se às já conhecidas geodesia (PT) e "Authorized Economic Operator" (EN).
+
+**Reconciliação playbooks:** sem edições feitas nesta auditoria: nenhuma divergência nova identificada entre o comportamento medido esta semana e `engine_playbooks.md`.
+
 ### 2026-09-07: Sétima execução (vs. 24 ago: a rotina voltou a saltar uma semana, 31 ago)
 
 **Score global:** 73/100 (Bom, em melhoria marginal: 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 24 ago: +1.** A comparação cobre duas semanas, não uma: não existe commit `audit: 2026-08-31 destaque.ai SINAL self-audit` - 2ª falta em 4 execuções (a 1ª foi 17 ago). O critério de verificação escrito na auditoria anterior ("as próximas 2-3 execuções sem hiato") falhou logo a seguir: o item PROCESS sobe a P0.
