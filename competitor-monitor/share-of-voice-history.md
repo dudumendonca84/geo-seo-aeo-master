@@ -149,6 +149,15 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-09-08 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 2 |
 | 2026-09-08 | Filipe Raimundo | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 3 |
 
+| 2026-09-15 | destaque.ai | 2/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1 (6.ª semana consecutiva), prompt 5 pos 1 (13.ª semana consecutiva) |
+| 2026-09-15 | Marco Gouveia | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 1 pos 2, 5.ª semana consecutiva no mesmo slot |
+| 2026-09-15 | AP\|Portugal | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; Prompt 2 pos 1 — 2.ª semana seguida sem troca com Infinidata |
+| 2026-09-15 | Infinidata | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; Prompt 2 pos 2 — mesma leitura acima |
+| 2026-09-15 | SEOLabs | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 2 pos 3, 4.ª semana consecutiva |
+| 2026-09-15 | Latigid | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 1, 3.ª semana consecutiva no mesmo slot |
+| 2026-09-15 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 2, 3.ª semana consecutiva |
+| 2026-09-15 | Filipe Raimundo | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 3, 3.ª semana consecutiva |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
