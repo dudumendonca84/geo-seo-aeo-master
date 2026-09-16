@@ -37,6 +37,8 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 **Actualização 15 Set 2026: décima sessão consecutiva sem caso de primeira mão, um detalhe periférico novo que não resolve:** pesquisa dirigida de hoje não encontrou nenhum caso novo em primeira mão de nenhum dos dois lados. Único achado novo: um artigo técnico do soku.ai (`chatgpt-ads-eea-custom-audiences-gap`) descreve que a OpenAI reescreveu o artigo do help-center sobre audiências personalizadas a 1 Set 2026 para os "43 mercados que acabaram de abrir", sem que nenhuma página de documentação para programadores tenha mudado em conformidade — é um sinal indirecto de que um lote de mercados (país não nomeado) abriu por volta de 1 Set, consistente com a leitura já conhecida, mas não é um caso de conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, nem a ser bloqueada nele. `WebFetch` directo a help.openai.com continua bloqueado (`EGRESS_BLOCKED`). O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
 
+**Actualização 16 Set 2026: décima primeira sessão consecutiva sem caso de primeira mão, nenhum achado novo de nenhum dos dois lados:** pesquisa dirigida de hoje (`WebSearch` apenas; sem tentativa de `WebFetch` directo, mesmo padrão de bloqueio de sessões anteriores) só encontrou o mesmo lote de guias promocionais portugueses já conhecidos (Infinidata, Let's Make It Digital, universidaduddi.com) a repetir, sem caso real descrito, que "desde 31 Ago 2026 qualquer empresa registada em Portugal pode criar conta em ads.openai.com/pt-PT sem aprovação de agência". Nenhuma fonte portuguesa dedicada (leak.pt, adclickgroup.com, briefing.pt) publicou conteúdo novo desde 13 Set. Continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, ou a ser bloqueada nele. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set. Onze sessões consecutivas sem dado novo: o retorno de mais uma ronda idêntica de `WebSearch` continua a decrescer.
+
 ## 🚨 ALERTA FUNDADOR: Cloudflare passa a bloquear por omissão crawlers de treino/agente em páginas com anúncios, desde hoje (15 Set 2026)
 
 **O que aconteceu:** a Cloudflare confirma (anúncio de Jul 2026, a entrar em vigor amanhã) que domínios novos, clientes novos e todos os clientes existentes no tier Free passam a ter os crawlers de categoria Training e Agent bloqueados por omissão em qualquer página com anúncios; os crawlers de categoria Search continuam permitidos por omissão. Um crawler multi-função (Googlebot, Bingbot, Applebot) fica bloqueado também se o Training for bloqueado. Não foi possível ler blog.cloudflare.com directamente nesta sessão (`WebFetch` bloqueado), mas a leitura está corroborada por 9+ fontes independentes sem nenhuma a contradizer, incl. TechCrunch e Engadget, que cobriram o anúncio original em Jul 2026.
@@ -45,6 +47,61 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Prazo:** 15 Set 2026 (a janela de opt-out fechou hoje; a partir de agora a mudança já se aplica aos clientes elegíveis).
 
 **Actualização 15 Set 2026: a data chega, a mudança entra em vigor, sem confirmação de impacto real ainda:** pesquisa dirigida hoje (`WebFetch` a blog.cloudflare.com continua bloqueado, `EGRESS_BLOCKED`) encontrou uma nova vaga de artigos técnicos publicados precisamente hoje (chudi.dev, novaproxy.io, royalplugins.com, hosting.com, pressbot.io, lovedby.ai, theaiinsider.tech, artificialintelligenceherald.com), todos a confirmar, nenhum a contradizer, a mesma mecânica já registada: desde hoje, domínios novos, clientes novos e todos os clientes existentes no tier Free têm Training e Agent bloqueados por omissão em páginas com anúncios; clientes pagos com definições já configuradas não mudam automaticamente. **Sem confirmação de impacto real**: nenhum relato datado de hoje de um site a perder citações ou acesso de crawler por causa desta mudança especificamente, nem declaração de Google, Bing, OpenAI ou Anthropic sobre os seus próprios crawlers em resposta a ela. Nota de precisão: pesquisa de hoje encontrou artigos (remoteworkeurope.eu, playwire.com) que descrevem um toggle Cloudflare mais antigo e distinto, "Block AI bots", por omissão em domínios novos desde Jul 2025, sem condição de anúncios/tier: não é a mudança de categoria Training/Agent em páginas com anúncios de hoje, e os dois não devem confundir-se (ver `references/frameworks.md` §2, nota adicionada hoje). **Recomendação ao founder**: como o prazo de acção (verificar clientes Cloudflare antes do corte) já não tem janela por cumprir, este alerta pode ser considerado cumprido e fechado; o acompanhamento contínuo (checar AI Crawl Control em qualquer cliente novo/Free na Cloudflare) passa a fazer parte do fluxo de auditoria já actualizado, não precisa de ficar como alerta activo. Fica à decisão do founder remover o bloco.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-16
+
+Radar LLM/IA: sem lançamento, deprecação ou mudança de preço confirmada hoje em ChatGPT, Claude, Gemini, Grok, DeepSeek, Mistral ou Meta. Grok 4.8 continua só comunicação de fundador (Musk, X), sem página de modelo, API ou preço da própria xAI.
+
+GEO/AEO: um estudo novo, de fonte secundária única e sem corroboração (TechnologyChecker.io, telemetria Cloudflare Radar): `ClaudeBot` gera cerca de 20.583 páginas rastreadas por cada referral devolvido a um site, e 89,4% do tráfego de crawlers de IA serve treino ou fins mistos, não pesquisa/resposta em tempo real. Absorvido em `references/frameworks.md` §2 como directriz, não facto confirmado. Passagem diária pelos 13 motores feita, todos os `meta:` reescritos, nenhum parado há mais de 30 dias.
+
+SEO/Google: sem mudança algorítmica confirmada na janela (dois rastreadores independentes apontam uma possível oscilação no início de Set, mas o Search Status Dashboard da Google não confirma; tratado como rumor, não incluído).
+
+Ads Manager PT: décima primeira sessão consecutiva sem caso de primeira mão de nenhum dos dois lados; sem achado novo, apenas repetição dos mesmos guias promocionais PT já conhecidos.
+
+Implicações: (1) sem jogada nova de conteúdo ou pitch hoje; (2) o achado sobre `ClaudeBot`/crawl-to-refer reforça, sem mudar, a recomendação já existente de auditoria robots.txt (treino vs. resposta); (3) watch de AI ads em Portugal sem acção além de continuar a monitorizar; watches de comércio agente e API do Bing Webmaster Tools sem novidade.
+
+Corrida completa.
+
+## 2026-09-16
+
+### 📊 Estudos & dados
+
+- **`ClaudeBot` gera ~20.583 páginas rastreadas por cada referral devolvido; 89,4% do tráfego de crawlers de IA é treino/misto**: [TechnologyChecker.io](https://technologychecker.io/blog/robots-txt-ai-crawlers-blocking-report), actualização de Set 2026, metodologia declarada (telemetria Cloudflare Radar em 330 cidades/125+ países, amostra de 4.000+ ficheiros robots.txt processada por trimestre). `GPTBot` continua o crawler mais bloqueado em robots.txt. Fonte secundária única (`WebFetch` não tentado nesta sessão, achado via `WebSearch`), sem corroboração independente encontrada hoje: os números são direccionais, não confirmados por segunda fonte.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Ads Manager PT: décima primeira sessão consecutiva sem caso de primeira mão** (ver actualização completa no bloco 🚨 ALERTA FUNDADOR no topo do feed): pesquisa de hoje só repetiu guias promocionais PT já conhecidos, sem caso real novo de nenhum dos dois lados; nenhuma fonte PT dedicada actualizou desde 13 Set.
+- **Cloudflare**: sem desenvolvimento novo desde a entrada em vigor de ontem; alerta no topo do feed mantém-se com a recomendação de fecho de 15 Set, à espera de decisão do founder.
+
+### 💡 Implicações para destaque.ai
+
+- O achado do `ClaudeBot`/crawl-to-refer não muda o pitch nem a metodologia de auditoria: reforça com um número a recomendação já existente de tratar `ClaudeBot` como candidato natural a "bloquear treino, permitir resposta" no robots.txt de um cliente B2B SaaS PT; sem prazo, entra na próxima auditoria como contexto.
+- Sem jogada nova no watch de AI ads em Portugal: décima primeira sessão sem caso de primeira mão confirma o padrão de retorno decrescente já registado; a única acção que falta continua a ser humana (registo real em ads.openai.com, país Portugal).
+- Sem acção pendente no alerta Cloudflare: aguarda decisão do founder sobre fechar o bloco, já sem prazo activo.
+
+### 🚨 Alerta ao founder
+
+Sem item novo e material hoje. O alerta Ads Manager PT segue aberto sem escalar (décima primeira sessão sem caso de primeira mão); o alerta Cloudflare aguarda decisão do founder sobre fecho, registada a 15 Set.
+
+### Passagem diária por motor (13 motores, OBRIGATÓRIA)
+
+Todos os 13 blocos de `references/engine_playbooks.md` (PT+EN) revistos hoje, linha `meta:` reescrita em todos. Dois com nota de substância: `chatgpt` (décima primeira sessão sem caso de primeira mão no Ads Manager PT, ver acima) e `grok` (sem desenvolvimento novo desde 13-14 Set: Grok 4.8 continua só comunicação de fundador). Os restantes onze (`claude`, `gemini`, `deepseek`, `mistral`, `llama`, `perplexity`, `google_aio`, `google_ai_mode`, `copilot`, `meta_ai`, `copilot_bing`) sem mudança de mecânica confirmada hoje: revisão documentada em cada `meta:`, sem inventar movimento onde não houve. Nenhum bloco parado há mais de 30 dias (todos revistos diariamente desde pelo menos 8 Set).
+
+### Aprendizagem interna
+
+Sem acesso aos dados de exportação do Tracker nesta sessão (mesma limitação de sessões anteriores): sem leitura de mecanismo nem de resultado hoje.
+
+### Verificação de primeira mão
+
+Nenhum item novo hoje justifica etiqueta `[verificar de primeira mão]`: o achado TechnologyChecker.io é um número de terceiros sem fluxo de produto a percorrer, e o Cloudflare/Ads Manager PT já estão sinalizados em entradas anteriores.
+
+### Manutenção
+
+Research feito com `WebSearch` (cerca de 20 pesquisas dirigidas cobrindo Tier 1/1b, os dois watches específicos, a passagem por motor e os dois alertas abertos); sem tentativa de `WebFetch` directo nesta sessão, dado o padrão consistente de `EGRESS_BLOCKED` em sessões anteriores para os mesmos domínios (openai.com, help.openai.com, blog.cloudflare.com). Candidatos investigados e **descartados por já cobertos**: GPT-6 Astra (já em `models.md` desde 3 Set); correcção do preço do Claude Sonnet 5 e Claude Fable 5.1/Mythos 5.1 (já em `models.md`); migração DeepSeek-V4.1-Flash (já absorvida a 14 Set); Google Merchant Center conversational attributes (já conhecido, sem novidade de data PT); expansão do AI Overviews/generative UI (já nos blocos `google_aio`/`google_ai_mode`). Candidato descartado por ser rumor não confirmado: uma possível oscilação algorítmica da Google no início de Set, reportada por dois rastreadores independentes mas não confirmada pelo Search Status Dashboard da própria Google. Não é "mudança algorítmica confirmada" nos critérios desta rotina, não incluído. Watch agentic commerce: **sem novidade** (checkout in-chat continua US-only, sem mudança a ACP/UCP ou ao feed de comércio da OpenAI). Watch Bing Webmaster Tools AI Performance API: **sem novidade** (Microsoft continua a descrever a API como "planeada", sem data).
+
+**Absorção (passo 1 de manutenção, antes do truncate)**: news-feed.md tinha 60 headers de data antes desta entrada. Revista a entrada mais antiga (2026-07-12: confirmação do Search Central Live Deep Dive Europe em Barcelona; retirada dos group chats do ChatGPT). Nenhum dos dois itens é técnica, framework, ferramenta, métrica, modelo ou mudança de comportamento de vendor elegível para `references/`: o primeiro é um evento de calendário/networking, o segundo uma mudança de produto/UX sem ligação a mecânica de citação. Nada por absorver; truncado (2026-07-12 removido, ficam 2026-07-13 a 2026-09-16, 60 headers).
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
 
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-15
 
@@ -1427,18 +1484,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - O resultado do paper sobre chunking (simples supera complexo em RAG) é apenas nota técnica interna sobre a construção de pipelines de indexação — sem impacto directo no pitch a clientes.
 
 **Nota de integridade de dados**: dia de notícias muito leve — verificadas todas as fontes Tier 1 (Google Search Central, blog.google, OpenAI, Anthropic, DeepMind, Bing, Perplexity), 5 fontes Tier 2 (Ahrefs, Search Engine Land, Search Engine Journal, Profound, Otterly, Peec), vozes Tier 3 (Aleyda Solis, Lily Ray, Glenn Gabe, Marie Haynes, Mike King, Rand Fishkin), comunidades Tier 4 (Hacker News, Reddit r/SEO, r/bigseo, r/MachineLearning) e arXiv cs.IR/cs.CL últimos 30 dias. Sem itens novos verificáveis em Tier 1, 3 ou 4 nas últimas 24-72h. Um estudo Clovion (SEJ, ~9 jul, 69.120 conversas multi-turn, 62% das recomendações de marca desaparecem após pergunta de follow-up) ficou fora da janela estrita de 72h e não foi incluído — candidato a verificar/incluir na próxima entrada se ainda não coberto.
-
-## 2026-07-12
-
-### 🔵 Anúncios oficiais
-- **Search Central Live Deep Dive Europe 2026 confirmado para Barcelona** — [Google Search Central Blog](https://developers.google.com/search/blog/2026/07/search-central-live-deep-dive-europe-2026) (jul 2026). Google fechou a votação pública de cidade (aberta desde junho, entre Barcelona, Budapeste, Berlim, Frankfurt, Lisboa e Praga) e confirmou Barcelona, 30 set–2 out 2026, como primeira edição EMEA do formato "Deep Dive" (multi-dia, cobertura técnica aprofundada de tópicos de Search).
-
-### ⚙️ Mudanças nas plataformas
-- **OpenAI — ChatGPT retira group chats** — [OpenAI Help Center](https://help.openai.com/en/articles/12703475-group-chats-in-chatgpt), efectivo 9 jul 2026. Deixa de ser possível criar novos group chats, converter conversas em group chats, ou entrar por convite (web, iOS, Android); chats existentes ficam disponíveis em modo leitura. Mudança de produto/UX, sem impacto conhecido em mecânica de citação ou pesquisa.
-
-### 💡 Implicações para destaque.ai
-- Dia de notícias leve (domingo) — os dois itens são awareness pura, sem mudança de mecânica de citação, pitch ou metodologia de auditoria.
-- A confirmação de Barcelona para o Deep Dive Europe é relevante para networking/presença de destaque.ai num evento técnico presencial da Google em território europeu próximo (Espanha) — vale considerar participação, sem urgência imediata.
-
-**Nota de integridade de dados**: esta pesquisa começou por, mais uma vez, escrever a entrada no caminho errado (`daily-agent/news-feed.md` na raiz do repo, branch antiga `claude/compassionate-planck-mjh8my`) antes de ser detectado e corrigido ainda antes do commit — mesmo erro já registado nas entradas de 02, 03, 04, 08, 09 e 10 de julho. Todos os itens inicialmente encontrados nessa pesquisa (GPT-5.6, Search Console platform properties, estudo Previsible 92,4%, paper arXiv 2606.25787) já estavam cobertos nas entradas de 07-09/07-11 — não são repetidos aqui. Apenas dois itens sobreviveram como genuinamente novos: a confirmação de Barcelona e a retirada de group chats do ChatGPT. A árvore `daily-agent/` (e `references/`, `SKILL.md`, `competitor-monitor/`, `destaque-ai-self/`, `routines/`) na raiz do repo continua divergente e por remover/redirecionar — sexta recomendação consecutiva nesse sentido.
-
