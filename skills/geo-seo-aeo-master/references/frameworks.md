@@ -232,6 +232,14 @@ Log-level analysis of ChatGPT Deep Research (~1,240 source records) found the ag
 
 A separate position paper on GEO governance ([Wen et al., arXiv:2606.12439](https://arxiv.org/abs/2606.12439)) argues the same low-contestability dynamic creates two risks worth naming to clients: influence concentration (a handful of sources feed most answers on a topic) and undisclosed commercial influence in the evidence an engine cites. Argumentative, not empirical: flagged here as context for the "why GEO governance matters" conversation, not as an audit input.
 
+### Canonicalization fixes can take up to two weeks to re-evaluate (Google, Jul 2026)
+
+Google updated its canonicalization troubleshooting documentation to specify that, even after a duplicate-content issue is fixed, a page can stay clustered as a duplicate for up to two weeks before Google re-evaluates it; separation from the cluster is faster when the content difference between the pages is clear and significant ([Search Engine Land](https://searchengineland.com/google-clarifys-canonicalization-fixes-can-take-up-to-two-weeks-to-resolve-481998), 10 Jul 2026, corroborated by Search Engine Journal and Search Engine Roundtable). Practical implication for audits: after a technical fix (canonical tags, duplicate-content cleanup), do not read a still-duplicate signal in a follow-up check inside two weeks as the fix having failed; this sets client expectations and avoids premature reindexing requests. Absorbed 17 Sep 2026, retroactively, from the 10 Jul 2026 news-feed entry (moved out of the daily feed on truncation).
+
+### Simple chunking beats semantic chunking in RAGAS tests (Jul 2026)
+
+A controlled comparison of chunking strategies for retrieval-augmented generation over long, structured documents found that semantic (cluster-based) chunking did not outperform simpler fixed/recursive chunking, tested with the RAGAS framework ([Kreileder, Reisinger, Fischer, arXiv:2607.01852](https://arxiv.org/abs/2607.01852), 2 Jul 2026). Practical implication: an argument against over-engineering the indexing pipelines used by internal AEO audit tooling: a simpler chunking strategy is a reasonable default, not a shortcut that costs accuracy. Absorbed 17 Sep 2026, retroactively, from the 2 Jul 2026 news-feed entry (moved out of the daily feed on truncation).
+
 ### Content patterns that get cited (cross-engine consensus)
 
 From Aggarwal et al. plus vendor follow-ups (Profound, Ahrefs, Semrush, Qwairy):
