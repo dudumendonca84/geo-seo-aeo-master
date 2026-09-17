@@ -78,6 +78,8 @@ These fire on the boolean event itself, not on a metric delta.
 | **An ambiguous mention spike** (≥ 10% of total mentions flagged ambiguous) | `informational` for the client; surface to ops |
 | **`models.md` indicates a default model changed** since the last audit | `informational` - annotate that this week's comparison is not fully comparable |
 | **Negative mention that meets the crisis bar** (see §3.1) | `critical` - `type: negative_mention`, carries the crisis payload |
+| **The brand is named in not one measurable response of the week**, having been named last week | `critical` - `type: brand_absent`, computed in Tracker code (see §3.2) |
+| **The brand disappears from one engine** where it was named last week, while still named elsewhere | `notable` - `type: brand_absent_engine` (see §3.2) |
 
 ### 3.1 Negative mention: crisis trigger and payload
 
@@ -111,6 +113,37 @@ needs, so the client never has to reconstruct the evidence:
 canonical statement on the owned domain. One alert per distinct claim, not
 per response: the same accusation across 5 engines is ONE crisis with the
 engine list in details.
+
+### 3.2 Brand absent: the floor of the whole product
+
+Every other alert in §2 measures a move. This one measures the floor: the
+week in which an engine stops naming the brand at all. It is the event a
+client asks to be told about before any other, and it is boolean, so it is
+computed in Tracker code (`src/lib/alerts/limiares.ts`) with no threshold
+to read from here.
+
+Fire `brand_absent` when, in the closing week, the brand is named in **zero
+measurable responses** and was named in at least one last week. Fire
+`brand_absent_engine`, per engine, under the same rule applied to that
+engine's responses, while the aggregate is still above zero: the first says
+the brand vanished, the second says where it started.
+
+Three guards, and they are what keeps this from becoming noise:
+
+- **A brand that was never there does not fire every week.** Zero after
+  zero is a state, not an event, and the client already reads it on the
+  dashboard. Only the crossing fires.
+- **A minimum base of 5 measurable responses in both weeks**, per engine,
+  for `brand_absent_engine`. An engine with two answers swinging to zero is
+  variance, the same bar §2 uses for sentiment.
+- **A week with no measurement at all is not an absence.** If the audit did
+  not run, or every response came back empty or errored, there is nothing to
+  compare: say nothing rather than tell a client they disappeared when what
+  failed was the collection.
+
+The alert `details` carries `from` (last week's citation rate), `to` (zero),
+and, for the per-engine one, the engine key, so the report can name where it
+happened without recomputing anything.
 
 ## 4. Cumulative / trend-based alerts
 
@@ -198,7 +231,8 @@ Until 10 Sep 2026 nothing compared a number with another: the Tracker stored wha
 | §2 Metric thresholds (CR, SoV, position, sentiment) | **Tracker code**, at the close of every week (`src/lib/alerts/limiares.ts`) | The four tables are parsed at runtime (`src/lib/skill/alertas.ts`), cached 1 h, with a fallback snapshot of this file. Types written: `cr_drop`, `cr_rise`, `sov_drop`, `sov_rise`, `position_worse`, `position_better`, `sentiment_negative`. Any alert the Routine writes with one of these types is replaced by the computed one, and the replacement is reported. |
 | §6 Suppression | **Tracker code** | The number of weeks is parsed from the sentence "for the next N weeks". |
 | §8 Override | **Tracker code** | Column `clients.alert_thresholds_override`, multiplicative. |
-| §3 Event-based, §3.1 Negative mention, §4 Cumulative, §11 Território | **Routine** (`routines/tracker-brain.md`, step 5) | Judgement over text and history; not suppressed. |
+| §3.2 Brand absent | **Tracker code**, at the close of every week (`src/lib/alerts/limiares.ts`) | Boolean, no threshold to parse. Types written: `brand_absent`, `brand_absent_engine`. Not suppressed by §6: an absence is an event. |
+| §3 Event-based (the rest), §3.1 Negative mention, §4 Cumulative, §11 Território | **Routine** (`routines/tracker-brain.md`, step 5) | Judgement over text and history; not suppressed. |
 | §5 Per-engine escalation | Not implemented as such | The computed CR alert names the engine with the largest contribution in `details.engine`; per-engine alerts stay with the Routine. |
 | §7 Tone and copy | Both | The code uses the templates above, in the client's language (PT-PT or EN). |
 

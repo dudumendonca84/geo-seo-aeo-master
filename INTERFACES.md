@@ -335,6 +335,10 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 **Producer:** `references/alert_thresholds.md` §2 (quatro tabelas: `### Citation rate (CR)`, `### Share of Voice (SoV)`, `### Average position`, `### Sentiment`) e §6 (a frase `for the next N weeks`). **Consumer:** `destaque-ai-tracker/src/lib/skill/alertas.ts` (`parseAlertThresholds`, cache 1 h, recurso `FALLBACK_ALERT_THRESHOLDS_MD`) lido no fecho de cada semana por `src/lib/alerts/semana.ts`. Cabeçalhos procurados no início de linha; linhas por rótulo (`Decrease`/`Increase`, `Worsens`/`Improves`, `critical`/`notable`); números por `pp`, `% rel`, `ranks`, `crosses N%`. Uma peça em falta manda o cliente para o recurso inteiro, nunca para uma mistura. O override por cliente é `tracker.clients.alert_thresholds_override` (multiplicativo; chaves em `CHAVES_DE_OVERRIDE`). Quem aplica cada secção está em `alert_thresholds.md` §12.
 
+### Contrato 14: planos (o que cada tier do Tracker recebe)
+
+**Producer:** `references/plans.md` §1 (a tabela `| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence |`). **Consumer:** `destaque-ai-tracker/src/lib/skill/planos.ts` (`parsePlanos`, cache 1 h, recurso `FALLBACK_PLANS_MD`), aplicado por `src/lib/plans/aplicar.ts` e pela rota `POST /api/admin/clients/[id]/plano`. Cabeçalho procurado no início de linha; `yes`/`no` nos dois booleanos, inteiros nos dois números, `weekly`/`biweekly`/`monthly` na cadência. Um nome de plano fora da tabela é recusado na escrita. **Não há `check` no SQL de propósito:** a tabela é a lista, e duplicá-la numa restrição era a mesma regra escrita duas vezes. Preços NÃO vivem aqui: `plans.md` §2 diz porquê.
+
 ## Frequência de atualização
 
 | Ficheiro | Cadência | Trigger |
