@@ -41,6 +41,8 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 **Actualização 17 Set 2026: décima segunda sessão consecutiva sem caso de primeira mão, mas dois desenvolvimentos novos que mudam o pano de fundo sem tocar na pergunta central:** pesquisa dirigida de hoje não encontrou nenhum caso novo em primeira mão de nenhum dos dois lados, nem actualização das fontes portuguesas dedicadas desde 13-16 Set. Dois achados novos, nenhum específico de Portugal: (1) a OpenAI lançou "Sponsored Agents" no ChatGPT (`openai.com/index/reimagining-advertising-with-ai/`, 16 Set 2026): ao clicar num anúncio, o utilizador pode agora abrir uma conversa rotulada com um agente patrocinado pela marca, em vez de sair logo para o site; piloto restrito a anunciantes nos EUA (Wayfair, Angi), sem menção a mercados europeus; (2) a Comissão Europeia designou o ChatGPT "Very Large Online Search Engine" (VLOSE) ao abrigo do Digital Services Act a 31 Ago 2026 (159,1M utilizadores mensais médios na UE), obrigando a OpenAI a publicar um **repositório público de anúncios** (Artigo 39) e a fazer avaliação anual de risco sistémico, com prazo de conformidade de 4 meses (~Jan 2027); este item não constava de nenhuma sessão anterior desta rotina, apesar de ter acontecido há cerca de duas semanas e meia. Nenhum dos dois resolve o estado disputado do self-serve em Portugal, mas o repositório de anúncios, quando publicado, pode tornar-se a primeira fonte first-party pública para medir pago vs. orgânico no ChatGPT na UE: sem acção esta semana, candidato a revisitar quando o prazo se aproximar. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
 
+**Actualização 18 Set 2026: décima terceira sessão consecutiva sem caso de primeira mão, sem achado novo de nenhum dos dois lados:** pesquisa dirigida de hoje repetiu as mesmas alegações já conhecidas dos agregadores portugueses (Infinidata, Let's Make It Digital, boomer.pt, marketeer.sapo.pt, obruno.pt) de que o self-serve está aberto desde 31 Ago 2026 em ads.openai.com/pt-PT, sem nenhum caso real descrito de conta PT a completar o registo; as fontes portuguesas dedicadas do lado oposto (leak.pt, adclickgroup.com, briefing.pt) continuam sem actualização desde 13-16 Set. Continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, ou a ser bloqueada nele. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
+
 ## 🚨 ALERTA FUNDADOR: Cloudflare passa a bloquear por omissão crawlers de treino/agente em páginas com anúncios, desde hoje (15 Set 2026)
 
 **O que aconteceu:** a Cloudflare confirma (anúncio de Jul 2026, a entrar em vigor amanhã) que domínios novos, clientes novos e todos os clientes existentes no tier Free passam a ter os crawlers de categoria Training e Agent bloqueados por omissão em qualquer página com anúncios; os crawlers de categoria Search continuam permitidos por omissão. Um crawler multi-função (Googlebot, Bingbot, Applebot) fica bloqueado também se o Training for bloqueado. Não foi possível ler blog.cloudflare.com directamente nesta sessão (`WebFetch` bloqueado), mas a leitura está corroborada por 9+ fontes independentes sem nenhuma a contradizer, incl. TechCrunch e Engadget, que cobriram o anúncio original em Jul 2026.
@@ -49,6 +51,58 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Prazo:** 15 Set 2026 (a janela de opt-out fechou hoje; a partir de agora a mudança já se aplica aos clientes elegíveis).
 
 **Actualização 15 Set 2026: a data chega, a mudança entra em vigor, sem confirmação de impacto real ainda:** pesquisa dirigida hoje (`WebFetch` a blog.cloudflare.com continua bloqueado, `EGRESS_BLOCKED`) encontrou uma nova vaga de artigos técnicos publicados precisamente hoje (chudi.dev, novaproxy.io, royalplugins.com, hosting.com, pressbot.io, lovedby.ai, theaiinsider.tech, artificialintelligenceherald.com), todos a confirmar, nenhum a contradizer, a mesma mecânica já registada: desde hoje, domínios novos, clientes novos e todos os clientes existentes no tier Free têm Training e Agent bloqueados por omissão em páginas com anúncios; clientes pagos com definições já configuradas não mudam automaticamente. **Sem confirmação de impacto real**: nenhum relato datado de hoje de um site a perder citações ou acesso de crawler por causa desta mudança especificamente, nem declaração de Google, Bing, OpenAI ou Anthropic sobre os seus próprios crawlers em resposta a ela. Nota de precisão: pesquisa de hoje encontrou artigos (remoteworkeurope.eu, playwire.com) que descrevem um toggle Cloudflare mais antigo e distinto, "Block AI bots", por omissão em domínios novos desde Jul 2025, sem condição de anúncios/tier: não é a mudança de categoria Training/Agent em páginas com anúncios de hoje, e os dois não devem confundir-se (ver `references/frameworks.md` §2, nota adicionada hoje). **Recomendação ao founder**: como o prazo de acção (verificar clientes Cloudflare antes do corte) já não tem janela por cumprir, este alerta pode ser considerado cumprido e fechado; o acompanhamento contínuo (checar AI Crawl Control em qualquer cliente novo/Free na Cloudflare) passa a fazer parte do fluxo de auditoria já actualizado, não precisa de ficar como alerta activo. Fica à decisão do founder remover o bloco.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-18
+
+Radar LLM/IA: sem lançamento, deprecação ou mudança de preço confirmada hoje em ChatGPT, Claude, Gemini, Grok, DeepSeek ou Mistral; sem mudança face ao estado registado ontem. Um artigo agregador (TheHackerNews) sobre "Cyber AI Models" da Google, Anthropic e OpenAI investigado e descartado por reempacotar lançamentos já reportados (GPT-6 Astra/Daybreak, Claude Fable 5.1, Gemini 3.8 Flash Cyber), sem facto novo.
+
+GEO/AEO/AI ads: sem desenvolvimento novo nos dois watches específicos (comércio agêntico, AI ads); Ads Manager PT chega à décima terceira sessão consecutiva sem caso de primeira mão de nenhum dos dois lados. Passagem diária pelos 13 motores feita, todos os `meta:` reescritos, nenhum parado há mais de 30 dias.
+
+SEO/Google: sem mudança algorítmica confirmada na janela; um relato de terceiros sobre uma possível oscilação de ranking no início de Setembro não tem confirmação no Search Status Dashboard da Google, tratado como rumor, não incluído.
+
+Implicações: (1) sem jogada nova de conteúdo ou pitch hoje; (2) watch de AI ads em Portugal sem acção além de continuar a monitorizar; watches de comércio agente e API do Bing Webmaster Tools sem novidade; (3) absorvido hoje em `references/benchmarks.md` (§50) um estudo de Julho que estava prestes a sair do news-feed por truncate (instabilidade de 11,6% nas fontes primárias do ChatGPT entre execuções repetidas), sem jogada nova de cliente associada.
+
+Corrida completa.
+
+## 2026-09-18
+
+### ⚙️ Mudanças nas plataformas
+
+- **Ads Manager PT: décima terceira sessão consecutiva sem caso de primeira mão** (ver actualização completa no bloco 🚨 ALERTA FUNDADOR no topo do feed): pesquisa de hoje repetiu as mesmas alegações já conhecidas dos agregadores portugueses, sem caso novo de nenhum dos dois lados; fontes portuguesas dedicadas sem actualização desde 13-16 Set.
+- **Cloudflare**: sem desenvolvimento novo; alerta no topo do feed mantém-se com a recomendação de fecho de 15 Set, à espera de decisão do founder.
+- **Bing Webmaster Tools AI Performance API**: sem novidade — o Q&A da Microsoft (learn.microsoft.com/en-us/answers) continua sem mencionar um endpoint programático; API por lançar.
+
+### 💡 Implicações para destaque.ai
+
+- Sem jogada nova no watch de AI ads em Portugal: décima terceira sessão sem caso de primeira mão confirma o padrão de retorno decrescente já registado; a única acção que falta continua a ser humana (registo real em ads.openai.com, país Portugal).
+- Sem acção pendente no alerta Cloudflare: aguarda decisão do founder sobre fechar o bloco, já sem prazo activo.
+- Sem mudança de pitch ou serviço hoje: dia de manutenção nos três watches específicos e na passagem diária pelos motores.
+
+### 🚨 Alerta ao founder
+
+Sem item novo e material hoje. O alerta Ads Manager PT segue aberto sem escalar (décima terceira sessão sem caso de primeira mão); o alerta Cloudflare aguarda decisão do founder sobre fecho, registada a 15 Set.
+
+### Passagem diária por motor (13 motores, OBRIGATÓRIA)
+
+Todos os 13 blocos de `references/engine_playbooks.md` (PT+EN) revistos hoje, linha `meta:` reescrita em todos. Um com nota de substância: `chatgpt` (décima terceira sessão sem caso de primeira mão no Ads Manager PT, ver acima; texto do `meta:` também comprimido, removendo referências já antigas a Sponsored Agents/VLOSE que passam a viver só na entrada de 17 Set e no alerta). Os restantes doze (`claude`, `gemini`, `grok`, `deepseek`, `mistral`, `llama`, `perplexity`, `google_aio`, `google_ai_mode`, `copilot`, `meta_ai`, `copilot_bing`) sem mudança de mecânica confirmada hoje: revisão documentada em cada `meta:`, sem inventar movimento onde não houve. Nenhum bloco parado há mais de 30 dias (todos revistos diariamente desde pelo menos 8 Set).
+
+### Aprendizagem interna
+
+Sem acesso aos dados de exportação do Tracker nesta sessão (mesma limitação de sessões anteriores): sem leitura de mecanismo nem de resultado hoje.
+
+### Verificação de primeira mão
+
+Nenhum item novo hoje justifica etiqueta `[verificar de primeira mão]` nova: o Cloudflare e o Ads Manager PT já estão sinalizados em entradas anteriores.
+
+### Manutenção
+
+Research feito com `WebSearch` (cerca de 9 pesquisas dirigidas cobrindo Tier 1/1b, os dois watches específicos e o alerta aberto); `WebFetch` não tentado directamente nesta sessão, dado o padrão consistente de `EGRESS_BLOCKED` em sessões anteriores para os mesmos domínios. Candidatos investigados e **descartados por já cobertos**: GPT-6 Astra, Claude Fable 5.1/Mythos 5.1, Gemini 3.8 Flash/Flash Cyber (todos já em `models.md` desde as datas de lançamento originais; um artigo agregador do TheHackerNews sobre "Cyber AI Models" dos três vendors apenas reempacota estes lançamentos); DeepSeek mantém a API do V4 Pro (já em `models.md`/news-feed desde 14/17 Set); "Sponsored Agents" e designação VLOSE/DSA do ChatGPT (já em `ai_ads.md` desde 17 Set); parceria PayPal-Perplexity Instant Buy (já conhecida, continua EUA-only). Watch agentic commerce: **sem novidade** (checkout in-chat continua US-only nos três motores). Watch Bing Webmaster Tools AI Performance API: **sem novidade** (Q&A da Microsoft continua sem mencionar endpoint programático).
+
+**Absorção (passo 1 de manutenção, antes do truncate)**: news-feed.md tinha 60 headers de data antes desta entrada (61 com esta). Revista a entrada mais antiga (2026-07-14: estudo da Search Engine Land sobre 4 pipelines de retrieval do ChatGPT — Labrador, Bright, Oxylabs, SERP — e 11,6% de instabilidade de fonte primária entre execuções; actualização do Perplexity Computer de 13 Jul). O estudo não estava absorvido em `references/` (confirmado por grep): absorvido hoje em `references/benchmarks.md` como entrada nova (§50), com nota a ligar ao "Labrador" já documentado em `frameworks.md` §5 a partir de leituras de Setembro. A actualização do Perplexity Computer não passou o crivo de materialidade (produto agêntico sem dado nem mudança de mecânica de citação) e não foi absorvida. Truncado para 60 headers (2026-07-15 a 2026-09-18) depois da absorção.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
+
+Sexta-feira → drafts semanais gerados em `drafts/2026-09-18-weekly.md`, cobrindo a semana de 12-18 Set (Cloudflare default-block, migração/recuo da API do V4 Pro da DeepSeek, Sponsored Agents + designação VLOSE/DSA do ChatGPT, estudo Uberall sobre reviews vs. presença em IA, e o hiato Ads Manager PT a chegar à décima terceira sessão).
 
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-17
 
@@ -1512,17 +1566,3 @@ Sem novidades significativas hoje — nenhum item genuinamente novo e não-dupli
 - O dado da Clovion (62% de churn de marcas citadas após um único follow-up) é o número mais concreto até à data para justificar, com evidência externa, que auditorias de visibilidade IA baseadas num único prompt por categoria são estruturalmente insuficientes — absorvido em `references/benchmarks.md` §19. Reforça a metodologia de tracking multi-prompt já usada pela destaque.ai; não exige novo serviço, mas é argumento de vendas forte para explicar a clientes porque "aparecer uma vez" não chega.
 - A chegada do Nano Banana às AI Overviews é, por agora, apenas awareness — não altera mecânica de citação nem ranking, mas confirma que a Google continua a investir em manter o utilizador dentro da própria AI Overview (agora também com criação de imagem), o que reforça a pressão de atribuição/tráfego já discutida em entradas anteriores. Vale a pena monitorizar se este tipo de geração de conteúdo nativo começa a competir com resultados de imagem de marcas B2B.
 - A expansão do Perplexity Computer (memória persistente, publicação de websites, investigação de empresas privadas) é awareness de produto agêntico, sem impacto directo conhecido em mecânica de pesquisa/citação — mantém-se na lista de plataformas a vigiar mas sem acção imediata para clientes.
-
-## 2026-07-14
-
-### 📊 Estudos & dados
-- **ChatGPT citations change when hidden search pipelines switch** — Search Engine Land, análise de Chris Green e Suganthan Mohanadasan ([link](https://searchengineland.com/chatgpt-citations-change-hidden-search-pipelines-481843)). Em 1.000 prompts testados até 10x cada (9.946 execuções completas), 11,6% mudaram a fonte de pesquisa primária entre execuções repetidas; identificaram 4 pipelines de retrieval distintos por trás das respostas (rotulados internamente Labrador, Bright, Oxylabs, SERP), invisíveis nos cartões de citação mostrados ao utilizador.
-
-### ⚙️ Mudanças nas plataformas
-- **Perplexity — Computer** (13 jul 2026) — Atualização do agente Computer: memória persistente entre sessões, respostas mais rápidas, troca de modelo a meio da tarefa, publicação de websites a partir de um único prompt e investigação de empresas privadas. https://www.perplexity.ai/changelog
-
-### 💡 Implicações para destaque.ai
-- O estudo da Search Engine Land confirma que "estar visível no ChatGPT" não é um alvo estável nem dentro da própria plataforma — a mesma query pode ser servida por pipelines de retrieval diferentes (com fontes diferentes) em execuções sucessivas. Reforça o argumento de vender monitorização contínua e multi-execução em vez de auditorias pontuais; é reforço de pitch existente, não exige novo serviço.
-- A instabilidade de 11,6% nas fontes primárias por prompt é um dado concreto para justificar a cadência de tracking recomendada aos clientes (múltiplas execuções por período, não uma amostra única) — pode alimentar a metodologia dos relatórios de AI visibility da destaque.ai.
-- A expansão do Perplexity Computer para publicação de websites e investigação de empresas privadas é, por agora, apenas awareness — não afeta diretamente GEO/AEO, mas confirma investimento continuado do Perplexity em funcionalidades agênticas para lá da pesquisa pura.
-
