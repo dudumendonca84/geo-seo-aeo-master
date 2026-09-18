@@ -16,17 +16,26 @@ One row per plan. `audience` says who buys it. `prompt_limit` is the number of
 active questions the client may hold; `personas` is whether the persona frame
 runs in turn 1; `grok` is whether that engine runs at all; `repeat_runs` is how
 many times the priority questions are asked in the same week; `cadence` is how
-often the audit runs.
+often the audit runs; `inception` is whether the client gets the Inception
+section, where the brand declares what it wants AI answers to say (value
+propositions and per-question targets) and the product measures whether it
+happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence |
-|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly |
-| lite | brand | 25 | no | no | 1 | weekly |
-| pro | brand | 50 | no | no | 1 | weekly |
-| business | brand | 100 | yes | yes | 2 | weekly |
-| enterprise | brand | 100 | yes | yes | 2 | weekly |
-| growth | agency | 50 | no | yes | 1 | weekly |
-| agency | agency | 100 | no | yes | 1 | weekly |
+`inception` is the first entitlement here that is not about the size of the
+measurement: it is a distinct piece of the product, sold from `pro` up
+(founder, 18 Sep 2026: *"it can change a company"*, *"premium feature, but we
+build it now"*). The Tracker writes it into the client's `modules` column, and
+the operator switch in the backoffice stays for the exceptions.
+
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception |
+|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no |
+| lite | brand | 25 | no | no | 1 | weekly | no |
+| pro | brand | 50 | no | no | 1 | weekly | yes |
+| business | brand | 100 | yes | yes | 2 | weekly | yes |
+| enterprise | brand | 100 | yes | yes | 2 | weekly | yes |
+| growth | agency | 50 | no | yes | 1 | weekly | yes |
+| agency | agency | 100 | no | yes | 1 | weekly | yes |
 
 **The add-ons are deviations from this table, not rows in it.** A Lite that
 bought the persona add-on has `personas` on and the plan still says `lite`:

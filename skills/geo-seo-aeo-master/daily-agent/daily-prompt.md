@@ -67,6 +67,25 @@ Hoje é {{TODAY}}.
 - arxiv.org (cs.IR, cs.CL: query "generative search" OR "RAG" OR "retrieval augmented")
 - Google Research, Microsoft Research papers
 
+## Cortes de treino dos modelos (18 Set 2026)
+
+Quando uma corrida encontrar, na documentação primária de um fornecedor
+(TIER 1), a data de corte do corpus de treino de um modelo que o Tracker
+chama, actualiza `references/model_cutoffs.md` §1:
+
+1. a data em ISO (`YYYY-MM-DD`, ou `YYYY-MM` quando o fornecedor só dá o
+   mês);
+2. a data da corrida em `confirmed` e a página exacta em `source`;
+3. um modelo NOVO que o `models.md § Tracker buyer defaults` passe a chamar
+   entra com `unknown`, nunca com a data do modelo anterior: um snapshot
+   novo é um corpus novo.
+
+**Não inferir um corte a partir do comportamento do modelo** ("não conhecia
+X, logo fechou antes de X"). Um modelo pode falhar em nomear uma marca por
+uma dúzia de razões que não são a data do corpus, e separar essas razões é
+exactamente para o que o ficheiro existe. Sem documentação do fornecedor, a
+célula fica `unknown` e o produto diz "por confirmar".
+
 ## Critérios
 
 INCLUIR apenas:
