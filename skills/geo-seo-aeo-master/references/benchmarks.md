@@ -557,6 +557,15 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Caveat.** Vendor-authored study (Uberall sells multi-location listing management); exact publication date not pinned down from secondary coverage; methodology (how "mention" was counted per model) not detailed in available coverage.
 - **Use.** For multi-location B2B/retail clients, directs review-generation effort ahead of rating-improvement effort as the GEO lever with the clearer signal, and flags photo count as a cheap, controllable lever worth testing per vertical. Awareness for now; not yet a named service line.
 
+## 50. Search Engine Land (Green & Mohanadasan): ChatGPT citations shift when hidden retrieval pipelines switch
+
+- **URL.** https://searchengineland.com/chatgpt-citations-change-hidden-search-pipelines-481843 (Search Engine Land)
+- **Date.** Jul 2026 (absorvido 18 Set 2026, entrada original no news-feed a 14 Jul 2026, prestes a sair por truncate de 60 dias).
+- **Amostra.** 1.000 prompts, até 10 execuções cada, 9.946 corridas completas.
+- **Achado.** 11,6% dos prompts mudaram a fonte de pesquisa primária entre execuções repetidas da mesma pergunta. Identificaram 4 pipelines de retrieval distintos por trás das respostas do ChatGPT (rotulados Labrador, Bright, Oxylabs, SERP), invisíveis nos cartões de citação mostrados ao utilizador. "Labrador" viria a ser confirmado como nome interno da família de índices verticais do ChatGPT em leituras posteriores (ver `frameworks.md` §5, 11 Set 2026).
+- **Caveat.** Nomes de pipeline são rótulos atribuídos pelos autores, não confirmados pela OpenAI; sem confirmação de que a distribuição entre pipelines é estável ao longo do tempo.
+- **Uso.** Justifica vender monitorização contínua e multi-execução em vez de auditorias pontuais: a mesma query pode ser servida por pipelines diferentes (com fontes diferentes) em corridas sucessivas. O número (11,6% de instabilidade por prompt) é o dado concreto para justificar a cadência de tracking recomendada aos clientes.
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
