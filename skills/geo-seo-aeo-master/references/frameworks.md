@@ -240,6 +240,14 @@ Google updated its canonicalization troubleshooting documentation to specify tha
 
 A controlled comparison of chunking strategies for retrieval-augmented generation over long, structured documents found that semantic (cluster-based) chunking did not outperform simpler fixed/recursive chunking, tested with the RAGAS framework ([Kreileder, Reisinger, Fischer, arXiv:2607.01852](https://arxiv.org/abs/2607.01852), 2 Jul 2026). Practical implication: an argument against over-engineering the indexing pipelines used by internal AEO audit tooling: a simpler chunking strategy is a reasonable default, not a shortcut that costs accuracy. Absorbed 17 Sep 2026, retroactively, from the 2 Jul 2026 news-feed entry (moved out of the daily feed on truncation).
 
+### AI Overviews gained a dynamic "Top Stories" layer (Jul 2026)
+
+Google's mobile AI Overviews (US) now show a fully-live "Top Stories" carousel for developing-news topics: static AI-generated summary alongside dynamically-updating reporting from outlets Google labels "Preferred Sources" (e.g. NYT, Yahoo), rolled out after testing since May ([Search Engine Land](https://searchengineland.com/top-stories-roll-out-in-google-ai-overviews-482615), confirmed by a Google spokesperson, 17 Jul 2026). Practical implication: for news-adjacent B2B queries, AI Overviews is not a single static generation any more; it can blend in a continuously-refreshed source layer with its own (undisclosed) source-preference list, separate from the citations in the static summary. No EU/PT rollout confirmed as of this refresh. Absorbed 19 Sep 2026, retroactively, from the 17 Jul 2026 news-feed entry (moved out of the daily feed on truncation).
+
+### AI Mode gained third-party app integrations: "Connected Apps" (Jul 2026)
+
+Google AI Mode (US, English) lets users connect third-party accounts so the model can act inside them: launch partners Instacart (add items from a generated shopping list to cart), YouTube Music (save a curated playlist) and Canva (fetch templates), with more integrations promised ([blog.google](https://blog.google/products-and-platforms/products/search/connected-apps/), 16 Jul 2026). Practical implication: AI Mode is moving from answer-and-cite toward answer-and-act inside partner surfaces; a brand's exposure there increasingly depends on being an integration partner, not just a cited source. Early and US-only; revisit if it reaches the EU/PT or adds partners relevant to B2B SaaS. Absorbed 19 Sep 2026, retroactively, from the 17 Jul 2026 news-feed entry (moved out of the daily feed on truncation).
+
 ### Content patterns that get cited (cross-engine consensus)
 
 From Aggarwal et al. plus vendor follow-ups (Profound, Ahrefs, Semrush, Qwairy):
