@@ -566,6 +566,15 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Caveat.** Nomes de pipeline são rótulos atribuídos pelos autores, não confirmados pela OpenAI; sem confirmação de que a distribuição entre pipelines é estável ao longo do tempo.
 - **Uso.** Justifica vender monitorização contínua e multi-execução em vez de auditorias pontuais: a mesma query pode ser servida por pipelines diferentes (com fontes diferentes) em corridas sucessivas. O número (11,6% de instabilidade por prompt) é o dado concreto para justificar a cadência de tracking recomendada aos clientes.
 
+## 51. Search Engine Land (Galinos): AI Overview traffic share and prominence swing, GA4 fragment tracking
+
+- **URL.** https://searchengineland.com/ai-overview-data-51000-tracked-events-485080 (Search Engine Land, Alex Galinos)
+- **Date.** 18 Ago 2026 (achado de recuperação de gap: nunca capturado por esta rotina, encontrado a 19 Set 2026 já a 32 dias de distância).
+- **Amostra.** 51.200 eventos rastreados em 1.661 snippets citados, Set 2025 a Jun 2026 (9 meses), um site próprio do autor. Metodologia: dimensão personalizada no GA4 accionada quando a sessão chega com o fragmento `#:~:text=` que a Google acrescenta ao clicar numa citação dentro de uma AI Overview (proxy indirecto, não telemetria oficial da Google).
+- **Achado.** AI Overviews geraram 7,53% das sessões orgânicas no período de 9 meses, mas de forma muito instável: pico de 16-17% em Fev-Mar 2026 (quase 1 em 6 visitas orgânicas via AIO), a descer para 2-4% mais recentemente. Erro de atribuição no GA4 (sessões AIO mal-atribuídas a "Direct"): 29,3% em Maio 2026, 16,8% em Abril 2026.
+- **Caveat.** Site único do autor, não um painel multi-cliente; o fragmento `#:~:text=` é um proxy, não confirmado pela Google como sinal estável ou universal (nem todo clique AIO o gera).
+- **Uso.** Reforça o argumento já usado com clientes de que a participação de tráfego via AI Overviews oscila de mês para mês (não é uma tendência monótona), e que o GA4 por omissão subestima o tráfego de AIO ao atribuí-lo erradamente a "Direct": argumento concreto para vender configuração de tracking dedicado, não um novo serviço.
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
