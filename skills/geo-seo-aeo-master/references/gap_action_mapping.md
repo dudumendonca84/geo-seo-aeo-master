@@ -866,6 +866,56 @@ ninguém executa, e o plano da semana já existe ao lado.
 - "criar conteúdo sobre o tema", sem sítio, sem palavras e sem número;
 - qualquer coisa que a marca não possa começar esta semana.
 
+## A proposta foi dita?
+
+Consumido pelo juízo por resposta do Tracker (migração 0132, 21 Set 2026).
+A campanha acima diz o que fazer; isto diz se serviu.
+
+O critério está fixado **antes** de se ler a primeira resposta, e é
+deliberado: o share of recommendation aprendeu-o à custa, quando um
+critério escrito depois de olhar para os dados é um critério afinado ao
+resultado que se queria.
+
+### A afirmação está gravada nas palavras da MARCA
+
+É esse o problema todo. A marca escreve *"DESCONTO VISIBILITY TRACKER"* e a
+resposta diz *"a destaque.ai tem uma promoção no plano inicial"*. Procurar
+a cadeia de caracteres não encontra nada e reporta zero por cento com o
+produto a funcionar. Por isso isto é juízo e não comparação de texto.
+
+### Conta
+
+- **A afirmação dita por outras palavras.** A proposta diz "entregamos em
+  24 horas" e a resposta diz "fazem entrega no dia seguinte": conta. O que
+  se julga é a AFIRMAÇÃO, não a frase.
+- **A afirmação dita com um número diferente mas equivalente.** "Desconto
+  de 20%" e "um quinto mais barato" são a mesma coisa.
+- **A afirmação dita de passagem**, numa lista ou numa frase subordinada.
+  Não tem de ser o tema da resposta.
+
+### Não conta
+
+- **A marca aparecer ao lado do assunto.** A proposta é sobre descontos, a
+  resposta nomeia a marca e fala de preços em geral: não é a afirmação.
+- **A afirmação dita sobre OUTRA marca.** "A X tem desconto, a Y não" não é
+  a proposta da Y dita.
+- **O motor a sugerir que se pergunte**, ou a dizer que "pode haver"
+  promoções. Uma possibilidade não é uma afirmação.
+- **A afirmação contradita.** "Não tem desconto nenhum" é `said: false`, e
+  não um sim com ressalva.
+
+**Em dúvida, não conta.** É a mesma regra do juízo de escolha, e pela mesma
+razão: inventar presença é pior do que falhar uma.
+
+### A frase é obrigatória
+
+Um `said: true` vai com a frase da resposta que o prova, recortada. Sem
+ela a base recusa a linha, e a razão é que um número que ninguém pode
+verificar não vai para o ecrã de um cliente.
+
+A frase é da RESPOSTA, não a reescrita da proposta: quem abrir o ecrã daqui
+a três meses tem de poder ler o que o motor escreveu.
+
 ---
 
 ## Manutenção
@@ -879,4 +929,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 21 Set 2026 (secção nova: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`). Anterior: 7 Set 2026 (a jornada de pesquisa).
+Last refresh: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
