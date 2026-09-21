@@ -816,6 +816,56 @@ Comum em brand com presença forte numa community específica que esse motor sob
 
 Não é dimensão GEO top-level: UX/engagement não é input direto a citation. Impacta a conversão depois de o utilizador chegar (ROI da campanha), não a citation rate em si. Hipóteses: landing page desalinhada com intent, LCP >4s, cookie consent invasivo. Ação: A/B test do hero, cookie consent compliance-minimal, fix LCP (ver DIMENSÃO 1). Relevante para o ROI da campanha GEO, reportar separado das métricas de citação.
 
+## A campanha de uma proposta de valor
+
+Consumido pela task `plan_value_prop` do Tracker (21 Set 2026). Uma
+**proposta de valor** é uma frase que a marca QUER que a IA diga, declarada
+uma vez e aplicada a várias perguntas: *"quando falarem de GEO, quero que
+mencionem o meu desconto"*. A task pede o TRABALHO que faz isso acontecer.
+
+O contexto que chega traz, para as perguntas que a proposta cobre: a
+medição por motor, quem aparece no lugar da marca, **os domínios que cada
+motor citou naquelas perguntas** e **o que ele foi procurar antes de
+responder**. É daí que sai a especificidade, e não de conhecimento geral.
+
+### A regra que separa uma campanha de uma lista de boas intenções
+
+**1. Sem prova pública, a primeira ação é criar a prova.** O contexto
+declara-o (`Prova pública: NENHUMA`). Uma proposta sem uma página
+verificável onde aquilo esteja escrito não é um problema de distribuição, é
+um problema de inexistência. Nunca propor pedir a um motor que afirme o que
+não está publicado em lado nenhum: isso não é GEO, é pedir ao modelo que
+invente.
+
+**2. Nomear o sítio, não a categoria.** Vale aqui a regra de
+especificidade do topo deste ficheiro, com uma fonte a mais: os domínios
+citados NAQUELAS perguntas. "Publicar um comparativo" é inútil; "publicar o
+comparativo em X, porque é o domínio que o ChatGPT citou em 4 das 6
+respostas desta pergunta" é uma ação.
+
+**3. Usar as palavras do comprador.** As consultas que vêm no contexto são
+o que o motor escreveu, não o que a marca chama às coisas. A peça escreve-se
+com elas, e a ação diz quais.
+
+**4. Cobrir as dimensões que o caso pede, e não as oito por obrigação.**
+Uma proposta sobre preço quase sempre toca Content (a página que o declara)
+e Authority (quem a cita). Forçar uma ação de Entity para fazer número é
+ruído.
+
+**5. Cada ação diz o que muda na medição.** O `rationale` cita o número que
+a produziu (a citação naquela pergunta, o domínio, o concorrente que está no
+lugar). Sem isso, a semana seguinte não consegue dizer se serviu.
+
+**6. Entre três e oito ações.** Menos não é campanha; mais é uma lista que
+ninguém executa, e o plano da semana já existe ao lado.
+
+### O que NÃO é uma ação de campanha
+
+- pedir ao motor que diga a afirmação (ver a regra 1);
+- repetir uma ação que o plano da semana já tem;
+- "criar conteúdo sobre o tema", sem sítio, sem palavras e sem número;
+- qualquer coisa que a marca não possa começar esta semana.
+
 ---
 
 ## Manutenção
@@ -829,4 +879,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 7 Set 2026 (secção nova: a jornada de pesquisa).
+Last refresh: 21 Set 2026 (secção nova: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`). Anterior: 7 Set 2026 (a jornada de pesquisa).
