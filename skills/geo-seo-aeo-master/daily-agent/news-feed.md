@@ -47,6 +47,8 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 **Actualização 20 Set 2026: décima quinta sessão consecutiva sem caso de primeira mão, e um alerta sobre o próprio método de pesquisa desta rotina:** pesquisa dirigida de hoje não encontrou nenhum caso novo em primeira mão de nenhum dos dois lados. Um achado exige nota à parte: um artigo do leak.pt voltou a aparecer numa pesquisa via `WebSearch`, mas desta vez o resumo devolvido pela ferramenta afirma, em discurso indirecto, que "desde 31 Ago 2026 as empresas portuguesas podem criar conta directamente no Ads Manager" — o oposto do que este mesmo alerta registou como a leitura do leak.pt em 4, 6 e 13 Set (acesso só por agência, self-serve "a chegar nos próximos meses"). `WebFetch` directo a leak.pt continua bloqueado (`EGRESS_BLOCKED`) nesta sessão, como em todas desde 1 Set, por isso não foi possível confirmar se o artigo mudou de facto ou se o resumo é um artefacto da camada de sumarização do `WebSearch` (o mesmo risco já identificado a 9 Set com o URL "ads.openai.com/pt-PT" do soku.ai). Tratado como não fiável e não incorporado, pelo mesmo critério de sempre: um resumo de motor de pesquisa não é uma citação directa da fonte. Nenhuma fonte portuguesa dedicada tem actualização confirmada por leitura directa desde 13-16 Set. Continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, ou a ser bloqueada nele. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
 
+**Actualização 21 Set 2026: décima sexta sessão consecutiva sem caso de primeira mão, um nome tentativo mas não confirmado:** pesquisa dirigida de hoje (três agentes de research dedicados) não encontrou nenhum caso confirmado em primeira mão de nenhum dos dois lados. Um resumo de pesquisa nomeou a **Discovery Hotel Management** (DHM, cinco hotéis) como uma "primeira experiência" com anúncios no ChatGPT, mas sem via de compra especificada (agência ou self-serve) e sem citação directa da fonte original: tratado como não fiável até se confirmar, pelo mesmo critério já aplicado a achados equivalentes em sessões anteriores. A Cosmo5 continua sem activação portuguesa concluída (dez clientes activos apenas em Espanha: Orange, Santalucía, Fotocasa), Portugal ainda "a preparar". Um achado à parte, contraditório com o que esta rotina tinha registado como baseline: um resumo de pesquisa afirmou hoje que o "Buy it in ChatGPT" (Instant Checkout) foi "abandonado silenciosamente em Março de 2026" a favor de um modelo de "Product Discovery" (isto contradiz directamente o estado registado desde 18 Ago 2026, checkout US-only mas activo); sem confirmação por fonte primária, tratado como possível artefacto de sumarização e não incorporado no watch de comércio agêntico. `WebFetch` directo a help.openai.com, leak.pt, adclickgroup.com e briefing.pt continua bloqueado (`EGRESS_BLOCKED`), o mesmo padrão desde 1 Set. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
+
 ## 🚨 ALERTA FUNDADOR: Cloudflare passa a bloquear por omissão crawlers de treino/agente em páginas com anúncios, desde hoje (15 Set 2026)
 
 **O que aconteceu:** a Cloudflare confirma (anúncio de Jul 2026, a entrar em vigor amanhã) que domínios novos, clientes novos e todos os clientes existentes no tier Free passam a ter os crawlers de categoria Training e Agent bloqueados por omissão em qualquer página com anúncios; os crawlers de categoria Search continuam permitidos por omissão. Um crawler multi-função (Googlebot, Bingbot, Applebot) fica bloqueado também se o Training for bloqueado. Não foi possível ler blog.cloudflare.com directamente nesta sessão (`WebFetch` bloqueado), mas a leitura está corroborada por 9+ fontes independentes sem nenhuma a contradizer, incl. TechCrunch e Engadget, que cobriram o anúncio original em Jul 2026.
@@ -55,6 +57,18 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Prazo:** 15 Set 2026 (a janela de opt-out fechou hoje; a partir de agora a mudança já se aplica aos clientes elegíveis).
 
 **Actualização 15 Set 2026: a data chega, a mudança entra em vigor, sem confirmação de impacto real ainda:** pesquisa dirigida hoje (`WebFetch` a blog.cloudflare.com continua bloqueado, `EGRESS_BLOCKED`) encontrou uma nova vaga de artigos técnicos publicados precisamente hoje (chudi.dev, novaproxy.io, royalplugins.com, hosting.com, pressbot.io, lovedby.ai, theaiinsider.tech, artificialintelligenceherald.com), todos a confirmar, nenhum a contradizer, a mesma mecânica já registada: desde hoje, domínios novos, clientes novos e todos os clientes existentes no tier Free têm Training e Agent bloqueados por omissão em páginas com anúncios; clientes pagos com definições já configuradas não mudam automaticamente. **Sem confirmação de impacto real**: nenhum relato datado de hoje de um site a perder citações ou acesso de crawler por causa desta mudança especificamente, nem declaração de Google, Bing, OpenAI ou Anthropic sobre os seus próprios crawlers em resposta a ela. Nota de precisão: pesquisa de hoje encontrou artigos (remoteworkeurope.eu, playwire.com) que descrevem um toggle Cloudflare mais antigo e distinto, "Block AI bots", por omissão em domínios novos desde Jul 2025, sem condição de anúncios/tier: não é a mudança de categoria Training/Agent em páginas com anúncios de hoje, e os dois não devem confundir-se (ver `references/frameworks.md` §2, nota adicionada hoje). **Recomendação ao founder**: como o prazo de acção (verificar clientes Cloudflare antes do corte) já não tem janela por cumprir, este alerta pode ser considerado cumprido e fechado; o acompanhamento contínuo (checar AI Crawl Control em qualquer cliente novo/Free na Cloudflare) passa a fazer parte do fluxo de auditoria já actualizado, não precisa de ficar como alerta activo. Fica à decisão do founder remover o bloco.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-21
+
+Radar LLM/IA: sem lançamento, deprecação ou mudança de preço confirmada hoje em ChatGPT, Claude, Gemini, Grok, DeepSeek ou Mistral face ao estado já registado. Fora do âmbito GEO/AEO mas com nota de segurança operacional: uma vulnerabilidade RCE zero-click ("Plugin4Shell", divulgada 17-18 Set) afecta ferramentas de coding agents com plugins auto-actualizáveis, incl. Claude Code (já corrigido na versão 2.1.179) e OpenAI Codex (corrigido, bounty de $6.500); Google optou por não corrigir o Gemini CLI, a caminho de depreciação a favor do Antigravity; GitHub Copilot continua por corrigir. Não é um item GEO/AEO e não entra nas secções abaixo, mas é relevante à ferramenta com que esta própria rotina corre: sem acção necessária desta sessão, Claude Code já está corrigido.
+
+GEO/AEO/AI ads: Ads Manager PT chega à décima sexta sessão consecutiva sem caso de primeira mão de nenhum dos dois lados; único achado é um nome tentativo (Discovery Hotel Management) sem via de compra confirmada, não incorporado como caso. Passagem diária pelos 26 blocos feita; único achado de substância é o teste do Google "Dive deeper" no Discover (18 Set, confirmado pela VP Robby Stein): troca o artigo/vídeo do publisher por um resumo de IA com cartões de fonte, a começar por vídeo, com sinais de expansão a artigos.
+
+SEO/Google: sem núcleo update confirmado na janela. Schema.org lançou a versão 30.1 (16 Set, fora da janela estrita de 48h mas nunca antes capturada por esta rotina; a rever com detalhe do changelog numa próxima sessão). Um paper novo sobre RAG (arXiv:2609.14245, submetido 13 Set) mede um trade-off entre compressão de contexto e exactidão de atribuição de citações: absorvido em `references/frameworks.md` §5.
+
+Implicações: (1) sem jogada nova de conteúdo ou pitch hoje; (2) o teste do Discover é awareness para clientes dependentes de tráfego de referência do Discover: se confirmar expansão a cartões de artigo, é a mesma lógica de substituição do clique directo já vista nas AI Overviews: vigiar na próxima passagem, sem acção esta semana; (3) watches de comércio agêntico e API do Bing Webmaster Tools sem novidade; alerta Cloudflare aguarda decisão do founder.
+
+Corrida completa.
 
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-20
 
@@ -67,6 +81,51 @@ SEO/Google: sem núcleo update de Setembro confirmado; sem mudança algorítmica
 Implicações: (1) sem jogada nova de conteúdo ou pitch hoje; (2) watch de AI ads em Portugal sem acção além de continuar a monitorizar; watches de comércio agêntico e API do Bing Webmaster Tools sem novidade; (3) sem absorção pendente hoje (news-feed com 56/60 headers, abaixo do limiar de truncate).
 
 Corrida completa.
+
+## 2026-09-21
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google testa "Dive deeper" no Discover**: desde 18 Set 2026, confirmado pela VP de Search Robby Stein. Um botão troca o artigo ou vídeo do publisher por um resumo temático escrito por IA com cartões de fonte, a começar pelo conteúdo em vídeo; investigadores independentes encontraram sinais de expansão também a cartões de artigo. É o Discover (feed móvel), não a superfície AI Overview em si, mas o mesmo mecanismo de fundo: resumo gerado substitui o clique directo à fonte. Ainda teste, não rollout confirmado. [Search Engine Roundtable](https://www.seroundtable.com/google-discover-dive-deeper-42119.html) (20 Set 2026), [Search Engine Journal](https://www.searchenginejournal.com/google-discover-test-adds-topic-overviews-starting-with-videos/589963/).
+- **Ads Manager PT: décima sexta sessão consecutiva sem caso de primeira mão** (ver actualização completa no bloco 🚨 ALERTA FUNDADOR no topo do feed): único achado de hoje é um nome tentativo (Discovery Hotel Management) sem via de compra confirmada; Cosmo5 continua sem activação PT concluída.
+- **Bing Webmaster Tools AI Performance API**: sem novidade, continua sem endpoint programático documentado.
+- **Cloudflare (crawlers de treino/agente)**: sem desenvolvimento novo; alerta no topo do feed mantém-se com a recomendação de fecho de 15 Set, à espera de decisão do founder.
+
+### 📄 Research académico
+
+- **The Attribution-Compression Frontier in Retrieval-Augmented Generation**: [arXiv:2609.14245](https://arxiv.org/abs/2609.14245) (submetido 13 Set 2026). Mede um trade-off mensurável em pipelines RAG: compressão mais agressiva do contexto recuperado melhora a fluência/relevância da resposta mas degrada a exactidão com que o modelo atribui a afirmação à fonte correcta. Um único paper, sem medição cross-engine de qual sistema de produção comprime quanto: tratado como hipótese, não mecanismo confirmado. Absorvido em `references/frameworks.md` §5.
+
+### 💡 Implicações para destaque.ai
+
+- O teste "Dive deeper" no Discover é awareness, não acção: se se confirmar a expansão a cartões de artigo, é a mesma lógica de substituição do clique directo já vigiada nas AI Overviews: útil para clientes com dependência forte de tráfego de referência do Discover; vigiar na próxima passagem, sem mudança de pitch esta semana.
+- Sem jogada nova no watch de AI ads em Portugal: décima sexta sessão sem caso de primeira mão; o nome tentativo de hoje (DHM) não muda o quadro sem confirmação de via de compra.
+- O paper sobre compressão de contexto em RAG reforça, com uma hipótese ainda não confirmada, um argumento a vigiar: "aparecer no conjunto recuperado" não é o mesmo que "sobreviver até à resposta final": awareness para a doutrina do porquê, sem mudança de metodologia de auditoria hoje.
+
+### 🚨 Alerta ao founder
+
+Sem item novo e material hoje. O alerta Ads Manager PT segue aberto sem escalar (décima sexta sessão sem caso de primeira mão); o alerta Cloudflare aguarda decisão do founder sobre fecho, registada a 15 Set.
+
+### Passagem diária por motor (26 blocos: 13 motores, PT+EN, OBRIGATÓRIA)
+
+Todos os 26 blocos de `references/engine_playbooks.md` revistos hoje, linha `meta:` reescrita em todos (data 2026-09-21). Dois blocos com nota de substância: `google_aio` (PT+EN) com o teste "Dive deeper" do Discover, e `chatgpt` (PT+EN) com a décima sexta sessão sem caso de primeira mão no Ads Manager PT e o nome tentativo (DHM) não confirmado. Os restantes vinte e dois blocos (`claude`, `gemini`, `grok`, `deepseek`, `mistral`, `llama`, `perplexity`, `google_ai_mode`, `copilot`, `meta_ai`, `copilot_bing`, em PT e EN) sem mudança de mecânica confirmada hoje. Nenhum bloco parado há mais de 30 dias (todos revistos diariamente desde pelo menos 8 Set).
+
+### Aprendizagem interna
+
+Sem acesso aos dados de exportação do Tracker nesta sessão (mesma limitação de sessões anteriores): sem leitura de mecanismo nem de resultado hoje.
+
+### Verificação de primeira mão
+
+Nenhum item novo hoje justifica etiqueta `[verificar de primeira mão]` nova: o Cloudflare e o Ads Manager PT já estão sinalizados em entradas anteriores; o teste do Discover é um teste da própria Google, não um lançamento de acesso a mercado.
+
+### Manutenção
+
+Research feito com três agentes dedicados de `WebSearch` (cerca de 25 pesquisas no total), cobrindo Tier 1/1b, o Radar LLM/IA, os três watches específicos, o alerta aberto e a passagem por motor; `WebFetch` não tentado directamente nesta sessão, dado o padrão consistente de `EGRESS_BLOCKED` em sessões anteriores para os mesmos domínios. Candidatos investigados e **descartados por serem fora de âmbito ou sem substância nova**: um processo antitrust contra Anthropic/OpenAI/xAI/Google sobre um alegado "pacto de abrandamento" (18 Set) e uma divulgação da Google sobre acesso não autorizado do Gemini a três sistemas externos num teste de segurança de Maio (divulgado 19 Set): nenhum dos dois é mecânica de citação, crawler ou pesquisa; suporte a extensões Chrome na app desktop do ChatGPT (18 Set), funcionalidade de produto sem ligação a GEO/AEO; "AI Max for Search" e "Offer Highlights" da Microsoft Advertising, sem data de chegada à UE confirmada, mantido fora do watch de AI ads até haver data; Schema.org v30.1 (16 Set), fora da janela estrita de 48h, sinalizado para revisão de changelog numa próxima sessão, não absorvido hoje por falta de tempo de análise. Watch agentic commerce: **sem novidade confirmada** (a alegação de que o "Buy it in ChatGPT" foi abandonado em Março contradiz o baseline registado e não tem fonte primária: ver nota no alerta). Watch AI ads: **sem novidade específica de Portugal** (ver Ads Manager PT acima). Watch Bing Webmaster Tools AI Performance API: **sem novidade**.
+
+**Absorção (passo 1 de manutenção, antes do truncate)**: news-feed.md tem 57 headers de data antes desta entrada (58 com esta), abaixo do limiar de 60: sem necessidade de truncate nem de absorção forçada hoje. Absorvido preventivamente: o paper arXiv:2609.14245 (RAG attribution/compression) em `references/frameworks.md` §5, no mesmo dia da descoberta.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
+
+Segunda-feira: sem drafts semanais hoje (só sextas-feiras).
 
 ## 2026-09-20
 
