@@ -11,6 +11,45 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-09-21: Nona execução (vs. 14 set: segunda semana consecutiva sem hiato)
+
+**Score global:** 74/100 (Bom, em recuperação: 1 de 12 categorias N/D: Performance/CWV, 10ª semana). **Δ vs. 14 set: +2.**
+
+**Score por categoria (delta vs. 14 set):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 88/100 | +1 |
+| Performance / CWV | N/D | : |
+| SEO On-Page | 94/100 | 0 |
+| Schema / dados estruturados | 95/100 | 0 |
+| Otimização de imagens | 74/100 | 0 |
+| GEO técnica | 93/100 | +5 |
+| Conteúdo & topical authority | 98/100 | +1 |
+| Entidade / brand foundation | 83/100 | 0 |
+| Autoridade & digital PR | 30/100 | 0 |
+| Sinais sociais & community | 35/100 | 0 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 50/100 | +12 |
+
+**Nota sobre o Δ global de +2:** reflecte com razoável fidelidade o que aconteceu esta semana, ao contrário de deltas anteriores que escondiam mais do que revelavam. Dois dos piores achados das duas últimas auditorias foram corrigidos, ambos com prova directa, não apenas ausência de sintoma: o `llms.txt` já não descreve `/en/about` como "consultancy" (deploy `#150`, produção 2026-09-14 14:43 UTC, cerca de cinco horas depois de a auditoria anterior terminar: o fix mais rápido observado nesta série), e o motor ChatGPT do Visibility Tracker, parado desde 11 set por um ID de modelo inválido e uma conta sem crédito, não regista nenhuma nova ocorrência na janela de 7 dias; o mesmo vale para o Gemini, sem crédito há onze semanas. GEO técnica sobe (+5) pelo primeiro achado; Medição sobe (+12) pelo segundo, mas de forma mista: o Perplexity, que devia ter beneficiado do mesmo ciclo de correcções, piora (429 sobe de 44/50 para 165 ocorrências, quase quatro vezes o volume), e o DataForSEO/`google_aio` continuam degradados, com volume a crescer (103 e 63 ocorrências respectivamente), sete semanas depois de identificados. Entidade não avança: `Organization.sameAs` continua sem o Wikidata perdido há sete semanas, sem pesquisa dedicada nova. Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 4. `GEO/ENTITY: llms.txt descreve /en/about como "consultancy"` (P0, aberto há 2 semanas, fix confirmado por fetch directo); `MEASUREMENT: Tracker: motor ChatGPT inoperacional` (P0, aberto há 1 semana, sem novas ocorrências em 7 dias, causa provável identificada com reserva); `MEASUREMENT: Tracker: crédito de API esgotado no Gemini` (P0, aberto há 11 semanas, o item mais lento a fechar-se de toda a série); `MEASUREMENT: Tracker: timeouts novos no Grok, bug de serialização numérica isolado` (P3, fechado por ausência de recorrência, não por correcção confirmada).
+
+**Items novos detectados:** 1 item discreto novo (P3: bug isolado em `/settings`, `iniciaisDe()` chamada do servidor, sem recorrência desde 15 set). Adicionalmente, actualizações materiais a 4 items existentes: o item MEASUREMENT do Perplexity (piora, volume quase quadruplica, sobe de urgência dentro do mesmo P1); o item MEASUREMENT do DataForSEO (sobe de volta a P1, volume quase triplica, mais uma assinatura relacionada nova); o item STRATEGIC da colisão do acrónimo "GEO" (quarto eixo confirmado, desta vez com outsourcing/nearshoring de TI, e com o achado adicional de que o mesmo prompt `V3` colide com sentidos diferentes semana a semana); o item PROCESS (segunda execução consecutiva sem hiato, duas das 2-3 exigidas pelo critério de verificação).
+
+**Mudanças materiais observadas:**
+- **GEO técnica: o fix mais rápido de toda esta série.** O `llms.txt` foi corrigido no mesmo dia em que a auditoria anterior confirmou, com prova concreta (`DC1`), que a linha errada estava a alimentar uma resposta sintetizada real. Entre a confirmação (~09:20 UTC, 14 set) e o deploy de produção (14:43 UTC, mesmo dia) foram menos de seis horas.
+- **Medição: duas recuperações reais, mas o quadro geral não é uma vitória simples.** ChatGPT e Gemini, os dois motores mais graves das duas auditorias anteriores, não registam nenhuma nova ocorrência de erro. O candidato a causa (deploy `#409` do Tracker, "Conta sem saldo é porta fechada, e o cartão volta a dizer o que falhou", 16 set) é plausível por descrição e por proximidade temporal, mas não confirmado por billing directo. Ao mesmo tempo, o Perplexity piora consideravelmente (quase 4×) e não parece ter beneficiado da mesma correcção: candidato a causa raiz distinta (limite de plano, não crédito esgotado).
+- **Entidade: sétima semana sem progresso no Wikidata, desta vez por falta de tempo de auditoria, não por falta de decisão do founder confirmada.** Sem pesquisa dedicada nesta execução: o item permanece exactamente onde estava há uma semana.
+- **Estratégico: a colisão do acrónimo "GEO" ganha um quarto eixo, e um padrão mais preocupante do que um quarto nome isolado.** O mesmo prompt (`V3`) devolveu sentidos diferentes de "GEO" em duas semanas consecutivas (Global Employer of Record há uma semana, outsourcing/nearshoring de TI genérico esta semana): a colisão não é estável, o que a torna mais difícil de mitigar com uma única correcção de conteúdo.
+- **Processo: segunda execução consecutiva sem hiato.** Exactamente 7 dias depois de 14 set, que por sua vez tinha sido a primeira depois da escalada a P0. Duas das 2-3 execuções exigidas pelo critério de verificação: ainda não suficiente para fechar o item, mas já não é "primeiro sinal".
+- **Metodologia: via de acesso técnico (Vercel MCP) reconfirmada fiável pela terceira semana**, apesar do bloqueio de rede geral desta sessão (confirmado contra `destaque.ai` e seis domínios de controlo externos, não específico ao domínio da auditada). O teste multi-motor desta semana usou uma amostra reduzida (6 prompts, sem sub-agentes dedicados) por gestão de tempo: cobertura menor do que semanas anteriores, registado como tal.
+
+**Reconciliação playbooks:** sem edições feitas nesta auditoria: nenhuma divergência nova identificada entre o comportamento medido esta semana e `engine_playbooks.md`.
+
+---
+
 ### 2026-09-14: Oitava execução (vs. 07 set: primeira semana consecutiva sem hiato desde a escalada do item PROCESS a P0)
 
 **Score global:** 72/100 (Bom, com um recuo marginal que esconde movimento maior nos dois sentidos: 1 de 12 categorias N/D: Performance/CWV). **Δ vs. 07 set: −1.** Primeira execução exatamente 7 dias depois da anterior desde a escalada do item PROCESS.
