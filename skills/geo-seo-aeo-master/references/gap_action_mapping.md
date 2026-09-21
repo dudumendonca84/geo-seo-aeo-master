@@ -177,6 +177,75 @@ Cadência editorial é foundation: sem ela, as outras alavancas de conteúdo per
 
 ---
 
+### Pattern: O motor LÊ o site e não NOMEIA a marca na resposta
+
+Pedido do founder a 21 Set 2026: *"quero que a skill me diga, ou para algum
+cliente; esse tipo de coisa quero ter na skill"*. Estava a ser encontrado à
+mão, cliente a cliente, por quem calhasse reparar. Um diagnóstico que depende
+de alguém reparar não é um diagnóstico.
+
+**É o gap mais barato de fechar de toda esta dimensão**, e o mais fácil de
+não ver: a marca já ganhou o difícil, que é o motor ir à página dela. O que
+falta é o nome sobreviver da página para o texto da resposta. Quem lê a
+resposta fica com o conselho e sem saber de quem é.
+
+#### Como se mede
+
+Por motor, sobre as respostas mensuráveis da semana:
+
+| | |
+|---|---|
+| **lidas** | respostas cujas fontes citadas incluem um domínio da marca |
+| **nomeadas** | dessas, as que têm `cited = true` (a marca aparece no TEXTO) |
+| **o gap** | lidas menos nomeadas, em percentagem das lidas |
+
+Distinguir "lida" de "citada" é o que a coluna `cited` existe para fazer:
+ler a presença do domínio nas fontes e concluir que a marca foi nomeada é
+o erro que esta medição existe para não cometer.
+
+#### Quando é que isto é um achado
+
+- **Base mínima de 10 respostas lidas** naquele motor. Abaixo disso, dois
+  casos mudam a percentagem em vinte pontos e o número não diz nada.
+- **Acima de 52%**, que é a referência pública abaixo. Abaixo dela, a marca
+  está dentro do normal do mercado e isto não é um achado: é como a coisa é.
+- Se o motor não cita fontes nenhumas, **isto não se aplica**: o problema é
+  outro e está na dimensão 1.
+
+#### Hipóteses
+1. A passagem citável da página não tem o nome da marca lá dentro. O motor
+   resume a ideia e a atribuição cai.
+2. A página fala na primeira pessoa ("nós", "a nossa metodologia") em vez de
+   se nomear.
+3. O nome está no cabeçalho, no rodapé e no logótipo, que é sítio nenhum
+   para quem lê o HTML por passagens.
+
+#### Ação
+Reescrever as passagens de facto para conterem o nome: *"O método SINAL da
+destaque.ai cobre oito dimensões"* em vez de *"o nosso método cobre oito
+dimensões"*. Uma vez por secção, na frase que carrega o facto, e não no
+texto todo, que passa a ler-se como um anúncio. Nas páginas que já são
+citadas, começar por essas, que são as que o motor já vai buscar.
+
+#### Esforço
+1-2h por página-pilar. Não precisa de conteúdo novo, é reescrita.
+
+#### Impacto típico
+**52% das citações do Perplexity ligam à fonte sem nomear a marca no texto
+da resposta** [Writesonic via Search Engine Land, Jul 2026]. É dado de
+fornecedor, trate-se como direcional: dá a ordem de grandeza do normal, não
+um alvo. Não há estudo público com o lift medido da reescrita, e enquanto
+não houver isto é uma hipótese com um mecanismo claro, não uma promessa.
+
+#### Exemplo medido
+destaque.ai, semana de 21 Set 2026, Perplexity: **21 respostas leem o site,
+6 nomeiam a marca, 15 não**. São 71% contra os 52% da referência, ou seja
+pior do que o normal do mercado, num motor que já vai ao site em 21 de 54
+respostas. O Perplexity é o caso óbvio porque corre sempre com pesquisa,
+mas a medição é a mesma em qualquer motor com fontes.
+
+---
+
 ## DIMENSÃO 3: Entity & brand foundation
 
 ### Pattern: Sem Wikidata QID
