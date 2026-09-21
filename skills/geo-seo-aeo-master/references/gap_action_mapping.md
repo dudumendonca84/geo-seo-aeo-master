@@ -912,6 +912,37 @@ citados NAQUELAS perguntas. "Publicar um comparativo" é inútil; "publicar o
 comparativo em X, porque é o domínio que o ChatGPT citou em 4 das 6
 respostas desta pergunta" é uma ação.
 
+**2b. Editar a página que os motores JÁ citam vem antes de publicar coisa
+nova.** É a regra mais barata desta lista e a que se esquece primeiro,
+porque publicar parece mais trabalho e portanto mais valor.
+
+Uma peça nova começa em zero citações e tem de ganhar o direito a ser lida.
+Uma página que já aparece nas fontes daquelas perguntas já o ganhou: o que
+falta é a afirmação estar lá dentro. Acrescentar um parágrafo a uma página
+citada é uma tarde; um artigo novo são semanas, e pode nunca ser lido.
+
+Como se escolhe a página, e vem dos dados que chegam no contexto:
+
+1. entre os domínios citados naquelas perguntas, o da própria marca;
+2. dentro dele, a página com mais citações, e a empatar a que aparece em
+   mais MOTORES (espalhamento vale mais do que volume: uma página citada
+   quatro vezes por um motor só depende de um motor);
+3. se o domínio da marca não aparece em nenhuma daquelas perguntas, esta
+   regra não se aplica, e o caso é o da dimensão 1 ou o da 2 (o motor não
+   chega ao site).
+
+A ação nomeia a página, não "o site": *"acrescentar a oferta a
+`/blog/escolher-consultora-x`, que é a página da marca com mais citações
+nesta pergunta (16, em 4 motores)"*.
+
+**E a ordem declara-se, não se deixa adivinhar.** Uma campanha sai como
+lista, e quem a lê começa por cima. Duas coisas a fazer por isso:
+`horizon` e `severity` põem a edição da página citada à frente dos artigos
+novos; e uma ação que depende de outra (a prova pública antes de a afirmação
+ir para a página, regra 1) leva no `blocked_on` a frase do que falta. Sem
+isso o cliente escolhe pela ordem em que as linhas foram escritas, que não
+é ordem nenhuma.
+
 **3. Usar as palavras do comprador.** As consultas que vêm no contexto são
 o que o motor escreveu, não o que a marca chama às coisas. A peça escreve-se
 com elas, e a ação diz quais.
@@ -933,7 +964,13 @@ ninguém executa, e o plano da semana já existe ao lado.
 - pedir ao motor que diga a afirmação (ver a regra 1);
 - repetir uma ação que o plano da semana já tem;
 - "criar conteúdo sobre o tema", sem sítio, sem palavras e sem número;
-- qualquer coisa que a marca não possa começar esta semana.
+- qualquer coisa que a marca não possa começar esta semana;
+- **verificar, daqui a N semanas, se a afirmação passou a ser dita.** Isso
+  é a medição, e ela corre sozinha no fecho de cada semana: a contagem de
+  lidas e ditas por pergunta, e o carimbo do alvo quando a medição o
+  confirma. Uma ação a pedir ao cliente que faça à mão o que a máquina já
+  faz ocupa um lugar na campanha e desaparece quando alguém a marca como
+  feita, sem nada ter acontecido.
 
 ## A proposta foi dita?
 
