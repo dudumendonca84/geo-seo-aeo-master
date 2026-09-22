@@ -47,6 +47,8 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 **Actualização 20 Set 2026: décima quinta sessão consecutiva sem caso de primeira mão, e um alerta sobre o próprio método de pesquisa desta rotina:** pesquisa dirigida de hoje não encontrou nenhum caso novo em primeira mão de nenhum dos dois lados. Um achado exige nota à parte: um artigo do leak.pt voltou a aparecer numa pesquisa via `WebSearch`, mas desta vez o resumo devolvido pela ferramenta afirma, em discurso indirecto, que "desde 31 Ago 2026 as empresas portuguesas podem criar conta directamente no Ads Manager" — o oposto do que este mesmo alerta registou como a leitura do leak.pt em 4, 6 e 13 Set (acesso só por agência, self-serve "a chegar nos próximos meses"). `WebFetch` directo a leak.pt continua bloqueado (`EGRESS_BLOCKED`) nesta sessão, como em todas desde 1 Set, por isso não foi possível confirmar se o artigo mudou de facto ou se o resumo é um artefacto da camada de sumarização do `WebSearch` (o mesmo risco já identificado a 9 Set com o URL "ads.openai.com/pt-PT" do soku.ai). Tratado como não fiável e não incorporado, pelo mesmo critério de sempre: um resumo de motor de pesquisa não é uma citação directa da fonte. Nenhuma fonte portuguesa dedicada tem actualização confirmada por leitura directa desde 13-16 Set. Continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, ou a ser bloqueada nele. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
 
+**Actualização 22 Set 2026: décima sétima sessão consecutiva sem caso de primeira mão, a Discovery Hotel Management ganha artigo próprio mas a via de compra continua por dizer:** pesquisa dirigida de hoje encontrou um artigo dedicado do Marketeer sobre a Discovery Hotel Management (DHM, cinco hotéis) e a sua campanha no ChatGPT Ads: deixa de ser só o nome tentativo, sem via de compra, registado ontem. `WebFetch` directo ao marketeer.sapo.pt continua bloqueado (`EGRESS_BLOCKED`) nesta sessão, e o resumo devolvido pelo `WebSearch` não diz se a DHM comprou por agência ou por self-serve: continua sem existir, de nenhum dos dois lados, um único caso em primeira mão de uma conta PT a chegar ao ecrã de criação de campanha em ads.openai.com, ou a ser bloqueada nele. Um achado à parte, fora de Portugal: a xAI lançou o Grok 4.7 a 21 Set 2026 (ver entrada do dia), sem ligação a este alerta. Cosmo5 continua sem activação PT concluída. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
+
 **Actualização 21 Set 2026: décima sexta sessão consecutiva sem caso de primeira mão, um nome tentativo mas não confirmado:** pesquisa dirigida de hoje (três agentes de research dedicados) não encontrou nenhum caso confirmado em primeira mão de nenhum dos dois lados. Um resumo de pesquisa nomeou a **Discovery Hotel Management** (DHM, cinco hotéis) como uma "primeira experiência" com anúncios no ChatGPT, mas sem via de compra especificada (agência ou self-serve) e sem citação directa da fonte original: tratado como não fiável até se confirmar, pelo mesmo critério já aplicado a achados equivalentes em sessões anteriores. A Cosmo5 continua sem activação portuguesa concluída (dez clientes activos apenas em Espanha: Orange, Santalucía, Fotocasa), Portugal ainda "a preparar". Um achado à parte, contraditório com o que esta rotina tinha registado como baseline: um resumo de pesquisa afirmou hoje que o "Buy it in ChatGPT" (Instant Checkout) foi "abandonado silenciosamente em Março de 2026" a favor de um modelo de "Product Discovery" (isto contradiz directamente o estado registado desde 18 Ago 2026, checkout US-only mas activo); sem confirmação por fonte primária, tratado como possível artefacto de sumarização e não incorporado no watch de comércio agêntico. `WebFetch` directo a help.openai.com, leak.pt, adclickgroup.com e briefing.pt continua bloqueado (`EGRESS_BLOCKED`), o mesmo padrão desde 1 Set. O alerta mantém-se aberto, sem prazo novo, no mesmo estado de decisão do founder registado a 8 Set.
 
 ## 🚨 ALERTA FUNDADOR: Cloudflare passa a bloquear por omissão crawlers de treino/agente em páginas com anúncios, desde hoje (15 Set 2026)
@@ -57,6 +59,18 @@ editorial_voice: sober, primary-source-anchored, no hype
 **Prazo:** 15 Set 2026 (a janela de opt-out fechou hoje; a partir de agora a mudança já se aplica aos clientes elegíveis).
 
 **Actualização 15 Set 2026: a data chega, a mudança entra em vigor, sem confirmação de impacto real ainda:** pesquisa dirigida hoje (`WebFetch` a blog.cloudflare.com continua bloqueado, `EGRESS_BLOCKED`) encontrou uma nova vaga de artigos técnicos publicados precisamente hoje (chudi.dev, novaproxy.io, royalplugins.com, hosting.com, pressbot.io, lovedby.ai, theaiinsider.tech, artificialintelligenceherald.com), todos a confirmar, nenhum a contradizer, a mesma mecânica já registada: desde hoje, domínios novos, clientes novos e todos os clientes existentes no tier Free têm Training e Agent bloqueados por omissão em páginas com anúncios; clientes pagos com definições já configuradas não mudam automaticamente. **Sem confirmação de impacto real**: nenhum relato datado de hoje de um site a perder citações ou acesso de crawler por causa desta mudança especificamente, nem declaração de Google, Bing, OpenAI ou Anthropic sobre os seus próprios crawlers em resposta a ela. Nota de precisão: pesquisa de hoje encontrou artigos (remoteworkeurope.eu, playwire.com) que descrevem um toggle Cloudflare mais antigo e distinto, "Block AI bots", por omissão em domínios novos desde Jul 2025, sem condição de anúncios/tier: não é a mudança de categoria Training/Agent em páginas com anúncios de hoje, e os dois não devem confundir-se (ver `references/frameworks.md` §2, nota adicionada hoje). **Recomendação ao founder**: como o prazo de acção (verificar clientes Cloudflare antes do corte) já não tem janela por cumprir, este alerta pode ser considerado cumprido e fechado; o acompanhamento contínuo (checar AI Crawl Control em qualquer cliente novo/Free na Cloudflare) passa a fazer parte do fluxo de auditoria já actualizado, não precisa de ficar como alerta activo. Fica à decisão do founder remover o bloco.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-22
+
+Radar LLM/IA: a xAI lançou o Grok 4.7 (21 Set 2026), novo modelo topo de gama para código e trabalho agêntico, mesmo preço do Grok 4.6 ($2/$6 por milhão de tokens), contexto alargado para 500K; disponível já na API, no Cursor/Grok Build e em rollout faseado no GitHub Copilot. Não confirmado se é já o modelo por omissão em grok.com (o que o Tracker mede): `references/models.md` actualizado com a linha e o preço, mapping do Deck Builder mantido em `grok-4.3` até se confirmar. Sem outra mudança de preço, lançamento ou deprecação em ChatGPT, Claude, Gemini, DeepSeek ou Mistral face ao estado já registado.
+
+GEO/AEO/AI ads: Ads Manager PT chega à décima sétima sessão consecutiva sem caso de primeira mão de nenhum dos dois lados; a Discovery Hotel Management ganhou artigo dedicado no Marketeer, mas sem via de compra especificada. Passagem diária pelos 26 blocos feita; sem mudança de mecânica confirmada em nenhum motor além do já registado para `grok` e `chatgpt`.
+
+SEO/Google: sem núcleo update confirmado na janela. Sem paper académico novo verificado nas últimas 24-48h.
+
+Implicações: (1) Grok 4.7 é awareness, sem jogada de pitch até se confirmar o default real em grok.com; (2) watch de AI ads em Portugal sem acção nova; (3) sem absorção pendente hoje (news-feed com 58/60 headers antes desta entrada).
+
+Corrida completa.
 
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-21
 
@@ -81,6 +95,51 @@ SEO/Google: sem núcleo update de Setembro confirmado; sem mudança algorítmica
 Implicações: (1) sem jogada nova de conteúdo ou pitch hoje; (2) watch de AI ads em Portugal sem acção além de continuar a monitorizar; watches de comércio agêntico e API do Bing Webmaster Tools sem novidade; (3) sem absorção pendente hoje (news-feed com 56/60 headers, abaixo do limiar de truncate).
 
 Corrida completa.
+
+## 2026-09-22
+
+### 🔵 Anúncios oficiais
+
+- **xAI lança o Grok 4.7**: modelo topo de gama para código e trabalho agêntico, lançado 21 Set 2026. Base maior que o Grok 4.6, com uma corrida de RL mais longa em tarefas difíceis e de várias horas; mesmo preço do antecessor ($2/M tokens de entrada, $6/M de saída, sobe para $4/$12 acima de 200K tokens de contexto); contexto alargado para 500K tokens. Disponível de imediato na API xAI (`grok-4.7`), no Grok Build/Cursor, e em rollout faseado no GitHub Copilot (Pro/Pro+/Max/Business/Enterprise). [MarkTechPost](https://www.marktechpost.com/2026/09/21/spacexai-releases-grok-4-7/), corroborado por XenoSpectrum, kingy.ai, Superpower Daily e Android Headlines; `WebFetch` a x.ai/docs.x.ai bloqueado pelo proxy desta sessão, nenhuma fonte primária acedida directamente. Nota de precisão: vários destes agregadores chamam ao fornecedor "SpaceXAI" em vez de "xAI"; sem confirmação de fonte primária, tratado como possível rebranding não verificado, não incorporado como facto. **Correcção ao registo de 15 Set 2026**: esta rotina tinha registado que Musk "abandonou" o Grok 4.7 a favor de saltar directamente para um Grok 4.8 de 2,5T parâmetros (comunicação via X, 13-14 Set, sem fonte Tier 1). O lançamento de hoje mostra que essa leitura estava errada, ou que o plano mudou outra vez sem anúncio: existe agora um Grok 4.7 real, lançado e documentado por múltiplos agregadores técnicos, e o Grok 4.8 continua sem página própria. Fica corrigido aqui, com a prova nova. Absorvido em `references/models.md` (secção xAI + tabela de preços); mapping do Deck Builder (`grok-4.3` como produção do motor `grok`) mantido sem alteração, porque não há confirmação de que grok.com (o produto medido pelo Tracker) já usa este modelo por omissão.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Ads Manager PT: décima sétima sessão consecutiva sem caso de primeira mão** (ver actualização completa no bloco 🚨 ALERTA FUNDADOR no topo do feed): a Discovery Hotel Management (DHM, 5 hotéis) ganhou hoje artigo dedicado no Marketeer, juntando-se a Continente e Robbialac como marca PT nomeada, mas o artigo não foi acedido directamente (`WebFetch` bloqueado) e o resumo de pesquisa não diz se a compra foi por agência ou self-serve. Cosmo5 continua sem activação PT concluída (dez clientes activos só em Espanha).
+- **Bing Webmaster Tools AI Performance API**: sem novidade, continua sem endpoint programático documentado.
+- **Cloudflare (crawlers de treino/agente)**: sem desenvolvimento novo; alerta no topo do feed mantém-se com a recomendação de fecho de 15 Set, à espera de decisão do founder.
+- **Comércio agêntico (ACP/UCP)**: sem desenvolvimento novo confirmado por fonte primária na janela.
+
+### 💡 Implicações para destaque.ai
+
+- O Grok 4.7 é awareness para o Radar LLM/IA, sem jogada de pitch: sem confirmação de que se torna o default de grok.com ou de outro produto AI search medido pelo Tracker. Ação: numa próxima sessão, verificar directamente grok.com (ou um agregador de tráfego/API) antes de mudar a linha `production` do Deck Builder; sem prazo, porque não há evidência de urgência.
+- Sem jogada nova no watch de AI ads em Portugal: décima sétima sessão sem caso de primeira mão; o artigo da DHM reforça a presença de marcas PT no ChatGPT Ads mas não resolve a questão central de self-serve vs. agência.
+- Sem mudança de pitch ou serviço hoje: dia de manutenção nos três watches específicos e na passagem diária pelos motores.
+
+### 🚨 Alerta ao founder
+
+Sem item novo e material hoje. O alerta Ads Manager PT segue aberto sem escalar (décima sétima sessão sem caso de primeira mão); o alerta Cloudflare aguarda decisão do founder sobre fecho, registada a 15 Set.
+
+### Passagem diária por motor (26 blocos: 13 motores, PT+EN, OBRIGATÓRIA)
+
+Todos os 26 blocos de `references/engine_playbooks.md` revistos hoje, linha `meta:` reescrita em todos (data 2026-09-22). Dois blocos com nota de substância: `grok` (PT+EN), com o lançamento do Grok 4.7 e a nota de precisão sobre "SpaceXAI", e `chatgpt` (PT+EN), com o artigo da DHM e a décima sétima sessão sem caso de primeira mão no Ads Manager PT. Os restantes vinte e quatro blocos (`claude`, `gemini`, `deepseek`, `mistral`, `llama`, `perplexity`, `google_aio`, `google_ai_mode`, `copilot`, `meta_ai`, `copilot_bing`, em PT e EN) sem mudança de mecânica confirmada hoje. Nenhum bloco parado há mais de 30 dias (todos revistos diariamente desde pelo menos 8 Set).
+
+### Aprendizagem interna
+
+Sem acesso aos dados de exportação do Tracker nesta sessão (mesma limitação de sessões anteriores): sem leitura de mecanismo nem de resultado hoje.
+
+### Verificação de primeira mão
+
+O lançamento do Grok 4.7 é candidato a esta etiqueta apenas se e quando se tentar confirmar directamente o modelo por omissão em grok.com; sinalizado `[verificar de primeira mão]` para essa verificação específica, não para o lançamento em si (que já tem corroboração de múltiplas fontes secundárias independentes). O Ads Manager PT e o Cloudflare já estão sinalizados em entradas anteriores.
+
+### Manutenção
+
+Research feito com `WebSearch` (cerca de 15 pesquisas), cobrindo Tier 1/1b, o Radar LLM/IA, os três watches específicos, o alerta aberto e a passagem por motor; duas tentativas de `WebFetch` directo (peec.ai, marketeer.sapo.pt, openai.com, x.ai/docs.x.ai) todas bloqueadas (`EGRESS_BLOCKED`), mesmo padrão de sessões anteriores. Candidatos investigados e **descartados por serem já conhecidos ou fora de âmbito**: preço estável da Claude Sonnet 5 ($2/$10, confirmado 26 Ago) e lançamento do AI Overviews em França (22 Jul), ambos fora da janela de 24-48h e já registados; llms.txt e Schema.org sem desenvolvimento novo na janela; robots.txt/crawlers de IA sem mudança de mecânica nova (relatório da TechnologyChecker.io sobre partilha ALLOW/DISALLOW é dado agregado sem data de mudança específica, não absorvido). Watch agentic commerce: **sem novidade confirmada por fonte primária**. Watch AI ads: **sem novidade específica de Portugal além do já registado no Ads Manager PT**. Watch Bing Webmaster Tools AI Performance API: **sem novidade**.
+
+**Absorção (passo 1 de manutenção, antes do truncate)**: news-feed.md tem 58 headers de data antes desta entrada (59 com esta), abaixo do limiar de 60: sem necessidade de truncate nem de absorção forçada hoje.
+
+`node scripts/validate-skill-tables.mjs` corrido antes do commit.
+
+Terça-feira: sem drafts semanais hoje (só sextas-feiras).
 
 ## 2026-09-21
 

@@ -207,6 +207,7 @@ Perplexity uses a multi-model architecture: user can select per-query.
 
 | Model | Released | Context | Used in |
 |---|---|---|---|
+| **Grok 4.7** | 21 Sep 2026 | 500k | xAI API (`grok-4.7`), Grok Build, Cursor; phased rollout across GitHub Copilot (Pro/Pro+/Max/Business/Enterprise). New, larger base model than 4.6 with a longer RL run on harder, multi-hour tasks; same price as predecessor ($2/$6 per 1M tokens). Not directly confirmed (`WebFetch` to x.ai/docs.x.ai blocked this session); corroborated by 5+ independent tech aggregators (MarkTechPost, XenoSpectrum, kingy.ai, Superpower Daily, Android Headlines), none contradicting. **Not confirmed** whether grok.com's consumer default (what the Tracker measures) has switched to this model: Deck Builder `grok` row left on `grok-4.3` pending direct confirmation. |
 | **Grok 4.6** | 12 Aug 2026 | not confirmed | X (Twitter) integrated, grok.com, xAI API; added to Perplexity's **Agent API** (developer/agent-building product, distinct from Perplexity's consumer Search) alongside DeepSeek V4 Flash and NVIDIA Nemotron models the same week ([Perplexity changelog](https://docs.perplexity.ai/docs/resources/changelog)) |
 | **Grok 4** | Feb 2026 | 1M tokens | X (Twitter) integrated, grok.com |
 | **Grok 3** | Aug 2025 | 256k | Legacy, still in API |
@@ -216,6 +217,8 @@ Perplexity uses a multi-model architecture: user can select per-query.
 - Grok citation behavior poorly documented publicly. Some tracking via Profound and Goodie (which monitor Grok among 9+ engines).
 - Web search via X (Twitter) data + standard web crawl.
 - Grok 4.6's addition to third-party agent products (Perplexity Agent API, Cursor, OpenRouter) is a distribution/reach signal, not a citation-surface change: it does not alter how Grok itself sources or cites content in grok.com/X answers.
+- **Naming caveat (22 Sep 2026):** several secondary sources covering the Grok 4.7 launch refer to the vendor as "SpaceXAI" rather than "xAI". No primary source (x.ai) was reached this session to confirm or deny a rebrand; treated as unconfirmed and not adopted in this file.
+- **Correction (22 Sep 2026):** the 15 Sep 2026 entry in this file/news-feed recorded that Musk had "dropped" Grok 4.7 in favor of jumping straight to a 2.5T-parameter Grok 4.8 (X posts, 13-14 Sep, no Tier 1 source). Today's release shows that reading was wrong, or the plan changed again without announcement: a real Grok 4.7 shipped, documented by multiple independent tech outlets, and Grok 4.8 still has no dedicated page.
 
 ---
 
@@ -493,6 +496,7 @@ news-feed": passa a registá-la também aqui.
 | `gpt-5.6-luna` | 0.20 | 1.20 | 2026-07-30 | corte de 80% face a 1.00/6.00; confirmado em OpenRouter, pricepertoken e getapipulse a 7 Set 2026 |
 | `gemini-3.5-flash` | 1.50 | 9.00 | 2026-05-19 | preço de lançamento; confirmado em OpenRouter, devtk e pricepertoken a 7 Set 2026. Cache de entrada a 0.15 |
 | `gemini-3.5-flash-lite` | 0.30 | 2.50 | | OpenRouter e eesel a 7 Set 2026. Houve subida de preço em 2026 e não se apurou a data: por isso `since` fica vazio |
+| `grok-4.7` | 2.00 | 6.00 | 2026-09-21 | MarkTechPost, XenoSpectrum, kingy.ai a 21-22 Set 2026 (`WebFetch` a docs.x.ai bloqueado). Acima de 200K tokens de contexto sobe para 4.00/12.00. Ainda sem confirmação de que é este o ID que o Tracker chama (ver `grok-4.3` abaixo e a nota em `## Tracker buyer defaults`) |
 | `grok-4.3` | 1.25 | 2.50 | | OpenRouter, requesty e pricepertoken a 7 Set 2026. A partir de 200K tokens de contexto passa a 2.50/5.00; medido a 11 Set 2026, nenhuma das nossas chamadas lá chega (máximo 70.440 de entrada em 363 chamadas), por isso este par é o que se paga |
 | `grok-4.1-fast` | 0.20 | 0.50 | | pricepertoken e Artificial Analysis a 7 Set 2026 |
 | `deepseek-v4-flash` | 0.44 | 1.32 | 2026-08-16 | PREÇO DE PICO. A DeepSeek passou a cobrar por hora a 16 Ago 2026: pico 0.44/1.32 (01:00-04:00 e 06:00-10:00 UTC), fora de pico 0.22/0.66. A auditoria semanal corre às 07:00 UTC, dentro do pico, por isso é o de pico que fica aqui; uma corrida fora dessas horas custa metade e esta tabela sobrestima-a |
