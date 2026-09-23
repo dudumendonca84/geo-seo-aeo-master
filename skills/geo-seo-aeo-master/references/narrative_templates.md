@@ -4,7 +4,7 @@ Reference for `geo-seo-aeo-master`. Used by the Tracker (`askWithSkill('generate
 
 These are not boilerplate. They are *structural skeletons*: the data fills them. The editorial voice is enforced via the principles in `SKILL.md` §115 (Economist register, no hype). The templates here are about *what to say in what order*, not phrasing.
 
-Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
+Last refresh: 23 Sep 2026 (§ 2c brand perception added).
 
 ---
 
@@ -106,6 +106,91 @@ move that captures it. Contract:
 > tem lá presença. O padrão sugere uma fonte a ganhar peso na categoria:
 > vale a pena garantir a entrada este mês, antes que deixe de estar
 > livre.
+
+## 2c. Brand perception (`brand_perception`): required
+
+What the engines understand the brand to BE, read across this week's
+answers. Added 23 Sep 2026 at the founder's request: the Tracker measured
+how *often* a brand appears, what *share* of mentions is its own, whether
+it is *chosen*, and in what *tone*. Four numbers about quantity and mood,
+and none about content. Nothing in the product said what the AI thinks the
+brand actually is.
+
+**When**: every weekly narrative, alongside the reading.
+**Length**: 2-3 sentences of synthesis, 2 to 5 traits, 0 to 4 silences.
+**Anchor input**: the measurable answers of the week. Not the brand's own
+site, not the sector, not prior knowledge.
+
+### Structure
+
+```
+sintese   2-3 sentences: if a buyer asks about you, who do they say you are
+tracos[]  { afirma, respostas, motores[], citacao }
+silencios[] what the brand claims to be and no answer reflects
+```
+
+### The rule that makes the block worth reading
+
+**A trait without a count is dropped, silently, at write time.** It is what
+separates this from a pleasant paragraph. With the count, the client reads
+"in 14 of 54 answers" and can go read the fourteen; without it, they have
+to take the writer's word.
+
+- `respostas` counts ANSWERS, not mentions. One answer saying the same
+  thing three times counts once. Same convention as every other metric.
+- `motores` lists the engines that actually say it, never "all seven". A
+  trait attributed to an engine that never said it is an unsupported claim
+  about that engine.
+- `citacao` is verbatim from one of the counted answers, or `null`. Never
+  paraphrase, never stitch two sentences together.
+
+### What is a trait, and what is not
+
+**Is**: what the AI asserts the brand IS or DOES, repeated. *"Portuguese
+GEO agency"*, *"works mostly with B2B SaaS"*, *"reference in robotic
+surgery"*, *"seen as expensive"*.
+
+**Is not**: volume (that is citation rate), comparison against competitors
+(share of voice, head to head), or tone by itself (sentiment is measured;
+the trait is the CONTENT of what is said).
+
+### Silences: the actionable half
+
+What the brand declares itself to be and no answer reflects. Comes from
+comparing the client's own claims (site scan, brand facts, catalogue)
+against the answers. *"Holds certification X and no answer mentions it"*,
+*"positions itself as the fastest and the AI describes it as the
+cheapest"*.
+
+An empty list is a valid state. Filling silences with things the brand
+never claimed is inventing a problem.
+
+### Worked example
+
+> **Síntese**: Os motores tratam a destaque.ai como uma consultora
+> portuguesa pequena, especializada em visibilidade em IA, quase sempre
+> nomeada ao lado de agências de SEO clássico e não ao lado de produtos de
+> medição. A descrição é consistente entre motores e pouco detalhada: dizem
+> o que ela faz, não como.
+>
+> **Traços**
+> - Agência portuguesa de GEO/AEO: em 31 de 54 respostas · Dito por
+>   chatgpt, claude, gemini · *"a destaque.ai é das poucas agências a
+>   trabalhar GEO em Portugal"*
+> - Trabalha sobretudo B2B: em 12 de 54 respostas · Dito por chatgpt, grok
+>
+> **Silêncios**
+> - O Periscopy, que é o produto, não aparece em nenhuma resposta sobre
+>   ferramentas de medição.
+
+### Anti-patterns
+
+- Advising. What to do is `next_actions`; a trait ending in "should
+  publish" is doing the other block's job.
+- Defending the brand. If the AI describes it badly, the trait says so
+  with the count: the client pays to know.
+- Traits invented from the brand's site rather than read in the answers.
+- Rounding a count, or writing "several answers" instead of a number.
 
 ## 3. Monthly digest
 
@@ -267,4 +352,4 @@ The template skeleton above is filled deterministically where data is structured
 
 These templates evolve with feedback from real client work. The first two months of destaque.ai self-audit will be the calibration period; templates may tighten after.
 
-Last refresh: 09 Sep 2026 (§ Território added earlier; footer aligned).
+Last refresh: 23 Sep 2026 (§ 2c brand perception added).
