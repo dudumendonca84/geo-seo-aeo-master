@@ -169,6 +169,10 @@ Caveats: test pages were already heavily cited. Schema may still matter for:
 
 The strong-form claim "schema gives +X% citations" is unsupported. The weak-form claim "schema reduces ambiguity for retrieval and rich-results eligibility" remains correct.
 
+### Schema.org v30.1: JSON-LD context lost implicit `@type` coercion (15 Sep 2026)
+
+Release `schemaorg/schemaorg#4854` ("Fixed bugs and documentation issues") removed the `@type` coercion keywords from the JSON-LD `@context` file for 126 terms: 80 lost `@type: @id` coercion, 46 lost `@type: Date` coercion, including widely-used properties like `mainEntityOfPage`, `dateModified`, `usageInfo` and `documentation` (rationale in upstream issue `#4852`). No new types or deprecated terms: this is a context/data-typing fix, not a vocabulary addition. Practical effect: JSON-LD that relied on the context file to *implicitly* coerce a plain string into an `@id` reference or an ISO date now needs that typing to be explicit in the markup itself (`{"@type": "@id", "@value": "..."}` style, or an explicit `Date` wrapper) to parse the same way against the updated context. Not yet verified against the official changelog page (`schema.org/docs/releases.html` blocked to direct fetch this session); sourced via a third-party GitHub issue analysis (`netwerk-digitaal-erfgoed/dataset-register#2378`) that cites the PR and upstream issue directly. **Not yet confirmed to cause any real-world parsing breakage** in a major consumer (Google Rich Results Test, an AI engine's structured-data parser): flagged here as a watch item, not an audit-methodology change, pending either a first-hand breakage report or direct read of the official changelog. Source: [github.com/netwerk-digitaal-erfgoed/dataset-register/issues/2378](https://github.com/netwerk-digitaal-erfgoed/dataset-register/issues/2378) (15-16 Sep 2026, secondary analysis of primary PR/issue).
+
 ---
 
 ## 4. E-E-A-T (May 2026)
