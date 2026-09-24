@@ -856,10 +856,57 @@ não se abre ação.
 É por aí que entram concorrentes de outro país na medição, e explica um
 nome que aparece do nada na lista de concorrentes.
 
-**Dimensão: positioning (8).** Ação: reforçar os sinais de mercado
-(morada, moeda, língua, casos locais, `hreflang`) e, no relatório,
-declarar que aquele concorrente veio de outra geografia em vez de o
-apresentar como rival direto.
+**Dimensão: positioning (8).** Ação: no relatório, declarar que aquele
+concorrente veio de outra geografia em vez de o apresentar como rival
+direto. Os sinais de mercado no site (morada no `Organization`, moeda,
+língua, casos locais, `hreflang`) entram como trabalho de fundo da
+dimensão entity, **nunca como a correção deste sintoma**: ver o padrão
+seguinte, que explica porquê.
+
+### Pattern: a PERGUNTA não diz o mercado, e o motor escolhe outro
+
+Escrito a 24 Set 2026 depois de a regra de cima ter sido esticada para
+este caso e ter produzido um conselho que não se sustenta. O founder
+apanhou-o numa frase: *"não é isso que vai mudar a resposta do prompt"*.
+
+**O sintoma.** Uma pergunta em português que não nomeia o país ("o que
+devo ter em conta ao escolher onde fazer as compras da semana?") e o
+motor responde sobre outro mercado. No caso medido saíram supermercados
+em Kapolei, no Havai, e em Reno, no Nevada, com morada e telefone.
+
+**A ação ERRADA, e é a que sai por omissão:** mandar pôr `hreflang` e
+morada no `Organization`. Esses são sinais NO SITE. Valem quando um motor
+já está a olhar para o site, e não injetam um país numa pergunta que não
+o tem: nesses casos o motor nem chega ao site, escolhe um mercado por
+omissão e responde sobre ele. Uma marca que fizesse este trabalho todo
+continuaria a ver a mesma resposta.
+
+**Antes de escrever o achado, CONTAR.** É a parte que mais custou: no
+Continente, a leitura apresentou "o motor responde sobre outro mercado"
+como a explicação das 26 respostas que faltavam (60 menos 34), e as
+respostas que falam mesmo de outro país eram **duas em 270**. O resto era
+a marca não ser nomeada numa resposta genérica, que é outro achado e
+muito menos dramático. A contagem é uma consulta: quantas respostas
+nomeiam cadeias do outro mercado. Sem esse número, o achado é uma
+história à volta de dois casos.
+
+**Dimensão: positioning (8), e a ação é em três camadas, por esta ordem:**
+
+1. **O desenho da pergunta, que é de quem mede e não do cliente.** Uma
+   pergunta sem mercado mede outro mercado. Ou passa a dizê-lo, ou fica
+   declarada como medição deliberada do caso sem âncora, que também é
+   legítima: é o que um comprador escreve quando não pensa no assunto.
+   Nunca se entrega ao cliente como defeito dele.
+2. **A localização da recolha, quando a superfície é de pesquisa.** Um
+   AIO ou um Copilot mal localizados produzem isto sem culpa nenhuma da
+   marca, e isso é defeito de quem mede. Verifica-se pela distribuição:
+   se for a localização, a superfície inteira vem do outro mercado; se
+   vier uma resposta em vinte, é o motor naquela consulta.
+3. **A camada de entidade, e só aqui.** O que faz "supermercado" em
+   português resolver para cadeias portuguesas é a identidade reconhecida
+   (Wikidata, Knowledge Panel, `sameAs`, cobertura local), não uma etiqueta
+   no `<head>`. É trabalho de meses e não se promete como correção desta
+   semana.
 
 ---
 
