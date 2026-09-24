@@ -1,9 +1,21 @@
 # Plans: what each tier of the Tracker actually gets
 
-**Status:** entitlements only. Prices are not here and are not published until
-the three checks in the Tracker's task list are done (the per-query cost of
-DataForSEO and SerpApi has never been measured, and a number in euros that
-nobody measured is the thing this house does not write).
+**Status:** entitlements, and a price column that is **empty on purpose**.
+
+Prices live here from 24 Sep 2026 (founder, asked whether the public site
+should carry them: *"preços sim"*), and the column ships blank because a
+number in euros that nobody wrote is not a number this house invents. Fill a
+cell and the public pricing page shows it within the hour, with no deploy and
+no migration. Leave it blank and that tier reads "sob consulta", which is the
+truth.
+
+What used to block this was the unit cost, and most of it is now measured. The
+Tracker's own records give **0.094 to 0.097 USD per question** across three
+clients in the week of 7 Sep, with the per-engine split measured again on 12
+Sep (chatgpt 48% of the bill, grok 20%, gemini 14%). The surfaces bill per
+query at DataForSEO and SerpApi, in cents. What is still not measured is the
+SerpApi monthly ceiling against a heavy month, and that bounds the volume a
+tier can promise, not the price it can charge.
 
 This file is the one place where a tier's entitlements live. The Tracker
 reads it at runtime and writes the columns of `tracker.clients` from it; the
@@ -27,15 +39,21 @@ measurement: it is a distinct piece of the product, sold from `pro` up
 build it now"*). The Tracker writes it into the client's `modules` column, and
 the operator switch in the backoffice stays for the exceptions.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception |
-|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no |
-| lite | brand | 25 | no | no | 1 | weekly | no |
-| pro | brand | 50 | no | no | 1 | weekly | yes |
-| business | brand | 100 | yes | yes | 2 | weekly | yes |
-| enterprise | brand | 100 | yes | yes | 2 | weekly | yes |
-| growth | agency | 50 | no | yes | 1 | weekly | yes |
-| agency | agency | 100 | no | yes | 1 | weekly | yes |
+`price_eur` is what the public pricing page shows, per month, excluding VAT.
+An empty cell is not a missing value: it is "sob consulta" on the page, and
+that is a legitimate state for a tier that is sold by conversation. Write the
+number alone (`390`), never a currency sign or a range: the page formats it,
+and the page is the only place that knows which language it is rendering in.
+
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | price_eur |
+|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | |
+| lite | brand | 25 | no | no | 1 | weekly | no | |
+| pro | brand | 50 | no | no | 1 | weekly | yes | |
+| business | brand | 100 | yes | yes | 2 | weekly | yes | |
+| enterprise | brand | 100 | yes | yes | 2 | weekly | yes | |
+| growth | agency | 50 | no | yes | 1 | weekly | yes | |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | |
 
 **The add-ons are deviations from this table, not rows in it.** A Lite that
 bought the persona add-on has `personas` on and the plan still says `lite`:
