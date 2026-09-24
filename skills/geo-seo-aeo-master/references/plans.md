@@ -45,15 +45,51 @@ that is a legitimate state for a tier that is sold by conversation. Write the
 number alone (`390`), never a currency sign or a range: the page formats it,
 and the page is the only place that knows which language it is rendering in.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | price_eur |
-|---|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no | |
-| lite | brand | 25 | no | no | 1 | weekly | no | |
-| pro | brand | 50 | no | no | 1 | weekly | yes | |
-| business | brand | 100 | yes | yes | 2 | weekly | yes | |
-| enterprise | brand | 100 | yes | yes | 2 | weekly | yes | |
-| growth | agency | 50 | no | yes | 1 | weekly | yes | |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | |
+`copilot` is the second engine a plan switches, next to `grok`, and it
+exists because that surface is bought per query. Microsoft Copilot runs only
+through SerpApi, whose plan has a hard monthly ceiling; Grok runs on an API
+we pay by the token. Selling Copilot on the cheapest tier spends a scarce
+ceiling on the client who pays least, so `lite` does without it (founder, 24
+Sep 2026: *"colocamos a partir do segundo plano"*, then *"agências têm que
+ter, mas se facturamos, vamos pagar mais"*).
+
+The arithmetic that produced that decision, so nobody re-derives it: measured
+against August, the surface costs about **6.7 SerpApi queries per monitored
+question per month** (896 queries across three clients holding 134 questions).
+An agency multiplies that by its brands, so one Growth account is ~8 000
+queries a month on its own. The plan is being raised to match; until it is,
+the ceiling and not this table is what limits how many clients can hold the
+surface.
+
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur |
+|---|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | no | |
+| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 |
+| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 |
+| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 |
+| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 |
+
+**`starter` is not sold and is kept only so a client already on it keeps its
+entitlements.** It exists because the agency tier in the 2026 catalogue is
+also called Starter, and one name meaning two things in a table the code
+indexes by name is how a client gets another tier's ceilings written to its
+columns. The agency row is `agency-starter` here; the catalogue and the
+public page still call it Starter, because a display name is not a key.
+
+**`enterprise` has no price and no fixed ceiling**, and that is the honest
+state rather than a gap: the catalogue sells it as *à medida*, its questions
+come from a feed, and the 200 above is the floor the product enforces until
+a discovery says otherwise. The page shows "sob consulta".
+
+**What is in the catalogue and NOT in this table**, on purpose: how many
+competitors a tier follows, how many markets, how many users, which
+integrations, which reports, and the manual-run allowance. Those are sold and
+described on the public page; they are not entitlements the Tracker writes
+into `tracker.clients`, and putting them here would be a second place to get
+them wrong. This table holds only what the code applies.
 
 **The add-ons are deviations from this table, not rows in it.** A Lite that
 bought the persona add-on has `personas` on and the plan still says `lite`:
