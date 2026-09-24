@@ -158,6 +158,15 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-09-15 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 2, 3.ª semana consecutiva |
 | 2026-09-15 | Filipe Raimundo | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 3, 3.ª semana consecutiva |
 
+| 2026-09-22 | destaque.ai | 2/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; prompt 1 pos 1 (7.ª semana consecutiva), prompt 5 pos 1 (14.ª semana consecutiva) |
+| 2026-09-22 | Marco Gouveia | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 1 pos 2, 6.ª semana consecutiva no mesmo slot |
+| 2026-09-22 | AP\|Portugal | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; Prompt 2 pos 1 — 3.ª semana seguida sem troca com Infinidata |
+| 2026-09-22 | Infinidata | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; Prompt 2 pos 2 — mesma leitura acima |
+| 2026-09-22 | SEOLabs | 1/5 | 3.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 2 pos 3, 5.ª semana consecutiva |
+| 2026-09-22 | Latigid | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 1, 4.ª semana consecutiva no mesmo slot |
+| 2026-09-22 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 2, 4.ª semana consecutiva |
+| **2026-09-22** | **Helder Mesquita** | **1/5** | **2.0** | **novo entrante em D1 (era 0/5 desde 06-30)** | 1/5 (só Claude) | Prompt 5 pos 2, via novo produto próprio LLMscope (llmscope.pt), lançado esta semana com Jorge Cruz |
+
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
 ## Como ler
