@@ -57,9 +57,12 @@ The arithmetic that produced that decision, so nobody re-derives it: measured
 against August, the surface costs about **6.7 SerpApi queries per monitored
 question per month** (896 queries across three clients holding 134 questions).
 An agency multiplies that by its brands, so one Growth account is ~8 000
-queries a month on its own. The plan is being raised to match; until it is,
-the ceiling and not this table is what limits how many clients can hold the
-surface.
+queries a month on its own. **The plan is raised when a client on one of
+these tiers pays, and not before** (founder, 24 Sep 2026). Until then the
+ceiling and not this table is what limits how many clients can hold the
+surface, and that is a deliberate state rather than an open action: buying
+headroom for a tier nobody has bought yet is spending against a sale that
+has not happened.
 
 | plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur |
 |---|---|---|---|---|---|---|---|---|---|
