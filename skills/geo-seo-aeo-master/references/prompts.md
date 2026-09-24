@@ -19,6 +19,7 @@
 - **Contexto realista**: inclui, quando fizer sentido, tamanho da empresa, geografia, vertical, restrições (suporte PT, GDPR, escala). Prompts vagos produzem respostas vagas.
 - **Intent claro**: cada prompt expressa um destes intents: `research`, `comparison`, `validation`, `migration`, `pricing`, `integration`, `pain_point`.
 - **Nunca nomeies a marca do cliente**: queremos ver se aparece organicamente (exceção: prompts branded de self-audit, ex. DC1).
+- **Quando a marca É nomeada e o nome também é palavra comum, escreve o substantivo à frente.** "o supermercado Continente", "a operadora NOS", não "Continente" e "NOS" a seco. Medido a 23 Set 2026: o claude.ai respondeu *"Se te referes ao Continente, a cadeia de supermercados portuguesa, posso comparar..."* e gastou a abertura a desambiguar, numa pergunta que devia começar a responder. A mesma lista que protege a LEITURA (`AMBIGUAS`: nos, era, isto, alma, logo, continente, amigo, novo, meta, ponto, canalha) vale aqui virada ao contrário. **Exceção:** nome próprio de produto que já é inequívoco ("Cartão Continente", "Continente Online") fica como está, porque acrescentar palavras a uma pergunta sem dúvida é ruído que muda o que se mede sem ganho. **E o custo de descobrir tarde:** mudar o texto de uma pergunta parte a série dela, porque a ponte casa a observação com a ficha pelo texto. Ou se escreve bem à primeira, ou não se muda mais.
 - **A língua é a do cliente, não a nossa.** O consumidor passa `locale` (`pt-PT` | `en`) com o pedido: gera o catálogo nessa língua, com o idioma do mercado dele. PT-PT é o valor por omissão e a nossa casa, não uma regra universal. Isto **não é cosmético**: um comprador em Londres escreve em inglês, e medi-lo com perguntas em português mede outra coisa, com uma taxa de citação que não é comparável com nada. Dentro de PT, PT-BR só se o público-alvo for tipicamente brasileiro; e mesmo num cliente PT-PT, EN quando a query real do segmento é em inglês (termos técnicos que ninguém traduz).
 - **Geografia segue o mercado.** Um prompt para um cliente britânico diz "in the UK", não "em Portugal". A referência geográfica sai de `market`, não da língua: uma marca inglesa pode competir no mercado português.
 - **Varia a formulação**: evita quase-duplicados na mesma categoria; muda o ângulo (dor, comparação, preço, exequibilidade técnica).
@@ -310,6 +311,9 @@ consegues estimar honestamente.
 - `prompt_text` - **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
 - Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
   `local_recommendation` qualificada por cidade/zona.
+- **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
+  palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
+  isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
 
 ### 8.5 Backfill
 
