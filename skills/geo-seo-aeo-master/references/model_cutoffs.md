@@ -44,7 +44,7 @@ ago on a model that shipped since is stale and should read `unknown` again.
 | Model | Cutoff | Confirmed | Source | Note |
 |---|---|---|---|---|
 | `gpt-5.6-luna` | unknown | | | OpenAI model page; check the model card, not the blog post |
-| `claude-sonnet-5` | unknown | | | Anthropic model overview; the "training data cutoff" row of the model comparison table |
+| `claude-sonnet-5` | 2026-01 | 2026-09-25 | platform.claude.com/docs/en/about-claude/models/overview | Training data cutoff row of the model comparison table, read directly |
 | `gemini-3.5-flash` | unknown | | | Google AI model page; note that AI Overviews routing may not run the same snapshot |
 | `grok-4.3` | unknown | | | xAI model card |
 | `deepseek-v4-flash` | unknown | | | DeepSeek API docs |
