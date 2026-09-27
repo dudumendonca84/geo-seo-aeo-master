@@ -45,6 +45,27 @@ that is a legitimate state for a tier that is sold by conversation. Write the
 number alone (`390`), never a currency sign or a range: the page formats it,
 and the page is the only place that knows which language it is rendering in.
 
+`public` says whether the public pricing page lists the tier. It was a
+`.filter((p) => p.plano !== "starter")` inside the page until 27 Sep 2026,
+which is a commercial rule written in TypeScript: the `starter` stopped
+being sold by a business decision, not by a property of the code. Hiding or
+showing a tier is now editing this cell. An absent column reads `yes`, and
+the direction of that default is deliberate: a table that loses the column
+shows everything, whereas the safer-looking default would empty the pricing
+page the day this file is edited carelessly.
+
+`free-trial` is the tier an operator applies to somebody who is trying the
+product (founder, 27 Sep 2026: *"cria um plan chamado Free Trial"*). Ten
+questions, one run a week, no personas, no Grok and no Copilot: the two
+switched engines are the two that cost money per run, and a trial that
+spends the SerpApi monthly ceiling is a trial that makes the paying clients
+worse off. It is **not on the public page**, because a trial is a call to
+action and not a column in a price table, and putting it there is a
+commercial decision nobody has taken. Its `price_eur` is empty for the same
+reason: the page would read it as "sob consulta", which is wrong for a free
+tier, so if the day comes to list it, the price cell needs a "free" state
+first and not a zero.
+
 `copilot` is the second engine a plan switches, next to `grok`, and it
 exists because that surface is bought per query. Microsoft Copilot runs only
 through SerpApi, whose plan has a hard monthly ceiling; Grok runs on an API
@@ -64,16 +85,17 @@ surface, and that is a deliberate state rather than an open action: buying
 headroom for a tier nobody has bought yet is spending against a sale that
 has not happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur |
-|---|---|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no | no | |
-| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 |
-| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 |
-| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 |
-| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | |
-| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 |
-| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 |
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public |
+|---|---|---|---|---|---|---|---|---|---|---|
+| free-trial | brand | 10 | no | no | 1 | weekly | no | no | | no |
+| starter | brand | 25 | no | no | 1 | weekly | no | no | | no |
+| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 | yes |
+| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 | yes |
+| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 | yes |
+| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | | yes |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes |
 
 **`starter` is not sold and is kept only so a client already on it keeps its
 entitlements.** It exists because the agency tier in the 2026 catalogue is
@@ -119,6 +141,15 @@ repeat_runs | cadence |`), at the start of a line. `yes`/`no` for the two
 booleans, integers for the two numbers, and `weekly` / `biweekly` / `monthly`
 for the cadence. A plan name that is not in this table is refused by the
 write, which is what keeps a typo from creating a tier nobody sells.
+
+The four columns after `cadence` are optional and read **in order**, as a
+prefix: `inception`, `copilot`, `price_eur`, `public`. A table may carry
+none of them, or the first two, or all four, and it reads either way, which
+is what lets this file and the Tracker be deployed in either order. What it
+may not do is skip one: a column out of place is read as the next one. An
+absent `inception` or `copilot` reads `no` (selling by accident is worse
+than not selling); an absent `price_eur` reads "sob consulta"; an absent
+`public` reads `yes`.
 
 **There is no CHECK constraint on `clients.plan`, deliberately.** A list of
 valid values in the SQL and another in this file is the same rule written
