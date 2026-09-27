@@ -54,17 +54,32 @@ the direction of that default is deliberate: a table that loses the column
 shows everything, whereas the safer-looking default would empty the pricing
 page the day this file is edited carelessly.
 
-`free-trial` is the tier an operator applies to somebody who is trying the
-product (founder, 27 Sep 2026: *"cria um plan chamado Free Trial"*). Ten
-questions, one run a week, no personas, no Grok and no Copilot: the two
-switched engines are the two that cost money per run, and a trial that
-spends the SerpApi monthly ceiling is a trial that makes the paying clients
-worse off. It is **not on the public page**, because a trial is a call to
-action and not a column in a price table, and putting it there is a
-commercial decision nobody has taken. Its `price_eur` is empty for the same
-reason: the page would read it as "sob consulta", which is wrong for a free
-tier, so if the day comes to list it, the price cell needs a "free" state
-first and not a zero.
+`trial` says whether the tier's card on the public page carries a free
+trial label. It is on for the three brand tiers that have a price, and off
+for the Enterprise and the three agency tiers: somebody who tries the
+product on their own is a brand, and an agency negotiates.
+
+**A free trial was a tier here for a few hours on 27 Sep 2026, and it is
+not any more.** The founder had asked for one (*"cria um plan chamado Free
+Trial"*), got a `free-trial` row that only an operator could apply, and
+refused it twice: *"o 2 não pode ser assim, tem que ser direto"*, then
+*"só coloca uma label free trial"*. So the trial stopped being a tier and
+became a promise on the tiers that already exist. Whoever clicks still
+goes through Stripe on the usual path; the label changes the offer, not
+the purchase. A tier nobody sells and nobody applies is the `starter`
+scar, described three paragraphs down, so the row went.
+
+**The label promises something the product does not enforce, and that is
+a deliberate, named cost.** There is no clock, no close and no warning:
+the founder chose no automatic end on the same day, so whoever starts a
+trial keeps running until a person decides. That is why the label carries
+no number of days. Writing "14 days" with nothing counting them would be
+the dishonest version; closing a trial is a human act, done by applying a
+paid plan.
+
+An absent `trial` column reads `no`, the opposite of `public`, and the
+direction is the `inception` argument: promising a trial by accident is
+worse than not promising one.
 
 `copilot` is the second engine a plan switches, next to `grok`, and it
 exists because that surface is bought per query. Microsoft Copilot runs only
@@ -85,17 +100,16 @@ surface, and that is a deliberate state rather than an open action: buying
 headroom for a tier nobody has bought yet is spending against a sale that
 has not happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public |
-|---|---|---|---|---|---|---|---|---|---|---|
-| free-trial | brand | 10 | no | no | 1 | weekly | no | no | | no |
-| starter | brand | 25 | no | no | 1 | weekly | no | no | | no |
-| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 | yes |
-| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 | yes |
-| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 | yes |
-| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | | yes |
-| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes |
-| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes |
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no |
+| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 | yes | yes |
+| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 | yes | yes |
+| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes |
+| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | | yes | no |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no |
 
 **`starter` is not sold and is kept only so a client already on it keeps its
 entitlements.** It exists because the agency tier in the 2026 catalogue is
@@ -142,14 +156,14 @@ booleans, integers for the two numbers, and `weekly` / `biweekly` / `monthly`
 for the cadence. A plan name that is not in this table is refused by the
 write, which is what keeps a typo from creating a tier nobody sells.
 
-The four columns after `cadence` are optional and read **in order**, as a
-prefix: `inception`, `copilot`, `price_eur`, `public`. A table may carry
-none of them, or the first two, or all four, and it reads either way, which
-is what lets this file and the Tracker be deployed in either order. What it
-may not do is skip one: a column out of place is read as the next one. An
-absent `inception` or `copilot` reads `no` (selling by accident is worse
-than not selling); an absent `price_eur` reads "sob consulta"; an absent
-`public` reads `yes`.
+The five columns after `cadence` are optional and read **in order**, as a
+prefix: `inception`, `copilot`, `price_eur`, `public`, `trial`. A table may
+carry none of them, or the first two, or all five, and it reads either way,
+which is what lets this file and the Tracker be deployed in either order.
+What it may not do is skip one: a column out of place is read as the next
+one. An absent `inception`, `copilot` or `trial` reads `no` (promising by
+accident is worse than not promising); an absent `price_eur` reads "sob
+consulta"; an absent `public` reads `yes`.
 
 **There is no CHECK constraint on `clients.plan`, deliberately.** A list of
 valid values in the SQL and another in this file is the same rule written
