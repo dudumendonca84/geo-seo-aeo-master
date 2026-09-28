@@ -45,6 +45,42 @@ that is a legitimate state for a tier that is sold by conversation. Write the
 number alone (`390`), never a currency sign or a range: the page formats it,
 and the page is the only place that knows which language it is rendering in.
 
+`public` says whether the public pricing page lists the tier. It was a
+`.filter((p) => p.plano !== "starter")` inside the page until 27 Sep 2026,
+which is a commercial rule written in TypeScript: the `starter` stopped
+being sold by a business decision, not by a property of the code. Hiding or
+showing a tier is now editing this cell. An absent column reads `yes`, and
+the direction of that default is deliberate: a table that loses the column
+shows everything, whereas the safer-looking default would empty the pricing
+page the day this file is edited carelessly.
+
+`trial` says whether the tier's card on the public page carries a free
+trial label. It is on for the three brand tiers that have a price, and off
+for the Enterprise and the three agency tiers: somebody who tries the
+product on their own is a brand, and an agency negotiates.
+
+**A free trial was a tier here for a few hours on 27 Sep 2026, and it is
+not any more.** The founder had asked for one (*"cria um plan chamado Free
+Trial"*), got a `free-trial` row that only an operator could apply, and
+refused it twice: *"o 2 não pode ser assim, tem que ser direto"*, then
+*"só coloca uma label free trial"*. So the trial stopped being a tier and
+became a promise on the tiers that already exist. Whoever clicks still
+goes through Stripe on the usual path; the label changes the offer, not
+the purchase. A tier nobody sells and nobody applies is the `starter`
+scar, described three paragraphs down, so the row went.
+
+**The label promises something the product does not enforce, and that is
+a deliberate, named cost.** There is no clock, no close and no warning:
+the founder chose no automatic end on the same day, so whoever starts a
+trial keeps running until a person decides. That is why the label carries
+no number of days. Writing "14 days" with nothing counting them would be
+the dishonest version; closing a trial is a human act, done by applying a
+paid plan.
+
+An absent `trial` column reads `no`, the opposite of `public`, and the
+direction is the `inception` argument: promising a trial by accident is
+worse than not promising one.
+
 `copilot` is the second engine a plan switches, next to `grok`, and it
 exists because that surface is bought per query. Microsoft Copilot runs only
 through SerpApi, whose plan has a hard monthly ceiling; Grok runs on an API
@@ -64,16 +100,16 @@ surface, and that is a deliberate state rather than an open action: buying
 headroom for a tier nobody has bought yet is spending against a sale that
 has not happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur |
-|---|---|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no | no | |
-| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 |
-| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 |
-| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 |
-| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | |
-| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 |
-| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 |
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no |
+| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 | yes | yes |
+| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 | yes | yes |
+| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes |
+| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | | yes | no |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no |
 
 **`starter` is not sold and is kept only so a client already on it keeps its
 entitlements.** It exists because the agency tier in the 2026 catalogue is
@@ -119,6 +155,15 @@ repeat_runs | cadence |`), at the start of a line. `yes`/`no` for the two
 booleans, integers for the two numbers, and `weekly` / `biweekly` / `monthly`
 for the cadence. A plan name that is not in this table is refused by the
 write, which is what keeps a typo from creating a tier nobody sells.
+
+The five columns after `cadence` are optional and read **in order**, as a
+prefix: `inception`, `copilot`, `price_eur`, `public`, `trial`. A table may
+carry none of them, or the first two, or all five, and it reads either way,
+which is what lets this file and the Tracker be deployed in either order.
+What it may not do is skip one: a column out of place is read as the next
+one. An absent `inception`, `copilot` or `trial` reads `no` (promising by
+accident is worse than not promising); an absent `price_eur` reads "sob
+consulta"; an absent `public` reads `yes`.
 
 **There is no CHECK constraint on `clients.plan`, deliberately.** A list of
 valid values in the SQL and another in this file is the same rule written
