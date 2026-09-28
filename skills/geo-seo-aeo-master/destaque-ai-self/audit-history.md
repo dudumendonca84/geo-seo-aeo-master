@@ -11,6 +11,46 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-09-28: Décima execução (vs. 21 set: terceira semana consecutiva sem hiato, critério PROCESS cumprido)
+
+**Score global:** 72/100 (Bom: pela primeira vez em 15 semanas, todas as 12 categorias têm pontuação real, nenhuma N/D). **Δ vs. 21 set: −2**, mas o número não é comparável de forma directa: a auditoria de 21 set mediou 11 categorias (Performance/CWV excluída por N/D); esta semana mediou 12, porque `curl` de saída funcionou pela primeira vez nesta série, permitindo TTFB real e retirando Performance/CWV do N/D permanente com um score médio (62/100) que por si só puxa a média para baixo.
+
+**Score por categoria (delta vs. 21 set):**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 88/100 | 0 |
+| Performance / CWV | 62/100 | N/D→62 (primeiro score real) |
+| SEO On-Page | 94/100 | 0 |
+| Schema / dados estruturados | 94/100 | −1 |
+| Otimização de imagens | 74/100 | 0 |
+| GEO técnica | 93/100 | 0 |
+| Conteúdo & topical authority | 96/100 | −2 |
+| Entidade / brand foundation | 78/100 | −5 |
+| Autoridade & digital PR | 34/100 | +4 |
+| Sinais sociais & community | 37/100 | +2 |
+| E-E-A-T & on-site authority | 70/100 | 0 |
+| Medição & feedback loop | 38/100 | −12 |
+
+**Nota sobre o Δ global de −2:** a maior parte da descida é aritmética (mudança de base de 11 para 12 categorias), não uma piora real generalizada. A parte que **é** real e preocupante está toda em Medição (−12): dois achados novos de alto volume no Tracker (`Invalid Refresh Token`, 614 ocorrências em dois dias, 7 utilizadores; falha de checkout Stripe por `tax_code` em falta, bloqueando literalmente uma venda do plano Pro/mês) e um item reaberto (Gemini: `RESOURCE_EXHAUSTED` reapareceu em 24 set, três dias depois de o item ter sido fechado DONE com uma reserva explícita de reabertura). Entidade desce (−5) por um achado que resolve uma ambiguidade mas piora o quadro prático: o QID Wikidata Q140043087 está confirmado inexistente (404 directo em `wikidata.org`), o que significa que não há nada para repor em `Organization.sameAs`, seria preciso construir um item novo de raiz. Conteúdo desce ligeiramente (−2) por uma cadência de deploy muito mais lenta esta semana (1 deploy novo vs. 6 na semana anterior). Do lado positivo: Autoridade & PR sobe (+4, segunda peça Marketeer confirmada) e Sinais sociais sobe (+2, LinkedIn confirmado activo com detalhe novo verificado directamente). Ver `audit-baseline.md` § Sumário executivo e § 16 para o detalhe.
+
+**Items movidos para DONE esta semana:** 2. `PROCESS: Routine semanal saltou uma semana sem registo` (terceira execução consecutiva sem hiato, 14, 21, 28 set, cumpre finalmente o critério de verificação definido em 24 ago, depois de duas faltas e duas re-escaladas); `STRATEGIC: SEO Alive por classificar` (classificação concluída: concorrente internacional sediado em Andorra, vertical SaaS/facturação, sem presença física PT).
+
+**Items reabertos esta semana:** 1. `MEASUREMENT: Tracker: crédito de API esgotado no Gemini` (fechado DONE a 21 set com reserva explícita "reabrir se reaparecer"; `RESOURCE_EXHAUSTED` reapareceu em 24 set, 60 ocorrências, 3 dias depois do fecho: a reserva aplicou-se).
+
+**Items novos detectados:** 4 itens discretos novos: 2 P0/P1 de alto volume (MEASUREMENT: erro `Invalid Refresh Token`, 614 ocorrências em dois dias, 7 utilizadores; MEASUREMENT: checkout Stripe falha por `tax_code` em falta, bloqueia venda real), 1 P2 (MEASUREMENT: conta DeepSeek do Tracker sem saldo, falhas activas na manhã da própria auditoria), 1 P3 (SCHEMA: `Organization.description` nomeia só 5 motores, inconsistente com os "onze" do `llms.txt`). Mais 1 item P1 novo de conteúdo/estratégia (STRATEGIC: destaque.ai a 0/6 nos prompts de alto intent GP1-6, espaço inteiramente cedido a conteúdo brasileiro genérico). Adicionalmente, actualizações materiais a 5 items existentes: ENTITY/Wikidata (mistério resolvido: QID confirmado inexistente, acção muda de "confirmar e repor" para "decidir se se constrói de raiz"); STRATEGIC da colisão "GEO" (5º eixo confirmado, "Gestão de Estruturas Organizacionais", mesmo prompt `V3` pela 5ª vez com sentido diferente); STRATEGIC de Marco Gouveia (5ª+ semana seguida a dominar recomendações locais directas, deixa de ser "achado a confirmar"); MEASUREMENT do Perplexity (90 ocorrências nesta janela, sem sinal de resolução); MEASUREMENT do DataForSEO/Copilot/google_aio (mensagem de erro muda para "conta sem buscas", sugerindo quota literalmente esgotada, candidato a causa raiz comum entre as três assinaturas).
+
+**Mudanças materiais observadas:**
+- **Metodologia: `curl` de saída funcionou pela primeira vez em 15 semanas.** Permite TTFB real (mediana 414ms), fetch directo de HTML/JSON-LD/robots.txt/llms.txt/sitemap.xml, e uma tentativa directa (não intermediada) ao PageSpeed Insights, que revelou que o bloqueio é quota diária do Google, não da rede desta sessão. Não confirmado se é uma mudança permanente: a próxima execução confirma.
+- **Teste multi-motor: a amostra mais completa desta série (32 prompts, 5 sub-agentes dedicados), pela primeira vez desde 13 jul.** Cumpre a recomendação pendente há duas execuções. Resultado: 9/31 prompts testáveis devolvem destaque.ai nalguma forma (29%), 5/31 (16%) com citação clara em síntese. Achado estrutural mais preocupante: **0/6 nos prompts de alto intent (GP1-6)**, o momento de compra mais quente, inteiramente cedido a conteúdo brasileiro genérico. 5º eixo de colisão do acrónimo "GEO" confirmado em V3. Zero menções negativas ou alucinadas em 32 pesquisas.
+- **Medição: dois achados operacionais novos de volume alto, distintos de todas as falhas de fornecedor LLM/dados já vistas nesta série.** Um erro de autenticação (614 ocorrências, pode estar a expulsar utilizadores de sessões activas) e uma falha de checkout Stripe (bloqueia uma venda real, 4 utilizadores afectados num dia). Nenhum dos dois é uma falha de quota de fornecedor terceiro: são bugs/configuração do próprio produto.
+- **Entidade: o item mais antigo desta série (Wikidata, 8 semanas em aberto) chega a uma resposta definitiva, ainda que não à resolução.** Confirmado por fetch directo que o QID nunca correspondeu (ou já não corresponde) a nenhum item válido: fecha a pergunta "foi deliberado ou acidental" (nenhum dos dois: o item simplesmente não existe para reclamar), mas abre um trabalho novo e maior (construir de raiz) em vez de um trabalho pequeno (repor um link).
+- **Processo: terceira execução consecutiva sem hiato, item PROCESS fechado DONE pela primeira vez desde a escalada a P0 em 24 ago.**
+
+**Reconciliação playbooks:** sem edições feitas nesta auditoria: nenhuma divergência nova identificada entre o comportamento medido esta semana e `engine_playbooks.md`.
+
+---
+
 ### 2026-09-21: Nona execução (vs. 14 set: segunda semana consecutiva sem hiato)
 
 **Score global:** 74/100 (Bom, em recuperação: 1 de 12 categorias N/D: Performance/CWV, 10ª semana). **Δ vs. 14 set: +2.**
