@@ -406,6 +406,23 @@ Visibility Score = 100 × ( w_citation × citation_rate
 3. **`net_sentiment`** (§7, mesma convenção do eixo do mapa de perceção),
    mapeado de -1..1 para 0..1. Só o negativo desconta.
 
+**Uma marca sem visibilidade nenhuma NÃO TEM score, e devolve `null`**
+(28 Set 2026). A terceira parcela é o sentimento numa escala de -1 a +1
+convertida para 0..1, portanto "sem sentimento nenhum" vale metade dela:
+`0,2 × 0,5 = 0,1`. Uma marca com zero citações, zero quota e zero
+sentimento recebia **10 em 100**, medido nesse dia no estudo do Barómetro
+de marcas. Dez pontos de brinde a quem nunca é nomeado não é um número
+que o cliente consiga explicar a ninguém.
+
+A guarda é sobre a VISIBILIDADE e não sobre o sentimento: `citation <= 0`
+e `sov <= 0` ao mesmo tempo. Uma marca nomeada com o sentimento por ler
+continua a ter score, porque a citação e a quota estão medidas. É a mesma
+saída, e quer dizer o mesmo, que o `null` de quando nada foi analisado:
+não há número a dar. O piso NÃO foi baixado dentro da conta
+(`max(0, net_sentiment)`), porque isso mudava o número de todas as marcas
+e de todas as semanas já gravadas; verificado nos nove clientes com
+medição, oito ficam ao dígito e só o Barómetro deixa de ter número.
+
 **Os pesos foram trocados a 28 Set 2026 e repostos no mesmo dia, e o erro
 foi de leitura minha.** O founder olhava para o cartão do painel, que
 mostrava "APARECES 50%" e "FACE AO LÍDER 30%" ao lado de duas
