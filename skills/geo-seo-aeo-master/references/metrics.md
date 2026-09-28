@@ -392,27 +392,30 @@ Visibility Score = 100 × ( w_citation × citation_rate
 
 | component | weight |
 |---|---|
-| `citation` | 0.3 |
-| `relative_sov` | 0.5 |
+| `citation` | 0.5 |
+| `relative_sov` | 0.3 |
 | `net_sentiment` | 0.2 |
 
 **As três parcelas, e porque são estas.**
 
-1. **`relative_sov`**, metade do peso, e não o SoV absoluto: a quota do
-   cliente a dividir pela quota do líder da categoria, com a mesma
-   atribuição fraccionária do §3. Lidera = parcela cheia.
-2. **`citation_rate`** (§1). Aparecer é a condição de tudo o resto (sem
-   menção não há quota nem retrato), e é por ser condição e não
-   resultado que pesa menos do que liderar.
+1. **`citation_rate`** (§1), metade do peso. Aparecer é a condição de
+   tudo o resto: sem menção não há quota nem retrato.
+2. **`relative_sov`**, e não o SoV absoluto: a quota do cliente a dividir
+   pela quota do líder da categoria, com a mesma atribuição fraccionária
+   do §3. Lidera = parcela cheia.
 3. **`net_sentiment`** (§7, mesma convenção do eixo do mapa de perceção),
    mapeado de -1..1 para 0..1. Só o negativo desconta.
 
-**A citação passou de 0,5 para 0,3 e a quota relativa de 0,3 para 0,5**
-(28 Set 2026, decisão do founder: *"esse apareces 30%, lideras 50%"*). O
-peso maior passa a estar em disputar quem lidera, e não em aparecer. A
-consequência a ter em conta ao ler séries: **o número de uma marca muda
-sem que a medição dela tenha mudado**, e a comparação com as semanas
-anteriores a esta data atravessa uma mudança de pesos.
+**Os pesos foram trocados a 28 Set 2026 e repostos no mesmo dia, e o erro
+foi de leitura minha.** O founder olhava para o cartão do painel, que
+mostrava "APARECES 50%" e "FACE AO LÍDER 30%" ao lado de duas
+percentagens medidas, e escreveu *"esse apareces 30%"* e *"lideras 50%"*.
+Eu li isso como uma régua nova; ele estava a apontar para os rótulos que
+queria fora do ecrã (*"eu nao quero ver o percentual em cima, porque
+confunde"*). Ficam os 0,5 / 0,3 / 0,2 de sempre. O que ficou da troca foi
+o que ele de facto pediu, e é no produto: o peso saiu do rótulo de cada
+parcela. Nota para quem ler uma série: as semanas medidas entre os dois
+commits desse dia saíram com a régua trocada.
 
 **Porque não é o SoV absoluto, com o caso que o obrigou.** A versão
 anterior era 0,4 citação + 0,4 SoV absoluto + 0,2 percentagem de
