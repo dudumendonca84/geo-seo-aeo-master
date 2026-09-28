@@ -67,11 +67,27 @@ Hoje é {{TODAY}}.
 - arxiv.org (cs.IR, cs.CL: query "generative search" OR "RAG" OR "retrieval augmented")
 - Google Research, Microsoft Research papers
 
-## Cortes de treino dos modelos (18 Set 2026)
+## Cortes de treino dos modelos (18 Set 2026, passagem obrigatória desde 28 Set)
 
-Quando uma corrida encontrar, na documentação primária de um fornecedor
-(TIER 1), a data de corte do corpus de treino de um modelo que o Tracker
-chama, actualiza `references/model_cutoffs.md` §1:
+**ISTO ERA PASSIVO E POR ISSO NÃO ACONTECIA.** A regra dizia "quando uma
+corrida encontrar", ou seja só se calhasse tropeçar na data a fazer outra
+coisa. Em dez dias não encontrou nenhuma; uma passagem feita de propósito a
+28 de Setembro encontrou duas em vinte minutos. Uma regra que depende de
+alguém tropeçar não é uma regra, é uma esperança.
+
+**Passa a ser uma passagem, como a dos motores: faz-se, mesmo em dia sem
+notícias.** Uma vez por semana chega (à segunda), porque um corte não muda
+entre dias; num dia em que um fornecedor anuncie modelo novo, faz-se nesse
+dia também.
+
+O que se faz: abrir a `source` de CADA linha de `references/model_cutoffs.md`
+§1 e ler o que lá está hoje. As linhas a `unknown` com `confirmed` preenchido
+já foram verificadas e o fornecedor não publica: reconfirmam-se na mesma, mas
+sem surpresa se continuarem vazias. As linhas sem `confirmed` nunca foram
+vistas e são as primeiras.
+
+Ao encontrar a data, na documentação primária de um fornecedor (TIER 1), de
+um modelo que o Tracker chama, actualiza `references/model_cutoffs.md` §1:
 
 1. a data em ISO (`YYYY-MM-DD`, ou `YYYY-MM` quando o fornecedor só dá o
    mês);
@@ -85,6 +101,18 @@ X, logo fechou antes de X"). Um modelo pode falhar em nomear uma marca por
 uma dúzia de razões que não são a data do corpus, e separar essas razões é
 exactamente para o que o ficheiro existe. Sem documentação do fornecedor, a
 célula fica `unknown` e o produto diz "por confirmar".
+
+**E não carregar a data do modelo irmão.** A 28 de Setembro a xAI publicava
+o corte do `grok-4.7` e nenhum para o `grok-4.3`, que é o que o Tracker
+chama. A tentação de escrever ali "May 2026" é a mesma inferência com outra
+roupa: é outro modelo, logo outro corpus.
+
+**Uma data que venha por CADEIA de model cards escreve-se com a cadeia à
+vista.** O `gemini-3.5-flash` só tem data porque o card dele remete para o
+do Gemini 3 Flash, e esse para o do 3 Pro, onde a frase existe. Isso é
+documentação primária e vale; o que não vale é escrever a data e calar os
+três saltos, porque quem a ler daqui a três meses não tem como saber que ela
+é herdada. A `note` leva a cadeia por extenso.
 
 ## Critérios
 
