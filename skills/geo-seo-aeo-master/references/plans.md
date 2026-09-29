@@ -100,16 +100,49 @@ surface, and that is a deliberate state rather than an open action: buying
 headroom for a tier nobody has bought yet is spending against a sale that
 has not happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no |
-| lite | brand | 50 | no | no | 1 | weekly | no | no | 149 | yes | yes |
-| pro | brand | 100 | yes | yes | 1 | weekly | yes | yes | 299 | yes | yes |
-| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes |
-| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no |
-| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no |
-| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no |
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial | agent |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no | no |
+| lite | brand | 50 | no | no | 1 | weekly | no | no | 149 | yes | yes | no |
+| pro | brand | 100 | yes | no | 1 | weekly | yes | no | 299 | yes | yes | no |
+| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes | yes |
+| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no | yes |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no | yes |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no | yes |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no | yes |
+
+**E o Agente sai do `pro` no mesmo dia** (*"e tiramos o agent também do
+pro"*). Coluna `agent`, escrita no `modules` do cliente como o
+`inception`, e pela mesma razão: é o segundo recurso que se esconde
+porque se VENDE, e não porque não sirva àquela marca.
+
+Fica do `business` para cima e nas três linhas de agência. O degrau
+deixa de ser só volume, que é o argumento mais fácil de comparar com uma
+ferramenta de 149 euros; perguntar em português aos próprios números não
+tem comparação no mercado.
+
+A coluna entra NO FIM da tabela e não ao lado do `inception`. As
+opcionais são posicionais no parser (`COLUNAS_OPCIONAIS` em
+`lib/skill/planos.ts`), e metê-la pelo meio deslocava o `price_eur`, o
+`public` e o `trial` em silêncio.
+
+**E o `pro` NÃO leva todos os motores (29 Set 2026).** Horas depois de
+pedir *"o pro para 100 por 299 com tudo"*, o founder corrigiu-se:
+*"vamos colocar menos motores no pro, pra justificar depois o aumento
+pro business"*. O `grok` e o `copilot` voltam a `no`.
+
+São exactamente as duas colunas que um plano liga e desliga, e o efeito
+é medível em vez de retórico. Contadas as linhas por pergunta nas três
+semanas até 29 Set, são **15** com tudo ligado (os quatro modelos com e
+sem pesquisa, o DeepSeek e o Mistral pelo treino, a Perplexity, o
+Copilot, as duas superfícies do Google e a Meta AI). Sem o Grok, que são
+duas, e sem o Copilot, que é uma, o `pro` mede **12**.
+
+O degrau para o `business` passa a ter três razões e não uma: o dobro
+das perguntas, a segunda medição semanal das prioritárias, e os dois
+motores. O que NÃO muda são as personas nem o Inception, que ficam no
+`pro`: cortar a medição é um degrau, cortar o que faz o produto valer a
+pena é outra coisa.
 
 ### A escada dobrou a 29 Set 2026, e o `pro` passou a ter tudo
 
