@@ -166,6 +166,15 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-09-22 | Latigid | 1/5 | 1.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 1, 4.ª semana consecutiva no mesmo slot |
 | 2026-09-22 | SmartLinks | 1/5 | 2.0 | = | 1/5 (só Claude) | Cobertura parcial; mantém Prompt 4 pos 2, 4.ª semana consecutiva |
 | **2026-09-22** | **Helder Mesquita** | **1/5** | **2.0** | **novo entrante em D1 (era 0/5 desde 06-30)** | 1/5 (só Claude) | Prompt 5 pos 2, via novo produto próprio LLMscope (llmscope.pt), lançado esta semana com Jorge Cruz |
+| 2026-09-29 | destaque.ai | 3/5 | 1.33 | +1 | 1/5 (só Claude) | P1 pos1, P4 pos2 (novo), P5 pos1 |
+| 2026-09-29 | Infinidata | 2/5 | 2.5 | +1 | 1/5 (só Claude) | P1 pos3 (novo), P2 pos2 |
+| 2026-09-29 | Marco Gouveia | 1/5 | 2.0 | = | 1/5 (só Claude) | P1 pos2, 7.ª semana |
+| 2026-09-29 | AP\|Portugal | 1/5 | 1.0 | = | 1/5 (só Claude) | P2 pos1 |
+| 2026-09-29 | Marketing Gabriel | 1/5 | 3.0 | +1 | 1/5 (só Claude) | P2 pos3 |
+| 2026-09-29 | 3HASH | 1/5 | 1.0 | +1 | 1/5 (só Claude) | P3 pos1; regressa após 2 semanas de ausência |
+| 2026-09-29 | Jelly | 1/5 | 3.0 | +1 | 1/5 (só Claude) | P3 pos3, via artigo ChatGPT Ads |
+| 2026-09-29 | SmartLinks | 1/5 | 1.0 | = | 1/5 (só Claude) | P4 pos1 (era pos2) |
+| 2026-09-29 | Helder Mesquita | 1/5 | 2.0 | = | 1/5 (só Claude) | P5 pos2 (LLMscope) |
 
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
