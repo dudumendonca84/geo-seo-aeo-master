@@ -103,13 +103,51 @@ has not happened.
 | plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no |
-| lite | brand | 25 | no | no | 1 | weekly | no | no | 149 | yes | yes |
-| pro | brand | 50 | no | no | 1 | weekly | yes | yes | 299 | yes | yes |
-| business | brand | 100 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes |
-| enterprise | brand | 200 | yes | yes | 10 | weekly | yes | yes | | yes | no |
+| lite | brand | 50 | no | no | 1 | weekly | no | no | 149 | yes | yes |
+| pro | brand | 100 | yes | yes | 1 | weekly | yes | yes | 299 | yes | yes |
+| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes |
+| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no |
 | agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no |
 | growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no |
 | agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no |
+
+### A escada dobrou a 29 Set 2026, e o `pro` passou a ter tudo
+
+Founder, ao olhar para esta tabela ao lado dos preços dos concorrentes:
+*"vamos mudar o lite para 50 prompts, o pro para 100 por 299 com tudo"*.
+
+A razão está medida e está em `destaque-ai-tracker/docs/precos-concorrentes-2026-09-02.md`.
+A 100 prompts o mercado pede **149 EUR** (Semantika, portuguesa),
+**$189** (Otterly) e **$245** (Peec, a 150). O `business` pedia **599 EUR**
+pelos mesmos 100, ou seja **quatro vezes** o concorrente direto em
+Portugal, e o `pro` dava 50 sem personas e sem Grok. A escada estava
+desenhada contra um mercado que ainda não existia quando foi escrita.
+
+**Ele pediu duas linhas e foram quatro, de propósito.** Mudar só o `lite`
+e o `pro` deixava o `business` a vender 100 prompts por 599 ao lado de um
+`pro` com os MESMOS 100 e tudo ligado por 299: um degrau que ninguém
+compra, descoberto por um cliente à frente de uma proposta. Cada tecto
+dobrou (50, 100, 200, 400) e a escada volta a ter sentido em cada degrau.
+
+O que separa o `pro` do `business` deixou de ser o que está ligado e passa
+a ser **quanto** se mede: o dobro das perguntas e as repetições semanais
+das prioritárias, que é o que distingue variação normal de mudança real.
+
+**O custo aguenta.** Medido em três clientes, 0,094 a 0,097 USD por
+pergunta: 100 perguntas são cerca de **41 USD/mês** contra 299 EUR, e as
+200 do `business` com duas repetições nas prioritárias ficam abaixo de
+120 USD contra 599 EUR. O que NÃO está medido continua a ser o tecto
+mensal da SerpApi, e é ele que limita o volume que um tier pode prometer.
+
+**As três linhas de agência não se mexeram**, e ficam por rever: com o
+`pro` a dar 100 prompts por 299, o `agency-starter` a dar 50 por 1190
+precisa de outro argumento que não seja o volume. É uma negociação
+separada e não se resolve de lado.
+
+**Quem já está num plano não muda sozinho.** A tabela decide o que a
+aplicação de um plano ESCREVE nas colunas do cliente; um cliente já
+aplicado fica como está até alguém reaplicar. A página pública de preços,
+essa, mostra os números novos dentro de uma hora.
 
 **`starter` is not sold and is kept only so a client already on it keeps its
 entitlements.** It exists because the agency tier in the 2026 catalogue is
