@@ -79,6 +79,42 @@ não é onde o sítio vive.
    scan cujo resultado contradiz outro do mesmo dia é motivo para não
    escrever a ação, não para escolher um deles.
 
+### O caminho por onde se mede faz parte da medição
+
+**Uma medição feita através de um proxy, de uma VPN ou de uma rede de
+empresa não é uma medição do site: é uma medição dos dois.** E o erro que
+isso produz não parece erro nenhum, parece um sintoma do outro lado.
+
+Do mesmo caso, e é a parte cara. As primeiras leituras do apex saíram
+assim:
+
+| | pelo proxy da sessão | por ligação direta |
+|---|---|---|
+| `https://dssmarthousing.com` | 200, 403 e ligação recusada, sem padrão | **403 em 12 de 12** |
+| `https://hosts.dssmarthousing.com` | falha no aperto de mão TLS | **503 em 7 de 7** |
+
+Com o primeiro par escrevi "resposta errática, servidor partido". Com o
+segundo, a verdade é outra e é pior: o endereço está morto de forma
+determinística, para toda a gente, e isso é uma ação com prazo. O
+"errático" era o proxy a entrar e a sair do caminho.
+
+**A regra:** um número sobre o comportamento de um servidor mede-se pela
+ligação mais curta que houver, e a via usada declara-se junto do número.
+Quando só há uma via possível e ela é indireta, o resultado não diz
+"o site faz X", diz "por esta via o site fez X".
+
+**E o sinal de que a via está a mentir é a incoerência.** Resultados
+diferentes para o mesmo pedido repetido, um erro de TLS num sítio com
+certificado válido, ou um código que não faz sentido para o servidor em
+causa. Nenhuma dessas coisas se reporta antes de ser repetida por outro
+caminho. Um servidor a sério erra de forma aborrecida e repetida; a
+variedade é quase sempre nossa.
+
+**O caso que fecha o assunto:** provei que aquele proxy mentia num
+endereço e continuei a citar, do endereço ao lado, números medidos por
+ele. Depois de se apanhar a via a mentir uma vez, **todas as medições
+feitas por ela voltam a zero**, e não só a que foi apanhada.
+
 ### O que é bloqueio a sério, e como se distingue
 
 Bloqueio é o endereço que serve o sítio recusar **o agente de um motor**
@@ -89,7 +125,7 @@ bloqueio:
 | Sintoma | O que é quase sempre |
 |---|---|
 | 403 no apex e 200 no `www` | redirecionamento em falta ou mal configurado |
-| resposta errática (200, 403, timeout) sem relação com o agente | servidor partido, não política |
+| resposta errática (200, 403, timeout) sem relação com o agente | **primeiro, a via por onde se mediu**; depois de confirmada por ligação direta, servidor partido e não política |
 | 503 com erro entre a rede de entrega e a origem | o sítio está em baixo, e é urgência e não GEO |
 | 404 no `/sitemap.xml` com `/sitemaps.xml` a funcionar | convenção diferente, e o `robots.txt` diz qual é |
 | `Disallow` só em `/admin`, `/cart`, `/checkout` | normal, e não afeta o que interessa |
