@@ -35,6 +35,71 @@ Formato da ação: sítio nomeado + evidência de porquê esse sítio (quantas r
 
 ---
 
+## Regra de verificação: o anfitrião que serve, e o que já lá está
+
+**Uma ação que manda fazer o que já está feito gasta o crédito do produto
+inteiro.** É pior do que não dizer nada: quem conhece o sítio percebe em
+dez segundos que ninguém foi ver, e passa a ler o resto com a mesma
+desconfiança.
+
+Nasce de um caso medido (D&S Smart Housing, 30 Set 2026). O produto
+escreveu, com severidade alta:
+
+> A homepage recusa a recolha com 403. Confirma com quem aloja o site por
+> que motivo a homepage devolve 403 a pedidos fora do browser, e liberta
+> os agentes de recolha dos motores (GPTBot, OAI-SearchBot, ClaudeBot,
+> PerplexityBot, Google-Extended) no robots.txt e na firewall.
+
+Verificado a seguir, três voltas e três agentes: o `www.dssmarthousing.com`
+devolveu **200 com 61 125 bytes ao GPTBot, nove vezes em nove**, e o
+`robots.txt` dele é `User-Agent: *` sem um único `Disallow`. Não havia
+nada a libertar. O 403 era do domínio sem `www`, que é outro anfitrião e
+não é onde o sítio vive.
+
+### As quatro perguntas antes de escrever uma ação técnica
+
+1. **Que anfitrião serve o sítio?** O apex e o `www` são hosts diferentes e
+   podem ter comportamentos opostos. Um 403, um 404 ou um 503 num deles
+   não é uma afirmação sobre o outro. A ação nomeia o anfitrião medido.
+2. **Isto já está feito?** Antes de mandar publicar `robots.txt`, sitemap,
+   `llms.txt`, schema ou redirecionamento, ver se existe. "O scan não
+   encontrou" é o que o scan viu, não é um facto sobre o sítio: pode ser
+   o anfitrião errado, um endereço convencional diferente
+   (`/sitemaps.xml` em vez de `/sitemap.xml`) ou uma recolha falhada.
+3. **O facto e a causa são a mesma afirmação?** Quase nunca. "O site é
+   citado em 5 de 124 respostas" é medição. "Porque a homepage recusa
+   robôs" é uma dedução, e é a parte que decide o trabalho que o cliente
+   vai fazer. Uma causa que não se verificou declara-se como hipótese, ou
+   fica de fora.
+4. **A fotografia em que me baseio é de quando?** Uma ação é escrita a
+   partir de um contexto que foi montado num instante anterior. Se o scan
+   entretanto correu outra vez, o número que está à frente é velho. Um
+   scan cujo resultado contradiz outro do mesmo dia é motivo para não
+   escrever a ação, não para escolher um deles.
+
+### O que é bloqueio a sério, e como se distingue
+
+Bloqueio é o anfitrião que serve o sítio recusar **o agente de um motor**
+enquanto serve um browser. Prova-se com o mesmo pedido em dois agentes,
+repetido, e declara-se com os dois resultados lado a lado. Não são
+bloqueio:
+
+| Sintoma | O que é quase sempre |
+|---|---|
+| 403 no apex e 200 no `www` | redirecionamento em falta ou mal configurado |
+| resposta errática (200, 403, timeout) sem relação com o agente | anfitrião partido, não política |
+| 503 com erro entre a rede de entrega e a origem | o sítio está em baixo, e é urgência e não GEO |
+| 404 no `/sitemap.xml` com `/sitemaps.xml` a funcionar | convenção diferente, e o `robots.txt` diz qual é |
+| `Disallow` só em `/admin`, `/cart`, `/checkout` | normal, e não afeta o que interessa |
+
+E o inverso tem o mesmo peso: quando o acesso está bom e a marca não é
+citada, **dizê-lo**. "O `robots.txt` está aberto e o GPTBot recebe a página
+inteira: o que falta não é acesso, é conteúdo" vale mais do que a ação
+que não se escreveu, porque fecha a porta ao primeiro palpite de toda a
+gente e manda o esforço para onde ele rende.
+
+---
+
 ## DIMENSÃO 1: Technical foundation
 
 ### Pattern: Gemini citation 0% mas outros motores >5%
