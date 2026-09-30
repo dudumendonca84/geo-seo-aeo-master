@@ -35,7 +35,7 @@ Formato da ação: sítio nomeado + evidência de porquê esse sítio (quantas r
 
 ---
 
-## Regra de verificação: o anfitrião que serve, e o que já lá está
+## Regra de verificação: o endereço que serve, e o que já lá está
 
 **Uma ação que manda fazer o que já está feito gasta o crédito do produto
 inteiro.** É pior do que não dizer nada: quem conhece o sítio percebe em
@@ -53,18 +53,20 @@ escreveu, com severidade alta:
 Verificado a seguir, três voltas e três agentes: o `www.dssmarthousing.com`
 devolveu **200 com 61 125 bytes ao GPTBot, nove vezes em nove**, e o
 `robots.txt` dele é `User-Agent: *` sem um único `Disallow`. Não havia
-nada a libertar. O 403 era do domínio sem `www`, que é outro anfitrião e
+nada a libertar. O 403 era do domínio sem `www`, que é outro endereço e
 não é onde o sítio vive.
 
 ### As quatro perguntas antes de escrever uma ação técnica
 
-1. **Que anfitrião serve o sítio?** O apex e o `www` são hosts diferentes e
-   podem ter comportamentos opostos. Um 403, um 404 ou um 503 num deles
-   não é uma afirmação sobre o outro. A ação nomeia o anfitrião medido.
+1. **Que endereço serve o sítio?** `exemplo.pt` e `www.exemplo.pt` são
+   dois nomes distintos para quem vai lá buscar, e podem ter
+   comportamentos opostos. Um 403, um 404 ou um 503 num deles não é uma
+   afirmação sobre o outro. A ação nomeia o endereço medido, com o `www`
+   escrito ou não escrito conforme o que foi testado.
 2. **Isto já está feito?** Antes de mandar publicar `robots.txt`, sitemap,
    `llms.txt`, schema ou redirecionamento, ver se existe. "O scan não
    encontrou" é o que o scan viu, não é um facto sobre o sítio: pode ser
-   o anfitrião errado, um endereço convencional diferente
+   o endereço errado, uma convenção diferente
    (`/sitemaps.xml` em vez de `/sitemap.xml`) ou uma recolha falhada.
 3. **O facto e a causa são a mesma afirmação?** Quase nunca. "O site é
    citado em 5 de 124 respostas" é medição. "Porque a homepage recusa
@@ -79,7 +81,7 @@ não é onde o sítio vive.
 
 ### O que é bloqueio a sério, e como se distingue
 
-Bloqueio é o anfitrião que serve o sítio recusar **o agente de um motor**
+Bloqueio é o endereço que serve o sítio recusar **o agente de um motor**
 enquanto serve um browser. Prova-se com o mesmo pedido em dois agentes,
 repetido, e declara-se com os dois resultados lado a lado. Não são
 bloqueio:
@@ -87,7 +89,7 @@ bloqueio:
 | Sintoma | O que é quase sempre |
 |---|---|
 | 403 no apex e 200 no `www` | redirecionamento em falta ou mal configurado |
-| resposta errática (200, 403, timeout) sem relação com o agente | anfitrião partido, não política |
+| resposta errática (200, 403, timeout) sem relação com o agente | servidor partido, não política |
 | 503 com erro entre a rede de entrega e a origem | o sítio está em baixo, e é urgência e não GEO |
 | 404 no `/sitemap.xml` com `/sitemaps.xml` a funcionar | convenção diferente, e o `robots.txt` diz qual é |
 | `Disallow` só em `/admin`, `/cart`, `/checkout` | normal, e não afeta o que interessa |
