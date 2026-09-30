@@ -72,6 +72,51 @@ editorial_voice: sober, primary-source-anchored, no hype
 
 **Actualização 15 Set 2026: a data chega, a mudança entra em vigor, sem confirmação de impacto real ainda:** pesquisa dirigida hoje (`WebFetch` a blog.cloudflare.com continua bloqueado, `EGRESS_BLOCKED`) encontrou uma nova vaga de artigos técnicos publicados precisamente hoje (chudi.dev, novaproxy.io, royalplugins.com, hosting.com, pressbot.io, lovedby.ai, theaiinsider.tech, artificialintelligenceherald.com), todos a confirmar, nenhum a contradizer, a mesma mecânica já registada: desde hoje, domínios novos, clientes novos e todos os clientes existentes no tier Free têm Training e Agent bloqueados por omissão em páginas com anúncios; clientes pagos com definições já configuradas não mudam automaticamente. **Sem confirmação de impacto real**: nenhum relato datado de hoje de um site a perder citações ou acesso de crawler por causa desta mudança especificamente, nem declaração de Google, Bing, OpenAI ou Anthropic sobre os seus próprios crawlers em resposta a ela. Nota de precisão: pesquisa de hoje encontrou artigos (remoteworkeurope.eu, playwire.com) que descrevem um toggle Cloudflare mais antigo e distinto, "Block AI bots", por omissão em domínios novos desde Jul 2025, sem condição de anúncios/tier: não é a mudança de categoria Training/Agent em páginas com anúncios de hoje, e os dois não devem confundir-se (ver `references/frameworks.md` §2, nota adicionada hoje). **Recomendação ao founder**: como o prazo de acção (verificar clientes Cloudflare antes do corte) já não tem janela por cumprir, este alerta pode ser considerado cumprido e fechado; o acompanhamento contínuo (checar AI Crawl Control em qualquer cliente novo/Free na Cloudflare) passa a fazer parte do fluxo de auditoria já actualizado, não precisa de ficar como alerta activo. Fica à decisão do founder remover o bloco.
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-30
+
+Radar LLM/IA: a OpenAI apresentou na DevDay (29 Set) o **GPT-6.1 Sol** (`gpt-6.1-sol`): $2/$10 por milhão de tokens de entrada/saída, contexto 1.050.000, saída máx. 128.000, corte de conhecimento 30 Abr 2026, com web search e file search na API ([developers.openai.com](https://developers.openai.com/api/docs/models/gpt-6.1-sol), lido diretamente). Também nova camada de velocidade "Ultrafast" e um plano ChatGPT Pro 500 ($500/mês); o Pro 200 passa a incluir metade do uso de Work e Codex a partir de 30 Out ([The Next Web](https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan), secundária). Sem mudança de preço nos restantes fornecedores.
+
+GEO/AEO: o Google lançou globalmente, para todos os utilizadores, a funcionalidade de monitorização no AI Mode (antes só Pro/Ultra) e testa cartões de citação no fundo das respostas dos AI Overviews em desktop ([SE Roundtable](https://www.seroundtable.com/recap-09-29-2026-42182.html), 29 Set). Nenhum anúncio de ads ou checkout no ChatGPT na DevDay encontrado nas fontes lidas.
+
+SEO/Google: September 2026 Spam Update continua em rollout; a Google recorreu da decisão da Comissão Europeia sobre partilha de dados de pesquisa ao abrigo do DMA (mesma fonte).
+
+Implicações: (1) GPT-6.1 Sol é awareness: o Tracker continua a medir `gpt-5.6-sol` até a OpenAI declarar default no Chat principal; rever quando isso acontecer. (2) Monitorização do AI Mode para todos: hoje, confirmar com um cliente ativo se a função aparece na conta e se serve de fonte gratuita de sinal para o relatório mensal. (3) Ads Manager PT: sem caso novo; a decisão do founder continua em aberto, sem prazo novo.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado); cortes de treino: passagem semanal é à segunda, mas o GPT-6.1 Sol foi verificado hoje por ser modelo novo.
+
+Corrida completa.
+
+## 2026-09-30
+
+### 🔵 Anúncios oficiais
+
+- **OpenAI: GPT-6.1 Sol**: [developers.openai.com](https://developers.openai.com/api/docs/models/gpt-6.1-sol) (lido diretamente, 30 Set 2026). $2/$10 por milhão de tokens (input em cache a 5% do preço; 2x/1,5x acima de 272K de input), contexto 1.050.000, saída 128.000, corte 30 Abr 2026, esforço de raciocínio até `max`, web search e computer use suportados. Anunciado na DevDay de 29 Set como "quase Astra" a cerca de 20% do preço.
+
+### ⚙️ Mudanças nas plataformas
+
+- **OpenAI: Ultrafast e planos ChatGPT**: [The Next Web](https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan) e [Neowin](https://www.neowin.net/news/openai-unveils-500-chatgpt-pro-plan-decisions-api-and-major-codex-upgrades-at-devday-2026/) (secundárias; `openai.com` bloqueado a esta sessão). Pro 500 ($500/mês, único com Ultrafast, até 8x mais rápido no Codex); Pro 200 com metade do uso de Work/Codex a partir de 30 Out. "Dots" (agentes sempre ativos no ChatGPT) a chegar a Pro e Business Premium. Nada sobre pesquisa, ads ou comércio.
+- **Google AI Mode: monitorização para todos**: [SE Roundtable](https://www.seroundtable.com/recap-09-29-2026-42182.html) (29 Set). A funcionalidade de monitorização deixa de ser exclusiva de Pro/Ultra. Teste de cartões de citação no fundo dos AI Overviews em desktop.
+- **Ads Manager PT**: sem caso novo de primeira mão; ver alerta no topo do feed.
+- **Bing AI Performance API, comércio agêntico (ACP/UCP), Cloudflare, AI ads na UE**: sem desenvolvimento novo confirmado por fonte primária.
+
+### 💡 Implicações para destaque.ai
+
+- GPT-6.1 Sol: awareness, sem jogada de pitch. Manter `gpt-5.6-sol` no Tracker até default confirmado; rever na próxima segunda (5 Out).
+- Monitorização do AI Mode para todos: verificar hoje numa conta de cliente se está visível e avaliar como fonte complementar ao Tracker.
+
+### 🚨 Alerta ao founder
+
+Sem item novo e material hoje. O alerta Ads Manager PT segue aberto sem escalar.
+
+### Passagem diária por motor
+
+26 blocos revistos; `meta:` reescrita em todos (2026-09-30). Substância: `chatgpt` (DevDay sem nada sobre pesquisa, ads ou comércio), `google_ai_mode` e `google_aio` (monitorização global e teste de cartões).
+
+### Aprendizagem interna
+
+Sem acesso aos dados de exportação do Tracker nesta sessão: sem leitura hoje.
+
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-09-29
 
 Radar LLM/IA: a Anthropic lançou o **Claude Sonnet 5.5** a 28 Set 2026 (`claude-sonnet-5-5`), o segundo modelo da família 5.5 em menos de uma semana, depois do Opus 5.5 (22 Set). Preço $2/$10 por milhão de tokens de entrada/saída, igual ao Sonnet 5; contexto 1M, saída máxima 128k, corte de conhecimento Jun 2026; Haiku 5.5 anunciado para "as próximas semanas". Confirmado por leitura direta da doc oficial ([platform.claude.com](https://platform.claude.com/docs/en/models/sonnet-5-5/overview)) e por [Gizmodo](https://gizmodo.com/anthropic-releases-its-second-new-ai-model-in-less-than-a-week-2000818514). Sem confirmação de default em claude.ai; `anthropic.com/news/claude-sonnet-5-5` devolveu 404 (a página de anúncio está em `anthropic.com/claude-sonnet-5-5`, não lida). Absorvido em `references/models.md` e `model_cutoffs.md`; mapping do Deck Builder `claude` inalterado.

@@ -113,3 +113,4 @@
 | 2026-05-25 | ✅ OK | 4 anúncios oficiais, 1 estudo, 1 mudança plataforma, 1 paper académico. Core update + Google I/O 2026 dominam. Sem drafts (segunda-feira). |
 | 2026-08-15 | ✅ Sucesso | 1 anúncio oficial (Google AI Overviews), 2 estudos/dados (TollBit scraping UE, queixa APIG/Arcom), 1 mudança de plataforma (Perplexity vs markdown ads). Sábado — sem drafts semanais. |
 | 2026-08-22 | OK | 5 itens adicionados (1 anúncio oficial, 3 estudos/dados, 1 mudança de plataforma, 1 paper). Sem entrada semanal (não é sexta-feira). |
+| 2026-09-30 | OK | 1 anúncio oficial (GPT-6.1 Sol, doc lida diretamente), 2 mudanças de plataforma (DevDay planos/Ultrafast; AI Mode monitorização global). Absorvido: models.md (GPT-6.1 Sol + preço), model_cutoffs.md (gpt-6.1-sol). 26 blocos de playbooks revistos. Digest sem Gmail no feed. Quarta-feira, sem drafts. |
