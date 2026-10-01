@@ -35,6 +35,109 @@ Formato da ação: sítio nomeado + evidência de porquê esse sítio (quantas r
 
 ---
 
+## Regra de verificação: o endereço que serve, e o que já lá está
+
+**Uma ação que manda fazer o que já está feito gasta o crédito do produto
+inteiro.** É pior do que não dizer nada: quem conhece o sítio percebe em
+dez segundos que ninguém foi ver, e passa a ler o resto com a mesma
+desconfiança.
+
+Nasce de um caso medido (D&S Smart Housing, 30 Set 2026). O produto
+escreveu, com severidade alta:
+
+> A homepage recusa a recolha com 403. Confirma com quem aloja o site por
+> que motivo a homepage devolve 403 a pedidos fora do browser, e liberta
+> os agentes de recolha dos motores (GPTBot, OAI-SearchBot, ClaudeBot,
+> PerplexityBot, Google-Extended) no robots.txt e na firewall.
+
+Verificado a seguir, três voltas e três agentes: o `www.dssmarthousing.com`
+devolveu **200 com 61 125 bytes ao GPTBot, nove vezes em nove**, e o
+`robots.txt` dele é `User-Agent: *` sem um único `Disallow`. Não havia
+nada a libertar. O 403 era do domínio sem `www`, que é outro endereço e
+não é onde o sítio vive.
+
+### As quatro perguntas antes de escrever uma ação técnica
+
+1. **Que endereço serve o sítio?** `exemplo.pt` e `www.exemplo.pt` são
+   dois nomes distintos para quem vai lá buscar, e podem ter
+   comportamentos opostos. Um 403, um 404 ou um 503 num deles não é uma
+   afirmação sobre o outro. A ação nomeia o endereço medido, com o `www`
+   escrito ou não escrito conforme o que foi testado.
+2. **Isto já está feito?** Antes de mandar publicar `robots.txt`, sitemap,
+   `llms.txt`, schema ou redirecionamento, ver se existe. "O scan não
+   encontrou" é o que o scan viu, não é um facto sobre o sítio: pode ser
+   o endereço errado, uma convenção diferente
+   (`/sitemaps.xml` em vez de `/sitemap.xml`) ou uma recolha falhada.
+3. **O facto e a causa são a mesma afirmação?** Quase nunca. "O site é
+   citado em 5 de 124 respostas" é medição. "Porque a homepage recusa
+   robôs" é uma dedução, e é a parte que decide o trabalho que o cliente
+   vai fazer. Uma causa que não se verificou declara-se como hipótese, ou
+   fica de fora.
+4. **A fotografia em que me baseio é de quando?** Uma ação é escrita a
+   partir de um contexto que foi montado num instante anterior. Se o scan
+   entretanto correu outra vez, o número que está à frente é velho. Um
+   scan cujo resultado contradiz outro do mesmo dia é motivo para não
+   escrever a ação, não para escolher um deles.
+
+### O caminho por onde se mede faz parte da medição
+
+**Uma medição feita através de um proxy, de uma VPN ou de uma rede de
+empresa não é uma medição do site: é uma medição dos dois.** E o erro que
+isso produz não parece erro nenhum, parece um sintoma do outro lado.
+
+Do mesmo caso, e é a parte cara. As primeiras leituras do apex saíram
+assim:
+
+| | pelo proxy da sessão | por ligação direta |
+|---|---|---|
+| `https://dssmarthousing.com` | 200, 403 e ligação recusada, sem padrão | **403 em 12 de 12** |
+| `https://hosts.dssmarthousing.com` | falha no aperto de mão TLS | **503 em 7 de 7** |
+
+Com o primeiro par escrevi "resposta errática, servidor partido". Com o
+segundo, a verdade é outra e é pior: o endereço está morto de forma
+determinística, para toda a gente, e isso é uma ação com prazo. O
+"errático" era o proxy a entrar e a sair do caminho.
+
+**A regra:** um número sobre o comportamento de um servidor mede-se pela
+ligação mais curta que houver, e a via usada declara-se junto do número.
+Quando só há uma via possível e ela é indireta, o resultado não diz
+"o site faz X", diz "por esta via o site fez X".
+
+**E o sinal de que a via está a mentir é a incoerência.** Resultados
+diferentes para o mesmo pedido repetido, um erro de TLS num sítio com
+certificado válido, ou um código que não faz sentido para o servidor em
+causa. Nenhuma dessas coisas se reporta antes de ser repetida por outro
+caminho. Um servidor a sério erra de forma aborrecida e repetida; a
+variedade é quase sempre nossa.
+
+**O caso que fecha o assunto:** provei que aquele proxy mentia num
+endereço e continuei a citar, do endereço ao lado, números medidos por
+ele. Depois de se apanhar a via a mentir uma vez, **todas as medições
+feitas por ela voltam a zero**, e não só a que foi apanhada.
+
+### O que é bloqueio a sério, e como se distingue
+
+Bloqueio é o endereço que serve o sítio recusar **o agente de um motor**
+enquanto serve um browser. Prova-se com o mesmo pedido em dois agentes,
+repetido, e declara-se com os dois resultados lado a lado. Não são
+bloqueio:
+
+| Sintoma | O que é quase sempre |
+|---|---|
+| 403 no apex e 200 no `www` | redirecionamento em falta ou mal configurado |
+| resposta errática (200, 403, timeout) sem relação com o agente | **primeiro, a via por onde se mediu**; depois de confirmada por ligação direta, servidor partido e não política |
+| 503 com erro entre a rede de entrega e a origem | o sítio está em baixo, e é urgência e não GEO |
+| 404 no `/sitemap.xml` com `/sitemaps.xml` a funcionar | convenção diferente, e o `robots.txt` diz qual é |
+| `Disallow` só em `/admin`, `/cart`, `/checkout` | normal, e não afeta o que interessa |
+
+E o inverso tem o mesmo peso: quando o acesso está bom e a marca não é
+citada, **dizê-lo**. "O `robots.txt` está aberto e o GPTBot recebe a página
+inteira: o que falta não é acesso, é conteúdo" vale mais do que a ação
+que não se escreveu, porque fecha a porta ao primeiro palpite de toda a
+gente e manda o esforço para onde ele rende.
+
+---
+
 ## DIMENSÃO 1: Technical foundation
 
 ### Pattern: Gemini citation 0% mas outros motores >5%
@@ -817,6 +920,48 @@ Convergem no mesmo vocabulário e nas mesmas fontes. Uma peça bem colocada
 mexe em vários ao mesmo tempo, e o plano deve concentrar em vez de
 espalhar. É também o cenário em que um domínio dominante vale mais: se
 todos passam por lá, estar lá é a alavanca.
+
+### Pattern: termo estranho que é o VOCABULÁRIO DO COMPRADOR na mesma categoria
+
+**É o caso mais frequente dos cinco, e é o único que não é problema
+nenhum.** Está escrito em quinto lugar e devia ser lido em primeiro: um
+termo que a nossa pergunta não tinha é, por omissão, a palavra com que o
+comprador pensa o assunto, e não um desvio.
+
+Medido no Continente (1 Out 2026), 44 consultas distintas numa semana:
+`ranking DECO`, `testes DECO marcas próprias`, `supermercados mais
+baratos`, `marcas próprias Portugal`, `opções sem glúten`, `melhores
+peixarias`, `cartões fidelização`, `entrega no mesmo dia`, `promoções
+semanais`, `críticas ao Continente`, `pontos fortes e fracos`,
+`sustentabilidade`, `metas ambientais`. **Zero são outra indústria.**
+
+Cada um destes é o título de uma peça, e dois deles dizem onde ela tem de
+ser lida: o motor vai ao `ranking DECO` e aos `testes DECO marcas
+próprias` decidir qual é o melhor supermercado. Isso é uma ação com
+nome e endereço, não um aviso.
+
+**Dimensão: content (2), e nunca positioning.** Uma peça por termo, pela
+ordem das consultas que trouxeram mais páginas. Quando o termo nomeia uma
+fonte de terceiros (uma associação de consumidores, um comparador, um
+ranking), a ação tem duas metades: estar lá, e publicar o dado próprio
+equivalente.
+
+**Como se distingue dos outros quatro, por ordem de teste:**
+
+| Pergunta | Se sim |
+|---|---|
+| O termo nomeia uma fonte, um ranking ou uma instituição? | vocabulário do comprador, e a ação é estar lá |
+| É o mesmo conceito da categoria noutra língua? | tradução (ver o padrão acima) |
+| É um atributo, um preço, um formato ou uma ocasião da categoria? | vocabulário do comprador |
+| Nomeia um país ou uma região que não é o nosso mercado? | outro mercado |
+| Pertence a outra indústria onde o nome da categoria também existe? | outro sentido, e só aqui é posicionamento |
+
+**A ordem não é decorativa.** O teste da colisão de nomes é o último
+porque é o mais raro e o mais caro de errar: foi medido uma vez, numa
+marca cujo nome colidia com geotecnia, e generalizá-lo fez o produto
+chamar "saiu do assunto" a treze consultas de supermercado e mandar o
+cliente corrigi-las com posicionamento. **Em dúvida entre o primeiro e o
+último, é o primeiro.**
 
 ### Pattern: termo estranho que é OUTRO SENTIDO do mesmo nome
 
