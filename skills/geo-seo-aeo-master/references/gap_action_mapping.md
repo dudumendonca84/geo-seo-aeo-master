@@ -274,6 +274,29 @@ um dos três, a ação é outra:
 Em dúvida entre duas linhas, lê os `page_examples`. Se não bastarem,
 **não se abre a ação**, que é a regra de sempre deste ficheiro.
 
+### 1b. O detalhe de um check é um FACTO, e a ação é tua
+
+Desde 1 Out 2026 o produto deixou de escrever o conselho dentro do
+detalhe. O que chega em `page_recommendations` e na Saúde do site é o
+que FALTA na página, verificado nela: "sem `shippingDetails` nem
+`hasDeliveryMethod` no `Offer`", "sem atributo `lang` no `<html>`",
+"sem `sameAs`".
+
+Isso é deliberado e muda o teu trabalho: **o facto é mecânico e já vem
+feito; escolher a ação é o que te cabe**, e é por isso que o pedido
+passou a trazer o que o negócio é. O detalhe não diz, e não deve dizer,
+"põe `shippingDetails`" nem "declara pt-PT": a primeira está errada num
+supermercado e a segunda num cliente inglês.
+
+Duas consequências práticas:
+
+- **Não repitas o facto como se fosse a ação.** "Adicionar
+  `shippingDetails`" não é um plano; é o mesmo check escrito outra vez.
+  A ação diz onde a condição vive neste negócio e quem a escreve.
+- **Um facto sem ação certa não vira ação.** Se os `page_examples` não
+  chegarem para decidir, diz-se que não chega, pela regra de sempre
+  deste ficheiro.
+
 ### 2. O que já está no plano
 
 Chega `existing_plan`: os títulos das ações, a dimensão, o estado e desde
