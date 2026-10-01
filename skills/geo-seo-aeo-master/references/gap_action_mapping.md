@@ -681,6 +681,70 @@ Top-X listicles têm presence forte em comparison-intent queries (LLM intent_sta
 
 ## DIMENSÃO 5: Social & community signals
 
+### Pattern: O LinkedIn é citado nesta categoria e a marca aparece lá pela PÁGINA, não pelas pessoas
+
+#### Quando este pattern se aplica, e quando não
+
+**Mede-se antes de se abrir.** O gatilho é `linkedin.com` ser uma fatia
+mensurável das citações DESTE cliente, não a categoria em abstrato.
+Medido a 1 Out 2026 sobre 60 dias: 2,0% das citações da Congruent e 1,4%
+das da destaque.ai (B2B), contra 0,3% no retalho, 0,2% no automóvel e
+0,0% nos três hospitais. Para quem está em baixo desta tabela, isto é
+ruído e a dimensão 5 resolve-se noutro sítio.
+
+É por isto que o pattern existe em vez de uma regra geral: a LinkedIn
+publica que é o **domínio mais citado em perguntas profissionais**
+(Profound, 2026, via `benchmarks.md` §53), e isso é verdade na população
+dela e falso como prioridade num catálogo português de retalho. Citar a
+manchete a um cliente sem a medição dele ao lado é o erro que a
+`## Regra de verificação` deste ficheiro proíbe.
+
+#### Hipóteses
+1. Só a Company Page publica, e as pessoas não. É o caso comum.
+2. Publica-se a cadência certa com o formato errado: posts soltos, sem peça longa que os sustente.
+3. Há peças longas e não há ligação de duas vias entre o site e a Page.
+
+#### Ação
+**As pessoas antes da página, e é medido:** 75% das citações do LinkedIn
+vêm de perfis individuais e 25% de Company Pages (Meltwater, 2026). Por
+tipo de conta, 40% são membros estabelecidos (10 mil ou mais
+seguidores), 35% são membros comuns com cadência regular, e 25% são
+páginas. **O cargo pesa menos do que a especialidade demonstrada**: CEOs
+são 8,2% do conteúdo citado e fundadores 7,5%, o que quer dizer que um
+especialista sem título chega lá.
+
+Nomear, como sempre: as duas ou três pessoas da casa que vão publicar, o
+tema que cada uma assina, e a cadência. Não "ativar os colaboradores".
+
+**Artigo primeiro, post a seguir.** Os artigos longos valem ~60% das
+citações do LinkedIn e os posts ~40% (dado interno da LinkedIn,
+direcional). O desenho que o documento propõe, e que é consistente com o
+resto deste ficheiro, é uma peça longa por tema e dois ou três posts a
+apontar-lhe.
+
+**Ligação de duas vias** entre o site e a Company Page, para a entidade
+ficar ligada (dimensão 3) em vez de serem dois objetos soltos.
+
+#### Esforço
+Uma peça longa por mês e dois posts por semana, por pessoa ativada.
+Primeiro mês inteiro antes de haver número para ler.
+
+#### Impacto típico
+**Não prometer semanas.** O tempo da publicação à primeira citação tem
+mediana de 6,81 dias, P75 de 18,68 e P90 de 37,10 (Profound, log de
+agentes ChatGPT + Claude, ~900 páginas, Mar-Mai 2026). Trinta dias é o
+chão para um veredicto, e um número achatado às três semanas é o
+esperado e não um falhanço. Quando o motor cita LinkedIn tende a
+preservar o fraseado original (similaridade semântica 0,57-0,60,
+Semrush 2026), o que torna a peça mais previsível do que a média.
+
+#### Fonte
+`benchmarks.md` §53. **Material de vendedor** (a LinkedIn a recomendar o
+LinkedIn) para os números internos; os de terceiros (Profound,
+Meltwater, Semrush, Ahrefs) estão identificados um a um lá.
+
+---
+
 ### Pattern: Ausente das comunidades que os motores sobre-citam (Reddit, HN, Stack Overflow)
 
 #### Hipóteses
