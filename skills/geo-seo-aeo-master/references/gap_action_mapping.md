@@ -310,6 +310,50 @@ técnico" e o "como avaliar uma agência" cada um duas vezes. Oito ações de
 conteúdo com repetições lá dentro **lêem-se como lista genérica**, mesmo
 quando cada uma é boa à parte.
 
+### 2b. E REVALIDA-SE, uma por uma
+
+Não chega não repetir. Uma ação aberta há cinco semanas pode já estar
+feita sem ninguém a ter marcado, ou ter deixado de fazer sentido porque a
+medição mudou. Mostrá-la como trabalho por fazer gasta o mesmo crédito
+que um conselho errado.
+
+Cada aberta chega com `id`, `source`, `evidence` (a medição que a
+produziu) e `revalidated` (quando foi revalidada pela última vez).
+**Devolve um veredicto por cada uma**, no campo `revalidations`, ao lado
+dos `items`:
+
+```json
+{ "id": "<o id que veio>", "verdict": "keep|close|rewrite",
+  "why": "a frase que o cliente vai ler", "title": "...", "action": "..." }
+```
+
+| Veredicto | Quando | O que escrever no `why` |
+|---|---|---|
+| `keep` | o facto que a gerou continua verdadeiro | o facto de hoje, com o número |
+| `close` | a medição mostra que está feito, ou a razão desapareceu | o que mudou e desde quando |
+| `rewrite` | o trabalho continua a fazer sentido e o texto já não | o que mudou; manda `title` e `action` novos |
+
+Quatro regras duras:
+
+- **O `why` é para o cliente ler**, e é o que explica uma ação que sai do
+  plano sem ele lhe tocar. Um veredicto sem `why` é recusado pelo
+  servidor: uma ação que desaparece sem explicação é um mistério.
+- **`close` precisa de um facto, não de uma impressão.** "Já deve estar
+  feito" não fecha nada. Sem facto, é `keep`.
+- **As que trazem `check_key` já foram revalidadas em código** antes de
+  este pedido existir: o scan corre, o check passa, a ação fecha-se
+  sozinha. Se uma delas chega aqui, é porque o facto continua verdadeiro.
+  Não a feches por teres outra opinião sobre o check.
+- **O `id` é o que veio.** Um id que não esteja na lista é recusado.
+
+### 2c. E uma ação do SCAN declara de que check nasceu
+
+Quando escreves uma ação com `source: "site_scan"`, acrescenta
+`check_key` com a chave que veio no `open_gaps` do pedido (`llms_txt`,
+`offer_shipping`, `schema_org`). É o que permite fechá-la sozinha no scan
+seguinte, sem passar por aqui outra vez. Uma chave que não venha no
+pedido é recusada, portanto não a inventes.
+
 As regras:
 
 - **Uma ação que já está no plano por fazer não se repete.** Nem com
