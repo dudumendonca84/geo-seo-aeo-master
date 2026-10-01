@@ -584,6 +584,53 @@ When confronted with such a stat by a client, the response is: *"That number cir
 - **Caveat.** Metodologia proprietária Comscore não publicada em detalhe pelas fontes secundárias; EUA apenas, sem quebra por mercado europeu ou PT.
 - **Uso.** Primeiro número público duro sobre a redistribuição de share entre motores de IA em 2026 (o ChatGPT a perder terreno relativo para Gemini e Claude): reforça o argumento de "não apostar tudo num motor só" no pitch. A subida da presença das AI Overviews (39,4% das pesquisas desktop) é o número mais recente para o bloco `google_aio` de `engine_playbooks.md`.
 
+## 53. LinkedIn: Unlocking AI Search Visibility, The B2B Marketer's Guide to LinkedIn (2026)
+
+- **URL.** LinkedIn marketing blog, AI Search Series. 36-page PDF supplied by the founder, 1 Oct 2026.
+- **Date.** 2026 (undated inside the document; internal LinkedIn figures labelled 2026, third-party figures carry their own dates).
+- **What it is.** **Vendor material, and the vendor is the channel being recommended.** LinkedIn arguing that LinkedIn is the strongest lever for AI search visibility. Read it for the third-party numbers it relays and for the tactics; treat every LinkedIn-internal figure as directional.
+
+### The headline, and why it does NOT transfer to PT-PT as a priority
+
+The document's central claim is that **LinkedIn is the #1 most-cited domain for professional queries in AI search** (attributed to Profound, 2026).
+
+Measured against our own citation corpus on 1 Oct 2026 (60 days, `raw_citations` by domain, per client):
+
+| Client | linkedin.com | total citations | share |
+|---|---|---|---|
+| Congruent (B2B IT services) | 447 | 22,204 | **2.0%** |
+| destaque.ai (B2B SaaS/consultancy) | 551 | 40,175 | **1.4%** |
+| K2 Medical Research | 32 | 2,620 | 1.2% |
+| D&S Smart Housing | 13 | 1,931 | 0.7% |
+| Continente (retail) | 10 | 3,454 | 0.3% |
+| Rocha Automóveis | 3 | 1,933 | 0.2% |
+| CUF / Lusíadas / Hospital da Luz | 1 each | 2,998 each | 0.0% |
+
+Both statements can be true: "most-cited single domain among professional queries" is a different population from "share of all citations on a Portuguese buyer's prompt set". **The actionable reading is the ranking of effort, and there the document and our measurement disagree**: for a PT B2B client LinkedIn is worth a real but second-tier investment (2% of citations), and for retail, automotive and healthcare it is close to noise. Do not quote the "#1 most-cited domain" line to a Portuguese client without this table beside it.
+
+### The numbers worth keeping (third-party, not LinkedIn's own)
+
+- **Profound, agent-log behaviour (ChatGPT + Claude), Mar-May 2026, ~900 newly cited pages.** Time from publication to first citation: **median 6.81 days, P75 18.68 days, P90 37.10 days**. This is the best public answer we have to "when will I see a result", and it is the number to use when setting expectations in a proposal: 30 days is the floor for a verdict, not the moment to declare failure.
+- **Meltwater, 2026.** **75% of LinkedIn citations come from individual member profiles, 25% from Company Pages.** CEOs 8.2% of cited content, founders 7.5%, but job title mattered less than demonstrated expertise. By account type: established members (10k+ followers) 40%, everyday members (<10k, consistent posters) 35%, Company Pages 25%.
+- **Meltwater, 2026.** LinkedIn citation share grew **26% across models over four weeks**; LinkedIn ranks top-5 cited domain in most major B2B categories (#1 AI & Data Science, #1 Marketing, #2 Leadership, #3 Technology & SaaS, #4 Healthcare, #5 Energy).
+- **Semrush, 2026.** LinkedIn content scores **0.57-0.60 semantic similarity** in AI answers: when a model cites LinkedIn it tends to preserve the original phrasing rather than dilute it.
+- **Ahrefs, Jun 2026.** `linkedin.com/posts` draws ~**8 million weekly organic visits**.
+- **6sense, 2025.** **94% of B2B buyers** use generative AI in research; average B2B buying cycle compressed from **11.3 months (2024) to 10.1 months (2025)**.
+- **Forrester, 2026 State of Business Buying.** Average B2B buying group: **13 stakeholders and 9 external influencers**, often doubling when AI is in the process.
+- **eMarketer, 2026.** **88% of VP/CMO-level leaders** are asking about AI visibility, while only **34% of B2B tech marketers** feel prepared and **51%** cite limited AEO knowledge as the barrier.
+
+### LinkedIn-internal figures (directional, single-vendor, unaudited)
+
+- Articles account for ~**60% of LinkedIn content citations**, posts for ~**40%**.
+- LinkedIn's own marketing sites saw non-branded search traffic fall **up to 60%**.
+- Six-fold engagement lift when employees were activated as creators.
+
+### What it does NOT change
+
+The measurement chapter proposes exactly the metric set this product already computes (prompt volume, share of voice, brand mentions, citations, citation rank, sentiment) and names Meltwater, Profound and Semrush as the tools. **Nothing in it revises a formula in `metrics.md`.** Its own closing caveat is the honest one and is worth repeating to clients: *"Don't fall for universal best practices. What works for one brand might not work for yours."*
+
+---
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
@@ -606,4 +653,4 @@ Public benchmark studies are released monthly. The `daily-agent/news-feed.md` ca
 - A previously-cited number is materially revised or retracted.
 - A new first-party telemetry feature ships from a major engine (Bing AI Performance was the last one, Feb 2026).
 
-Last refresh: 13 Sep 2026 (added §49, Uberall multi-location AI-mentions study, review volume outpredicts star rating across verticals/models). Previous: 12 Sep 2026 (added §48, Zatuchin per-entity citation-concentration preprint, absorbed from the 2026-07-08 news-feed entry immediately before it fell out of the 60-day truncation window). Previous: 11 Sep 2026 (added §46, Ahrefs self-promotional-content experiment, and §47, Varga per-entity hallucination-rate preprint, both absorbed from the 2026-07-07 news-feed entry immediately before it fell out of the 60-day truncation window). Previous: 8 Sep 2026 (added §43, SE Ranking study on AI Mode ads not buying organic citation/ranking, absorbed from the 2026-09-08 news-feed entry; added §44, Agarwal &amp; Sen SSRN field study on AI Overviews click loss, absorbed from the 2026-07-05 news-feed entry before it fell out of the 60-day truncation window). Previous: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
+Last refresh: 1 Oct 2026 (added §53, LinkedIn's own B2B AI-search guide: kept for the Profound time-to-citation curve and the Meltwater profile-vs-Page split, and filed WITH our own measurement showing linkedin.com is 1.4-2.0% of citations for PT B2B clients and under 0.5% elsewhere, against the document's "#1 most-cited domain" headline). Previous: 13 Sep 2026 (added §49, Uberall multi-location AI-mentions study, review volume outpredicts star rating across verticals/models). Previous: 12 Sep 2026 (added §48, Zatuchin per-entity citation-concentration preprint, absorbed from the 2026-07-08 news-feed entry immediately before it fell out of the 60-day truncation window). Previous: 11 Sep 2026 (added §46, Ahrefs self-promotional-content experiment, and §47, Varga per-entity hallucination-rate preprint, both absorbed from the 2026-07-07 news-feed entry immediately before it fell out of the 60-day truncation window). Previous: 8 Sep 2026 (added §43, SE Ranking study on AI Mode ads not buying organic citation/ranking, absorbed from the 2026-09-08 news-feed entry; added §44, Agarwal &amp; Sen SSRN field study on AI Overviews click loss, absorbed from the 2026-07-05 news-feed entry before it fell out of the 60-day truncation window). Previous: 7 Sep 2026 (added §41, Fractl/SEL 1-million-keywords redistributed-demand study, absorbed from the 2026-07-04 news-feed entry before it fell out of the 60-day truncation window; added §42, SEJ/Bocconi study on AI search growing without displacing Google audience; extended §39 with the Semrush "85% of categories contestable" figure from the same source article). Previous: 6 Sep 2026 (added §39-40, Semrush AI-visibility/conversion study and Ten Speed/Peec AI B2B evaluation-stage citation study, both from the 2026-09-06 news-feed entry). Previous to that: 5 Sep 2026 (added §38, absorbed from the 2026-07-02 news-feed entry before it fell out of the 60-day truncation window). Previous to that: 29 Aug 2026 (added §36-37, absorbed from the 2026-06-26 news-feed entry).
