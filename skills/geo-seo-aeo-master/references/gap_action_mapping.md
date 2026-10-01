@@ -136,6 +136,195 @@ inteira: o que falta não é acesso, é conteúdo" vale mais do que a ação
 que não se escreveu, porque fecha a porta ao primeiro palpite de toda a
 gente e manda o esforço para onde ele rende.
 
+## Onde dá para conseguir presença, e onde não dá
+
+Lido pelo Tracker em runtime (`lib/skill/presenca.ts`), para o bloco
+**"Meios que a IA cita muito · a tua marca não está lá"** e para as ações
+off-site que a Routine escreve.
+
+**Porquê aqui e não em código** (1 Out 2026, founder: *"a skill funciona
+como um super cérebro, nada pode passar dessa forma, tem que validar tudo"*
+e, a seguir, *"tudo tem que passar pela skill"*).
+
+O bloco propôs, com severidade alta, **"Conseguir presença em
+`developers.google.com`"**, porque esse domínio é citado em 45 respostas da
+categoria e a marca nunca aparece ao lado. O facto está certo e a ação é
+impossível: aquilo é a documentação da própria Google. E o caminho que a
+produziu não toca na skill nem na Routine: é SQL, uma contagem de domínios
+e uma concatenação de texto. **O cérebro nunca viu aquela frase.**
+
+A `## Regra de especificidade` deste ficheiro já manda nomear o sítio exato
+e tirá-lo dos dados. Faltava-lhe a metade seguinte, que é esta: **o sítio
+nomeado tem de ser um sítio onde publicar seja possível.**
+
+### A regra
+
+Antes de uma ação dizer "consegue presença em X", X passa por quatro
+perguntas, por esta ordem. A primeira que responda sim recusa o alvo.
+
+| Pergunta | Se sim |
+|---|---|
+| É a casa do próprio fornecedor (documentação, suporte, página de produto)? | **primeira parte**, não há lá presença a conseguir |
+| Serve outra coisa que não publicar (arquivo, validador, especificação, tradutor)? | **infraestrutura** |
+| É a Wikipédia ou a Wikidata? | **tem dono na dimensão entity**, com regras próprias |
+| É o sítio de um concorrente? | **concorrente** |
+
+E a regra ao contrário, que é o ponto todo: **tudo o resto passa.** Uma
+plataforma de reservas, um comparador, um guia de categoria, um fórum, um
+meio de imprensa, o Medium, o Reddit, o GitHub. Este filtro é sobre ser
+POSSÍVEL, não sobre valer a pena: se vale a pena é juízo, e é o dos
+padrões deste ficheiro.
+
+### Primeira parte
+
+Uma entrada **sem ponto** é uma etiqueta e apanha o nome em qualquer
+posição e qualquer país: `google` apanha `developers.google.com`,
+`translate.google.com.br` e `blog.google`, e não apanha `notgoogle.com`
+nem `googleblog.net`. Uma entrada **com ponto** é uma raiz e apanha os
+subdomínios dela.
+
+| entrada | porquê |
+|---|---|
+| google | docs, tradutor, scholar, search, blog |
+| withgoogle | campanhas da Google |
+| openai | developers, help, platform |
+| anthropic | support |
+| claude | support |
+| microsoft | learn, support, partner, adoption, pulse, news |
+| bing | o motor e o blog dele |
+| perplexity | docs |
+| salesforce | appexchange, careers |
+| outsystems | documentação de produto |
+| adobe.com | etiqueta comum de mais sozinha |
+| zapier.com | idem |
+| monday.com | idem |
+| clickup.com | idem |
+
+### Infraestrutura
+
+| entrada | o que é |
+|---|---|
+| archive.org | arquivo |
+| w3.org | norma |
+| schema.org | especificação |
+| schemavalidator.org | validador |
+| llmstxt.org | especificação |
+| translate.com | tradutor |
+| scribd.com | depósito de ficheiros |
+| doi.org | resolvedor de identificadores |
+
+### Tem dono noutra dimensão
+
+| entrada |
+|---|
+| wikipedia |
+| wikidata |
+
+Presença lá é possível e **não é um alvo de autoridade**: é trabalho da
+dimensão entity, com notabilidade e referências próprias. Propô-la aqui
+convida a criar um artigo sobre si próprio, que é a maneira mais rápida de
+ser eliminado (ver o item apagado de 11 Ago 2026 na lição 10 do Tracker).
+
+### O concorrente, que é o caso mais frequente e não se lista aqui
+
+Medido a 1 Out 2026: **seis dos oito cartões de um cliente eram o site de
+um concorrente direto.** A causa não é esta tabela, é a ficha: 86% dos
+concorrentes desse cliente não tinham o domínio preenchido (385 de 446;
+56% noutro, 267 de 477), e sem domínio o site do rival classifica como
+editorial.
+
+Por isso a recusa por concorrente **é mecânica e corre em código**, com a
+regra que o `dominioDasCitacoes` já usa ao contrário: o nome compactado
+dentro do rótulo do domínio, ou uma palavra forte do nome que SEJA o
+rótulo (igualdade e não conter, senão "gabriel" casava com
+`gabrielgarcia.pt`). Reconhecer um nome dentro de um domínio é computação,
+como a partilha de voz; o que é juízo são as três tabelas acima.
+
+## Antes de aconselhar: o que este negócio é, e o que já está no plano
+
+Dois blocos que agora chegam em todos os pedidos de juízo
+(`generate_opportunities` e `page_recommendations`), e que mudam o
+conselho mais do que qualquer padrão deste ficheiro.
+
+### 1. O que o negócio é
+
+Chegam `audience_type`, `is_local`, `locations` e **`page_examples`**:
+três endereços reais do site, com o título.
+
+**Os exemplos valem mais do que o rótulo.** `b2c` não distingue um
+supermercado de um gestor de alojamento local, e essa distinção decidiu
+duas falhas medidas:
+
+| Medido | O conselho que saiu | Porque estava errado |
+|---|---|---|
+| Continente, 1894 fichas de produto (23 Set 2026) | põe `shippingDetails` no `Offer` | num supermercado a entrega decide-se no cesto, por zona e com sessão iniciada. A condição é da loja e não do artigo |
+| D&S, 529 fichas de apartamento (1 Out 2026) | falta `price` e `availability` | numa estadia o preço varia com a data e a disponibilidade é um calendário. Nenhum dos dois cabe num valor |
+
+**A pergunta a fazer antes de escrever uma ação de comércio:** o que esta
+página vende tem um preço fixo, um stock contável e um envio? Se faltar
+um dos três, a ação é outra:
+
+| O que a página vende | `price` | `availability` | envio |
+|---|---|---|---|
+| artigo enviado (marketplace) | valor | em stock ou não | `shippingDetails` no `Offer` |
+| artigo de supermercado | valor | em stock ou não | **página de entregas com `FAQPage`**, não por artigo |
+| estadia, reserva, serviço com data | `priceSpecification` ou `AggregateOffer` | **não se aplica** | **não existe** |
+| serviço sem preço público | faixa indicativa, ou nada | não se aplica | não existe |
+
+Em dúvida entre duas linhas, lê os `page_examples`. Se não bastarem,
+**não se abre a ação**, que é a regra de sempre deste ficheiro.
+
+### 1b. O detalhe de um check é um FACTO, e a ação é tua
+
+Desde 1 Out 2026 o produto deixou de escrever o conselho dentro do
+detalhe. O que chega em `page_recommendations` e na Saúde do site é o
+que FALTA na página, verificado nela: "sem `shippingDetails` nem
+`hasDeliveryMethod` no `Offer`", "sem atributo `lang` no `<html>`",
+"sem `sameAs`".
+
+Isso é deliberado e muda o teu trabalho: **o facto é mecânico e já vem
+feito; escolher a ação é o que te cabe**, e é por isso que o pedido
+passou a trazer o que o negócio é. O detalhe não diz, e não deve dizer,
+"põe `shippingDetails`" nem "declara pt-PT": a primeira está errada num
+supermercado e a segunda num cliente inglês.
+
+Duas consequências práticas:
+
+- **Não repitas o facto como se fosse a ação.** "Adicionar
+  `shippingDetails`" não é um plano; é o mesmo check escrito outra vez.
+  A ação diz onde a condição vive neste negócio e quem a escreve.
+- **Um facto sem ação certa não vira ação.** Se os `page_examples` não
+  chegarem para decidir, diz-se que não chega, pela regra de sempre
+  deste ficheiro.
+
+### 2. O que já está no plano
+
+Chega `existing_plan`: os títulos das ações, a dimensão, o estado e desde
+quando.
+
+**Serve para não propor a mesma coisa por outras palavras**, e isso não é
+teórico. Medido a 1 Out 2026, antes de este bloco existir: a Congruent
+tinha o Wikidata proposto duas vezes (27 Ago e 28 Set) e o Clutch duas
+vezes; a destaque.ai tinha o Wikidata, a prova do desconto, o "audit
+técnico" e o "como avaliar uma agência" cada um duas vezes. Oito ações de
+conteúdo com repetições lá dentro **lêem-se como lista genérica**, mesmo
+quando cada uma é boa à parte.
+
+As regras:
+
+- **Uma ação que já está no plano por fazer não se repete.** Nem com
+  outro título, nem com outro ângulo. Se houver matéria nova sobre ela,
+  isso é um comentário à ação que existe, não uma ação nova.
+- **Uma que já foi feita também não.** Repetir trabalho que o cliente
+  acabou de fazer gasta a mesma confiança que repetir o que não fez.
+- **Uma ação nova que seja o passo seguinte de uma que existe diz-o no
+  texto**, e nomeia a anterior. "Depois do item Wikidata estar criado,
+  ligar o `sameAs`" é uma ação; "Completar o `sameAs`" solta, ao lado de
+  "Criar o item Wikidata", é a mesma coisa partida em duas.
+- **O plano tem um tamanho útil.** Acima de oito ações abertas por
+  dimensão, ninguém as lê. Preferir aprofundar uma que existe a
+  acrescentar a nona.
+
 ---
 
 ## DIMENSÃO 1: Technical foundation
