@@ -8,6 +8,42 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-01
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API hoje nas fontes lidas (Claude Opus 5.5 e Sonnet 5.5 já absorvidos a 22 e 28 Set).
+
+GEO/AEO: a OpenAI enviou aos anunciantes (30 Set) uma atualização do ChatGPT Ads: upload em massa de campanhas de produtos, estado de revisão por produto e expansão a sete mercados asiáticos, 59 no total; Portugal não é mencionado ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-updates-42194.html)). Chris Long testou cerca de 100 marcas: 93% mostram AI Overviews em pesquisas pelo nome, a maioria a meio da página; a DemandSphere diz que triplicaram em Setembro ([SE Roundtable](https://www.seroundtable.com/google-ai-overviews-large-brand-names-42195.html)).
+
+SEO/Google: o September 2026 Spam Update (24 Set, até duas semanas) continua em rollout ([Search Engine Journal](https://www.searchenginejournal.com/google-september-2026-spam-update/590828/)). O piloto AI contribution paga a cerca de 100 publishers, em geral menos de 0,1% da receita de anúncios, segundo The Information ([SE Roundtable](https://www.seroundtable.com/google-ai-contribution-pilot-01-percent-42188.html)).
+
+Implicações: (1) AIO em queries de marca: hoje, juntar ao relatório de clientes B2B a verificação do AIO nas pesquisas pelo nome da marca, até sexta. (2) ChatGPT Ads: awareness; a decisão sobre o Ads Manager PT continua em aberto, sem caso novo. (3) Segunda 5 Out: passagem semanal de cortes de treino.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Corrida completa.
+
+## 2026-10-01
+
+### ⚙️ Mudanças nas plataformas
+
+- **OpenAI ChatGPT Ads: atualização aos anunciantes**: [SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-updates-42194.html) (30 Set 2026, secundária, via email da OpenAI). Bulk upload de campanhas de feed de produtos, separador Products com estado de revisão, conversões extra na Insights API, nomes separados de conta/marca/faturação; expansão a Indonésia, Malásia, Filipinas, Singapura, Tailândia, Vietname e Taiwan (59 mercados). Sem menção a Portugal.
+- **Google AI Overviews em pesquisas de marca**: [SE Roundtable](https://www.seroundtable.com/google-ai-overviews-large-brand-names-42195.html) (30 Set). Chris Long: 93% de ~100 marcas testadas mostram AIO; DemandSphere: triplicaram em Setembro. Google não mostra AIO para o próprio nome nem para publishers de notícias.
+- **Google AI contribution pilot**: [SE Roundtable](https://www.seroundtable.com/google-ai-contribution-pilot-01-percent-42188.html) (30 Set, citando The Information). ~100 publishers pagos por conteúdo que molda respostas de AIO, AI Mode e Gemini; um acima de $1M/ano, pequenos abaixo de $1.000 em vários meses; cálculo não divulgado.
+- **Google Spam Update (24 Set)**: [SEJ](https://www.searchenginejournal.com/google-september-2026-spam-update/590828/). Quarta do ano, global, até duas semanas, ainda em curso.
+- **Bing**: [SE Roundtable](https://www.seroundtable.com/recap-09-30-2026-42189.html) testa extensões de anúncio com review de consumidores e etiquetas de características em listagens de produto. Google Maps exige login para ver todas as reviews.
+- **Bing AI Performance API, comércio agêntico (ACP/UCP), Cloudflare**: sem desenvolvimento novo confirmado por fonte primária.
+
+### 💡 Implicações para destaque.ai
+
+- AIO em pesquisas de marca (dado secundário, amostra pequena): incluir no relatório mensal a presença de AIO nas pesquisas pelo nome do cliente; verificar dois clientes até sexta.
+- ChatGPT Ads: awareness; Portugal ausente da expansão. Sem mudança de pitch.
+
+### 🚨 Alerta ao founder
+
+Sem item novo e material hoje. O alerta Ads Manager PT segue aberto sem escalar.
+
+### Passagem diária por motor
+
+26 blocos revistos, `meta:` reescrita (2026-10-01). Substância: `chatgpt` (atualização de anunciantes) e `google_aio` (queries de marca). Dados do Tracker indisponíveis: sem leitura interna.
+
 ## 🚨 ALERTA FUNDADOR
 
 **O que aconteceu:** o hiato identificado a 21-28 ago fechou-se — desde 1 Set 2026 a compra self-serve de anúncios do ChatGPT (OpenAI Ads Manager) está aberta em beta a "anunciantes elegíveis" nos mesmos 31 mercados europeus onde os anúncios já corriam desde 24 ago, incl. Portugal, além do Médio Oriente, Norte de África e Índia — anunciado junto com o marco de $1 mil milhões de receita anualizada em menos de 200 dias desde o lançamento. [Digiday](https://digiday.com/media-buying/openais-chatgpt-ads-business-hits-1-billion-run-rate-as-europe-gets-self-serve-access/), corroborado por [CNBC](https://www.cnbc.com/2026/08/31/open-ai-chatgpt-ads-revenue.html), [Forbes](https://www.forbes.com/sites/gabrielalinzainescu/2026/08/31/openais-chatgpt-ads-hit-1-billion-run-rate-in-just-200-days/) e [Storyboard18](https://www.storyboard18.com/amp/advertising/chatgpt-ads-crosses-1-billion-annualised-revenue-run-rate-as-openai-expands-global-rollout-109405.htm) (31 ago-1 set 2026; `openai.com` bloqueado pelo proxy desta sessão, ver nota de integridade em 2026-09-02).
