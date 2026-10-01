@@ -921,6 +921,48 @@ mexe em vários ao mesmo tempo, e o plano deve concentrar em vez de
 espalhar. É também o cenário em que um domínio dominante vale mais: se
 todos passam por lá, estar lá é a alavanca.
 
+### Pattern: termo estranho que é o VOCABULÁRIO DO COMPRADOR na mesma categoria
+
+**É o caso mais frequente dos cinco, e é o único que não é problema
+nenhum.** Está escrito em quinto lugar e devia ser lido em primeiro: um
+termo que a nossa pergunta não tinha é, por omissão, a palavra com que o
+comprador pensa o assunto, e não um desvio.
+
+Medido no Continente (1 Out 2026), 44 consultas distintas numa semana:
+`ranking DECO`, `testes DECO marcas próprias`, `supermercados mais
+baratos`, `marcas próprias Portugal`, `opções sem glúten`, `melhores
+peixarias`, `cartões fidelização`, `entrega no mesmo dia`, `promoções
+semanais`, `críticas ao Continente`, `pontos fortes e fracos`,
+`sustentabilidade`, `metas ambientais`. **Zero são outra indústria.**
+
+Cada um destes é o título de uma peça, e dois deles dizem onde ela tem de
+ser lida: o motor vai ao `ranking DECO` e aos `testes DECO marcas
+próprias` decidir qual é o melhor supermercado. Isso é uma ação com
+nome e endereço, não um aviso.
+
+**Dimensão: content (2), e nunca positioning.** Uma peça por termo, pela
+ordem das consultas que trouxeram mais páginas. Quando o termo nomeia uma
+fonte de terceiros (uma associação de consumidores, um comparador, um
+ranking), a ação tem duas metades: estar lá, e publicar o dado próprio
+equivalente.
+
+**Como se distingue dos outros quatro, por ordem de teste:**
+
+| Pergunta | Se sim |
+|---|---|
+| O termo nomeia uma fonte, um ranking ou uma instituição? | vocabulário do comprador, e a ação é estar lá |
+| É o mesmo conceito da categoria noutra língua? | tradução (ver o padrão acima) |
+| É um atributo, um preço, um formato ou uma ocasião da categoria? | vocabulário do comprador |
+| Nomeia um país ou uma região que não é o nosso mercado? | outro mercado |
+| Pertence a outra indústria onde o nome da categoria também existe? | outro sentido, e só aqui é posicionamento |
+
+**A ordem não é decorativa.** O teste da colisão de nomes é o último
+porque é o mais raro e o mais caro de errar: foi medido uma vez, numa
+marca cujo nome colidia com geotecnia, e generalizá-lo fez o produto
+chamar "saiu do assunto" a treze consultas de supermercado e mandar o
+cliente corrigi-las com posicionamento. **Em dúvida entre o primeiro e o
+último, é o primeiro.**
+
 ### Pattern: termo estranho que é OUTRO SENTIDO do mesmo nome
 
 O nome da categoria colide com outro domínio de conhecimento. Medido na
