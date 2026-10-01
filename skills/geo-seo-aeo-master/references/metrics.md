@@ -383,10 +383,20 @@ sem deixar rasto fora do repo do produto.
 **Fórmula.**
 
 ```
-Visibility Score = 100 × ( w_citation × citation_rate
-                         + w_relative_sov × relative_sov
-                         + w_net_sentiment × (net_sentiment + 1) / 2 )
+parcelas medidas   = { citation, relative_sov } ∪
+                     { net_sentiment  se  sentiment_base >= 5 }
+
+Visibility Score = 100 × ( Σ  w_i × valor_i  )  /  ( Σ  w_i )
+                            i ∈ medidas            i ∈ medidas
+
+    valor_citation      = citation_rate
+    valor_relative_sov  = relative_sov
+    valor_net_sentiment = (net_sentiment + 1) / 2
 ```
+
+A divisão pelos pesos que entraram é o que mantém a escala em 0..100
+quando uma parcela fica de fora. Com o sentimento fora, a citação vale
+0,5/0,8 = 62,5% e a quota 0,3/0,8 = 37,5%.
 
 **Pesos (contrato parseável).**
 
@@ -422,6 +432,48 @@ não há número a dar. O piso NÃO foi baixado dentro da conta
 (`max(0, net_sentiment)`), porque isso mudava o número de todas as marcas
 e de todas as semanas já gravadas; verificado nos nove clientes com
 medição, oito ficam ao dígito e só o Barómetro deixa de ter número.
+
+**UMA PARCELA SEM MEDIÇÃO NÃO ENTRA, E OS PESOS RENORMALIZAM** (1 Out
+2026). A guarda de cima fechava o caso extremo e deixava passar o caso
+comum, que é o mesmo piso com outra roupa: a parcela do sentimento não
+conhecia a BASE sobre que foi lida, portanto uma marca citada **uma vez**,
+positivamente, recebia a parcela inteira.
+
+Medido na base do Tracker antes de se corrigir, destaque.ai na semana de
+29 Jun 2026:
+
+| | |
+|---|---|
+| citação | 1 resposta em 416 (0,24%) |
+| pontos de citação | 0,1 |
+| pontos de sentimento | **20,0 de 20** |
+
+Uma leitura valia duzentas vezes a citação medida sobre 416 respostas. O
+mesmo nas semanas de 22 Jun (base 2) e de 6 e 13 Jul (base 4).
+
+A regra já existia e vivia no §7: abaixo de ~5 menções a leitura de
+narrativa é ruído e **omite-se em vez de se afirmar**. O produto inteiro
+obedecia (o mapa de perceção mostra um traço, a narrativa cala-se) e esta
+fórmula era o único sítio que a ignorava. Fica assim:
+
+- `net_sentiment` abaixo da base mínima é `null`, e `null` **não é zero
+  nem é meio**: não entra na conta. Deixá-lo entrar a zero dizia "falam
+  mal de ti" a quem ninguém leu; deixá-lo entrar a meio é o brinde de dez
+  pontos.
+- O score passa a ser a **média ponderada do que foi medido**, com os
+  pesos a renormalizar sobre as parcelas presentes.
+- **Quem mostra a composição mostra os pesos APLICADOS**, nunca os da
+  tabela. Imprimir "sentimento, peso 20%" numa parcela que não entrou é
+  uma legenda a descrever outra conta, que é o defeito que a tabela de
+  pesos existe para evitar.
+- A base mínima vale para o NÚMERO DE CAPA e não para o ecrã: "2 de 2
+  respostas são positivas" é uma frase verdadeira com a base à vista. O
+  que não se faz é transformar essas duas num compósito.
+
+Efeito na série, medido antes de se mexer: **quatro semanas**, todas da
+destaque.ai e todas de Junho e Julho, todas com base de sentimento abaixo
+de cinco. Nenhuma semana de nenhum cliente com base ≥ 5 se move, e isso
+inclui todas as de Agosto em diante.
 
 **Os pesos foram trocados a 28 Set 2026 e repostos no mesmo dia, e o erro
 foi de leitura minha.** O founder olhava para o cartão do painel, que
@@ -460,6 +512,13 @@ espaço não são sentimento).
 - Uma semana sem análise não tem score. `null` não é zero: zero diz "não
   apareces", e a verdade é "ainda ninguém leu".
 
-**Consumido por:** o relatório do prospect e o PDF (número de capa), e o
-painel do Tracker (número + as três parcelas). Implementação oficial no
-Tracker, com fallback para estes pesos quando a skill não responde.
+- Uma parcela que não foi medida **não ajuda nem prejudica**: sai da conta
+  e os pesos renormalizam. Quem compara duas semanas tem de saber se a
+  repartição foi a mesma nas duas, e por isso os pesos aplicados vão com
+  o número.
+
+**Consumido por:** o relatório do prospect e o PDF (número de capa e a
+frase "como se compõe"). **NÃO está no painel do Tracker desde 28 Set
+2026**, por decisão do founder: aí quem abre é a taxa de citação, que se
+entende sem legenda. Implementação oficial no Tracker, com fallback para
+estes pesos quando a skill não responde.
