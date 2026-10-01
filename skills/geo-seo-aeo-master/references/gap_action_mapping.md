@@ -240,6 +240,68 @@ rótulo (igualdade e não conter, senão "gabriel" casava com
 `gabrielgarcia.pt`). Reconhecer um nome dentro de um domínio é computação,
 como a partilha de voz; o que é juízo são as três tabelas acima.
 
+## Antes de aconselhar: o que este negócio é, e o que já está no plano
+
+Dois blocos que agora chegam em todos os pedidos de juízo
+(`generate_opportunities` e `page_recommendations`), e que mudam o
+conselho mais do que qualquer padrão deste ficheiro.
+
+### 1. O que o negócio é
+
+Chegam `audience_type`, `is_local`, `locations` e **`page_examples`**:
+três endereços reais do site, com o título.
+
+**Os exemplos valem mais do que o rótulo.** `b2c` não distingue um
+supermercado de um gestor de alojamento local, e essa distinção decidiu
+duas falhas medidas:
+
+| Medido | O conselho que saiu | Porque estava errado |
+|---|---|---|
+| Continente, 1894 fichas de produto (23 Set 2026) | põe `shippingDetails` no `Offer` | num supermercado a entrega decide-se no cesto, por zona e com sessão iniciada. A condição é da loja e não do artigo |
+| D&S, 529 fichas de apartamento (1 Out 2026) | falta `price` e `availability` | numa estadia o preço varia com a data e a disponibilidade é um calendário. Nenhum dos dois cabe num valor |
+
+**A pergunta a fazer antes de escrever uma ação de comércio:** o que esta
+página vende tem um preço fixo, um stock contável e um envio? Se faltar
+um dos três, a ação é outra:
+
+| O que a página vende | `price` | `availability` | envio |
+|---|---|---|---|
+| artigo enviado (marketplace) | valor | em stock ou não | `shippingDetails` no `Offer` |
+| artigo de supermercado | valor | em stock ou não | **página de entregas com `FAQPage`**, não por artigo |
+| estadia, reserva, serviço com data | `priceSpecification` ou `AggregateOffer` | **não se aplica** | **não existe** |
+| serviço sem preço público | faixa indicativa, ou nada | não se aplica | não existe |
+
+Em dúvida entre duas linhas, lê os `page_examples`. Se não bastarem,
+**não se abre a ação**, que é a regra de sempre deste ficheiro.
+
+### 2. O que já está no plano
+
+Chega `existing_plan`: os títulos das ações, a dimensão, o estado e desde
+quando.
+
+**Serve para não propor a mesma coisa por outras palavras**, e isso não é
+teórico. Medido a 1 Out 2026, antes de este bloco existir: a Congruent
+tinha o Wikidata proposto duas vezes (27 Ago e 28 Set) e o Clutch duas
+vezes; a destaque.ai tinha o Wikidata, a prova do desconto, o "audit
+técnico" e o "como avaliar uma agência" cada um duas vezes. Oito ações de
+conteúdo com repetições lá dentro **lêem-se como lista genérica**, mesmo
+quando cada uma é boa à parte.
+
+As regras:
+
+- **Uma ação que já está no plano por fazer não se repete.** Nem com
+  outro título, nem com outro ângulo. Se houver matéria nova sobre ela,
+  isso é um comentário à ação que existe, não uma ação nova.
+- **Uma que já foi feita também não.** Repetir trabalho que o cliente
+  acabou de fazer gasta a mesma confiança que repetir o que não fez.
+- **Uma ação nova que seja o passo seguinte de uma que existe diz-o no
+  texto**, e nomeia a anterior. "Depois do item Wikidata estar criado,
+  ligar o `sameAs`" é uma ação; "Completar o `sameAs`" solta, ao lado de
+  "Criar o item Wikidata", é a mesma coisa partida em duas.
+- **O plano tem um tamanho útil.** Acima de oito ações abertas por
+  dimensão, ninguém as lê. Preferir aprofundar uma que existe a
+  acrescentar a nona.
+
 ---
 
 ## DIMENSÃO 1: Technical foundation
