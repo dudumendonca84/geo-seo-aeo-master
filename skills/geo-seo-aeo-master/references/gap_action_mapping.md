@@ -136,6 +136,110 @@ inteira: o que falta não é acesso, é conteúdo" vale mais do que a ação
 que não se escreveu, porque fecha a porta ao primeiro palpite de toda a
 gente e manda o esforço para onde ele rende.
 
+## Onde dá para conseguir presença, e onde não dá
+
+Lido pelo Tracker em runtime (`lib/skill/presenca.ts`), para o bloco
+**"Meios que a IA cita muito · a tua marca não está lá"** e para as ações
+off-site que a Routine escreve.
+
+**Porquê aqui e não em código** (1 Out 2026, founder: *"a skill funciona
+como um super cérebro, nada pode passar dessa forma, tem que validar tudo"*
+e, a seguir, *"tudo tem que passar pela skill"*).
+
+O bloco propôs, com severidade alta, **"Conseguir presença em
+`developers.google.com`"**, porque esse domínio é citado em 45 respostas da
+categoria e a marca nunca aparece ao lado. O facto está certo e a ação é
+impossível: aquilo é a documentação da própria Google. E o caminho que a
+produziu não toca na skill nem na Routine: é SQL, uma contagem de domínios
+e uma concatenação de texto. **O cérebro nunca viu aquela frase.**
+
+A `## Regra de especificidade` deste ficheiro já manda nomear o sítio exato
+e tirá-lo dos dados. Faltava-lhe a metade seguinte, que é esta: **o sítio
+nomeado tem de ser um sítio onde publicar seja possível.**
+
+### A regra
+
+Antes de uma ação dizer "consegue presença em X", X passa por quatro
+perguntas, por esta ordem. A primeira que responda sim recusa o alvo.
+
+| Pergunta | Se sim |
+|---|---|
+| É a casa do próprio fornecedor (documentação, suporte, página de produto)? | **primeira parte**, não há lá presença a conseguir |
+| Serve outra coisa que não publicar (arquivo, validador, especificação, tradutor)? | **infraestrutura** |
+| É a Wikipédia ou a Wikidata? | **tem dono na dimensão entity**, com regras próprias |
+| É o sítio de um concorrente? | **concorrente** |
+
+E a regra ao contrário, que é o ponto todo: **tudo o resto passa.** Uma
+plataforma de reservas, um comparador, um guia de categoria, um fórum, um
+meio de imprensa, o Medium, o Reddit, o GitHub. Este filtro é sobre ser
+POSSÍVEL, não sobre valer a pena: se vale a pena é juízo, e é o dos
+padrões deste ficheiro.
+
+### Primeira parte
+
+Uma entrada **sem ponto** é uma etiqueta e apanha o nome em qualquer
+posição e qualquer país: `google` apanha `developers.google.com`,
+`translate.google.com.br` e `blog.google`, e não apanha `notgoogle.com`
+nem `googleblog.net`. Uma entrada **com ponto** é uma raiz e apanha os
+subdomínios dela.
+
+| entrada | porquê |
+|---|---|
+| google | docs, tradutor, scholar, search, blog |
+| withgoogle | campanhas da Google |
+| openai | developers, help, platform |
+| anthropic | support |
+| claude | support |
+| microsoft | learn, support, partner, adoption, pulse, news |
+| bing | o motor e o blog dele |
+| perplexity | docs |
+| salesforce | appexchange, careers |
+| outsystems | documentação de produto |
+| adobe.com | etiqueta comum de mais sozinha |
+| zapier.com | idem |
+| monday.com | idem |
+| clickup.com | idem |
+
+### Infraestrutura
+
+| entrada | o que é |
+|---|---|
+| archive.org | arquivo |
+| w3.org | norma |
+| schema.org | especificação |
+| schemavalidator.org | validador |
+| llmstxt.org | especificação |
+| translate.com | tradutor |
+| scribd.com | depósito de ficheiros |
+| doi.org | resolvedor de identificadores |
+
+### Tem dono noutra dimensão
+
+| entrada |
+|---|
+| wikipedia |
+| wikidata |
+
+Presença lá é possível e **não é um alvo de autoridade**: é trabalho da
+dimensão entity, com notabilidade e referências próprias. Propô-la aqui
+convida a criar um artigo sobre si próprio, que é a maneira mais rápida de
+ser eliminado (ver o item apagado de 11 Ago 2026 na lição 10 do Tracker).
+
+### O concorrente, que é o caso mais frequente e não se lista aqui
+
+Medido a 1 Out 2026: **seis dos oito cartões de um cliente eram o site de
+um concorrente direto.** A causa não é esta tabela, é a ficha: 86% dos
+concorrentes desse cliente não tinham o domínio preenchido (385 de 446;
+56% noutro, 267 de 477), e sem domínio o site do rival classifica como
+editorial.
+
+Por isso a recusa por concorrente **é mecânica e corre em código**, com a
+regra que o `dominioDasCitacoes` já usa ao contrário: o nome compactado
+dentro do rótulo do domínio, ou uma palavra forte do nome que SEJA o
+rótulo (igualdade e não conter, senão "gabriel" casava com
+`gabrielgarcia.pt`). Reconhecer um nome dentro de um domínio é computação,
+como a partilha de voz; o que é juízo são as três tabelas acima.
+
 ---
 
 ## DIMENSÃO 1: Technical foundation
