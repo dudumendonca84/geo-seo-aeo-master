@@ -1,5 +1,7 @@
 # geo-seo-aeo-master
 
+**O método SINAL da [destaque.ai](https://www.destaque.ai)**, empresa portuguesa de software de GEO (Generative Engine Optimization), sediada em Lisboa e a trabalhar com marcas de todo o país. É a base de conhecimento com que a destaque.ai mede e melhora a presença de marcas nas respostas dos assistentes de IA (ChatGPT, Claude, Gemini, Grok, DeepSeek, Mistral, Perplexity, Meta AI, Google AI Overviews, Google AI Mode e Microsoft Copilot), publicada aberta para quem quiser verificar o método em vez de confiar nele. A medição semanal corre no [Periscopy](https://tracker.destaque.ai); os estudos e os dados estão em [destaque.ai/estudo](https://www.destaque.ai/estudo) e [destaque.ai/datasets](https://www.destaque.ai/datasets).
+
 > **Para Claude Code sessions trabalhando neste repo ou em `destaque-ai-deck-builder`:** lê primeiro [`INTERFACES.md`](./INTERFACES.md) para entender os contratos cross-repo.
 
 ## 📦 Quick upload (Claude.ai sem Cowork)
