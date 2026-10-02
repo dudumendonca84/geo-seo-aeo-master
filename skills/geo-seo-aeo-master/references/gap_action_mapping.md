@@ -323,23 +323,30 @@ produziu) e `revalidated` (quando foi revalidada pela última vez).
 dos `items`:
 
 ```json
-{ "id": "<o id que veio>", "verdict": "keep|close|rewrite",
+{ "id": "<o id que veio>", "verdict": "keep|close|drop|rewrite",
   "why": "a frase que o cliente vai ler", "title": "...", "action": "..." }
 ```
 
 | Veredicto | Quando | O que escrever no `why` |
 |---|---|---|
 | `keep` | o facto que a gerou continua verdadeiro | o facto de hoje, com o número |
-| `close` | a medição mostra que está feito, ou a razão desapareceu | o que mudou e desde quando |
+| `close` | a medição mostra que **está feito** | o que mudou e desde quando |
+| `drop` | **não foi feito** e deixou de fazer sentido: duplica outra aberta, a razão desapareceu, ou o cliente desistiu do que a originou | porque sai, e se duplica, qual fica |
 | `rewrite` | o trabalho continua a fazer sentido e o texto já não | o que mudou; manda `title` e `action` novos |
 
-Quatro regras duras:
+Cinco regras duras:
 
 - **O `why` é para o cliente ler**, e é o que explica uma ação que sai do
   plano sem ele lhe tocar. Um veredicto sem `why` é recusado pelo
   servidor: uma ação que desaparece sem explicação é um mistério.
 - **`close` precisa de um facto, não de uma impressão.** "Já deve estar
   feito" não fecha nada. Sem facto, é `keep`.
+- **`close` é só para o que foi FEITO.** Vai para a lista das Feitas do
+  cliente e conta como trabalho entregue. Uma duplicada, ou uma ação cuja
+  razão desapareceu, não foi feita por ninguém: é `drop`, e sai para as
+  dispensadas. Na primeira passagem (1 Out 2026) duas duplicadas foram
+  fechadas com `close` e apareceram nas Feitas da destaque.ai, que é o
+  cliente a ler que fez trabalho que nunca fez.
 - **As que trazem `check_key` já foram revalidadas em código** antes de
   este pedido existir: o scan corre, o check passa, a ação fecha-se
   sozinha. Se uma delas chega aqui, é porque o facto continua verdadeiro.
