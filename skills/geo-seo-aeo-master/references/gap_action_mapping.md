@@ -387,6 +387,39 @@ Oito regras duras:
   Não a feches por teres outra opinião sobre o check.
 - **O `id` é o que veio.** Um id que não esteja na lista é recusado.
 
+### 2d. Antes de mandar publicar, vê o que o site já tem
+
+Chega `site_pages`: as páginas que a Saúde do site leu no site do
+cliente, com o caminho e o título (`total` diz quantas são, `omitted`
+quantas ficaram de fora do tecto; as fichas de produto vão para o fim).
+
+**Uma ação que manda publicar uma peça que já existe é um conselho
+errado**, e o cliente vê-o na primeira leitura. A 2 Out 2026 o plano da
+destaque.ai mandava publicar "o que esperar dos primeiros 90 dias com
+uma consultora", "consultora contra equipa interna" e "como avaliar uma
+agência", e o blogue tinha as três (`/blog/primeiros-90-dias-consultora-geo`,
+`/blog/consultora-geo-vs-equipa-interna`,
+`/blog/escolher-consultora-geo-saas-b2b-portugal`).
+
+As regras:
+
+- **Procura no `site_pages` antes de escrever "publicar".** Pelo
+  assunto, não pela palavra exata: um título diferente pode responder à
+  mesma pergunta.
+- **Se existe, a ação é reforçar essa página, pelo endereço.** E o
+  trabalho muda: a peça não falta, falta ser lida e citada. Lê a página
+  antes de dizer o que lhe falta (a resposta direta no primeiro
+  parágrafo, o nome da marca na frase que responde, a data, o autor, os
+  dados próprios, as ligações a partir das páginas que os motores já
+  leem). "Reforçar" sem dizer o quê é tão genérico como "publicar".
+- **Na revalidação também.** Uma aberta que manda publicar o que o
+  `site_pages` mostra publicado é `rewrite` para reforçar essa página,
+  ou `drop` se a página já faz o que a ação pedia. Não é `close`: ninguém
+  fez o trabalho por causa da ação.
+- **`omitted` maior que zero** quer dizer que a lista não está inteira.
+  Não encontrar uma página na lista, nesse caso, não prova que ela não
+  existe: diz-se "não a encontrámos nas páginas lidas", não "não existe".
+
 ### 2c. E uma ação do SCAN declara de que check nasceu
 
 Quando escreves uma ação com `source: "site_scan"`, acrescenta
