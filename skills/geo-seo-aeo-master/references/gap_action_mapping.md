@@ -337,7 +337,10 @@ título deixou passar, a 1 Out, uma ação com "19 de 54" no título e "21
 respostas" no porquê.
 
 **Devolve um veredicto por cada uma**, no campo `revalidations`, ao lado
-dos `items`:
+dos `items`. Não é opcional: desde 2 Out 2026 o servidor **recusa o
+pedido inteiro** se faltar o veredicto de uma aberta sem `check_key`, e
+devolve os ids em falta. Nesse dia a corrida criou uma ação nova e não
+revalidou nenhuma das 16 abertas. Não ter nada a mudar é `keep`:
 
 ```json
 { "id": "<o id que veio>", "verdict": "keep|close|drop|rewrite",
