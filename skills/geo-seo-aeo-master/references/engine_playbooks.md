@@ -175,7 +175,7 @@ Faz:
 
 meta: revisto 2026-10-02 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Visibility Tracker [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
+Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Periscopy [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
 
 Faz:
 1. Mantém presença ativa e citável no X, com reação rápida aos temas da categoria: alavanca de marca geral, mesmo sem citação direta confirmada neste nicho.
@@ -337,7 +337,7 @@ Do:
 
 meta: revisto 2026-10-02 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Visibility Tracker audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today. {{fontes}}
+How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Periscopy audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today. {{fontes}}
 
 Do:
 1. Keep an active, quotable presence on X, reacting quickly to category topics: a general brand lever, even without confirmed direct citation in this niche.
