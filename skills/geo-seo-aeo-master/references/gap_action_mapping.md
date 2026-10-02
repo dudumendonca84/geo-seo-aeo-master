@@ -310,6 +310,16 @@ técnico" e o "como avaliar uma agência" cada um duas vezes. Oito ações de
 conteúdo com repetições lá dentro **lêem-se como lista genérica**, mesmo
 quando cada uma é boa à parte.
 
+### 2a. O nome do produto, no que o cliente lê
+
+**O produto chama-se Periscopy** (rebranding de "Visibility Tracker",
+confirmado pelo founder a 21 Set 2026). "Tracker" e "Visibility Tracker"
+são nomes internos: aparecem neste ficheiro, no código e no schema, e
+continuam lá. **Em texto que o cliente lê** (título, porquê, ação, peça
+preparada, `why`), escreve-se **Periscopy**. A 1 Out, três ações da
+destaque.ai mandavam "fechar com a oferta do Tracker", que é um produto
+com um nome que já não existe para quem o compra.
+
 ### 2b. E REVALIDA-SE, uma por uma
 
 Não chega não repetir. Uma ação aberta há cinco semanas pode já estar
@@ -318,13 +328,21 @@ medição mudou. Mostrá-la como trabalho por fazer gasta o mesmo crédito
 que um conselho errado.
 
 Cada aberta chega com `id`, `source`, `evidence` (a medição que a
-produziu) e `revalidated` (quando foi revalidada pela última vez).
+produziu), `revalidated` (quando foi revalidada pela última vez) e, desde
+2 Out 2026, **o texto inteiro que o cliente lê**: `rationale` (o porquê),
+`action`, `deliverable` (a peça preparada) e `last_note` (a nota da
+revalidação anterior, ou o aviso de que a proposta de valor de onde a ação
+nasceu foi apagada). **Lê o texto, não só o título.** Revalidar pelo
+título deixou passar, a 1 Out, uma ação com "19 de 54" no título e "21
+respostas" no porquê.
+
 **Devolve um veredicto por cada uma**, no campo `revalidations`, ao lado
 dos `items`:
 
 ```json
 { "id": "<o id que veio>", "verdict": "keep|close|drop|rewrite",
-  "why": "a frase que o cliente vai ler", "title": "...", "action": "..." }
+  "why": "a frase que o cliente vai ler",
+  "title": "...", "action": "...", "rationale": "...", "deliverable": "..." }
 ```
 
 | Veredicto | Quando | O que escrever no `why` |
@@ -332,9 +350,9 @@ dos `items`:
 | `keep` | o facto que a gerou continua verdadeiro | o facto de hoje, com o número |
 | `close` | a medição mostra que **está feito** | o que mudou e desde quando |
 | `drop` | **não foi feito** e deixou de fazer sentido: duplica outra aberta, a razão desapareceu, ou o cliente desistiu do que a originou | porque sai, e se duplica, qual fica |
-| `rewrite` | o trabalho continua a fazer sentido e o texto já não | o que mudou; manda `title` e `action` novos |
+| `rewrite` | o trabalho continua a fazer sentido e o texto já não | o que mudou; manda **todos** os campos que mudam (`title`, `action`, `rationale`, `deliverable`) |
 
-Cinco regras duras:
+Oito regras duras:
 
 - **O `why` é para o cliente ler**, e é o que explica uma ação que sai do
   plano sem ele lhe tocar. Um veredicto sem `why` é recusado pelo
@@ -347,6 +365,19 @@ Cinco regras duras:
   dispensadas. Na primeira passagem (1 Out 2026) duas duplicadas foram
   fechadas com `close` e apareceram nas Feitas da destaque.ai, que é o
   cliente a ler que fez trabalho que nunca fez.
+- **Um número muda em todos os campos onde aparece.** Se a medição de
+  hoje é outra, o `rewrite` leva o título, o porquê e a peça com o número
+  novo. Reescrever só o título deixa o cliente com dois números no mesmo
+  cartão, e um cartão com dois números diz-lhe que nenhum é de confiança.
+- **Texto de uma campanha que já não existe é texto velho.** Se o
+  `last_note` diz que a proposta de valor foi apagada, ou se o texto manda
+  "fechar com a oferta", fala de um desconto, ou remete para "a ação 1"
+  de uma campanha que não está no pedido: `rewrite` sem a campanha quando
+  o trabalho continua a valer por si (um guia técnico continua útil sem
+  desconto), `drop` quando a ação só existia por ela.
+- **Duas abertas que respondem à mesma pergunta são uma.** Fica a mais
+  completa (a que tem a peça preparada mais útil); a outra é `drop`, com o
+  `why` a dizer qual fica.
 - **As que trazem `check_key` já foram revalidadas em código** antes de
   este pedido existir: o scan corre, o check passa, a ação fecha-se
   sozinha. Se uma delas chega aqui, é porque o facto continua verdadeiro.
@@ -593,12 +624,28 @@ mas a medição é a mesma em qualquer motor com fontes.
 
 ### Pattern: Sem Wikidata QID
 
+**Lê primeiro o campo `entity` do pedido** (desde 2 Out 2026). "Sem QID"
+são duas situações que pedem trabalho oposto, e o `entity.wikidata.note`
+diz qual é:
+
+| O que o `note` diz | Ação |
+|---|---|
+| nada, ou que o item nunca existiu | a do padrão, abaixo |
+| que o item **foi apagado** (traz o QID antigo) | **nunca "criar o item"**. Primeiro reunir duas a três referências públicas e independentes (imprensa, diretórios do setor, rankings que os motores citam); só depois recriar, com cada afirmação ligada a uma dessas referências. Recriar com a mesma checklist leva à mesma eliminação |
+
+Foi o que aconteceu à destaque.ai: o `Q140043087` foi apagado a 11 Ago 2026
+por notabilidade (zero referências, um único contribuidor), a verificação
+de entidade sabia-o e escrevia-o, e o plano de 28 Set mandou criar o item
+com a checklist que levou à eliminação, porque o aviso não chegava ao
+pedido.
+
 #### Hipóteses
 1. Não criado.
 2. Criado mas em estado "draft" / sem suficientes claims para survive deletion.
+3. Criado e **apagado** por notabilidade (ver a tabela acima).
 
 #### Ação
-Criar QID na Wikidata.org. Mínimo: `instance of` (Q4830453 commercial organization), `country` (Q45 Portugal), `inception` (year), `official website`, `industry`. Cita fontes externas (LinkedIn, Crunchbase, imprensa).
+Criar QID na Wikidata.org (só no primeiro caso da tabela). Mínimo: `instance of` (Q4830453 commercial organization), `country` (Q45 Portugal), `inception` (year), `official website`, `industry`. Cita fontes externas (LinkedIn, Crunchbase, imprensa).
 
 #### Esforço
 1-2h (criação + verificação por editores Wikidata).
@@ -1392,6 +1439,14 @@ O contexto que chega traz, para as perguntas que a proposta cobre: a
 medição por motor, quem aparece no lugar da marca, **os domínios que cada
 motor citou naquelas perguntas** e **o que ele foi procurar antes de
 responder**. É daí que sai a especificidade, e não de conhecimento geral.
+
+**E traz o plano que já existe** (`existing_plan`, desde 2 Out 2026), com
+a mesma regra do plano semanal: **uma ação que já lá está não se repete**,
+nem com outro título. Se a campanha precisa de uma peça que o plano já
+tem (o guia de um tema, a página de uma pergunta), diz-se isso no `why`
+da ação da campanha e não se cria outra. Sem isto, a campanha do desconto
+da destaque.ai pôs o "audit técnico" e o "como avaliar uma agência" no
+plano pela segunda vez.
 
 ### A regra que separa uma campanha de uma lista de boas intenções
 
