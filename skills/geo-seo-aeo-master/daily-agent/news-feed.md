@@ -8,6 +8,34 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-02
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API nas fontes lidas (anthropic.com/news: último modelo Sonnet 5.5, 28 Set; openai.com devolveu 403).
+
+GEO/AEO: o ChatGPT passa a ter botão "Try on" (prova virtual) em listagens de produto de vestuário e acessórios, segundo a documentação de ajuda da OpenAI ([SE Roundtable](https://www.seroundtable.com/chatgpt-virtually-try-on-42215.html)). Os AI Overviews já respondem a perguntas de rosters de equipas em vez de mostrar sites ([SE Roundtable](https://www.seroundtable.com/google-ai-overviews-team-rosters-42202.html)).
+
+SEO/Google: a Google atualizou a 1 Out o guia de conteúdo gerado por IA: "é crítico verificar manualmente e rever todo o conteúdo gerado por IA" ([SE Roundtable](https://www.seroundtable.com/google-updates-ai-content-guidelines-factcheck-review-42217.html)). Fase 2 do September 2026 Spam Update a 30 Set, com quebras reportadas em Discover; rollout de duas semanas ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-two-42209.html)). Search Console anunciou relatório de performance multimodal na web ([Google Search Central](https://developers.google.com/search/blog), título lido no índice do blog; post não verificado).
+
+Implicações: (1) Spam update: hoje, verificar no Search Console os clientes com conteúdo gerado em escala, antes de sexta à tarde. (2) Guia de IA: incluir a frase da Google no checklist editorial dos clientes na próxima revisão mensal. (3) Segunda 5 Out: passagem semanal de cortes de treino.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Corrida completa.
+
+## 2026-10-02
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google: guia de conteúdo gerado por IA atualizado**: [SE Roundtable](https://www.seroundtable.com/google-updates-ai-content-guidelines-factcheck-review-42217.html) (1 Out, secundária; página primária: developers.google.com/search/docs/fundamentals/using-gen-ai-content). Acrescenta "é crítico verificar manualmente e rever todo o conteúdo gerado por IA", com a justificação de que os modelos preveem sequências prováveis de palavras. Versão anterior: Out 2025.
+- **Google September 2026 Spam Update, fase 2**: [SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-two-42209.html) (1 Out). Quedas reportadas a 30 Set (Discover/News); Google confirmou rollout de duas semanas com vários ciclos. Conteúdo traduzido por IA do Reddit voltou a subir.
+- **Google AI Overviews em rosters de equipas**: [SE Roundtable](https://www.seroundtable.com/google-ai-overviews-team-rosters-42202.html) (1 Out, secundária). AIO responde diretamente em vez de mostrar conteúdo de sites.
+- **ChatGPT: virtual try-on**: [SE Roundtable](https://www.seroundtable.com/chatgpt-virtually-try-on-42215.html) (1 Out, via help doc OpenAI e TechCrunch). Botão "Try on" em listagens de produto; selfie guardada em Personalização; favoritos e pastas na Library. Mercados não confirmados.
+- **Search Console**: título "Announcing web multimodal Search performance reporting" no índice do blog Search Central; post sem URL verificada, detalhes por confirmar.
+
+### 💡 Implicações para destaque.ai
+
+- Spam update ainda a decorrer: pedir hoje aos clientes com conteúdo em escala o export do Search Console de 24 Set a 2 Out; não mexer em nada até ao fim do rollout (~8 Out).
+- Guia de IA da Google: acrescentar a revisão manual como passo obrigatório no processo de conteúdo; só awareness para o pitch.
+- ChatGPT try-on: só relevante para e-commerce moda; awareness, sem ação PT enquanto o mercado não for confirmado.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-01
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API hoje nas fontes lidas (Claude Opus 5.5 e Sonnet 5.5 já absorvidos a 22 e 28 Set).
