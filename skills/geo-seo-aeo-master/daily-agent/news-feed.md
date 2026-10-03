@@ -8,6 +8,33 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-03
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API nas fontes lidas (anthropic.com/news: últimas entradas 1 e 2 Out são parcerias e formação, sem modelo).
+
+GEO/AEO: a Google acrescentou AI Mode e Gemini à documentação do Loyalty Customer Match e alargou o programa de 8 para 14 países (Espanha e Itália entram; Portugal não) ([SE Roundtable](https://www.seroundtable.com/google-loyalty-customer-match-expands-42216.html)). Correção: o parâmetro `?st_source=ai_overview` visto nos links do AIO não era um teste da Google, era uma extensão de Chrome ([SE Roundtable](https://www.seroundtable.com/google-ai-overview-link-tracking-parameters-42219.html)).
+
+SEO/Google: o September 2026 Spam Update continua em rollout (24 Set, até duas semanas) ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-42163.html)). O post do Search Console sobre relatório multimodal existe agora com URL verificado ([Google Search Central](https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc)).
+
+Implicações: (1) Spam update: segunda 5 Out, rever o Search Console dos clientes com conteúdo em escala; nada de alterações antes do fim do rollout (~8 Out). (2) Sem parâmetro oficial de atribuição para AIO: não prometer a clientes atribuição por URL; manter a medição por referrer e Tracker. (3) Segunda 5 Out: passagem semanal de cortes de treino.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Corrida completa.
+
+## 2026-10-03
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Loyalty Customer Match: AI Mode e Gemini**: [SE Roundtable](https://www.seroundtable.com/google-loyalty-customer-match-expands-42216.html) (2 Out, secundária). A documentação passa a mencionar AI Mode e Gemini, integração via Merchant API, participação de não anunciantes; 14 países (entram Índia, Itália, Países Baixos, Coreia do Sul, Espanha). Portugal fora.
+- **Google Search Console: relatório multimodal na web**: [Google Search Central](https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc) (Set 2026). Passa a haver dados de desempenho em pesquisas multimodais; URL agora verificado, detalhes de métricas por confirmar.
+- **Correção: `?st_source=ai_overview`**: [SE Roundtable](https://www.seroundtable.com/google-ai-overview-link-tracking-parameters-42219.html) (2 Out). O parâmetro nos links de AIO/AI Mode era injetado por uma extensão de Chrome, segundo o autor do achado; não é teste da Google.
+- **Spam update de Setembro**: continua em rollout, sem fim anunciado ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-42163.html)).
+- **Comércio agêntico, Bing AI Performance API, anúncios de IA em PT**: sem desenvolvimento novo confirmado por fonte primária. openai.com não verificado nesta corrida.
+
+### 💡 Implicações para destaque.ai
+
+- Atribuição de AIO: não existe parâmetro oficial; só awareness, mas na próxima proposta de medição dizer ao cliente que a atribuição vem do referrer e do Tracker, não de UTM da Google. Prazo: próxima proposta.
+- Spam update: segunda 5 Out de manhã, export do Search Console dos clientes de conteúdo em escala; ações só depois de ~8 Out.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-02
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API nas fontes lidas (anthropic.com/news: último modelo Sonnet 5.5, 28 Set; openai.com devolveu 403).
