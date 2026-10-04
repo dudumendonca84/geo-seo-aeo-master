@@ -8,6 +8,21 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-10-04: Taxonomia de prompts: o país conta como geografia, e "qual a melhor / quem recomendam" é descoberta
+
+**Trigger.** Decisão do founder a 4 Out 2026, depois de um teste de classificação das 134 perguntas da destaque.ai com um classificador externo (Jev, TypeSafe). As divergências vinham sobretudo de etiquetas atuais inconsistentes entre si, e duas delas de regras que a skill não escrevia: uma pergunta que nomeia só "Portugal" é ou não `local_recommendation`, e em que etapa do funil cai "qual é a melhor X?".
+
+**O que muda.**
+
+- **O país conta como geografia** (`references/prompts.md` §2.3). "Qual a melhor agência de GEO em Portugal?" é `local_recommendation`, tal como "…em Lisboa". O que decide é a pergunta pedir fornecedores ou opções num sítio nomeado (país, região, cidade, ou o gentílico). Nomear Portugal sem pedir fornecedor ("Como funciona o GEO em Portugal?") não é recomendação e classifica-se pelo que pede.
+- **"Qual é a melhor X?" e "Quem recomendam para X?" são topo (`awareness`)** (`references/prompts.md` §8.2). É a pessoa a descobrir quem existe. Passa a meio quando já compara nomes, e a fundo quando traz o pedido concreto de compra (prazo, quantidade, orçamento, "preciso de").
+
+**Aplicado no mesmo dia.** Cinco perguntas da destaque.ai estavam como `price_comparison` sem falarem de preço: duas passaram a `local_recommendation` (pedem fornecedor português) e três a `generic_category` (nomeiam Portugal ou o mercado sem pedir fornecedor). As restantes etiquetas que contradizem as duas regras não foram mexidas: mudar a fase ou a categoria de uma pergunta muda a jornada e os tópicos de semanas já fechadas, e essa reetiquetagem fica por decisão.
+
+**Secções alteradas.** `references/prompts.md` §2.3 e §8.2.
+
+---
+
 ## 2026-09-14: Cloudflare default-block de crawlers de IA em páginas com anúncios: novo passo no audit de robots.txt
 
 **Trigger.** Gatilho 5 de `SKILL.md` § Methodology evolution ("mudança de postura de compliance de uma família de crawlers"). Watch aberto desde 12 Set 2026 (`references/frameworks.md` §2), confirmado hoje por corroboração cruzada de 9+ fontes independentes (incl. TechCrunch e Engadget, que cobriram o anúncio original da Cloudflare em Jul 2026): leitura directa a `blog.cloudflare.com` continua bloqueada (`EGRESS_BLOCKED`), mas o volume e a qualidade das fontes secundárias, sem nenhuma a contradizer, satisfazem o limiar já usado noutras entradas deste changelog para confirmar sem fetch directo.

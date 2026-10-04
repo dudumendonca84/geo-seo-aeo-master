@@ -78,6 +78,14 @@ marcado como tal.)
 ### 2.3 `local_recommendation`
 Pede recomendações para uma geografia específica.
 
+**O país conta como geografia** [2026-10-04, decisão do founder]. "Qual a melhor
+agência de GEO em Portugal?" e "Qual é o melhor supermercado em Portugal?" são
+`local_recommendation`, tal como "…em Lisboa". O que decide é a pergunta pedir
+fornecedores ou opções num sítio nomeado (país, região ou cidade, ou o
+gentílico: "uma SaaS portuguesa"). Uma pergunta que nomeia Portugal sem pedir
+fornecedor ("Como funciona o GEO em Portugal?", "Portugal é bom para
+nearshore?") não é recomendação: classifica-se pelo que pede.
+
 Intents típicos: `research`, `validation`.
 
 Forma exemplo:
@@ -289,7 +297,12 @@ Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pe
 
 ### 8.2 Fase de funil (`intent_stage`)
 
-- **Topo:** `awareness`, `research` - descoberta de categoria.
+- **Topo:** `awareness`, `research` - descoberta de categoria. **"Qual é a
+  melhor X?" e "Quem recomendam para X?" são topo (`awareness`)**
+  [2026-10-04, decisão do founder]: é a pessoa a descobrir quem existe, antes
+  de ter uma lista. Passa a meio quando já compara nomes ou alternativas, e a
+  fundo quando a pergunta traz o pedido concreto de compra (prazo, quantidade,
+  orçamento, "preciso de", "quem faz isto para mim").
 - **Meio:** `comparison` - shortlists, alternativas.
 - **Fundo:** `decision`, `post_decision` - intenção de compra. **São os que
   convertem: prioriza gerá-los por persona.**
