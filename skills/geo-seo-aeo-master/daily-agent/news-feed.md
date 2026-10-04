@@ -8,6 +8,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-04
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API (anthropic.com/news: última entrada 2 Out, formação; openai.com devolveu 403).
+
+GEO/AEO: a Google testa um formato de anúncio com sitelinks no AI Mode ([SE Roundtable](https://www.seroundtable.com/google-ads-sitelinks-ai-mode-42206.html)). O Bing testa a secção "Recommended by" em resultados de produto ([SE Roundtable](https://www.seroundtable.com/bing-recommended-by-products-section-42193.html)).
+
+SEO/Google: o guia de conteúdo útil ganhou secções "main content" e EOT/SA (Effort, Originality, Talent/Skill, Accuracy) ([SE Roundtable](https://www.seroundtable.com/google-helpful-content-main-content-and-eot-sa-42218.html)). Spam update de Setembro em rollout até ~8 Out.
+
+Implicações: (1) Segunda 5 Out: rever Search Console dos clientes de conteúdo em escala e fazer a passagem semanal de cortes de treino. (2) Adicionar EOT/SA ao checklist editorial na próxima revisão mensal.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Corrida completa.
+
+## 2026-10-04
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Ads: sitelinks no AI Mode (teste)**: [SE Roundtable](https://www.seroundtable.com/google-ads-sitelinks-ai-mode-42206.html) (2 Out, secundária). Formato avistado por um observador; sem anúncio oficial nem mercados.
+- **Bing: secção "Recommended by" em produtos (teste)**: [SE Roundtable](https://www.seroundtable.com/bing-recommended-by-products-section-42193.html) (2 Out, secundária). Miniaturas atribuídas a marcas ligam a retalhistas, sem prova da recomendação.
+- **Google: guia de conteúdo útil**: [SE Roundtable](https://www.seroundtable.com/google-helpful-content-main-content-and-eot-sa-42218.html) (2 Out, secundária). Duas secções novas: qualidade do conteúdo principal e critérios EOT/SA usados pelos avaliadores.
+- **Comércio agêntico, Bing AI Performance API, anúncios de IA em PT**: sem desenvolvimento novo confirmado por fonte primária. openai.com não verificado (403).
+
+### 💡 Implicações para destaque.ai
+
+- Ads em AI Mode: só awareness; incluir sitelinks na lista de formatos a acompanhar no mapa de anúncios de IA. Prazo: próxima revisão do ai_ads.md.
+- EOT/SA: usar como grelha no checklist editorial dos clientes. Prazo: revisão mensal de Outubro.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-03
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API nas fontes lidas (anthropic.com/news: últimas entradas 1 e 2 Out são parcerias e formação, sem modelo).
