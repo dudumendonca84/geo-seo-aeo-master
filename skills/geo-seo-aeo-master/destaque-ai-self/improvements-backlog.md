@@ -50,6 +50,35 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 _(Atualizado 28 setembro 2026: décima execução do Routine, terceira semana consecutiva sem hiato, critério de verificação do item PROCESS cumprido, ver DONE abaixo. `curl` de saída funcionou pela primeira vez em 15 semanas, permitindo TTFB real, fetch directo e a maior amostra de teste multi-motor desta série (32 prompts, 5 sub-agentes). Dois achados novos de alto volume no Tracker: erro de autenticação (`Invalid Refresh Token`, 614 ocorrências, 7 utilizadores) e falha de checkout Stripe (`tax_code` em falta, bloqueia venda do plano Pro/mês). O item Gemini, fechado DONE há uma semana com reserva explícita, **reabre**: crédito esgotou-se de novo em 24 set. O mistério do Wikidata está resolvido: o QID Q140043087 confirmado inexistente (404 directo), não há nada para repor, só para construir de raiz. Teste multi-motor completo (pela primeira vez desde 13 jul) revela 0/6 nos prompts de alto intent (GP1-6) e um 5º eixo de colisão do acrónimo "GEO" em V3. SEO Alive classificado formalmente. Ver `audit-baseline.md` 28 set para o detalhe completo.)_
 
+### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lote diário de 5 out
+- **Prioridade:** P0
+- **Esforço:** 15-30min
+- **Origem:** auditoria semanal 2026-10-05 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
+- **Estado:** TODO
+- **Descrição:** `claude/claude-sonnet-5 (knowledge) failed: 400 ... Your credit balance is too low to access the Anthropic API`: mais de 30 grupos de erro de 1 ocorrência cada, todos entre 07:01 e 07:10 UTC de 5 out, rota `/api/audit/run-batch`. O motor Claude do Periscopy fica sem medição no lote diário.
+- **Ação:** Repor crédito em Plans & Billing e activar recarga automática. Considerar migrar de `claude-sonnet-5` para `claude-sonnet-5-5` (`models.md`).
+- **Verificação:** zero ocorrências numa janela de 7 dias.
+- **Notes:** Mesmo padrão dos esgotamentos OpenAI (set) e Gemini (set): três fornecedores, três esgotamentos manuais. Sugere alerta de saldo, não só top-up.
+
+### 2026-10-05 added: STRATEGIC/ENTITY: única pegada em respostas de IA é o perfil Sortlist
+- **Prioridade:** P1
+- **Esforço:** 1 dia
+- **Origem:** auditoria semanal 2026-10-05 (prompt-test, 34 prompts)
+- **Estado:** TODO
+- **Descrição:** destaque.ai aparece em 3 de 34 prompts (9%), e em todos os três é por `sortlist.co.uk/agency/destaque-ai` (GD5, GD8 em síntese; V2 como link). O site próprio não é citado em nenhum resultado. Perfis de terceiros (Clutch, Semrush Agencies, listas de agências) dominam as respostas.
+- **Ação:** Completar/rever Sortlist; reclamar perfis em Clutch (existe em `sameAs`), Semrush Agencies, lista consultancy.eu/RevenueBase; verificar o conteúdo do perfil Sortlist (fetch devolveu 403).
+- **Verificação:** repetir o prompt-test e contar citações com fonte diferente de Sortlist.
+- **Notes:** Amostra via `WebSearch` (proxy, EUA), não motores reais: leitura direcional.
+
+### 2026-10-05 added: SOCIAL: contagem de seguidores LinkedIn contraditória (250 vs 96)
+- **Prioridade:** P3
+- **Esforço:** 15min
+- **Origem:** auditoria semanal 2026-10-05
+- **Estado:** TODO
+- **Descrição:** 28 set reportou 250 seguidores; esta semana um WebFetch devolveu 96. Provável erro de leitura de uma das duas.
+- **Ação:** Verificação manual humana da página.
+- **Verificação:** número confirmado e registado no próximo baseline.
+
 ### 2026-09-14 added: MEASUREMENT: Tracker: motor ChatGPT inoperacional desde 11 set, duas causas simultâneas
 - **Prioridade:** P0
 - **Esforço:** 1-2h (diagnóstico/correção do ID de modelo) + 30min (reposição de crédito OpenAI)
@@ -64,31 +93,37 @@ _(Atualizado 28 setembro 2026: décima execução do Routine, terceira semana co
 - **Prioridade:** P0
 - **Esforço:** 1-2h (diagnóstico) + variável (correção)
 - **Origem:** auditoria semanal 2026-09-28 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias)
-- **Estado:** TODO
+- **Estado:** TODO (volume reduzido)
 - **Descrição:** `AuthApiError: Invalid Refresh Token: Refresh Token Not Found` (`refresh_token_not_found`), duas assinaturas do mesmo erro: 572 ocorrências (6 utilizadores, rota `/middleware`, 26-27 set) e 40 ocorrências (1 utilizador, 26 set), mais 2 ocorrências isoladas em `/invite`. Total: 614 ocorrências, 7 utilizadores, concentradas num intervalo de ~34 horas. Ligado por proximidade temporal ao deployment `dpl_ANAQSqyAn1Zc8EaJM6uWi8fa6pcy` (PR #539, "fix(pdf): confronto direto com os dois primeiros cartões claros", produção 26 set); a ligação causal não está confirmada, é só a coincidência de data mais próxima.
 - **Ação:** Confirmar se é uma regressão introduzida por um deploy recente (o candidato mais próximo em data é #539) ou uma mudança de comportamento de sessão Supabase (expiração de refresh token mais agressiva, rotação de chave). `/middleware` a falhar pode significar utilizadores autenticados a serem expulsos de sessões ativas sem aviso: verificar se há reclamações de clientes reais na mesma janela.
 - **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de `refresh_token_not_found` numa janela de 7 dias.
 - **Notes:** Volume mais alto que qualquer erro novo já visto nesta série (614 num único fim de semana). Achado da auditoria de 28 set.
+- **Atualização 2026-10-05:** 20 ocorrências, 2 utilizadores, `/middleware`, última 1 out 10:08 UTC (vs. 614 em 28 set). Rebaixado de P0 para P1: o pico de 26-27 set não se repetiu, mas o erro persiste residualmente.
+
 
 ### 2026-09-28 added: MEASUREMENT: Tracker: checkout Stripe falha por tax_code em falta, bloqueia venda
 - **Prioridade:** P1
 - **Esforço:** 15-30min
 - **Origem:** auditoria semanal 2026-09-28 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias)
-- **Estado:** TODO
+- **Estado:** TODO (provável resolvido, por confirmar)
 - **Descrição:** `[stripe/checkout] pro/month: Invalid line_items[0]: the product tax code is missing`, 5 ocorrências, 4 utilizadores, 25 set entre 06:46-07:11 UTC, rota `/api/stripe/checkout`. O produto "Pro/mês" no dashboard Stripe não tem `tax_code` definido, requisito do "Managed Payments" (ativo por omissão na conta Stripe). Distinto dos outros erros desta auditoria: bloqueia receita a entrar, não é uma degradação de medição.
 - **Ação:** Definir `tax_code` elegível no produto "Pro/mês" no Stripe Dashboard (per a mensagem de erro, `docs.stripe.com/payments/managed-payments/eligibility#product-tax-code-requirements`), ou desativar Managed Payments na sessão de checkout (`managed_payments[enabled]=false`) se não se pretender usar essa funcionalidade.
 - **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências deste erro; checkout de "Pro/mês" testado manualmente com sucesso.
 - **Notes:** 4 utilizadores distintos tentaram comprar e falharam num único dia: impacto de receita direto e imediato, não hipotético. Achado da auditoria de 28 set.
+- **Atualização 2026-10-05:** zero ocorrências de `tax_code` em `get_runtime_errors` (7 dias, 5 out). Ausência de erro não prova correcção (lição do Gemini): confirmar no Stripe Dashboard que o produto Pro/mês tem `tax_code`; só então DONE.
+
 
 ### 2026-09-28 added: MEASUREMENT: Tracker: conta DeepSeek sem saldo, falhas ativas esta manhã
 - **Prioridade:** P2
 - **Esforço:** 15-30min (top-up de billing)
 - **Origem:** auditoria semanal 2026-09-28 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias)
-- **Estado:** TODO
+- **Estado:** TODO (provável resolvido, por confirmar)
 - **Descrição:** `deepseek/deepseek-v4-flash (knowledge) failed: 402 Insufficient Balance` e `429 Too many requests... concurrency... based on your remaining balance`, dezenas de ocorrências isoladas (1 cada), todas entre 07:04-07:12 UTC de 28 set, durante o próprio lote diário de auditoria do Tracker (cerca de uma hora antes desta execução do Routine).
 - **Ação:** Repor saldo na conta DeepSeek usada pelo Tracker.
 - **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de `Insufficient Balance` para o DeepSeek numa janela de 7 dias.
 - **Notes:** Distinto do incidente isolado de 14 set (timeout concentrado em 18 minutos, sem saldo em causa): este é esgotamento de conta, mesmo padrão que já afetou Gemini/Perplexity/ChatGPT em semanas anteriores. Achado da auditoria de 28 set.
+- **Atualização 2026-10-05:** sem `402 Insufficient Balance` na janela de 7 dias. Confirmar saldo no dashboard DeepSeek. Separado: `deepseek-v4-flash` está retirado (news-feed 5 out); confirmar que o Tracker chama `deepseek-flash`.
+
 
 ### 2026-09-28 added: SCHEMA: Organization.description nomeia só 5 motores, inconsistente com "onze" do llms.txt
 - **Prioridade:** P3
@@ -264,11 +299,13 @@ _(Atualizado 28 setembro 2026: décima execução do Routine, terceira semana co
 - **Prioridade:** P3
 - **Esforço:** 30min-1h
 - **Origem:** auditoria semanal 2026-09-14 (fetch direto e extração programática de `/` e `/en`)
-- **Estado:** TODO
+- **Estado:** DONE (2026-10-05)
 - **Descrição:** A homepage PT tem 2 imagens (dashboard do Tracker + selo OpenAI Select Partner); `/en` tem apenas 1 (só o selo). Gap de paridade multimodal entre as duas línguas, pequeno mas mensurável.
 - **Ação:** Adicionar o dashboard do Tracker (ou equivalente) à homepage `/en`.
 - **Verificação:** `/en` mostra 2 imagens, com `ImageObject` se aplicável.
 - **Notes:** Baixo risco, achado novo desta semana. **Atualização 2026-09-28:** reconfirmado por fetch directo, sem alteração (`/` continua com 2 imagens, `/en` com 1). 3ª semana em aberto.
+- **Atualização 2026-10-05:** homepage `/en` tem agora 14 `<img>` (igual a PT, com o dashboard Periscopy): paridade multimodal restabelecida após o redesign (#168-#178).
+
 
 ### 2026-09-21 added: MEASUREMENT: Tracker: bug isolado em /settings (função de cliente chamada do servidor)
 - **Prioridade:** P3

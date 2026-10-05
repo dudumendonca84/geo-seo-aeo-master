@@ -11,6 +11,40 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-10-05: Décima primeira execução (vs. 28 set; quarta semana consecutiva sem hiato)
+
+**Score global:** 73/100. **Δ vs. 28 set: +1.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 88 | 0 |
+| Performance / CWV | 66 | +4 |
+| SEO On-Page | 95 | +1 |
+| Schema | 93 | −1 |
+| Imagens | 76 | +2 |
+| GEO técnica | 93 | 0 |
+| Conteúdo & topical authority | 97 | +1 |
+| Entidade | 78 | 0 |
+| Autoridade & PR | 34 | 0 |
+| Social | 37 | 0 |
+| E-E-A-T | 70 | 0 |
+| Medição | 44 | +6 |
+
+**Items movidos para DONE:** 1 (CONTENT: `/en` com menos cobertura de imagem: 14 `<img>` em PT e EN). **Candidatos a DONE por confirmar na origem (ausência de erro na janela de 7 dias, não prova):** Stripe `tax_code`, DeepSeek sem saldo; Gemini mantém a reserva de 21 set.
+
+**Items reclassificados:** auth `refresh_token_not_found` de P0 para P1 (614 → 20 ocorrências).
+
+**Items novos:** 3: MEASUREMENT P0 (crédito Anthropic esgotado no lote de 5 out), STRATEGIC/ENTITY P1 (única pegada em respostas de IA é o perfil Sortlist), SOCIAL P3 (seguidores LinkedIn 250 vs. 96).
+
+**Mudanças materiais:**
+- Prompt-test (34 prompts, proxy `WebSearch`): destaque.ai em 3 (9%), 2 em síntese, sempre via Sortlist; 0/9 em GP1-9; 0/10 nos rotativos. Não comparável directamente com 29% de 28 set (amostra diferente). Nenhuma menção negativa ou alucinada sobre a marca; protocolo de crise não accionado. Alucinação sobre o acrónimo ("Geographic Entity Optimization") em LR1.
+- Site: redesign em produção (11 deploys, #168–#178), sitemap 89 → 128 URLs, TTFB mediana 414 → 276 ms, HTML 152.844 → 109.467 B.
+- Não verificável: PSI (429), Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT, Sortlist (403), `content-encoding` nos headers amostrados.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-09-28: Décima execução (vs. 21 set: terceira semana consecutiva sem hiato, critério PROCESS cumprido)
 
 **Score global:** 72/100 (Bom: pela primeira vez em 15 semanas, todas as 12 categorias têm pontuação real, nenhuma N/D). **Δ vs. 21 set: −2**, mas o número não é comparável de forma directa: a auditoria de 21 set mediou 11 categorias (Performance/CWV excluída por N/D); esta semana mediou 12, porque `curl` de saída funcionou pela primeira vez nesta série, permitindo TTFB real e retirando Performance/CWV do N/D permanente com um score médio (62/100) que por si só puxa a média para baixo.
