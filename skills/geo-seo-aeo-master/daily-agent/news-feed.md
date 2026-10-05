@@ -8,6 +8,31 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-05
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API. Leitura direta de api-docs.deepseek.com: `deepseek-v4-flash` retirado e servido pelo V4.1-Flash ao preço Flash ([DeepSeek](https://api-docs.deepseek.com/quick_start/pricing)). A página de modelos da Anthropic dá a retirada do Haiku 4.5 "não antes de 15 Out 2026" ([Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview)).
+
+GEO/AEO e SEO/Google: nada novo em fonte primária (Search Central: último post de Set; SE Roundtable: última entrada 2 Out). Spam update de Setembro em rollout até ~8 Out.
+
+Cortes de treino (passagem de segunda): sem alterações; Sonnet 5.5, GPT-5.6 Luna, grok-4.3, Mistral e DeepSeek reconfirmados. Novo `deepseek-flash` entra com `unknown`.
+
+Implicações: (1) Spam update: não mexer em conteúdo dos clientes antes de 8 Out e rever o Search Console depois. (2) Se o Tracker ainda enviar `deepseek-v4-flash`, passar a `deepseek-flash` esta semana: o alias está retirado.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Corrida completa.
+
+## 2026-10-05
+
+### ⚙️ Mudanças nas plataformas
+
+- **DeepSeek: `deepseek-v4-flash` retirado**: [DeepSeek API docs](https://api-docs.deepseek.com/quick_start/pricing). Pedidos servidos pelo DeepSeek-V4.1-Flash (`deepseek-flash`, 1M de contexto) ao preço Flash: $0,15 a $0,30 de entrada (cache miss) e $0,60 a $1,20 de saída por MTok, conforme fora de pico ou pico. Confirma por leitura direta o que estava registado desde 14 Set.
+- **Anthropic: Haiku 4.5**: [Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview). Retirada "não antes de 15 Out 2026"; Sonnet 5.5, Opus 5.5 e Fable 5.1 sem data próxima.
+- **Comércio agêntico, Bing AI Performance API, anúncios de IA em PT**: sem desenvolvimento novo confirmado por fonte primária. openai.com não verificado nesta corrida.
+
+### 💡 Implicações para destaque.ai
+
+- Tracker: confirmar hoje que chama `deepseek-flash` e não o alias retirado; é só manutenção, prazo 9 Out.
+- Spam update: manter congelamento de alterações em clientes de conteúdo em escala até ~8 Out, depois rever o Search Console.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-04
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API (anthropic.com/news: última entrada 2 Out, formação; openai.com devolveu 403).
