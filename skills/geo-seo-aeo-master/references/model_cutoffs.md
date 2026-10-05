@@ -52,15 +52,16 @@ below forbids.
 
 | Model | Cutoff | Confirmed | Source | Note |
 |---|---|---|---|---|
-| `gpt-5.6-luna` | 2026-02-16 | 2026-09-28 | developers.openai.com/api/docs/models/gpt-5.6-luna | The model page states it verbatim: "Feb 16, 2026 knowledge cutoff" |
+| `gpt-5.6-luna` | 2026-02-16 | 2026-10-05 | developers.openai.com/api/docs/models/gpt-5.6-luna | The model page states it verbatim: "Feb 16, 2026 knowledge cutoff" |
 | `claude-sonnet-5` | 2026-01 | 2026-09-25 | platform.claude.com/docs/en/about-claude/models/overview | Training data cutoff row of the model comparison table, read directly |
-| `claude-sonnet-5-5` | 2026-06 | 2026-09-29 | platform.claude.com/docs/en/models/sonnet-5-5/overview | Reliable and training data cutoff both "Jun 2026" on the model page. Not a model the Tracker calls yet (buyer default is `claude-sonnet-5`): a snapshot novo é um corpus novo |
+| `claude-sonnet-5-5` | 2026-06 | 2026-10-05 | platform.claude.com/docs/en/models/sonnet-5-5/overview | Reliable and training data cutoff both "Jun 2026" on the model page. Not a model the Tracker calls yet (buyer default is `claude-sonnet-5`): a snapshot novo é um corpus novo |
 | `gpt-6.1-sol` | 2026-04-30 | 2026-09-30 | developers.openai.com/api/docs/models/gpt-6.1-sol | Model page states "April 30, 2026" directly. Not a model the Tracker calls yet (buyer default is `gpt-5.6-sol`): a snapshot novo é um corpus novo |
 | `gemini-3.5-flash` | 2025-01 | 2026-09-28 | storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf | **Inherited through Google's own chain of model cards, not published for this model.** The 3.5 Flash card says "For more information about the training dataset for Gemini 3.5 Flash, see the Gemini 3 Flash model card"; that card says "Gemini 3 Flash is based on Gemini 3 Pro"; the 3 Pro card states "The knowledge cutoff date for Gemini 3 Pro was January 2025." Neither the API docs nor the 3.5 Flash card state one directly. Re-read when Google publishes a 3.5 Flash card of its own. AI Overviews routing may not run the same snapshot |
-| `grok-4.3` | unknown | 2026-09-28 | docs.x.ai/docs/models | Checked and NOT published. The page lists a cutoff for grok-4.7 only ("The knowledge cut-off date of Grok 4.7 is May 2026") and states none for 4.3. Do not carry 4.7's date across |
-| `deepseek-v4-flash` | unknown | 2026-09-28 | api-docs.deepseek.com; huggingface.co/deepseek-ai/DeepSeek-V4-Flash | Checked and NOT published, in the API docs or the model card. The card gives corpus SIZE ("more than 32T tokens") and no date |
+| `grok-4.3` | unknown | 2026-10-05 | docs.x.ai/docs/models | Checked and NOT published. The page lists a cutoff for grok-4.7 only ("The knowledge cut-off date of Grok 4.7 is May 2026") and states none for 4.3. Do not carry 4.7's date across |
+| `deepseek-v4-flash` | unknown | 2026-10-05 | api-docs.deepseek.com; huggingface.co/deepseek-ai/DeepSeek-V4-Flash | Checked and NOT published, in the API docs or the model card. ID retired 10 Sep 2026 and served by V4.1-Flash (`deepseek-flash`, see next row). The card gives corpus SIZE ("more than 32T tokens") and no date |
+| `deepseek-flash` | unknown | 2026-10-05 | api-docs.deepseek.com/quick_start/pricing | DeepSeek-V4.1-Flash, the ID the Tracker now calls (models.md mapping, 14 Sep 2026). No cutoff on the pricing or models page. A snapshot novo é um corpus novo: do not carry the V4-Flash row across |
 | `sonar-pro` | n/a | 2026-09-18 | search_modes.md | Perplexity is augmented-only: it searches on every answer, so a training cutoff does not describe what a buyer meets |
-| `mistral-large-latest` | unknown | 2026-09-28 | docs.mistral.ai/getting-started/models/models_overview/ | Checked and NOT published. The overview lists models and versions with no cutoff column |
+| `mistral-large-latest` | unknown | 2026-10-05 | docs.mistral.ai/getting-started/models/models_overview/ | Checked and NOT published. The overview lists models and versions with no cutoff column |
 
 ## 2. How the daily agent keeps this fresh
 
