@@ -445,6 +445,53 @@ As regras:
 
 ---
 
+## Quem ganha: o jogo do adversário
+
+Bloco `context.competitive` do `generate_opportunities` (6 Out 2026). O
+resto do pacote mede a marca; este mede quem a vence. Sem ele o plano
+conserta lacunas da marca e nunca diz como o concorrente ganha, que foi a
+queixa do founder nesse dia: *"não vi nenhum pulo do gato"*.
+
+Três listas, todas da semana mais recente e sem as perguntas branded:
+
+- `perguntas_onde_outros_ganham`: por pergunta, quem foi escolhido, quantas
+  vezes, e as páginas que o motor leu nas respostas em que escolheu um
+  concorrente e não a marca (`paginas_que_sustentam`). Ordenadas pela
+  pergunta onde a marca mais perde.
+- `escolhidos_na_semana`: quem é escolhido mais vezes, no total.
+- `leu_o_site_e_escolheu_outro`: respostas que leram uma página da marca e
+  escolheram outro a seguir, com a página lida.
+
+**Como se lê, e o que se faz:**
+
+1. **As três primeiras perguntas pedem uma ação cada**, se a marca pode
+   disputá-las (ver "Onde dá para conseguir presença"). Uma ação que
+   responde a uma pergunta perdida vale mais do que três que consertam um
+   sinal geral.
+2. **A página que sustenta diz o tipo de jogo.** Lê o endereço e o título:
+   é uma página de serviço que afirma ("isto é o que fazemos"), a página de
+   uma pessoa (`/consultor-geo/` com o nome dela), a de uma cidade
+   (`/seo-porto/`), a de preço (`/quanto-custa-...`)? A ação nomeia a
+   página do concorrente e o equivalente que a marca tem ou não tem
+   (`site_pages`), e diz o que muda. Nunca se manda copiar texto.
+3. **Quando os escolhidos são pessoas**, e a pergunta pede "um consultor",
+   o jogo é de entidade-pessoa: a página da pessoa responsável, com o nome
+   no título, `Person` com `sameAs`, e presença dela onde os motores leem.
+   Se a marca não tem rosto público, isto é uma decisão do cliente e não
+   uma ação: diz-se em `blocked_on`, com o número de respostas em jogo.
+4. **Ler o site e escolher outro** quer dizer que a página da marca serviu
+   de critério para recomendar a concorrência. Quase sempre é um guia
+   neutro ("como escolher", "quanto custa") sem a regra de escolha da
+   própria marca. A ação reescreve o fecho dessa página: para quem a marca
+   é a opção certa e para quem não é. Nunca um superlativo que não se
+   prova.
+5. **Território que a marca não serve não se disputa.** Uma cidade onde
+   não opera ou um segmento que não atende: diz-se que se deixa, e porquê.
+6. **Amostra pequena é amostra pequena.** Menos de três escolhas numa
+   pergunta não é padrão; menciona-se, não se constrói uma ação em cima.
+
+---
+
 ## DIMENSÃO 1: Technical foundation
 
 ### Pattern: Gemini citation 0% mas outros motores >5%
