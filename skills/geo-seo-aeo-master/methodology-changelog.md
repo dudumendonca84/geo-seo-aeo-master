@@ -8,6 +8,16 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-10-06: Sentimento positivo exige uma frase favorável citável, e já não uma recomendação
+
+**Trigger.** Decisão do founder a 6 Out 2026 ("b"), depois da comparação em sombra entre a Routine e o Jev (TypeSafe) nas semanas de 28 Set e 5 Out: a maior divergência no sentimento eram respostas que descrevem a marca com uma frase favorável sem a recomendar (117 na semana de 28 Set, 55 só no Continente na de 5 Out). A Routine marcava-as `neutral`, o Jev `positive`, e a skill não tinha regra para o positivo.
+
+**O que muda.** `positive` passa a exigir uma frase citável que avalie a marca favoravelmente, o espelho exato da regra do `negative`. Uma descrição sem juízo continua `neutral`. A série de sentimento sobe a partir da semana de 12 Out 2026 por causa da régua, não da marca.
+
+**Secções alteradas.** `references/metrics.md` §7 (nova regra 3; a antiga regra 3 passa a 4).
+
+---
+
 ## 2026-10-04: Taxonomia de prompts: o país conta como geografia, e "qual a melhor / quem recomendam" é descoberta
 
 **Trigger.** Decisão do founder a 4 Out 2026, depois de um teste de classificação das 134 perguntas da destaque.ai com um classificador externo (Jev, TypeSafe). As divergências vinham sobretudo de etiquetas atuais inconsistentes entre si, e duas delas de regras que a skill não escrevia: uma pergunta que nomeia só "Portugal" é ou não `local_recommendation`, e em que etapa do funil cai "qual é a melhor X?".

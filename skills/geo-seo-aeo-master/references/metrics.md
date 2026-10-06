@@ -141,11 +141,12 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 
 Isso é **proeminência**, não portrayal, e já está medido ao lado na mesma linha (`position`) e no share of voice. Rotulá-lo `negative` conta o mesmo problema duas vezes e conta-o com a palavra errada: o cliente lê "a IA falou mal de nós" quando o que aconteceu foi "a IA quase não falou de nós". São diagnósticos diferentes, com ações diferentes.
 
-Três regras, por ordem de precedência:
+Quatro regras, por ordem de precedência:
 
 1. **Sem menção não há sentimento.** Se a marca não aparece no texto, o valor é `unknown`, nunca `negative`. Não existe frase para avaliar. Ausência é taxa de citação, e já tem coluna. (Medido a 30 Ago 2026: 16 respostas em toda a base estavam `negative` com a marca ausente, uma delas com o `why` a dizer literalmente "Marca não mencionada".)
 2. **`negative` exige uma frase citável que avalie a marca.** Preço acima da concorrência, queixas, nota baixa, valência em falta, ressalva explícita ("se X não tiver vaga"). Se não se consegue colar a frase no `context_snippet`, não é `negative`.
-3. **Lugar, ordem e espaço não são sentimento.** Aparecer em décimo, fechar a lista sem descrição, ficar numa secção secundária ou ser nomeado sem números: tudo isto é `neutral` no sentimento e vive no `position`, no SoV e no `why`. O `why` deve e pode explicar a proeminência com todo o detalhe: é o campo certo para isso.
+3. **`positive` exige uma frase citável que avalie a marca favoravelmente** [2026-10-06, decisão do founder]. É o espelho exato da regra 2: "destaca-se pela variedade", "o mais barato do cabaz", "boa avaliação dos clientes", "a opção mais completa". Não é preciso a resposta recomendar a marca: uma frase favorável chega. Uma descrição seca ("tem 300 lojas", "vende online") continua `neutral`, porque não avalia nada. Até esta data, a Routine só marcava `positive` quando a resposta recomendava; as semanas anteriores a 5 Out 2026 estão nessa régua mais estreita, e quem comparar a série tem de o saber.
+4. **Lugar, ordem e espaço não são sentimento.** Aparecer em décimo, fechar a lista sem descrição, ficar numa secção secundária ou ser nomeado sem números: tudo isto é `neutral` no sentimento e vive no `position`, no SoV e no `why`. O `why` deve e pode explicar a proeminência com todo o detalhe: é o campo certo para isso.
 
 Corolário para quem lê: uma marca pode ter 100% de sentimento neutro e uma posição média péssima. É um retrato coerente, e é o retrato mais comum de uma marca pequena numa categoria dominada.
 
