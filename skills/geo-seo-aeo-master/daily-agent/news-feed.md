@@ -8,6 +8,32 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-06
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API (anthropic.com/news: última entrada 2 Out, formação de engenheiros; sem lançamentos).
+
+GEO/AEO: a OpenAI testa um formato de anúncio visual durante a geração de imagens no ChatGPT ([SE Roundtable](https://www.seroundtable.com/openai-visual-chatgpt-ad-format-42229.html)). A Google testa parâmetros de tracking em URLs dentro de AI Overviews e AI Mode ([SE Roundtable](https://www.seroundtable.com/google-ai-overview-link-tracking-parameters-42219.html)).
+
+SEO/Google: a Google diz que usa IA para combater spam e que o aumento de spam updates em 2026 vem do volume de conteúdo novo ([SE Roundtable](https://www.seroundtable.com/google-search-spam-updates-ai-42226.html)). Gary Illyes partilhou tempos médios e piores casos de crawl, indexação e serving ([SE Roundtable](https://www.seroundtable.com/google-crawling-indexing-serving-data-42225.html)).
+
+Implicações: (1) Anúncios: marcar pago vs orgânico nas capturas do Tracker também para formatos visuais; rever na sexta. (2) Spam update: manter congelamento até ~8 Out e rever o Search Console a 9 Out.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Corrida completa.
+
+## 2026-10-06
+
+### ⚙️ Mudanças nas plataformas
+
+- **ChatGPT: formato de anúncio visual em teste**: [SE Roundtable](https://www.seroundtable.com/openai-visual-chatgpt-ad-format-42229.html) (secundária; openai.com não verificado). Anúncio apresentado durante a geração de imagens; teste, sem mercados nem escala confirmados.
+- **Google AI Overviews / AI Mode: parâmetros de tracking em URLs**: [SE Roundtable](https://www.seroundtable.com/google-ai-overview-link-tracking-parameters-42219.html) (2 Out, secundária). Experiência da Google com parâmetros nos links; o caso de `st_source` de 3 Out foi uma extensão de Chrome, por isso confirmar sempre na fonte da Google.
+- **Google Search: IA contra spam e dados de crawl/indexação**: [spam](https://www.seroundtable.com/google-search-spam-updates-ai-42226.html), [tempos](https://www.seroundtable.com/google-crawling-indexing-serving-data-42225.html) (5 Out, Search Central Live, secundárias). Spam updates mais frequentes por volume de conteúdo novo; Gary Illyes publicou tempos típicos e piores de crawl, indexação e serving.
+- **Comércio agêntico, Bing AI Performance API, anúncios de IA em PT**: sem desenvolvimento novo confirmado por fonte primária. Estado do Ads Manager PT inalterado (disputado).
+
+### 💡 Implicações para destaque.ai
+
+- Anúncios em geração de imagem: awareness; adicionar à lista de superfícies pagas a distinguir no Tracker, rever na sexta.
+- Spam update: congelamento de alterações em clientes de conteúdo em escala até ~8 Out; rever o Search Console a 9 Out.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-05
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API. Leitura direta de api-docs.deepseek.com: `deepseek-v4-flash` retirado e servido pelo V4.1-Flash ao preço Flash ([DeepSeek](https://api-docs.deepseek.com/quick_start/pricing)). A página de modelos da Anthropic dá a retirada do Haiku 4.5 "não antes de 15 Out 2026" ([Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview)).
