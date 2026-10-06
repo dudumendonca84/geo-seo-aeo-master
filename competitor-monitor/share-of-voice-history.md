@@ -175,6 +175,9 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-09-29 | Jelly | 1/5 | 3.0 | +1 | 1/5 (só Claude) | P3 pos3, via artigo ChatGPT Ads |
 | 2026-09-29 | SmartLinks | 1/5 | 1.0 | = | 1/5 (só Claude) | P4 pos1 (era pos2) |
 | 2026-09-29 | Helder Mesquita | 1/5 | 2.0 | = | 1/5 (só Claude) | P5 pos2 (LLMscope) |
+| 2026-10-06 | destaque.ai | 1/5 | 2.0 | -2 | 1/5 (só Claude) | P2 pos2; P1/P3/P5 com resultados irrelevantes (ruído de recolha) |
+| 2026-10-06 | AISO Hub | 1/5 | 1.0 | +1 | 1/5 (só Claude) | P4 pos1 |
+| 2026-10-06 | Marketing Gabriel | 1/5 | 3.0 | = | 1/5 (só Claude) | P2 pos3 |
 
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 

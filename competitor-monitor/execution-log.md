@@ -147,3 +147,11 @@ Uma linha por execução semanal: data, dimensões cobertas, candidatos descober
 - Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) destaque.ai 3/5, primeira aparição no Prompt 4. (3) 3HASH regressa (Prompt 3 pos 1) após 2 semanas de ausência. (4) Latigid (Prompt 4) e SEOLabs (Prompt 2) saem do top-3. (5) Prompt 3 dominado por conteúdo de ChatGPT Ads. (6) Sem alterações de pricing. (7) Mercado mantém 24 concorrentes.
 - Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
 - Report: competitor-monitor/reports/2026-09-29.md
+
+## 2026-10-06
+- Dimensões cobertas: D0 (descoberta), D1 (5 prompts fixos, Claude augmented /5), D2, D3, D4.
+- Candidatos descobertos: nenhum. Rejeitados/em observação: DevCommX (landing pages por cidade, sem operação PT verificada — fila de human review), Claneo (SEO internacional), OEA Consultoria (homónimo AEO aduaneiro). BE VISIBLE e Orbis mantidos em fila de human review.
+- SoV history: 3 linhas adicionadas (destaque.ai 1/5, AISO Hub 1/5, Marketing Gabriel 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) **Queda de cobertura generalizada** (3/5→1/5 destaque.ai; 7 players com 0 após ≥1 na semana anterior): WebSearch devolveu resultados irrelevantes nos Prompts 1, 3 e 5 (homónimos GEO, LLM Amália). Tratado como ruído de recolha; quebra a série de 15 semanas de destaque.ai em pos 1 no Prompt 5 — a confirmar na próxima semana. (3) AISO Hub sobe a pos 1 no Prompt 4; dado novo de pricing em directórios (projecto mínimo $1,000+). (4) Mercado mantém 24 concorrentes.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-10-06.md
