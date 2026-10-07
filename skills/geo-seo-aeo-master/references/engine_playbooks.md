@@ -132,7 +132,7 @@ o Tracker não tem fallback para este conteúdo, e um header fora do formato
 
 ### chatgpt
 
-meta: revisto 2026-10-06 · externo: 6 Out: ChatGPT testa anúncio visual durante geração de imagens (5 Out, SE Roundtable, secundária; teste) · ChatGPT: botão "Try on" em listagens de produto de vestuário e acessórios (1 Oct, help doc OpenAI via TechCrunch/SE Roundtable); mercados não confirmados; Ads Manager PT sem caso novo · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: 6 Out: ChatGPT testa anúncio visual durante geração de imagens (5 Out, SE Roundtable, secundária; teste) · ChatGPT: botão "Try on" em listagens de produto de vestuário e acessórios (1 Oct, help doc OpenAI via TechCrunch/SE Roundtable); mercados não confirmados; Ads Manager PT sem caso novo · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fração das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026]. Um teste comportamental (Malte Landwehr via Peec.ai, 4 Set 2026) sugere que o ChatGPT também consulta a Google para fundamentar algumas respostas, não só o Bing: um site sem tráfego registou um pico de referral no Search Console da Google especificamente nos dias em que só o ChatGPT o consultava; fonte única, metodologia informal, tratar como pista, não facto assente. {{fontes}}
 
@@ -147,7 +147,7 @@ Faz:
 
 ### claude
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança nova · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança nova · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: sobretudo memória de treino no modo base; com pesquisa ativa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional]. Claude (claude.ai) e Claude Code são motores de resposta distintos, não a mesma coisa em superfícies diferentes: o Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, e as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois [fonte: Profound, 24 Ago 2026, corroborado por Search Engine Journal, 31 Ago 2026]. Este bloco descreve o Claude consumidor (claude.ai); otimizar para aqui não garante nada de visibilidade no Claude Code. {{fontes}}
 
@@ -160,7 +160,7 @@ Faz:
 
 ### gemini
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: liga ao ecossistema Google; o que o Google indexa e entende bem alimenta o Gemini, e os motores generativos da Google favorecem conteúdo da própria Google [fonte: Grossman et al., SIGIR 2026]. {{fontes}}
 
@@ -173,7 +173,7 @@ Faz:
 
 ### grok
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Periscopy [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
 
@@ -185,7 +185,7 @@ Faz:
 
 ### deepseek
 
-meta: revisto 2026-10-06 · externo: api-docs.deepseek.com lido diretamente: `deepseek-v4-flash` retirado e servido pelo V4.1-Flash ao preço Flash; sem mudança em como se aparece · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: api-docs.deepseek.com lido diretamente: `deepseek-v4-flash` retirado e servido pelo V4.1-Flash ao preço Flash; sem mudança em como se aparece · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: memória de treino com forte peso de fontes em inglês; cobertura pt-PT mais fina.
 
@@ -196,7 +196,7 @@ Faz:
 
 ### mistral
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: memória de treino com boa cobertura europeia, mas desde 20 Ago 2026 a API já não é só memória: o "Agentic Search" dá ao modelo 5 operações (search/open/navigate/read/grep) que abrem e verificam documentos activamente em vez de aceitar só excertos de retrieval pré-cortados; a accuracy no FinanceBench sobe de 26,7% para 86% com o modo ativo [fonte: mistral.ai/news/agentic-search, 20 Ago 2026]. O texto anterior deste bloco ("a API não expõe pesquisa de primeira parte") deixou de ser correto: corrigido hoje. {{fontes}}
 
@@ -207,7 +207,7 @@ Faz:
 
 ### llama
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: corre só em memória de treino; nenhum fornecedor que aloja o Llama expõe pesquisa de primeira parte. Move-se em meses, ao ritmo dos ciclos de treino.
 
@@ -219,7 +219,7 @@ Nota: este motor é o modelo Llama, não o assistente Meta AI do WhatsApp. O ass
 
 ### perplexity
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: pesquisa sempre a web viva e cita fontes explícitas. O YouTube lidera as citações [fonte: 32,4%, Ahrefs, Jun 2026], as comunidades pesam muito (Reddit ~47% em alguns estudos de categoria; direccional) e os portais de research primária e a imprensa especializada pesam mais do que nos outros motores [fonte: 5W, Jun 2026]. {{fontes}}
 
@@ -231,7 +231,7 @@ Faz:
 
 ### google_aio
 
-meta: revisto 2026-10-06 · externo: AIO a gerar respostas de rosters de equipas desportivas em vez de mostrar conteúdo de sites (1 Oct, SE Roundtable, secundária); spam update fase 2 a 30 Set, rollout até ~8 Oct · nota 3 Out: o suposto teste de ?st_source=ai_overview nos links do AIO era uma extensão de Chrome, não a Google (SE Roundtable, correção de 2 Out) · 4 Out: guia de conteúdo útil da Google ganha secções "main content" e EOT/SA (Effort, Originality, Talent/Skill, Accuracy) (2 Out, SE Roundtable, secundária) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: AIO a gerar respostas de rosters de equipas desportivas em vez de mostrar conteúdo de sites (1 Oct, SE Roundtable, secundária); spam update fase 2 a 30 Set, rollout até ~8 Oct · nota 3 Out: o suposto teste de ?st_source=ai_overview nos links do AIO era uma extensão de Chrome, não a Google (SE Roundtable, correção de 2 Out) · 4 Out: guia de conteúdo útil da Google ganha secções "main content" e EOT/SA (Effort, Originality, Talent/Skill, Accuracy) (2 Out, SE Roundtable, secundária) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) diretamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco. Desde finais de Ago 2026, em queries onde os sistemas da Google determinam maior utilidade, o bloco expande dinamicamente para o estado completo (tipo AI Mode) sem o utilizador clicar em "Mostrar mais", com a caixa "Pergunta o que quiseres" já aberta: empurra os resultados orgânicos mais abaixo na página; a Google confirma que a expansão é cancelada se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura [fonte: Search Engine Land/Search Engine Roundtable, 27 ago 2026]. {{fontes}}
 
@@ -245,7 +245,7 @@ Faz:
 
 ### google_ai_mode
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança nova · 4 Out: Google testa formato de anúncio com sitelinks no AI Mode (2 Out, SE Roundtable, secundária; teste, sem escala confirmada) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança nova · 4 Out: Google testa formato de anúncio com sitelinks no AI Mode (2 Out, SE Roundtable, secundária; teste, sem escala confirmada) · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o modo conversacional de pesquisa do Google; responde a quase todas as perguntas e cita ao nível da passagem. Em 80% das citações a resposta está na primeira frase do trecho extraído, e a passagem citada mediana tem ~117 palavras [fonte: Pillarbase, 15,7M citações, Jul 2026]. Nas perguntas comerciais aparecem anúncios dentro da resposta [fonte: 29% dos casos; mais de metade nas keywords de CPC alto; SE Ranking, Jun 2026]. {{fontes}}
 
@@ -257,7 +257,7 @@ Faz:
 
 ### copilot
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança nova · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança nova · interno: sem acesso a dados do Tracker nesta sessão
 
 Como decide: é o chat da Microsoft; pesquisa via índice Bing. A Microsoft está a unificar o Copilot consumer com o Copilot enterprise (M365) numa única superfície: a fronteira entre "assistente pessoal" e "produtividade empresarial" que hoje separa este bloco do M365 Copilot pode ficar menos nítida ao longo de Set 2026; sem mudança confirmada na mecânica de retrieval/citação por agora, mas vale a pena revisitar este bloco quando o rollout terminar [fonte: PYMNTS, 29 Jul 2026]. A Microsoft descreve a indexação e o "AI grounding" como sistemas agora explicitamente separados: uma página pode continuar indexada no Bing e ainda assim ser filtrada da resposta do Copilot: explica quedas de citação que não correspondem a nenhuma queda de indexação [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", 6 Mai 2026]. {{fontes}}
 
@@ -269,13 +269,13 @@ Faz:
 
 ### meta_ai
 
-meta: revisto 2026-10-06 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
 
 A Meta AI (WhatsApp, Instagram, meta.ai) responde a partir do Llama com pesquisa própria e **não expõe API nem fontes**: o que se mede é o que uma pessoa vê numa sessão real, e o que aparece nas respostas é o que a Meta indexa da web aberta. Aparecer aqui é ter a marca dita com o nome certo nas páginas que a Meta lê: a própria, as fichas de diretórios, a Wikipédia quando existe, e a imprensa. Sem citações visíveis, o sinal que conta é o nome no texto, e a ausência é o dado.
 
 ### copilot_bing
 
-meta: revisto 2026-10-06 · externo: Loyalty Customer Match passa a mencionar AI Mode e Gemini, 8 para 14 países incl. Espanha e Itália, não PT (2 Out, SE Roundtable, secundária); sem outra mudança desde o teste de etiqueta "AI Mode" de 25 Set · 4 Out: Bing testa secção "Recommended by" em resultados de produto, miniaturas ligam a retalhistas (2 Out, SE Roundtable, secundária; teste) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: Loyalty Customer Match passa a mencionar AI Mode e Gemini, 8 para 14 países incl. Espanha e Itália, não PT (2 Out, SE Roundtable, secundária); sem outra mudança desde o teste de etiqueta "AI Mode" de 25 Set · 4 Out: Bing testa secção "Recommended by" em resultados de produto, miniaturas ligam a retalhistas (2 Out, SE Roundtable, secundária; teste) · interno: sem acesso a dados do Tracker nesta sessão
 
 O bloco Copilot dentro da página de resultados do Bing, o análogo Microsoft do AIO. **Medição suspensa; não voltar a ligar sem confirmação do fornecedor.**
 
@@ -294,7 +294,7 @@ divergem são pior do que uma só.
 
 ### chatgpt
 
-meta: revisto 2026-10-06 · externo: Oct 6: ChatGPT testing visual ad during image generation (Oct 5, SE Roundtable, secondary; test) · ChatGPT: "Try on" button on clothing and accessory product listings (Oct 1, OpenAI help doc via TechCrunch/SE Roundtable); markets unconfirmed; Ads Manager PT no new case · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: Oct 6: ChatGPT testing visual ad during image generation (Oct 5, SE Roundtable, secondary; test) · ChatGPT: "Try on" button on clothing and accessory product listings (Oct 1, OpenAI help doc via TechCrunch/SE Roundtable); markets unconfirmed; Ads Manager PT no new case · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. Search runs on the Bing index and typically reads only the top 2 to 3 results per sub-query [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, small sample]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026]. A behavioral test (Malte Landwehr via Peec.ai, Sep 4 2026) suggests ChatGPT also queries Google to ground some answers, not only Bing: a zero-traffic site logged a Google Search Console referral spike specifically on days only ChatGPT was querying it; single source, informal methodology, treat as a lead rather than settled fact. {{fontes}}
 
@@ -309,7 +309,7 @@ Do:
 
 ### claude
 
-meta: revisto 2026-10-06 · externo: no new change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no new change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: mostly training memory in base mode; with search on it prefers institutional sources and clear documentation. It cites reference journalism more often than the other engines [fonte: 5W Citation Source Index, Jun 2026; directional]. Claude (claude.ai) and Claude Code are distinct answer engines, not the same thing on different surfaces: Claude uses web search in 93% of answers, Claude Code only in 13%, and the brands cited for the same prompt overlap only about 20% between the two [fonte: Profound, Aug 24 2026, corroborated by Search Engine Journal, Aug 31 2026]. This block describes consumer Claude (claude.ai); optimizing for it does not guarantee any visibility in Claude Code. {{fontes}}
 
@@ -322,7 +322,7 @@ Do:
 
 ### gemini
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: wired into the Google ecosystem; what Google indexes and understands well feeds Gemini, and Google's generative engines favor Google-owned content [fonte: Grossman et al., SIGIR 2026]. {{fontes}}
 
@@ -335,7 +335,7 @@ Do:
 
 ### grok
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Periscopy audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today. {{fontes}}
 
@@ -347,7 +347,7 @@ Do:
 
 ### deepseek
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: training memory weighted heavily toward English-language sources.
 
@@ -358,7 +358,7 @@ Do:
 
 ### mistral
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: training memory with good European coverage, but since Aug 20, 2026 the API is no longer memory-only: "Agentic Search" gives the model 5 operations (search/open/navigate/read/grep) that actively open and verify documents instead of accepting only pre-cut retrieval chunks; FinanceBench accuracy rises from 26.7% to 86% with the mode active [fonte: mistral.ai/news/agentic-search, Aug 20, 2026]. This block's previous text ("the API exposes no first-party search") is no longer correct: corrected today. {{fontes}}
 
@@ -369,7 +369,7 @@ Do:
 
 ### llama
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: runs on training memory alone; no provider hosting Llama exposes first-party search. It moves in months, at the pace of training cycles.
 
@@ -381,7 +381,7 @@ Note: this engine is the Llama model, not the Meta AI assistant it powers in Wha
 
 ### perplexity
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: always searches the live web and cites explicit sources. YouTube leads its citations [fonte: 32.4%, Ahrefs, Jun 2026], communities weigh heavily (Reddit ~47% in some category studies; directional) and primary-research portals and trade press weigh more than on other engines [fonte: 5W, Jun 2026]. {{fontes}}
 
@@ -393,7 +393,7 @@ Do:
 
 ### google_aio
 
-meta: revisto 2026-10-06 · externo: AIO generating team-roster answers instead of site content (Oct 1, SE Roundtable, secondary); spam update phase two Sep 30, rollout through ~Oct 8 · note Oct 3: the alleged ?st_source=ai_overview test on AIO links was a Chrome extension, not Google (SE Roundtable, Oct 2 correction) · Oct 4: Google helpful-content doc adds "main content" and EOT/SA sections (Oct 2, SE Roundtable, secondary) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: AIO generating team-roster answers instead of site content (Oct 1, SE Roundtable, secondary); spam update phase two Sep 30, rollout through ~Oct 8 · note Oct 3: the alleged ?st_source=ai_overview test on AIO links was a Chrome extension, not Google (SE Roundtable, Oct 2 correction) · Oct 4: Google helpful-content doc adds "main content" and EOT/SA sections (Oct 2, SE Roundtable, secondary) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: the AI answer block at the top of Google. The organic top 10 accounts for 38% of citations [fonte: Ahrefs, Mar 2026; was 76% in Jul 2025]: rank helps, but the page's citable structure weighs ever more. Since May 2026 it includes discussion citations (Reddit, forums, blogs) directly in the answer. On local and urgent questions it tends to show the local pack (the map) instead of the block. Since late Aug 2026, on queries where Google's systems determine it is most useful, the block dynamically expands to its full AI-Mode-like state without the user clicking "Show more", with the "Ask anything" box already open: pushing organic results further down the page; Google confirms the expansion is cancelled if the user has already started scrolling past it, to avoid losing their reading position [fonte: Search Engine Land/Search Engine Roundtable, 27 Aug 2026]. {{fontes}}
 
@@ -407,7 +407,7 @@ Do:
 
 ### google_ai_mode
 
-meta: revisto 2026-10-06 · externo: no new change · Oct 4: Google testing sitelinks ad format in AI Mode (Oct 2, SE Roundtable, secondary; test) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no new change · Oct 4: Google testing sitelinks ad format in AI Mode (Oct 2, SE Roundtable, secondary; test) · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: Google's conversational search mode; it answers almost every question and cites at passage level. In 80% of citations the answer sits in the first sentence of the extracted passage, and the median cited passage runs ~117 words [fonte: Pillarbase, 15.7M citations, Jul 2026]. On commercial questions ads appear inside the answer [fonte: 29% of cases; over half on high-CPC keywords; SE Ranking, Jun 2026]. {{fontes}}
 
@@ -419,7 +419,7 @@ Do:
 
 ### copilot
 
-meta: revisto 2026-10-06 · externo: no new change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no new change · interno: sem acesso a dados do Tracker nesta sessão
 
 How it decides: Microsoft's chat; searches through the Bing index. Microsoft is unifying consumer Copilot with enterprise (M365) Copilot into a single surface: the boundary between "personal assistant" and "enterprise productivity" that today separates this block from M365 Copilot may blur over the course of Sep 2026; no confirmed change to retrieval/citation mechanics yet, but this block is worth revisiting once the rollout completes [fonte: PYMNTS, Jul 29, 2026]. Microsoft now describes indexing and "AI grounding" as explicitly separate systems: a page can stay indexed on Bing and still be filtered out of Copilot's answer: this explains citation drops that don't correspond to any indexing drop [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", May 6, 2026]. {{fontes}}
 
@@ -431,13 +431,13 @@ Do:
 
 ### meta_ai
 
-meta: revisto 2026-10-06 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
 
 Meta AI (WhatsApp, Instagram, meta.ai) answers from Llama with its own retrieval and **exposes neither an API nor sources**: what gets measured is what a person sees in a real session, and what shows up in answers is what Meta indexes from the open web. Showing up here means having the brand named correctly on the pages Meta reads: your own, directory listings, Wikipedia where it exists, and the press. With no visible citations, the signal that counts is the name in the text, and absence is the datum.
 
 ### copilot_bing
 
-meta: revisto 2026-10-06 · externo: Loyalty Customer Match now mentions AI Mode and Gemini, 8 to 14 countries incl. Spain and Italy, not PT (Oct 2, SE Roundtable, secondary); no other change since the Sep 25 "AI Mode" label test · Oct 4: Bing testing "Recommended by" section on product results, thumbnails link to retailers (Oct 2, SE Roundtable, secondary; test) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-10-07 · externo: Loyalty Customer Match now mentions AI Mode and Gemini, 8 to 14 countries incl. Spain and Italy, not PT (Oct 2, SE Roundtable, secondary); no other change since the Sep 25 "AI Mode" label test · Oct 4: Bing testing "Recommended by" section on product results, thumbnails link to retailers (Oct 2, SE Roundtable, secondary; test) · interno: sem acesso a dados do Tracker nesta sessão
 
 The Copilot block inside Bing's results page, Microsoft's counterpart to the AIO. **Measurement suspended; do not switch it back on without provider confirmation.**
 
