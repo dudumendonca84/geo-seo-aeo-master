@@ -517,11 +517,46 @@ próprio trabalho, e não do que o mercado diz.
    mexeu, mas mexeram outras coisas na mesma janela. Diz-se assim.
 4. **`amostra_pequena` não conta como evidência.** Menos de dez respostas
    numa das medições é ruído.
-5. **O escopo `marca` é o mais fraco.** Uma ação sem pergunta nem motor
-   mede-se na marca toda, onde tudo se mistura. Por isso, sempre que a
-   ação mira uma pergunta, declara-se `prompt`; quando mira um motor,
-   `engine`. Ações gerais continuam a existir, porque nem tudo mira uma
-   pergunta (entidade, preço, imprensa); essas simplesmente medem-se pior.
+5. **O escopo `marca` é o mais fraco, e por isso tem de ser escolhido.**
+   Uma ação sem pergunta nem motor mede-se na marca toda, onde tudo se
+   mistura. Desde 7 Out 2026 cada ação nova declara um de três, e o
+   servidor recusa o plano sem ele: `prompt` (o texto de uma pergunta do
+   cliente, a que mais pesa quando a ação serve várias), `engine`, ou
+   `escopo: "marca"` com `porque_marca` numa frase. Ações gerais continuam
+   a existir (entidade, preço, imprensa); o que deixa de existir é cair na
+   marca por esquecimento. Medido nesse dia: das 48 ações feitas da
+   destaque.ai, 40 não diziam o alvo.
+6. **`entre_clientes` é o mesmo saldo, somado sobre todos os clientes**, só
+   com contagens. Uma classe com `pode_citar` ali tem 3 medidas limpas de
+   pelo menos 2 clientes, e é o que mais perto há de "isto funciona no
+   mercado". Cita-se sem nomear ninguém ("esta classe de ação moveu a
+   citação X pp em N casos de vários clientes"). Quando o saldo do próprio
+   cliente e o de `entre_clientes` discordam, vale o do cliente para ele, e
+   diz-se que discordam.
+
+### Como se vê que a ação está feita: `verifica`
+
+O efeito só se mede numa ação feita, e os clientes não marcam nada (7 Out
+2026: Congruent 0 de 48, Continente 0 de 23). Por isso cada ação que deixa
+um rasto público declara `verifica: { url, contem? }`, e o servidor vai ver
+no fecho de cada semana e em cada scan. Fecha-se sozinha quando a página
+responde e diz o texto.
+
+- **O `url` é onde o rasto fica**: a página nova, a página reescrita, o
+  perfil no diretório. Https, público.
+- **O `contem` só pode existir DEPOIS da ação feita.** O título de uma
+  página que já existe não prova nada; o nome da pessoa na página "Sobre",
+  a frase de abertura nova, o nome da marca na lista do diretório, provam.
+  Curto (até 160 caracteres), e uma frase que a página vá dizer à letra,
+  não uma paráfrase.
+- **Sem `verifica` quando não há endereço que se possa ver**: pedir uma peça
+  a um jornal, falar num podcast antes de ele sair. Essas continuam a
+  fechar-se pelo veredicto do cérebro na revalidação.
+- **Nas `revalidations[]`, um `keep` ou um `rewrite` também levam
+  `verifica`**: é assim que as ações abertas antes de 7 Out ganham a
+  verificação.
+- Uma página que recusa robôs (403) ou que não responde não fecha nem
+  mantém nada: "não vimos" não é "está feito".
 
 ---
 
