@@ -8,6 +8,35 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-07
+
+Radar LLM/IA: sem modelo novo nem mudança de preço de API (anthropic.com/news: última entrada 6 Out, Cyber Verification Program; sem lançamentos). Google lança o Nano Banana 2.1 no AI Mode ([SE Roundtable](https://www.seroundtable.com/nano-banana-21-google-ai-mode-42246.html)).
+
+GEO/AEO: a OpenAI testa etiquetas de produto nos resultados do ChatGPT, como "best all-rounder" e "best for beginners" ([SE Roundtable](https://www.seroundtable.com/product-labels-on-chatgpt-results-42237.html)). O controlo de IA generativa da Google no Search Console passa a avisar quando uma propriedade filha anula a definição da pai ([SE Roundtable](https://www.seroundtable.com/google-search-generative-ai-control-add-42236.html)).
+
+SEO/Google: fase 3 do spam update de Setembro possivelmente a 4 a 6 Out ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-phase-3-42239.html)). A documentação de crawl rate passa a dar a orientação de `Retry-After` com 503/429 ([SE Roundtable](https://www.seroundtable.com/google-crawl-rate-documentation-update-42247.html)).
+
+Implicações: (1) Spam update: rever o Search Console a 9 Out, depois do fim do rollout. (2) Etiquetas de produto no ChatGPT: awareness; incluir na checklist de comércio do Tracker na sexta.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Quarta-feira: sem passagem de cortes nem drafts. Corrida completa.
+
+## 2026-10-07
+
+### ⚙️ Mudanças nas plataformas
+
+- **ChatGPT: etiquetas de produto em teste**: [SE Roundtable](https://www.seroundtable.com/product-labels-on-chatgpt-results-42237.html) (6 Out, secundária; openai.com não verificado). Etiquetas como "best all-rounder", "best for beginners" e "best cushioning", com realce verde para o produto de topo e cinzento para categorias; teste descoberto por Brodie Clark, sem mercados confirmados.
+- **Google AI Mode: Nano Banana 2.1**: [SE Roundtable](https://www.seroundtable.com/nano-banana-21-google-ai-mode-42246.html) (6 Out, secundária). Modelo de geração e edição de imagem disponível no AI Mode, acessível pelo ícone da banana na app Google.
+- **Google Search Console: controlo de IA generativa**: [SE Roundtable](https://www.seroundtable.com/google-search-generative-ai-control-add-42236.html) (6 Out, secundária). Proprietários de propriedades de domínio de topo recebem aviso quando uma propriedade filha anula a definição da pai.
+- **Google Search: documentação de crawl rate**: [SE Roundtable](https://www.seroundtable.com/google-crawl-rate-documentation-update-42247.html) (6 Out, secundária). Guia reorganizado e com orientação explícita de `Retry-After` (atraso ou timestamp UTC) com 503 ou 429 para reduzir o crawl em emergência; o mecanismo já era suportado.
+- **Google: spam update de Setembro**: [SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-phase-3-42239.html) (6 Out, secundária). Possível fase final a 4 a 6 Out; sem confirmação no Search Status Dashboard lida hoje.
+- **Comércio agêntico, Bing AI Performance API, anúncios de IA em PT**: sem desenvolvimento novo confirmado por fonte primária. Search Central: último post de Out (learning paths no YouTube), sem relevância.
+
+### 💡 Implicações para destaque.ai
+
+- Spam update: rever o Search Console dos clientes de conteúdo em escala a 9 Out e levantar o congelamento se o dashboard der o rollout como concluído.
+- Etiquetas de produto no ChatGPT: awareness; adicionar à checklist de prontidão de comércio do Tracker na sexta, sem mexer em pitch.
+- `Retry-After`: sem ação; útil como resposta-padrão para clientes com picos de crawl de bots IA.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-06
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API (anthropic.com/news: última entrada 2 Out, formação de engenheiros; sem lançamentos).
