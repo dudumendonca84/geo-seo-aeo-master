@@ -464,10 +464,15 @@ Três listas, todas da semana mais recente e sem as perguntas branded:
 
 **Como se lê, e o que se faz:**
 
-1. **As três primeiras perguntas pedem uma ação cada**, se a marca pode
-   disputá-las (ver "Onde dá para conseguir presença"). Uma ação que
-   responde a uma pergunta perdida vale mais do que três que consertam um
-   sinal geral.
+1. **As três primeiras perguntas pedem uma ação cada, OBRIGATORIAMENTE**
+   (7 Out 2026): ou uma ação, ou a decisão explícita de não a disputar,
+   com o porquê. O servidor recusa o plano sem isto (`disputas[]`). Uma
+   ação que responde a uma pergunta perdida vale mais do que três que
+   consertam um sinal geral.
+1b. **A gravidade segue o que está em jogo.** Uma ação sobre uma pergunta
+   onde os outros são escolhidos muitas vezes, e a marca nenhuma, é `high`;
+   o número de respostas em jogo vai no `evidence`. Uma ação geral sem
+   pergunta nem motor não passa de `medium` só por ser fácil.
 2. **A página que sustenta diz o tipo de jogo.** Lê o endereço e o título:
    é uma página de serviço que afirma ("isto é o que fazemos"), a página de
    uma pessoa (`/consultor-geo/` com o nome dela), a de uma cidade
