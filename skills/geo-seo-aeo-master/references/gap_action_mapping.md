@@ -492,6 +492,34 @@ Três listas, todas da semana mais recente e sem as perguntas branded:
 
 ---
 
+## O que já funcionou: o efeito das ações feitas
+
+Bloco `context.what_worked` do `generate_opportunities` (7 Out 2026). O
+Tracker mede sozinho, em código, o número antes e quatro semanas depois de
+cada ação feita: na pergunta que a ação declarou, no motor, ou, sem nada
+declarado, na marca toda. É a parte da aprendizagem que vem do nosso
+próprio trabalho, e não do que o mercado diz.
+
+**Como se lê:**
+
+1. **Uma classe com `pode_citar` (3 casos medidos e limpos) cita-se** na
+   ação nova da mesma classe: "esta classe de ação moveu a citação X pp
+   em N casos". Abaixo de 3, menciona-se como indício, nunca como prova.
+2. **Uma classe que não mexe deixa de ser a primeira proposta.** Se três
+   casos de uma classe ficaram iguais ou desceram, a próxima ação para o
+   mesmo problema tenta outro caminho, e diz porquê.
+3. **`outras_na_janela` acima de zero não dá crédito a ninguém.** O número
+   mexeu, mas mexeram outras coisas na mesma janela. Diz-se assim.
+4. **`amostra_pequena` não conta como evidência.** Menos de dez respostas
+   numa das medições é ruído.
+5. **O escopo `marca` é o mais fraco.** Uma ação sem pergunta nem motor
+   mede-se na marca toda, onde tudo se mistura. Por isso, sempre que a
+   ação mira uma pergunta, declara-se `prompt`; quando mira um motor,
+   `engine`. Ações gerais continuam a existir, porque nem tudo mira uma
+   pergunta (entidade, preço, imprensa); essas simplesmente medem-se pior.
+
+---
+
 ## DIMENSÃO 1: Technical foundation
 
 ### Pattern: Gemini citation 0% mas outros motores >5%
