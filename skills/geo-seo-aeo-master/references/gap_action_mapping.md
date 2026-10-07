@@ -534,6 +534,23 @@ próprio trabalho, e não do que o mercado diz.
    cliente e o de `entre_clientes` discordam, vale o do cliente para ele, e
    diz-se que discordam.
 
+### As abertas também dizem o que miram
+
+Na revalidação, cada aberta com `alvo: "sem_alvo"` recebe-o no `keep` ou
+no `rewrite`: `prompt`, `engine` ou `porque_marca`, como uma ação nova. O
+servidor recusa o plano sem isso (7 Out 2026). Escolhe a pergunta onde o
+efeito se vai ver primeiro, não a mais genérica.
+
+### O tecto do plano
+
+O pacote traz `teto_do_plano`, e depois da passagem não podem ficar mais
+ações do cliente do que esse número. Escolher o que sai é parte do
+trabalho: tira (`drop`) primeiro o que repete outra ação, depois o que
+mexe em menos respostas, depois o que depende de uma decisão que ninguém
+tomou há semanas. O `why` diz contra quê perdeu ("menos prioritária do que
+«…», que mexe em 45 respostas"). Uma ação tirada não é uma ação feita, e
+pode voltar quando a medição a justificar.
+
 ### Como se vê que a ação está feita: `verifica`
 
 O efeito só se mede numa ação feita, e os clientes não marcam nada (7 Out
