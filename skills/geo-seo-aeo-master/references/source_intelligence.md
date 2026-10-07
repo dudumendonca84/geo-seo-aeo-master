@@ -179,6 +179,120 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-10-05 (quatro auditorias: consultoria B2B, formação e serviços de IT, retalho alimentar, alojamento de curta duração)
+
+Primeira entrada desde 4 de Setembro: as semanas de 7, 14, 21 e 28 de
+Setembro ficaram por escrever e não se reconstroem aqui. A comparação
+abaixo é com a semana de 28 de Setembro, que mediu três destas quatro
+auditorias. O conjunto mudou (uma auditoria a mais), portanto **as listas
+de domínios não se comparam entre as duas semanas**; a densidade por
+resposta e as quotas por tipo de fonte comparam-se, porque são médias.
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro e sem
+sentinela. 154 respostas por motor na semana (135 no AI Overviews), 139
+na anterior (130 no AI Overviews).
+
+### Densidade de fontes por resposta
+
+| Motor | 28 Set | 5 Out | Respostas sem fonte nenhuma (5 Out) |
+|---|---|---|---|
+| Grok | 33,9 | 33,3 | 1 de 154 |
+| Perplexity | 18,7 | 18,8 | 0 de 154 |
+| Gemini | 12,5 | 12,9 | 15 de 154 |
+| Copilot | 9,4 | 9,3 | 0 de 134 |
+| AI Overviews | 6,9 | 7,0 | 26 de 135 |
+| Meta AI (sessão real) | 6,7 | 6,1 | 37 de 154 |
+| Claude | 4,1 | 5,7 | 56 de 154 |
+| AI Mode | 3,7 | 4,5 | 10 de 154 |
+| ChatGPT | 3,1 | 3,2 | 11 de 154 |
+
+Estável em quase todos os motores, o que torna a ordem útil como
+referência: entre o Grok e o ChatGPT há um factor de dez na mesma malha
+de perguntas. A subida do Claude (4,1 para 5,7) é a única mexida
+relevante e coincide com a auditoria nova; não se lê como mudança do
+motor antes de uma segunda semana. A linha do ChatGPT mistura duas vias
+(API e aplicação), e numa das auditorias a via da aplicação gravou zero
+fontes em todas as respostas: o número é um piso, não a densidade do
+motor.
+
+### Lidas contra citadas: a barreira de entrada, por motor
+
+Três motores separam o que leram do que citaram:
+
+| Motor | Citadas / lidas, 5 Out | 28 Set |
+|---|---|---|
+| Grok | 1117 de 5127 (22%) | 1031 de 4706 (22%) |
+| Meta AI | 427 de 940 (45%) | 460 de 928 (50%) |
+| Claude | 678 de 874 (78%) | 412 de 573 (72%) |
+
+O Grok lê cinco páginas por cada uma que cita, e o rácio repetiu-se ao
+ponto percentual nas duas semanas. Consequência prática: no Grok, estar
+nas fontes lidas é fácil e quase não diz nada; o trabalho é passar à
+lista das citadas, e uma métrica de "presença nas fontes" sem esta
+separação sobrestima a marca por um factor de quatro a cinco. No Claude
+a distância é pequena: o que ele lê, quase sempre usa.
+
+### O que domina, por tipo de fonte
+
+- **Família Google: vídeo e comunidade.** O YouTube está em 39 de 135
+  respostas do AI Overviews (42 de 130 na semana anterior) e em 18 de 154
+  do AI Mode (19 de 139); o Reddit em 49 de 154 do Gemini (55 de 139) e
+  em 24 do AI Overviews. Duas semanas seguidas, e confirma o bloco do
+  Gemini em `engine_playbooks.md` (YouTube como domínio mais citado nas
+  respostas de IA da Google). No AI Overviews entram também o Instagram e
+  o Facebook (21 e 9 respostas), sobretudo nas perguntas de consumo.
+- **Perplexity: imprensa, plataformas de categoria e o LinkedIn, e quase
+  nenhum vídeo.** O YouTube aparece em **1 de 154** respostas (2 de 139 na
+  semana anterior). **Contradiz** o bloco do Perplexity em
+  `engine_playbooks.md`, que diz que o YouTube lidera as citações (32,4%,
+  Ahrefs, Jun 2026). Na nossa malha, portuguesa e dominada por perguntas
+  de serviço B2B e de consumo local, o Perplexity cita imprensa
+  portuguesa, associações de consumidores, páginas de categoria de
+  plataformas e o LinkedIn (32 respostas). Segunda semana seguida: entra
+  como candidata a correção do bloco, com a ressalva de que o estudo
+  citado é global e o nosso não, e as duas coisas podem ser verdade.
+- **Meta AI (sessão real): repositórios e artigos abertos.** O GitHub ou o
+  Medium aparecem em 44 de 154 respostas (50 de 139), sobretudo ficheiros
+  Markdown de documentação e guias, e o LinkedIn em 29. Duas semanas
+  seguidas. **Contradiz em parte** o bloco da Meta AI, que diz que ela
+  "não expõe fontes": na aplicação, o painel de raciocínio mostra fontes
+  em 117 das 154 respostas desta semana. O que a API não dá, a sessão
+  real dá.
+- **Claude: a Wikipédia inglesa como âncora.** `en.wikipedia.org` é o
+  domínio que o Claude mais cita esta semana, em 25 de 154 respostas (7
+  de 139 na anterior, com a auditoria nova a explicar parte da subida).
+  Nenhum outro motor a usa em mais de 7 respostas. Observação de uma
+  semana.
+- **Grok: o domínio próprio das empresas nomeadas e a imprensa de
+  negócios.** O Grok é o motor que mais lê sites de empresas da própria
+  categoria e imprensa económica portuguesa; o LinkedIn entra em 32
+  respostas.
+
+### Contaminação de mercado: o Copilot, duas semanas seguidas
+
+Em perguntas escritas em português de Portugal sobre o mercado português,
+**28% das fontes do Copilot são domínios .br** (347 de 1244, em 78 de 134
+respostas), contra 22% na semana anterior (282 de 1261, em 83 de 139). Os
+domínios .pt são 289. No Perplexity o mesmo valor é 8% (221 de 2900) e no
+Grok 3% (141 de 5127); no AI Mode, 1 fonte em 695. A família Google
+resolve o mercado e o Copilot não.
+
+Antes de isto virar conselho a uma marca, falta saber quanto é do motor e
+quanto é da localização da recolha (ver o padrão "a PERGUNTA não diz o
+mercado" em `gap_action_mapping.md`): a lista dos domínios .br mais citados
+roda de semana para semana (só 3 dos 10 domínios mais citados pelo
+Copilot repetem), que é o comportamento de uma pesquisa genérica em
+português e não de uma fonte de referência. A verificação manual a partir
+de Portugal está no plano de um cliente.
+
+### O que fica para promoção
+
+Dois padrões cumprem a regra das duas semanas e contradizem um playbook:
+o YouTube quase ausente no Perplexity e as fontes visíveis da Meta AI na
+sessão real. Ficam aqui como evidência interna para a reconciliação do
+self-audit; a edição dos blocos, com registo no `methodology-changelog.md`,
+é decisão dessa passagem.
+
 ## 2026-09-04 (comércio automóvel local, leitura completa da mesma semana)
 
 A entrada de 3 de Setembro foi escrita sobre uma leitura parcial da mesma
