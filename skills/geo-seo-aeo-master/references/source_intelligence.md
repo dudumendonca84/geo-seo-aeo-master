@@ -293,6 +293,56 @@ sessão real. Ficam aqui como evidência interna para a reconciliação do
 self-audit; a edição dos blocos, com registo no `methodology-changelog.md`,
 é decisão dessa passagem.
 
+### Adenda de 8 Out: um estudo de desporto, e as casas de apostas como fonte
+
+Fechou depois da entrada acima uma quinta auditoria da mesma semana, um
+estudo público sobre clubes de futebol portugueses (dez perguntas: o
+favorito em sete provas, o maior e o melhor clube, os adeptos mais
+apaixonados). Fica à parte porque a categoria não se parece com nenhuma
+das quatro de cima, e não entra nas tabelas.
+
+Base: respostas com pesquisa, sem erro, que citam pelo menos uma fonte.
+
+| Motor | Com fontes | Citam um sítio de apostas ou prognósticos | Citam o sítio oficial de um clube |
+|---|---|---|---|
+| Copilot | 40 | 23 | 0 |
+| Grok | 40 | 22 | 9 |
+| Gemini | 40 | 17 | 7 |
+| Perplexity | 30 | 15 | 12 |
+| Meta AI (sessão real) | 9 | 5 | 0 |
+| ChatGPT | 10 | 4 | 1 |
+| AI Mode | 30 | 0 | 0 |
+| AI Overviews | 21 | 1 | 2 |
+| Claude | 7 | 0 | 0 |
+
+"Sítio de apostas ou prognósticos" é uma lista de domínios por nome
+(apostalegal.pt, academiadasapostas.com, forebet.com, sportytrader.pt,
+prognosticosfutebol.pt, estimador.pt, mercados de previsão), não uma
+classificação semântica; a imprensa desportiva (abola.pt em 95 respostas,
+observador.pt em 60, a maior parte nas suas páginas de prognósticos) fica
+fora da contagem e empurraria os números para cima.
+
+Duas leituras, ambas de uma semana só e por isso observação datada:
+
+- **Nas perguntas de "quem é o favorito", as odds publicadas são uma
+  matéria-prima de primeira linha** para Copilot, Grok, Gemini e
+  Perplexity, perto de metade das respostas com fontes. A ideia de
+  favorito que o motor devolve é, em boa parte, a do mercado de apostas
+  da semana.
+- **A família Google quase não as cita** (AI Mode 0 de 30, AI Overviews
+  1 de 21) na mesma malha de perguntas. Não se atribui causa a partir
+  daqui; a confirmar numa segunda semana antes de passar ao bloco do
+  motor em `engine_playbooks.md`.
+
+Ressalva de medição: o Copilot desta semana foi recolhido por um
+fornecedor que não fixa o país, e as respostas refletem o Brasil; a linha
+dele vale como observação do motor, não do mercado português.
+
+Fora das fontes, o padrão que o estudo mostra é a desatualização sem
+pesquisa: nas mesmas perguntas, as respostas sem pesquisa falam de
+épocas de 2023/24 a 2025/26 como se fossem a atual. Para qualquer
+pergunta sobre o presente, a via sem pesquisa mede uma fotografia antiga.
+
 ## 2026-09-04 (comércio automóvel local, leitura completa da mesma semana)
 
 A entrada de 3 de Setembro foi escrita sobre uma leitura parcial da mesma
