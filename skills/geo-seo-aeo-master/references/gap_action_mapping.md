@@ -513,8 +513,9 @@ próprio trabalho, e não do que o mercado diz.
 2. **Uma classe que não mexe deixa de ser a primeira proposta.** Se três
    casos de uma classe ficaram iguais ou desceram, a próxima ação para o
    mesmo problema tenta outro caminho, e diz porquê.
-3. **`outras_na_janela` acima de zero não dá crédito a ninguém.** O número
-   mexeu, mas mexeram outras coisas na mesma janela. Diz-se assim.
+3. **`outras_na_janela` acima de zero não dá crédito automático.** O
+   número mexeu, mas mexeram outras coisas na mesma janela. Quem decide a
+   quem se deve és tu, na leitura (abaixo), e não a conta.
 4. **`amostra_pequena` não conta como evidência.** Menos de dez respostas
    numa das medições é ruído.
 5. **O escopo `marca` é o mais fraco, e por isso tem de ser escolhido.**
@@ -533,6 +534,45 @@ próprio trabalho, e não do que o mercado diz.
    citação X pp em N casos de vários clientes"). Quando o saldo do próprio
    cliente e o de `entre_clientes` discordam, vale o do cliente para ele, e
    diz-se que discordam.
+
+### O teu trabalho: ler o efeito (`leituras_do_efeito`)
+
+O código mede; quem diz o que o número quer dizer és tu (8 Out 2026,
+founder: *"tem que ser o cérebro"*). As ações fecham-se em lotes, e com
+oito outras na mesma janela a conta sozinha não dá crédito a ninguém:
+nesse dia as 20 ações medidas da destaque.ai tinham todas outras na
+janela, e o saldo por classe estava vazio em todos os clientes.
+
+Por isso, para cada id em `what_worked.por_ler` (até 10 por plano, as
+mais antigas primeiro), devolves ao lado dos `items` uma entrada em
+`leituras_do_efeito[]`:
+
+```json
+{ "id": "…", "atribuicao": "esta | partilhada | nenhuma | nao_se_sabe",
+  "classe": "entidade: Wikidata",
+  "licao": "Completar o item Wikidata não mexeu a citação em quatro semanas.",
+  "porque": "Oito outras ações na janela, nenhuma no mesmo motor; a subida está toda no Perplexity." }
+```
+
+- **`atribuicao`**: `esta` quando, olhando para as outras da janela (vêm na
+  mesma lista `accoes`, com data, alvo e título), o movimento é desta e de
+  mais nenhuma; `partilhada` quando várias explicam o mesmo número;
+  `nenhuma` quando o número não mexeu ou mexeu por outra razão que se vê
+  nos dados; `nao_se_sabe` quando não há como separar. `nao_se_sabe` é uma
+  leitura honesta, não uma falha.
+- **`classe`**: reutiliza uma de `classes_conhecidas` sempre que serve
+  (`dimensão: tipo de ação`, até 60 caracteres, sem nome de cliente). Duas
+  grafias para a mesma ação são dois padrões que nunca chegam a três casos.
+- **`licao`**: o que se aprende, numa frase, para o plano seguinte.
+- **`porque`**: o que mais mudou na janela e porque atribuis assim.
+- **Não escreves números.** O delta e as outras na janela gravam-se do
+  código, ao lado da tua leitura.
+
+O servidor recusa o plano sem as leituras pedidas. Na semana seguinte
+voltam como `licoes` (por classe) e `licoes_entre_clientes` (só contagens,
+só classes de dois clientes ou mais): o saldo conta apenas as que leste
+como `esta`, e uma classe com `pode_citar` (3 atribuídas) cita-se como os
+pontos 1 e 6 acima dizem.
 
 ### As abertas também dizem o que miram
 
