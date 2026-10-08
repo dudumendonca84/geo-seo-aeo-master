@@ -55,16 +55,19 @@ done and 4 weeks later, measured on the target the action declares
 (one question, one engine, or the whole brand), with the other actions
 done in the same window counted as confounders.
 
-- **Computed, not written by hand** (8 Oct 2026). The Tracker computes
-  it from the audits (`src/lib/opportunities/efeito.ts`) and hands it to
-  the brain as `context.what_worked` in `generate_opportunities`: per
-  client, per action class, and an anonymised `entre_clientes` block.
-  The old hand-written table (`tracker.intervention_outcomes`) had 15
-  rows when one client alone had 48 completed actions; it stays as
-  history and is no longer written. Arithmetic in code, judgement in
-  the brain: the same split as share of voice.
+- **Measured in code, read by the brain** (8 Oct 2026). The Tracker
+  computes before, after and the confounders from the audits
+  (`src/lib/opportunities/efeito.ts`). Attributing a movement to one of
+  nine actions closed in the same week is judgement, so the brain writes
+  it: for every measured action not yet read, a `leituras_do_efeito`
+  entry (attribution, action class, lesson, why) in
+  `generate_opportunities`, stored in `opportunities.effect_reading` with
+  the code's numbers beside it. The server refuses the plan without them.
+  The old hand-written table (`tracker.intervention_outcomes`) stays as
+  history and is no longer written: the brain wrote the numbers there too.
 - **Read**: when generating opportunities or the weekly bet, use
-  `what_worked`; with 3+ cases of the same class (`pode_citar`), cite
+  `what_worked.licoes` (only readings attributed to the action itself
+  count); with 3+ such cases of the same class (`pode_citar`), cite
   them ("this class of action moved citation +X pp in N cases"). Below
   3 cases, do not aggregate: one case is an anecdote, not evidence.
 - This is the asset the market cannot copy: intervention data, not

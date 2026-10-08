@@ -76,9 +76,10 @@ hierarchy, in order, always saying which layer it came from:
    sources, mode (memory vs live search), who is mentioned, the text.
    The strongest layer; use it first.
 2. **Our own intervention data.** The measured effect of completed
-   actions (`context.what_worked`, computed by the Tracker from the
-   audits; market_models.md §3): what actually moved citation, in how
-   many cases. From 3+ cases of a class, cite them.
+   actions (`context.what_worked`: measured by the Tracker, attributed by
+   the brain's own readings; market_models.md §3): what actually moved
+   citation, in how many cases. From 3+ attributed cases of a class, cite
+   them.
 3. **Our own accumulated patterns.** market_models.md: source shifts,
    category movements, cross-layer stories, dated and revisited.
 4. **Documented knowledge with a source.** frameworks.md, benchmarks.md,
