@@ -50,20 +50,26 @@ position is opening". For each insight:
 
 ## 3. The intervention registry (the causal engine)
 
-`tracker.intervention_outcomes` accumulates, across clients and
-anonymised, what each completed action actually did: action class,
-dimension, coarse sector, citation/SoV at completion and 4 weeks later,
-and the confounders written honestly (what else changed in the window).
+What each completed action actually did: citation in the week it was
+done and 4 weeks later, measured on the target the action declares
+(one question, one engine, or the whole brand), with the other actions
+done in the same window counted as confounders.
 
-- **Write**: for every opportunity marked done >=4 weeks ago and not
-  yet registered, add its row. Labels only: never a client name or
-  domain in text fields.
-- **Read**: when generating opportunities or the weekly bet, consult
-  the registry; with 3+ cases of the same class, cite them ("this class
-  of action moved citation +X pp in N cases"). Below 3 cases, do not
-  aggregate: one case is an anecdote, not evidence.
+- **Computed, not written by hand** (8 Oct 2026). The Tracker computes
+  it from the audits (`src/lib/opportunities/efeito.ts`) and hands it to
+  the brain as `context.what_worked` in `generate_opportunities`: per
+  client, per action class, and an anonymised `entre_clientes` block.
+  The old hand-written table (`tracker.intervention_outcomes`) had 15
+  rows when one client alone had 48 completed actions; it stays as
+  history and is no longer written. Arithmetic in code, judgement in
+  the brain: the same split as share of voice.
+- **Read**: when generating opportunities or the weekly bet, use
+  `what_worked`; with 3+ cases of the same class (`pode_citar`), cite
+  them ("this class of action moved citation +X pp in N cases"). Below
+  3 cases, do not aggregate: one case is an anecdote, not evidence.
 - This is the asset the market cannot copy: intervention data, not
-  opinion. It only grows if every completed action is registered.
+  opinion. It only grows if every action declares its target (question,
+  engine, or brand with a reason), which is what the server enforces.
 
 ## 4. Honesty rules (non-negotiable)
 
