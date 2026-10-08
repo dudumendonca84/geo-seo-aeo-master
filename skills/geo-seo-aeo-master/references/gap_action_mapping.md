@@ -345,6 +345,7 @@ revalidou nenhuma das 16 abertas. Não ter nada a mudar é `keep`:
 ```json
 { "id": "<o id que veio>", "verdict": "keep|close|drop|rewrite",
   "why": "a frase que o cliente vai ler",
+  "motivo": "duplica|coberta|ja_nao_se_aplica   (só no drop)",
   "title": "...", "action": "...", "rationale": "...", "deliverable": "..." }
 ```
 
@@ -352,7 +353,7 @@ revalidou nenhuma das 16 abertas. Não ter nada a mudar é `keep`:
 |---|---|---|
 | `keep` | o facto que a gerou continua verdadeiro | o facto de hoje, com o número |
 | `close` | a medição mostra que **está feito** | o que mudou e desde quando |
-| `drop` | **não foi feito** e deixou de fazer sentido: duplica outra aberta, a razão desapareceu, ou o cliente desistiu do que a originou | porque sai, e se duplica, qual fica |
+| `drop` | **não foi feito** e deixou de fazer sentido: duplica outra aberta (`motivo: "duplica"`), está coberta por outra que a absorve (`"coberta"`), ou a razão desapareceu ou o cliente desistiu (`"ja_nao_se_aplica"`). **Nunca por prioridade**: uma ação menos urgente fica, e espera em "A seguir" | porque sai, e se duplica ou está coberta, qual fica |
 | `rewrite` | o trabalho continua a fazer sentido e o texto já não | o que mudou; manda **todos** os campos que mudam (`title`, `action`, `rationale`, `deliverable`) |
 
 Oito regras duras:
@@ -581,15 +582,22 @@ no `rewrite`: `prompt`, `engine` ou `porque_marca`, como uma ação nova. O
 servidor recusa o plano sem isso (7 Out 2026). Escolhe a pergunta onde o
 efeito se vai ver primeiro, não a mais genérica.
 
-### O tecto do plano
+### Nada sai do plano por prioridade
 
-O pacote traz `teto_do_plano`, e depois da passagem não podem ficar mais
-ações do cliente do que esse número. Escolher o que sai é parte do
-trabalho: tira (`drop`) primeiro o que repete outra ação, depois o que
-mexe em menos respostas, depois o que depende de uma decisão que ninguém
-tomou há semanas. O `why` diz contra quê perdeu ("menos prioritária do que
-«…», que mexe em 45 respostas"). Uma ação tirada não é uma ação feita, e
-pode voltar quando a medição a justificar.
+Decisão do founder (8 Out 2026: *"as ações não são para ser perdidas, são
+para ser colapsadas, e vão aparecendo mais"*). O plano não tem tecto. O
+ecrã mostra as cinco primeiras pela ordem de ataque e guarda as outras em
+"A seguir", fechado; quando uma das de cima fecha, a seguinte sobe
+sozinha. Por isso:
+
+- **Uma ação menos prioritária fica aberta.** O teu trabalho é a ordem
+  (prioridade, esforço, quantas respostas mexe), não cortar. A 8 Out uma
+  regra de tecto que entretanto saiu levou a corrida a tirar 21 ações
+  "por serem menos prioritárias"; foram repostas.
+- **Um `drop` traz `motivo`**: `duplica`, `coberta` ou `ja_nao_se_aplica`.
+  O servidor recusa um `drop` sem um destes.
+- **Não ser prioritária hoje não é motivo**: a ordem muda com a medição,
+  e uma ação tirada perde-se, que é o contrário do que se quer.
 
 ### Como se vê que a ação está feita: `verifica`
 
