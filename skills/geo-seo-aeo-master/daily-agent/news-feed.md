@@ -8,6 +8,38 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-08
+
+Radar LLM/IA: a Anthropic lança o Claude Haiku 5.5 (`claude-haiku-5-5`, 7 Out) a $0,10/$0,50 por MTok de input/output até 100K tokens, contexto de 1M, corte Jun 2026 ([documentação da Anthropic](https://platform.claude.com/docs/en/models/haiku-5-5/overview)). Tokenizador novo: o mesmo texto conta ~30% mais tokens do que no Haiku 4.5. Sem outras mudanças de modelo ou preço lidas.
+
+GEO/AEO: o Merchant Center ganha um hub de integração UCP (checkout em AI Mode e Gemini), só EUA por agora; Austrália e Canadá em 2027 ([SE Roundtable](https://www.seroundtable.com/google-merchant-center-ucp-integration-hub-42243.html)). A Google testa "add to calendar" em AI Overviews, não reproduzido ([SE Roundtable](https://www.seroundtable.com/google-ai-overviews-add-to-calendar-42233.html)).
+
+SEO/Google: a Google deixa de mostrar rich results de reviews em páginas de saúde ([SE Roundtable](https://www.seroundtable.com/google-drops-healthcare-review-snippets-42248.html)). Spam update de Setembro: fase final possivelmente concluída a 4 a 6 Out, sem confirmação no dashboard.
+
+Implicações: (1) Haiku 5.5: o `cost_optimized` do Tracker/Deck Builder passa a `claude-haiku-5-5` já (o 4.5 retira-se a partir de 15 Out); validar uma auditoria gratuita antes de segunda. (2) Spam update: rever o Search Console a 9 Out, como previsto. (3) UCP: sem ação para PT; awareness.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Quinta-feira: sem passagem de cortes nem drafts. Corrida completa.
+
+## 2026-10-08
+
+### 🔵 Anúncios oficiais
+
+- **Introducing Claude Haiku 5.5**: [platform.claude.com](https://platform.claude.com/docs/en/models/haiku-5-5/overview) (7 Out, leitura direta; anthropic.com/news lista a entrada). ID `claude-haiku-5-5`, contexto 1M, saída máxima 128K, pensamento adaptativo (esforço por omissão `medium`), corte de conhecimento Jun 2026. Preço $0,10/$0,50 por MTok até 100K tokens de prompt e $0,50/$2,50 acima; cache read $0,01; Batch -50%. Tokenizador novo (~30% mais tokens para o mesmo texto). Retirada não antes de 7 Out 2027. Absorvido em `models.md` e `model_cutoffs.md`.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google Merchant Center: hub de integração UCP**: [SE Roundtable](https://www.seroundtable.com/google-merchant-center-ucp-integration-hub-42243.html) (7 Out, secundária; doc de apoio em support.google.com/merchants/answer/16992327). Permite aderir ao Universal Commerce Protocol a partir da conta, com botão de checkout em listagens elegíveis do AI Mode e do Gemini; rollout gradual nos EUA, Austrália e Canadá em 2027. Sem UE/PT. Relevante para o watch de comércio agêntico: nenhum gatilho de chegada à UE disparado.
+- **Google AI Overviews: "add to calendar"**: [SE Roundtable](https://www.seroundtable.com/google-ai-overviews-add-to-calendar-42233.html) (7 Out, secundária). Teste de link para adicionar datas de eventos ao calendário; o autor não o reproduziu.
+- **Google Search: rich results de reviews em saúde**: [SE Roundtable](https://www.seroundtable.com/google-drops-healthcare-review-snippets-42248.html) (7 Out, secundária). Páginas de saúde com markup de reviews deixam de os mostrar.
+- **OpenAI Ads na Europa**: WebSearch devolve apenas a alegação já conhecida de self-serve em Portugal (FullPress), contra a previsão de analistas de 2 a 4 meses (MediaPost). `openai.com` devolve 403. Estado do Ads Manager PT inalterado (disputado), sem caso de primeira mão.
+- **Bing Webmaster AI Performance API**: sem anúncio. Sem outros Tier 1 novos (Google, OpenAI, Anthropic, Bing, Perplexity) além do Haiku 5.5.
+
+### 💡 Implicações para destaque.ai
+
+- Haiku 5.5: o `cost_optimized` do `claude` passou a `claude-haiku-5-5` em `models.md`; confirmar no Tracker até segunda que o ID resolve e que o custo por auditoria gratuita desce (a poupança real é menor que os 90% do preço de tabela por causa do tokenizador). Só awareness para o pitch.
+- UCP só nos EUA: manter a categoria `transactional` do Tracker em modo de monitorização; sem mudança de pitch em PT.
+- Spam update: rever o Search Console dos clientes de conteúdo em escala a 9 Out.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-07
 
 Radar LLM/IA: sem modelo novo nem mudança de preço de API (anthropic.com/news: última entrada 6 Out, Cyber Verification Program; sem lançamentos). Google lança o Nano Banana 2.1 no AI Mode ([SE Roundtable](https://www.seroundtable.com/nano-banana-21-google-ai-mode-42246.html)).
