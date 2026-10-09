@@ -8,6 +8,41 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-09
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço lidas. A Anthropic publica a atualização da Usage Policy (8 Out, em vigor a 12 Nov): sem alterações a crawling, treino, anúncios ou API ([Anthropic](https://www.anthropic.com/news/2026-usage-policy-update)).
+
+GEO/AEO: sem anúncio Tier 1 novo para motores de IA. Nenhum gatilho dos watches (checkout in-chat na UE, anúncios ChatGPT em PT, API do Bing AI Performance) disparou.
+
+SEO/Google: o spam update de Setembro terminou a 8 Out, depois de duas semanas (24 Set a 8 Out), confirmado pela Search Central no X ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-done-42235.html)). A Google documenta o programa UGC Fresh Data, só para plataformas de conteúdo gerado por utilizadores ([Google](https://developers.google.com/search/docs/appearance/ugc-fresh-data-program)).
+
+Implicações: (1) Spam update fechado: comparar hoje o Search Console de 24 Set a 8 Out com as duas semanas anteriores para cada cliente e reportar na segunda. (2) Merchant Center: mais de uma alteração de preço ou stock por dia pode causar reprovação; quem tem feed, rever a frequência de atualização antes de segunda. (3) UGC Fresh Data: sem ação para B2B SaaS em PT; awareness.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Sexta: drafts semanais gerados. Corrida completa.
+
+## 2026-10-09
+
+### 🔵 Anúncios oficiais
+
+- **2026 Usage Policy update**: [Anthropic](https://www.anthropic.com/news/2026-usage-policy-update) (8 Out, leitura direta). Em vigor a 12 Nov. Novas secções sobre campanhas enganosas e atividade artificial, vigilância, armas e ações físicas autónomas, clarificação de regiões não suportadas. A página não menciona crawling, treino com dados, anúncios, comércio nem alterações específicas de API.
+- **UGC Fresh Data Program**: [Google Search Central](https://developers.google.com/search/docs/appearance/ugc-fresh-data-program) (8 Out, via [SE Roundtable](https://www.seroundtable.com/google-ugc-fresh-data-program-42265.html), secundária). Pipeline próprio (OAuth 2.0, JSON-LD validado) para plataformas aprovadas enviarem conteúdo gerado por utilizadores em minutos; contadores de engagement em 72 horas; sem garantia de aparecer; resposta às candidaturas em 6 a 8 semanas. Separado da Indexing API.
+
+### ⚙️ Mudanças nas plataformas
+
+- **Google: September 2026 Spam Update concluído**: [SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-done-42235.html) (8 Out, secundária; confirmação da Search Central no X). Rollout de 24 Set a 8 Out (4h37 ET), global e em todas as línguas, sem alvo em link spam. Impacto reportado em 25 a 27 Set, 30 Set e 4 a 6 Out, com possível sobreposição de outras mudanças. A Google diz que a recuperação pode demorar meses e que haverá refreshes periódicos.
+- **Google Merchant Center: produtos que mudam com frequência**: [SE Roundtable](https://www.seroundtable.com/google-merchant-center-disapprove-products-chnage-fast-42251.html) (8 Out, secundária; página de ajuda revista a 27 Set, via PPC News Feed). Alterações de preço ou disponibilidade mais de uma vez por dia podem falhar nas atualizações automáticas, e o produto pode ser reprovado em vez de atualizado. Tensão direta com a spec da OpenAI (refresh até 15 min) para comércio agêntico.
+- **Google Search Central: percursos de aprendizagem em YouTube**: [Google](https://developers.google.com/search/blog) (Out 2026, primária). Playlists para fundamentos de Search e SEO técnico; sem impacto em GEO.
+- **Watches**: nenhum gatilho disparado (checkout in-chat na UE/PT, anúncios ChatGPT em PT, API do Bing AI Performance: último post do Bing Search é de 16 Jun). Sem lançamento de modelo nem alteração de preço lidos em Tier 1.
+
+### 💡 Implicações para destaque.ai
+
+- Spam update fechado a 8 Out: comparar o Search Console dos clientes de 24 Set a 8 Out contra as duas semanas anteriores e enviar a leitura na segunda de manhã; qualquer queda sem causa técnica entra como caso para o pitch de auditoria.
+- Merchant Center e feeds: para clientes e-commerce, rever na segunda a frequência de atualização do feed (no máximo uma alteração diária por produto no Google; a OpenAI aceita até 15 min). Define o desenho do módulo de prontidão de comércio do Tracker: awareness, sem mudança de pitch.
+- Usage Policy da Anthropic: só awareness; sem efeito no crawling do ClaudeBot nem nas regras de robots.txt.
+
+### Nota
+Drafts semanais: `drafts/2026-10-09-weekly.md`.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-08
 
 Radar LLM/IA: a Anthropic lança o Claude Haiku 5.5 (`claude-haiku-5-5`, 7 Out) a $0,10/$0,50 por MTok de input/output até 100K tokens, contexto de 1M, corte Jun 2026 ([documentação da Anthropic](https://platform.claude.com/docs/en/models/haiku-5-5/overview)). Tokenizador novo: o mesmo texto conta ~30% mais tokens do que no Haiku 4.5. Sem outras mudanças de modelo ou preço lidas.
