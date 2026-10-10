@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-10
+
+Dia parado; corrida completa. Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1 (a Anthropic publicou a 8 Out apenas Usage Policy, Cyber Mission e programa de verificação; openai.com devolve 403) ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: nada novo desde a entrada de ontem; o spam update de Setembro continua dado como concluído a 8 Out ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-done-42235.html)). Nenhum gatilho dos watches disparou (checkout in-chat na UE, anúncios ChatGPT em PT, API do Bing AI Performance).
+
+Implicações: (1) enviar na segunda de manhã a leitura do Search Console de 24 Set a 8 Out por cliente, como previsto. (2) Sem ação nova.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Sábado: sem drafts nem cortes.
+
+## 2026-10-10
+
+Sem novidades significativas hoje.
+
+- Watches: nenhum gatilho disparado. Último item de topo do SE Roundtable é de 9 Out (testes de UI do Bing sem favicons e sem bordas no local pack; Google Ads com previews de assets de AI Max): sem impacto em GEO. O arquivo da Search Central não mostra posts novos desde o de Out sobre playlists.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-09
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço lidas. A Anthropic publica a atualização da Usage Policy (8 Out, em vigor a 12 Nov): sem alterações a crawling, treino, anúncios ou API ([Anthropic](https://www.anthropic.com/news/2026-usage-policy-update)).
