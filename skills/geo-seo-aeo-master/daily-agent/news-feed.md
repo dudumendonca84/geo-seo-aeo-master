@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-11
+
+Dia parado; corrida completa. Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser 8 Out (Usage Policy, Cyber Mission) e Haiku 5.5 de 7 Out ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: sem anúncio novo; o topo do SE Roundtable é de 9 Out ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou (checkout in-chat na UE, anúncios ChatGPT em PT, API do Bing AI Performance).
+
+Implicações: enviar na segunda de manhã a leitura do Search Console de 24 Set a 8 Out por cliente, como previsto.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Domingo: sem drafts nem cortes.
+
+## 2026-10-11
+
+Sem novidades significativas hoje.
+
+- Watches: nenhum gatilho disparado. Pesquisa por lançamentos de modelos, preços e AI Mode/AIO em Out 2026 não devolveu fonte primária nova.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-10
 
 Dia parado; corrida completa. Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1 (a Anthropic publicou a 8 Out apenas Usage Policy, Cyber Mission e programa de verificação; openai.com devolve 403) ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: nada novo desde a entrada de ontem; o spam update de Setembro continua dado como concluído a 8 Out ([SE Roundtable](https://www.seroundtable.com/google-september-2026-spam-update-done-42235.html)). Nenhum gatilho dos watches disparou (checkout in-chat na UE, anúncios ChatGPT em PT, API do Bing AI Performance).
