@@ -11,6 +11,39 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-10-12: Décima segunda execução (vs. 5 out; quinta semana consecutiva sem hiato)
+
+**Score global:** 72,5/100 (73 arredondado). **Δ vs. 5 out: 0.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 89 | +1 |
+| Performance / CWV | 67 | +1 |
+| SEO On-Page | 95 | 0 |
+| Schema | 92 | −1 |
+| Imagens | 76 | 0 |
+| GEO técnica | 93 | 0 |
+| Conteúdo & topical authority | 97 | 0 |
+| Entidade | 78 | 0 |
+| Autoridade & PR | 34 | 0 |
+| Social | 37 | 0 |
+| E-E-A-T | 70 | 0 |
+| Medição | 42 | −2 |
+
+**Items movidos para DONE:** 0. **Candidatos a DONE por confirmar na origem:** auth `refresh_token_not_found`, Stripe `tax_code`, DeepSeek sem saldo, Gemini (ausentes da janela de 7 dias; ausência não é prova).
+
+**Items novos:** 3: MEASUREMENT P1 (Perplexity `402` de 9 out), ENTITY P2 ("Periscopy" lido como "Periscope", entidade sem resultado), CONTENT P2 (formato citável PT-PT em falta para FS2/FS3/GE4/GP7-9). **Reconfirmado:** MEASUREMENT P0 Anthropic (repetido a 12 out), SCHEMA `Organization.description` (4ª semana).
+
+**Mudanças materiais:**
+- Crédito Anthropic esgotado outra vez no lote de 12 out (07:02–07:11 UTC), uma semana depois do primeiro aviso. Notificação enviada.
+- Prompt-test (32 prompts + entidade, proxy `WebSearch`): destaque.ai em 3 (9%), 2 em síntese, sempre via Sortlist; nos 22 prompts fixos, 3/22 contra 3/22 a 5 out. Nenhuma menção negativa ou alucinada sobre a marca; protocolo de crise não accionado. Confusões sobre o acrónimo GEO (GD1, GD7, V3, V4) e sobre "Periscopy".
+- Site: `content-encoding: br` confirmado por header; TTFB mediana 276 → 257 ms; sitemap 128 → 132 URLs; estudo do futebol e "Sites AI Native" publicados; artigo "O orçamento segue o clique" retirado a pedido do fundador (404).
+- Não verificável: PSI (429), Knowledge Panel, GBP, Bing Places, GSC (com atraso reportado), GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-10-05: Décima primeira execução (vs. 28 set; quarta semana consecutiva sem hiato)
 
 **Score global:** 73/100. **Δ vs. 28 set: +1.**
