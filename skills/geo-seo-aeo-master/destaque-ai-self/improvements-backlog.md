@@ -48,23 +48,52 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 28 setembro 2026: décima execução do Routine, terceira semana consecutiva sem hiato, critério de verificação do item PROCESS cumprido, ver DONE abaixo. `curl` de saída funcionou pela primeira vez em 15 semanas, permitindo TTFB real, fetch directo e a maior amostra de teste multi-motor desta série (32 prompts, 5 sub-agentes). Dois achados novos de alto volume no Tracker: erro de autenticação (`Invalid Refresh Token`, 614 ocorrências, 7 utilizadores) e falha de checkout Stripe (`tax_code` em falta, bloqueia venda do plano Pro/mês). O item Gemini, fechado DONE há uma semana com reserva explícita, **reabre**: crédito esgotou-se de novo em 24 set. O mistério do Wikidata está resolvido: o QID Q140043087 confirmado inexistente (404 directo), não há nada para repor, só para construir de raiz. Teste multi-motor completo (pela primeira vez desde 13 jul) revela 0/6 nos prompts de alto intent (GP1-6) e um 5º eixo de colisão do acrónimo "GEO" em V3. SEO Alive classificado formalmente. Ver `audit-baseline.md` 28 set para o detalhe completo.)_
+_(Atualizado 12 outubro 2026: décima segunda execução, quinta consecutiva sem hiato. P0 Anthropic repetiu-se (12 out), novos P1 Perplexity 402 e P2 entidade/conteúdo; sem items movidos para DONE esta semana. Anteriormente, 28 setembro 2026: décima execução do Routine, terceira semana consecutiva sem hiato, critério de verificação do item PROCESS cumprido, ver DONE abaixo. `curl` de saída funcionou pela primeira vez em 15 semanas, permitindo TTFB real, fetch directo e a maior amostra de teste multi-motor desta série (32 prompts, 5 sub-agentes). Dois achados novos de alto volume no Tracker: erro de autenticação (`Invalid Refresh Token`, 614 ocorrências, 7 utilizadores) e falha de checkout Stripe (`tax_code` em falta, bloqueia venda do plano Pro/mês). O item Gemini, fechado DONE há uma semana com reserva explícita, **reabre**: crédito esgotou-se de novo em 24 set. O mistério do Wikidata está resolvido: o QID Q140043087 confirmado inexistente (404 directo), não há nada para repor, só para construir de raiz. Teste multi-motor completo (pela primeira vez desde 13 jul) revela 0/6 nos prompts de alto intent (GP1-6) e um 5º eixo de colisão do acrónimo "GEO" em V3. SEO Alive classificado formalmente. Ver `audit-baseline.md` 28 set para o detalhe completo.)_
 
-### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lote diário de 5 out
-- **Prioridade:** P0
+### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lotes de 5 e 12 out
+- **Prioridade:** P0 (REPETIDO a 12 out: segunda semana consecutiva)
 - **Esforço:** 15-30min
 - **Origem:** auditoria semanal 2026-10-05 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
 - **Estado:** TODO
+- **Atualização 2026-10-12:** o erro repetiu-se hoje, ~35 grupos, 07:02–07:11 UTC, `/api/audit/run-batch`. Notificação enviada ao fundador. A recarga automática não está activa ou o top-up de 5 out não foi feito.
 - **Descrição:** `claude/claude-sonnet-5 (knowledge) failed: 400 ... Your credit balance is too low to access the Anthropic API`: mais de 30 grupos de erro de 1 ocorrência cada, todos entre 07:01 e 07:10 UTC de 5 out, rota `/api/audit/run-batch`. O motor Claude do Periscopy fica sem medição no lote diário.
 - **Ação:** Repor crédito em Plans & Billing e activar recarga automática. Considerar migrar de `claude-sonnet-5` para `claude-sonnet-5-5` (`models.md`).
 - **Verificação:** zero ocorrências numa janela de 7 dias.
 - **Notes:** Mesmo padrão dos esgotamentos OpenAI (set) e Gemini (set): três fornecedores, três esgotamentos manuais. Sugere alerta de saldo, não só top-up.
+
+### 2026-10-12 added: MEASUREMENT: Tracker: Perplexity sonar-pro com 402 (crédito) além dos 429
+- **Prioridade:** P1
+- **Esforço:** 30min
+- **Origem:** auditoria semanal 2026-10-12 (`get_runtime_errors`, 7 dias)
+- **Estado:** TODO
+- **Descrição:** a 9 out surgiu `perplexity/sonar-pro (augmented) failed: 402 insufficient API credits`, a somar aos 82 `429` activos desde 7 set (último hoje). O motor Perplexity do Periscopy está degradado por limite e, pelo menos uma vez, por saldo.
+- **Ação:** verificar saldo e tier de rate-limit em perplexity.ai/account/api/billing; activar recarga; escalonar os pedidos do lote.
+- **Verificação:** zero `402` e queda dos `429` numa janela de 7 dias.
+
+### 2026-10-12 added: ENTITY: "Periscopy" confundido com "Periscope" e sem entidade reconhecida em pesquisa
+- **Prioridade:** P2
+- **Esforço:** 1 dia
+- **Origem:** auditoria semanal 2026-10-12 (pesquisa de entidade)
+- **Estado:** TODO
+- **Descrição:** "destaque.ai Periscopy Lisboa" devolve Periscope (X) e Periscope (Capterra); a síntese diz não haver nada sobre destaque.ai.
+- **Ação:** em descrições do produto usar "Periscopy, software de visibilidade em IA da destaque.ai"; página/ficha do produto em directórios (Capterra, G2) com o nome correcto; ligar ao item Wikidata quando existir.
+- **Verificação:** repetir a pesquisa de entidade e obter pelo menos uma fonte própria ou de directório.
+
+### 2026-10-12 added: CONTENT: Formato citável em falta para FS2/FS3/GE4 e GP7-9 (PT-PT, dados próprios, autor nomeado)
+- **Prioridade:** P2
+- **Esforço:** 1 semana
+- **Origem:** auditoria semanal 2026-10-12 (prompt-test)
+- **Estado:** TODO
+- **Descrição:** os resultados para ClaudeBot/Claude-User (FS2) e AI Performance do Bing (FS3) vêm de directórios e blogs, não da documentação oficial; GE4 e GP7-9 não têm fonte PT-PT. O site tem dados próprios (estudos) mas não os ligou a estas perguntas.
+- **Ação:** artigos curtos com autor nomeado e dados do Periscopy sobre robots.txt de crawlers de IA, relatório AI Performance do Bing e perguntas a fazer a um consultor GEO.
+- **Verificação:** repetir FS2, FS3, GE4, GP7-9 e contar citações do domínio próprio.
 
 ### 2026-10-05 added: STRATEGIC/ENTITY: única pegada em respostas de IA é o perfil Sortlist
 - **Prioridade:** P1
 - **Esforço:** 1 dia
 - **Origem:** auditoria semanal 2026-10-05 (prompt-test, 34 prompts)
 - **Estado:** TODO
+- **Atualização 2026-10-12:** 3 de 32 (9%), igual; GD5 e GD8 em síntese, V2 como link. O perfil Sortlist não tem avaliações (ressalva em GD5).
 - **Descrição:** destaque.ai aparece em 3 de 34 prompts (9%), e em todos os três é por `sortlist.co.uk/agency/destaque-ai` (GD5, GD8 em síntese; V2 como link). O site próprio não é citado em nenhum resultado. Perfis de terceiros (Clutch, Semrush Agencies, listas de agências) dominam as respostas.
 - **Ação:** Completar/rever Sortlist; reclamar perfis em Clutch (existe em `sameAs`), Semrush Agencies, lista consultancy.eu/RevenueBase; verificar o conteúdo do perfil Sortlist (fetch devolveu 403).
 - **Verificação:** repetir o prompt-test e contar citações com fonte diferente de Sortlist.
@@ -126,6 +155,7 @@ _(Atualizado 28 setembro 2026: décima execução do Routine, terceira semana co
 
 
 ### 2026-09-28 added: SCHEMA: Organization.description nomeia só 5 motores, inconsistente com "onze" do llms.txt
+- **Atualização 2026-10-12:** ainda por corrigir (4ª semana consecutiva).
 - **Prioridade:** P3
 - **Esforço:** 15-30min
 - **Origem:** auditoria semanal 2026-09-28 (extração direta do JSON-LD da homepage)
