@@ -179,6 +179,106 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-10-12 (três auditorias: consultoria B2B, formação e serviços de IT, retalho alimentar)
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro e sem
+sentinela. 134 respostas por motor (126 no AI Overviews), exceto o Grok,
+com 55 (ver abaixo). O conjunto é diferente do da semana de 5 Out (três
+auditorias contra quatro), portanto a coluna de comparação usa só as duas
+auditorias presentes nas duas semanas, com 104 respostas por motor.
+
+**A semana em que o Grok e o Gemini passaram para a aplicação** (8 Out). A
+metade com pesquisa destes dois motores deixou de ser a API e passou a ser
+a sessão real, em duas das três auditorias. As linhas deles NÃO se
+comparam com as semanas anteriores: mudou a via, não o motor.
+
+### Densidade de fontes por resposta
+
+| Motor | 5 Out (2 auditorias) | 12 Out (as mesmas 2) | 12 Out (as 3) | Sem fonte nenhuma (as 3) |
+|---|---|---|---|---|
+| Grok | 33,6 | 28,9 | 30,1 | 3 de 55 |
+| Perplexity | 18,8 | 18,3 | 18,5 | 0 de 134 |
+| Copilot | 9,4 | 9,6 | 9,5 | 0 de 134 |
+| AI Overviews | 7,0 | 7,6 | 7,5 | 25 de 126 |
+| Claude (sessão real) | 5,8 | 6,9 | 6,5 | 53 de 134 |
+| Meta AI (sessão real) | 5,9 | 6,1 | 6,0 | 36 de 134 |
+| Gemini | 12,0 | 2,0 | 4,5 | 50 de 134 |
+| AI Mode | 3,4 | 3,2 | 3,8 | 12 de 134 |
+| ChatGPT (sessão real) | 3,1 | 3,9 | 3,6 | 9 de 134 |
+
+Os motores medidos pela mesma via nas duas semanas ficaram onde estavam
+(Perplexity, Copilot, AI Overviews, AI Mode, Meta AI), e é a terceira
+semana com a mesma ordem.
+
+**Gemini: 12 fontes por resposta na API, 2 na aplicação.** Na mesma
+semana, a auditoria que continuou na API deu 13,2 por resposta e 1 de 30
+sem fontes; as duas medidas na aplicação deram 1,4 e 2,5, com 49 de 104
+respostas sem fonte nenhuma. A recolha declara-se cega em 2 de 189
+observações (fontes em botões sem ligação), portanto a diferença é
+maioritariamente o que a aplicação mostra ao utilizador e não um defeito
+de extração. Para quem lê esta tabela: o Gemini que o utilizador vê cita
+muito menos do que o Gemini da API, e uma comparação entre semanas que
+atravesse 8 Out mede a troca de via.
+
+**Grok: a aplicação parou a meio.** A recolha da sessão real do Grok fez
+51 observações a 9 Out e nenhuma depois: uma auditoria ficou com metade
+das perguntas com pesquisa medidas e outra com nenhuma. É o tecto de
+mensagens da conta gratuita, risco declarado quando a via mudou. A
+densidade do Grok desta semana é de 55 respostas e vale como observação,
+não como série.
+
+### Lidas contra citadas
+
+| Motor | Citadas / lidas, 12 Out | 5 Out |
+|---|---|---|
+| Grok | 299 de 1658 (18%) | 1117 de 5127 (22%) |
+| Meta AI | 389 de 805 (48%) | 427 de 940 (45%) |
+| Claude | 664 de 866 (77%) | 678 de 874 (78%) |
+| Gemini (aplicação, novo) | 540 de 600 (90%) | (a API não separava) |
+
+Meta AI e Claude repetem o rácio pela terceira semana. O Grok desce
+quatro pontos, mas a via mudou e a base é um terço da anterior. O Gemini
+na aplicação separa lidas de citadas, o que a API não fazia, e cita quase
+tudo o que mostra: ao contrário do Grok, ali a lista curta já é a lista
+das citadas.
+
+### O que domina, por tipo de fonte
+
+- **Perplexity: o YouTube continua ausente, terceira semana.** 1 de 134
+  respostas (1 de 154 e 2 de 139 nas duas anteriores). O LinkedIn está em
+  31. Reforça a contradição com o bloco do Perplexity em
+  `engine_playbooks.md` (YouTube a liderar, estudo global).
+- **Meta AI: repositórios e artigos abertos, terceira semana.** GitHub ou
+  Medium em 42 de 134 respostas (44 de 154, 50 de 139), LinkedIn em 28. O
+  YouTube aparece em 18, o que nas semanas anteriores não se destacava.
+- **Família Google: vídeo e comunidade na pesquisa, menos no Gemini da
+  aplicação.** YouTube em 32 de 126 respostas do AI Overviews e em 21 de
+  134 do AI Mode; Reddit em 23 do AI Overviews. O Reddit no Gemini caiu
+  de 49 de 154 para 22 de 134, e a queda coincide com a troca de via, não
+  se lê como mudança do motor.
+- **Claude: a Wikipédia inglesa não se confirmou.** `en.wikipedia.org` em
+  7 de 134 respostas, contra 25 de 154 na semana anterior. A subida de 5
+  Out era da auditoria que esta semana não está no conjunto; a observação
+  fica por confirmar e não passa a padrão.
+
+### Contaminação de mercado: o Copilot, terceira semana
+
+**30% das fontes do Copilot são domínios .br** (376 de 1269), contra 28% e
+22% nas duas semanas anteriores; os .pt são 283. No Perplexity o valor é
+8% (188 de 2477), no Grok 2% e no AI Mode 3 fontes em 503. Três semanas
+seguidas e a subir. A ressalva da entrada anterior mantém-se: o
+fornecedor que recolhe o Copilot não fixa o país, e falta separar o que é
+do motor do que é da localização da recolha antes de isto virar conselho.
+
+### O que fica para promoção
+
+Três padrões cumprem agora três semanas seguidas: o YouTube quase ausente
+no Perplexity, as fontes visíveis da Meta AI na sessão real, e a fatia .br
+do Copilot. Os dois primeiros contradizem blocos de `engine_playbooks.md`;
+o terceiro precisa primeiro da verificação de localização. Continuam a
+ser decisão da passagem do self-audit, com registo no
+`methodology-changelog.md`.
+
 ## 2026-10-05 (quatro auditorias: consultoria B2B, formação e serviços de IT, retalho alimentar, alojamento de curta duração)
 
 Primeira entrada desde 4 de Setembro: as semanas de 7, 14, 21 e 28 de
