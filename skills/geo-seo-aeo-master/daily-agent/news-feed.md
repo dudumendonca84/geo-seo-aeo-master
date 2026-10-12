@@ -8,6 +8,28 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-12
+
+Radar LLM/IA: a Mistral lançou o Large 4 em preview público a 6 Out: MoE aberto de 1,05T parâmetros (52B ativos), contexto 1M, preço de lista $1,36/$4,18 por milhão de tokens, a $0,68/$2,09 em promoção de lançamento; pesos prometidos até ao fim de Out ([Mistral](https://mistral.ai/news/mistral-large-4/), [docs](https://docs.mistral.ai/models/mistral-large-4)). Sem cutoff publicado. GEO/AEO e SEO: sem anúncio novo; o topo do SE Roundtable é de 11 Out (relatório de desempenho do Search Console com mais de 64 horas de atraso) ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) o Tracker chama `mistral-large-latest`; se a alias passar para o Large 4, o custo e o corpus mudam sem aviso. Jogada: na próxima auditoria semanal (quinta), conferir o ID devolvido pela API e, se for o Large 4, registar a linha em `model_cutoffs.md` como `unknown`. (2) Enviar hoje a leitura do Search Console de 24 Set a 8 Out por cliente, com a nota de que o relatório tem atraso.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Segunda: passagem de cortes feita.
+
+## 2026-10-12
+
+### 🔵 Anúncios oficiais
+- **Introducing Mistral Large 4**: Mistral (https://mistral.ai/news/mistral-large-4/, https://docs.mistral.ai/models/mistral-large-4). Preview público a 6 Out 2026 do modelo aberto multimodal MoE (1,05T parâmetros, 52B ativos, contexto 1M). Preço de lista $1,36 entrada / $4,18 saída por milhão de tokens; a página mostra $0,68/$2,09 em promoção (changelog: 50% durante 2 semanas). Pesos "até ao fim do mês". Cutoff, licença e a alias `mistral-large-latest` não são indicados.
+
+### ⚙️ Mudanças nas plataformas
+- **Google Search Console: relatório de desempenho com atraso**: SE Roundtable, 11 Out (https://www.seroundtable.com/). Relatório com mais de 64 horas de atraso; fonte secundária, sem confirmação da Google.
+
+### 💡 Implicações para destaque.ai
+- Mistral Large 4 pode entrar no Le Chat/alias sem aviso: conferir o ID devolvido na auditoria de quinta e abrir linha `unknown` em `model_cutoffs.md` se mudar. Só awareness.
+- Dados do Search Console atrasados: avisar os clientes ao enviar a leitura de 24 Set a 8 Out hoje.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Cortes de treino (passagem de segunda): gpt-5.6-luna, claude-sonnet-5, grok-4.3, deepseek-flash, mistral reconfirmados; sem alterações. Anthropic: topo continua a ser 8 Out (Haiku 5.5 de 7 Out).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-11
 
 Dia parado; corrida completa. Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser 8 Out (Usage Policy, Cyber Mission) e Haiku 5.5 de 7 Out ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: sem anúncio novo; o topo do SE Roundtable é de 9 Out ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou (checkout in-chat na UE, anúncios ChatGPT em PT, API do Bing AI Performance).
