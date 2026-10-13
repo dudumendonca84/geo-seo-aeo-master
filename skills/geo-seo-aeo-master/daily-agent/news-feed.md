@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-13
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser 8 Out ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: o SE Roundtable de 12 Out regista, em fonte secundária, a Microsoft a testar o modelo Microsoft-Decision-1 no Bing e Copilot e AI Overviews a aparecer em queries com erros de escrita ou sem resultados ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) AIO em queries sem resultado: na leitura do Search Console de hoje, avisar os clientes de que as impressões de cauda longa podem mudar de comportamento. (2) Rank trackers de terceiros com falhas: usar o Search Console como linha de base esta semana.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Terça: sem cortes nem drafts.
+
+## 2026-10-13
+
+### ⚙️ Mudanças nas plataformas
+- **Bing e Copilot: Microsoft-Decision-1 em teste**: SE Roundtable, 12 Out (https://www.seroundtable.com/). Modelo de pontuação de decisão em experimentação no Bing Search e Copilot; fonte secundária, sem post em blogs.bing.com.
+- **Google: AI Overviews em queries com erros de escrita ou sem resultados**: SE Roundtable, 12 Out (https://www.seroundtable.com/). O AIO pode aparecer quando a query não corresponde a nenhuma página; fonte secundária.
+- **Google Merchant Center: imagem de baixa qualidade não bloqueia o produto**: SE Roundtable, 12 Out (https://www.seroundtable.com/). Help doc atualizada; sem impacto em GEO.
+
+### 💡 Implicações para destaque.ai
+- Só awareness: confirmar no blogs.bing.com/search se o Microsoft-Decision-1 tem post próprio antes de o citar a clientes.
+- Rank trackers de terceiros instáveis (SE Roundtable, 12 Out): hoje, usar o Search Console como linha de base na leitura aos clientes.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Search Central: topo continua a ser o de Out sobre playlists. Terça: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-12
 
 Radar LLM/IA: a Mistral lançou o Large 4 em preview público a 6 Out: MoE aberto de 1,05T parâmetros (52B ativos), contexto 1M, preço de lista $1,36/$4,18 por milhão de tokens, a $0,68/$2,09 em promoção de lançamento; pesos prometidos até ao fim de Out ([Mistral](https://mistral.ai/news/mistral-large-4/), [docs](https://docs.mistral.ai/models/mistral-large-4)). Sem cutoff publicado. GEO/AEO e SEO: sem anúncio novo; o topo do SE Roundtable é de 11 Out (relatório de desempenho do Search Console com mais de 64 horas de atraso) ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou.
