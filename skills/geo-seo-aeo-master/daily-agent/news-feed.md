@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-14
+
+Radar LLM/IA: o Gemini 4 Argon, modelo de topo da Google anunciado a 30 Set em acesso faseado (parceiros de cibersegurança primeiro), ficou a 13 Out selecionável no AI Mode para assinantes Pro/Ultra em todo o mundo, segundo fonte secundária; preço de lançamento reportado $2/$10 por milhão de tokens ([SE Roundtable](https://www.seroundtable.com/google-ai-mode-gemini-4-argon-42289.html)). Sem post blog.google lido, por confirmar. GEO/AEO e SEO: o Bing acrescentou Topics Portfolio ao relatório AI Performance do Webmaster Tools, ainda sem API ([SE Roundtable](https://www.seroundtable.com/topics-portfolio-bing-webmaster-tools-42288.html)); a Google confirmou à Adweek anúncios de produtos farmacêuticos em AI Mode e AI Overviews ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Gemini 4 Argon no AI Mode é opt-in e pago: hoje, ler blog.google e confirmar se o Tracker precisa de novo mapeamento antes de qualquer alteração. (2) Topics Portfolio: nas leituras de BWT desta semana, usar a vista por tema para propor temas a clientes B2B; a API continua por anunciar.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Quarta: sem cortes nem drafts.
+
+## 2026-10-14
+
+### ⚙️ Mudanças nas plataformas
+- **Google AI Mode: Gemini 4 Argon como opção para Pro/Ultra**: SE Roundtable, 13 Out (https://www.seroundtable.com/google-ai-mode-gemini-4-argon-42289.html). Modelo anunciado a 30 Set com acesso faseado, agora selecionável no AI Mode a nível global para assinantes pagos; fonte secundária, `references/models.md` atualizado com a linha marcada por confirmar.
+- **Bing Webmaster Tools: Topics Portfolio no AI Performance**: SE Roundtable, 13 Out (https://www.seroundtable.com/topics-portfolio-bing-webmaster-tools-42288.html). Vista por tema com procura, concorrência e margem de crescimento; continua sem API.
+- **Google: anúncios farmacêuticos em AI Mode e AI Overviews**: SE Roundtable, 13 Out (https://www.seroundtable.com/), citando a Adweek. Expansão de anúncios para certos produtos farmacêuticos; sem mercado PT confirmado.
+
+### 💡 Implicações para destaque.ai
+- Só awareness: confirmar em blog.google o Argon (disponibilidade, preço) antes de o citar a clientes; hoje.
+- Topics Portfolio: incluir a vista nas leituras de BWT desta semana; a API não chegou, por isso o import manual mantém-se.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Terça/quarta: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-13
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser 8 Out ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: o SE Roundtable de 12 Out regista, em fonte secundária, a Microsoft a testar o modelo Microsoft-Decision-1 no Bing e Copilot e AI Overviews a aparecer em queries com erros de escrita ou sem resultados ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou.

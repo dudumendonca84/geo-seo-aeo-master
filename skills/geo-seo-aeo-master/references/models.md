@@ -131,6 +131,7 @@ Claude Opus 5.5 (22 Sep 2026): pricing $4/$20 per million input/output tokens (-
 | **Gemini 3.7 Flash** | 13 Aug 2026 | not confirmed | Yes | Selectable in AI Mode via model picker for Google AI Pro/Ultra subscribers (English only) since 14 Aug 2026: built on Gemini 3.6 Flash, marketed as better instruction-following/intent understanding; opt-in, not yet the AI Mode default |
 | **Gemini 3.8 Flash** | 02 Sep 2026 | not confirmed | Yes | Just released; not yet confirmed as default anywhere: AI Mode/AI Overviews remain on 3.5 Flash/Flash-Lite as of this refresh. Intro pricing $0.75/$3.75 per million input/output tokens through 31 Dec 2026 (same band as 3.7 Flash), rising to $1.50/$7.50 from 01 Jan 2027 |
 | **Gemini 3.8 Flash Cyber** | 02 Sep 2026 | not confirmed | Yes | Companion release to 3.8 Flash; not yet confirmed as default anywhere. Same pricing schedule as 3.8 Flash |
+| **Gemini 4 Argon** | 30 Sep 2026 (fonte secundária) | 1M output tokens (reportado) | Yes | Acesso faseado: parceiros de cibersegurança, depois clientes pagos/AI Ultra. Selecionável no AI Mode para AI Pro/Ultra a nível global desde 13 Out 2026 (SE Roundtable, secundária); opt-in, não é o default. Preço de lançamento reportado $2/$10 por milhão de tokens; por confirmar em blog.google/ai.google.dev |
 | **Gemini 3.5 Pro** | May 2026 (I/O) | 2M tokens | Yes | Gemini Advanced ($), Workspace integrations |
 | **Gemini 2.5 Pro** | Dec 2025 | 1M tokens | Yes | Still available in Vertex AI, AI Studio |
 | **Gemini 2.5 Flash** | Dec 2025 | 1M tokens | Yes | API default before I/O 2026 |
