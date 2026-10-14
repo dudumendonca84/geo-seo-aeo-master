@@ -309,7 +309,7 @@ The destaque.ai methodology covers **everything that contributes to ranking #1 o
 
 2. **Content strategy and topical authority**: which topics the brand owns, content cluster architecture, cadence, depth, unique data and original statistics (Aggarwal et al. KDD 2024: statistics addition is the strongest single citation lift). Editorial calendar discipline, content gap analysis vs competitors, distribution channels.
 
-3. **Entity and brand foundation**: Wikidata item completeness, Wikipedia eligibility/coverage, Google Knowledge Panel presence, `Organization.sameAs` depth, NAP consistency across web (Google Business, LinkedIn, Crunchbase, Bloomberg), brand-as-entity disambiguation. See `references/frameworks.md` §7. Brand search volume correlates with citation at r≈0.33 (Profound).
+3. **Entity and brand foundation**: Wikidata item completeness, Wikipedia eligibility/coverage, Google Knowledge Panel presence, `Organization.sameAs` depth, NAP consistency across web (Google Business, LinkedIn, Crunchbase, Bloomberg), brand-as-entity disambiguation. See `references/frameworks.md` §7. Branded search volume correlates with AI Overview presence at r=0.334 (Ahrefs, `benchmarks.md` §3).
 
 4. **Authority and digital PR**: Tier-1 media coverage (for PT-PT clients: Observador, ECO, Público, Expresso, Dinheiro Vivo, Jornal de Negócios), industry-publication mentions, podcast appearances, conference speaking, third-party case studies, link graph quality. Branded anchor text correlates with AI Overview presence at r=0.527 (Ahrefs 75k-brand analysis): outperforming domain rating.
 
