@@ -329,7 +329,7 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 ### Contrato 12: o pacote do agente e o monitor de concorrentes
 
-**Consumer:** `destaque-ai-tracker/src/lib/agent/cerebro.ts` lê `SKILL.md`, `references/gap_action_mapping.md`, `references/benchmarks.md` e `daily-agent/news-feed.md` (cortado a ~40k caracteres na fronteira de uma entrada) como sistema do agente do cliente; `src/lib/skill/market-monitor.ts` lê `competitor-monitor/*`. Prosa, sem parser estrutural: mudar títulos é seguro, apagar um ficheiro deixa o agente sem essa peça e declara-o em `result.skill`.
+**Consumer:** `destaque-ai-tracker/src/lib/agent/cerebro.ts` lê `SKILL.md`, `references/gap_action_mapping.md`, `references/benchmarks.md` e `daily-agent/news-feed.md` (cortado a ~40k caracteres na fronteira de uma entrada) como sistema do agente do cliente; `src/lib/skill/market-monitor.ts` lê `competitor-monitor/*` (as três tabelas do Contrato 15 por colunas, o resto como prosa). Prosa, sem parser estrutural: mudar títulos é seguro, apagar um ficheiro deixa o agente sem essa peça e declara-o em `result.skill`.
 
 ### Contrato 13: limiares de alerta (o que dispara um alerta por semana)
 
@@ -338,6 +338,18 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 ### Contrato 14: planos (o que cada tier do Tracker recebe)
 
 **Producer:** `references/plans.md` §1 (a tabela `| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence |`). **Consumer:** `destaque-ai-tracker/src/lib/skill/planos.ts` (`parsePlanos`, cache 1 h, recurso `FALLBACK_PLANS_MD`), aplicado por `src/lib/plans/aplicar.ts` e pela rota `POST /api/admin/clients/[id]/plano`. Cabeçalho procurado no início de linha; `yes`/`no` nos dois booleanos, inteiros nos dois números, `weekly`/`biweekly`/`monthly` na cadência. Um nome de plano fora da tabela é recusado na escrita. **Não há `check` no SQL de propósito:** a tabela é a lista, e duplicá-la numa restrição era a mesma regra escrita duas vezes. Preços NÃO vivem aqui: `plans.md` §2 diz porquê.
+
+### Contrato 15: mercado GEO (o ecrã Mercado do Tracker, só operadores)
+
+**Producer:** a rotina `competitor-monitor` (`competitor-monitor/monitor-prompt.md`), em três ficheiros:
+
+| Ficheiro | O que o Tracker lê | Para quê |
+|---|---|---|
+| `competitor-monitor/reports/YYYY-MM-DD.md` (o mais recente) | a tabela `## Tracker market data` (`\| Marca \| Site \| Preço de entrada \| Movimento \| Preço mudou \|`) | o resumo da semana (movimentos novos, mudanças de preço) e a tabela Concorrentes |
+| `competitor-monitor/known-competitors.md` | a tabela de `## Lista` (`\| Nome \| URL \| Desde (YYYY-MM-DD) \| Bucket \| … \|`) | concorrentes seguidos e o censo por bucket, com as entradas das últimas 4 semanas |
+| `competitor-monitor/share-of-voice-history.md` | a tabela de `## Tabela` (`\| Semana \| Player \| Aparições (/N real) \| … \|`) | a série das últimas 8 semanas por marca |
+
+**Consumer:** `destaque-ai-tracker/src/lib/skill/market-monitor.ts` (`parseDadosDoMercado`, `parseCenso`, `parseSerieDoMercado`, cache 1 h). Cabeçalhos procurados no início de linha; colunas por nome do cabeçalho, nunca por posição. `Preço mudou` lê `sim`/`não`; `—` é vazio. Uma semana sem o bloco não parte nada: o ecrã mostra o report em prosa e diz que o bloco falta. A partilha de voz do ecrã é a fatia de cada marca nas aparições da semana (aparições da marca a dividir pela soma das aparições de todas as marcas nessa semana); uma marca sem linha numa semana conta 0, como a manutenção do histórico já prevê. O denominador real (hoje só o Claude, `/5`) vai dito no ecrã.
 
 ## Frequência de atualização
 
@@ -402,5 +414,6 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 | 2026-05-29 | **Contrato 4 (method) criado.** Nova secção `## Deck Builder method` em `SKILL.md` - glossário (SEO/GEO/AEO) + 8 dimensões client-facing, resumo parseável da lista da secção "Scope of the methodology: holistic" do SKILL.md. Consumido pelos Slides 06 e 07. Corrige drift do deck que dizia "4 disciplinas" e inventava o acrónimo "AISO". | Deck Builder picks up no próximo fetch: sem code change. O método no deck passa a vir vivo da skill; fallback hardcoded mantém paridade. |
 | 2026-09-03 | **Contrato 8 (visibility score) criado.** Nova secção `## Visibility Score` em `metrics.md`: fórmula, os três pesos numa tabela parseável, o caso que obrigou a trocar SoV absoluto por SoV relativo ao líder, e a obrigação de mostrar o número decomposto. O número existia desde sempre no código do relatório e não estava na skill. | Tracker passa a ler os pesos no fetch seguinte, com fallback hardcoded aos mesmos valores. Um peso mudado aqui muda o número de capa de todos os clientes sem deploy: alterar sempre com nota datada na secção. |
 | 2026-05-29 | **Contrato 4 estendido + Contrato 1 reforçado + drift de taxonomia decidido.** (1) `## Deck Builder method` ganha 3.ª tabela **SEO vs GEO** (`\| seo \| geo \|`), consumida pelo Slide 05 (antes hardcoded no componente). (2) Contrato 1: a tabela §3 de `prompts.md` passa a ser **parseada** (`loadPromptConfig`, zip posicional com `PROMPT_CATEGORIES`): `generate-audit-prompts.ts` segue a distribuição viva, já não a constante. (3) **Decisão do founder:** a lista das 8 dimensões é a detalhada em SKILL.md § "Scope of the methodology: holistic" (technical · content · entity · authority · **social** · **authority-on-site** · measurement · positioning). `destaque-ai-deck-builder/CLAUDE.md` foi alinhado a esta lista. | Deck Builder picks up no próximo fetch. **`gap_action_mapping.md` reconciliado (SINAL v1.7):** DIMENSÃO 5 → Social & community signals, nova 6 → Authority signals on site (E-E-A-T), Measurement → 7, Positioning → 8; cadência editorial movida para a DIMENSÃO 2, UX/engagement passa a transversal. Consumido como prosa por `synthesize-deck.ts` (sem parser estrutural): restruturação segura. |
+| 2026-10-15 | **Contrato 15 (mercado GEO) criado.** O report semanal do `competitor-monitor` ganha a secção `## Tracker market data` (marca, site, preço de entrada, movimento, preço mudou), descrita no template de `monitor-prompt.md`; o report de 2026-10-13 recebeu o bloco tirado das suas próprias Dimensões 2 e 4. O Tracker passa a ler também, por colunas, a lista de `known-competitors.md` e a tabela de `share-of-voice-history.md`. O Contrato 12 continua a valer para o resto do report, que é prosa. | Tracker: o ecrã Mercado GEO passa de markdown cru a resumo, tabela de concorrentes, série de 8 semanas e censo. A rotina tem de escrever o bloco todas as semanas; sem ele o ecrã cai na prosa. |
 
 Adicionar entry sempre que algum contrato mudar.

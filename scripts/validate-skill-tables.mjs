@@ -257,6 +257,29 @@ let allOk = true;
   }
 }
 
+// --- Contrato 15: mercado GEO (consumido por src/lib/skill/market-monitor.ts no Tracker)
+// O Tracker lê as três tabelas por NOME de coluna. Um report sem o bloco não
+// parte o ecrã (cai na prosa), mas aqui acusa-se, senão ninguém dá por isso.
+{
+  const name = "Contrato 15 · mercado GEO";
+  const { readdirSync } = await import("node:fs");
+  const faltas = [];
+  const cabecalhoDe = (sec) => (sec ?? "").split("\n").map((l) => l.trim()).find((l) => l.startsWith("|")) ?? "";
+  const colunas = (linha) => linha.split("|").slice(1, -1).map((c) => c.trim().toLowerCase());
+  const exige = (onde, sec, pedidas) => {
+    if (sec == null) { faltas.push(`${onde}: secção em falta`); return; }
+    const tem = colunas(cabecalhoDe(sec));
+    for (const c of pedidas) if (!tem.some((t) => t.startsWith(c))) faltas.push(`${onde}: coluna '${c}'`);
+  };
+  const reports = readdirSync("competitor-monitor/reports").filter((n) => /^\d{4}-\d{2}-\d{2}\.md$/.test(n)).sort();
+  const ultimo = reports[reports.length - 1];
+  if (!ultimo) faltas.push("sem reports");
+  else exige(ultimo, sectionContent(read(`competitor-monitor/reports/${ultimo}`) ?? "", "## Tracker market data"), ["marca", "site", "preço de entrada", "movimento", "preço mudou"]);
+  exige("known-competitors.md", sectionContent(read("competitor-monitor/known-competitors.md") ?? "", "## Lista"), ["nome", "url", "desde", "bucket"]);
+  exige("share-of-voice-history.md", sectionContent(read("competitor-monitor/share-of-voice-history.md") ?? "", "## Tabela"), ["semana", "player", "aparições"]);
+  check(name, faltas.length === 0, faltas.length === 0 ? `3 tabelas parseáveis (report ${ultimo})` : `Tracker cai na prosa: ${faltas.join("; ")}`);
+}
+
 // (news-feed, execution-log, drafts/), que são histórico e não copy.
 {
   const name = "Contrato editorial · skill inteira";
