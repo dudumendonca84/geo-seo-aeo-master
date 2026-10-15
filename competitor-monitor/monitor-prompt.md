@@ -152,7 +152,33 @@ Cria um ficheiro novo: `competitor-monitor/reports/YYYY-MM-DD.md` com este templ
 ## Sinais para a destaque.ai
 - 2-3 observações accionáveis. O que é que isto sugere para o pitch, pricing,
   ou content da destaque.ai esta semana? Tom sóbrio, sem hype.
+
+## Tracker market data
+| Marca | Site | Preço de entrada | Movimento | Preço mudou |
+|---|---|---|---|---|
+| <nome> | <domínio, sem https> | <preço público ou —> | <1 frase ou —> | sim / não |
 ```
+
+### O bloco `## Tracker market data` (contrato 15, lido pelo Tracker)
+
+É a última secção do report e a única que o Tracker lê por colunas (o resto
+continua a ser prosa). Vive no ecrã Mercado GEO, só para operadores. Regras:
+
+- **Uma linha por marca com preço público OU movimento verificável esta
+  semana**, tirados das Dimensões 2 e 4 deste mesmo report. Nada que não
+  esteja escrito acima entra aqui.
+- **`Site`**: o domínio da marca, sem `https://` e sem caminho (serve para o
+  logótipo). `—` quando não se sabe.
+- **`Preço de entrada`**: o preço público mais baixo, como aparece na Dimensão
+  4 (moeda incluída). `—` quando é "sob pedido" ou não se encontrou.
+- **`Movimento`**: uma frase, só o que é novo esta semana. `—` quando não há.
+- **`Preço mudou`**: `sim` só quando o preço público mudou face à semana
+  anterior ou apareceu um tier novo; `não` em tudo o resto, incluindo um
+  preço visto pela primeira vez.
+- A destaque.ai pode ter linha quando há movimento dela.
+- Semana sem preços nem movimentos: a secção fica com o cabeçalho da tabela e
+  nenhuma linha. **Não se apaga a secção**: sem ela o Tracker mostra o report
+  em prosa e diz que falta o bloco.
 
 ## Guardrails (honestidade — crítico)
 
