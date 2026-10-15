@@ -120,6 +120,7 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 2. Mobile app referrals strip Referer.
 3. ChatGPT Atlas and some agentic browsers mask origin.
 4. UTM tagging in ChatGPT only began June 2025 and only on cited links.
+5. From ~Oct 9 2026 (GPT-6), ChatGPT links reportedly open without `utm_source=chatgpt.com` and without a referrer: Adobe's Cedric Huesler measured ~500 pages (ChatGPT ≥5% of visits, Oct 9–13 vs prior week): ChatGPT visits -31k/day, direct +26k/day; unclear if intentional ([SE Roundtable, 14 Oct 2026](https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html), secondary). Treat a ChatGPT drop with a direct rise as misattribution before concluding lost visibility.
 5. Edge's Copilot sidebar navigates without producing a conventional Referer (handled inside browser chrome).
 
 **Net effect.** GA4 AI-referral counts are a **lower bound**. Expect 30-60% under-reporting relative to true AI-driven visits (no rigorous public measurement of the gap; this is order-of-magnitude vendor consensus, treat with appropriate scepticism).

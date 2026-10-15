@@ -8,6 +8,28 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-15
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 14 Out (midterms dos EUA, escritório em Singapura), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). A Haiku 4.5 sai de serviço hoje, 15 Out, conforme registado a 5 Out. GEO/AEO: o GPT-6 passou a abrir links sem `utm_source=chatgpt.com` nem referrer; a Adobe mediu cerca de 500 páginas e viu −31k visitas/dia atribuídas ao ChatGPT e +26k diretas ([SE Roundtable](https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html), secundária). A OpenAI atribui Account Managers a anunciantes do ChatGPT Ads ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-account-manager-42278.html)). SEO: Google testa a barra lateral do AI Mode na página principal ([SE Roundtable](https://www.seroundtable.com/google-ai-mode-left-sidebar-42298.html)); Illyes diz que keywords no URL são sinal "incredibly small" ([SE Roundtable](https://www.seroundtable.com/google-search-urls-42305.html)). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Tráfego ChatGPT subestimado em analytics: hoje, avisar os clientes de que quedas de referral ChatGPT com subida de direto são atribuição, não visibilidade, e na leitura de GA4 desta semana somar os dois. (2) Account Managers no ChatGPT Ads: perguntar na próxima semana a um cliente com conta se tem AM atribuído, para saber se há acesso a agências em PT.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Quinta: sem cortes nem drafts.
+
+## 2026-10-15
+
+### ⚙️ Mudanças nas plataformas
+- **ChatGPT (GPT-6): links sem UTM nem referrer**: SE Roundtable, 14 Out (https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html). Cedric Huesler (Adobe) mediu cerca de 500 páginas com ChatGPT ≥5% das visitas, 9 a 13 Out contra a semana anterior: −31k visitas/dia ChatGPT, +26k diretas; tráfego de pesquisa −7%, em linha com o site. Desconhece-se se a mudança é intencional. Fonte secundária; absorvido em `references/metrics.md`.
+- **OpenAI ChatGPT Ads: Account Managers para anunciantes**: SE Roundtable, 14 Out (https://www.seroundtable.com/openai-chatgpt-ads-account-manager-42278.html). Email de apresentação de um AM com reunião e check-in quinzenal; mercados não especificados.
+- **Google: teste da barra lateral do AI Mode na página principal**: SE Roundtable, 14 Out (https://www.seroundtable.com/google-ai-mode-left-sidebar-42298.html). Histórico de chats e novo chat à esquerda; o autor não consegue reproduzir, é teste.
+- **Google: URLs e ranking**: SE Roundtable, 14 Out (https://www.seroundtable.com/google-search-urls-42305.html). Em vídeo da Google, Gary Illyes diz que keywords no URL ou domínio são sinal "incredibly small", recomenda hífens a underscores.
+
+### 💡 Implicações para destaque.ai
+- Medição: o tráfego ChatGPT pode estar a cair para "direto" em GA4. Hoje, incluir nota nos relatórios de IA e, no Tracker, não tratar quedas de referral ChatGPT como perda de visibilidade sem cruzar com direto; confirmar a causa antes de a citar a clientes.
+- ChatGPT Ads: só awareness; perguntar a um cliente com conta se tem AM, na próxima semana.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Quinta: sem passagem de cortes. Search Central e anthropic.com/news sem novidades de modelos.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-14
 
 Radar LLM/IA: o Gemini 4 Argon, modelo de topo da Google anunciado a 30 Set em acesso faseado (parceiros de cibersegurança primeiro), ficou a 13 Out selecionável no AI Mode para assinantes Pro/Ultra em todo o mundo, segundo fonte secundária; preço de lançamento reportado $2/$10 por milhão de tokens ([SE Roundtable](https://www.seroundtable.com/google-ai-mode-gemini-4-argon-42289.html)). Sem post blog.google lido, por confirmar. GEO/AEO e SEO: o Bing acrescentou Topics Portfolio ao relatório AI Performance do Webmaster Tools, ainda sem API ([SE Roundtable](https://www.seroundtable.com/topics-portfolio-bing-webmaster-tools-42288.html)); a Google confirmou à Adweek anúncios de produtos farmacêuticos em AI Mode e AI Overviews ([SE Roundtable](https://www.seroundtable.com/)). Nenhum gatilho dos watches disparou.
