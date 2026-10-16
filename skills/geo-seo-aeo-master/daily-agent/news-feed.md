@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-16
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 15 Out ("An update on independent evaluators"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: a Google atualizou os links no AI Mode e AI Overviews (mais links inline, secção de topo com 1 ou 2 links, carrosséis de notícias globais); sem dados de cliques nos relatórios ([SE Roundtable](https://www.seroundtable.com/google-updates-links-in-ai-mode-and-ai-overviews-again-42308.html), secundária). Universal Cart (UCP) lançado no Search e no Gemini, só EUA ([SE Roundtable](https://www.seroundtable.com/universal-cart-google-search-42312.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Links no AI Mode: hoje, avisar clientes de media/conteúdo de que a Google não dá cliques por superfície; não prometer atribuição de tráfego AI Mode. (2) Universal Cart: só awareness; na segunda, confirmar que o feed UCP/Merchant de um cliente e-commerce está pronto antes de um eventual arranque na UE.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Sexta: drafts gerados em drafts/2026-10-16-weekly.md.
+
+## 2026-10-16
+
+### ⚙️ Mudanças nas plataformas
+- **Google AI Mode e AI Overviews: novo desenho de links**: SE Roundtable, 15 Out (https://www.seroundtable.com/google-updates-links-in-ai-mode-and-ai-overviews-again-42308.html). Mais links inline, secção de topo com 1 ou 2 links, carrosséis de notícias globais com Preferred Sources (utilizadores 7x desde janeiro, segundo a Google), "Dive Deeper" com miniaturas; nomes de publishers em vídeo em teste. Mais de 400 publicações no piloto de licenciamento News AI. A Google continua sem publicar dados de cliques. Fonte secundária; o post da Google não foi lido.
+- **Google: Universal Cart no Search e Gemini (EUA)**: SE Roundtable, 15 Out (https://www.seroundtable.com/universal-cart-google-search-42312.html). Carrinho multi-comerciante sobre UCP, checkout com Google Pay; Nike, Sephora, Target, Walmart e comerciantes Shopify. Só EUA, sem data para a UE; fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Links no AI Mode: só awareness; incluir nos relatórios de IA desta semana a nota de que não há dados de cliques e não prometer métricas de tráfego AI Mode.
+- Universal Cart: não dispara o watch de commerce (EUA apenas). Na segunda, rever com um cliente e-commerce a prontidão do feed UCP/Merchant.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Search Central: último post de Out sobre playlists de aprendizagem. Sexta: sem passagem de cortes.
+
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-15
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 14 Out (midterms dos EUA, escritório em Singapura), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). A Haiku 4.5 sai de serviço hoje, 15 Out, conforme registado a 5 Out. GEO/AEO: o GPT-6 passou a abrir links sem `utm_source=chatgpt.com` nem referrer; a Adobe mediu cerca de 500 páginas e viu −31k visitas/dia atribuídas ao ChatGPT e +26k diretas ([SE Roundtable](https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html), secundária). A OpenAI atribui Account Managers a anunciantes do ChatGPT Ads ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-account-manager-42278.html)). SEO: Google testa a barra lateral do AI Mode na página principal ([SE Roundtable](https://www.seroundtable.com/google-ai-mode-left-sidebar-42298.html)); Illyes diz que keywords no URL são sinal "incredibly small" ([SE Roundtable](https://www.seroundtable.com/google-search-urls-42305.html)). Nenhum gatilho dos watches disparou.
