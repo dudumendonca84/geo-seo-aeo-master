@@ -98,6 +98,10 @@ move that captures it. Contract:
   a repeat of a next_action already listed: the bet is the unsolicited
   one, the thing the client did not ask about.
 - A weekly narrative without a `weekly_bet` is incomplete.
+- Since 16 Oct 2026 the bet also carries `summary.narrative.weekly_bet_title`:
+  the move itself, imperative, one short sentence (up to ~90 characters),
+  shown above the reasoning on the Tracker Overview. `weekly_bet` stays the
+  reasoning. Without a title the card shows the whole bet untitled.
 
 ### Worked example
 
@@ -106,6 +110,28 @@ move that captures it. Contract:
 > tem lá presença. O padrão sugere uma fonte a ganhar peso na categoria:
 > vale a pena garantir a entrada este mês, antes que deixe de estar
 > livre.
+
+## 2b'. Headline and reading fields (Overview v15, 16 Oct 2026)
+
+The Tracker Overview shows the weekly reading as a briefing card: a headline,
+the bet, and each finding on one line with a severity dot and its number as a
+fraction with a bar, the rest opening on demand. The narrative carries:
+
+- `headline` (root): the week in one sentence, what moved and why, with a
+  number, no adjectives, up to ~140 characters.
+- Per `reading` block, besides `titulo`, `numero`, `texto` and `accao`:
+  `resumo` (the finding in one line, the fact not the conclusion, up to ~120
+  characters), `gravidade` (`alerta` = work to do, nothing lost yet; `perda` =
+  the brand lost something measured week on week, or is described wrongly;
+  `contexto` = observation, no action), `grupo` (`acao` or `contexto`) and
+  `fonte` (the one domain that explains the finding, omitted when there is
+  none).
+- Write `numero` as a fraction whenever possible ("19 de 57", "0 em 324").
+
+The exact contract, with what the card does when a field is missing, is in
+the Tracker routine spec (`routines/tracker-brain.md`, section on
+`narrative.reading`). "Perda" is never inferred by the product: it appears
+only when written.
 
 ## 2c. Brand perception (`brand_perception`): required
 
