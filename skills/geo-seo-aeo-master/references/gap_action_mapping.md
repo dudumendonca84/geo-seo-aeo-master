@@ -1032,9 +1032,17 @@ tema que cada uma assina, e a cadência. Não "ativar os colaboradores".
 
 **Artigo primeiro, post a seguir.** Os artigos longos valem ~60% das
 citações do LinkedIn e os posts ~40% (dado interno da LinkedIn,
-direcional). O desenho que o documento propõe, e que é consistente com o
-resto deste ficheiro, é uma peça longa por tema e dois ou três posts a
-apontar-lhe.
+direcional). **Medido no nosso corpus a 17 Out 2026, a diferença é
+maior: 73% artigos (`/pulse/`) contra 27% posts**, nos 8 motores
+(`benchmarks.md` §53). O desenho é uma peça longa por tema, publicada
+como artigo do LinkedIn e não só no site, e dois ou três posts a
+apontar-lhe. **O post abre com a pergunta que responde**: as primeiras
+palavras do post vão para o endereço dele, e o endereço é o que o motor lê.
+
+**E a Company Page completa, porque é citada tanto como os posts** (17%
+das citações do LinkedIn cada, mesma medição). Descrição com o que a
+empresa faz e para quem, serviços, setor, dimensão e o site. É trabalho
+de entidade (dimensão 3), que se faz uma vez e não pede cadência.
 
 **Ligação de duas vias** entre o site e a Company Page, para a entidade
 ficar ligada (dimensão 3) em vez de serem dois objetos soltos.
