@@ -8,6 +8,17 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-17
+
+Dia parado: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser de 15 Out ("An update on independent evaluators"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Sem novidades significativas hoje; corrida completa. Nenhum gatilho dos watches disparou. Passagem por motor feita (26 blocos, `meta:` atualizado). Sábado: sem cortes nem drafts.
+
+## 2026-10-17
+
+Sem novidades significativas hoje.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Pesquisa web sem itens novos datados de 16 a 17 Out; openai.com e fontes Tier 1 sem novidades de modelos ou preços. Sábado: sem passagem de cortes.
+
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-16
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 15 Out ("An update on independent evaluators"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). GEO/AEO e SEO: a Google atualizou os links no AI Mode e AI Overviews (mais links inline, secção de topo com 1 ou 2 links, carrosséis de notícias globais); sem dados de cliques nos relatórios ([SE Roundtable](https://www.seroundtable.com/google-updates-links-in-ai-mode-and-ai-overviews-again-42308.html), secundária). Universal Cart (UCP) lançado no Search e no Gemini, só EUA ([SE Roundtable](https://www.seroundtable.com/universal-cart-google-search-42312.html), secundária). Nenhum gatilho dos watches disparou.
