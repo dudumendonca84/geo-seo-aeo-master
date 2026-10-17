@@ -638,7 +638,7 @@ Both statements can be true: "most-cited single domain among professional querie
 
 - **Articles against posts: 73% to 27%** (441 to 164), against LinkedIn's own 60/40. Same direction, wider gap: the article is the format that carries a brand into an answer.
 - **The Company Page is cited as often as feed posts.** This is not in the LinkedIn guide, which pushes people over Pages (Meltwater's 75/25). The two are compatible: Meltwater counts who AUTHORED the cited content, we count which URL was cited, and a Company Page URL is cited as a description of the company (services, sector, size), which is entity work (dimension 3) and not content cadence.
-- **A feed post's URL carries its opening words** (`linkedin.com/posts/name_opening-words-activity-...`): verified on the cited URLs. Opening a post with the question it answers puts that question in the URL the engine reads.
+- **A feed post's URL carries its opening words**, or its first hashtags when it opens with them (`linkedin.com/posts/name_opening-words-activity-...`): verified on the cited URLs, e.g. `a-messina_seo-aeo-e-geo-não-são-a-mesma-coisa`. Opening a post with the question it answers puts that question in the URL the engine reads.
 - **Population.** Portuguese B2B and consumer prompt sets (the clients and the Radar sectors). linkedin.com is 1.4-2.0% of all citations for B2B clients and under 0.5% elsewhere (table above): this is the split INSIDE that slice, not a reason to raise LinkedIn's priority for a retail client.
 - LinkedIn's own marketing sites saw non-branded search traffic fall **up to 60%**.
 - Six-fold engagement lift when employees were activated as creators.
