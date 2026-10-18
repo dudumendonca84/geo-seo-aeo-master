@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -358,6 +358,98 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
   (tipicamente **CEO/fundador**) fica quase ausente: se acontecer, reatribui a
   persona dos prompts cujo ângulo é claramente de outro perfil (`update` no mesmo
   `id`, não perde histórico).
+
+
+### 8.7 O que o servidor verifica antes de uma pergunta existir [2026-10-18]
+
+Uma pergunta proposta só entra no catálogo depois de passar por estas
+regras. Vivem aqui e o Tracker verifica-as em código
+(`src/lib/prompts/verificar.ts`, contrato 18): uma regra que só existe em
+prosa não obriga ninguém. O que falha não entra, e volta ao gerador com o
+motivo (§8.8).
+
+**Recusa-se:**
+
+1. **Uma palavra-chave em vez de uma pergunta**: menos de `palavras_min`
+   palavras, sem ponto de interrogação e sem ser um pedido. Uma pergunta
+   curta e completa ("O llms.txt vale a pena?") passa. As perguntas reais a um assistente têm 9 a 15 palavras na
+   mediana, e 65% a 85% não casam com nenhuma palavra-chave (Semrush,
+   clickstream dos EUA, abril de 2026; dados de fornecedor, direcionais).
+   Três palavras soltas não são uma amostra disto.
+2. **A marca do cliente numa pergunta que não está marcada como
+   branded.** Nomear uma marca na pergunta muda a probabilidade de ela
+   aparecer na resposta (Lin et al., "LLM Whisperer", arXiv 2406.04755: até
+   78 pontos). Uma pergunta que nomeia a marca é branded por construção e
+   sai dos rácios (decisão de 23 Set 2026); deixá-la como não branded
+   inflacionava a taxa de citação.
+3. **Dois concorrentes ou mais nomeados sem a marca numa
+   `direct_comparison`**, a partir de `concorrentes_sem_marca`. É a regra
+   dura do §2.2: a ausência da marca está garantida antes de a pergunta
+   correr. Noutra categoria é aviso, porque o nome pode ser um canal e não
+   o lado de um duelo ("que empresas de arrendamento no Porto são mais
+   baratas do que o Airbnb?" deixa lugar para a marca).
+4. **Uma pergunta quase igual a outra da mesma persona**, já no catálogo ou
+   no mesmo pedido: proporção de palavras em comum igual ou acima de
+   `semelhanca_max`. A unidade que se mede é a intenção, e a variância
+   entre perguntas pesa mais do que a de repetir a mesma (Żatuchin, arXiv
+   2607.13304, julho de 2026; preprint de autor único). Duas redações da
+   mesma intenção não são cobertura: são uma pergunta contada duas vezes.
+5. **Vocabulário do Brasil numa pergunta para `pt-PT`**, pela tabela
+   "Brasil → Portugal" de `escrita.md`. Os modelos derivam para PT-BR
+   (Ferreira et al., "P3B3", workshop MeLLM do ACL 2026), e uma pergunta em
+   PT-BR enviada de Portugal mede outra coisa.
+6. **O enquadramento da persona (`persona_context`, `persona_followup`)
+   que nomeia a marca ou um concorrente.** Vai à frente da pergunta, e
+   nomear lá uma marca é sermos nós a pô-la na resposta.
+
+**Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
+existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
+reescrever, e devolvê-los pedia reescrever perguntas que já entraram.
+
+A marca e os concorrentes reconhecem-se pela grafia das fichas. Uma marca
+cujo nome também é palavra comum ("Continente", "NOS") tem de estar na
+lista `AMBIGUAS` do Tracker, senão toda a pergunta que use a palavra é lida
+como branded.
+
+**Avisa-se, e a pergunta entra:**
+
+- não termina em ponto de interrogação nem começa por um pedido
+  ("recomenda", "preciso de");
+- tem mais de `palavras_max` palavras;
+- marcada como branded sem nomear a marca na grafia da ficha (um produto
+  da marca com outro nome, por exemplo);
+- categoria ou fase de funil fora das listas do §2 e do §8.2: entra com a
+  de omissão, e o aviso diz qual foi trocada;
+- no pedido inteiro, menos de `fundo_de_funil_min` das perguntas no fundo
+  do funil (§8.2), quando o pedido traz dez ou mais (§8.6).
+
+#### Limites que se verificam
+
+| Regra | Limite | Porquê |
+|---|---|---|
+| `palavras_min` | 5 | abaixo disto é palavra-chave e não pergunta |
+| `palavras_max` | 60 | acima disto é um briefing; aviso, não recusa |
+| `semelhanca_max` | 0,8 | proporção de palavras em comum (Jaccard, palavras de três letras ou mais) a partir da qual duas perguntas são a mesma |
+| `concorrentes_sem_marca` | 2 | concorrentes nomeados, sem a marca, a partir dos quais a pergunta mede o duelo dos outros |
+| `fundo_de_funil_min` | 0,2 | fração mínima de fundo de funil num pedido de dez perguntas ou mais |
+
+Mudar um limite é editar esta tabela, sem deploy. Os números são juízo
+nosso sobre a evidência acima, e não valores publicados: nenhum estudo
+público dá o tamanho mínimo de uma pergunta nem o limiar de semelhança.
+
+### 8.8 O que volta ao gerador [2026-10-18]
+
+Uma pergunta recusada pelo §8.7 não entra, e o Tracker abre um pedido novo
+com `recusadas` (o texto e os motivos) e `target_count` igual ao número de
+recusadas. O gerador reescreve cada uma com o motivo à frente, sem a
+repetir. O pedido novo nunca arranca a auditoria sozinho (`auto_audit`
+fica de fora), e há no máximo duas voltas: o que a terceira tentativa
+ainda recusar fica registado no pedido e para aí.
+
+Num pedido do funil (`auto_audit`), se nada entrou, o pedido novo leva o
+`auto_audit` (a auditoria ainda não arrancou); se alguma coisa entrou, as
+reescritas entram já ativas e medem-se na semana seguinte. Um cliente
+desligado, fora do funil, não recebe pedido novo.
 
 
 ## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
