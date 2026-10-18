@@ -42,6 +42,14 @@ A tese vai no primeiro parágrafo. O resto do texto sustenta-a.
 A estrutura serve o leitor que lê na diagonal: quem só ler o título, a
 abertura e os subtítulos tem de sair com a resposta.
 
+**Todo o texto entregue leva, no fim, a nota "Antes de publicar"**,
+separada e marcada como não publicável: o que falta preencher (cada
+lacuna `[assim]`), o que falta confirmar, e as afirmações que dependem de
+uma fonte que o escritor não viu. Sem nada a dizer, não há nota.
+
+Os exemplos deste ficheiro ilustram a forma. Os factos de qualquer texto
+vêm só do contexto de quem escreve, nunca de um exemplo daqui.
+
 ### Artigo (site, blog, artigo do LinkedIn)
 
 - **Título**: diz a resposta ou a promessa concreta, em 45 a 70
@@ -64,19 +72,30 @@ abertura e os subtítulos tem de sair com a resposta.
 
 ### Estudo
 
-- **Título**: o achado principal, como frase. "Sem pesquisa, a IA não
-  sabe que o JPP existe" diz mais do que "Os partidos portugueses na IA".
+- **Título**: o achado principal, como frase. Um título com sujeito, verbo
+  e o resultado medido diz mais do que um tema ("Os partidos portugueses
+  na IA" é um tema).
 - **Abertura**: o achado, o número que o prova e o que significa, em três
   frases.
-- **Três números-chave**, cada um com uma linha que diz como se lê.
+- **Até três números-chave**, os que o estudo tem, cada um com uma linha
+  que diz como se lê. Dois números verdadeiros valem mais do que três com
+  um inventado para fechar o ritmo.
 - **Resultados**: cada secção é um achado, e o subtítulo diz o achado
   inteiro. O gráfico mostra; o texto diz o que o gráfico mostra e porque
-  importa. Nunca se descreve o gráfico eixo a eixo.
+  importa. Nunca se descreve o gráfico eixo a eixo. Sem os valores do
+  gráfico no contexto, não se escreve a direção do efeito: marca-se
+  `[valor do gráfico]` e vai para o "Antes de publicar".
+- **Os subtítulos de "Método" e "Limitações" são etiquetas**; só os dos
+  resultados e o da lição para a marca dizem o achado.
 - **O que isto quer dizer para uma marca**: uma vez, numa secção própria,
   e não como refrão no fim de cada secção.
 - **Método**: amostra, motores, perguntas, datas, como se contou. Frases
   curtas, sem jargão, com o que ficou de fora dito por extenso.
-- **Limitações**: o que o estudo não mede, sem pedir desculpa.
+- **Limitações**: o que o estudo não mede, sem pedir desculpa, deduzido só
+  do que o método declara. O que não se sabe vai para o "Antes de
+  publicar", não para uma limitação inventada.
+- **"Nós" para quem fez o estudo** ("lemos as respostas"), e o tratamento
+  do canal para o leitor.
 
 ### Caso
 
@@ -263,7 +282,8 @@ para ele.
   corrido, também quando descrevem um produto ("a auditoria de quatro
   semanas", "sete motores"). Em algarismos: com unidade ("3%", "7 ms"),
   em tabelas, em datas e nos intervalos, os dois extremos iguais
-  ("8 a 12 semanas", "8-12", nunca "oito a 12").
+  ("8 a 12 semanas", "8-12", nunca "oito a 12"). O mesmo quando dois
+  números se comparam e um passa de dez: "10 de 11", nunca "dez dos 11".
 
 ### Brasil → Portugal
 
@@ -325,15 +345,17 @@ polir frases de uma secção que vai sair.
 2. **Os factos.** Cada afirmação sobre a marca ou o mercado, com número
    ou sem ele ("o acompanhamento é à parte", "as empresas trocam X por Y
    porque..."), está no contexto: no kit, no site, na medição ou numa
-   fonte citada? O que não está, sai, mesmo que soe plausível, e isso
-   inclui depoimentos e citações que ninguém deu. Vem logo a seguir à
+   fonte citada? E o contexto sustenta-a, ou só a menciona? O que não
+   está, ou não se sustenta, sai, mesmo que soe plausível, e isso inclui
+   depoimentos e citações que ninguém deu. Vem logo a seguir à
    tese porque é a passagem que mais importa e porque não vale a pena
    polir uma frase que vai sair.
 3. **A estrutura.** Cada subtítulo diz o que a secção prova? Há secções
    que dizem a mesma coisa? Há uma secção sem prova? Junta, corta, ordena.
 4. **Os parágrafos.** A primeira frase de cada um diz a ideia? Há
    parágrafos com duas ideias? Parte-os.
-5. **As frases.** Corta 10 a 20% das palavras. Parte as frases acima de 35
+5. **As frases.** Corta 10 a 20% das palavras de cada frase (o texto
+   inteiro pode crescer, se a estrutura pedir secções que faltavam). Parte as frases acima de 35
    palavras e as que levam dois-pontos e ponto e vírgula ao mesmo tempo.
    Troca cada nome abstrato pelo verbo. Troca cada adjetivo pelo número,
    ou tira-o.
@@ -365,6 +387,9 @@ que passar do limite. Mudar um limite aqui muda a verificação sem deploy.
 ## 11. Antes e depois
 
 Exemplos reais, tirados dos nossos textos. O "antes" estava publicado.
+Alguns "depois" usam factos do estudo inteiro que a frase citada não
+mostra: servem para ver a forma, e quem rever um texto nunca acrescenta
+um facto que o seu contexto não tem.
 
 **Encadear por dois-pontos.**
 Antes: "A IA está a dizer o que lhe falta para responder: as prioridades,
