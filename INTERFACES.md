@@ -351,6 +351,17 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 **Consumer:** `destaque-ai-tracker/src/lib/skill/market-monitor.ts` (`parseDadosDoMercado`, `parseCenso`, `parseSerieDoMercado`, cache 1 h). Cabeçalhos procurados no início de linha; colunas por nome do cabeçalho, nunca por posição. `Preço mudou` lê `sim`/`não`; `—` é vazio. Uma semana sem o bloco não parte nada: o ecrã mostra o report em prosa e diz que o bloco falta. A partilha de voz do ecrã é a fatia de cada marca nas aparições da semana (aparições da marca a dividir pela soma das aparições de todas as marcas nessa semana); uma marca sem linha numa semana conta 0, como a manutenção do histórico já prevê. O denominador real (hoje só o Claude, `/5`) vai dito no ecrã.
 
+### Contrato 16: memória do setor (o que o agente e o Estúdio sabem do segmento)
+
+**Producer:** `skills/geo-seo-aeo-master/setores/<id>.md`, escritos pela routine `setores-weekly` (domingo 20:00 Lisboa, `setores/setores-prompt.md`). Secções procuradas no início de linha: `## O que se sabe do setor`, `## Tendências`, `## Calendário`, `## Fontes a vigiar`. A lista dos ids está em `setores/README.md` (só os setores de clientes ativos).
+**Consumer:** `destaque-ai-tracker/src/lib/setores/` (cache 1 h): entra no pacote de factos do agente do painel e no contexto do Estúdio, para os clientes ligados ao setor em `tracker.clients.sectors`. Prosa, lida por secção: um ficheiro em falta ou uma secção vazia deixam o setor sem memória e o produto diz-o, nunca parte. A metade medida (fontes e consultas dos motores no setor) é do Tracker e não vive aqui.
+
+### Contrato 17: o Estúdio (as regras do escritor de textos)
+
+**Producer:** `references/estudio.md`. **Consumer:** `destaque-ai-tracker/src/lib/estudio/`, que o usa como sistema do escritor. Prosa: os tipos de texto são as subsecções `### \`<tipo>\`` de `## Os tipos de texto`, e o Tracker lê-as pelo título para saber que tipos oferecer; mudar o identificador de um tipo tira-o do ecrã até o Tracker o conhecer.
+
+---
+
 ## Frequência de atualização
 
 | Ficheiro | Cadência | Trigger |
