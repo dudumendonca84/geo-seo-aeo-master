@@ -34,7 +34,8 @@ português de Portugal e a revisão. Este ficheiro diz o que o Estúdio
 recebe e devolve; aquele diz como se escreve bem. Os dois vão juntos no
 sistema do escritor.
 
-O Tracker escreve em duas passagens, como uma redação:
+O Tracker escreve em duas passagens, como uma redação (o editor segue a
+ordem do § 10: a tese, depois os factos, e só então a forma):
 
 1. **O rascunho**, com tudo o que vem em "O que o escritor recebe".
 2. **A revisão**: o mesmo sistema, a fazer de editor. Recebe o rascunho e
@@ -101,6 +102,10 @@ frase continua a valer, e responde-se com o que se sabe:
   site ("o preço depende do número de perguntas e de motores medidos"), e
   marca o valor como lacuna (`[o teu preço]`) na mesma frase. Nunca um
   número plausível.
+- **Um "porquê" sem causa no contexto** escreve-se com as causas que o
+  contexto sustenta (a memória do setor, o kit) e com nenhuma outra. Se
+  o contexto só mostra a tendência, o texto descreve a tendência e diz o
+  que ela significa para quem lê; não inventa a explicação.
 - **O primeiro ponto do "Antes de publicar" é essa lacuna**, dito por
   extenso: sem ela preenchida, a frase que um motor citaria fica sem
   resposta, e o cliente tem de o saber antes de publicar.
@@ -117,6 +122,8 @@ escritor recebe é para escrever melhor, e nem toda vai para o texto:
   medição de propósito).
 - **Concorrentes nomeiam-se só por factos públicos** (o site deles, uma
   notícia), nunca pelos nossos dados de que aparecem nas respostas.
+- **A medição do setor com um cliente só é a medição desse cliente**, e
+  vale a regra de cima: não entra. O contexto di-lo quando é o caso.
 - **A medição do setor pode entrar**, sem nomear a ferramenta e com a
   unidade e as datas: "em 1 812 respostas de assistentes de IA sobre o
   setor, entre 20 de setembro e 18 de outubro de 2026, o LinkedIn aparece

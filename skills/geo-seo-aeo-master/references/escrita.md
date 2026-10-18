@@ -160,8 +160,9 @@ A pergunta como o cliente a escreveria. A resposta começa por "sim",
   Nunca uma frase inteira lá dentro.
 - **Sem pontos de exclamação, sem reticências.**
 - **Perguntas retóricas**: no máximo uma por texto, e nunca para abrir.
-  Um subtítulo em forma de pergunta não é retórico, porque o texto
-  responde-lhe logo a seguir.
+  Não é retórica a pergunta a que o texto responde logo a seguir: um
+  subtítulo em forma de pergunta, a primeira linha de um post do
+  LinkedIn, a pergunta de uma FAQ.
 - **Aspas curvas** (“assim”), e só para citar ou para uma palavra usada
   num sentido que não é o seu. Nunca para dar ênfase.
 
@@ -260,7 +261,8 @@ para ele.
   para diferenças de percentagem (+0,7 pts). Até dez por extenso no texto
   corrido, também quando descrevem um produto ("a auditoria de quatro
   semanas", "sete motores"). Em algarismos: com unidade ("3%", "7 ms"),
-  em tabelas e em datas.
+  em tabelas, em datas e nos intervalos, os dois extremos iguais
+  ("8 a 12 semanas", "8-12", nunca "oito a 12").
 
 ### Brasil → Portugal
 
@@ -319,26 +321,28 @@ polir frases de uma secção que vai sair.
 
 1. **A tese.** Está no primeiro parágrafo? Quem ler só o título e a
    abertura sabe a resposta? Se não, reescreve a abertura.
-2. **A estrutura.** Cada subtítulo diz o que a secção prova? Há secções
+2. **Os factos.** Cada afirmação sobre a marca ou o mercado, com número
+   ou sem ele ("o acompanhamento é à parte", "as empresas trocam X por Y
+   porque..."), está no contexto: no kit, no site, na medição ou numa
+   fonte citada? O que não está, sai, mesmo que soe plausível, e isso
+   inclui depoimentos e citações que ninguém deu. Vem logo a seguir à
+   tese porque é a passagem que mais importa e porque não vale a pena
+   polir uma frase que vai sair.
+3. **A estrutura.** Cada subtítulo diz o que a secção prova? Há secções
    que dizem a mesma coisa? Há uma secção sem prova? Junta, corta, ordena.
-3. **Os parágrafos.** A primeira frase de cada um diz a ideia? Há
+4. **Os parágrafos.** A primeira frase de cada um diz a ideia? Há
    parágrafos com duas ideias? Parte-os.
-4. **As frases.** Corta 10 a 20% das palavras. Parte as frases acima de 35
+5. **As frases.** Corta 10 a 20% das palavras. Parte as frases acima de 35
    palavras e as que levam dois-pontos e ponto e vírgula ao mesmo tempo.
    Troca cada nome abstrato pelo verbo. Troca cada adjetivo pelo número,
    ou tira-o.
-5. **Os tiques.** Percorre a secção 6, padrão a padrão e expressão a
+6. **Os tiques.** Percorre a secção 6, padrão a padrão e expressão a
    expressão. Procura os refrões: uma frase que abra ou feche duas secções
    da mesma maneira é um refrão.
-6. **A língua.** Tratamento único do princípio ao fim. Nenhuma palavra da
-   tabela Brasil → Portugal. Acordo de 1990. Nenhum travessão.
-7. **Os factos.** Cada afirmação sobre a marca, com número ou sem ele
-   ("o acompanhamento é à parte", "cada ação diz a pergunta que move"),
-   está no contexto: no kit, no site, na medição ou numa fonte citada? O
-   que não está, sai, mesmo que soe plausível. É aqui que o editor apanha
-   o que o rascunho inventou, e é a passagem que mais importa.
-   Cada número tem origem e data? Os denominadores estão lá? As lacunas
-   estão marcadas e listadas no "Antes de publicar"?
+7. **A língua e os números.** Tratamento único do princípio ao fim.
+   Nenhuma palavra da tabela Brasil → Portugal. Acordo de 1990. Nenhum
+   travessão. Cada número tem origem e data, os denominadores estão lá, e
+   as lacunas estão marcadas e listadas no "Antes de publicar".
 8. **Em voz alta.** Lê a abertura e um parágrafo do meio como se os
    dissesses a alguém do outro lado da mesa. Onde tropeças, reescreves.
 
@@ -351,7 +355,7 @@ que passar do limite. Mudar um limite aqui muda a verificação sem deploy.
 |---|---|
 | palavras por frase | 35 |
 | dois-pontos por parágrafo | 1 |
-| frases por parágrafo | 6 |
+| frases por parágrafo | 5 |
 | pontos de exclamação | 0 |
 | travessões | 0 |
 

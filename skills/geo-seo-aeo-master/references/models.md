@@ -478,30 +478,37 @@ variável de ambiente na Vercel punha `gpt-5.6-luna` e tapava o erro.
 
 ---
 
-## Tracker writer model
+## Tracker product models
 
-**Que modelo ESCREVE os textos do Estúdio** (18 Out 2026, founder:
-*"temos que realmente garantir que a skill saiba escrever [...] com uma
-qualidade impecável"*). Lido em runtime pelo `destaque-ai-tracker`
-(`src/lib/skill/escritor.ts`, contrato 17).
+**Que modelo serve cada funcionalidade do Tracker que ESCREVE OU
+RESPONDE** (18 Out 2026, founder: *"temos que realmente garantir que a
+skill saiba escrever [...] com uma qualidade impecável"* e *"eu também
+não quero nada rodando no Sonnet 5 mais"*). Lido em runtime pelo
+`destaque-ai-tracker` (`src/lib/skill/escritor.ts`, contrato 17).
 
-Esta secção existe porque o Estúdio escrevia com o modelo da MEDIÇÃO: a
-linha `claude` da tabela dos buyer defaults, que é o Claude que o
-comprador encontra no plano gratuito. Esse modelo é o certo para medir o
-que o comprador vê, e o errado para escrever um texto que vai ser
-publicado com o nome do cliente. Medir e escrever são dois papéis, e cada
-um tem a sua linha.
+Esta secção existe porque o Estúdio, o agente do painel e a sugestão de
+concorrentes do registo chamavam o modelo da MEDIÇÃO: a linha `claude`
+dos buyer defaults, que é o Claude que o comprador encontra no plano
+gratuito. Esse modelo é o certo para medir o que o comprador vê, e o
+errado para um texto publicado com o nome do cliente ou uma resposta que
+ele lê no produto. Medir e servir são papéis diferentes, e cada um tem a
+sua linha. **A medição não vive aqui**: continua nos buyer defaults.
 
 | Papel | Modelo | Porquê |
 |---|---|---|
-| `estudio` | `claude-opus-5-5` | o rascunho: o modelo com melhor escrita longa disponível na API |
-| `revisao` | `claude-opus-5-5` | a passagem de editor (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
+| `estudio` | `claude-opus-5-5` | o rascunho dos textos do Estúdio: o modelo com melhor escrita longa disponível na API |
+| `revisao` | `claude-opus-5-5` | a passagem de editor do Estúdio (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
+| `agente` | `claude-opus-5-5` | o agente do painel: lê os factos da semana e responde ao cliente |
+| `registo` | `claude-opus-5-5` | a sugestão de concorrentes no registo, com pesquisa na web: a primeira coisa que o cliente vê |
 
 Custo, pelos preços da tabela seguinte (4,00 USD por milhão de fichas de
-entrada, 20,00 de saída): um artigo com ~12 000 fichas de entrada (regras
-em cache incluídas) e ~3 000 de saída fica perto de 0,11 USD por passagem,
-0,22 com a revisão. Com o tecto de 20 textos por mês, cerca de 4,40 USD
-por cliente.
+entrada, 20,00 de saída, o dobro do Sonnet 5):
+- **Estúdio**: um artigo com ~12 000 fichas de entrada e ~3 000 de saída
+  fica perto de 0,11 USD por passagem, 0,22 com a revisão; com o tecto de
+  20 textos por mês, cerca de 4,40 USD por cliente.
+- **Agente**: a pergunta típica (5 410 fichas de entrada, 700 de saída)
+  passa de 1,78 a cerca de 3,6 cêntimos.
+- **Registo**: uma procura por conta nova, alguns cêntimos.
 
 ## Token prices
 
