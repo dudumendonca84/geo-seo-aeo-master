@@ -13,8 +13,9 @@ de cada linha._
 
 ## Tendências
 
-_Sem entradas ainda. A primeira corrida do agente semanal preenche esta
-secção._
+- **2026-10-15** · A Google redesenhou os links no AI Mode e nos AI Overviews (mais links inline, secção de topo com 1 ou 2 links) e continua sem publicar dados de cliques por superfície; quem vende GEO não deve prometer atribuição de tráfego do AI Mode ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-16)
+- **2026-10-14** · Com o GPT-6, os links do ChatGPT passaram a abrir sem `utm_source` nem referrer: a Adobe mediu cerca de 500 páginas e viu −31 mil visitas/dia atribuídas ao ChatGPT e +26 mil diretas, pelo que uma queda de referral ChatGPT pode ser atribuição e não perda de visibilidade ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-15)
+- **2026-10-13** · O Bing Webmaster Tools juntou o Topics Portfolio ao relatório AI Performance (vista por tema com procura e concorrência), ainda sem API ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-14)
 
 ## Calendário
 
