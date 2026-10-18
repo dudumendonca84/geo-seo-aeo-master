@@ -496,19 +496,29 @@ sua linha. **A medição não vive aqui**: continua nos buyer defaults.
 
 | Papel | Modelo | Porquê |
 |---|---|---|
-| `estudio` | `claude-opus-5-5` | o rascunho dos textos do Estúdio: o modelo com melhor escrita longa disponível na API |
-| `revisao` | `claude-opus-5-5` | a passagem de editor do Estúdio (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
+| `estudio` | `claude-opus-5-5` | o rascunho dos textos do Estúdio: o modelo de maior capacidade da Anthropic na API (secção Anthropic deste ficheiro) |
+| `revisao` | `claude-opus-5-5` | a revisão do Estúdio (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
 | `agente` | `claude-opus-5-5` | o agente do painel: lê os factos da semana e responde ao cliente |
 | `registo` | `claude-opus-5-5` | a sugestão de concorrentes no registo, com pesquisa na web: a primeira coisa que o cliente vê |
+| `classificar` | `claude-haiku-5-5` | sugerir a categoria e a fase de uma pergunta: duas chaves validadas contra a taxonomia, uma tarefa de modelo rápido |
 
-Custo, pelos preços da tabela seguinte (4,00 USD por milhão de fichas de
-entrada, 20,00 de saída, o dobro do Sonnet 5):
-- **Estúdio**: um artigo com ~12 000 fichas de entrada e ~3 000 de saída
-  fica perto de 0,11 USD por passagem, 0,22 com a revisão; com o tecto de
-  20 textos por mês, cerca de 4,40 USD por cliente.
+Um papel sem linha usa o modelo de recurso do Tracker (o de qualidade, ou o
+rápido no `classificar`), com uma exceção: a `revisao` sem linha usa o
+modelo do `estudio`.
+
+**Custo, ESTIMADO** pelos preços da tabela seguinte (4,00 USD por milhão de
+fichas de entrada, 20,00 de saída, o dobro do Sonnet 5); nenhum texto
+correu ainda com estes modelos, e o Tracker grava as fichas de cada
+passagem (`studio_texts.passes`) para estes números se corrigirem:
+- **Estúdio**: o rascunho com ~12 000 fichas de entrada e ~3 000 de saída
+  fica perto de 0,11 USD. A revisão lê mais (o contexto e o rascunho), mas
+  o sistema e o contexto vêm da cache; conta-se 0,10 a 0,15 USD. Com o
+  tecto de 20 textos por mês, 4 a 5 USD por cliente.
 - **Agente**: a pergunta típica (5 410 fichas de entrada, 700 de saída)
   passa de 1,78 a cerca de 3,6 cêntimos.
 - **Registo**: uma procura por conta nova, alguns cêntimos.
+
+---
 
 ## Token prices
 

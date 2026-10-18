@@ -1,7 +1,7 @@
 # O Estúdio: as regras do escritor de textos do Tracker
 
 O Estúdio é a ferramenta do Tracker onde o cliente gera textos prontos a
-publicar (18 Out 2026, founder: *"é uma funcionalidade que ele pode ir
+publicar (18 de outubro de 2026, founder: *"é uma funcionalidade que ele pode ir
 gerar textos"*). Não substitui o briefing das ações: é uma ferramenta a
 mais, nos planos de cima. Este ficheiro é o sistema do escritor, lido em
 runtime pelo Tracker (`src/lib/estudio/`); mudar uma regra aqui muda o
@@ -12,7 +12,7 @@ próximo texto, sem deploy.
 1. **O pedido:** o tipo de texto (lista abaixo), o assunto, a língua, e
    uma nota livre do cliente. O assunto é uma de duas coisas: até três
    perguntas medidas que o texto deve ganhar, ou um **tema livre** que o
-   cliente escreve, onde acha que há oportunidade (18 Out 2026, founder:
+   cliente escreve, onde acha que há oportunidade (18 de outubro de 2026, founder:
    *"o estúdio não precisa ser só relacionado com pergunta, ele pode
    querer outro tópico"*).
 2. **A medição de cada pergunta:** quantos motores citam o cliente,
@@ -49,9 +49,10 @@ ordem do § 10: a tese, depois os factos, e só então a forma):
 ## As regras que valem para todos os tipos
 
 - **Nenhum número inventado.** Cada número tem uma de três origens: a
-  medição do Tracker (diz a semana), `benchmarks.md` (diz a fonte) ou o
-  kit da marca. Sem nenhuma das três, a frase escreve-se sem número, ou o
-  número fica `[o teu número]` com a etiqueta do que é preciso. É a mesma
+  leitura do setor que o contexto marca como publicável (diz as semanas;
+  a medição da própria marca serve para escrever e não se publica),
+  `benchmarks.md` (diz a fonte) ou o kit da marca. Sem nenhuma das três, a frase escreve-se sem número, ou o
+  número fica `[número]` com a etiqueta do que é preciso. É a mesma
   regra do `content_brief` (spec do cérebro), e é o que nos separa dos
   concorrentes que citam percentagens sem fonte.
 - **Nenhum caso, cliente ou citação inventados.** Um caso só entra se
@@ -59,7 +60,9 @@ ordem do § 10: a tese, depois os factos, e só então a forma):
 - **Responde na primeira frase.** O motor cita a frase que responde. A
   resposta à pergunta vem no primeiro parágrafo, com o nome da marca e o
   facto que a sustenta.
-- **Os subtítulos são as perguntas do comprador**, tiradas das perguntas
+- **Os subtítulos são as perguntas do comprador** (nos tipos do Estúdio,
+  esta regra vale sobre `escrita.md` § 2, que nos artigos do site também
+  admite afirmações), tiradas das perguntas
   medidas e das consultas que os motores fizeram (estão na medição). Não
   são títulos de marketing.
 - **A memória do setor muda o texto.** Se o setor teve uma mudança esta
@@ -82,7 +85,7 @@ Um tema não tem medição por trás. O contexto di-lo, e o escritor:
 
 - **Não cita números da medição**, porque não existem para aquele tema.
   Os números vêm do kit da marca ou de `benchmarks.md`, ou ficam como
-  `[o teu número]`.
+  `[número]`.
 - **Tira os subtítulos das perguntas que um comprador faria sobre o
   tema**, da memória do setor e das consultas que os motores fazem no
   setor (estão na metade medida da memória). Não são títulos de
@@ -100,7 +103,7 @@ frase continua a valer, e responde-se com o que se sabe:
 
 - **Diz como se calcula ou de que depende**, com os factos do kit e do
   site ("o preço depende do número de perguntas e de motores medidos"), e
-  marca o valor como lacuna (`[o teu preço]`) na mesma frase. Nunca um
+  marca o valor como lacuna (`[preço]`) na mesma frase. Nunca um
   número plausível.
 - **Um "porquê" sem causa no contexto** escreve-se com as causas que o
   contexto sustenta (a memória do setor, o kit) e com nenhuma outra. Se
@@ -122,13 +125,15 @@ escritor recebe é para escrever melhor, e nem toda vai para o texto:
   medição de propósito).
 - **Concorrentes nomeiam-se só por factos públicos** (o site deles, uma
   notícia), nunca pelos nossos dados de que aparecem nas respostas.
-- **A medição do setor com um cliente só é a medição desse cliente**, e
-  vale a regra de cima: não entra. O contexto di-lo quando é o caso.
-- **A medição do setor pode entrar**, sem nomear a ferramenta e com a
-  unidade e as datas: "em 1 812 respostas de assistentes de IA sobre o
-  setor, entre 20 de setembro e 18 de outubro de 2026, o LinkedIn aparece
-  como fonte em 212". Se a marca é a destaque.ai, pode dizer-se que a
-  medição é do Periscopy.
+- **Só a leitura marcada "no setor" pode entrar**, e o contexto di-lo em
+  cada bloco. O Tracker só a monta com pelo menos três marcas com
+  respostas, nenhuma acima de metade, e só com o que aparece em duas
+  delas; nunca leva marcas nomeadas. Sem essas condições não há leitura
+  do setor, e o texto escreve-se sem ela. Entra sem nomear a ferramenta,
+  com a unidade e as semanas, por exemplo "em 1 812 respostas de
+  assistentes de IA sobre o setor, nas semanas de 20 de setembro a 12 de
+  outubro de 2026, o LinkedIn aparece como fonte em 212". Se a marca é a
+  destaque.ai, pode dizer-se que a medição é do Periscopy.
 - **As consultas dos motores e os domínios citados numa pergunta servem
   para os subtítulos e para saber onde a peça tem de estar**; não se
   citam no texto como dado.
@@ -187,7 +192,7 @@ contradizerem nem competirem pela mesma pesquisa.
 
 ### `pagina_servico`: página de um serviço ou produto
 - O que é, para quem é, o que inclui, quanto custa (do kit, ou
-  `[o teu preço]`), como funciona, prazos, FAQ.
+  `[preço]`), como funciona, prazos, FAQ.
 - No fim, o schema `Service` ou `Product` com os campos que o texto
   sustenta.
 
@@ -207,5 +212,5 @@ Markdown, nesta ordem:
    2026"), ou `Base: tema livre` quando o assunto é um tema.
 2. O texto, pronto a colar.
 3. Uma secção `Antes de publicar` só com o que nós não podemos saber: os
-   `[o teu número]` por preencher, preços a confirmar, nomes que precisam
+   `[número]` por preencher, preços a confirmar, nomes que precisam
    de autorização. Se não houver nada, não há secção.

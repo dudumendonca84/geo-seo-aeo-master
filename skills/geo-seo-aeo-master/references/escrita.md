@@ -6,11 +6,12 @@ artigos do LinkedIn, os relatórios, as propostas e os textos que o Estúdio
 do Tracker escreve para os clientes. Quem escrever qualquer um destes lê
 isto primeiro e faz a revisão do fim antes de entregar.
 
-Existe porque o founder o pediu por extenso (18 Out 2026): *"temos que
-realmente garantir que a skill saiba escrever sobre esse tipo de texto com
-uma qualidade impecável"*. Os textos que saíam estavam corretos nos números
-e maus na escrita: frases encadeadas por dois-pontos, refrões repetidos,
-fragmentos soltos a fazer de estilo, palavras de máquina. Nada disso é
+Existe porque o founder o pediu por extenso a 18 de outubro de 2026, com
+estas palavras: *"temos que realmente garantir que a skill saiba escrever
+sobre esse tipo de texto com uma qualidade impecável"*. Os textos que
+saíam estavam corretos nos números e maus na escrita. Encadeavam frases
+por dois-pontos, repetiam refrões, usavam fragmentos soltos a fazer de
+estilo e palavras de máquina. Nada disso é
 erro de facto, e tudo isso faz o leitor desistir.
 
 O registo é o da casa (`SKILL.md` § Editorial voice): sóbrio, The
@@ -20,7 +21,7 @@ Economist, números em vez de adjetivos. Este ficheiro diz como se chega lá.
 
 ## 1. Antes de escrever uma linha
 
-Três respostas, escritas para ti antes do texto. Sem elas, o texto anda à
+Antes do texto, escreve para ti estas três respostas. Sem elas, o texto anda à
 procura do assunto enquanto o leitor espera.
 
 1. **Quem lê, e o que já sabe.** Um diretor de marketing de uma PME
@@ -233,7 +234,7 @@ editor com a indicação do que pôr no lugar.
 | `não é segredo que` · `sem dúvida` · `é inegável` · `inegavelmente` · `a verdade é que` | a prova |
 | `mergulhar` · `mergulhe` · `desbloquear` · `desbloqueie` · `alavancar` · `alavanque` · `potenciar ao máximo` | o verbo do que se faz |
 | `game-changer` · `revolucionário` · `revolucionar` · `paradigma` · `sinergia` · `disruptivo` | o efeito, medido |
-| `solução robusta` · `robusto` · `robusta` · `holístico` · `holística` · `de ponta` · `inovador` · `inovadora` | o que faz, com número |
+| `solução robusta` · `robusto` · `robusta` · `holístico` · `holística` · `tecnologia de ponta` · `inovador` · `inovadora` | o que faz, com número |
 | `papel crucial` · `papel fundamental` · `desempenha um papel` · `peça-chave` · `pilar fundamental` · `a chave para` | o que causa |
 | `de forma eficaz` · `de forma eficiente` · `de forma significativa` · `de forma clara` | o resultado, ou nada |
 | `no que diz respeito a` · `no que toca a` · `a nível de` · `ao nível de` | "sobre", "em" |
@@ -324,7 +325,9 @@ inglês valem igual.
 
 - **Cada número tem origem e data**: a medição do Tracker (diz a semana),
   um estudo de `benchmarks.md` (diz a fonte e o ano) ou o kit da marca.
-- **O que não se sabe fica marcado**: `[o teu número]`, `[o teu preço]`,
+- **O que não se sabe fica marcado** com uma lacuna neutra, que não trata o
+  leitor por "tu" nem por "você" e por isso não quebra o tratamento:
+  `[número]`, `[preço]`,
   `[nome do cliente, com autorização]`. Uma lacuna marcada é honesta; um
   número plausível inventado é o pior erro que este ficheiro conhece.
 - **Dados de fornecedor dizem-se como tal**: "segundo a Profound, que vende
