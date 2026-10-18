@@ -101,6 +101,14 @@ competitors can read the same papers, but not our data.
 
 ## The delivery bar: hand it over done (a fasquia da entrega)
 
+**Done also means proven and approved** (founder, 18 Oct 2026: *"o produto
+já está em produção, não podemos colocar qualquer coisa live mais"*). Any
+change to what a client sees or receives, whether it ships through the
+Tracker, the sites or a document, follows the quality cycle in
+`destaque-ai-tracker/QUALIDADE.md`: design in Claude Design first, real
+output as proof, an independent review, and the founder's approval before
+it goes live.
+
 Founder directive, 22 Aug 2026. The positioning and the goal: for this
 skill and for every output that leaves destaque.ai: is to deliver
 everything **as done as we can make it**, as if we could connect to the
