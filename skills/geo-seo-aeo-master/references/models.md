@@ -498,8 +498,8 @@ sua linha. **A medição não vive aqui**: continua nos buyer defaults.
 |---|---|---|
 | `estudio` | `claude-opus-5-5` | o rascunho dos textos do Estúdio: o modelo de maior capacidade da Anthropic na API (secção Anthropic deste ficheiro) |
 | `revisao` | `claude-opus-5-5` | a revisão do Estúdio (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
-| `agente` | `claude-opus-5-5` | o agente do painel: lê os factos da semana e responde ao cliente |
-| `registo` | `claude-opus-5-5` | a sugestão de concorrentes no registo, com pesquisa na web: a primeira coisa que o cliente vê |
+| `agente` | `claude-opus-5-5` | o agente do painel: lê os factos da semana e responde ao cliente. **Ainda não lida**: o Tracker continua no modelo da medição até o founder decidir o custo |
+| `registo` | `claude-opus-5-5` | a sugestão de concorrentes no registo, com pesquisa na web: a primeira coisa que o cliente vê. **Ainda não lida**, pela mesma razão |
 | `classificar` | `claude-haiku-5-5` | sugerir a categoria e a fase de uma pergunta: duas chaves validadas contra a taxonomia, uma tarefa de modelo rápido |
 
 Um papel sem linha usa o modelo de recurso do Tracker (o de qualidade, ou o
