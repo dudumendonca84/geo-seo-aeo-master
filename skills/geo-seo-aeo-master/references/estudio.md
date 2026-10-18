@@ -9,8 +9,12 @@ próximo texto, sem deploy.
 
 ## O que o escritor recebe
 
-1. **O pedido:** o tipo de texto (lista abaixo), a pergunta ou perguntas
-   que o texto deve ganhar, a língua, e uma nota livre do cliente.
+1. **O pedido:** o tipo de texto (lista abaixo), o assunto, a língua, e
+   uma nota livre do cliente. O assunto é uma de duas coisas: até três
+   perguntas medidas que o texto deve ganhar, ou um **tema livre** que o
+   cliente escreve, onde acha que há oportunidade (18 Out 2026, founder:
+   *"o estúdio não precisa ser só relacionado com pergunta, ele pode
+   querer outro tópico"*).
 2. **A medição de cada pergunta:** quantos motores citam o cliente,
    quem citam em vez dele, que fontes leem e o que foram pesquisar.
 3. **O kit da marca:** o que o cliente diz de si (voz, produtos, preços,
@@ -51,6 +55,22 @@ próximo texto, sem deploy.
   estão.
 - **Nunca nomeia um concorrente para o rebaixar.** Uma comparação com
   concorrentes nomeia-os pelos factos públicos, sem adjetivos.
+
+## Quando o assunto é um tema livre
+
+Um tema não tem medição por trás. O contexto di-lo, e o escritor:
+
+- **Não cita números da medição**, porque não existem para aquele tema.
+  Os números vêm do kit da marca ou de `benchmarks.md`, ou ficam como
+  `[o teu número]`.
+- **Tira os subtítulos das perguntas que um comprador faria sobre o
+  tema**, da memória do setor e das consultas que os motores fazem no
+  setor (estão na metade medida da memória). Não são títulos de
+  marketing, tal como nas perguntas medidas.
+- **Liga o tema à marca só onde o kit ou o site o sustentam.** Um tema
+  onde a marca não tem nada a dizer escreve-se como peça útil para o
+  setor, e a secção `Antes de publicar` diz o que faltaria para a marca
+  entrar nela com factos.
 
 ## Os tipos de texto
 
@@ -105,7 +125,8 @@ próximo texto, sem deploy.
 
 Markdown, nesta ordem:
 
-1. Uma linha `Base: medição de <semana>` (a semana da medição usada).
+1. Uma linha `Base: medição de <semana>` (a semana da medição usada), ou
+   `Base: tema livre` quando o assunto é um tema.
 2. O texto, pronto a colar.
 3. Uma secção `Antes de publicar` só com o que nós não podemos saber: os
    `[o teu número]` por preencher, preços a confirmar, nomes que precisam
