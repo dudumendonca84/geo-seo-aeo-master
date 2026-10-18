@@ -460,25 +460,30 @@ marca diz de si nem o que a IA pesquisa por trás (founder, 18 Out 2026:
 AI"*). Ninguém publica as perguntas feitas aos assistentes, por isso a
 aproximação é a voz pública do cliente.
 
-O pedido `generate_prompts` de um cliente novo traz `voz_do_cliente`:
+O pedido `generate_prompts` de um cliente novo traz `voz_do_cliente`
+(nesta versão, uma fonte):
 
 - `autocompletar`: o que o Google completa para a marca no mercado do
   cliente (`semente`, `sugestao`), da marca sozinha, com cada letra, com
   as palavras de pergunta e contra cada concorrente;
-- `queixas`: as primeiras linhas das reclamações no Portal da Queixa
-  (`abertura`), que são a voz de quem reclama (o título é reescrito pelo
-  site e não serve). `portal_da_queixa.nome` diz que marca a página
-  descreve: se não for o cliente, ignora as queixas;
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
   de propósito. Não ler não é o mesmo que ninguém perguntar.
+
+**O Portal da Queixa não se recolhe.** No piloto do Continente foi a fonte
+que mostrou o que corre mal (138 de 300 reclamações sobre encomendas), mas
+o `robots.txt` dele recusa os robôs de IA (GPTBot, ClaudeBot,
+anthropic-ai) e proíbe as páginas de listagem a todos. Recolher contra
+isso não se faz. As reclamações da marca são dela, e ela pode dá-las.
 
 Como se usa:
 
 1. **Lê primeiro, agrupa em temas, e só depois escreve.** No piloto do
    Continente os temas foram o preço contra o rival, o saldo e as parcerias
    do cartão, a compra online (custo da entrega, valor mínimo, app que
-   falha), o reembolso, e os horários. Cada tema com muitas sugestões ou
-   muitas queixas merece pelo menos uma pergunta.
+   falha), o reembolso, e os horários. Cada tema com muitas sugestões
+   merece pelo menos uma pergunta. As sugestões vêm em minúsculas e às
+   vezes não são sobre a marca ("continente africano"): decide pelo
+   sentido.
 2. **As palavras são as do cliente, numa frase completa.** "saldo cartão
    continente expira" dá "O saldo do Cartão Continente expira?"; "continente
    ou pingo doce qual o mais barato" dá "Qual é mais barato, o supermercado
@@ -489,14 +494,13 @@ Como se usa:
    cliente dá muitas das primeiras: equilibra com as segundas pelo §8.1 a
    §8.6, porque sem elas não há taxa de citação.
 4. **Cada pergunta diz de onde veio**, em `voice_source`, com a fonte e as
-   palavras: `Google: saldo cartão continente expira`, `Portal da Queixa:
-   atraso na entrega de encomenda online`. Uma pergunta que não veio da voz
-   do cliente fica sem `voice_source`.
+   palavras: `Google: saldo cartão continente expira`. Uma pergunta que não
+   veio da voz do cliente fica sem `voice_source`.
 5. **Uma marca nova e pouco conhecida devolve pouco**, e às vezes devolve
    outra empresa com o mesmo nome (medido: as duas sugestões da goCrew
    eram de empresas homónimas noutro país). Isso é um dado sobre a marca,
-   não uma falha: ignora o que não é ela, escreve a partir das sugestões
-   dos concorrentes e da categoria, e diz isso no `notes` do pedido.
+   não uma falha: ignora o que não é ela e escreve a partir das sugestões
+   dos concorrentes e da categoria.
 6. **Muitas sugestões são de localidade** ("hospital da luz coimbra",
    "rocha automóveis braga"). Dizem onde o cliente procura a marca; numa
    marca com várias lojas valem uma pergunta local, não uma por cidade.
