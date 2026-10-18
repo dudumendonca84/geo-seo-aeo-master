@@ -51,7 +51,8 @@ exatos no início de linha:
 ## Regras de escrita
 
 As da casa: português de Portugal com o Acordo de 1990, sem travessões,
-sem as palavras "controlo" e "canónico", números só com fonte, e "não
+sem as duas palavras que o founder recusou (a lista está no `CLAUDE.md` do
+Tracker, ponto 11 dos princípios editoriais), números só com fonte, e "não
 encontrámos" quando não se encontrou. Uma tendência sem ligação para a
 fonte primária não entra.
 

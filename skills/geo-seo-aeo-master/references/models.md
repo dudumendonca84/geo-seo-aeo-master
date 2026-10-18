@@ -478,6 +478,48 @@ variável de ambiente na Vercel punha `gpt-5.6-luna` e tapava o erro.
 
 ---
 
+## Tracker product models
+
+**Que modelo serve cada funcionalidade do Tracker que ESCREVE OU
+RESPONDE** (18 Out 2026, founder: *"temos que realmente garantir que a
+skill saiba escrever [...] com uma qualidade impecável"* e *"eu também
+não quero nada rodando no Sonnet 5 mais"*). Lido em runtime pelo
+`destaque-ai-tracker` (`src/lib/skill/escritor.ts`, contrato 17).
+
+Esta secção existe porque o Estúdio, o agente do painel e a sugestão de
+concorrentes do registo chamavam o modelo da MEDIÇÃO: a linha `claude`
+dos buyer defaults, que é o Claude que o comprador encontra no plano
+gratuito. Esse modelo é o certo para medir o que o comprador vê, e o
+errado para um texto publicado com o nome do cliente ou uma resposta que
+ele lê no produto. Medir e servir são papéis diferentes, e cada um tem a
+sua linha. **A medição não vive aqui**: continua nos buyer defaults.
+
+| Papel | Modelo | Porquê |
+|---|---|---|
+| `estudio` | `claude-opus-5-5` | o rascunho dos textos do Estúdio: o modelo de maior capacidade da Anthropic na API (secção Anthropic deste ficheiro) |
+| `revisao` | `claude-opus-5-5` | a revisão do Estúdio (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
+| `agente` | `claude-opus-5-5` | o agente do painel: lê os factos da semana e responde ao cliente. **Ainda não lida**: o Tracker continua no modelo da medição até o founder decidir o custo |
+| `registo` | `claude-opus-5-5` | a sugestão de concorrentes no registo, com pesquisa na web: a primeira coisa que o cliente vê. **Ainda não lida**, pela mesma razão |
+| `classificar` | `claude-haiku-5-5` | sugerir a categoria e a fase de uma pergunta: duas chaves validadas contra a taxonomia, uma tarefa de modelo rápido |
+
+Um papel sem linha usa o modelo de recurso do Tracker (o de qualidade, ou o
+rápido no `classificar`), com uma exceção: a `revisao` sem linha usa o
+modelo do `estudio`.
+
+**Custo, ESTIMADO** pelos preços da tabela seguinte (4,00 USD por milhão de
+fichas de entrada, 20,00 de saída, o dobro do Sonnet 5); nenhum texto
+correu ainda com estes modelos, e o Tracker grava as fichas de cada
+passagem (`studio_texts.passes`) para estes números se corrigirem:
+- **Estúdio**: o rascunho com ~12 000 fichas de entrada e ~3 000 de saída
+  fica perto de 0,11 USD. A revisão lê mais (o contexto e o rascunho), mas
+  o sistema e o contexto vêm da cache; conta-se 0,10 a 0,15 USD. Com o
+  tecto de 20 textos por mês, 4 a 5 USD por cliente.
+- **Agente**: a pergunta típica (5 410 fichas de entrada, 700 de saída)
+  passa de 1,78 a cerca de 3,6 cêntimos.
+- **Registo**: uma procura por conta nova, alguns cêntimos.
+
+---
+
 ## Token prices
 
 **Single source of truth for what a call COSTS**, in the same spirit as the

@@ -232,6 +232,54 @@ const countTableRows = (section) =>
 
 let allOk = true;
 
+// --- Contrato 17: o Estúdio (consumido por src/lib/estudio/regras-de-escrita.ts e src/lib/skill/escritor.ts no Tracker)
+// As quatro tabelas do escrita.md e os papéis dos modelos do produto. Um
+// cabeçalho renomeado não parte o Tracker, que cai no recurso: é por isso
+// que tem de falhar aqui, onde alguém olha, e não em silêncio lá.
+{
+  const name = "Contrato 17 · Estúdio";
+  const escrita = read(`${SKILL}/references/escrita.md`);
+  const models = read(`${SKILL}/references/models.md`);
+  const falhas = [];
+  // A primeira tabela debaixo de um cabeçalho (### ou ##), com linhas de expressões entre crases.
+  const tabelaDe = (body, cabecalho) => {
+    const linhas = body.split("\n");
+    const i = linhas.findIndex((l) => l.trim() === cabecalho);
+    if (i < 0) return null;
+    const out = [];
+    let dentro = false;
+    for (const l of linhas.slice(i + 1)) {
+      const t = l.trim();
+      if (t.startsWith("|")) { dentro = true; out.push(t); }
+      else if (dentro || /^#{1,3} /.test(t)) break;
+    }
+    return out.slice(2);
+  };
+  if (!escrita) falhas.push("escrita.md não encontrado");
+  else {
+    for (const cab of ["### Tiques (português)", "### Tiques (inglês)", "### Brasil → Portugal"]) {
+      const t = tabelaDe(escrita, cab);
+      if (!t) falhas.push(`'${cab}' ausente`);
+      else if (!t.some((l) => /`[^`]+`/.test(l.split("|")[1] ?? ""))) falhas.push(`'${cab}' sem expressões entre crases`);
+    }
+    const lim = tabelaDe(escrita, "### Limites que se medem");
+    const nomes = ["palavras por frase", "dois-pontos por parágrafo", "frases por parágrafo", "pontos de exclamação", "travessões"];
+    if (!lim) falhas.push("'### Limites que se medem' ausente");
+    else for (const n of nomes) if (!lim.some((l) => l.split("|")[1]?.trim().toLowerCase() === n && /\d/.test(l.split("|")[2] ?? ""))) falhas.push(`limite '${n}' ausente ou sem número`);
+  }
+  if (!models) falhas.push("models.md não encontrado");
+  else {
+    const sec = sectionContent(models, "\n## Tracker product models");
+    if (!sec) falhas.push("'## Tracker product models' ausente");
+    else for (const papel of ["estudio", "revisao", "agente", "registo", "classificar"]) {
+      if (!new RegExp("^\\|\\s*`" + papel + "`\\s*\\|\\s*`[^`]+`", "m").test(sec)) falhas.push(`papel '${papel}' ausente`);
+    }
+  }
+  falhas.length === 0
+    ? check(name, true, "4 tabelas do escrita.md e 5 papéis dos modelos do produto parseáveis")
+    : check(name, false, falhas.join("; "));
+}
+
 // --- Contrato editorial: nada do que a skill escreve leva travessões nem "canónico"
 // (Tracker CLAUDE.md, regras 8 e 11; pedido do founder a 25 Ago e 9 Set 2026).
 // Alargado à skill inteira a 10 Set 2026. Ficam de fora só os registos diários

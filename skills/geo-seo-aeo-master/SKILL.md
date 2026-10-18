@@ -24,6 +24,8 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 | `references/prompts.md` | Prompt intelligence for the destaque.ai segment: canonical landscape of prompts used by B2B SaaS PT prospects when consulting LLMs about GEO/SEO/AEO. Gold-standard test suite for self-audit and prospect audits. |
 | `references/competitor_filtering.md` | Four-question peer-competitor test + worked examples + sector heuristics. Used by the Visibility Tracker to classify brand mentions extracted from LLM responses into `peer` vs `adjacent_vendor` vs `adjacent_consultancy` vs `expert_individual` vs others. |
 | `references/alert_thresholds.md` | Severity bands (critical / notable / informational) and per-metric WoW thresholds (CR / SoV / position / sentiment) plus event-based and trend-based alerts. Used by the Visibility Tracker to decide which week-over-week changes warrant surfacing. |
+| `references/escrita.md` | The house writing craft: structure per type (article, study, case, LinkedIn, service page, FAQ), paragraph, sentence, punctuation, machine-writing tics to cut, PT-PT vs PT-BR, numbers, and the mandatory revision passes with before/after examples. Mandatory for any long-form prose. |
+| `references/estudio.md` | The Tracker's Estúdio writer: what it receives, the six text types, the draft-and-revision passes, and what it returns. |
 | `references/narrative_templates.md` | Editorial structural skeletons for weekly Top-3, weekly Próximas ações, monthly digest, quarterly review, proposal copy. Used by the Visibility Tracker (and proposal flows) to keep narrative outputs in the SINAL voice. |
 | `references/search_modes.md` | Canonical declaration of SINAL's two audit modes (`knowledge` vs `augmented`) and the per-engine native tool/feature each consumer (Tracker, Deck Builder) must enable to put an engine into augmented mode. |
 | `daily-agent/news-feed.md` | Auto-updated daily 08:00 Lisboa. "What changed in the last 24-48h" entries (model releases, AIO mechanic changes, studies, papers). |
@@ -98,6 +100,14 @@ layers 1-3 automatically. The moat is that layers 1-3 are ours alone:
 competitors can read the same papers, but not our data.
 
 ## The delivery bar: hand it over done (a fasquia da entrega)
+
+**Done also means proven and approved** (founder, 18 Oct 2026: *"o produto
+já está em produção, não podemos colocar qualquer coisa live mais"*). Any
+change to what a client sees or receives, whether it ships through the
+Tracker, the sites or a document, follows the quality cycle in
+`destaque-ai-tracker/QUALIDADE.md`: design in Claude Design first, real
+output as proof, an independent review, and the founder's approval before
+it goes live.
 
 Founder directive, 22 Aug 2026. The positioning and the goal: for this
 skill and for every output that leaves destaque.ai: is to deliver
@@ -565,6 +575,17 @@ the client's market.
 market knowledge, not universal method. For an `en` client in the UK, the
 equivalent is that market's Tier-1 press and its own entity landscape; do not
 transplant Observador and ECO into a British report.
+
+### Writing craft: `references/escrita.md` (mandatory)
+
+**Any prose someone reads with attention follows `references/escrita.md`**:
+site articles, studies, cases, LinkedIn posts and articles, reports,
+proposals and every text the Tracker's Estúdio writes. It holds the
+structure of each type, the paragraph, the sentence, punctuation, the
+machine-writing tics to cut, PT-PT vs PT-BR, and the revision passes.
+Read it before writing, and run its revision (§ 10) before handing over.
+No first draft ships (founder, 18 Oct 2026: *"temos que realmente garantir
+que a skill saiba escrever [...] com uma qualidade impecável"*).
 
 ### Register (all languages)
 
