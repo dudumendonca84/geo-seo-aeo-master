@@ -153,9 +153,10 @@ A pergunta como o cliente a escreveria. A resposta começa por "sim",
   comum dos textos fracos é encadear tudo por dois-pontos: "Sem isso, dá
   a lista inteira: a lista inteira não ajuda ninguém".
 - **Ponto e vírgula: raramente.** Quase sempre fica melhor um ponto final.
-- **Travessão: nunca** (regra do founder). Nem o longo (—) nem o médio
-  (–). Onde apetecer um, usa vírgula, dois-pontos, parênteses ou ponto
-  final. Intervalos de números escrevem-se com hífen: 10-20.
+- **Travessão: nunca** (regra do founder). Nem o longo nem o médio, os
+  dois traços maiores do que o hífen. Onde apetecer um, usa vírgula,
+  dois-pontos, parênteses ou ponto final. Intervalos de números
+  escrevem-se com hífen: 10-20.
 - **Parênteses**: curtos, para um esclarecimento que se pode saltar.
   Nunca uma frase inteira lá dentro.
 - **Sem pontos de exclamação, sem reticências.**

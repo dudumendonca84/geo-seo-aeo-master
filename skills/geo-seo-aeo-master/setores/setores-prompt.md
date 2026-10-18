@@ -56,7 +56,8 @@ Portugal, com ligação para a entrada.
   Um ficheiro parado é melhor do que um ficheiro com ruído.
 
 Regras da casa: português de Portugal com o Acordo de 1990, sem
-travessões, sem as palavras "controlo" e "canónico", nenhum número sem
+travessões, sem as duas palavras que o founder recusou (ponto 11 dos
+princípios editoriais do `CLAUDE.md` do Tracker), nenhum número sem
 fonte, e nada inventado. Se não confirmaste na fonte primária, não entra.
 
 ## No fim
