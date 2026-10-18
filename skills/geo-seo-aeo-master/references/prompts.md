@@ -319,11 +319,19 @@ consegues estimar honestamente.
 
 ### 8.4 Contrato por prompt
 
-`{ prompt_text, category, intent_stage, topic, branded, persona, interest, voice_source }` (`voice_source` só quando a pergunta veio da voz do cliente, §8.9)
+`{ prompt_text, category, intent_stage, topic, branded, persona, persona_context, persona_followup, interest, voice_source }` (`voice_source` só quando a pergunta veio da voz do cliente, §8.9)
 
 - `prompt_text` - **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
 - Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
   `local_recommendation` qualificada por cidade/zona.
+- `persona_context` e `persona_followup` escrevem-se SEMPRE que há
+  `persona`; sem os dois a pergunta corre num turno só. O contexto é uma
+  frase na primeira pessoa que diz quem pergunta, com o que muda a resposta
+  e nada mais ("Sou responsável financeira numa PME de 20 pessoas em
+  Lisboa."), sem repetir a pergunta e sem nomear a marca nem um concorrente
+  (§8.7). O seguimento é a segunda pergunta natural daquela pessoa depois de
+  ouvir a primeira resposta, e não uma variação dela ("E desses, qual sai
+  mais barato a três anos?"). Até 600 caracteres cada, na língua do mercado.
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
   palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
   isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
@@ -461,13 +469,41 @@ AI"*). Ninguém publica as perguntas feitas aos assistentes, por isso a
 aproximação é a voz pública do cliente.
 
 O pedido `generate_prompts` de um cliente novo traz `voz_do_cliente`
-(nesta versão, uma fonte):
+(nesta versão, uma fonte, o autocompletar do Google no mercado do cliente,
+em duas partes):
 
-- `autocompletar`: o que o Google completa para a marca no mercado do
-  cliente (`semente`, `sugestao`), da marca sozinha, com cada letra, com
-  as palavras de pergunta e contra cada concorrente;
+- `autocompletar`: o que se completa para a MARCA (`semente`, `sugestao`),
+  da marca sozinha, com cada letra, com as palavras de pergunta e contra
+  cada concorrente. É daqui que saem as perguntas branded;
+- `autocompletar_categoria`: o que se completa para a CATEGORIA, sem a
+  marca ("melhor ginásio", "ginásio preço", "ginásio perto de mim" num
+  negócio local). É daqui que saem as perguntas que medem a visibilidade;
+- `categoria`: os dois ou três termos com que um cliente procura este tipo
+  de negócio, o que a marca vende numa frase, e se vende num sítio físico.
+  Tira-se da página inicial (`site`, o título, a descrição, os subtítulos e
+  o princípio do texto), e o site serve para saber o que a marca vende,
+  nunca para escrever as perguntas com as palavras dela;
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
   de propósito. Não ler não é o mesmo que ninguém perguntar.
+
+**Um segmento que nunca medimos funciona na mesma** [2026-10-18], e é para
+isso que serve a parte da categoria: o que se pesquisa sobre "seguro de
+saúde" ou "ginásio" existe para qualquer segmento, mesmo quando a marca é
+nova e o Google ainda não a completa. A categoria e as palavras com que
+cada marca entrou ficam registadas no pedido e no rasto da recolha
+(`job_runs`, `voz-do-cliente`), e é por lá que se sabe que segmentos já
+entraram.
+
+**As primeiras perguntas de um cliente novo são escritas na hora** pelo
+produto, logo a seguir à recolha, e não esperam pela Routine (decisão do
+founder, 18 Out 2026: o cliente que se regista não pode esperar dias pela
+primeira medição). O modelo é o papel `perguntas` de `models.md`
+`## Tracker product models`, e o sistema dele é este ficheiro: §1, §2 e §8.
+Por isso **uma regra de geração que não esteja nestas três secções não
+chega às primeiras perguntas**: escreve-se aqui, e não só na spec da
+Routine. O resultado passa pela mesma verificação (§8.7) e pelas mesmas
+reescritas (§8.8). Se a escrita falhar, o pedido segue para a Routine como
+seguia antes.
 
 **O Portal da Queixa não se recolhe.** No piloto do Continente foi a fonte
 que mostrou o que corre mal (138 de 300 reclamações sobre encomendas), mas
@@ -500,7 +536,8 @@ Como se usa:
    outra empresa com o mesmo nome (medido: as duas sugestões da goCrew
    eram de empresas homónimas noutro país). Isso é um dado sobre a marca,
    não uma falha: ignora o que não é ela e escreve a partir das sugestões
-   dos concorrentes e da categoria.
+   dos concorrentes e de `autocompletar_categoria`. As sugestões da
+   categoria também trazem ruído ("seguro de si"): decide pelo sentido.
 6. **Muitas sugestões são de localidade** ("hospital da luz coimbra",
    "rocha automóveis braga"). Dizem onde o cliente procura a marca; numa
    marca com várias lojas valem uma pergunta local, não uma por cidade.
