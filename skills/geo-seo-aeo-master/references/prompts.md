@@ -293,7 +293,9 @@ Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pe
 [serviço] perto de [zona]?"*).
 
 **Regra:** gera **pelo menos 1–2 prompts de fundo-de-funil por persona**, e varia o
-ângulo entre personas (o CEO não pergunta como o CTO). Nunca nomeies a marca do cliente.
+ângulo entre personas (o CEO não pergunta como o CTO). Nunca nomeies a marca do cliente
+numa pergunta de visibilidade. A exceção são as branded do Tracker (§8.9, ponto 3):
+nomeiam a marca de propósito, para medir a perceção, e vão com `branded: true`.
 
 ### 8.2 Fase de funil (`intent_stage`)
 
@@ -322,6 +324,11 @@ consegues estimar honestamente.
 `{ prompt_text, category, intent_stage, topic, branded, persona, persona_context, persona_followup, interest, voice_source }` (`voice_source` só quando a pergunta veio da voz do cliente, §8.9)
 
 - `prompt_text` - **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
+- **A língua da pergunta, quando os campos divergem**: `prompt_language` quando
+  vem; senão a do mercado (`market`), e só depois `locale`. Uma marca portuguesa
+  a vender nos EUA é perguntada em inglês americano, com referências dos EUA. O
+  § 1 fala da língua pelo `locale` porque o Deck Builder só tem esse campo; no
+  Tracker manda o mercado na pergunta, e a língua do cliente no relatório.
 - Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
   `local_recommendation` qualificada por cidade/zona.
 - `persona_context` e `persona_followup` escrevem-se SEMPRE que há
@@ -469,8 +476,8 @@ AI"*). Ninguém publica as perguntas feitas aos assistentes, por isso a
 aproximação é a voz pública do cliente.
 
 O pedido `generate_prompts` de um cliente novo traz `voz_do_cliente`
-(nesta versão, uma fonte, o autocompletar do Google no mercado do cliente,
-em duas partes):
+(nesta versão, duas fontes: o autocompletar do Google no mercado do cliente,
+em duas partes, e a página inicial da marca):
 
 - `autocompletar`: o que se completa para a MARCA (`semente`, `sugestao`),
   da marca sozinha, com cada letra, com as palavras de pergunta e contra
@@ -502,8 +509,10 @@ primeira medição). O modelo é o papel `perguntas` de `models.md`
 Por isso **uma regra de geração que não esteja nestas três secções não
 chega às primeiras perguntas**: escreve-se aqui, e não só na spec da
 Routine. O resultado passa pela mesma verificação (§8.7) e pelas mesmas
-reescritas (§8.8). Se a escrita falhar, o pedido segue para a Routine como
-seguia antes.
+reescritas (§8.8), em lotes de até 30 perguntas. Quando as fichas do
+cliente (`audience_type`, `is_local`) e o que o site diz (`categoria`)
+divergem, ganha o site. Se a escrita falhar, o pedido segue para a Routine
+como seguia antes.
 
 **O Portal da Queixa não se recolhe.** No piloto do Continente foi a fonte
 que mostrou o que corre mal (138 de 300 reclamações sobre encomendas), mas
