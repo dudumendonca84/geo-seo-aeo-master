@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 18 Oct 2026**: §8.7 a §8.9 (o que o Tracker verifica antes de uma pergunta existir, de onde vêm as candidatas, o que volta ao gerador). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -366,7 +366,7 @@ Uma pergunta proposta só entra no catálogo depois de passar por estas
 regras. Vivem aqui e o Tracker verifica-as em código
 (`src/lib/prompts/verificar.ts`, contrato 18): uma regra que só existe em
 prosa não obriga ninguém. O que falha não entra, e volta ao gerador com o
-motivo (§8.9).
+motivo (§8.8).
 
 **Recusa-se:**
 
@@ -398,6 +398,18 @@ motivo (§8.9).
    "Brasil → Portugal" de `escrita.md`. Os modelos derivam para PT-BR
    (Ferreira et al., "P3B3", workshop MeLLM do ACL 2026), e uma pergunta em
    PT-BR enviada de Portugal mede outra coisa.
+6. **O enquadramento da persona (`persona_context`, `persona_followup`)
+   que nomeia a marca ou um concorrente.** Vai à frente da pergunta, e
+   nomear lá uma marca é sermos nós a pô-la na resposta.
+
+**Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
+existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
+reescrever, e devolvê-los pedia reescrever perguntas que já entraram.
+
+A marca e os concorrentes reconhecem-se pela grafia das fichas. Uma marca
+cujo nome também é palavra comum ("Continente", "NOS") tem de estar na
+lista `AMBIGUAS` do Tracker, senão toda a pergunta que use a palavra é lida
+como branded.
 
 **Avisa-se, e a pergunta entra:**
 
@@ -425,37 +437,7 @@ Mudar um limite é editar esta tabela, sem deploy. Os números são juízo
 nosso sobre a evidência acima, e não valores publicados: nenhum estudo
 público dá o tamanho mínimo de uma pergunta nem o limiar de semelhança.
 
-### 8.8 De onde vêm as perguntas candidatas [2026-10-18]
-
-O gerador não parte do nada. O pedido `generate_prompts` traz
-`sinais_de_procura`, e é daí que se parte, por esta ordem de valor:
-
-1. `consultas_proprias`: o que os motores pesquisaram antes de responder
-   às perguntas deste cliente, nas últimas quatro semanas, contado por
-   resposta. São as palavras com que os motores procuram fontes.
-2. `consultas_do_setor`: o mesmo, somado entre os clientes do setor, só
-   com o que aparece em duas marcas ou mais, e nunca com nomes de marcas
-   (a regra de privacidade de `setores/`).
-3. `gsc_perguntas`: as consultas longas ou em forma de pergunta do Search
-   Console do cliente, por impressões, quando ele o ligou.
-
-Como se usam:
-
-- **Uma consulta é um sinal, não uma pergunta.** Reescreve-se na voz do
-  comprador (§1, §8.1): "agência geo lisboa preço" passa a "Quanto custa
-  contratar uma agência de GEO em Lisboa e o que deve incluir?". Copiar a
-  consulta como está dá uma palavra-chave, que o §8.7 recusa.
-- **Um concorrente que aparece numa consulta não entra na pergunta**,
-  salvo numa `direct_comparison` que inclua a marca (§2.2).
-- **Sem sinais não quer dizer sem procura.** Um cliente novo, ou sem
-  Search Console, chega sem eles; gera-se pelo §8.1 a §8.6, como antes.
-- **O que isto é, dito sem exagero:** são as pesquisas que os motores
-  fizeram, não as perguntas que as pessoas escreveram. Não há dados
-  públicos de perguntas reais para Portugal, e nenhum fornecedor declara
-  cobertura do país. Nunca se apresenta isto ao cliente como volume de
-  procura.
-
-### 8.9 O que volta ao gerador [2026-10-18]
+### 8.8 O que volta ao gerador [2026-10-18]
 
 Uma pergunta recusada pelo §8.7 não entra, e o Tracker abre um pedido novo
 com `recusadas` (o texto e os motivos) e `target_count` igual ao número de
@@ -463,6 +445,11 @@ recusadas. O gerador reescreve cada uma com o motivo à frente, sem a
 repetir. O pedido novo nunca arranca a auditoria sozinho (`auto_audit`
 fica de fora), e há no máximo duas voltas: o que a terceira tentativa
 ainda recusar fica registado no pedido e para aí.
+
+Num pedido do funil (`auto_audit`), se nada entrou, o pedido novo leva o
+`auto_audit` (a auditoria ainda não arrancou); se alguma coisa entrou, as
+reescritas entram já ativas e medem-se na semana seguinte. Um cliente
+desligado, fora do funil, não recebe pedido novo.
 
 
 ## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
