@@ -100,16 +100,26 @@ surface, and that is a deliberate state rather than an open action: buying
 headroom for a tier nobody has bought yet is spending against a sale that
 has not happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial | agent |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no | no |
-| lite | brand | 50 | no | no | 1 | weekly | no | no | 149 | yes | yes | no |
-| pro | brand | 100 | yes | no | 1 | weekly | yes | no | 299 | yes | yes | no |
-| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes | yes |
-| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no | yes |
-| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no | yes |
-| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no | yes |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no | yes |
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial | agent | studio | studio_texts |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no | no | no | 0 |
+| lite | brand | 50 | no | no | 1 | weekly | no | no | 149 | yes | yes | no | no | 0 |
+| pro | brand | 100 | yes | no | 1 | weekly | yes | no | 299 | yes | yes | no | no | 0 |
+| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes | yes | yes | 20 |
+| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no | yes | yes | 50 |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no | yes | yes | 20 |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no | yes | yes | 40 |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no | yes | yes | 60 |
+
+**O Estúdio entra a 18 Out 2026** (founder: *"é uma funcionalidade que
+ele pode ir gerar textos"*, *"só nos planos de cima"*). Coluna `studio`,
+escrita no `modules` do cliente como o `agent`; coluna `studio_texts`, o
+tecto mensal de textos gerados, porque cada texto é uma chamada paga ao
+modelo. Do `business` para cima e nas agências, as mesmas linhas do
+Agente. **Os tectos (20, 50, 20, 40, 60) são proposta de quem construiu,
+não decisão do founder**: mudam-se no back-office (`/admin/plans`). Zero
+é um valor (o plano não traz textos), e as duas colunas entram no fim
+pela regra das opcionais, abaixo.
 
 **E o Agente sai do `pro` no mesmo dia** (*"e tiramos o agent também do
 pro"*). Coluna `agent`, escrita no `modules` do cliente como o
