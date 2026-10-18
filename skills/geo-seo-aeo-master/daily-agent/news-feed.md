@@ -8,6 +8,17 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-18
+
+Sem novidades significativas hoje; corrida completa. O topo de anthropic.com/news continua a ser de 15 Out ([Anthropic](https://www.anthropic.com/news)); sem modelos novos nem mudanças de preço em Tier 1. Nenhum gatilho dos watches disparou. Domingo: sem cortes nem drafts.
+
+## 2026-10-18
+
+Sem novidades significativas hoje.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Pesquisa web sem itens datados de 17 a 18 Out. Passagem por motor: sem mudança externa; `meta:` dos blocos não reescrito hoje. Domingo: sem passagem de cortes.
+
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-17
 
 Dia parado: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser de 15 Out ("An update on independent evaluators"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Sem novidades significativas hoje; corrida completa. Nenhum gatilho dos watches disparou. Passagem por motor feita (26 blocos, `meta:` atualizado). Sábado: sem cortes nem drafts.
