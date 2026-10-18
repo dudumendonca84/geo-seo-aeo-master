@@ -358,7 +358,11 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 ### Contrato 17: o Estúdio (as regras do escritor de textos)
 
-**Producer:** `references/estudio.md`. **Consumer:** `destaque-ai-tracker/src/lib/estudio/`, que o usa como sistema do escritor. Prosa: os tipos de texto são as subsecções `### \`<tipo>\`` de `## Os tipos de texto`, e o Tracker lê-as pelo título para saber que tipos oferecer; mudar o identificador de um tipo tira-o do ecrã até o Tracker o conhecer.
+**Producer:** `references/estudio.md` (o que o escritor recebe e devolve, por tipo), `references/escrita.md` (o ofício: estrutura, frase, pontuação, tiques, português de Portugal, revisão) e a secção `## Tracker writer model` de `references/models.md`. **Consumer:** `destaque-ai-tracker/src/lib/estudio/` e `src/lib/skill/escritor.ts`.
+
+- `estudio.md` + `escrita.md` são o sistema do escritor, nas duas passagens (rascunho e revisão). Os tipos de texto são as subsecções `### \`<tipo>\`` de `## Os tipos de texto`, e o Tracker lê-as pelo título para saber que tipos oferecer; mudar o identificador de um tipo tira-o do ecrã até o Tracker o conhecer.
+- De `escrita.md` o Tracker lê também três tabelas, pelo título no início de linha: `### Tiques (português)`, `### Tiques (inglês)` e `### Brasil → Portugal` (a primeira coluna tem as expressões entre crases, separadas por ` · `; a segunda diz o que pôr no lugar) e `### Limites que se medem` (`| Medida | Limite |`, as medidas pelo nome: palavras por frase, dois-pontos por parágrafo, frases por parágrafo, pontos de exclamação, travessões). O que for encontrado no rascunho vai ao editor como lista de problemas. Uma tabela em falta não parte nada: o Tracker usa a sua cópia de recurso e diz-o no registo.
+- `## Tracker writer model`: `| Papel | Modelo | Porquê |`, papéis `estudio` e `revisao`. Sem a secção, o Tracker usa o modelo de recurso dele, que não é o da medição.
 
 ---
 

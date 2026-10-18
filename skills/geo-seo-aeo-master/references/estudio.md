@@ -26,6 +26,25 @@ próximo texto, sem deploy.
    e a metade medida pelo Tracker (o que os motores citam e consultam
    neste setor).
 
+## Como se escreve: `escrita.md`
+
+**O ofício está em `references/escrita.md`, e é obrigatório**: a estrutura
+de cada tipo, a frase, o parágrafo, a pontuação, os tiques a cortar, o
+português de Portugal e a revisão. Este ficheiro diz o que o Estúdio
+recebe e devolve; aquele diz como se escreve bem. Os dois vão juntos no
+sistema do escritor.
+
+O Tracker escreve em duas passagens, como uma redação:
+
+1. **O rascunho**, com tudo o que vem em "O que o escritor recebe".
+2. **A revisão**: o mesmo sistema, a fazer de editor. Recebe o rascunho e
+   a lista do que a verificação automática encontrou (tiques, palavras do
+   Brasil, grafia anterior ao Acordo, travessões, frases e parágrafos acima
+   dos limites de `escrita.md` § 10) e faz a revisão completa de
+   `escrita.md` § 10, passagem a passagem. Devolve só o texto final, no
+   formato de "O que o escritor devolve". O editor não acrescenta factos:
+   corta, reordena e reescreve o que já lá está.
+
 ## As regras que valem para todos os tipos
 
 - **Nenhum número inventado.** Cada número tem uma de três origens: a
@@ -72,6 +91,49 @@ Um tema não tem medição por trás. O contexto di-lo, e o escritor:
   setor, e a secção `Antes de publicar` diz o que faltaria para a marca
   entrar nela com factos.
 
+## Quando falta o dado que a pergunta pede
+
+Acontece: a pergunta é "quanto custa" e o kit não tem preço, ou é "quem
+são os clientes" e o kit não tem casos. A regra de responder na primeira
+frase continua a valer, e responde-se com o que se sabe:
+
+- **Diz como se calcula ou de que depende**, com os factos do kit e do
+  site ("o preço depende do número de perguntas e de motores medidos"), e
+  marca o valor como lacuna (`[o teu preço]`) na mesma frase. Nunca um
+  número plausível.
+- **O primeiro ponto do "Antes de publicar" é essa lacuna**, dito por
+  extenso: sem ela preenchida, a frase que um motor citaria fica sem
+  resposta, e o cliente tem de o saber antes de publicar.
+
+## A medição num texto público
+
+O texto vai ser publicado pelo cliente com o nome dele. A medição que o
+escritor recebe é para escrever melhor, e nem toda vai para o texto:
+
+- **A medição da própria marca nunca entra** ("a marca é citada em 0 de
+  14 respostas"). É informação de trabalho do cliente, não argumento de
+  venda, e publicá-la é mostrar a fraqueza ao concorrente. A exceção é a nota do
+  cliente pedi-lo por escrito (a destaque.ai publica a sua própria
+  medição de propósito).
+- **Concorrentes nomeiam-se só por factos públicos** (o site deles, uma
+  notícia), nunca pelos nossos dados de que aparecem nas respostas.
+- **A medição do setor pode entrar**, sem nomear a ferramenta e com a
+  unidade e as datas: "em 1 812 respostas de assistentes de IA sobre o
+  setor, entre 20 de setembro e 18 de outubro de 2026, o LinkedIn aparece
+  como fonte em 212". Se a marca é a destaque.ai, pode dizer-se que a
+  medição é do Periscopy.
+- **As consultas dos motores e os domínios citados numa pergunta servem
+  para os subtítulos e para saber onde a peça tem de estar**; não se
+  citam no texto como dado.
+
+## Quando o site já tem uma página sobre o mesmo
+
+As páginas do site vêm no contexto para não se escrever o que já existe.
+Se uma página responde à mesma pergunta, o texto escreve-se na mesma
+(foi pedido), com outro ângulo que a página não cobre, liga para ela, e o
+"Antes de publicar" diz qual é e sugere rever as duas para não se
+contradizerem nem competirem pela mesma pesquisa.
+
 ## Os tipos de texto
 
 ### `artigo_blog`: artigo para o site do cliente
@@ -80,8 +142,12 @@ Um tema não tem medição por trás. O contexto di-lo, e o escritor:
 - Corpo em secções H2, cada uma com uma pergunta do comprador como título.
 - Quando a pergunta é comparativa ("X ou Y", "qual o melhor"), uma tabela
   com critérios e valores, e a origem de cada valor.
-- Fecho com o próximo passo concreto (não "contacte-nos" solto).
-- FAQ com 3 a 6 perguntas e respostas de duas frases.
+- Fecho com o próximo passo concreto (não "contacte-nos" solto), num
+  parágrafo final ou numa última secção cujo subtítulo também é pergunta
+  ("Por onde começar?").
+- FAQ com 3 a 6 perguntas que o corpo não respondeu diretamente, e
+  respostas de duas ou três frases (`escrita.md` § 2). Uma pergunta que
+  repete uma secção sai.
 - No fim, separado: a sugestão de schema (`Article` e `FAQPage`) e as
   ligações internas para as páginas do site que já existem.
 - Tamanho: o que a pergunta pede. Uma pergunta simples não precisa de
@@ -103,7 +169,11 @@ Um tema não tem medição por trás. O contexto di-lo, e o escritor:
   cada.
 
 ### `faq`: perguntas e respostas para uma página
-- 5 a 10 pares, das perguntas medidas e das consultas dos motores.
+- 5 a 10 pares, das perguntas medidas e das consultas dos motores. Aqui
+  as perguntas são o próprio texto, e por isso podem ser as medidas;
+  respostas de duas ou três frases. Uma pergunta a que os factos do
+  contexto não respondem fica de fora, em vez de ser respondida com uma
+  lacuna.
 - Cada resposta começa pela resposta (sim, não, o número, o nome).
 - No fim, o JSON-LD `FAQPage` válido com os mesmos pares, palavra por
   palavra.
@@ -125,8 +195,9 @@ Um tema não tem medição por trás. O contexto di-lo, e o escritor:
 
 Markdown, nesta ordem:
 
-1. Uma linha `Base: medição de <semana>` (a semana da medição usada), ou
-   `Base: tema livre` quando o assunto é um tema.
+1. Uma linha `Base: medição da semana de <dia> de <mês> de <ano>` (a
+   semana da medição usada, com a data por extenso, "12 de outubro de
+   2026"), ou `Base: tema livre` quando o assunto é um tema.
 2. O texto, pronto a colar.
 3. Uma secção `Antes de publicar` só com o que nós não podemos saber: os
    `[o teu número]` por preencher, preços a confirmar, nomes que precisam

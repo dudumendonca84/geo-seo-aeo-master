@@ -478,6 +478,31 @@ variável de ambiente na Vercel punha `gpt-5.6-luna` e tapava o erro.
 
 ---
 
+## Tracker writer model
+
+**Que modelo ESCREVE os textos do Estúdio** (18 Out 2026, founder:
+*"temos que realmente garantir que a skill saiba escrever [...] com uma
+qualidade impecável"*). Lido em runtime pelo `destaque-ai-tracker`
+(`src/lib/skill/escritor.ts`, contrato 17).
+
+Esta secção existe porque o Estúdio escrevia com o modelo da MEDIÇÃO: a
+linha `claude` da tabela dos buyer defaults, que é o Claude que o
+comprador encontra no plano gratuito. Esse modelo é o certo para medir o
+que o comprador vê, e o errado para escrever um texto que vai ser
+publicado com o nome do cliente. Medir e escrever são dois papéis, e cada
+um tem a sua linha.
+
+| Papel | Modelo | Porquê |
+|---|---|---|
+| `estudio` | `claude-opus-5-5` | o rascunho: o modelo com melhor escrita longa disponível na API |
+| `revisao` | `claude-opus-5-5` | a passagem de editor (`escrita.md` § 10): lê o rascunho e reescreve o que falha |
+
+Custo, pelos preços da tabela seguinte (4,00 USD por milhão de fichas de
+entrada, 20,00 de saída): um artigo com ~12 000 fichas de entrada (regras
+em cache incluídas) e ~3 000 de saída fica perto de 0,11 USD por passagem,
+0,22 com a revisão. Com o tecto de 20 textos por mês, cerca de 4,40 USD
+por cliente.
+
 ## Token prices
 
 **Single source of truth for what a call COSTS**, in the same spirit as the
