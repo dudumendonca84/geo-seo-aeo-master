@@ -280,6 +280,41 @@ let allOk = true;
     : check(name, false, falhas.join("; "));
 }
 
+// --- Contrato 18: as perguntas que medem (consumido por src/lib/skill/regras-das-perguntas.ts no Tracker)
+// A tabela dos limites do §8.7 e a linha do fundo do funil do §8.2. Uma
+// chave que não se leia cai no recurso do Tracker em silêncio: tem de
+// falhar aqui.
+{
+  const name = "Contrato 18 · perguntas";
+  const body = read(`${SKILL}/references/prompts.md`);
+  const falhas = [];
+  if (!body) falhas.push("prompts.md não encontrado");
+  else {
+    const linhas = body.split("\n");
+    const i = linhas.findIndex((l) => l.trim() === "#### Limites que se verificam");
+    if (i < 0) falhas.push("'#### Limites que se verificam' ausente");
+    else {
+      const tabela = [];
+      let dentro = false;
+      for (const l of linhas.slice(i + 1)) {
+        const t = l.trim();
+        if (t.startsWith("|")) { dentro = true; tabela.push(t); }
+        else if (dentro || /^#{1,4} /.test(t)) break;
+      }
+      for (const chave of ["palavras_min", "palavras_max", "semelhanca_max", "concorrentes_sem_marca", "fundo_de_funil_min"]) {
+        const linha = tabela.find((l) => (l.split("|")[1] ?? "").trim() === "`" + chave + "`");
+        const valor = linha ? Number((linha.split("|")[2] ?? "").trim().replace(",", ".")) : NaN;
+        if (!linha) falhas.push(`chave '${chave}' ausente`);
+        else if (!Number.isFinite(valor) || valor <= 0) falhas.push(`chave '${chave}' sem número positivo`);
+      }
+    }
+    if (!/^\s*[-*]\s+\*\*Fundo:\*\*.*`[a-z_]+`/m.test(body)) falhas.push("linha '- **Fundo:**' do §8.2 sem chaves entre crases");
+  }
+  falhas.length === 0
+    ? check(name, true, "5 limites do §8.7 e o fundo do funil do §8.2 parseáveis")
+    : check(name, false, falhas.join("; "));
+}
+
 // --- Contrato editorial: nada do que a skill escreve leva travessões nem "canónico"
 // (Tracker CLAUDE.md, regras 8 e 11; pedido do founder a 25 Ago e 9 Set 2026).
 // Alargado à skill inteira a 10 Set 2026. Ficam de fora só os registos diários
