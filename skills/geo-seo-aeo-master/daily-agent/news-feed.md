@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-19
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 18 Out ("Investing in the public benefit"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). SEO/Google: volatilidade de ranking e "chatter" a 16 Out ([SE Roundtable](https://www.seroundtable.com/google-search-ranking-volatility-chatter-42317.html), secundária, sem confirmação da Google); quotas da Indexing API atualizadas ([SE Roundtable](https://www.seroundtable.com/google-updates-indexing-api-quota-information-42316.html), secundária). Bing testa "Read more" e "Popular Links" em snippets ([SE Roundtable](https://www.seroundtable.com/bing-read-more-links-42311.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Volatilidade sem update confirmado: hoje, não atribuir quedas de clientes a causas antes de cruzar com o Search Status Dashboard; reavaliar na quarta. (2) Sem mais jogadas.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Segunda: passagem de cortes feita (grok-4.3 continua sem corte publicado; sonnet-5 Jan 2026 e gpt-5.6-luna 16 Fev 2026 reconfirmados).
+
+## 2026-10-19
+
+### ⚙️ Mudanças nas plataformas
+- **Google: volatilidade de ranking**: SE Roundtable, 16 Out (https://www.seroundtable.com/google-search-ranking-volatility-chatter-42317.html). Pico de volatilidade e conversa; sem update confirmado pela Google. Fonte secundária.
+- **Google: quotas da Indexing API**: SE Roundtable, 16 Out (https://www.seroundtable.com/google-updates-indexing-api-quota-information-42316.html). Documentação de quotas atualizada. Fonte secundária; a doc da Google não foi lida.
+- **Bing: testes de "Read more" e "Popular Links" em snippets**: SE Roundtable, 16 Out (https://www.seroundtable.com/bing-read-more-links-42311.html). Testes de interface; sem impacto documentado em citações Copilot.
+
+### 💡 Implicações para destaque.ai
+- Volatilidade: só awareness; hoje, não explicar quedas de clientes por um update antes de a Google o confirmar; rever na quarta.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Segunda: passagem de cortes feita sem alterações (grok-4.3 sem corte publicado; sonnet-5 e gpt-5.6-luna reconfirmados; restantes linhas não reabertas).
+
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-17
 
 Dia parado: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news continua a ser de 15 Out ("An update on independent evaluators"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Sem novidades significativas hoje; corrida completa. Nenhum gatilho dos watches disparou. Passagem por motor feita (26 blocos, `meta:` atualizado). Sábado: sem cortes nem drafts.
