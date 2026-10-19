@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -293,7 +293,9 @@ Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pe
 [serviço] perto de [zona]?"*).
 
 **Regra:** gera **pelo menos 1–2 prompts de fundo-de-funil por persona**, e varia o
-ângulo entre personas (o CEO não pergunta como o CTO). Nunca nomeies a marca do cliente.
+ângulo entre personas (o CEO não pergunta como o CTO). Nunca nomeies a marca do cliente
+numa pergunta de visibilidade. A exceção são as branded do Tracker (§8.9, ponto 3):
+nomeiam a marca de propósito, para medir a perceção, e vão com `branded: true`.
 
 ### 8.2 Fase de funil (`intent_stage`)
 
@@ -319,11 +321,24 @@ consegues estimar honestamente.
 
 ### 8.4 Contrato por prompt
 
-`{ prompt_text, category, intent_stage, topic, branded, persona, interest }`
+`{ prompt_text, category, intent_stage, topic, branded, persona, persona_context, persona_followup, interest, voice_source }` (`voice_source` só quando a pergunta veio da voz do cliente, §8.9)
 
 - `prompt_text` - **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
+- **A língua da pergunta, quando os campos divergem**: `prompt_language` quando
+  vem; senão a do mercado (`market`), e só depois `locale`. Uma marca portuguesa
+  a vender nos EUA é perguntada em inglês americano, com referências dos EUA. O
+  § 1 fala da língua pelo `locale` porque o Deck Builder só tem esse campo; no
+  Tracker manda o mercado na pergunta, e a língua do cliente no relatório.
 - Mistura personas e fundo-de-funil. PT-PT para clientes PT. Para local, usa
   `local_recommendation` qualificada por cidade/zona.
+- `persona_context` e `persona_followup` escrevem-se SEMPRE que há
+  `persona`; sem os dois a pergunta corre num turno só. O contexto é uma
+  frase na primeira pessoa que diz quem pergunta, com o que muda a resposta
+  e nada mais ("Sou responsável financeira numa PME de 20 pessoas em
+  Lisboa."), sem repetir a pergunta e sem nomear a marca nem um concorrente
+  (§8.7). O seguimento é a segunda pergunta natural daquela pessoa depois de
+  ouvir a primeira resposta, e não uma variação dela ("E desses, qual sai
+  mais barato a três anos?"). Até 600 caracteres cada, na língua do mercado.
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
   palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
   isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
@@ -451,6 +466,94 @@ Num pedido do funil (`auto_audit`), se nada entrou, o pedido novo leva o
 reescritas entram já ativas e medem-se na semana seguinte. Um cliente
 desligado, fora do funil, não recebe pedido novo.
 
+
+### 8.9 A voz do cliente: as primeiras perguntas nascem das palavras de quem compra [2026-10-18]
+
+O que se mede é o que um cliente da marca pergunta, e não o que o site da
+marca diz de si nem o que a IA pesquisa por trás (founder, 18 Out 2026:
+*"interessa o que um usuário de uma marca [...] vai perguntar para a
+AI"*). Ninguém publica as perguntas feitas aos assistentes, por isso a
+aproximação é a voz pública do cliente.
+
+O pedido `generate_prompts` de um cliente novo traz `voz_do_cliente`
+(nesta versão, duas fontes: o autocompletar do Google no mercado do cliente,
+em duas partes, e a página inicial da marca):
+
+- `autocompletar`: o que se completa para a MARCA (`semente`, `sugestao`),
+  da marca sozinha, com cada letra, com as palavras de pergunta e contra
+  cada concorrente. É daqui que saem as perguntas branded;
+- `autocompletar_categoria`: o que se completa para a CATEGORIA, sem a
+  marca ("melhor ginásio", "ginásio preço", "ginásio perto de mim" num
+  negócio local). É daqui que saem as perguntas que medem a visibilidade;
+- `categoria`: os dois ou três termos com que um cliente procura este tipo
+  de negócio, o que a marca vende numa frase, e se vende num sítio físico.
+  Tira-se da página inicial (`site`, o título, a descrição, os subtítulos e
+  o princípio do texto), e o site serve para saber o que a marca vende,
+  nunca para escrever as perguntas com as palavras dela;
+- `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
+  de propósito. Não ler não é o mesmo que ninguém perguntar.
+
+**Um segmento que nunca medimos funciona na mesma** [2026-10-18], e é para
+isso que serve a parte da categoria: o que se pesquisa sobre "seguro de
+saúde" ou "ginásio" existe para qualquer segmento, mesmo quando a marca é
+nova e o Google ainda não a completa. A categoria e as palavras com que
+cada marca entrou ficam registadas no pedido e no rasto da recolha
+(`job_runs`, `voz-do-cliente`), e é por lá que se sabe que segmentos já
+entraram.
+
+**As primeiras perguntas de um cliente novo são escritas na hora** pelo
+produto, logo a seguir à recolha, e não esperam pela Routine (decisão do
+founder, 18 Out 2026: o cliente que se regista não pode esperar dias pela
+primeira medição). O modelo é o papel `perguntas` de `models.md`
+`## Tracker product models`, e o sistema dele é este ficheiro: §1, §2 e §8.
+Por isso **uma regra de geração que não esteja nestas três secções não
+chega às primeiras perguntas**: escreve-se aqui, e não só na spec da
+Routine. O resultado passa pela mesma verificação (§8.7) e pelas mesmas
+reescritas (§8.8), em lotes de até 30 perguntas. Quando as fichas do
+cliente (`audience_type`, `is_local`) e o que o site diz (`categoria`)
+divergem, ganha o site. Se a escrita falhar, o pedido segue para a Routine
+como seguia antes.
+
+**O Portal da Queixa não se recolhe.** No piloto do Continente foi a fonte
+que mostrou o que corre mal (138 de 300 reclamações sobre encomendas), mas
+o `robots.txt` dele recusa os robôs de IA (GPTBot, ClaudeBot,
+anthropic-ai) e proíbe as páginas de listagem a todos. Recolher contra
+isso não se faz. As reclamações da marca são dela, e ela pode dá-las.
+
+Como se usa:
+
+1. **Lê primeiro, agrupa em temas, e só depois escreve.** No piloto do
+   Continente os temas foram o preço contra o rival, o saldo e as parcerias
+   do cartão, a compra online (custo da entrega, valor mínimo, app que
+   falha), o reembolso, e os horários. Cada tema com muitas sugestões
+   merece pelo menos uma pergunta. As sugestões vêm em minúsculas e às
+   vezes não são sobre a marca ("continente africano"): decide pelo
+   sentido.
+2. **As palavras são as do cliente, numa frase completa.** "saldo cartão
+   continente expira" dá "O saldo do Cartão Continente expira?"; "continente
+   ou pingo doce qual o mais barato" dá "Qual é mais barato, o supermercado
+   Continente ou o Pingo Doce?". Copiar a pesquisa tal como está dá uma
+   palavra-chave, que o §8.7 recusa.
+3. **Uma pergunta que nomeia a marca é branded** (mede a perceção e sai dos
+   rácios); as de categoria, sem a marca, medem a visibilidade. A voz do
+   cliente dá muitas das primeiras: equilibra com as segundas pelo §8.1 a
+   §8.6, porque sem elas não há taxa de citação.
+4. **Cada pergunta diz de onde veio**, em `voice_source`, com a fonte e as
+   palavras: `Google: saldo cartão continente expira`. Uma pergunta que não
+   veio da voz do cliente fica sem `voice_source`.
+5. **Uma marca nova e pouco conhecida devolve pouco**, e às vezes devolve
+   outra empresa com o mesmo nome (medido: as duas sugestões da goCrew
+   eram de empresas homónimas noutro país). Isso é um dado sobre a marca,
+   não uma falha: ignora o que não é ela e escreve a partir das sugestões
+   dos concorrentes e de `autocompletar_categoria`. As sugestões da
+   categoria também trazem ruído ("seguro de si"): decide pelo sentido.
+6. **Muitas sugestões são de localidade** ("hospital da luz coimbra",
+   "rocha automóveis braga"). Dizem onde o cliente procura a marca; numa
+   marca com várias lojas valem uma pergunta local, não uma por cidade.
+
+O que isto não é, e não se diz ao cliente que é: não são as perguntas
+feitas à IA, e o autocompletar não dá volumes. É o que se pesquisa, não
+quanto.
 
 ## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
 

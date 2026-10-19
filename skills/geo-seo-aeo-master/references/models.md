@@ -501,6 +501,7 @@ sua linha. **A medição não vive aqui**: continua nos buyer defaults.
 | `agente` | `claude-opus-5-5` | o agente do painel: lê os factos da semana e responde ao cliente (ligado a 18 Out 2026 com o OK do founder ao custo) |
 | `registo` | `claude-opus-5-5` | a sugestão de concorrentes no registo, com pesquisa na web: a primeira coisa que o cliente vê |
 | `classificar` | `claude-haiku-5-5` | sugerir a categoria e a fase de uma pergunta: duas chaves validadas contra a taxonomia, uma tarefa de modelo rápido |
+| `perguntas` | `claude-opus-5-5` | as primeiras perguntas de um cliente novo, escritas na hora a partir da voz do cliente (`prompts.md` §8.9): o catálogo que ele vai pagar para medir. Ligado a 18 Out 2026 com o OK do founder |
 
 Um papel sem linha usa o modelo de recurso do Tracker (o de qualidade, ou o
 rápido no `classificar`), com uma exceção: a `revisao` sem linha usa o
@@ -517,6 +518,10 @@ passagem (`studio_texts.passes`) para estes números se corrigirem:
 - **Agente**: a pergunta típica (5 410 fichas de entrada, 700 de saída)
   passa de 1,78 a cerca de 3,6 cêntimos.
 - **Registo**: uma procura por conta nova, alguns cêntimos.
+- **Perguntas**: uma vez por cliente novo. O sistema (§1, §2 e §8 de
+  `prompts.md`) são ~6 000 fichas, o pedido com a voz do cliente e o site
+  ~6 000 a 9 000, e a resposta com 30 perguntas ~4 500; perto de 0,15 USD,
+  e o dobro no pior caso, com as duas voltas de reescrita do §8.8.
 
 ---
 

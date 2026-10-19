@@ -271,12 +271,12 @@ let allOk = true;
   else {
     const sec = sectionContent(models, "\n## Tracker product models");
     if (!sec) falhas.push("'## Tracker product models' ausente");
-    else for (const papel of ["estudio", "revisao", "agente", "registo", "classificar"]) {
+    else for (const papel of ["estudio", "revisao", "agente", "registo", "classificar", "perguntas"]) {
       if (!new RegExp("^\\|\\s*`" + papel + "`\\s*\\|\\s*`[^`]+`", "m").test(sec)) falhas.push(`papel '${papel}' ausente`);
     }
   }
   falhas.length === 0
-    ? check(name, true, "4 tabelas do escrita.md e 5 papéis dos modelos do produto parseáveis")
+    ? check(name, true, "4 tabelas do escrita.md e 6 papéis dos modelos do produto parseáveis")
     : check(name, false, falhas.join("; "));
 }
 
