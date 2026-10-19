@@ -11,6 +11,41 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-10-19: Décima terceira execução (vs. 12 out; sexta semana consecutiva sem hiato)
+
+**Score global:** 72,3/100 (72 arredondado). **Δ vs. 12 out: −0,3.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 89 | 0 |
+| Performance / CWV | 66 | −1 |
+| SEO On-Page | 95 | 0 |
+| Schema | 92 | 0 |
+| Imagens | 76 | 0 |
+| GEO técnica | 93 | 0 |
+| Conteúdo & topical authority | 97 | 0 |
+| Entidade | 78 | 0 |
+| Autoridade & PR | 34 | 0 |
+| Social | 37 | 0 |
+| E-E-A-T | 70 | 0 |
+| Medição | 40 | −2 |
+
+**Items movidos para DONE:** 0. **Candidatos a DONE por confirmar na origem:** auth `refresh_token_not_found`, Stripe `tax_code`, DeepSeek sem saldo, Gemini (ausentes da janela de 7 dias; ausência não é prova); Perplexity `402`/`429` saiu do top-50 de erros.
+
+**Items novos:** 2: TECH/GEO P2 (`/radar` fora do sitemap e do `llms.txt`; `/en/radar` 404), CONTENT P2 (lacunas PT-PT de 19 out). **Reconfirmado/escalado:** MEASUREMENT P0 Anthropic (3ª repetição: 16 e 19 out), MEASUREMENT P1 DataForSEO sem pesquisas (activo), SCHEMA `Organization.description` (5ª semana).
+
+**Mudanças materiais:**
+- Crédito Anthropic esgotado de novo (16 out 10:58 UTC; 19 out 07:00–07:11 UTC). Notificação enviada.
+- DataForSEO "run out of searches" activo a 19 out: `google_aio` 29, `google_ai_mode` 19, `copilot/serpapi` 16.
+- Prompt-test (32 prompts + entidade, proxy `WebSearch`): destaque.ai em 3 (9%), todos em síntese (GD5, GD8, V2), sempre via Sortlist; nos 22 prompts fixos, 3/22, igual a 12 e 5 out. Nenhuma menção negativa ou alucinada; protocolo de crise não accionado. Confusões de acrónimo (GEA, GEO geoespacial, "auditoria de IA" como compliance) e de nome (Periscopy/Periscope).
+- Site: TTFB mediana 257 ms (igual); HTML 109.688 → 124.812 B (+14%), Brotli 22.613 B; sitemap 132 → 133; `llms.txt` 34.806 → 38.023 B; Radar `/radar`, Estúdio e correcções técnicas da auditoria de 14 out em produção; 2 deploys `ERROR` (#196, #201) ambos recuperados.
+- models.md: tentativa de refresh (11 dias desde o último) sem confirmação Tier 1; nenhuma linha alterada.
+- Não verificável: PSI (429), Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-10-12: Décima segunda execução (vs. 5 out; quinta semana consecutiva sem hiato)
 
 **Score global:** 72,5/100 (73 arredondado). **Δ vs. 5 out: 0.**
