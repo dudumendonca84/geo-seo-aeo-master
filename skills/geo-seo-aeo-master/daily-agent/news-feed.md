@@ -8,6 +8,28 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-20
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 18 Out, sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Anúncios de IA: a Google confirma testes de anúncios no AI Mode com Personal Intelligence ligada, mercados não nomeados ([SE Roundtable](https://www.seroundtable.com/google-ads-ai-mode-personal-intelligence-42320.html), secundária); o ChatGPT Ads ganha formatos visuais e parceiros de medição, sem mercados especificados ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-updates-42321.html), secundária). Google testa botão "Source preferences" nas citações do AI Mode ([SE Roundtable](https://www.seroundtable.com/google-ai-mode-citations-preferred-sources-42323.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Ads no AI Mode: hoje, acrescentar à proposta de AI ads a nota de que a personalização por apps entra nos anúncios Google; sem ação de cliente. (2) Medição ChatGPT Ads: quinta, ver se os parceiros novos (Northbeam, Kochava) cobrem clientes PT quando o Ads Manager abrir.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Terça: sem cortes nem drafts.
+
+## 2026-10-20
+
+### ⚙️ Mudanças nas plataformas
+- **Google: anúncios no AI Mode com Personal Intelligence**: SE Roundtable, 19 Out (https://www.seroundtable.com/google-ads-ai-mode-personal-intelligence-42320.html). A Google disse ao Search Engine Land que testa anúncios para utilizadores com apps ligadas; em março dizia que ficava sem anúncios. Sem Gmail/Photos como alvo direto, categorias sensíveis excluídas. Mercados não nomeados. Fonte secundária.
+- **ChatGPT Ads: formatos visuais, medição, emails**: SE Roundtable, 19 Out (https://www.seroundtable.com/openai-chatgpt-ads-updates-42321.html). Cartões mais largos e imagens maiores, multi-imagem em breve; parceiros Northbeam, DV Rockerbox, INCRMNTAL, Kochava, Tenjin, Airbridge; email semanal de desempenho. Mercados não especificados. Fonte secundária.
+- **Google AI Mode: "Source preferences" nas citações (teste)**: SE Roundtable, 19 Out (https://www.seroundtable.com/google-ai-mode-citations-preferred-sources-42323.html). Botão que abre a lista de Preferred Sources; visto num vídeo no X, não reproduzido. Fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Ads Google no AI Mode: awareness; incluir na proposta de AI ads, esta semana, a nota sobre personalização por apps.
+- ChatGPT Ads: sem gatilho PT; quinta, rever a cobertura de medição quando o Ads Manager abrir em Portugal.
+- Source preferences: só awareness; reforça pedir aos clientes de media para promoverem a fonte como Preferred Source.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Terça: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-19
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 18 Out ("Investing in the public benefit"), sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). SEO/Google: volatilidade de ranking e "chatter" a 16 Out ([SE Roundtable](https://www.seroundtable.com/google-search-ranking-volatility-chatter-42317.html), secundária, sem confirmação da Google); quotas da Indexing API atualizadas ([SE Roundtable](https://www.seroundtable.com/google-updates-indexing-api-quota-information-42316.html), secundária). Bing testa "Read more" e "Popular Links" em snippets ([SE Roundtable](https://www.seroundtable.com/bing-read-more-links-42311.html), secundária). Nenhum gatilho dos watches disparou.
