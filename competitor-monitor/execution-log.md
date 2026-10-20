@@ -163,3 +163,11 @@ Uma linha por execução semanal: data, dimensões cobertas, candidatos descober
 - Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Segunda semana de ruído de recolha nos Prompts 1, 3 e 5 (sem entidades PT); destaque.ai sobe a pos 1 no P2 via Sortlist. (3) Marketing Gabriel sai (0/5). (4) BE VISIBLE: snippet "a partir de €2.000", não verificado. (5) Mercado mantém 24 concorrentes.
 - Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
 - Report: competitor-monitor/reports/2026-10-13.md
+
+## 2026-10-20
+- Dimensões cobertas: D0 (descoberta), D1 (5 prompts fixos, Claude augmented /5), D2, D3, D4.
+- Candidatos descobertos: nenhum. Rejeitados/em observação: DevCommX (sem operação PT verificada), Claneo (SEO internacional), OEA Consultoria (homónimo), agências brasileiras (fora de âmbito). BE VISIBLE e Orbis mantidos em fila de human review.
+- SoV history: 2 linhas adicionadas (destaque.ai 1/5, AISO Hub 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Terceira semana de ruído de recolha nos Prompts 1, 3 e 5 (sem entidades PT). (3) Mercado mantém 24 concorrentes; D2 sem movimentos verificáveis.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-10-20.md
