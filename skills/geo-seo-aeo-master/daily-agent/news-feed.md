@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-21
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 18 Out, sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Anúncios de IA: a OpenAI avisa anunciantes de que os "creative enhancements" ficam ativos por defeito a 30 Out, com opt-out no Ads Manager ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-enabling-creative-enhancements-42344.html), secundária). A Google remove a etiqueta "AI Overviews" em alguns resultados no desktop ([SE Roundtable](https://www.seroundtable.com/google-ai-overviews-label-missing-42337.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) ChatGPT Ads: até 29 Out, avisar clientes com campanhas para decidirem o opt-out dos creative enhancements; sem cliente PT ativo, só awareness. (2) AIO sem etiqueta: quinta, registar no Tracker se a captura desktop distingue AIO sem etiqueta.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Quarta: sem cortes nem drafts.
+
+## 2026-10-21
+
+### ⚙️ Mudanças nas plataformas
+- **ChatGPT Ads: creative enhancements ativos por defeito a 30 Out**: SE Roundtable, 20 Out (https://www.seroundtable.com/openai-chatgpt-ads-enabling-creative-enhancements-42344.html). Email da OpenAI a anunciantes; opt-out no Ads Manager. Fonte secundária.
+- **Google: etiqueta "AI Overviews" em falta em alguns resultados**: SE Roundtable, 20 Out (https://www.seroundtable.com/google-ai-overviews-label-missing-42337.html). Visível em mobile, aparentemente ausente em desktop para alguns resultados. Fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Creative enhancements: incluir na proposta de AI ads, até 29 Out, a nota de opt-out por defeito; awareness.
+- AIO sem etiqueta: quinta, verificar se a captura desktop do Tracker deteta AIO sem etiqueta.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Quarta: sem passagem de cortes.
+
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-20
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 18 Out, sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Anúncios de IA: a Google confirma testes de anúncios no AI Mode com Personal Intelligence ligada, mercados não nomeados ([SE Roundtable](https://www.seroundtable.com/google-ads-ai-mode-personal-intelligence-42320.html), secundária); o ChatGPT Ads ganha formatos visuais e parceiros de medição, sem mercados especificados ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-updates-42321.html), secundária). Google testa botão "Source preferences" nas citações do AI Mode ([SE Roundtable](https://www.seroundtable.com/google-ai-mode-citations-preferred-sources-42323.html), secundária). Nenhum gatilho dos watches disparou.
