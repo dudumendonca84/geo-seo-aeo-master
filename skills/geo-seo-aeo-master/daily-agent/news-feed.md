@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-22
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 21 Out e não é de modelos (Long-Term Benefit Trust) ([Anthropic](https://www.anthropic.com/news)). SEO/Google: a Google atualizou o doc "Control what you share with Google Search" com secções sobre robots meta, data-nosnippet, X-Robots-Tag e o controlo de IA generativa de Search ([SE Roundtable](https://www.seroundtable.com/google-updates-control-what-you-share-42350.html), secundária); vídeo de Illyes: robots.txt controla acesso, não treino, e só aceita tokens de user-agent válidos ([SE Roundtable](https://www.seroundtable.com/google-video-robots-txt-rules-42355.html), secundária); volatilidade de ranking a 20 e 21 Out sem update confirmado ([SE Roundtable](https://www.seroundtable.com/google-search-ranking-volatility-42347.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Controlos de IA: hoje, ao rever robots.txt de clientes, explicar que Disallow não impede uso de conteúdo já recolhido e rever a página de controlo da Google para citar a lista atual. (2) Volatilidade: até sexta, não atribuir quedas a causas antes de cruzar com o Search Status Dashboard.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Quinta: sem cortes nem drafts.
+
+## 2026-10-22
+
+### ⚙️ Mudanças nas plataformas
+- **Google: doc "Control what you share with Google Search" atualizado**: SE Roundtable, 21 Out (https://www.seroundtable.com/google-updates-control-what-you-share-42350.html). Duas secções novas (robots meta tag, data-nosnippet, X-Robots-Tag; controlo de IA generativa de Search) e esclarecimento de que a página se aplica à Google Search. Doc: https://developers.google.com/search/docs/crawling-indexing/control-what-you-share. Fonte secundária.
+- **Google: robots.txt e crawlers de IA (vídeo)**: SE Roundtable, 21 Out (https://www.seroundtable.com/google-video-robots-txt-rules-42355.html). Illyes: robots.txt é um protocolo de preferência de acesso, não controla o uso de conteúdo já recolhido; bloquear um crawler exige o seu token de user-agent (só letras e hífenes); regras inventadas são descartadas. Fonte secundária.
+- **Google: volatilidade de ranking, 20 e 21 Out**: SE Roundtable (https://www.seroundtable.com/google-search-ranking-volatility-42347.html). Suspeita de update não confirmado. Fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Controlos de IA: na auditoria técnica, acrescentar a verificação do controlo de IA generativa de Search e distinguir bloqueio de crawl de bloqueio de uso; awareness, aplicar já nas próximas auditorias.
+- Volatilidade: sem update confirmado; reavaliar na sexta antes de comunicar a clientes.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Quinta: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-21
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 18 Out, sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). Anúncios de IA: a OpenAI avisa anunciantes de que os "creative enhancements" ficam ativos por defeito a 30 Out, com opt-out no Ads Manager ([SE Roundtable](https://www.seroundtable.com/openai-chatgpt-ads-enabling-creative-enhancements-42344.html), secundária). A Google remove a etiqueta "AI Overviews" em alguns resultados no desktop ([SE Roundtable](https://www.seroundtable.com/google-ai-overviews-label-missing-42337.html), secundária). Nenhum gatilho dos watches disparou.
