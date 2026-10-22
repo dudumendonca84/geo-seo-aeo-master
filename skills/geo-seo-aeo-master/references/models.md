@@ -573,6 +573,7 @@ news-feed": passa a registá-la também aqui.
 | `mistral-small-latest` | 0.15 | 0.60 | 2026-06 | Mistral Small 4. A MENOS FIRME DA TABELA: sem acesso à página do fornecedor, os agregadores dividem-se entre 0.15/0.60 (OpenRouter, tokencost, gate.ai) e 0.10/0.30 (outros). Fica o par mais citado, e a divergência é de 50% |
 | `sonar-pro` | 3.00 | 15.00 | | pricepertoken, cloudzero e burnwise a 7 Set 2026. INCOMPLETO DE PROPÓSITO: há ainda uma taxa por pedido de 6 a 14 dólares por mil pedidos, consoante o tamanho do contexto de pesquisa, que estas duas colunas não sabem exprimir. Ver a nota sobre custo declarado abaixo |
 | `sonar` | 1.00 | 1.00 | | mesmas fontes. A mesma taxa por pedido, aqui de 5 a 12 dólares por mil |
+| `muse-spark-1.3` | 1.25 | 4.25 | 2026-10-21 | Meta Model API (`api.meta.ai`), página de preços lida a 21 Out 2026. É o modelo que responde no Meta AI. INCOMPLETO DE PROPÓSITO, como o `sonar`: a ferramenta `web_search` custa mais 2,50 dólares por mil pesquisas, que estas duas colunas não exprimem. O Tracker só o chama na primeira semana de um cliente e nos prospects |
 
 ### Contrato de leitura
 
