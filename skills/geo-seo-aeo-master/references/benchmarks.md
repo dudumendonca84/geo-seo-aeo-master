@@ -649,6 +649,16 @@ The measurement chapter proposes exactly the metric set this product already com
 
 ---
 
+## 54. Tráfego e conversão de IA vs Google orgânico: três estudos (22 Out 2026)
+
+Fonte de agregação: [SE Roundtable, 22 Out 2026](https://www.seroundtable.com/ai-search-studies-42359.html) (secundária); estudos de terceiros, não auditados.
+
+- **Marie Haynes, "GEO is a distraction"** ([link](https://www.mariehaynes.com/geo-is-a-distraction/)): 100 sites, 12 meses de GA4, mais de 145 milhões de sessões. Sessões do ChatGPT = 0,62% das do Google orgânico; conversão 13,8% vs 3,02%; o Google gerou 96,5% das conversões e 27x mais que todos os LLMs juntos.
+- **SEO Works** ([link](https://www.seoworks.co.uk/downloads/ai-referral-traffic-benchmark/)): amostra não indicada. Orgânico entrega 39x mais tráfego que assistentes de IA; por cada 100 conversões orgânicas, 3,2 vêm de referrals de IA.
+- **Kevin Indig, Growth Memo** ([link](https://www.growth-memo.com/p/does-ai-drive-more-direct-traffic)): 12 sites. Sem relação fiável entre visibilidade em IA e tráfego direto ou de marca; efeito em páginas long-tail "ainda não detetável".
+
+Caveats: o GPT-6 abre links sem UTM nem referrer (ver metrics.md), pelo que o referral de IA está subestimado em GA4; a conclusão dos autores ("não investir") não decorre dos dados, que só dizem que o volume direto é pequeno.
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.
