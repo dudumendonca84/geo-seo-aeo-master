@@ -103,7 +103,7 @@ has not happened.
 | plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial | agent | studio | studio_texts |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no | no | no | 0 |
-| lite | brand | 50 | no | no | 1 | weekly | no | no | 149 | yes | yes | no | no | 0 |
+| lite | brand | 100 | no | no | 1 | weekly | no | yes | 149 | yes | yes | no | no | 0 |
 | pro | brand | 100 | yes | no | 1 | weekly | yes | no | 299 | yes | yes | no | no | 0 |
 | business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes | yes | yes | 20 |
 | enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no | yes | yes | 50 |
