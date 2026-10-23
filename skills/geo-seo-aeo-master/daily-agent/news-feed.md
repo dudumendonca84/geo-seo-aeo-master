@@ -8,6 +8,31 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-23
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço; o topo de anthropic.com/news (22 Out) é "Donating Agent Skills to the Agentic AI Foundation" e uma chamada para investigadores, sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). GEO/AEO: três estudos de tráfego de IA convergem em volume pequeno (ChatGPT = 0,62% das sessões do Google orgânico em 100 sites; 13,8% vs 3,02% de conversão) ([SE Roundtable](https://www.seroundtable.com/ai-search-studies-42359.html), secundária). SEO/Google: teste de layout do painel local ([SE Roundtable](https://www.seroundtable.com/google-local-panel-layout-42356.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Pitch: hoje, enquadrar GEO como qualidade de lead e marca, não volume; somar referral e direto antes de reportar. (2) Painel local: segunda, ver se afeta clientes com perfil Google.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Sexta: drafts gerados.
+
+## 2026-10-23
+
+### 📊 Estudos & dados
+- **GEO is a distraction (Marie Haynes)**: https://www.mariehaynes.com/geo-is-a-distraction/. 100 sites, 12 meses GA4, >145M sessões: ChatGPT = 0,62% das sessões do Google orgânico, conversão 13,8% vs 3,02%, Google = 96,5% das conversões.
+- **AI referral traffic benchmark (SEO Works)**: https://www.seoworks.co.uk/downloads/ai-referral-traffic-benchmark/. Orgânico 39x mais tráfego que assistentes; 3,2 conversões de IA por 100 de orgânico. Amostra não indicada.
+- **Does AI drive more direct traffic? (Kevin Indig)**: https://www.growth-memo.com/p/does-ai-drive-more-direct-traffic. 12 sites: sem relação fiável entre visibilidade em IA e tráfego direto/de marca.
+- Agregação: SE Roundtable, 22 Out (https://www.seroundtable.com/ai-search-studies-42359.html). Fonte secundária. Absorvido em benchmarks.md §54.
+
+### ⚙️ Mudanças nas plataformas
+- **Google: teste de layout do painel local**: SE Roundtable, 22 Out (https://www.seroundtable.com/google-local-panel-layout-42356.html). Fotos acima do nome, avaliações e botões. Fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Pitch: os números de volume são baixos e os de conversão altos; vender GEO como lead qualificado e presença de marca, com referral e direto somados (GPT-6 sem UTM). Mudança de pitch, aplicar já nas propostas desta semana.
+- Painel local: awareness; verificar na segunda clientes com perfil Google.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Sexta: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-22
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço em Tier 1; o topo de anthropic.com/news é de 21 Out e não é de modelos (Long-Term Benefit Trust) ([Anthropic](https://www.anthropic.com/news)). SEO/Google: a Google atualizou o doc "Control what you share with Google Search" com secções sobre robots meta, data-nosnippet, X-Robots-Tag e o controlo de IA generativa de Search ([SE Roundtable](https://www.seroundtable.com/google-updates-control-what-you-share-42350.html), secundária); vídeo de Illyes: robots.txt controla acesso, não treino, e só aceita tokens de user-agent válidos ([SE Roundtable](https://www.seroundtable.com/google-video-robots-txt-rules-42355.html), secundária); volatilidade de ranking a 20 e 21 Out sem update confirmado ([SE Roundtable](https://www.seroundtable.com/google-search-ranking-volatility-42347.html), secundária). Nenhum gatilho dos watches disparou.
