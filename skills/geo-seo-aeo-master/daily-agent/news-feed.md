@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-24
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço; o topo de anthropic.com/news (22 Out) não é de modelos ([Anthropic](https://www.anthropic.com/news)). GEO/AEO: o AI Overviews parece testar resumos gerados por IA nos cartões de citação, em vez do texto da fonte; relato de Brodie Clark, sem confirmação da Google ([SE Roundtable](https://www.seroundtable.com/google-ai-overview-citation-ai-summaries-42361.html), secundária). Nenhum gatilho dos watches disparou.
+
+Implicações: (1) Resumos nos cartões: segunda, rever os trechos que clientes querem ver citados, porque o texto exibido pode já não ser o da página; não reescrever nada até haver confirmação. Sábado: sem cortes nem drafts.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado).
+
+## 2026-10-24
+
+### ⚙️ Mudanças nas plataformas
+- **Google: resumos gerados por IA nos cartões de citação do AI Overviews (teste)**: SE Roundtable, 23 Out (https://www.seroundtable.com/google-ai-overview-citation-ai-summaries-42361.html). Brodie Clark viu os cartões laterais ou inferiores mostrarem um resumo escrito por IA, que "não aparece exatamente assim na página"; Schwartz reproduziu em algumas consultas, não em todas. Sem declaração da Google. Fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Resumos nos cartões: o texto visível junto à citação pode deixar de ser o da página, logo o título e o primeiro parágrafo deixam de garantir o trecho mostrado. Awareness; segunda de manhã, verificar 3 consultas de clientes e só então mexer em copy.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Sábado: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-23
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço; o topo de anthropic.com/news (22 Out) é "Donating Agent Skills to the Agentic AI Foundation" e uma chamada para investigadores, sem relação com modelos ([Anthropic](https://www.anthropic.com/news)). GEO/AEO: três estudos de tráfego de IA convergem em volume pequeno (ChatGPT = 0,62% das sessões do Google orgânico em 100 sites; 13,8% vs 3,02% de conversão) ([SE Roundtable](https://www.seroundtable.com/ai-search-studies-42359.html), secundária). SEO/Google: teste de layout do painel local ([SE Roundtable](https://www.seroundtable.com/google-local-panel-layout-42356.html), secundária). Nenhum gatilho dos watches disparou.
