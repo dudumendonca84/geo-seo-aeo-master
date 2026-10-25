@@ -8,6 +8,16 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-25
+
+Sem novidades significativas hoje; corrida completa. O topo de anthropic.com/news continua a 22 Out, sem modelos nem preços ([Anthropic](https://www.anthropic.com/news)); o SE Roundtable não tem itens novos desde 23 Out ([SE Roundtable](https://www.seroundtable.com/), secundária). Nenhum gatilho dos watches disparou. Passagem por motor feita (26 blocos, `meta:` atualizado). Domingo: sem cortes nem drafts.
+
+## 2026-10-25
+
+Sem novidades significativas hoje.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Domingo: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-24
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço; o topo de anthropic.com/news (22 Out) não é de modelos ([Anthropic](https://www.anthropic.com/news)). GEO/AEO: o AI Overviews parece testar resumos gerados por IA nos cartões de citação, em vez do texto da fonte; relato de Brodie Clark, sem confirmação da Google ([SE Roundtable](https://www.seroundtable.com/google-ai-overview-citation-ai-summaries-42361.html), secundária). Nenhum gatilho dos watches disparou.
