@@ -315,6 +315,29 @@ let allOk = true;
     : check(name, false, falhas.join("; "));
 }
 
+// --- Contrato 19: o caminho de cada pergunta (consumido por src/lib/skill/caminhos.ts no Tracker)
+// A linha `limiar_dentro: N%` dentro da secção. Sem ela o Tracker cai no
+// recurso (50%) sem erro: tem de falhar aqui.
+{
+  const name = "Contrato 19 · caminhos";
+  const body = read(`${SKILL}/references/gap_action_mapping.md`);
+  const falhas = [];
+  if (!body) falhas.push("gap_action_mapping.md não encontrado");
+  else {
+    const sec = sectionContent(body, "\n## O caminho de cada pergunta (Perguntas x fontes)");
+    if (!sec) falhas.push("'## O caminho de cada pergunta (Perguntas x fontes)' ausente");
+    else {
+      const m = /^limiar_dentro:\s*([\d.,]+)\s*%/m.exec(sec);
+      const v = m ? Number(m[1].replace(",", ".")) : NaN;
+      if (!m) falhas.push("linha 'limiar_dentro: N%' ausente");
+      else if (!(v > 0 && v <= 100)) falhas.push("limiar_dentro fora de 0..100");
+    }
+  }
+  falhas.length === 0
+    ? check(name, true, "limiar_dentro parseável")
+    : check(name, false, falhas.join("; "));
+}
+
 // --- Contrato editorial: nada do que a skill escreve leva travessões nem "canónico"
 // (Tracker CLAUDE.md, regras 8 e 11; pedido do founder a 25 Ago e 9 Set 2026).
 // Alargado à skill inteira a 10 Set 2026. Ficam de fora só os registos diários
