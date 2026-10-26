@@ -11,6 +11,41 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-10-26: Décima quarta execução (vs. 19 out; sétima semana consecutiva sem hiato)
+
+**Score global:** 72,8/100 (73 arredondado). **Δ vs. 19 out: +0,5.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 89 | 0 |
+| Performance / CWV | 65 | −1 |
+| SEO On-Page | 95 | 0 |
+| Schema | 92 | 0 |
+| Imagens | 76 | 0 |
+| GEO técnica | 93 | 0 |
+| Conteúdo & topical authority | 97 | 0 |
+| Entidade | 78 | 0 |
+| Autoridade & PR | 46 | +12 |
+| Social | 37 | 0 |
+| E-E-A-T | 71 | +1 |
+| Medição | 34 | −6 |
+
+**Items movidos para DONE:** 0. **Candidatos por confirmar na origem:** Stripe `tax_code`, Perplexity `402`/`429` (ausentes da janela de 7 dias; ausência não é prova). `Organization.description` parcialmente corrigida (item mantido, âmbito reduzido).
+
+**Items novos:** 3: BACKLINKS P2 (verificar na origem a cobertura Lusa/Público de 22-24 out), MEASUREMENT P1 (DeepSeek sem saldo; SerpApi e DataForSEO sem pesquisas em simultâneo), MEASUREMENT P3 (Stripe webhook, 1 ocorrência). **Reconfirmado/escalado:** MEASUREMENT P0 Anthropic (4ª semana com registo, 26 out), Gemini (activo, 198 ocorrências), TECH/GEO `/radar` fora do sitemap e do `llms.txt` (2ª semana), BACKLINKS Tier-1 (reclassificado P3 → P2).
+
+**Mudanças materiais:**
+- Lote de 26 out (07:00–07:48 UTC): Anthropic, Gemini e DeepSeek sem saldo; SerpApi sem pesquisas e DataForSEO em erro; Mistral 429. Seis motores com leitura incompleta. Notificação enviada.
+- Imprensa: `/imprensa` passa a listar nove peças, entre elas Lusa (22 out) republicada por Rádio Comercial, SAPO e DN Madeira, Público Brasil (22 out) e O Antagonista (24 out). Lista do próprio site, não verificada nos meios; a pesquisa do proxy não as devolve.
+- Prompt-test (32 prompts + entidade + imprensa, proxy `WebSearch`): destaque.ai em 3 (9%), todos em síntese (GD5, GD8, V2), sempre via Sortlist; nos 22 prompts fixos, 3/22, igual a 19, 12 e 5 out. Nenhuma menção negativa ou alucinada; protocolo de crise não accionado. Confusões de acrónimo (GEO geoespacial em GD6 e V4) e de nome (Periscopy/Periscope).
+- Site: TTFB mediana 257 → 241 ms; HTML 124.812 → 153.412 B (+23%), Brotli 25.235 B; sitemap 133 → 135; `llms.txt` inalterado (38.023 B); 19 deploys de produção desde 19 out, todos `READY`; Engenharia de perguntas PT/EN, Radar com PDF e Mapa das empresas na home em produção.
+- models.md: refresh não repetido (7 dias exactos desde a tentativa de 19 out); news-feed de 20-26 out sem modelos novos nem mudanças de preço Tier 1.
+- Não verificável: PSI (429), Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-10-19: Décima terceira execução (vs. 12 out; sexta semana consecutiva sem hiato)
 
 **Score global:** 72,3/100 (72 arredondado). **Δ vs. 12 out: −0,3.**

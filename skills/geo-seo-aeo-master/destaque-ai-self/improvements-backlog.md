@@ -48,7 +48,36 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 19 outubro 2026: décima terceira execução, sexta consecutiva sem hiato. P0 Anthropic repetiu-se pela terceira vez (16 e 19 out); DataForSEO sem pesquisas (item de 3 ago actualizado); dois items novos (`/radar` fora do sitemap/llms.txt; lacunas de conteúdo PT-PT de 19 out); sem items movidos para DONE. Anteriormente, 12 outubro 2026: décima segunda execução, quinta consecutiva sem hiato. P0 Anthropic repetiu-se (12 out), novos P1 Perplexity 402 e P2 entidade/conteúdo; sem items movidos para DONE esta semana. Anteriormente, 28 setembro 2026: décima execução do Routine, terceira semana consecutiva sem hiato, critério de verificação do item PROCESS cumprido, ver DONE abaixo. `curl` de saída funcionou pela primeira vez em 15 semanas, permitindo TTFB real, fetch directo e a maior amostra de teste multi-motor desta série (32 prompts, 5 sub-agentes). Dois achados novos de alto volume no Tracker: erro de autenticação (`Invalid Refresh Token`, 614 ocorrências, 7 utilizadores) e falha de checkout Stripe (`tax_code` em falta, bloqueia venda do plano Pro/mês). O item Gemini, fechado DONE há uma semana com reserva explícita, **reabre**: crédito esgotou-se de novo em 24 set. O mistério do Wikidata está resolvido: o QID Q140043087 confirmado inexistente (404 directo), não há nada para repor, só para construir de raiz. Teste multi-motor completo (pela primeira vez desde 13 jul) revela 0/6 nos prompts de alto intent (GP1-6) e um 5º eixo de colisão do acrónimo "GEO" em V3. SEO Alive classificado formalmente. Ver `audit-baseline.md` 28 set para o detalhe completo.)_
+_(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem hiato. P0 Anthropic na 4ª semana com registo (26 out); Gemini, DeepSeek e SerpApi/DataForSEO sem saldo no mesmo lote; BACKLINKS recebe a primeira cobertura de agência (Lusa, Público, 22-24 out, por verificar); três items novos; `Organization.description` parcialmente corrigida. Anteriormente, 19 outubro 2026: décima terceira execução, sexta consecutiva sem hiato. P0 Anthropic repetiu-se pela terceira vez (16 e 19 out); DataForSEO sem pesquisas (item de 3 ago actualizado); dois items novos (`/radar` fora do sitemap/llms.txt; lacunas de conteúdo PT-PT de 19 out); sem items movidos para DONE. Anteriormente, 12 outubro 2026: décima segunda execução, quinta consecutiva sem hiato. P0 Anthropic repetiu-se (12 out), novos P1 Perplexity 402 e P2 entidade/conteúdo; sem items movidos para DONE esta semana. Anteriormente, 28 setembro 2026: décima execução do Routine, terceira semana consecutiva sem hiato, critério de verificação do item PROCESS cumprido, ver DONE abaixo. `curl` de saída funcionou pela primeira vez em 15 semanas, permitindo TTFB real, fetch directo e a maior amostra de teste multi-motor desta série (32 prompts, 5 sub-agentes). Dois achados novos de alto volume no Tracker: erro de autenticação (`Invalid Refresh Token`, 614 ocorrências, 7 utilizadores) e falha de checkout Stripe (`tax_code` em falta, bloqueia venda do plano Pro/mês). O item Gemini, fechado DONE há uma semana com reserva explícita, **reabre**: crédito esgotou-se de novo em 24 set. O mistério do Wikidata está resolvido: o QID Q140043087 confirmado inexistente (404 directo), não há nada para repor, só para construir de raiz. Teste multi-motor completo (pela primeira vez desde 13 jul) revela 0/6 nos prompts de alto intent (GP1-6) e um 5º eixo de colisão do acrónimo "GEO" em V3. SEO Alive classificado formalmente. Ver `audit-baseline.md` 28 set para o detalhe completo.)_
+
+### 2026-10-26 added: BACKLINKS: Cobertura Lusa/Público de 22-24 out: verificar na origem e converter em sinal de entidade
+- **Prioridade:** P2
+- **Esforço:** 2h
+- **Origem:** auditoria semanal 2026-10-26 (`/imprensa` e `list_deployments` #215–#218; pesquisa de imprensa do proxy: 0/1)
+- **Estado:** TODO
+- **Descrição:** A sala de imprensa lista nove peças, quatro delas distribuição de uma só peça da Lusa sobre o estudo da eleição no Brasil. É a primeira cobertura de agência e de Público, mas é uma história só e não está confirmada fora do site; a pesquisa do proxy não devolveu nenhuma. Nenhuma dessas ligações aparece no `sameAs` nem no JSON-LD.
+- **Acção:** Abrir cada peça no site do meio e confirmar data, autor e citação da destaque.ai; acrescentar as confirmadas como `citation`/`subjectOf` ou `sameAs` onde fizer sentido; repetir a pesquisa de imprensa daqui a duas semanas para ver se entram no índice.
+- **Verificação:** nove URLs abertas e registadas; pelo menos uma peça aparece numa pesquisa de entidade.
+- **Notes:** Não confundir distribuição Lusa com cinco menções independentes. Alimenta o pedido de item Wikidata (H3).
+
+### 2026-10-26 added: MEASUREMENT: Tracker: DeepSeek sem saldo e SerpApi/DataForSEO sem pesquisas em simultâneo
+- **Prioridade:** P1
+- **Esforço:** 1h
+- **Origem:** auditoria semanal 2026-10-26 (`get_runtime_errors`, 7 dias)
+- **Estado:** TODO
+- **Descrição:** `deepseek-v4-flash` devolve `402 Insufficient Balance` e `429` de concorrência por saldo (26 out). DataForSEO em erro e SerpApi "run out of searches": `google_aio` 92, `google_ai_mode` 48, `copilot/serpapi` 10 em 26 out. Sem fornecedor de reserva, os três motores Google/Microsoft ficam sem leitura.
+- **Acção:** Recarregar DeepSeek; renovar SerpApi (plano) e abrir ticket ao DataForSEO sobre "Internal SE Server Error"; marcar o estado "sem dados" no Tracker em vez de falha, para não contar como ausência da marca.
+- **Verificação:** zero ocorrências de "run out of searches" e `402` numa janela de 7 dias.
+- **Notes:** Complementa o item de 3 ago (SerpApi/DataForSEO), que continua aberto.
+
+### 2026-10-26 added: MEASUREMENT: Stripe webhook com assinatura recusada (1 ocorrência, 23 out)
+- **Prioridade:** P3
+- **Esforço:** 30min
+- **Origem:** auditoria semanal 2026-10-26 (`/api/stripe/webhook`)
+- **Estado:** TODO
+- **Descrição:** "No signatures found matching the expected signature" numa chamada. Pode ser um teste manual ou um reenvio por terceiro; sem repetição na janela.
+- **Acção:** Confirmar na dashboard do Stripe se o evento era de teste; se se repetir, verificar o segredo do endpoint e o corpo bruto.
+- **Verificação:** zero ocorrências em 14 dias.
 
 ### 2026-10-19 added: TECH/GEO: /radar fora do sitemap e do llms.txt; /en/radar devolve 404
 - **Prioridade:** P2
@@ -58,6 +87,7 @@ _(Atualizado 19 outubro 2026: décima terceira execução, sexta consecutiva sem
 - **Descrição:** O Radar destaque.ai × Periscopy (#196–#199) está no ar com canonical próprio, mas nenhum crawler o descobre pelo sitemap nem pelo `llms.txt`. A versão `/en` não existe.
 - **Ação:** Acrescentar `/radar` e as páginas por sector ao sitemap e ao `llms.txt`; decidir se haverá `/en/radar` (e então `hreflang` recíproco) ou se é só PT por decisão.
 - **Verificação:** `grep radar` no sitemap e no `llms.txt`; `curl -I /en/radar` conforme a decisão.
+- **Atualização 2026-10-26:** sem alteração: sitemap 135 URLs sem "radar", `llms.txt` (38.023 B) idêntico, `/en/radar` 404, apesar de sete deploys do Radar desde 19 out. Segunda semana aberta.
 - **Notes:** O número de URLs só subiu de 132 para 133 desde 12 out.
 
 ### 2026-10-19 added: CONTENT: Lacunas PT-PT sem fonte com dados próprios (GP2, GP3, GP5, GP7-9, FS4, FS7, DC5, LR3, PC4)
@@ -71,10 +101,11 @@ _(Atualizado 19 outubro 2026: décima terceira execução, sexta consecutiva sem
 - **Notes:** Extende o item de 12 out (FS2/FS3/GE4/GP7-9); mantém-se um item de conteúdo contínuo, não bloqueante.
 
 ### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lotes de 5 e 12 out
-- **Prioridade:** P0 (REPETIDO a 19 out: terceira semana consecutiva)
+- **Prioridade:** P0 (REPETIDO a 26 out: quarta semana com registo)
 - **Esforço:** 15-30min
 - **Origem:** auditoria semanal 2026-10-05 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
 - **Estado:** TODO
+- **Atualização 2026-10-26:** quarta semana com registo: lote de 26 out, 07:03–07:14 UTC, `claude-sonnet-5` knowledge e augmented. No mesmo lote falham Gemini (402), DeepSeek (402/429 por saldo) e SerpApi/DataForSEO (sem pesquisas): o problema é de gestão de saldo em quatro fornecedores, não do Claude. Acção proposta: um único alerta de saldo (cron `ops-health`) e recarga automática em todos; até lá, suspender o motor em falta em vez de gerar dezenas de falhas por lote. Notificação enviada.
 - **Atualização 2026-10-19:** terceira repetição: lotes de 16 out (10:58 UTC) e 19 out (07:00–07:11 UTC), ~35 grupos `claude-sonnet-5 (knowledge)`. Três avisos sem efeito; a recarga automática continua sem estar activa. Notificação enviada. Escalar: bloquear o lote do motor Claude enquanto não houver saldo (evita 35 falhas diárias ruidosas), ou repor saldo hoje.
 - **Atualização 2026-10-12:** o erro repetiu-se hoje, ~35 grupos, 07:02–07:11 UTC, `/api/audit/run-batch`. Notificação enviada ao fundador. A recarga automática não está activa ou o top-up de 5 out não foi feito.
 - **Descrição:** `claude/claude-sonnet-5 (knowledge) failed: 400 ... Your credit balance is too low to access the Anthropic API`: mais de 30 grupos de erro de 1 ocorrência cada, todos entre 07:01 e 07:10 UTC de 5 out, rota `/api/audit/run-batch`. O motor Claude do Periscopy fica sem medição no lote diário.
@@ -176,6 +207,7 @@ _(Atualizado 19 outubro 2026: décima terceira execução, sexta consecutiva sem
 
 
 ### 2026-09-28 added: SCHEMA: Organization.description nomeia só 5 motores, inconsistente com "onze" do llms.txt
+- **Atualização 2026-10-26:** parcialmente corrigido: uma `Organization.description` já diz "onze motores e superfícies". O `Service` e a oferta no JSON-LD da home ainda listam "ChatGPT, Claude, Google AI Mode, Gemini e Perplexity" (6ª semana de acompanhamento). Manter P3; fechar quando a lista de cinco sair ou ganhar "entre onze".
 - **Atualização 2026-10-12:** ainda por corrigir (4ª semana consecutiva).
 - **Prioridade:** P3
 - **Esforço:** 15-30min
@@ -341,7 +373,7 @@ _(Atualizado 19 outubro 2026: décima terceira execução, sexta consecutiva sem
 - **Prioridade:** P0
 - **Esforço:** 30min-1h (top-up de billing): o mais barato de toda esta lista
 - **Origem:** auditoria semanal 2026-08-10 (`mcp__Vercel__get_runtime_errors`, projeto `destaque-ai-tracker`, janela 7 dias); reconfirmado 2026-08-24; revisto 2026-09-07
-- **Estado:** REABERTO (2026-09-28, depois de DONE em 2026-09-21)
+- **Estado:** REABERTO (2026-09-28, depois de DONE em 2026-09-21). **Atualização 2026-10-26:** activo: 178 (knowledge) + 20 (augmented) ocorrências na janela de 7 dias, última a 26 out 07:14 UTC, 8 utilizadores. Agrupar com o item Anthropic (saldo).
 - **Descrição:** **Gemini** (`RESOURCE_EXHAUSTED: Your prepayment credits are depleted`) falha por falta de crédito pré-pago na conta do fornecedor, não por erro de código: afecta `gemini/gemini-3.5-flash` em modo knowledge e augmented. Ativo desde 23 jun 2026. **Atualização 2026-09-07:** primeira execução em que a janela de 7 dias consultada (31 ago–07 set) não mostra nenhuma ocorrência nova: a última registada pela ferramenta é 31 ago 09:39 UTC, antes do início desta janela. Não confirma resolução (pode ser ausência de tráfego que accionasse a chamada, não crédito reposto), mas é o primeiro sinal desta natureza em nove semanas de item aberto.
 - **Ação:** Confirmar diretamente (billing da conta Google AI Studio) se o crédito foi reposto, ou se a ausência de erro é coincidência de baixo tráfego. Considerar ligar isto ao cron `ops-health` (mergeado 24 ago) como verificação de saldo, não só de auditorias em falta.
 - **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de `RESOURCE_EXHAUSTED` para o Gemini num período de 7 dias: critério já cumprido nesta execução; falta a confirmação direta de billing ou uma segunda janela sem ocorrência antes de fechar o item.
@@ -537,6 +569,7 @@ _(Atualizado 19 outubro 2026: décima terceira execução, sexta consecutiva sem
 - **Descrição:** Nenhuma menção a destaque.ai ou Eduardo Mendonça encontrada em Observador, ECO, Público, Expresso, Jornal de Negócios, Dinheiro Vivo (confirmado até 27 jul; não re-verificado 03 ago).
 - **Ação:** Iniciar pipeline de digital PR de forma orgânica, usando os estudos originais como gancho.
 - **Verificação:** Primeira peça Tier-1 publicada.
+- **Atualização 2026-10-26:** `/imprensa` lista agora nove peças, entre elas Lusa (PT e EN, 22 out) republicada por Rádio Comercial, SAPO e Diário de Notícias da Madeira, Público Brasil (22 out) e O Antagonista (24 out). Quatro são cópias de uma peça da Lusa sobre o estudo da eleição no Brasil. Por verificar nos sites dos meios (lista do próprio site; a pesquisa do proxy não as devolve). Continua sem Observador, ECO, Expresso e Negócios. Prioridade sobe para P2 (ver item novo de 26 out).
 - **Notes:** Expectável para empresa fundada em 2025: horizonte 3-4, não urgente. **Atualização 2026-09-14: primeira citação de imprensa PT verificável em 9 semanas de tentativas, ainda que não Tier-1.** A Marketeer construiu pelo menos dois artigos à volta do estudo próprio "mapa das empresas de Portugal" (marketeer.sapo.pt/as-marcas-portuguesas-que-a-ia-nomeia-e-as-que-realmente-recomenda/ e um segundo artigo relacionado), citando a distinção "nomeada" vs. "escolhida" (share of recommendation) por nome. Marketeer não é uma das seis publicações Tier-1 desta metodologia (essas continuam em zero), mas é prova real de que os estudos próprios geram cobertura de terceiros verificável. Data exata não confirmada de forma independente (a "3 de setembro" citada num commit interno não bate com o texto do artigo, que só situa o estudo subjacente em "final de agosto"). Ação recomendada: identificar 2-3 publicações adicionais de marketing/negócios para pitch direto usando os estudos como gancho, e confirmar a data exata da Marketeer.
 
 ## Items DONE (últimas 4 semanas, por rastreabilidade)
