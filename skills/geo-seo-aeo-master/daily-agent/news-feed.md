@@ -8,6 +8,24 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-26
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço; o topo de anthropic.com/news continua a 22 Out, sem modelos ([Anthropic](https://www.anthropic.com/news)). SEO/Google: o SE Roundtable relata volatilidade de rankings a 24 Out, provável ajuste, sem confirmação da Google nem leituras numéricas ([SE Roundtable](https://www.seroundtable.com/google-search-ranking-volatility-heated-42373.html), secundária). Nenhum gatilho dos watches disparou (o blogue do Bing continua em 16 Jun, sem API do AI Performance).
+
+Implicações: (1) Volatilidade: hoje, não atribuir quedas de clientes a GEO nem prometer causa; rever em 3 a 5 dias com Search Console antes de qualquer reunião.
+
+Passagem por motor feita (26 blocos, `meta:` atualizado). Segunda: passagem de cortes feita (gpt-5.6-luna, claude-sonnet-5, grok-4.3 reconfirmados sem alteração).
+
+## 2026-10-26
+
+### ⚙️ Mudanças nas plataformas
+- **Google: volatilidade de rankings a 24 Out**: SE Roundtable, 25 Out (https://www.seroundtable.com/google-search-ranking-volatility-heated-42373.html). Vários rastreadores (Mozcast, Semrush, Sistrix, AWR, entre outros) mostram movimento; sem números nem declaração da Google. Fonte secundária.
+
+### 💡 Implicações para destaque.ai
+- Volatilidade: awareness; rever clientes no Search Console em 3 a 5 dias antes de atribuir causa.
+
+- Watches: nenhum gatilho disparado (checkout in-chat UE, anúncios ChatGPT em PT, API Bing AI Performance). Segunda: passagem de cortes feita, sem alterações.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-25
 
 Sem novidades significativas hoje; corrida completa. O topo de anthropic.com/news continua a 22 Out, sem modelos nem preços ([Anthropic](https://www.anthropic.com/news)); o SE Roundtable não tem itens novos desde 23 Out ([SE Roundtable](https://www.seroundtable.com/), secundária). Nenhum gatilho dos watches disparou. Passagem por motor feita (26 blocos, `meta:` atualizado). Domingo: sem cortes nem drafts.
