@@ -179,6 +179,72 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-10-26 (todas as auditorias da semana: 16 marcas e radares setoriais)
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro e sem
+mock, de todas as auditorias das semanas de 19 e 26 Out. Entre 132 e 240
+respostas por motor. A comparação é entre as duas semanas inteiras, e o
+conjunto de marcas é quase o mesmo (14 a 16 por motor).
+
+### Densidade de fontes por resposta
+
+| Motor | 19 Out | 26 Out | Sem fonte nenhuma, 26 Out |
+|---|---|---|---|
+| Grok (aplicação) | 55,2 | 54,6 | 0 de 200 |
+| ChatGPT (aplicação) | 12,8 | 21,2 | 38 de 240 |
+| Perplexity (aplicação) | 13,7 | 13,0 | 0 de 210 |
+| Meta AI | 5,1 | 13,4 | 70 de 220 |
+| Claude (aplicação) | 8,9 | 11,7 | 53 de 220 |
+| AI Overviews | 6,9 | 6,8 | 42 de 198 |
+| Copilot | 5,7 | 5,2 | 23 de 132 |
+| AI Mode | 4,0 | 4,1 | 10 de 200 |
+| Gemini (aplicação) | 0,8 | 0,1 | 222 de 231 |
+
+**O número do Grok está inflacionado pela recolha, não pelo motor.** Os
+domínios `onetrust.com` e `cookiepedia.co.uk` aparecem em 200 das 200
+respostas desta semana (210 de 210 na anterior): são as ligações do aviso
+de cookies das páginas abertas, gravadas como fontes. Qualquer leitura de
+densidade ou de "lidas contra citadas" do Grok na aplicação tem de os
+excluir primeiro.
+
+**Gemini na aplicação: fontes visíveis em 9 de 231 respostas.** Era 63 de
+220 a 19 Out e 84 de 134 a 12 Out. Três semanas a cair com o mesmo volume
+de respostas é o padrão de um extrator que deixou de ver o bloco de
+fontes, mais do que de um motor que deixou de as mostrar. Fica como
+observação a confirmar no HTML guardado antes de entrar em qualquer
+conclusão sobre o Gemini.
+
+**Meta AI passa de 5 para 13 fontes por resposta**, com o mesmo número de
+respostas sem fonte (63 e 70). A subida concentra-se em plataformas: o
+`youtube.com` está em 76 de 220 respostas (28 na semana anterior), o
+`medium.com` em 55 (22) e o `github.com` em 37 (22).
+
+### Que tipo de fonte domina, por motor
+
+| Motor | Tipo dominante, 26 Out | Exemplos (respostas) |
+|---|---|---|
+| AI Overviews | UGC e vídeo | youtube.com 54, reddit.com 36, instagram.com 27, facebook.com 19 (de 198) |
+| Perplexity | fórum e comparadores de consumo | reddit.com 63, deco.proteste.pt 28, comparaja.pt 20, doutorfinancas.pt 16 (de 210) |
+| Claude | queixas e defesa do consumidor | portaldaqueixa.com 24, deco.proteste.pt 19, en.wikipedia.org 18 (de 220) |
+| Grok | perfis profissionais e imprensa económica | pt.linkedin.com 79, eco.sapo.pt 55, jornaleconomico.sapo.pt 40, marketeer.sapo.pt 34 (de 200) |
+| ChatGPT | sites de fornecedores e documentação | flowup.agency 27, google.com 23, site próprio do cliente 23, developers.google.com 22 (de 240) |
+| Meta AI | plataformas de vídeo e de programadores | youtube.com 76, medium.com 55, github.com 37 (de 220) |
+| AI Mode | comparadores e fórum | deco.proteste.pt 19, google.com 15, reddit.com 13 (de 200) |
+
+**Confirmações dos playbooks, segunda semana seguida:** o AI Overviews é o
+motor mais UGC (YouTube e Reddit no topo nas duas semanas); o Perplexity
+volta a ter o `reddit.com` como domínio mais citado (56 e 63); o Grok volta
+a ter o LinkedIn e a imprensa económica portuguesa no topo depois de
+excluído o aviso de cookies. São três padrões em duas semanas seguidas, e
+ficam como candidatos a promoção no próximo self-audit, depois de a semana
+de 2 Nov os repetir sem mudança de via.
+
+**Observação de uma semana só:** o Claude na aplicação sobe o
+`portaldaqueixa.com` de 17 para 24 respostas e passa a ter a Wikipédia
+inglesa no topo (18). Em perguntas de consumo, o Claude que o utilizador vê
+vai a sites de queixas antes de ir ao fornecedor.
+
+
 ## 2026-10-12 (três auditorias: consultoria B2B, formação e serviços de IT, retalho alimentar)
 
 Base: só respostas com pesquisa (`augmented`), analisadas, sem erro e sem
