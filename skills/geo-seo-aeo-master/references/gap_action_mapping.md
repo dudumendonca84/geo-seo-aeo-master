@@ -1649,12 +1649,12 @@ limiar_dentro: 50%
 
 | Ordem | Caminho | Quando | O que se aconselha |
 |---|---|---|---|
-| 1 | Está dentro | a marca é nomeada em pelo menos `limiar_dentro` dos motores medidos | manter as páginas que já são citadas e acompanhar |
+| 1 | Está dentro | a marca é nomeada em pelo menos `limiar_dentro` dos motores com resposta (um motor por ler conta como não) | manter as páginas que já são citadas e acompanhar |
 | 2 | Respondeu de memória | nenhum motor citou fonte nenhuma | nenhuma página muda isto a curto prazo; é a camada de entidade e de autoridade, em meses |
 | 3 | Reescrever página | uma página da marca é citada, mas a marca fica abaixo do limiar | reescrever essa página para responder à pergunta logo na abertura, com casos e números |
 | 4 | Entidade | a Wikipédia ou o Wikidata estão entre as fontes de terceiros | trabalhar a entidade: item no Wikidata com referências, e só depois a Wikipédia |
-| 5 | Comunidade | a fonte de terceiros mais citada é uma plataforma social (LinkedIn, YouTube, Reddit) | publicar nessa plataforma, na conta da marca, uma resposta direta à pergunta |
-| 6 | PR e listas | a fonte de terceiros mais citada é imprensa, um guia, uma lista ou um diretório | pedir a inclusão nessa página, com o dado que a sustenta |
+| 5 | Comunidade | a fonte de terceiros mais citada onde a marca ainda não está é uma plataforma social (LinkedIn, YouTube, Reddit) | publicar nessa plataforma, na conta da marca, uma resposta direta à pergunta |
+| 6 | PR e listas | a fonte de terceiros mais citada onde a marca ainda não está é imprensa, um guia, uma lista ou um diretório | pedir a inclusão nessa página, com o dado que a sustenta |
 | 7 | Falta página | só são citadas páginas de concorrentes, de outras marcas ou de referência | escrever a página da marca que responde a esta pergunta |
 
 **Fontes de referência** (documentação oficial, estudos, normas:
@@ -1674,6 +1674,12 @@ Duas regras que o código cumpre e que não se reaprendem à custa:
 - **Uma semana por ler não decide "Está dentro".** Enquanto nenhuma
   resposta da pergunta foi lida, o "citada em X de N" é por ler e o
   caminho sai só das fontes, a partir da regra 2.
+- **Uma resposta conta uma vez por domínio**, como nas Fontes: seis
+  ligações ao mesmo blogue numa resposta valem uma. "Mais citada" é a fonte
+  citada pelo maior número de respostas desta pergunta.
+- **Toda a outra marca da lista do cliente é "não é alvo"**, incluindo as
+  fichas `distractor` (outra empresa com nome parecido) e as desativadas
+  por fusão: continuam a ser o sítio de outra empresa.
 - **O limiar conta motores, não respostas.** Um motor com duas respostas
   na semana pesa o mesmo que um com uma: a pergunta é "quantos motores te
   põem nesta resposta", que é o que o cliente lê no "citada em X de N".
