@@ -376,6 +376,13 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 - §8.9: o pedido `generate_prompts` de um cliente novo traz `context.voz_do_cliente` (`autocompletar` e `autocompletar_categoria`: `[{ semente, sugestao }]`; `categoria: { termos, o_que_vende, local } | null`; `site: { endereco, titulo, descricao, subtitulos, texto } | null`; `nao_lidos`, `fora`), recolhida por `src/lib/voz-do-cliente/`. Cada pergunta devolve `voice_source` (texto curto), gravado em `tracker.prompts.voice_source` (migração 0161).
 - **As primeiras perguntas de um cliente novo são escritas pelo Tracker, não pela Routine** (`context.escrita_imediata`, `src/lib/primeiras-perguntas/escrever.ts`). O sistema são as secções `## 1. Princípios`, `## 2. Categorias` e `## 8. Descoberta de prompts por persona` de `prompts.md`, lidas pelo cabeçalho no início de linha; sem uma delas, o pedido segue para a Routine. Renomear um destes três cabeçalhos passa o onboarding inteiro para a Routine, sem erro. A resposta é `{"items": [...]}` com o contrato do §8.4, em lotes de até 30. Enquanto escreve, o Tracker reserva o pedido (`brain_jobs.status = 'processing'`, com `context.escrita_desde`); a Routine só lê `pending`, e o `POST /api/brain/jobs` devolve `reservado` sem tocar num pedido reservado. Quando a escrita falha, o pedido volta a `pending` e a Routine é acordada; uma reserva parada há mais de 30 minutos volta na exportação seguinte ou na passagem do ops-health.
 
+### Contrato 19: o caminho de cada pergunta (o ecrã Perguntas x fontes)
+
+**Producer:** `references/gap_action_mapping.md` § `## O caminho de cada pergunta (Perguntas x fontes)`. **Consumer:** `destaque-ai-tracker/src/lib/skill/caminhos.ts` e `src/lib/sources/perguntas-x-fontes.ts`.
+
+- A linha `limiar_dentro: N%` (no início de linha, dentro da secção) é lida por chave; aceita vírgula ou ponto decimal. Sem ela, ou sem a secção, vale o recurso do Tracker (50%) e o ecrã diz que a régua é a de recurso.
+- A ORDEM das regras está em código, pela ordem da tabela. Mudar a ordem ou acrescentar um caminho é trabalho no Tracker (o ecrã tem um rótulo e uma cor por caminho); mudar o limiar é só editar a linha.
+
 ---
 
 ## Frequência de atualização

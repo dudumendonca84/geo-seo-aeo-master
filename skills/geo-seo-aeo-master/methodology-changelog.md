@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-10-26: O caminho de cada pergunta (Perguntas x fontes)
+
+- **Trigger:** o founder pediu o ecrã Perguntas x fontes em todos os planos, a partir do desenho aprovado no Claude Design (lista das perguntas com as fontes que os motores citam e um caminho por pergunta).
+- **O que muda:** `references/gap_action_mapping.md` ganha a secção `## O caminho de cada pergunta (Perguntas x fontes)`: sete caminhos por ordem (de memória, está dentro, reescrever página, entidade, comunidade, PR e listas, falta página) e o limiar `limiar_dentro: 50%`, lido pelo Tracker (contrato 19 do INTERFACES.md).
+- **Regras escritas com ele:** uma página de concorrente ou de outra marca nunca é alvo; "a marca está lá?" é Sim só com prova, e sem ler a página é Por ler, nunca Não.
+
+---
+
 ## 2026-10-06: Sentimento positivo exige uma frase favorável citável, e já não uma recomendação
 
 **Trigger.** Decisão do founder a 6 Out 2026 ("b"), depois da comparação em sombra entre a Routine e o Jev (TypeSafe) nas semanas de 28 Set e 5 Out: a maior divergência no sentimento eram respostas que descrevem a marca com uma frase favorável sem a recomendar (117 na semana de 28 Set, 55 só no Continente na de 5 Out). A Routine marcava-as `neutral`, o Jev `positive`, e a skill não tinha regra para o positivo.

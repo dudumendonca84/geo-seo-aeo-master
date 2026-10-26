@@ -1630,6 +1630,56 @@ história à volta de dois casos.
 
 ---
 
+## O caminho de cada pergunta (Perguntas x fontes)
+
+Escrito a 26 Out 2026, para o ecrã **Perguntas x fontes** do Tracker
+(founder: "todos" os planos). Para cada pergunta, no modo com pesquisa, o
+ecrã mostra de onde vem a resposta (os domínios que os motores citaram) e
+UM caminho para a marca entrar nela. **A contagem está em código; a régua
+está aqui.** O código lê o limiar desta secção em runtime e aplica as
+regras pela ordem da tabela: a primeira que casar decide.
+
+O tipo de cada domínio não se adivinha: vem da lista de concorrentes do
+cliente (o `bucket`), do domínio do próprio cliente e da taxonomia
+estrutural (plataformas sociais, Wikipédia e Wikidata). Uma página de
+concorrente ou de outra marca **nunca é alvo**: pedir espaço a um rival é
+o erro que o primeiro desenho deste ecrã cometeu com a aiso-hub.com.
+
+limiar_dentro: 50%
+
+| Ordem | Caminho | Quando | O que se aconselha |
+|---|---|---|---|
+| 1 | Está dentro | a marca é nomeada em pelo menos `limiar_dentro` dos motores medidos | manter as páginas que já são citadas e acompanhar |
+| 2 | Respondeu de memória | nenhum motor citou fonte nenhuma | nenhuma página muda isto a curto prazo; é a camada de entidade e de autoridade, em meses |
+| 3 | Reescrever página | uma página da marca é citada, mas a marca fica abaixo do limiar | reescrever essa página para responder à pergunta logo na abertura, com casos e números |
+| 4 | Entidade | a Wikipédia ou o Wikidata estão entre as fontes de terceiros | trabalhar a entidade: item no Wikidata com referências, e só depois a Wikipédia |
+| 5 | Comunidade | a fonte de terceiros mais citada é uma plataforma social (LinkedIn, YouTube, Reddit) | publicar nessa plataforma, na conta da marca, uma resposta direta à pergunta |
+| 6 | PR e listas | a fonte de terceiros mais citada é imprensa, um guia, uma lista ou um diretório | pedir a inclusão nessa página, com o dado que a sustenta |
+| 7 | Falta página | só são citadas páginas de concorrentes, de outras marcas ou de referência | escrever a página da marca que responde a esta pergunta |
+
+**Fontes de referência** (documentação oficial, estudos, normas:
+`developers.google.com`, Search Central, `schema.org`, `arxiv.org`,
+domínios `.edu` e `.gov`) não são alvo de PR: ninguém pede a inclusão na
+documentação da Google nem num artigo científico. São a base sobre a qual
+a página da marca se escreve, e por isso não contam para as regras 5 e 6.
+Visto nos dados reais da destaque.ai a 26 Out 2026: sem esta regra, as
+perguntas informativas saíam com "pedir a inclusão em developers.google.com".
+
+Duas regras que o código cumpre e que não se reaprendem à custa:
+
+- **"A marca está lá?" é Sim só com prova.** A página é da marca, ou o
+  endereço citado é sobre a marca. Sem ler a página, a resposta é **Por
+  ler**, nunca Não: dizer a um cliente que não está numa lista onde está
+  manda-o pedir o que já tem (lição 46 do Tracker).
+- **Uma semana por ler não decide "Está dentro".** Enquanto nenhuma
+  resposta da pergunta foi lida, o "citada em X de N" é por ler e o
+  caminho sai só das fontes, a partir da regra 2.
+- **O limiar conta motores, não respostas.** Um motor com duas respostas
+  na semana pesa o mesmo que um com uma: a pergunta é "quantos motores te
+  põem nesta resposta", que é o que o cliente lê no "citada em X de N".
+
+---
+
 ## Patterns transversais (cross-dimensional)
 
 ### Pattern: Citation rate <10% em todos os motores
