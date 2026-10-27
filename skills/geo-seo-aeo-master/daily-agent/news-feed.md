@@ -8,6 +8,25 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-27
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço; o único item novo em anthropic.com/news é o pedido de S-1 à SEC (26 Out), sem relação com modelos ou preços ([Anthropic](https://www.anthropic.com/news)). GEO/SEO: sem itens novos confirmados; a pesquisa por atualizações do Google a 26 Out não devolveu nada. Um relato secundário (FullPress) diz que o Ads Manager do ChatGPT em self-service já inclui Portugal; não verificado (fonte e OpenAI com 403 nesta sessão). Nenhum outro gatilho dos watches disparou.
+
+Implicações: (1) Ads Manager PT: quarta de manhã, alguém com conta tenta o fluxo real até ao fim [verificar de primeira mão] antes de dizer a clientes que está aberto. Passagem por motor feita (26 blocos, `meta:` atualizado).
+
+## 2026-10-27
+
+### 🔵 Anúncios oficiais
+- **Anthropic files S-1 with the SEC for proposed initial public offering**: anthropic.com/news (26 Out) (https://www.anthropic.com/news). Anúncio corporativo; sem modelos nem preços.
+
+### ⚙️ Mudanças nas plataformas
+- **ChatGPT Ads: self-service em Portugal (por confirmar)** `[verificar de primeira mão]`: FullPress (secundária) afirma que a página oficial de disponibilidade do Ads Manager lista Portugal; sem data e sem confirmação primária (openai.com devolveu 403). Contradiz a parede registada a 20 Ago ("ainda não está disponível no seu país") só se for confirmado.
+
+### 💡 Implicações para destaque.ai
+- Ads Manager PT: se confirmado, abre o serviço de AI ads em PT. Quarta de manhã, percorrer o fluxo real e registar a mensagem exata; só então atualizar ai_ads.md e publicar.
+
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance). Terça: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-26
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço; o topo de anthropic.com/news continua a 22 Out, sem modelos ([Anthropic](https://www.anthropic.com/news)). SEO/Google: o SE Roundtable relata volatilidade de rankings a 24 Out, provável ajuste, sem confirmação da Google nem leituras numéricas ([SE Roundtable](https://www.seroundtable.com/google-search-ranking-volatility-heated-42373.html), secundária). Nenhum gatilho dos watches disparou (o blogue do Bing continua em 16 Jun, sem API do AI Performance).
