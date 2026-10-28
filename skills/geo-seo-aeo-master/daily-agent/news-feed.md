@@ -8,6 +8,27 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-28
+
+Radar LLM/IA: sem modelos novos; preço: a Anthropic anunciou um acordo com a GSA dos EUA com 40% de desconto em Claude Enterprise, Claude for Government e API para organismos públicos, sem efeito no preço de tabela nem em PT ([Anthropic](https://www.anthropic.com/news)). GEO/SEO: nada de novo confirmado; a pesquisa devolveu só conteúdo antigo. Pesquisa secundária repete que o Ads Manager do ChatGPT lista Portugal, ainda sem verificação de primeira mão.
+
+Implicações: (1) Ads Manager PT: hoje, alguém com conta percorre o fluxo até ao fim e regista a mensagem exata [verificar de primeira mão]; só depois se atualiza ai_ads.md. Passagem por motor feita (26 blocos, `meta:` atualizado).
+
+## 2026-10-28
+
+### 🔵 Anúncios oficiais
+- **Expanding our partnership with GSA to bring Claude to all levels of government**: anthropic.com/news (27 Out) (https://www.anthropic.com/news). Novo acordo com 40% de desconto em Claude Enterprise, Claude for Government e API para parceiros governamentais; condição comercial setorial, sem mudança de preço de tabela.
+- **Donating Agent Skills to the Agentic AI Foundation**: anthropic.com/news (22 Out) (https://www.anthropic.com/news). Standard aberto de Agent Skills doado à fundação; mais de 70 plataformas de agentes integradas desde Dez 2025.
+
+### ⚙️ Mudanças nas plataformas
+- **ChatGPT Ads: Portugal na lista de self-service (ainda por confirmar)** `[verificar de primeira mão]`: FullPress (https://www.fullpress.it/?p=154220, secundária) e um resumo da página de disponibilidade da OpenAI indicam Portugal entre os mercados com Ads Manager; fontes divergem entre 24 e 31 Ago como data de abertura. Sem leitura direta da página nesta corrida.
+
+### 💡 Implicações para destaque.ai
+- Ads Manager PT: se a abertura se confirmar, o serviço de AI ads em PT passa a vendável. Hoje, percorrer o fluxo real e citar a mensagem exata; publicar só depois.
+- Agent Skills como standard aberto: awareness; reforça publicar conteúdo e documentação legíveis por agentes. Sem ação esta semana.
+
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance). Quarta: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-27
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço; o único item novo em anthropic.com/news é o pedido de S-1 à SEC (26 Out), sem relação com modelos ou preços ([Anthropic](https://www.anthropic.com/news)). GEO/SEO: sem itens novos confirmados; a pesquisa por atualizações do Google a 26 Out não devolveu nada. Um relato secundário (FullPress) diz que o Ads Manager do ChatGPT em self-service já inclui Portugal; não verificado (fonte e OpenAI com 403 nesta sessão). Nenhum outro gatilho dos watches disparou.
