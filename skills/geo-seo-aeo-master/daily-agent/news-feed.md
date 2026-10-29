@@ -8,6 +8,22 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-29
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news tem dois posts novos (27 e 28 Out) sobre ciência e desenvolvimento de fármacos, sem relação com modelos ou preços ([Anthropic](https://www.anthropic.com/news)). SEO/Google: o blogue do Search Central não tem nada novo além de percursos de aprendizagem em YouTube ([Google](https://developers.google.com/search/blog)). A pesquisa não devolveu nada de novo sobre Ads Manager do ChatGPT em PT.
+
+Implicações: (1) Ads Manager PT: hoje, alguém com conta percorre o fluxo até ao fim e regista a mensagem exata [verificar de primeira mão]; é o único item pendente com impacto comercial. Passagem por motor feita (26 blocos, `meta:` atualizado). Quinta: sem passagem de cortes.
+
+## 2026-10-29
+
+### 🔵 Anúncios oficiais
+- **AI for Science expands to foundations and research institutions** (28 Out) e **Early progress on accelerating drug development with Claude** (27 Out): anthropic.com/news (https://www.anthropic.com/news). Programas setoriais de ciência; sem modelos, preços de tabela nem política de crawling.
+
+### 💡 Implicações para destaque.ai
+- Ads Manager PT continua por verificar de primeira mão (fontes secundárias de Ago dizem self-service "mais tarde este trimestre"). Jogada: hoje, percorrer o fluxo com conta real e citar a mensagem exata antes de qualquer pitch.
+
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance). Quinta: sem passagem de cortes.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-28
 
 Radar LLM/IA: sem modelos novos; preço: a Anthropic anunciou um acordo com a GSA dos EUA com 40% de desconto em Claude Enterprise, Claude for Government e API para organismos públicos, sem efeito no preço de tabela nem em PT ([Anthropic](https://www.anthropic.com/news)). GEO/SEO: nada de novo confirmado; a pesquisa devolveu só conteúdo antigo. Pesquisa secundária repete que o Ads Manager do ChatGPT lista Portugal, ainda sem verificação de primeira mão.
