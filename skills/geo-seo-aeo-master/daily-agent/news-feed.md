@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-30
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news não tem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)). SEO/Google: o blogue do Search Central só mostra o post de percursos de aprendizagem em YouTube, sem data de dia ([Google](https://developers.google.com/search/blog)). A página de ajuda da OpenAI sobre o Ads Manager continua a devolver 403; nada novo verificado sobre Portugal.
+
+Implicações: (1) hoje os "creative enhancements" por defeito nos anúncios do ChatGPT passam a valer (anunciados a 20 Out, secundária); jogada: segunda de manhã, confirmar no Ads Manager de uma conta real onde fica o opt-out. (2) Ads Manager PT: continua por verificar de primeira mão [verificar de primeira mão]. Passagem por motor feita (26 blocos, `meta:` atualizado). Sexta: drafts semanais gerados.
+
+## 2026-10-30
+
+### 🔵 Anúncios oficiais
+- Sem novidades significativas hoje. anthropic.com/news sem posts após 28 Out (https://www.anthropic.com/news); Search Central sem novidades datadas (https://developers.google.com/search/blog).
+
+### 💡 Implicações para destaque.ai
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance). Ads Manager PT segue por verificar de primeira mão; fontes primárias da OpenAI com 403. Sexta: sem passagem de cortes (só segundas).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-29
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news tem dois posts novos (27 e 28 Out) sobre ciência e desenvolvimento de fármacos, sem relação com modelos ou preços ([Anthropic](https://www.anthropic.com/news)). SEO/Google: o blogue do Search Central não tem nada novo além de percursos de aprendizagem em YouTube ([Google](https://developers.google.com/search/blog)). A pesquisa não devolveu nada de novo sobre Ads Manager do ChatGPT em PT.
