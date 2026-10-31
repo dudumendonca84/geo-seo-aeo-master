@@ -321,7 +321,7 @@ consegues estimar honestamente.
 
 ### 8.4 Contrato por prompt
 
-`{ prompt_text, category, intent_stage, topic, branded, persona, persona_context, persona_followup, interest, voice_source }` (`voice_source` só quando a pergunta veio da voz do cliente, §8.9)
+`{ prompt_text, category, intent_stage, topic, branded, persona, persona_context, persona_followup, interest, voice_source, rationale }` (`voice_source` só quando a pergunta veio da voz do cliente, §8.9; `rationale` sempre)
 
 - `prompt_text` - **pergunta natural** (§ 1 e § 4 regra). Nunca keyword.
 - **A língua da pergunta, quando os campos divergem**: `prompt_language` quando
@@ -339,6 +339,26 @@ consegues estimar honestamente.
   (§8.7). O seguimento é a segunda pergunta natural daquela pessoa depois de
   ouvir a primeira resposta, e não uma variação dela ("E desses, qual sai
   mais barato a três anos?"). Até 600 caracteres cada, na língua do mercado.
+- `rationale` escreve-se SEMPRE, em todas as perguntas [2026-10-31]. É o
+  racional de quem escreveu a pergunta, e o cliente lê-o no Tracker, na
+  gaveta "Porque esta pergunta", no passo "Escolhemos". Duas ou três frases,
+  em português de Portugal, a tratar o cliente por você:
+  1. quem faz esta pergunta e o que quer resolver, com o que se sabe da
+     categoria e da persona;
+  2. porque é que este momento pesa para esta marca: o que o assistente
+     decide aqui (que lista forma, que marca põe à frente, que critério usa);
+  3. o que a resposta vai mostrar sobre a marca face aos concorrentes que
+     disputam esta resposta.
+  Específico à marca, à categoria e à fase: uma frase que serviria a
+  qualquer pergunta não é um racional e volta para trás. Nunca um número
+  que não esteja nos dados recebidos, nunca uma promessa de resultado, sem
+  travessões, sem nomear modelos nem a maquinaria interna. Até 600
+  caracteres. Exemplo (oficina, comparação direta, branded): "Quem já
+  decidiu fazer a revisão fora do concessionário compara as redes que
+  conhece pelo preço e pela garantia. É aqui que o assistente põe a MyForce
+  ao lado da Norauto e diz qual compensa. A resposta mostra se a MyForce
+  entra nessa comparação como opção mais barata ou como a alternativa
+  menos conhecida."
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
   palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
   isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
