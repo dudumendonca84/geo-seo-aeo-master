@@ -8,6 +8,15 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-31
+
+Sem novidades significativas hoje; corrida completa. A pesquisa não devolveu anúncios datados de 30 ou 31 Out da Google, OpenAI ou Perplexity, nem modelos novos ou mudanças de preço de tabela (só agregadores sem fonte primária). Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real até ao fim e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos, `meta:` atualizado).
+
+## 2026-10-31
+
+### 💡 Implicações para destaque.ai
+- Sem novidades significativas hoje. Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance). Sábado: sem passagem de cortes (só segundas) nem drafts (só sextas).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-30
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news não tem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)). SEO/Google: o blogue do Search Central só mostra o post de percursos de aprendizagem em YouTube, sem data de dia ([Google](https://developers.google.com/search/blog)). A página de ajuda da OpenAI sobre o Ads Manager continua a devolver 403; nada novo verificado sobre Portugal.
