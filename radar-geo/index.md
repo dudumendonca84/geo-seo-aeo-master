@@ -15,3 +15,4 @@ produzido pela destaque.ai a partir da monitorização semanal de mercado
 | Julho 2026 | [radar-geo/2026-07.md](./2026-07.md) |
 | Agosto 2026 | [radar-geo/2026-08.md](./2026-08.md) |
 | Setembro 2026 | [radar-geo/2026-09.md](./2026-09.md) |
+| Outubro 2026 | [radar-geo/2026-10.md](./2026-10.md) |
