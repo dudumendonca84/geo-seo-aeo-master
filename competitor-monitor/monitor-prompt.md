@@ -151,7 +151,9 @@ Cria um ficheiro novo: `competitor-monitor/reports/YYYY-MM-DD.md` com este templ
 
 ## Sinais para a destaque.ai
 - 2-3 observações accionáveis. O que é que isto sugere para o pitch, pricing,
-  ou content da destaque.ai esta semana? Tom sóbrio, sem hype.
+  ou content da destaque.ai esta semana? Tom sóbrio, sem hype. Escritas em
+  português corrente, sem abreviaturas internas (ver "Escrever para quem lê
+  o ecrã", abaixo).
 
 ## Tracker market data
 | Marca | Site | Preço de entrada | Movimento | Preço mudou |
@@ -172,10 +174,39 @@ continua a ser prosa). Vive no ecrã Mercado GEO, só para operadores. Regras:
 - **`Preço de entrada`**: o preço público mais baixo, como aparece na Dimensão
   4 (moeda incluída). `—` quando é "sob pedido" ou não se encontrou.
 - **`Movimento`**: uma frase, só o que é novo esta semana. `—` quando não há.
+  Sem abreviaturas internas (ver abaixo).
 - **`Preço mudou`**: `sim` só quando o preço público mudou face à semana
   anterior ou apareceu um tier novo; `não` em tudo o resto, incluindo um
   preço visto pela primeira vez.
 - A destaque.ai pode ter linha quando há movimento dela.
+
+### Escrever para quem lê o ecrã (1 Nov 2026)
+
+O founder abriu o Mercado GEO e respondeu *"entendi nada aqui"*: a tabela
+dizia "Perfil na Sortlist continua a sustentar P2 pos 1", "Lidera P4 pela 3.ª
+semana" e "a partir de €2.000 (snippet, por confirmar)". As secções
+`## Sinais para a destaque.ai` e `## Tracker market data` aparecem no ecrã
+tal como são escritas, e por isso escrevem-se para quem não conhece a
+rotina:
+
+- **Nunca o número da pergunta** (P1 a P5, "Prompt 2"): escreve-se a
+  pergunta, entre aspas e encurtada se for preciso. Não "P2", mas
+  "agências de GEO em Portugal".
+- **Nunca "pos N"**: escreve-se o lugar e o motor. Não "P2 pos 1", mas "1.º
+  lugar no Claude em 'agências de GEO em Portugal'".
+- **A origem de um preço diz-se por extenso**: não "(snippet, por
+  confirmar)", mas "(lido no resultado do Google, sem abrir o site)". Um
+  preço lido na página do concorrente não leva nota.
+- Exemplos, com os dados de 27 Out 2026:
+  - "1.º lugar no Claude em 'agências de GEO em Portugal', pelo perfil na
+    Sortlist (4.ª semana)"
+  - "1.º lugar no Claude em 'consultoria AI search / AEO em Portugal' pela 4.ª
+    semana"
+  - "a partir de €2.000 (lido no resultado do Google, sem abrir o site)"
+
+As secções de detalhe (Share of Voice, detalhe por pergunta) podem continuar
+a usar os números das perguntas: são de trabalho, e o cabeçalho de cada
+sub-secção já tem a pergunta por extenso.
 - Semana sem preços nem movimentos: a secção fica com o cabeçalho da tabela e
   nenhuma linha. **Não se apaga a secção**: sem ela o Tracker mostra o report
   em prosa e diz que falta o bloco.
