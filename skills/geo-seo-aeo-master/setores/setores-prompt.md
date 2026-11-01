@@ -52,8 +52,67 @@ Portugal, com ligação para a entrada.
   `## Calendário`.
 - Se encontrares uma fonte boa que não estava na lista, acrescenta-a a
   `## Fontes a vigiar`.
-- Semana sem nada que cumpra as regras: não escrevas nada nesse setor.
-  Um ficheiro parado é melhor do que um ficheiro com ruído.
+- Semana sem nada que cumpra as regras: não acrescentes tendências nesse
+  setor. Um ficheiro parado é melhor do que um ficheiro com ruído. Mas a
+  semana vazia tem de ficar PROVADA no registo (ver "O registo de cada
+  corrida", abaixo).
+
+## Um setor vazio preenche-se primeiro (1 Nov 2026)
+
+Em duas corridas (18 e 25 Out) só o setor `geo` mudou. Os três setores dos
+clientes (`formacao-it`, `outsourcing-it`, `software-rh`) continuaram com
+"Por preencher" e zero tendências, e a corrida de 25 Out durou 72 segundos.
+O agente do painel e o Estúdio desses clientes nunca tiveram uma linha do
+setor. O founder: *"estranho, garanta isso"*.
+
+Por isso, antes das tendências da semana:
+
+- **`## O que se sabe do setor` com "Por preencher" é trabalho desta
+  corrida, e não fica para a seguinte.** Escreve entre 6 e 12 factos
+  duráveis sobre o setor EM PORTUGAL: quem são os grandes, a estrutura do
+  mercado, como o comprador decide, os preços de referência, o regulador
+  e as certificações, o vocabulário próprio. Cada linha com a fonte e a
+  data em que a leste. A regra de "nada sem fonte primária" vale igual: um
+  setor com poucas fontes fica com poucos factos, mas não fica vazio por
+  falta de procura.
+- **`## Tendências` vazia procura nos últimos 90 dias, e não só nos 7.**
+  Numa semana normal são 7 dias; num setor que nunca teve entradas, o que
+  aconteceu nos últimos três meses é o que falta saber.
+- **`## Calendário` com "Por preencher"** recebe o que se repete todos os
+  anos nesse setor (picos de procura, prazos, campanhas), com a fonte.
+
+## O mínimo de procura por setor
+
+Para cada setor que não seja o `geo`, no mínimo:
+
+1. Abrir cada fonte de `## Fontes a vigiar` (a página de notícias ou de
+   comunicados) e ler o que tem dos últimos 7 dias (90 se o setor estiver
+   vazio).
+2. Três pesquisas na web com o nome do setor, "Portugal" e o período, em
+   português, variando os termos (exemplo para `formacao-it`: "formação
+   certificação IT Portugal", "exames Microsoft alterações 2026", "IEFP
+   formação digital").
+3. Uma pesquisa por marca grande do setor que já esteja em "O que se sabe".
+
+Não há tecto de tempo: um setor bem lido demora vários minutos. Uma
+corrida que acaba em um minuto com quatro setores não leu os setores.
+
+## O registo de cada corrida
+
+No fim, acrescenta no TOPO de `setores/execucoes.md` (cria-o se não
+existir) uma secção da corrida:
+
+```
+## AAAA-MM-DD
+| Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
+|---|---|---|---|---|
+| formacao-it | 4 | 5 | 3 tendências, 8 factos | 2 notícias sem fonte primária |
+```
+
+As pesquisas escrevem-se por extenso por baixo da tabela, uma linha por
+setor. "0 entradas" sem pesquisas registadas não é uma semana vazia: é uma
+corrida que não aconteceu. É este ficheiro que o Tracker lê para acusar um
+setor parado.
 
 Regras da casa: português de Portugal com o Acordo de 1990, sem
 travessões, sem as duas palavras que o founder recusou (ponto 11 dos
@@ -62,6 +121,6 @@ fonte, e nada inventado. Se não confirmaste na fonte primária, não entra.
 
 ## No fim
 
-Um resumo curto na resposta: por setor, quantas entradas novas e a mais
-importante. Depois commit e push para `main` com a mensagem
+Um resumo curto na resposta: por setor, quantas entradas novas, a mais
+importante, e confirma que `setores/execucoes.md` tem a linha da corrida. Depois commit e push para `main` com a mensagem
 `setores: semana de AAAA-MM-DD`.
