@@ -8,6 +8,14 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-01
+
+Sem novidades significativas hoje; corrida completa. anthropic.com/news não tem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o arquivo do Search Central não mostra posts novos de Nov ([Google](https://developers.google.com/search/blog)); a pesquisa geral não devolveu anúncios datados de 1 Nov. Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real até ao fim e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos, `meta:` atualizado).
+
+## 2026-11-01
+
+Sem novidades significativas hoje. Domingo: sem passagem de cortes (só segundas) nem drafts (só sextas). Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-10-31
 
 Sem novidades significativas hoje; corrida completa. A pesquisa não devolveu anúncios datados de 30 ou 31 Out da Google, OpenAI ou Perplexity, nem modelos novos ou mudanças de preço de tabela (só agregadores sem fonte primária). Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real até ao fim e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos, `meta:` atualizado).
