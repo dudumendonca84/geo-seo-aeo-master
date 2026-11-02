@@ -8,6 +8,19 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-02
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news sem posts de modelos após 28 Out ([Anthropic](https://www.anthropic.com/news)). SEO/Google: a Google, Bing, OpenAI e Anthropic anunciaram a 30 Out a intenção de suportar um sinal partilhado de preferência de treino de IA no robots.txt, a Google para início de 2027 ([Search Engine Roundtable](https://seroundtable.com/google-ai-training-control-42430.html)). Implicação: sem ação técnica agora; na próxima revisão de robots.txt de clientes, anotar a política de treino por fornecedor e rever quando os tokens forem suportados (prazo: T1 2027). Anúncios ChatGPT em PT: continua por verificar de primeira mão; jogada: hoje, percorrer o Ads Manager com conta real e registar a mensagem exata [verificar de primeira mão]. Passagem por motor feita (26 blocos). Passagem de cortes feita (gpt-5.6-luna, sonnet-5, grok-4.3 reconfirmados sem alteração).
+
+## 2026-11-02
+
+### ⚙️ Mudanças nas plataformas
+- **Sinal partilhado de preferência de treino de IA (IETF AIPREF)**: [Search Engine Roundtable, 30 Out](https://seroundtable.com/google-ai-training-control-42430.html) (secundária; cita a documentação de crawlers da Google, post original do Search Central não lido). Google pretende declarar a preferência de treino uma só vez no robots.txt (`user-agent: __usage_ai-training`), para início de 2027; Bing, OpenAI ([resumo](https://rohitai.com/blog/openai-shared-website-ai-training-preferences), "nos próximos meses") e Anthropic anunciaram intenção semelhante. Rascunho individual do IETF, não norma; só treino, sem efeito no acesso de pesquisa nem no AI Overviews. Absorvido em frameworks.md §2.
+
+### 💡 Implicações para destaque.ai
+- Só awareness: sem mudança de pitch. Jogada: acrescentar ao checklist de robots.txt dos clientes uma linha "política de treino por fornecedor, rever quando o token partilhado for suportado" na próxima auditoria, e voltar a verificar em Jan 2027.
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance). Segunda: passagem de cortes feita sem alterações.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-01
 
 Sem novidades significativas hoje; corrida completa. anthropic.com/news não tem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o arquivo do Search Central não mostra posts novos de Nov ([Google](https://developers.google.com/search/blog)); a pesquisa geral não devolveu anúncios datados de 1 Nov. Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real até ao fim e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos, `meta:` atualizado).
