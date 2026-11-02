@@ -148,6 +148,29 @@ measure ten engines"; they buy buyers, sales, revenue. Features are the
 evidence, never the headline: "each AI answer is a sale being decided"
 is the register.
 
+**Demo parity rule (founder, 2 Nov 2026: *"sempre que altere algo,
+assim como os preços, ou funcionalidades novas do site, a skill também
+diga que tem que refazer a demo"*).** The demo is part of the product, and
+a change is not DONE until the demo says what the product now does. "The
+demo" is three things: the guided tour (`visita`, one stage per step,
+`destaque-ai-tracker/src/lib/visita/passos.ts`), the demo account
+(`clients.is_demo`, today Adidas) and the same tour run on a prospect's
+account. Any of these triggers a demo update in the same piece of work:
+
+- a new screen, capability or data layer in the Tracker (the tour gains a
+  step and a stage, or the existing stage says it);
+- a price, plan or included-feature change (the tour and the demo account
+  show the plan as it is sold now, never the old one);
+- a new feature announced on the site (what the site promises, the tour
+  shows);
+- a screen renamed, merged or removed (its step follows it).
+
+A new stage follows the existing stage pattern and goes through Claude
+Design first, like any other client-facing change. It must also work on a
+prospect account (one week, about 15 questions, no history): the stage
+shows what that account has, or the tour skips the step, never sample
+data in place of the real data.
+
 **Selling with market numbers (founder, 23 Aug 2026: loosened on his
 order).** Money numbers LEAD. A market benchmark can be the headline of
 a page, a deck slide or a pitch ("visitors from AI convert ~1.2x above
