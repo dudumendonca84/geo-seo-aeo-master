@@ -11,6 +11,41 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-11-02: Décima quinta execução (vs. 26 out; oitava semana consecutiva sem hiato)
+
+**Score global:** 73,5/100 (74 arredondado). **Δ vs. 26 out: +0,8.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 89 | 0 |
+| Performance / CWV | 65 | 0 |
+| SEO On-Page | 95 | 0 |
+| Schema | 92 | 0 |
+| Imagens | 76 | 0 |
+| GEO técnica | 93 | 0 |
+| Conteúdo & topical authority | 97 | 0 |
+| Entidade | 79 | +1 |
+| Autoridade & PR | 52 | +6 |
+| Social | 37 | 0 |
+| E-E-A-T | 71 | 0 |
+| Medição | 36 | +2 |
+
+**Items movidos para DONE:** 0. **Candidatos por confirmar:** Anthropic sem saldo (sem erro na janela de 26 out a 2 nov; última leitura 26 out 07:14 UTC; ausência não é prova); Stripe webhook (ausente).
+
+**Items novos:** 3: STRATEGIC P1 (Bluesoft, revaliQ e AppLabx fora do peer set), ENTITY P1 (dependência de Clutch e Sortlist como únicas fontes das menções), MEASUREMENT P3 (Supabase Auth 429 em `/middleware`). **Reconfirmado:** MEASUREMENT DataForSEO/SerpApi (2.ª semana, P1), Gemini e DeepSeek (últimas 29 out), `/radar` fora do sitemap e do `llms.txt` (3.ª semana), BACKLINKS (verificação das peças, agora com quatro novas).
+
+**Mudanças materiais:**
+- Prompt-test (32 prompts + LR1, LR2 + entidade + imprensa, proxy `WebSearch`): destaque.ai na síntese em 9/32 (28%), contra 3/32; fixos 8/22 (36%), contra 3/22. GD3-8 6/8 (era 2/8). Origem passa a ser sobretudo o perfil Clutch; Sortlist em GD5, GD8, V2. GP1-9 0/9. GD1 ausente. Possível ruído do proxy; confirmar na semana seguinte.
+- Sem menção negativa ou alucinada; reservas factuais ("fundada em 2025", "estrutura pequena"). Protocolo de crise não accionado.
+- Site: TTFB mediana 241 → 353 ms (primeiras corridas com ligação fria; quentes 161-216 ms); HTML 153.412 → 153.235 B; sitemap 135; `llms.txt` inalterado; 8 deploys `READY` (#220–#227); `/imprensa` com Observador, Cidade FM, M80 e Smooth FM (declarado, não verificado na origem).
+- Medição: DataForSEO e SerpApi ainda sem pesquisas a 2 nov; Mistral 429; Supabase Auth 429 isolado.
+- models.md: refresh tentado (14 dias), sem alteração de linhas; news-feed sem modelos novos nem mudanças de preço Tier 1.
+- Não verificável: PSI (429), Wikidata (429 na API), Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-10-26: Décima quarta execução (vs. 19 out; sétima semana consecutiva sem hiato)
 
 **Score global:** 72,8/100 (73 arredondado). **Δ vs. 19 out: +0,5.**
