@@ -48,7 +48,37 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem hiato. P0 Anthropic na 4ª semana com registo (26 out); Gemini, DeepSeek e SerpApi/DataForSEO sem saldo no mesmo lote; BACKLINKS recebe a primeira cobertura de agência (Lusa, Público, 22-24 out, por verificar); três items novos; `Organization.description` parcialmente corrigida. Anteriormente, 19 outubro 2026: décima terceira execução, sexta consecutiva sem hiato. P0 Anthropic repetiu-se pela terceira vez (16 e 19 out); DataForSEO sem pesquisas (item de 3 ago actualizado); dois items novos (`/radar` fora do sitemap/llms.txt; lacunas de conteúdo PT-PT de 19 out); sem items movidos para DONE. Anteriormente, 12 outubro 2026: décima segunda execução, quinta consecutiva sem hiato. P0 Anthropic repetiu-se (12 out), novos P1 Perplexity 402 e P2 entidade/conteúdo; sem items movidos para DONE esta semana. Anteriormente, 28 setembro 2026: décima execução do Routine, terceira semana consecutiva sem hiato, critério de verificação do item PROCESS cumprido, ver DONE abaixo. `curl` de saída funcionou pela primeira vez em 15 semanas, permitindo TTFB real, fetch directo e a maior amostra de teste multi-motor desta série (32 prompts, 5 sub-agentes). Dois achados novos de alto volume no Tracker: erro de autenticação (`Invalid Refresh Token`, 614 ocorrências, 7 utilizadores) e falha de checkout Stripe (`tax_code` em falta, bloqueia venda do plano Pro/mês). O item Gemini, fechado DONE há uma semana com reserva explícita, **reabre**: crédito esgotou-se de novo em 24 set. O mistério do Wikidata está resolvido: o QID Q140043087 confirmado inexistente (404 directo), não há nada para repor, só para construir de raiz. Teste multi-motor completo (pela primeira vez desde 13 jul) revela 0/6 nos prompts de alto intent (GP1-6) e um 5º eixo de colisão do acrónimo "GEO" em V3. SEO Alive classificado formalmente. Ver `audit-baseline.md` 28 set para o detalhe completo.)_
+_(Atualizado 2 novembro 2026: décima quinta execução, oitava consecutiva sem hiato. Nenhum item para DONE. Anthropic (P0) sem erro de saldo na janela de 26 out a 2 nov: por confirmar, não DONE. DataForSEO/SerpApi persistem (2.ª semana). Três itens novos: Bluesoft/revaliQ/AppLabx no peer set, dependência de Clutch e Sortlist, Supabase Auth 429. Visibilidade em respostas de IA sobe para 9/32 (era 3/32), via Clutch; confirmar na semana seguinte.)_
+
+### 2026-11-02 added: STRATEGIC: Bluesoft, revaliQ e AppLabx: nomes frequentes nas respostas, fora do peer set
+- **Prioridade:** P1
+- **Esforço:** 1h
+- **Origem:** auditoria semanal 2026-11-02 (prompt-test: Bluesoft em GD1, 3, 4, 5, 6, 7, V5; revaliQ em GD3, 5, 6, LR3; AppLabx em GD1, 6, 7)
+- **Estado:** TODO
+- **Descrição:** Bluesoft é o concorrente mais citado nos prompts de descoberta e não está classificado; AppLabx domina GD1 com um listicle próprio; revaliQ aparece como Lisboa, SEO técnico e GEO, USD 100-149/h no Clutch (terceiros, não verificado).
+- **Acção:** Classificar cada um (âmbito, ICP, preço público, presença em Clutch e Sortlist) e acrescentar ao peer set; avaliar uma peça comparativa com autor nomeado para GD1.
+- **Verificação:** três entradas no peer set com fonte; GD1 re-testado duas semanas depois.
+- **Notes:** Liga-se ao item "Peer set desatualizado" de 27 jul.
+
+### 2026-11-02 added: ENTITY: Menções em respostas de IA assentam em Clutch e Sortlist; o site próprio nunca é a fonte
+- **Prioridade:** P1
+- **Esforço:** 1 dia
+- **Origem:** auditoria semanal 2026-11-02 (9/32 na síntese: Clutch em GD3-7, V1, V5, LR3; Sortlist em GD5, GD8, V2; site próprio 0)
+- **Estado:** TODO
+- **Descrição:** As respostas descrevem destaque.ai como "consultoria de GEO em Lisboa, B2B SaaS, fundada em 2025", a formulação dos directórios, e não "software de visibilidade em IA". Sem avaliações no Sortlist; reservas "pouco historial" e "estrutura pequena" vêm daí.
+- **Acção:** Pedir avaliações a clientes no Clutch e no Sortlist; alinhar a descrição dos perfis com a do site; tornar o site citável nas perguntas GD (resposta directa, autor nomeado, dados próprios).
+- **Verificação:** avaliações visíveis; destaque.ai ou o site próprio como fonte em pelo menos um prompt GD.
+- **Notes:** A subida de 3 para 9 pode ser em parte ruído do proxy; reavaliar a 9 nov. Alinha com o item de convergência de entidade de 24 ago.
+
+### 2026-11-02 added: MEASUREMENT: Tracker: Supabase Auth com 429 em /middleware (6 ocorrências, 2 nov)
+- **Prioridade:** P3
+- **Esforço:** 30min
+- **Origem:** auditoria semanal 2026-11-02 (`get_runtime_errors`)
+- **Estado:** TODO
+- **Descrição:** `AuthApiError: Request rate limit reached` (`over_request_rate_limit`), 1 utilizador, 2 nov 00:32 UTC.
+- **Acção:** Rever chamadas de sessão no middleware; só agir se repetir.
+- **Verificação:** ausência na janela seguinte.
+- **Notes:** Isolado; sem relação conhecida com `refresh_token_not_found`.
 
 ### 2026-10-26 added: BACKLINKS: Cobertura Lusa/Público de 22-24 out: verificar na origem e converter em sinal de entidade
 - **Prioridade:** P2
@@ -59,6 +89,7 @@ _(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem
 - **Acção:** Abrir cada peça no site do meio e confirmar data, autor e citação da destaque.ai; acrescentar as confirmadas como `citation`/`subjectOf` ou `sameAs` onde fizer sentido; repetir a pesquisa de imprensa daqui a duas semanas para ver se entram no índice.
 - **Verificação:** nove URLs abertas e registadas; pelo menos uma peça aparece numa pesquisa de entidade.
 - **Notes:** Não confundir distribuição Lusa com cinco menções independentes. Alimenta o pedido de item Wikidata (H3).
+- **Atualização 2026-11-02:** `/imprensa` ganhou Observador, Cidade FM, M80 e Smooth FM (#220), por verificar na origem; E2 do proxy continua 0 peças. Verificar 13 URLs em vez de nove.
 
 ### 2026-10-26 added: MEASUREMENT: Tracker: DeepSeek sem saldo e SerpApi/DataForSEO sem pesquisas em simultâneo
 - **Prioridade:** P1
@@ -69,6 +100,7 @@ _(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem
 - **Acção:** Recarregar DeepSeek; renovar SerpApi (plano) e abrir ticket ao DataForSEO sobre "Internal SE Server Error"; marcar o estado "sem dados" no Tracker em vez de falha, para não contar como ausência da marca.
 - **Verificação:** zero ocorrências de "run out of searches" e `402` numa janela de 7 dias.
 - **Notes:** Complementa o item de 3 ago (SerpApi/DataForSEO), que continua aberto.
+- **Atualização 2026-11-02:** 2.ª semana. DataForSEO `Internal SE Server Error` 172, `google_aio` 139 e `google_ai_mode` 30 sem fallback, última 2 nov 07:07 UTC; DeepSeek `402` última a 29 out; Mistral `429` 71.
 
 ### 2026-10-26 added: MEASUREMENT: Stripe webhook com assinatura recusada (1 ocorrência, 23 out)
 - **Prioridade:** P3
@@ -89,6 +121,7 @@ _(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem
 - **Verificação:** `grep radar` no sitemap e no `llms.txt`; `curl -I /en/radar` conforme a decisão.
 - **Atualização 2026-10-26:** sem alteração: sitemap 135 URLs sem "radar", `llms.txt` (38.023 B) idêntico, `/en/radar` 404, apesar de sete deploys do Radar desde 19 out. Segunda semana aberta.
 - **Notes:** O número de URLs só subiu de 132 para 133 desde 12 out.
+- **Atualização 2026-11-02:** 3.ª semana: `/radar` 200 (466.320 B, 2 blocos JSON-LD), ainda fora do sitemap e do `llms.txt`; `/en/radar` 404.
 
 ### 2026-10-19 added: CONTENT: Lacunas PT-PT sem fonte com dados próprios (GP2, GP3, GP5, GP7-9, FS4, FS7, DC5, LR3, PC4)
 - **Prioridade:** P2
@@ -112,6 +145,7 @@ _(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem
 - **Ação:** Repor crédito em Plans & Billing e activar recarga automática. Considerar migrar de `claude-sonnet-5` para `claude-sonnet-5-5` (`models.md`).
 - **Verificação:** zero ocorrências numa janela de 7 dias.
 - **Notes:** Mesmo padrão dos esgotamentos OpenAI (set) e Gemini (set): três fornecedores, três esgotamentos manuais. Sugere alerta de saldo, não só top-up.
+- **Atualização 2026-11-02:** Sem `credit balance is too low` na janela de 26 out a 2 nov (última 26 out 07:14 UTC, antes da janela). Por confirmar recarga: ausência não é prova. Passa a P1 se confirmado; manter P0 até lá. Sete timeouts de 180 s em `claude-sonnet-5` (augmented).
 
 ### 2026-10-12 added: MEASUREMENT: Tracker: Perplexity sonar-pro com 402 (crédito) além dos 429
 - **Prioridade:** P1
@@ -150,6 +184,7 @@ _(Atualizado 26 outubro 2026: décima quarta execução, sétima consecutiva sem
 - **Ação:** Completar/rever Sortlist; reclamar perfis em Clutch (existe em `sameAs`), Semrush Agencies, lista consultancy.eu/RevenueBase; verificar o conteúdo do perfil Sortlist (fetch devolveu 403).
 - **Verificação:** repetir o prompt-test e contar citações com fonte diferente de Sortlist.
 - **Notes:** Amostra via `WebSearch` (proxy, EUA), não motores reais: leitura direcional.
+- **Atualização 2026-11-02:** Já não é só Sortlist: Clutch passa a ser a fonte principal (ver item novo de 2 nov).
 
 ### 2026-10-05 added: SOCIAL: contagem de seguidores LinkedIn contraditória (250 vs 96)
 - **Prioridade:** P3
