@@ -573,8 +573,8 @@ Repeat the full matrix after fixes; track the delta in `audit-history.md` (for s
 ### Language follows the client, not the practitioner
 
 **Write client-facing work in the client's language.** The consumer states it
-explicitly: the Tracker carries `clients.locale` (`pt-PT` | `en`) and passes it
-with every request. PT-PT is the default and the house dialect, not a universal
+explicitly: the Tracker carries `clients.locale` (`pt-PT` | `en` | `fr-FR`) and
+passes it with every request. PT-PT is the default and the house dialect, not a universal
 rule: destaque.ai serves clients outside Portugal, and a report in a language the
 reader does not work in is a worse report, however good the numbers are.
 
@@ -586,7 +586,15 @@ cosmetic.** Prompts are meant to be what a real buyer would type. A buyer in
 London types in English; measuring them with Portuguese questions measures the
 wrong thing, and the resulting citation rate is not comparable with anything.
 When the locale is `en`, generate the catalogue in English, with the idiom of
-the client's market.
+the client's market; when it is `fr-FR`, in French as written in France.
+
+**`fr-FR` (since 3 Nov 2026) is a full client language, not a fallback.** Every
+written piece (reading, brand perception, top-3, actions, weekly bet) comes out
+in French: a non-breaking space before `: ; ? ! %` and inside `« »` quotation
+marks (`« texte »`, never `«texte»`), and
+the same sober register, not a calque of English. Writing in another language
+because "the report translates it" is wrong: the report translates only its own
+frame, never the analysis.
 
 **What does NOT translate**, whatever the locale:
 - Technical identifiers: `hreflang`, `Schema.org/Course`, `User-agent: GPTBot`, model ids.
