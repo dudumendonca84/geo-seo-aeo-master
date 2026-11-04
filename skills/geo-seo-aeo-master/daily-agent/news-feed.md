@@ -8,6 +8,14 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-04
+
+Sem novidades significativas hoje; corrida completa. anthropic.com/news não tem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central não mostra posts novos além dos de Out ([Google](https://developers.google.com/search/blog)); a pesquisa sobre anúncios do ChatGPT em Portugal só devolveu cobertura de Ago e Set, nada de Nov. Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
+
+## 2026-11-04
+
+Sem novidades significativas hoje. Quarta: sem passagem de cortes (só segundas) nem drafts (só sextas). Watches: nenhum gatilho confirmado (checkout in-chat UE, anúncios ChatGPT em PT por verificar, API Bing AI Performance).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-03
 
 Sem novidades significativas hoje; corrida completa. anthropic.com/news não tem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central só mostra os posts de Out já conhecidos, incluindo o do controlo partilhado de treino de IA ([Google](https://developers.google.com/search/blog)). Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
