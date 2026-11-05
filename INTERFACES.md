@@ -385,6 +385,15 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 ---
 
+### Contrato 20: onde a marca tem perfil (o ecrã Entidade)
+
+**Producer:** `references/gap_action_mapping.md` § `## Onde a marca tem perfil (o ecrã Entidade)`. **Consumer:** `destaque-ai-tracker/src/lib/skill/plataformas-da-entidade.ts` e `src/inngest/functions/perfis-da-entidade.ts`.
+
+- A tabela `| plataforma | conta | para quem |` é lida por cabeçalho. `plataforma` é o identificador que o Tracker conhece (`src/lib/entity/perfis.ts`); um identificador que ele não conheça é ignorado sem erro. `conta` é `sempre` ou `concorrentes`; outro valor ignora a linha.
+- Sem a secção, ou sem linhas válidas, vale a lista de recurso do Tracker (as seis redes como `sempre`), e o registo da recolha diz que correu com a lista de recurso.
+
+---
+
 ## Frequência de atualização
 
 | Ficheiro | Cadência | Trigger |
@@ -438,6 +447,7 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 | Data | Mudança | Impacto |
 |---|---|---|
+| 2026-11-05 | **Contrato 20 (perfis da marca) criado.** `gap_action_mapping.md` ganha § "Onde a marca tem perfil (o ecrã Entidade)": que plataformas contam, e os diretórios de setor que contam pelos concorrentes. | Tracker lê a tabela na recolha dos perfis; acrescentar um diretório é uma linha, sem deploy, quando o Tracker já reconhece o endereço. |
 | 2026-05-23 | Inicialização: prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
 | 2026-09-10 | **Contrato 3: `aio_top10_share` passa a 38% (Ahrefs, Mar 2026)**, era 54% (BrightEdge 2025); o Slide 05 do deck muda no fetch seguinte. `benchmarks.md` ganha §45 (carrossel do ChatGPT, 83% do top-40 do Google Shopping). `models.md`: cabeçalho sem "May 2026" e os sete "Prior entry" movidos para `## Refresh history` no fim (os cabeçalhos parseados não mexeram). Validador passa a correr em todos os pushes e PRs (`.github/workflows/validate.yml`). | Deck Builder: um número público muda sem deploy; a data e a fonte vão na linha. |
 | 2026-09-10 | **Contrato 13 (limiares de alerta).** §2 e §6 de `alert_thresholds.md` passam a ser lidos pelo Tracker no fecho de cada semana e calculados em código; `alert_thresholds.md` ganha §12 "Who computes what", o override por cliente ganha coluna (Tracker 0120) e Território passa a §11. Também: a raiz do repo deixa de ter cópia de `destaque-ai-self` (era de 17 Ago; passa a link como `daily-agent` e `references`). | Tracker: alertas `cr_*`, `sov_*`, `position_*`, `sentiment_negative` escritos pelo código; a Routine fica com eventos, tendências e território. Mudar um número no §2 muda o que dispara para todos os clientes sem deploy: sempre com nota datada. |

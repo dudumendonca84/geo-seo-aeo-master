@@ -836,6 +836,63 @@ mas a medição é a mesma em qualquer motor com fontes.
 
 ---
 
+## Onde a marca tem perfil (o ecrã Entidade)
+
+Desde 5 Nov 2026 (desenho v2 do ecrã Entidade, aprovado pelo founder). O
+Tracker recolhe sozinho onde a marca tem perfil: primeiro o site do cliente
+(rodapé e `sameAs`), depois o mesmo site num navegador quando o rodapé é
+montado por script, e por fim a pesquisa "marca + plataforma", que só aceita
+a página com o nome ou o domínio certo. O que não passa a regra fica em
+dúvida e vai ao cliente confirmar.
+
+Esta secção diz **que plataformas contam**, e é lida pelo Tracker (contrato
+20 do `INTERFACES.md`). A coluna `conta` tem dois valores:
+
+- `sempre`: a plataforma conta para qualquer marca, e a recolha procura-a
+  sempre;
+- `concorrentes`: um diretório de setor. Conta para uma marca quando pelo
+  menos um concorrente dela tem lá perfil, ou quando ela própria já tem. É
+  assim que o setor entra sem o código ter de o adivinhar: a Doctoralia
+  aparece a um hospital porque os outros hospitais lá estão, e nunca a uma
+  agência de software.
+
+O ecrã diz a relevância por extenso ("4 de 6 concorrentes têm"), e quem
+escreve uma ação sobre um perfil lê esse número antes de a escrever: criar
+um perfil onde nenhum concorrente está raramente é a primeira ação.
+
+| plataforma | conta | para quem |
+|---|---|---|
+| linkedin | sempre | qualquer empresa; é a página que os motores mais citam sobre uma marca B2B |
+| instagram | sempre | marcas de consumo, retalho, restauração, saúde |
+| facebook | sempre | marcas de consumo e negócios locais |
+| youtube | sempre | quem publica vídeo; os motores citam canais e vídeos |
+| tiktok | sempre | marcas de consumo com público jovem |
+| x | sempre | marcas com presença em imprensa e tecnologia |
+| trustpilot | concorrentes | comércio eletrónico, serviços ao consumidor, SaaS |
+| portaldaqueixa | concorrentes | marcas de consumo em Portugal (retalho, telecom, seguros, banca) |
+| doctoralia | concorrentes | saúde privada: clínicas, hospitais, médicos |
+| clutch | concorrentes | agências e serviços de TI B2B |
+| crunchbase | concorrentes | startups e empresas de tecnologia |
+| racius | concorrentes | empresas portuguesas (ficha da empresa) |
+| einforma | concorrentes | empresas portuguesas (ficha da empresa) |
+
+Três regras para quem lê o resultado:
+
+1. **"Não encontrámos" não é "falta".** A pesquisa pode não trazer um perfil
+   que existe; o ecrã pede ao cliente para confirmar antes de qualquer ação
+   de criar (é a regra de verificação deste ficheiro, aplicada à entidade).
+2. **O que o cliente confirmou ou negou manda.** A recolha nunca escreve por
+   cima, e uma ação nunca pede para criar um perfil que o cliente negou ser
+   dele (pode ser um homónimo a separar, que é a ação de nome ambíguo).
+3. **Um perfil confirmado que não está no `Organization.sameAs` do site é a
+   ação barata**: 30 minutos, e é o pattern `sameAs` desta dimensão.
+
+Acrescentar uma plataforma é acrescentar uma linha; se o Tracker ainda não
+souber reconhecer o endereço de uma página de empresa nela, a linha é
+ignorada sem erro até o código a conhecer (`src/lib/entity/perfis.ts`).
+
+---
+
 ## DIMENSÃO 3: Entity & brand foundation
 
 ### Pattern: Sem Wikidata QID

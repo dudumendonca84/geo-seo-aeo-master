@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-05: Onde a marca tem perfil, e que diretórios contam pelos concorrentes
+
+- **Trigger:** o desenho v2 do ecrã Entidade, aprovado pelo founder a 5 Nov: o que o produto lê, o que encontra por pesquisa, e o que o cliente confirma.
+- **O que muda:** `references/gap_action_mapping.md` ganha § "Onde a marca tem perfil (o ecrã Entidade)" (contrato 20). As redes contam sempre; os diretórios de setor (Doctoralia, Clutch, Portal da Queixa, Trustpilot) contam quando um concorrente lá está, e o ecrã diz "N de M concorrentes têm". "Não encontrámos" nunca é "falta", e o que o cliente confirmou ou negou manda.
+- **Porquê pelos concorrentes:** o setor de cada marca não está escrito em lado nenhum de forma fiável; os concorrentes estão, e dizem que diretórios importam naquele mercado sem o código ter de adivinhar.
+
+---
+
 ## 2026-11-05: As perguntas escolhem-se pela procura, e o racional diz porquê
 
 - **Trigger:** o founder, sobre as perguntas do Pingo Doce: *"quero que nossas perguntas tenham racional"*, *"por isso escolhemos essas"*, e *"se não é automático"* não serve.
