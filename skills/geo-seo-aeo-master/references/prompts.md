@@ -315,9 +315,11 @@ Escala qualitativa do quanto a audiência faz este tipo de pergunta:
 
 - `5` = pergunta muito comum na categoria · `3` = procura moderada · `1` = nicho.
 
-**Não é volume de pesquisa real** (não temos esses dados): é *directional*, como o
+**Não é volume de pesquisa** e não é uma cópia dele: é *directional*, como o
 Peec AI. **Nunca inventes números precisos de volume.** Omite (`null`) quando não
-consegues estimar honestamente.
+consegues estimar honestamente. Quando o pedido traz `voz_do_cliente.procura`
+(§8.9), o interesse apoia-se nela: um tema com milhares de pesquisas por mês
+não é `1`, e um com dezenas não é `5`.
 
 ### 8.4 Contrato por prompt
 
@@ -349,6 +351,13 @@ consegues estimar honestamente.
      decide aqui (que lista forma, que marca põe à frente, que critério usa);
   3. o que a resposta vai mostrar sobre a marca face aos concorrentes que
      disputam esta resposta.
+  Quando o pedido traz `voz_do_cliente.procura` [2026-11-05], o racional diz
+  também **porque escolhemos esta pergunta**: a procura do tema nos motores
+  de busca (a ordem de grandeza por mês, arredondada: "cerca de 160 mil
+  pesquisas por mês", "algumas centenas") e a tendência quando mexe ("a
+  subir nos últimos três meses"). Diz-se "nos motores de busca" e nunca o
+  nome de um fornecedor, de uma ferramenta ou de um motor em particular. Os
+  concorrentes que se nomeiam são os da lista do cliente, e nenhum outro.
   Específico à marca, à categoria e à fase: uma frase que serviria a
   qualquer pergunta não é um racional e volta para trás. Nunca um número
   que não esteja nos dados recebidos, nunca uma promessa de resultado, sem
@@ -510,6 +519,11 @@ em duas partes, e a página inicial da marca):
   Tira-se da página inicial (`site`, o título, a descrição, os subtítulos e
   o princípio do texto), e o site serve para saber o que a marca vende,
   nunca para escrever as perguntas com as palavras dela;
+- `procura` [2026-11-05]: o volume mensal (`volume`, média de doze meses)
+  e a tendência recente (`tendencia`, os três meses mais recentes face aos
+  três anteriores, em percentagem) de cada termo da marca, dos
+  concorrentes e das sugestões das duas listas acima, da maior procura
+  para a menor. `null` é "sem número", não zero;
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
   de propósito. Não ler não é o mesmo que ninguém perguntar.
 
@@ -568,12 +582,36 @@ Como se usa:
    dos concorrentes e de `autocompletar_categoria`. As sugestões da
    categoria também trazem ruído ("seguro de si"): decide pelo sentido.
 6. **Muitas sugestões são de localidade** ("hospital da luz coimbra",
-   "rocha automóveis braga"). Dizem onde o cliente procura a marca; numa
-   marca com várias lojas valem uma pergunta local, não uma por cidade.
+   "rocha automóveis braga"). Dizem onde o cliente procura a marca. Numa
+   marca com lojas em várias cidades, as perguntas locais escrevem-se **uma
+   por cidade, com a cidade no texto** ("Qual é o melhor supermercado em
+   Braga?"), começando pelas cidades com mais procura em `procura` e, sem
+   esse dado, por Lisboa, Porto e Braga [2026-11-05].
+7. **"Perto de mim" não entra no texto** [2026-11-05]. O motor responde a
+   "perto de mim" pela localização de quem pergunta, e quem pergunta é a
+   nossa máquina: a resposta mede o sítio da recolha e não o mercado.
+   A sugestão "supermercado perto de mim" diz que há procura local; a
+   pergunta que a mede é a da cidade (ponto 6).
+8. **Escolhe os temas pela procura** [2026-11-05]. O autocompletar diz O
+   QUE se pesquisa e `procura` diz QUANTO. Medido no Pingo Doce a 5 Nov: as
+   frases compridas que o autocompletar devolve quase não têm procura
+   ("supermercado mais barato em portugal", 210 por mês; "cabaz de compras
+   deco", 10), e os assuntos curtos têm milhares ("pingo doce folheto", 165
+   mil; "continente online", 201 mil). Regras:
+   - o número de perguntas de um tema acompanha a procura dele: um tema
+     com centenas de pesquisas por mês vale uma pergunta, não dez;
+   - um tema que sobe (`tendencia` acima de 20) merece pergunta mesmo com
+     procura média, e o racional diz que está a subir;
+   - a tendência é recente e não homóloga: um mês sazonal (o Natal, o
+     regresso às aulas) mexe nela, e o racional não a apresenta como subida
+     do ano;
+   - sem `procura` (não se conseguiu medir, está em `nao_lidos`), escolhe
+     como antes e o racional não fala de procura.
 
 O que isto não é, e não se diz ao cliente que é: não são as perguntas
-feitas à IA, e o autocompletar não dá volumes. É o que se pesquisa, não
-quanto.
+feitas à IA. É o que se pesquisa nos motores de busca e quanto, que é a
+melhor aproximação pública ao que se pergunta a um assistente, e o
+racional di-lo assim.
 
 ## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
 
