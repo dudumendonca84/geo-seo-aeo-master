@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-05: As perguntas escolhem-se pela procura, e o racional diz porquê
+
+- **Trigger:** o founder, sobre as perguntas do Pingo Doce: *"quero que nossas perguntas tenham racional"*, *"por isso escolhemos essas"*, e *"se não é automático"* não serve.
+- **O que muda:** a voz do cliente traz `procura` (volume mensal e tendência recente de cada termo). `references/prompts.md` §8.9 ganha os pontos 6 a 8 (uma pergunta local por cidade, com a cidade no texto; "perto de mim" não entra, porque o motor responde pela localização da máquina de recolha; os temas escolhem-se pela procura, com a tendência como recente e não homóloga), §8.4 obriga o racional a dizer a procura nos motores de busca sem nomear fornecedores, e §8.3 apoia o interesse no volume quando ele existe.
+- **Medido antes:** no Pingo Doce as frases compridas do autocompletar tinham dezenas ou centenas de pesquisas por mês e os assuntos curtos dezenas de milhares.
+
+---
+
 ## 2026-10-26: O caminho de cada pergunta (Perguntas x fontes)
 
 - **Trigger:** o founder pediu o ecrã Perguntas x fontes em todos os planos, a partir do desenho aprovado no Claude Design (lista das perguntas com as fontes que os motores citam e um caminho por pergunta).
