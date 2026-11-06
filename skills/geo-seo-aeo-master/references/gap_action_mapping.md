@@ -139,7 +139,7 @@ gente e manda o esforço para onde ele rende.
 ## Onde dá para conseguir presença, e onde não dá
 
 Lido pelo Tracker em runtime (`lib/skill/presenca.ts`), para o bloco
-**"Meios que a IA cita muito · a tua marca não está lá"** e para as ações
+**"Meios que a IA cita muito · a sua marca não está lá"** e para as ações
 off-site que a Routine escreve.
 
 **Porquê aqui e não em código** (1 Out 2026, founder: *"a skill funciona
@@ -1509,9 +1509,9 @@ diz `sub_perguntas`, `encontrado_em`, e a lista `sem_ti` com quem está no
 lugar da marca.
 
 **É a ação mais concreta que esta metodologia produz, e por uma razão de
-forma: o título da peça vem escrito.** "Não apareces em «que agência de
+forma: o título da peça vem escrito.** "Não aparece em «que agência de
 GEO recomendam»" é um diagnóstico. "Das nove pesquisas em que ele partiu
-essa pergunta, não apareces em «GEO case study Portugal» nem em «agência
+essa pergunta, não aparece em «GEO case study Portugal» nem em «agência
 GEO preço», e nessas está a 3HASH e a UniK SEO" é um plano editorial com
 sete títulos e a concorrência identificada por título.
 
@@ -1774,7 +1774,7 @@ Indica fragilidade em múltiplas dimensões simultaneamente. Não fazer "fix it 
 
 ### Pattern: Citation rate alto mas position avg >4
 
-Brand é citado mas em segundo plano consistente. Indica concorrente dominante. Estratégia: defender o que tens (não regredir) enquanto constrói edge em dimensão específica (ex: original research).
+Brand é citado mas em segundo plano consistente. Indica concorrente dominante. Estratégia: defender o que já tem (não regredir) enquanto constrói edge em dimensão específica (ex: original research).
 
 ### Pattern: Citation rate disparado num motor, baixo nos outros
 

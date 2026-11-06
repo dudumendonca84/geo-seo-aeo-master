@@ -460,7 +460,7 @@ fórmula era o único sítio que a ignorava. Fica assim:
 
 - `net_sentiment` abaixo da base mínima é `null`, e `null` **não é zero
   nem é meio**: não entra na conta. Deixá-lo entrar a zero dizia "falam
-  mal de ti" a quem ninguém leu; deixá-lo entrar a meio é o brinde de dez
+  mal de si" a quem ninguém leu; deixá-lo entrar a meio é o brinde de dez
   pontos.
 - O score passa a ser a **média ponderada do que foi medido**, com os
   pesos a renormalizar sobre as parcelas presentes.
@@ -512,7 +512,7 @@ espaço não são sentimento).
   cliente tem de ver qual das três o está a puxar para baixo, porque as
   ações são diferentes em cada caso.
 - Uma semana sem análise não tem score. `null` não é zero: zero diz "não
-  apareces", e a verdade é "ainda ninguém leu".
+  aparece", e a verdade é "ainda ninguém leu".
 
 - Uma parcela que não foi medida **não ajuda nem prejudica**: sai da conta
   e os pesos renormalizam. Quem compara duas semanas tem de saber se a

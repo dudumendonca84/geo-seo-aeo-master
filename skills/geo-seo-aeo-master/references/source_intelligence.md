@@ -49,7 +49,7 @@ primeiras é a coisa mais accionável que esta metodologia produz.
 **Lida e não citada é um diagnóstico, não uma ausência.** Uma página que
 esteve nos resultados e não foi usada foi encontrada e preterida: o
 problema é autoridade ou é conteúdo que não responde, e não indexação.
-Dizer "não apareces" a quem está nessa lista manda fazer o trabalho
+Dizer "não aparece" a quem está nessa lista manda fazer o trabalho
 errado.
 
 **O que cada fornecedor dá**, medido a 5 de Setembro de 2026 contra as
