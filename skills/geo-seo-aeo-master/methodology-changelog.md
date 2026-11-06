@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-06: O produto trata o cliente por "você", como o site
+
+- **Trigger:** o relatório do Pingo Doce saiu com "tu" vindo dos porquês e dos playbooks, e o founder decidiu "produto todo em você" (6 Nov 2026).
+- **O que muda:** `references/escrita.md` deixa de dizer que o Periscopy trata por "tu": o site e o produto tratam por "você", e um imperativo dirigido ao cliente vai na forma de "você" ("Publique", "Mantenha"). Os itens do "Faz:" em `references/engine_playbooks.md` (PT) passam ao imperativo de "você"; o marcador "Faz:" fica, porque é o que o Tracker procura. Os exemplos que o cliente lê em `SKILL.md`, `metrics.md`, `gap_action_mapping.md` e `source_intelligence.md` acompanham. O agente diário e a auditoria semanal escrevem os playbooks já nesta forma.
+- **O que não muda:** as instruções ao próprio modelo (texto dirigido ao agente, não ao cliente), as citações históricas do ecrã e os identificadores (`sem_ti`).
+
+---
+
 ## 2026-11-06: Um defeito do modelo de página é uma ação, não mil recomendações
 
 - **Trigger:** a primeira análise das páginas do Pingo Doce escreveu 3000 recomendações quase iguais para um defeito do modelo das fichas de produto; o founder concordou que devia ser uma ação.

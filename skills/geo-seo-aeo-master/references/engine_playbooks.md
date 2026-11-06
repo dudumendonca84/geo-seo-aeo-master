@@ -137,13 +137,13 @@ meta: revisto 2026-11-06 · externo: 13 Out: GPT-6 abre links sem `utm_source=ch
 Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fração das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026]. Um teste comportamental (Malte Landwehr via Peec.ai, 4 Set 2026) sugere que o ChatGPT também consulta a Google para fundamentar algumas respostas, não só o Bing: um site sem tráfego registou um pico de referral no Search Console da Google especificamente nos dias em que só o ChatGPT o consultava; fonte única, metodologia informal, tratar como pista, não facto assente. {{fontes}}
 
 Faz:
-1. Responde no site às perguntas comparativas da categoria, uma pergunta por secção. {{perguntas:direct_comparison}} Abre a via da pesquisa em semanas.
-2. Garante indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa. {{skip:bwt-connected}}
-3. Publica documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos [fonte: Semrush via Search Engine Land, Jul 2026].
-4. Procura presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
-5. Mantém uma versão EN atualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desatualizada desempenha pior do que não ter nenhuma [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
-6. Usa o mesmo nome e a mesma descrição da marca em todas as fontes.
-7. Separa conquistado de comprado desde já: os anúncios do ChatGPT já aparecem em Portugal, por baixo da resposta e identificados, nos planos Free e Go. A compra ainda não é self-serve para anunciantes portugueses: faz-se pela equipa de anúncios da OpenAI ou por uma agência parceira, e as fontes divergem sobre quando abre. Mede a linha de base conquistada antes de haver pago, senão não há como ler o efeito do investimento. [fonte: OpenAI, Ago 2026; imprensa internacional e portuguesa, Set 2026, com leituras divergentes sobre a abertura do self-serve]
+1. Responda no site às perguntas comparativas da categoria, uma pergunta por secção. {{perguntas:direct_comparison}} Abre a via da pesquisa em semanas.
+2. Garanta indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa. {{skip:bwt-connected}}
+3. Publique documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos [fonte: Semrush via Search Engine Land, Jul 2026].
+4. Procure presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
+5. Mantenha uma versão EN atualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desatualizada desempenha pior do que não ter nenhuma [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+6. Use o mesmo nome e a mesma descrição da marca em todas as fontes.
+7. Separe conquistado de comprado desde já: os anúncios do ChatGPT já aparecem em Portugal, por baixo da resposta e identificados, nos planos Free e Go. A compra ainda não é self-serve para anunciantes portugueses: faz-se pela equipa de anúncios da OpenAI ou por uma agência parceira, e as fontes divergem sobre quando abre. Meça a linha de base conquistada antes de haver pago, senão não há como ler o efeito do investimento. [fonte: OpenAI, Ago 2026; imprensa internacional e portuguesa, Set 2026, com leituras divergentes sobre a abertura do self-serve]
 
 ### claude
 
@@ -152,11 +152,11 @@ meta: revisto 2026-11-06 · externo: Claude Haiku 5.5 lançado a 7 Out (platform
 Como decide: sobretudo memória de treino no modo base; com pesquisa ativa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional]. Claude (claude.ai) e Claude Code são motores de resposta distintos, não a mesma coisa em superfícies diferentes: o Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, e as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois [fonte: Profound, 24 Ago 2026, corroborado por Search Engine Journal, 31 Ago 2026]. Este bloco descreve o Claude consumidor (claude.ai); otimizar para aqui não garante nada de visibilidade no Claude Code. {{fontes}}
 
 Faz:
-1. Mantém a entidade consistente: sameAs no schema, descrições estáveis em todas as plataformas.
-2. Escreve páginas que expliquem o que a marca faz em linguagem direta, factual, sem promessas infladas.
-3. Publica conteúdo técnico citável: documentação, dados, comparações verificáveis.
-4. Procura cobertura em imprensa de referência: é o perfil de fonte que este motor mais cita.
-5. Não presumas que uma boa presença no Claude se transfere para o Claude Code: se um cliente pede visibilidade especificamente no Claude Code (uso interno de developer tooling), é uma medição à parte, com pesquisa web ligada em muito menos respostas.
+1. Mantenha a entidade consistente: sameAs no schema, descrições estáveis em todas as plataformas.
+2. Escreva páginas que expliquem o que a marca faz em linguagem direta, factual, sem promessas infladas.
+3. Publique conteúdo técnico citável: documentação, dados, comparações verificáveis.
+4. Procure cobertura em imprensa de referência: é o perfil de fonte que este motor mais cita.
+5. Não presuma que uma boa presença no Claude se transfere para o Claude Code: se um cliente pede visibilidade especificamente no Claude Code (uso interno de developer tooling), é uma medição à parte, com pesquisa web ligada em muito menos respostas.
 
 ### gemini
 
@@ -165,11 +165,11 @@ meta: revisto 2026-11-06 · externo: Gemini 4 Argon lançado a 30 Set em acesso 
 Como decide: liga ao ecossistema Google; o que o Google indexa e entende bem alimenta o Gemini, e os motores generativos da Google favorecem conteúdo da própria Google [fonte: Grossman et al., SIGIR 2026]. {{fontes}}
 
 Faz:
-1. Cuida do SEO clássico: top-10 orgânico nas perguntas comparativas é o bilhete de entrada.
-2. Completa o schema.org do site e mantém a ficha Google (Business Profile) atualizada por localização.
-3. Cria presença no YouTube: é o domínio mais citado nas respostas de IA da Google [fonte: 22,9% das citações do AI Overviews, Ahrefs, Set 2026; era 20,9% em Jun 2026].
-4. Declara autoria: autores com nome e credenciais nas páginas-chave.
-5. Mede a visibilidade aqui com ferramentas terceiras: as menções de marca nas respostas do Gemini não aparecem no Search Console nem no GA4 [fonte: Search Engine Land, Ago 2026].
+1. Cuide do SEO clássico: top-10 orgânico nas perguntas comparativas é o bilhete de entrada.
+2. Complete o schema.org do site e mantenha a ficha Google (Business Profile) atualizada por localização.
+3. Crie presença no YouTube: é o domínio mais citado nas respostas de IA da Google [fonte: 22,9% das citações do AI Overviews, Ahrefs, Set 2026; era 20,9% em Jun 2026].
+4. Declare autoria: autores com nome e credenciais nas páginas-chave.
+5. Meça a visibilidade aqui com ferramentas terceiras: as menções de marca nas respostas do Gemini não aparecem no Search Console nem no GA4 [fonte: Search Engine Land, Ago 2026].
 
 ### grok
 
@@ -178,10 +178,10 @@ meta: revisto 2026-11-06 · externo: nenhuma mudança · interno: sem acesso a d
 Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Periscopy [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
 
 Faz:
-1. Mantém presença ativa e citável no X, com reação rápida aos temas da categoria: alavanca de marca geral, mesmo sem citação direta confirmada neste nicho.
-2. Garante que o site valida o que afirmas nas redes: cada afirmação com página correspondente.
-3. Publica com frequência: o recente pesa mais aqui do que nos outros motores.
-4. Não contes com o X como canal de citação garantido no Grok para esta categoria: prioriza o site e fontes indexadas antes de investir tempo em X à espera de citação direta.
+1. Mantenha presença ativa e citável no X, com reação rápida aos temas da categoria: alavanca de marca geral, mesmo sem citação direta confirmada neste nicho.
+2. Garanta que o site valida o que afirma nas redes: cada afirmação com página correspondente.
+3. Publique com frequência: o recente pesa mais aqui do que nos outros motores.
+4. Não conte com o X como canal de citação garantido no Grok para esta categoria: priorize o site e fontes indexadas antes de investir tempo em X à espera de citação direta.
 
 ### deepseek
 
@@ -190,9 +190,9 @@ meta: revisto 2026-11-06 · externo: api-docs.deepseek.com lido diretamente: `de
 Como decide: memória de treino com forte peso de fontes em inglês; cobertura pt-PT mais fina.
 
 Faz:
-1. Publica versão EN das páginas-chave da marca e mantém-na atualizada: uma página EN desatualizada desempenha pior do que não ter nenhuma, porque os modelos a tratam como oficial [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
-2. Entra em diretórios e listas internacionais da categoria.
-3. Usa um nome de marca sem ambiguidade linguística nas fontes EN.
+1. Publique versão EN das páginas-chave da marca e mantenha-a atualizada: uma página EN desatualizada desempenha pior do que não ter nenhuma, porque os modelos a tratam como oficial [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+2. Entre em diretórios e listas internacionais da categoria.
+3. Use um nome de marca sem ambiguidade linguística nas fontes EN.
 
 ### mistral
 
@@ -201,9 +201,9 @@ meta: revisto 2026-11-06 · externo: 6 Out: Mistral Large 4 em preview público 
 Como decide: memória de treino com boa cobertura europeia, mas desde 20 Ago 2026 a API já não é só memória: o "Agentic Search" dá ao modelo 5 operações (search/open/navigate/read/grep) que abrem e verificam documentos activamente em vez de aceitar só excertos de retrieval pré-cortados; a accuracy no FinanceBench sobe de 26,7% para 86% com o modo ativo [fonte: mistral.ai/news/agentic-search, 20 Ago 2026]. O texto anterior deste bloco ("a API não expõe pesquisa de primeira parte") deixou de ser correto: corrigido hoje. {{fontes}}
 
 Faz:
-1. Trabalha as alavancas de memória: entidade consistente, imprensa durável, presença em fontes europeias da categoria: continuam a valer para o modo base.
-2. Mantém conteúdo comparativo e ranking orgânico: vale para o produto de consumo e para os restantes motores augmented.
-3. Estrutura páginas para verificação ativa, não só para recuperação: com o Agentic Search o modelo pode abrir e ler o documento inteiro antes de responder, por isso a resposta direta tem de aguentar-se quando o modelo confere a fonte, não só quando a recupera.
+1. Trabalhe as alavancas de memória: entidade consistente, imprensa durável, presença em fontes europeias da categoria: continuam a valer para o modo base.
+2. Mantenha conteúdo comparativo e ranking orgânico: vale para o produto de consumo e para os restantes motores augmented.
+3. Estruture páginas para verificação ativa, não só para recuperação: com o Agentic Search o modelo pode abrir e ler o documento inteiro antes de responder, por isso a resposta direta tem de aguentar-se quando o modelo confere a fonte, não só quando a recupera.
 
 ### llama
 
@@ -212,8 +212,8 @@ meta: revisto 2026-11-06 · externo: nenhuma mudança · interno: sem acesso a d
 Como decide: corre só em memória de treino; nenhum fornecedor que aloja o Llama expõe pesquisa de primeira parte. Move-se em meses, ao ritmo dos ciclos de treino.
 
 Faz:
-1. Trabalha a entidade: Wikidata, Wikipédia quando elegível, descrições consistentes em todas as plataformas.
-2. Procura menções em fontes abertas que entram nos conjuntos de treino.
+1. Trabalhe a entidade: Wikidata, Wikipédia quando elegível, descrições consistentes em todas as plataformas.
+2. Procure menções em fontes abertas que entram nos conjuntos de treino.
 
 Nota: este motor é o modelo Llama, não o assistente Meta AI do WhatsApp. O assistente traz sistema e recolha próprios e não é medível por API hoje.
 
@@ -224,10 +224,10 @@ meta: revisto 2026-11-06 · externo: nenhuma mudança · interno: sem acesso a d
 Como decide: pesquisa sempre a web viva e cita fontes explícitas. O YouTube lidera as citações [fonte: 32,4%, Ahrefs, Jun 2026], as comunidades pesam muito (Reddit ~47% em alguns estudos de categoria; direccional) e os portais de research primária e a imprensa especializada pesam mais do que nos outros motores [fonte: 5W, Jun 2026]. {{fontes}}
 
 Faz:
-1. Está presente, e faz-te mencionar, em comunidades relevantes: Reddit e fóruns da categoria.
-2. Publica vídeo no YouTube e dados originais que mereçam citação.
-3. Escreve o nome da marca dentro da passagem citável: 52% das citações do Perplexity ligam à fonte sem nomear a marca no texto da resposta [fonte: Writesonic via Search Engine Land, Jul 2026].
-4. Garante páginas rápidas e legíveis por bots, com PerplexityBot autorizado no robots.txt.
+1. Esteja presente, e faça-se mencionar, em comunidades relevantes: Reddit e fóruns da categoria.
+2. Publique vídeo no YouTube e dados originais que mereçam citação.
+3. Escreva o nome da marca dentro da passagem citável: 52% das citações do Perplexity ligam à fonte sem nomear a marca no texto da resposta [fonte: Writesonic via Search Engine Land, Jul 2026].
+4. Garanta páginas rápidas e legíveis por bots, com PerplexityBot autorizado no robots.txt.
 
 ### google_aio
 
@@ -236,12 +236,12 @@ meta: revisto 2026-11-06 · externo: AIO a gerar respostas de rosters de equipas
 Como decide: é o bloco de resposta de IA no topo do Google. O top-10 orgânico explica 38% das citações [fonte: Ahrefs, Mar 2026; era 76% em Jul 2025]: o rank ajuda, mas a estrutura citável da página pesa cada vez mais. Desde Mai 2026 inclui citações de discussões (Reddit, fóruns, blogs) diretamente na resposta. Nas perguntas locais e de urgência tende a mostrar o pacote local (mapa) em vez do bloco. Desde finais de Ago 2026, em queries onde os sistemas da Google determinam maior utilidade, o bloco expande dinamicamente para o estado completo (tipo AI Mode) sem o utilizador clicar em "Mostrar mais", com a caixa "Pergunta o que quiseres" já aberta: empurra os resultados orgânicos mais abaixo na página; a Google confirma que a expansão é cancelada se o utilizador já tiver começado a percorrer a página, para não perder a posição de leitura [fonte: Search Engine Land/Search Engine Roundtable, 27 ago 2026]. {{fontes}}
 
 Faz:
-1. Abre cada página-chave com um parágrafo-resposta direto, citável isolado.
-2. Mantém o SEO clássico saudável, o schema completo e as fichas Google por localização, para as perguntas locais.
-3. Permite o Google-Extended no robots.txt: sites que o bloqueiam são significativamente menos recuperados pelo AI Overviews [fonte: Grossman et al., SIGIR 2026].
-4. Está presente em comunidades da categoria: o bloco passou a citar discussões [fonte: Google, Mai 2026].
-5. Não dependas de listicles auto-promocionais: em 69% dos casos o AIO cita a marca sem a recomendar [fonte: Lily Ray, Jun 2026], e manipular citações de IA é spam ao abrigo da política da Google desde Jun 2026.
-6. Estrutura conteúdo instrucional/comparativo em passos discretos e testáveis: desde por volta de 19-20 Ago 2026 o AIO (não só o AI Mode) pode renderizar "generative UI" (layouts visuais interativos, quizzes) para perguntas que se prestem a isso; conteúdo em passos claros tem mais hipótese de alimentar essa renderização do que prosa corrida [fonte: Search Engine Journal, Ago 2026].
+1. Abra cada página-chave com um parágrafo-resposta direto, citável isolado.
+2. Mantenha o SEO clássico saudável, o schema completo e as fichas Google por localização, para as perguntas locais.
+3. Permita o Google-Extended no robots.txt: sites que o bloqueiam são significativamente menos recuperados pelo AI Overviews [fonte: Grossman et al., SIGIR 2026].
+4. Esteja presente em comunidades da categoria: o bloco passou a citar discussões [fonte: Google, Mai 2026].
+5. Não dependa de listicles auto-promocionais: em 69% dos casos o AIO cita a marca sem a recomendar [fonte: Lily Ray, Jun 2026], e manipular citações de IA é spam ao abrigo da política da Google desde Jun 2026.
+6. Estruture conteúdo instrucional/comparativo em passos discretos e testáveis: desde por volta de 19-20 Ago 2026 o AIO (não só o AI Mode) pode renderizar "generative UI" (layouts visuais interativos, quizzes) para perguntas que se prestem a isso; conteúdo em passos claros tem mais hipótese de alimentar essa renderização do que prosa corrida [fonte: Search Engine Journal, Ago 2026].
 
 ### google_ai_mode
 
@@ -251,8 +251,8 @@ Como decide: é o modo conversacional de pesquisa do Google; responde a quase to
 
 Faz:
 1. Tudo o que vale para o Google AI Overviews.
-2. Abre cada secção com a resposta na primeira frase e mantém passagens autocontidas de cerca de 120 palavras.
-3. Conta com anúncios dentro da resposta nas perguntas comerciais: a citação orgânica não substitui presença paga.
+2. Abra cada secção com a resposta na primeira frase e mantenha passagens autocontidas de cerca de 120 palavras.
+3. Conte com anúncios dentro da resposta nas perguntas comerciais: a citação orgânica não substitui presença paga.
 4. Para tópicos em desenvolvimento (notícia recente, evento a decorrer), o AI Mode mostra desde finais de Ago 2026 um carrossel horizontal de links de artigos ("Preferred Sources") entre secções da resposta: cobertura fresca e com autoridade declarada tem uma via extra de exposição aqui, além da citação inline [fonte: Google/Robby Stein via X, ~25 ago 2026; desktop primeiro, mobile "em breve"].
 
 ### copilot
@@ -262,10 +262,10 @@ meta: revisto 2026-11-06 · externo: 13 Out: Topics Portfolio no relatório AI P
 Como decide: é o chat da Microsoft; pesquisa via índice Bing. A Microsoft está a unificar o Copilot consumer com o Copilot enterprise (M365) numa única superfície: a fronteira entre "assistente pessoal" e "produtividade empresarial" que hoje separa este bloco do M365 Copilot pode ficar menos nítida ao longo de Set 2026; sem mudança confirmada na mecânica de retrieval/citação por agora, mas vale a pena revisitar este bloco quando o rollout terminar [fonte: PYMNTS, 29 Jul 2026]. A Microsoft descreve a indexação e o "AI grounding" como sistemas agora explicitamente separados: uma página pode continuar indexada no Bing e ainda assim ser filtrada da resposta do Copilot: explica quedas de citação que não correspondem a nenhuma queda de indexação [fonte: Microsoft, "Evolving role of the index: from ranking pages to supporting answers", 6 Mai 2026]. {{fontes}}
 
 Faz:
-1. Garante indexação saudável no Bing: Bing Webmaster Tools ativo e IndexNow ligado. {{skip:bwt-connected}}
-2. Publica conteúdo comparativo claro, com autoridade declarada no site.
-3. Liga o "AI Performance" do Bing Webmaster Tools e usa o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação [fonte: Jun 2026]. É a única telemetria first-party de citações de IA. {{skip:bwt-connected}}
-4. Mantém versão EN atualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+1. Garanta indexação saudável no Bing: Bing Webmaster Tools ativo e IndexNow ligado. {{skip:bwt-connected}}
+2. Publique conteúdo comparativo claro, com autoridade declarada no site.
+3. Ligue o "AI Performance" do Bing Webmaster Tools e use o Citation Share e o Compare para medir o efeito de cada mudança de conteúdo ou schema na taxa de citação [fonte: Jun 2026]. É a única telemetria first-party de citações de IA. {{skip:bwt-connected}}
+4. Mantenha versão EN atualizada das páginas-pilar: o efeito na presença em respostas de IA é visível também no Copilot [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
 
 ### meta_ai
 

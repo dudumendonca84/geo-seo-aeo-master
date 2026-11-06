@@ -265,10 +265,14 @@ para ele.
   brasileira no início da frase ("Se mede"). "Estar a fazer", nunca "estar
   fazendo". "Nós", nunca "a gente". Possessivo com artigo ("o seu site").
 - **Tratamento: um só em todo o texto.** O site institucional da
-  destaque.ai trata por "você" ("o seu site", "pode"); o produto, o
-  Periscopy, trata por "tu"; um texto do Estúdio usa o que o kit da marca
-  diz, e sem kit usa o "você" de cortesia. Misturar "tu" e "você" no
-  mesmo texto é erro, não estilo.
+  destaque.ai e o produto, o Periscopy, tratam por "você" ("o seu site",
+  "pode", "a sua marca aparece"): os ecrãs, os relatórios, os alertas, a
+  leitura da semana, os porquês, os playbooks e as ações (decisão do
+  founder a 6 Nov 2026, "produto todo em você"). Um texto do Estúdio usa o
+  que o kit da marca diz, e sem kit usa o "você" de cortesia. Misturar "tu"
+  e "você" no mesmo texto é erro, não estilo. Um imperativo dirigido ao
+  cliente vai na forma de "você" ("Faça", "Publique", "Peça"), nunca na de
+  "tu" ("Faz", "Publica", "Pede").
 - **Anglicismos**: só quando é a palavra que o leitor usa no trabalho e não
   há outra corrente (SEO, schema, lead, prompt). "Desempenho" e não
   "performance", "relatório" e não "report", "prazo" e não "deadline",
