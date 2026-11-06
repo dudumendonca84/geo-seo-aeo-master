@@ -8,6 +8,20 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-06
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news sem posts após 28 Out ([Anthropic](https://www.anthropic.com/news)). AI ads: a OpenAI avisou anunciantes do ChatGPT Ads de mudanças nas opções de lance (max bid ou max CPC) a partir de segunda, 9 Nov ([Search Engine Roundtable](https://www.seroundtable.com/), 5 Nov; secundária, mercados não especificados). SEO/Google: AI Mode ganha botões de reserva para serviços domésticos via parceiros (EUA, secundária) e a Google lembra que as ações manuais de reputação de site deixaram de afetar o EEE desde 30 Ago ([Search Engine Roundtable](https://seroundtable.com/google-site-reputation-policy-eea-41968.html)). Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real e registar a mensagem exata para Portugal [verificar de primeira mão]; já nessa sessão ver o ecrã de lances. Passagem por motor feita (26 blocos). Sexta: drafts gerados.
+
+## 2026-11-06
+
+### ⚙️ Mudanças nas plataformas
+- **ChatGPT Ads: novas opções de lance (max bid ou max CPC)**: [Search Engine Roundtable, 5 Nov](https://www.seroundtable.com/) (secundária; email da OpenAI a anunciantes, em vigor a 9 Nov). Mercados não especificados; sem confirmação para Portugal. [verificar de primeira mão]
+- **Google AI Mode: botões de reserva em serviços domésticos** (Angi, Thumbtack, Housecall, GetJobber): Search Engine Roundtable, 5 Nov (secundária; EUA, sem sinal para PT).
+
+### 💡 Implicações para destaque.ai
+- Só awareness no que toca a lances: a mudança só importa para clientes PT quando o Ads Manager abrir em Portugal. Jogada: segunda 9 Nov, conta real, fluxo até ao fim, citar a mensagem de bloqueio com data.
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-05
 
 Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central não mostra posts novos de Nov ([Google](https://developers.google.com/search/blog)); preços e modelos da OpenAI sem mudança confirmada (tabela GPT-6 Sol/Luna já registada a 29 Set). Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
