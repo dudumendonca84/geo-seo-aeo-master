@@ -116,8 +116,8 @@ firehose: Instagram and TikTok are partially indexed, X variably.
 That is declared in the rationale, never hidden. Upgrade path when volume
 justifies it: YouTube Data API (free quota) first; paid native APIs (X)
 only with the recurring cost shown to the founder before production.
-The 360 set still lands inactive for new clients until a human confirms.
-except where the founder has already ordered it on (destaque.ai, 22 Aug).
+The 360 set lands **active** for every client (founder, 6 Nov 2026: "tudo
+tem que ser automático"); it can be switched off per client in Gerir fontes.
 
 **Do not propose** platforms whose terms forbid programmatic reading and
 which have no public search surface, and never propose a workaround for
@@ -130,7 +130,11 @@ Return items with `kind` in `reddit_search | subreddit | hackernews | site`,
 `identifier` (search term, subreddit name without `r/`, or domain),
 `label` (human name), and `rationale` - one sentence saying why this
 source matters **for this brand**, not for brands in general. Everything
-lands inactive; a human confirms before collection touches it.
+lands **active** (founder, 6 Nov 2026: a proposal that waits for a human
+left Reddit, DECO and Portal da Queixa idle for ten days on a client). A
+person can switch any source off in Gerir fontes, and a source switched off
+by hand is never switched back on by a new proposal. That makes the
+rationale more important, not less: propose only what serves this brand.
 
 Six to twelve sources is the useful range. More than that dilutes the
 weekly read and multiplies collection cost without adding signal.
