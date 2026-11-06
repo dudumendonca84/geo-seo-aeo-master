@@ -297,6 +297,25 @@ Duas consequências práticas:
   chegarem para decidir, diz-se que não chega, pela regra de sempre
   deste ficheiro.
 
+### 1c. Um defeito do modelo de página é uma ação, não mil recomendações
+
+Desde 6 Nov 2026. Quando o mesmo conjunto de factos se repete em muitas
+páginas do mesmo tipo (as fichas de produto de uma loja, os artigos de
+um blogue), o defeito está no **modelo** da página e a correção faz-se
+uma vez, por quem mantém o modelo.
+
+- A ação escreve-se **uma vez** no plano, com os números (quantas páginas,
+  que modelo) e a peça para quem a faz.
+- Na recomendação de cada página desse grupo, uma frase só, igual em
+  todas: o problema é do modelo, e a ação está no plano.
+- Por extenso, só o que é desta página e não do modelo: uma página morta
+  que continua no sitemap, um título que é o código interno do produto,
+  um caso que contraria o resto.
+
+Porquê: na primeira análise do Pingo Doce saíram 3000 recomendações quase
+iguais, uma por ficha, para um defeito que era um só. As 12 páginas que
+eram mesmo diferentes ficaram escondidas no meio delas.
+
 ### 2. O que já está no plano
 
 Chega `existing_plan`: os títulos das ações, a dimensão, o estado e desde
