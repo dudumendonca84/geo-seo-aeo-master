@@ -8,6 +8,13 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-06: Um defeito do modelo de página é uma ação, não mil recomendações
+
+- **Trigger:** a primeira análise das páginas do Pingo Doce escreveu 3000 recomendações quase iguais para um defeito do modelo das fichas de produto; o founder concordou que devia ser uma ação.
+- **O que muda:** `references/gap_action_mapping.md` ganha o §1c. O conselho de um defeito repetido escreve-se uma vez como ação no plano; cada página do grupo leva uma frase a apontar para ela; por extenso só o que é da página e não do modelo. A spec da Routine (`page_recommendations`) diz o mesmo.
+
+---
+
 ## 2026-11-05: Onde a marca tem perfil, e que diretórios contam pelos concorrentes
 
 - **Trigger:** o desenho v2 do ecrã Entidade, aprovado pelo founder a 5 Nov: o que o produto lê, o que encontra por pesquisa, e o que o cliente confirma.
