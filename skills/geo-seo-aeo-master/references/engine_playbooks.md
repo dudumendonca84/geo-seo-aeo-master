@@ -132,24 +132,25 @@ o Tracker não tem fallback para este conteúdo, e um header fora do formato
 
 ### chatgpt
 
-meta: revisto 2026-11-08 · externo: 13 Out: GPT-6 abre links sem `utm_source=chatgpt.com` nem referrer, cliques ChatGPT aparecem como tráfego direto (Adobe/Huesler, ~500 páginas, -31k visitas/dia ChatGPT, +26k diretas; SE Roundtable 14 Out, secundária) · 14 Out: OpenAI atribui Account Managers a anunciantes ChatGPT Ads (SE Roundtable, secundária; mercados não especificados) · 6 Out: ChatGPT testa anúncio visual durante geração de imagens (5 Out, SE Roundtable, secundária; teste) · ChatGPT: botão "Try on" em listagens de produto de vestuário e acessórios (1 Oct, help doc OpenAI via TechCrunch/SE Roundtable); mercados não confirmados; Ads Manager PT sem caso novo · 16 Out: novos formatos visuais e parceiros de medição no ChatGPT Ads Manager, mercados não especificados (SE Roundtable 19 Out, secundária) · 20 Out: OpenAI ativa por defeito "creative enhancements" nos anúncios a partir de 30 Out, com opt-out no Ads Manager (SE Roundtable, secundária) · 30 Out: anunciado sinal partilhado de preferência de treino de IA no robots.txt (IETF AIPREF, `__usage_ai-training`; Google para início de 2027, OpenAI 'nos próximos meses'; SE Roundtable, secundária); só treino, sem efeito no acesso de pesquisa · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: 8 Nov: mecanismo corrigido, as respostas leem o índice próprio da OpenAI (OAI-SearchBot) e não o índice Bing; o ChatGPT-User não decide a inclusão (página dos robôs da OpenAI; Seiden et al., CCS 2026) · 13 Out: GPT-6 abre links sem `utm_source=chatgpt.com` nem referrer, cliques ChatGPT aparecem como tráfego direto (Adobe/Huesler, ~500 páginas, -31k visitas/dia ChatGPT, +26k diretas; SE Roundtable 14 Out, secundária) · 14 Out: OpenAI atribui Account Managers a anunciantes ChatGPT Ads (SE Roundtable, secundária; mercados não especificados) · 6 Out: ChatGPT testa anúncio visual durante geração de imagens (5 Out, SE Roundtable, secundária; teste) · ChatGPT: botão "Try on" em listagens de produto de vestuário e acessórios (1 Oct, help doc OpenAI via TechCrunch/SE Roundtable); mercados não confirmados; Ads Manager PT sem caso novo · 16 Out: novos formatos visuais e parceiros de medição no ChatGPT Ads Manager, mercados não especificados (SE Roundtable 19 Out, secundária) · 20 Out: OpenAI ativa por defeito "creative enhancements" nos anúncios a partir de 30 Out, com opt-out no Ads Manager (SE Roundtable, secundária) · 30 Out: anunciado sinal partilhado de preferência de treino de IA no robots.txt (IETF AIPREF, `__usage_ai-training`; Google para início de 2027, OpenAI 'nos próximos meses'; SE Roundtable, secundária); só treino, sem efeito no acesso de pesquisa · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fração das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. A pesquisa corre sobre o índice Bing e lê tipicamente só os 2 a 3 primeiros resultados por sub-pergunta [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, amostra pequena]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026]. Um teste comportamental (Malte Landwehr via Peec.ai, 4 Set 2026) sugere que o ChatGPT também consulta a Google para fundamentar algumas respostas, não só o Bing: um site sem tráfego registou um pico de referral no Search Console da Google especificamente nos dias em que só o ChatGPT o consultava; fonte única, metodologia informal, tratar como pista, não facto assente. {{fontes}}
+Como decide: mistura memória de treino com pesquisa web, e só liga a pesquisa numa fração das perguntas [fonte: ~34,5% das queries, Semrush clickstream, Fev 2026]. Quando pesquisa, não visita o seu site naquele instante: lê a cópia que a OpenAI guardou no índice próprio, recolhida antes pelo robô `OAI-SearchBot` [fonte: documentação dos robôs da OpenAI; experiência com 20 sites, Seiden et al., CCS 2026; Peec AI, Set 2026]. Os resultados do Bing e da Google servem sobretudo para o ChatGPT descobrir que endereços considerar, e o peso de cada um não está medido [fonte: OpenAI, 2024; Peec AI, Set 2026, fonte única]. O ranking orgânico não é pré-requisito: 28,3% das páginas mais citadas não têm visibilidade orgânica nenhuma [fonte: Ahrefs, Q1 2026]. Uma página alterada só entra nas respostas depois de o `OAI-SearchBot` voltar a ela, e a OpenAI não tem forma documentada de pedir essa visita [fonte: como-os-motores-leem.md, 8 Nov 2026]. {{fontes}}
 
 Faz:
 1. Responda no site às perguntas comparativas da categoria, uma pergunta por secção. {{perguntas:direct_comparison}} Abre a via da pesquisa em semanas.
-2. Garanta indexação saudável no Bing (Bing Webmaster Tools, IndexNow): é o índice que a pesquisa do ChatGPT usa. {{skip:bwt-connected}}
-3. Publique documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos [fonte: Semrush via Search Engine Land, Jul 2026].
-4. Procure presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
-5. Mantenha uma versão EN atualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desatualizada desempenha pior do que não ter nenhuma [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
-6. Use o mesmo nome e a mesma descrição da marca em todas as fontes.
-7. Separe conquistado de comprado desde já: os anúncios do ChatGPT já aparecem em Portugal, por baixo da resposta e identificados, nos planos Free e Go. A compra ainda não é self-serve para anunciantes portugueses: faz-se pela equipa de anúncios da OpenAI ou por uma agência parceira, e as fontes divergem sobre quando abre. Meça a linha de base conquistada antes de haver pago, senão não há como ler o efeito do investimento. [fonte: OpenAI, Ago 2026; imprensa internacional e portuguesa, Set 2026, com leituras divergentes sobre a abertura do self-serve]
+2. Permita o `OAI-SearchBot` no robots.txt e na firewall, sirva o texto no HTML sem depender de JavaScript, e mantenha o sitemap com o `lastmod` igual à última alteração real de cada página. É a cópia da OpenAI que entra na resposta. Bloquear o `ChatGPT-User` não tira o site das respostas com pesquisa, e permiti-lo não o põe lá.
+3. Ligue o Bing Webmaster Tools e o IndexNow: valem para o Copilot e possivelmente para o ChatGPT descobrir as páginas novas. {{skip:bwt-connected}}
+4. Publique documentação e dados verificáveis de nível institucional: em modo de raciocínio o ChatGPT desloca citações de UGC para fontes institucionais, com só 25,6% de sobreposição de domínios entre modos [fonte: Semrush via Search Engine Land, Jul 2026].
+5. Procure presença em fontes duráveis: imprensa, listas "melhores de", Wikipedia quando elegível. Alimenta a memória de treino, em meses.
+6. Mantenha uma versão EN atualizada das páginas-pilar: aumenta a presença nas respostas, mas uma página EN desatualizada desempenha pior do que não ter nenhuma [fonte: Search Engine Land, Ago 2026]. {{skip:en-site}}
+7. Use o mesmo nome e a mesma descrição da marca em todas as fontes.
+8. Separe conquistado de comprado desde já: os anúncios do ChatGPT já aparecem em Portugal, por baixo da resposta e identificados, nos planos Free e Go. A compra ainda não é self-serve para anunciantes portugueses: faz-se pela equipa de anúncios da OpenAI ou por uma agência parceira, e as fontes divergem sobre quando abre. Meça a linha de base conquistada antes de haver pago, senão não há como ler o efeito do investimento. [fonte: OpenAI, Ago 2026; imprensa internacional e portuguesa, Set 2026, com leituras divergentes sobre a abertura do self-serve]
 
 ### claude
 
-meta: revisto 2026-11-08 · externo: Claude Haiku 5.5 lançado a 7 Out (platform.claude.com, leitura direta); modelo de API, sem mudança documentada em como se aparece no Claude · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: 8 Nov: mecanismo da pesquisa acrescentado (índice da Brave, que segue as permissões do Googlebot) · Claude Haiku 5.5 lançado a 7 Out (platform.claude.com, leitura direta); modelo de API, sem mudança documentada em como se aparece no Claude · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: sobretudo memória de treino no modo base; com pesquisa ativa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional]. Claude (claude.ai) e Claude Code são motores de resposta distintos, não a mesma coisa em superfícies diferentes: o Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, e as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois [fonte: Profound, 24 Ago 2026, corroborado por Search Engine Journal, 31 Ago 2026]. Este bloco descreve o Claude consumidor (claude.ai); otimizar para aqui não garante nada de visibilidade no Claude Code. {{fontes}}
+Como decide: sobretudo memória de treino no modo base; com pesquisa ativa prefere fontes institucionais e documentação clara. Cita jornalismo de referência com mais frequência do que os outros motores [fonte: 5W Citation Source Index, Jun 2026; direccional]. Claude (claude.ai) e Claude Code são motores de resposta distintos, não a mesma coisa em superfícies diferentes: o Claude usa pesquisa web em 93% das respostas, o Claude Code só em 13%, e as marcas citadas para o mesmo prompt só coincidem em cerca de 20% entre os dois [fonte: Profound, 24 Ago 2026, corroborado por Search Engine Journal, 31 Ago 2026]. Com pesquisa, o Claude lê o índice da Brave e não visita o site no momento da resposta, e a Brave não recolhe o que o `Googlebot` não pode recolher [fonte: lista de subcontratantes da Anthropic, Mar 2025; página do rastreador da Brave; Seiden et al., CCS 2026]. Este bloco descreve o Claude consumidor (claude.ai); otimizar para aqui não garante nada de visibilidade no Claude Code. {{fontes}}
 
 Faz:
 1. Mantenha a entidade consistente: sameAs no schema, descrições estáveis em todas as plataformas.
@@ -157,6 +158,7 @@ Faz:
 3. Publique conteúdo técnico citável: documentação, dados, comparações verificáveis.
 4. Procure cobertura em imprensa de referência: é o perfil de fonte que este motor mais cita.
 5. Não presuma que uma boa presença no Claude se transfere para o Claude Code: se um cliente pede visibilidade especificamente no Claude Code (uso interno de developer tooling), é uma medição à parte, com pesquisa web ligada em muito menos respostas.
+6. Não bloqueie o `Googlebot` em nenhuma página que queira ver no Claude, porque a Brave segue as mesmas permissões. Depois de alterar uma página importante, peça nova leitura no formulário de submissão da Brave.
 
 ### gemini
 
@@ -173,15 +175,15 @@ Faz:
 
 ### grok
 
-meta: revisto 2026-11-08 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: 8 Nov: origem da pesquisa por documentar, Googlebot e agentes de navegador observados (Seiden et al., CCS 2026) · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Periscopy [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. {{fontes}}
+Como decide: puxa do índice web e, segundo a documentação do fornecedor, dá peso invulgar a conversas no X e a sinais recentes. Duas auditorias seguidas do Periscopy [fonte: 2026-08-10 e 2026-08-17, nicho de consultoria de visibilidade em IA/SEO em Portugal, `source_intelligence.md`] não encontraram nenhuma citação de x.com nem twitter.com nas respostas de pesquisa do Grok neste nicho: zero em ambas as semanas. Não invalida a alavanca noutras categorias, mas neste nicho o X não é hoje um canal de citação observável. A xAI não publica de onde vem a pesquisa; numa experiência com 20 sites, o Grok usou conteúdo recolhido pelo `Googlebot` e por agentes de navegador sem nome [fonte: Seiden et al., CCS 2026]. {{fontes}}
 
 Faz:
 1. Mantenha presença ativa e citável no X, com reação rápida aos temas da categoria: alavanca de marca geral, mesmo sem citação direta confirmada neste nicho.
 2. Garanta que o site valida o que afirma nas redes: cada afirmação com página correspondente.
 3. Publique com frequência: o recente pesa mais aqui do que nos outros motores.
-4. Não conte com o X como canal de citação garantido no Grok para esta categoria: priorize o site e fontes indexadas antes de investir tempo em X à espera de citação direta.
+4. Não conte com o X como canal de citação garantido no Grok para esta categoria: priorize o site, bem indexado na Google, e fontes indexadas antes de investir tempo em X à espera de citação direta.
 
 ### deepseek
 
@@ -219,9 +221,9 @@ Nota: este motor é o modelo Llama, não o assistente Meta AI do WhatsApp. O ass
 
 ### perplexity
 
-meta: revisto 2026-11-08 · externo: nenhuma mudança · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: 8 Nov: arquitetura do índice próprio acrescentada (Perplexity Research, 25 Set 2025) · interno: sem acesso a dados do Tracker nesta sessão
 
-Como decide: pesquisa sempre a web viva e cita fontes explícitas. O YouTube lidera as citações [fonte: 32,4%, Ahrefs, Jun 2026], as comunidades pesam muito (Reddit ~47% em alguns estudos de categoria; direccional) e os portais de research primária e a imprensa especializada pesam mais do que nos outros motores [fonte: 5W, Jun 2026]. {{fontes}}
+Como decide: pesquisa sempre e cita fontes explícitas. Lê o índice próprio, recolhido pelo `PerplexityBot`, onde um modelo decide quando volta a cada página [fonte: Perplexity Research, 25 Set 2025]. O YouTube lidera as citações [fonte: 32,4%, Ahrefs, Jun 2026], as comunidades pesam muito (Reddit ~47% em alguns estudos de categoria; direccional) e os portais de research primária e a imprensa especializada pesam mais do que nos outros motores [fonte: 5W, Jun 2026]. {{fontes}}
 
 Faz:
 1. Esteja presente, e faça-se mencionar, em comunidades relevantes: Reddit e fóruns da categoria.
@@ -294,24 +296,25 @@ divergem são pior do que uma só.
 
 ### chatgpt
 
-meta: revisto 2026-11-08 · externo: Oct 13: GPT-6 opens links without `utm_source=chatgpt.com` or referrer, ChatGPT clicks show as direct (Adobe/Huesler, ~500 pages, -31k ChatGPT visits/day, +26k direct; SE Roundtable Oct 14, secondary) · Oct 14: OpenAI assigns Account Managers to ChatGPT Ads advertisers (SE Roundtable, secondary; markets unspecified) · Oct 6: ChatGPT testing visual ad during image generation (Oct 5, SE Roundtable, secondary; test) · ChatGPT: "Try on" button on clothing and accessory product listings (Oct 1, OpenAI help doc via TechCrunch/SE Roundtable); markets unconfirmed; Ads Manager PT no new case · Oct 16: new visual ad formats and measurement partners in ChatGPT Ads Manager, markets unspecified (SE Roundtable Oct 19, secondary) · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: Nov 8: mechanism corrected, answers read OpenAI's own index (OAI-SearchBot), not the Bing index; ChatGPT-User does not decide inclusion (OpenAI bots page; Seiden et al., CCS 2026) · Oct 13: GPT-6 opens links without `utm_source=chatgpt.com` or referrer, ChatGPT clicks show as direct (Adobe/Huesler, ~500 pages, -31k ChatGPT visits/day, +26k direct; SE Roundtable Oct 14, secondary) · Oct 14: OpenAI assigns Account Managers to ChatGPT Ads advertisers (SE Roundtable, secondary; markets unspecified) · Oct 6: ChatGPT testing visual ad during image generation (Oct 5, SE Roundtable, secondary; test) · ChatGPT: "Try on" button on clothing and accessory product listings (Oct 1, OpenAI help doc via TechCrunch/SE Roundtable); markets unconfirmed; Ads Manager PT no new case · Oct 16: new visual ad formats and measurement partners in ChatGPT Ads Manager, markets unspecified (SE Roundtable Oct 19, secondary) · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. Search runs on the Bing index and typically reads only the top 2 to 3 results per sub-query [fonte: Search Engine Land, Jun 2026; Peec AI, Jul 2026, small sample]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026]. A behavioral test (Malte Landwehr via Peec.ai, Sep 4 2026) suggests ChatGPT also queries Google to ground some answers, not only Bing: a zero-traffic site logged a Google Search Console referral spike specifically on days only ChatGPT was querying it; single source, informal methodology, treat as a lead rather than settled fact. {{fontes}}
+How it decides: mixes training memory with web search, and only turns search on for a fraction of questions [fonte: ~34.5% of queries, Semrush clickstream, Feb 2026]. When it searches, it does not visit your site at that moment: it reads the copy OpenAI stored in its own index, collected earlier by the `OAI-SearchBot` crawler [fonte: OpenAI crawler documentation; 20-site experiment, Seiden et al., CCS 2026; Peec AI, Sep 2026]. Bing and Google results mainly help ChatGPT discover which URLs to consider, and the weight of each is unmeasured [fonte: OpenAI, 2024; Peec AI, Sep 2026, single source]. Organic ranking is not a prerequisite: 28.3% of its most-cited pages have no organic keyword visibility [fonte: Ahrefs, Q1 2026]. A changed page only reaches answers after `OAI-SearchBot` returns to it, and OpenAI has no documented way to request that visit [fonte: como-os-motores-leem.md, 8 Nov 2026]. {{fontes}}
 
 Do:
 1. Answer the category's comparison questions on your site, one question per section. {{perguntas:direct_comparison}} Opens the search route in weeks.
-2. Keep Bing indexing healthy (Bing Webmaster Tools, IndexNow): it is the index ChatGPT search uses. {{skip:bwt-connected}}
-3. Publish verifiable, institution-grade documentation and data: in reasoning mode ChatGPT shifts citations from UGC to institutional sources, with only 25.6% domain overlap between modes [fonte: Semrush via Search Engine Land, Jul 2026].
-4. Earn presence in durable sources: press, "best of" lists, Wikipedia where eligible. Feeds training memory, in months.
-5. Keep an up-to-date EN version of pillar pages: it raises presence in answers, but a stale EN page performs worse than none [fonte: Search Engine Land, Aug 2026]. {{skip:en-site}}
-6. Use the same brand name and description across every source.
-7. Separate earned from paid starting now: ChatGPT ads already show in Portugal, below the answer and labeled, on the Free and Go plans. Buying is not yet self-serve for Portuguese advertisers: it goes through OpenAI's ads team or a partner agency, and sources disagree on when it opens. Measure the earned baseline before paid exists, or there is no way to read what the spend did. [fonte: OpenAI, Aug 2026; international and Portuguese press, Sep 2026, with diverging readings on the self-serve opening]
+2. Allow `OAI-SearchBot` in robots.txt and in the firewall, serve the text in the HTML without relying on JavaScript, and keep the sitemap `lastmod` equal to each page's last real change. OpenAI's copy is what enters the answer. Blocking `ChatGPT-User` does not take the site out of search answers, and allowing it does not put it there.
+3. Connect Bing Webmaster Tools and IndexNow: they count for Copilot and possibly for ChatGPT discovering new pages. {{skip:bwt-connected}}
+4. Publish verifiable, institution-grade documentation and data: in reasoning mode ChatGPT shifts citations from UGC to institutional sources, with only 25.6% domain overlap between modes [fonte: Semrush via Search Engine Land, Jul 2026].
+5. Earn presence in durable sources: press, "best of" lists, Wikipedia where eligible. Feeds training memory, in months.
+6. Keep an up-to-date EN version of pillar pages: it raises presence in answers, but a stale EN page performs worse than none [fonte: Search Engine Land, Aug 2026]. {{skip:en-site}}
+7. Use the same brand name and description across every source.
+8. Separate earned from paid starting now: ChatGPT ads already show in Portugal, below the answer and labeled, on the Free and Go plans. Buying is not yet self-serve for Portuguese advertisers: it goes through OpenAI's ads team or a partner agency, and sources disagree on when it opens. Measure the earned baseline before paid exists, or there is no way to read what the spend did. [fonte: OpenAI, Aug 2026; international and Portuguese press, Sep 2026, with diverging readings on the self-serve opening]
 
 ### claude
 
-meta: revisto 2026-11-08 · externo: Claude Haiku 5.5 released Oct 7 (platform.claude.com, read directly); API model, no documented change to how one appears in Claude · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: Nov 8: search mechanism added (Brave's index, which follows Googlebot permissions) · Claude Haiku 5.5 released Oct 7 (platform.claude.com, read directly); API model, no documented change to how one appears in Claude · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: mostly training memory in base mode; with search on it prefers institutional sources and clear documentation. It cites reference journalism more often than the other engines [fonte: 5W Citation Source Index, Jun 2026; directional]. Claude (claude.ai) and Claude Code are distinct answer engines, not the same thing on different surfaces: Claude uses web search in 93% of answers, Claude Code only in 13%, and the brands cited for the same prompt overlap only about 20% between the two [fonte: Profound, Aug 24 2026, corroborated by Search Engine Journal, Aug 31 2026]. This block describes consumer Claude (claude.ai); optimizing for it does not guarantee any visibility in Claude Code. {{fontes}}
+How it decides: mostly training memory in base mode; with search on it prefers institutional sources and clear documentation. It cites reference journalism more often than the other engines [fonte: 5W Citation Source Index, Jun 2026; directional]. Claude (claude.ai) and Claude Code are distinct answer engines, not the same thing on different surfaces: Claude uses web search in 93% of answers, Claude Code only in 13%, and the brands cited for the same prompt overlap only about 20% between the two [fonte: Profound, Aug 24 2026, corroborated by Search Engine Journal, Aug 31 2026]. With search on, Claude reads Brave's index and does not visit the site at answer time, and Brave does not crawl what `Googlebot` may not crawl [fonte: Anthropic subprocessor list, Mar 2025; Brave crawler page; Seiden et al., CCS 2026]. This block describes consumer Claude (claude.ai); optimizing for it does not guarantee any visibility in Claude Code. {{fontes}}
 
 Do:
 1. Keep the entity consistent: sameAs in schema, stable descriptions across platforms.
@@ -319,6 +322,7 @@ Do:
 3. Publish quotable technical content: documentation, data, verifiable comparisons.
 4. Earn coverage in reference journalism: it is the source profile this engine cites most.
 5. Do not assume good Claude presence transfers to Claude Code: if a client specifically asks for Claude Code visibility (internal developer-tooling usage), that is a separate measurement, with web search enabled on far fewer answers.
+6. Do not block `Googlebot` on any page you want seen in Claude, because Brave follows the same permissions. After changing an important page, request a fresh read through Brave's submission form.
 
 ### gemini
 
@@ -335,15 +339,15 @@ Do:
 
 ### grok
 
-meta: revisto 2026-11-08 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: Nov 8: search origin undocumented, Googlebot and browser agents observed (Seiden et al., CCS 2026) · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Periscopy audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today. {{fontes}}
+How it decides: pulls from the web index and, per the vendor's own documentation, gives unusual weight to conversation on X and to recent signals. Two consecutive Periscopy audits [fonte: 2026-08-10 and 2026-08-17, AI-visibility/SEO consultancy niche in Portugal, `source_intelligence.md`] found zero citations of x.com or twitter.com in Grok's search answers for this niche, in either week. This does not invalidate the lever in other categories, but in this niche X is not an observable citation channel today. xAI does not publish where its search comes from; in a 20-site experiment Grok used content collected by `Googlebot` and by unnamed browser agents [fonte: Seiden et al., CCS 2026]. {{fontes}}
 
 Do:
 1. Keep an active, quotable presence on X, reacting quickly to category topics: a general brand lever, even without confirmed direct citation in this niche.
 2. Make the site back up what you claim on social: every claim with a matching page.
 3. Publish often: recency counts for more here than on other engines.
-4. Do not count on X as a guaranteed citation channel in Grok for this category: prioritise the site and indexed sources over X presence built purely to chase direct citation.
+4. Do not count on X as a guaranteed citation channel in Grok for this category: prioritise the site, well indexed in Google, and indexed sources over X presence built purely to chase direct citation.
 
 ### deepseek
 
@@ -381,9 +385,9 @@ Note: this engine is the Llama model, not the Meta AI assistant it powers in Wha
 
 ### perplexity
 
-meta: revisto 2026-11-08 · externo: no confirmed change · interno: sem acesso a dados do Tracker nesta sessão
+meta: revisto 2026-11-08 · externo: Nov 8: own-index architecture added (Perplexity Research, Sep 25 2025) · interno: sem acesso a dados do Tracker nesta sessão
 
-How it decides: always searches the live web and cites explicit sources. YouTube leads its citations [fonte: 32.4%, Ahrefs, Jun 2026], communities weigh heavily (Reddit ~47% in some category studies; directional) and primary-research portals and trade press weigh more than on other engines [fonte: 5W, Jun 2026]. {{fontes}}
+How it decides: always searches and cites explicit sources. It reads its own index, collected by `PerplexityBot`, where a model decides when to revisit each page [fonte: Perplexity Research, Sep 25 2025]. YouTube leads its citations [fonte: 32.4%, Ahrefs, Jun 2026], communities weigh heavily (Reddit ~47% in some category studies; directional) and primary-research portals and trade press weigh more than on other engines [fonte: 5W, Jun 2026]. {{fontes}}
 
 Do:
 1. Be present, and get mentioned, in relevant communities: Reddit and category forums.

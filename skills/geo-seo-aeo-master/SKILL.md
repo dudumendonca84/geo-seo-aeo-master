@@ -17,6 +17,7 @@ Canonical knowledge base for **destaque.ai** (Eduardo Mendonça, Portugal). The 
 |---|---|
 | `SKILL.md` | This file. Identity, principles, workflow. |
 | `references/frameworks.md` | llms.txt spec, AI crawler matrix, Schema.org types that matter, E-E-A-T, RAG mechanics by engine, Princeton GEO paper, entity-based optimization, multilingual/PT-PT, adversarial risks. |
+| `references/como-os-motores-leem.md` | How each engine reads a site at answer time: the stored copy and the index crawler behind it (`OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`, Brave), not the user-triggered agents; how long a change takes to show and how to speed it up per engine; what server logs can and cannot prove (UA spoofing, IP verification, CDN cache blind spots); a canary-token experiment protocol. Each claim marked documented, measured, inferred or unknown. |
 | `references/tools.md` | Vendor landscape (Profound, Peec AI, Otterly, Goodie, Daydream, Surfer, Ahrefs Brand Radar, Semrush AI Toolkit) with honest gaps. |
 | `references/metrics.md` | Citation rate, brand mention rate, SoV, AI-attributed traffic, Princeton PAWC; GSC / GA4 / Bing Webmaster Tools current state. |
 | `references/benchmarks.md` | Public studies with hard numbers (Pew, Ahrefs, BrightEdge, Semrush, Similarweb, NetElixir, Aggarwal et al., Seer). Flagged stats *not* to cite. |
@@ -454,7 +455,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 
 ### 7. AI / LLM visibility (technical GEO)
 - `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap?
-- Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent.
+- Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent. Inclusion in answers with search is decided by the **index crawlers** (`OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`, and `Googlebot` again for Brave and therefore Claude), not by the user-triggered agents; check robots.txt and the firewall/CDN for those first. See `references/como-os-motores-leem.md`.
 - Is HTML server-rendered (LLMs read it without JS)?
 - **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images: image SEO is now a citation surface.
 - **Two-mode measurement.** Every audit prompt is run twice per engine: once in `knowledge` mode (raw model, no tools) and once in `augmented` mode (native web-search / grounding feature enabled). Report `knowledge_cr` and `augmented_cr` side-by-side; never blend them. Per-engine activation table is in `references/search_modes.md`. The *gap* between the two is itself a finding: `knowledge` weak / `augmented` strong points to entity-foundation work; the reverse points to crawlability and freshness work.
