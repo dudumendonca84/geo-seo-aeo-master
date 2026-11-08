@@ -573,7 +573,7 @@ news-feed": passa a registá-la também aqui.
 | `mistral-small-latest` | 0.15 | 0.60 | 2026-06 | Mistral Small 4. A MENOS FIRME DA TABELA: sem acesso à página do fornecedor, os agregadores dividem-se entre 0.15/0.60 (OpenRouter, tokencost, gate.ai) e 0.10/0.30 (outros). Fica o par mais citado, e a divergência é de 50% |
 | `sonar-pro` | 3.00 | 15.00 | | pricepertoken, cloudzero e burnwise a 7 Set 2026. INCOMPLETO DE PROPÓSITO: há ainda uma taxa por pedido de 6 a 14 dólares por mil pedidos, consoante o tamanho do contexto de pesquisa, que estas duas colunas não sabem exprimir. Ver a nota sobre custo declarado abaixo |
 | `sonar` | 1.00 | 1.00 | | mesmas fontes. A mesma taxa por pedido, aqui de 5 a 12 dólares por mil |
-| `muse-spark-1.3` | 1.25 | 4.25 | 2026-10-21 | Meta Model API (`api.meta.ai`), página de preços lida a 21 Out 2026. É o modelo que responde no Meta AI. INCOMPLETO DE PROPÓSITO, como o `sonar`: a ferramenta `web_search` custa mais 2,50 dólares por mil pesquisas, que estas duas colunas não exprimem. O Tracker só o chama na primeira semana de um cliente e nos prospects |
+| `muse-spark-1.3` | 1.25 | 4.25 | 2026-10-21 | Meta Model API (`api.meta.ai`), página de preços lida a 21 Out 2026. É o modelo que responde no Meta AI. INCOMPLETO DE PROPÓSITO, como o `sonar`: a ferramenta `web_search` custa mais 2,50 dólares por mil pesquisas, que estas duas colunas não exprimem (está em `## Search prices`). O Tracker só o chama na primeira semana de um cliente e nos prospects |
 
 ### Contrato de leitura
 
@@ -591,6 +591,9 @@ news-feed": passa a registá-la também aqui.
    onde a multiplicação falharia: as duas colunas de preço não conhecem
    a taxa por pedido de 6 a 14 dólares por mil, que na nossa utilização
    pesa mais do que os tokens. Medido vence calculado.
+7. **A pesquisa na web paga-se à parte**, e a taxa vive na secção
+   `## Search prices`, logo abaixo. Uma chamada com pesquisa custa as
+   fichas desta tabela mais as pesquisas daquela.
 
 ### O que estas duas colunas não conseguem dizer
 
@@ -608,7 +611,22 @@ número que lá está é uma escolha declarada, não a verdade inteira:
   mediu, e era uma afirmação sobre dinheiro (lição 2 do Tracker).
 - **`sonar-pro` e `sonar` dependem do NÚMERO DE PEDIDOS.** Ver o ponto 6.
 
-Um consumidor que queira ser rigoroso mostra estes três como piso e não
+- **`gemini-3.5-flash` já não é o modelo que responde.** A página de
+  descontinuações da Google (`aistudio.google.com/docs/deprecations`, lida
+  a 8 Nov 2026) diz que o endpoint `gemini-3.5-flash` "automatically routes
+  API requests to `gemini-3.6-flash`", que custa 0.75/3.75 até 31 Dez 2026
+  (1.50/7.50 a partir de 1 Jan 2027). A página não diz a que tabela se
+  fatura o pedido reencaminhado (para o `gemini-2.5-flash` diz-o por
+  escrito; para este não), por isso a linha de cima fica como está e fica
+  POR CONFIRMAR na fatura da Google. Se se faturar ao preço do 3.6, a linha
+  de cima sobrestima as fichas do Gemini para o dobro.
+- **O Gemini fatura as fichas de raciocínio como saída** ("Output price
+  (including thinking tokens)", mesma página de preços). O que o Tracker
+  grava como `tokens_out` do Gemini é o `candidatesTokenCount`, que não as
+  inclui: o custo das fichas do Gemini fica por baixo na mesma proporção.
+  Não está medido quanto.
+
+Um consumidor que queira ser rigoroso mostra os três primeiros como piso e não
 como custo. Nenhum deles deve aparecer a um cliente sem essa ressalva.
 
 ### Contrato de manutenção
@@ -617,6 +635,99 @@ Atualiza-se quando um fornecedor muda um preço, quando uma promoção
 começa ou acaba, e quando um modelo novo entra na tabela de mappings. A
 coluna `since` é a data a partir da qual o preço vale, e a `source` diz
 onde foi lido: sem as duas, a linha não entra.
+
+---
+
+## Search prices
+
+**O que uma chamada COM PESQUISA paga além das fichas.** Mesmo espírito da
+tabela de cima: a prosa é para pessoas, esta tabela é para código.
+
+PORQUÊ (8 Nov 2026). Até hoje o custo de uma chamada era fichas vezes o
+preço de `## Token prices`, e nada mais. Mas a pesquisa na web paga-se à
+parte, por pesquisa, em todos os fornecedores que o Tracker chama com
+pesquisa, e a tabela de fichas não o sabe. Resultado: todo o
+`audit_responses.cost_usd` da metade `augmented` estava por baixo, e no
+ChatGPT e no Gemini a taxa de pesquisa pesa mais do que as fichas. O
+founder recusou um custo por resposta do ChatGPT com pesquisa de 0,0023
+dólares ("não é verdade"), e tinha razão: com a taxa, a mesma resposta
+custa perto de dez vezes isso.
+
+**Uma linha por ID de modelo da API**, o mesmo ID de `## Token prices`.
+Os preços estão em dólares por mil unidades, e a unidade diz o que se
+conta.
+
+| API model ID | unit | USD per 1000 | free allowance | since | source |
+|---|---|---|---|---|---|
+| `gpt-5.6-luna` | search | 10.00 | | | developers.openai.com/api/docs/pricing, "Built-in tools", "Web search (all models): $10.00 / 1k calls + Search content tokens billed at model rates" (lido a 2026-11-08). O conteúdo da pesquisa já vem no `input_tokens` e paga-se pela tabela de cima |
+| `gpt-5.6-sol` | search | 10.00 | | | idem |
+| `gpt-6-sol` | search | 10.00 | | | idem |
+| `gpt-6-luna` | search | 10.00 | | | idem |
+| `gpt-6.1-sol` | search | 10.00 | | | idem |
+| `claude-sonnet-5` | search | 10.00 | | | platform.claude.com/docs/en/about-claude/pricing, "Web search tool": "$10 USD per 1,000 searches, plus standard token costs"; "A web search that fails with an error is not billed" (lido a 2026-11-08). A web fetch não tem taxa |
+| `claude-sonnet-5-5` | search | 10.00 | | | idem |
+| `claude-opus-5` | search | 10.00 | | | idem |
+| `claude-opus-5-5` | search | 10.00 | | | idem |
+| `claude-haiku-5-5` | search | 10.00 | | | idem |
+| `claude-haiku-4-5` | search | 10.00 | | | idem |
+| `claude-fable-5-1` | search | 10.00 | | | idem |
+| `gemini-3.5-flash` | search | 14.00 | 5000 por mês, partilhadas por todos os Gemini 3 e seguintes; tecto de 1500 por dia | | aistudio.google.com/docs/pricing ("Pricing for tools" e a linha de cada modelo Gemini 3): "5,000 free search requests per month (shared across all Gemini 3 and newer models), then $14 per 1,000 requests"; "You will be charged for each individual search query performed" (lido a 2026-11-08). O endpoint reencaminha para o `gemini-3.6-flash`, que tem a mesma taxa |
+| `gemini-3.8-flash` | search | 14.00 | idem | | idem |
+| `gemini-3.5-flash-lite` | search | 14.00 | idem | | idem |
+| `grok-4.3` | search | 5.00 | | | docs.x.ai/docs/pricing, "Server-side tool pricing": "Web Search (`web_search`): $5" por mil chamadas (lido a 2026-11-08) |
+| `grok-4.7` | search | 5.00 | | | idem |
+| `grok-4.1-fast` | search | 5.00 | | | idem |
+| `muse-spark-1.3` | search | 2.50 | | | dev.meta.ai/docs/pricing-rate-limits.md: "$2.50 per 1,000 search queries, in addition to the request's token cost" (lido a 2026-11-08) |
+
+**Sem linha de propósito:**
+
+- **`sonar` e `sonar-pro`** (Perplexity): a resposta da API traz o custo
+  da chamada com a taxa por pedido incluída (`usage.cost.total_cost`), e
+  esse ganha às duas tabelas (ponto 6 do contrato de `## Token prices`).
+- **Mistral e DeepSeek**: o Tracker não os chama com pesquisa (só a metade
+  `knowledge`). Se isso mudar, a taxa entra aqui antes da primeira
+  corrida, senão o custo dessa chamada fica desconhecido (ponto 5 abaixo).
+
+### Contrato de leitura
+
+1. Localizar a secção `## Search prices` no início de uma linha.
+2. Ler a tabela com o cabeçalho `| API model ID | unit | USD per 1000 | free allowance | since | source |`.
+3. Tirar as crases do ID.
+4. `unit` é `search` (paga-se cada pesquisa que a chamada fez, contada
+   pela resposta do fornecedor) ou `request` (paga-se uma vez por chamada
+   que pesquisou, como os Gemini 2.5 cobravam). Outro valor, ou `?` no
+   preço: a linha não tem preço.
+5. **Uma chamada que pesquisou sem preço de pesquisa tem custo
+   desconhecido**, e não o custo das fichas sozinho. É a regra do `?` de
+   cima aplicada à taxa: o custo das fichas sozinho era o número errado
+   que esta tabela veio corrigir. Uma chamada sem pesquisa (ou com zero
+   pesquisas) paga só as fichas.
+6. O custo declarado pelo fornecedor continua a ganhar a esta tabela.
+7. **A quota grátis NÃO se desconta.** O custo gravado é o preço de lista
+   de cada pesquisa: a quota é da conta inteira e do mês, e uma chamada
+   não sabe se caiu dentro dela. Quem quiser a fatura do mês desconta a
+   quota no total, não chamada a chamada. Está na coluna para isso.
+
+### O que conta como uma pesquisa (em cada fornecedor)
+
+O preço é por pesquisa, e cada fornecedor diz quantas fez de maneira
+diferente. O Tracker conta assim, e o número é o que a resposta da API
+declara, nunca uma estimativa:
+
+| Fornecedor | O que se conta | Nota |
+|---|---|---|
+| OpenAI (Responses API) | itens `web_search_call` com ação `search` | o guia da ferramenta diz "Search actions incur a tool call cost"; `open_page` e `find_in_page` não são pesquisas e não se contam |
+| xAI (Responses API) | a mesma regra do OpenAI | a página de preços diz "por chamada" e não separa ações: se a xAI cobrar também a abertura de páginas, este número é um piso |
+| Anthropic | `usage.server_tool_use.web_search_requests`, somado por todas as voltas | uma pesquisa que falha não se paga, e o contador da API já não a conta |
+| Google (Gemini 3 e seguintes) | `groundingMetadata.webSearchQueries`, todas, sem tirar repetidas | "charged for each individual search query performed" |
+| Meta Model API | itens `web_search_call` | a página diz "por consulta" e não separa ações |
+
+### Contrato de manutenção
+
+Igual ao de `## Token prices`: uma mudança de taxa, uma quota grátis nova
+ou um modelo novo chamado com pesquisa entram aqui, com a fonte e a data
+em que foi lida. O daily-agent já trata uma mudança de preço como item de
+news-feed; uma taxa de pesquisa é um preço.
 
 ---
 
