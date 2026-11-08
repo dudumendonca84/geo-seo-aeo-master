@@ -365,15 +365,17 @@ let allOk = true;
     const fichas = /^## Token prices\s*$/m.test(body) ? sectionContent(body.slice(body.search(/^## Token prices\s*$/m)), "## Token prices") : null;
     const pesquisa = /^## Search prices\s*$/m.test(body) ? sectionContent(body.slice(body.search(/^## Search prices\s*$/m)), "## Search prices") : null;
     const linhasFichas = fichas && lerTabela(fichas, "| API model ID | input USD/1M | output USD/1M | since | source |");
-    const linhasPesquisa = pesquisa && lerTabela(pesquisa, "| API model ID | unit | USD per 1000 | free allowance | since | source |");
+    const linhasPesquisa = pesquisa && lerTabela(pesquisa, "| API model ID | unit | USD per 1000 | free per month | free pool | since | source |");
     if (!linhasFichas) check(name, false, "'## Token prices' ausente ou cabeçalho da tabela mudou");
     else if (!linhasPesquisa) check(name, false, "'## Search prices' ausente ou cabeçalho da tabela mudou");
     else {
-      const unidades = linhasPesquisa.map((l) => l.split("|").slice(1, -1).map((c) => c.trim())[1]);
-      const mas = unidades.filter((u) => u !== "search" && u !== "request");
-      mas.length > 0
-        ? check(name, false, `unidade desconhecida em '## Search prices': ${mas.join(", ")} (só search ou request)`)
-        : check(name, true, `${linhasFichas.length} preços de fichas e ${linhasPesquisa.length} taxas de pesquisa`);
+      const celulas = linhasPesquisa.map((l) => l.split("|").slice(1, -1).map((c) => c.trim()));
+      const mas = celulas.map((c) => c[1]).filter((u) => u !== "search" && u !== "request");
+      // A quota e o grupo vão juntos: um sem o outro não se consegue contar.
+      const quotaSolta = celulas.filter((c) => (c[3] !== "") !== (c[4] !== "")).map((c) => c[0]);
+      if (mas.length > 0) check(name, false, `unidade desconhecida em '## Search prices': ${mas.join(", ")} (só search ou request)`);
+      else if (quotaSolta.length > 0) check(name, false, `'free per month' e 'free pool' vão juntos: ${quotaSolta.join(", ")}`);
+      else check(name, true, `${linhasFichas.length} preços de fichas e ${linhasPesquisa.length} taxas de pesquisa`);
     }
   }
 }

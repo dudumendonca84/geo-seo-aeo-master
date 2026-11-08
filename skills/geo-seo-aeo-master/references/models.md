@@ -657,33 +657,37 @@ custa perto de dez vezes isso.
 Os preços estão em dólares por mil unidades, e a unidade diz o que se
 conta.
 
-| API model ID | unit | USD per 1000 | free allowance | since | source |
-|---|---|---|---|---|---|
-| `gpt-5.6-luna` | search | 10.00 | | | developers.openai.com/api/docs/pricing, "Built-in tools", "Web search (all models): $10.00 / 1k calls + Search content tokens billed at model rates" (lido a 2026-11-08). O conteúdo da pesquisa já vem no `input_tokens` e paga-se pela tabela de cima |
-| `gpt-5.6-sol` | search | 10.00 | | | idem |
-| `gpt-6-sol` | search | 10.00 | | | idem |
-| `gpt-6-luna` | search | 10.00 | | | idem |
-| `gpt-6.1-sol` | search | 10.00 | | | idem |
-| `claude-sonnet-5` | search | 10.00 | | | platform.claude.com/docs/en/about-claude/pricing, "Web search tool": "$10 USD per 1,000 searches, plus standard token costs"; "A web search that fails with an error is not billed" (lido a 2026-11-08). A web fetch não tem taxa |
-| `claude-sonnet-5-5` | search | 10.00 | | | idem |
-| `claude-opus-5` | search | 10.00 | | | idem |
-| `claude-opus-5-5` | search | 10.00 | | | idem |
-| `claude-haiku-5-5` | search | 10.00 | | | idem |
-| `claude-haiku-4-5` | search | 10.00 | | | idem |
-| `claude-fable-5-1` | search | 10.00 | | | idem |
-| `gemini-3.5-flash` | search | 14.00 | 5000 por mês, partilhadas por todos os Gemini 3 e seguintes; tecto de 1500 por dia | | aistudio.google.com/docs/pricing ("Pricing for tools" e a linha de cada modelo Gemini 3): "5,000 free search requests per month (shared across all Gemini 3 and newer models), then $14 per 1,000 requests"; "You will be charged for each individual search query performed" (lido a 2026-11-08). O endpoint reencaminha para o `gemini-3.6-flash`, que tem a mesma taxa |
-| `gemini-3.8-flash` | search | 14.00 | idem | | idem |
-| `gemini-3.5-flash-lite` | search | 14.00 | idem | | idem |
-| `grok-4.3` | search | 5.00 | | | docs.x.ai/docs/pricing, "Server-side tool pricing": "Web Search (`web_search`): $5" por mil chamadas (lido a 2026-11-08) |
-| `grok-4.7` | search | 5.00 | | | idem |
-| `grok-4.1-fast` | search | 5.00 | | | idem |
-| `muse-spark-1.3` | search | 2.50 | | | dev.meta.ai/docs/pricing-rate-limits.md: "$2.50 per 1,000 search queries, in addition to the request's token cost" (lido a 2026-11-08) |
+| API model ID | unit | USD per 1000 | free per month | free pool | since | source |
+|---|---|---|---|---|---|---|
+| `gpt-5.6-luna` | search | 10.00 | | | | developers.openai.com/api/docs/pricing, "Built-in tools", "Web search (all models): $10.00 / 1k calls + Search content tokens billed at model rates" (lido a 2026-11-08). O conteúdo da pesquisa já vem no `input_tokens` e paga-se pela tabela de cima |
+| `gpt-5.6-sol` | search | 10.00 | | | | idem |
+| `gpt-6-sol` | search | 10.00 | | | | idem |
+| `gpt-6-luna` | search | 10.00 | | | | idem |
+| `gpt-6.1-sol` | search | 10.00 | | | | idem |
+| `claude-sonnet-5` | search | 10.00 | | | | platform.claude.com/docs/en/about-claude/pricing, "Web search tool": "$10 USD per 1,000 searches, plus standard token costs"; "A web search that fails with an error is not billed" (lido a 2026-11-08). A web fetch não tem taxa |
+| `claude-sonnet-5-5` | search | 10.00 | | | | idem |
+| `claude-opus-5` | search | 10.00 | | | | idem |
+| `claude-opus-5-5` | search | 10.00 | | | | idem |
+| `claude-haiku-5-5` | search | 10.00 | | | | idem |
+| `claude-haiku-4-5` | search | 10.00 | | | | idem |
+| `claude-fable-5-1` | search | 10.00 | | | | idem |
+| `gemini-3.5-flash` | search | 14.00 | 5000 | `gemini-3` | | aistudio.google.com/docs/pricing ("Pricing for tools" e a linha de cada modelo Gemini 3): "5,000 free search requests per month (shared across all Gemini 3 and newer models), then $14 per 1,000 requests"; "You will be charged for each individual search query performed" (lido a 2026-11-08). O tecto de 1500 pedidos por dia por projeto é limite de ritmo e não quota: não entra na conta. O endpoint reencaminha para o `gemini-3.6-flash`, que tem a mesma taxa |
+| `gemini-3.8-flash` | search | 14.00 | 5000 | `gemini-3` | | idem |
+| `gemini-3.5-flash-lite` | search | 14.00 | 5000 | `gemini-3` | | idem |
+| `grok-4.3` | search | 5.00 | | | | docs.x.ai/docs/pricing, "Server-side tool pricing": "Web Search (`web_search`): $5" por mil chamadas (lido a 2026-11-08) |
+| `grok-4.7` | search | 5.00 | | | | idem |
+| `grok-4.1-fast` | search | 5.00 | | | | idem |
+| `muse-spark-1.3` | search | 2.50 | | | | dev.meta.ai/docs/pricing-rate-limits.md: "$2.50 per 1,000 search queries, in addition to the request's token cost" (lido a 2026-11-08) |
 
 **Sem linha de propósito:**
 
 - **`sonar` e `sonar-pro`** (Perplexity): a resposta da API traz o custo
   da chamada com a taxa por pedido incluída (`usage.cost.total_cost`), e
   esse ganha às duas tabelas (ponto 6 do contrato de `## Token prices`).
+  A taxa por pedido depende do tamanho do contexto de pesquisa e de o
+  pedido ser classificado como Pro Search (6 a 22 dólares por mil), e não
+  cabe numa linha. Sem custo declarado, a chamada conta como um pedido com
+  pesquisa e sem taxa, e fica com custo desconhecido (ponto 5).
 - **Mistral e DeepSeek**: o Tracker não os chama com pesquisa (só a metade
   `knowledge`). Se isso mudar, a taxa entra aqui antes da primeira
   corrida, senão o custo dessa chamada fica desconhecido (ponto 5 abaixo).
@@ -703,10 +707,17 @@ conta.
    que esta tabela veio corrigir. Uma chamada sem pesquisa (ou com zero
    pesquisas) paga só as fichas.
 6. O custo declarado pelo fornecedor continua a ganhar a esta tabela.
-7. **A quota grátis NÃO se desconta.** O custo gravado é o preço de lista
-   de cada pesquisa: a quota é da conta inteira e do mês, e uma chamada
-   não sabe se caiu dentro dela. Quem quiser a fatura do mês desconta a
-   quota no total, não chamada a chamada. Está na coluna para isso.
+7. **A quota grátis desconta-se no mês civil, por grupo.** `free per month`
+   é quantas unidades por mês não se pagam e `free pool` diz que modelos a
+   partilham (no Gemini, `gemini-3`: todos os Gemini 3 e seguintes). As
+   duas colunas vão juntas: uma quota sem grupo não se consegue contar e
+   fica sem efeito. O consumidor soma o que as chamadas do mês (UTC) dos
+   modelos do grupo já gastaram e só cobra a parte que já não cabe. Se não
+   conseguir contar o mês, cobra o preço de lista. Um tecto de pedidos por
+   dia é limite de ritmo, não quota, e não vai nestas colunas.
+8. **O cabeçalho é contrato e lê-se por posição.** Mudar a ordem ou o nome
+   de uma coluna deixa o consumidor sem taxas (com aviso), e então toda a
+   chamada com pesquisa fica com custo desconhecido.
 
 ### O que conta como uma pesquisa (em cada fornecedor)
 
@@ -717,7 +728,7 @@ declara, nunca uma estimativa:
 | Fornecedor | O que se conta | Nota |
 |---|---|---|
 | OpenAI (Responses API) | itens `web_search_call` com ação `search` | o guia da ferramenta diz "Search actions incur a tool call cost"; `open_page` e `find_in_page` não são pesquisas e não se contam |
-| xAI (Responses API) | a mesma regra do OpenAI | a página de preços diz "por chamada" e não separa ações: se a xAI cobrar também a abertura de páginas, este número é um piso |
+| xAI (Responses API) | `usage.server_side_tool_usage_details.web_search_calls`, que é o número da xAI; só quando não vier, a mesma regra do OpenAI | a contagem pelos itens é um piso se a xAI cobrar também a abertura de páginas |
 | Anthropic | `usage.server_tool_use.web_search_requests`, somado por todas as voltas | uma pesquisa que falha não se paga, e o contador da API já não a conta |
 | Google (Gemini 3 e seguintes) | `groundingMetadata.webSearchQueries`, todas, sem tirar repetidas | "charged for each individual search query performed" |
 | Meta Model API | itens `web_search_call` | a página diz "por consulta" e não separa ações |
