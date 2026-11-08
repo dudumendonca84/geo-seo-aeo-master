@@ -1,5 +1,21 @@
 # Registo das corridas do agente semanal de setores
 
+## 2026-11-08
+| Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
+|---|---|---|---|---|
+| formacao-it | 3 (Microsoft Learn, IEFP notícias, DGERT devolveu 503) | 2 | 0 tendências, 2 factos | Sem exame novo com retirada marcada; sem notícia do IEFP sobre formação digital nos últimos 30 dias; DGERT indisponível |
+| outsourcing-it | 1 (AICEP notícias) | 1 | 0 tendências, 0 factos | Pesquisa só devolveu relatórios de mercado e estimativas divergentes (IMARC, TechBehemoths); notícias da AICEP sem facto sobre serviços de IT; nota da Legal500 sobre limiares de contratação pública até 31 dez 2026 não confirmada em fonte oficial |
+| software-rh | 1 (Cegid comunicados) | 1 | 0 tendências, 0 factos | Cegid sem comunicados depois de 29 Set; prazo de conservação do registo de tempos continua só em blogues de fornecedores; ACT e Diário da República não abertos |
+| geo | news-feed de 2 a 8 Nov | 0 (por regra) | 2 tendências | Resto do news-feed sem novidade significativa ou só EUA |
+
+Pesquisas por extenso:
+- formacao-it: "formação certificação IT Portugal novembro 2026".
+- outsourcing-it: "outsourcing IT consultoras tecnologia Portugal novembro 2026".
+- software-rh: "software recursos humanos Portugal registo tempos de trabalho ACT novembro 2026".
+- geo: sem pesquisa, resumo do `daily-agent/news-feed.md`.
+
+Limitações desta corrida: ficou abaixo do mínimo de três pesquisas por setor e sem pesquisa por marca grande (Accenture, Capgemini, Sage, Factorial, Rumos); o ECO, o Observador, o Público, o Expresso e o Jornal de Negócios não foram lidos. Semana sem facto novo confirmado nos setores de clientes; fica para a próxima corrida completar a procura por marca.
+
 ## 2026-11-01
 | Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
 |---|---|---|---|---|
