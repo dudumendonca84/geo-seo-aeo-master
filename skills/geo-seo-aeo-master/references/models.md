@@ -55,7 +55,7 @@ When citing capabilities, **always include the model version and the date observ
 
 ### Products and which model
 
-- **ChatGPT Search / SearchGPT**: since 9 Jul 2026, default is tier-dependent: GPT-5.6 Sol for Plus/Pro/Business/Enterprise, GPT-5.5 Instant unchanged for Free/Go (gradual rollout, not confirmed complete as of 11 Jul). Web search via Bing index + OpenAI crawl for both. Source: [openai.com/index/gpt-5-6](https://openai.com/index/gpt-5-6/) (9 Jul 2026); publish-date and detail cross-confirmed via OpenAI Help Center, TechCrunch, CNBC (direct fetch of openai.com blocked by bot-protection at verification time).
+- **ChatGPT Search / SearchGPT**: since 9 Jul 2026, default is tier-dependent: GPT-5.6 Sol for Plus/Pro/Business/Enterprise, GPT-5.5 Instant unchanged for Free/Go (gradual rollout, not confirmed complete as of 11 Jul). Web search reads OpenAI's own index and cache, fed by `OAI-SearchBot`; third-party results (Bing, Google via intermediaries) mainly help discover and rank URLs (corrected 8 Nov 2026, was "Bing index + OpenAI crawl"; evidence in `como-os-motores-leem.md`). Source: [openai.com/index/gpt-5-6](https://openai.com/index/gpt-5-6/) (9 Jul 2026); publish-date and detail cross-confirmed via OpenAI Help Center, TechCrunch, CNBC (direct fetch of openai.com blocked by bot-protection at verification time).
 - **ChatGPT Atlas browser**: GPT-5.5 Instant with browsing tools enabled by default (not yet confirmed migrated to GPT-5.6).
 - **Custom GPTs**: pinned to model owner chose (often GPT-4o legacy still).
 - **ChatGPT Voice (GPT-Live)**: since 8 Jul 2026, full-duplex voice models (GPT-Live-1 flagship for paid tiers, GPT-Live-1 mini default for free users) replace Advanced Voice Mode. Voice layer only: delegates web search/reasoning to the GPT-5.5 backend when a query needs it; underlying search/citation model unchanged. Source: [openai.com/index/introducing-gpt-live](https://openai.com/index/introducing-gpt-live/).
@@ -65,7 +65,7 @@ When citing capabilities, **always include the model version and the date observ
 
 - ChatGPT Search enables web search on only **~34.5% of queries** (Semrush clickstream Feb 2026). 65% of answers come from training-data recall: no live citation possible.
 - UTM tagging in citation links since June 2025: `?utm_source=chatgpt.com`.
-- Bot user-agents: `GPTBot` (training), `OAI-SearchBot` (search index), `ChatGPT-User` (real-time fetch). See `frameworks.md` §2.
+- Bot user-agents: `GPTBot` (training), `OAI-SearchBot` (search index: the agent that decides whether a page can appear in answers with search), `ChatGPT-User` (user-triggered fetch only; per OpenAI "not used to determine whether content may appear in Search"). See `frameworks.md` §2 and `como-os-motores-leem.md`.
 
 ---
 
@@ -114,8 +114,8 @@ Claude Opus 5.5 (22 Sep 2026): pricing $4/$20 per million input/output tokens (-
 
 ### GEO-relevant notes
 
-- Web search backend: **Brave Search**. Conservative citation behavior: cites only when grounding specific claims.
-- Bot user-agents: `ClaudeBot` (training), `Claude-User` (real-time fetch), `Claude-SearchBot` (search index), `claude-code` (Claude Code CLI/SDK tool). Legacy `anthropic-ai` and `Claude-Web` superseded. See `frameworks.md` §2.
+- Web search backend: **Brave Search**. Evidence: Brave on Anthropic's subprocessor list since 19 Mar 2025 (read via TechCrunch, 21 Mar 2025); in a canary-token experiment, Mar-Apr 2026, Claude's answers carried content served to Brave's crawler and to no Anthropic agent (Seiden et al., CCS 2026). Two further search subprocessors appeared in 2026 (TurboPuffer, Parallel Web Systems; secondary source, unconfirmed). Brave does not crawl what `Googlebot` may not crawl, so blocking `Googlebot` also removes a site from Claude's search answers. Conservative citation behavior: cites only when grounding specific claims.
+- Bot user-agents: `ClaudeBot` (training), `Claude-User` (user-triggered fetch, e.g. the `web_fetch` tool, which caches by default and does not run JavaScript), `Claude-SearchBot` (search index, documented but nearly absent from logs and from the canary), `claude-code` (Claude Code CLI/SDK tool). Legacy `anthropic-ai` and `Claude-Web` superseded. See `frameworks.md` §2.
 - API requires citations to be **shown to end users** when surfacing search results ([web search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)).
 
 ---
@@ -173,7 +173,7 @@ Claude Opus 5.5 (22 Sep 2026): pricing $4/$20 per million input/output tokens (-
 
 ### GEO-relevant notes
 
-- Bing is the underlying index for both Copilot AND ChatGPT Search: improving Bing ranking lifts citation probability in both.
+- Bing is the underlying index for Copilot: Copilot sends a short generated query to the Bing service and composes the answer from what Bing returns (Microsoft Learn, 29 Oct 2026). Corrected 8 Nov 2026: this line used to say Bing is also the index for ChatGPT Search. ChatGPT's answer text comes from OpenAI's own index (`OAI-SearchBot`); Bing results may help ChatGPT discover URLs, weight unmeasured. Microsoft Web IQ (2 Jun 2026) has no primary source saying it powers ChatGPT. See `como-os-motores-leem.md`.
 - Microsoft (Fabrice Canel, Mar 2025) publicly stated schema helps Copilot understand content. See `frameworks.md` §3.
 
 ---
@@ -196,7 +196,8 @@ Perplexity uses a multi-model architecture: user can select per-query.
 
 - Citation density: **~21.9 citations/answer** vs ChatGPT's ~7.9 (Profound). Highest in industry.
 - Heavy Reddit (~46.7% of top citations) and YouTube (~14%) bias.
-- Bot user-agents: `PerplexityBot` (indexing), `Perplexity-User` (real-time, **does not respect robots.txt** per Perplexity's own docs). Cloudflare alleged undeclared crawlers Aug 2025 (disputed). See `frameworks.md` §2.
+- Retrieval: own index of 200 billion+ URLs; an ML model decides whether and when to re-index each URL; documents are split into self-contained passages at indexing time and ranked hybrid (lexical + semantic, then cross-encoder) at query time ([Perplexity Research](https://www.perplexity.ai/hub/blog/architecting-and-evaluating-an-ai-first-search-api), 25 Sep 2025). The canary experiment (Seiden et al., CCS 2026) also saw content served to `Googlebot` in Perplexity answers.
+- Bot user-agents: `PerplexityBot` (indexing: the agent that matters for inclusion), `Perplexity-User` (user-requested visits, **does not respect robots.txt** per Perplexity's own docs; not observed feeding answers in the canary). Cloudflare alleged undeclared crawlers Aug 2025 (disputed). See `frameworks.md` §2.
 
 ---
 
@@ -230,7 +231,7 @@ Perplexity uses a multi-model architecture: user can select per-query.
 ### GEO-relevant notes
 
 - Grok citation behavior poorly documented publicly. Some tracking via Profound and Goodie (which monitor Grok among 9+ engines).
-- Web search via X (Twitter) data + standard web crawl.
+- Web search: xAI documents only that Grok searches and browses "in real time", with no crawler, IP list or search provider published. In the canary experiment (Seiden et al., CCS 2026) Grok used content served to `Googlebot` (Google results via an intermediary) and to generic Chrome/Safari agents, still served a week after the site went offline. X (Twitter) data is a separate source. See `como-os-motores-leem.md`.
 - Grok 4.6's addition to third-party agent products (Perplexity Agent API, Cursor, OpenRouter) is a distribution/reach signal, not a citation-surface change: it does not alter how Grok itself sources or cites content in grok.com/X answers.
 - **Naming caveat (22 Sep 2026):** several secondary sources covering the Grok 4.7 launch refer to the vendor as "SpaceXAI" rather than "xAI". No primary source (x.ai) was reached this session to confirm or deny a rebrand; treated as unconfirmed and not adopted in this file.
 - **Correction (22 Sep 2026):** the 15 Sep 2026 entry in this file/news-feed recorded that Musk had "dropped" Grok 4.7 in favor of jumping straight to a 2.5T-parameter Grok 4.8 (X posts, 13-14 Sep, no Tier 1 source). Today's release shows that reading was wrong, or the plan changed again without announcement: a real Grok 4.7 shipped, documented by multiple independent tech outlets, and Grok 4.8 still has no dedicated page.

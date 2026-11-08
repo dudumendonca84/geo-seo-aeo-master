@@ -8,6 +8,16 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-08: Os motores leem uma cópia guardada, e quem decide a inclusão é o robô de indexação
+
+- **Trigger:** a pergunta "quanto tempo demora uma alteração no site a aparecer numa resposta, e porquê" não tinha resposta na skill, e a resposta implícita estava errada em dois pontos. A skill dizia que a pesquisa do ChatGPT corre sobre o índice Bing e que bloquear os agentes em tempo real (`ChatGPT-User`, `Claude-User`, `Perplexity-User`) tira a marca do assistente.
+- **Fonte:** documentação dos robôs da OpenAI, da Anthropic, da Perplexity, da Google e da Microsoft, lida a 8 Nov 2026; a experiência com 20 sites e valores por visitante de Seiden et al. (arXiv 2605.13706, CCS 2026, consultas de março a abril de 2026, sobretudo por API); Perplexity Research (25 Set 2025); Botify (23 Abr 2026); Peec AI (4 Set 2026, fonte única e vendedora); e os registos e as respostas medidas do próprio destaque.ai, de junho a novembro de 2026.
+- **O que muda:** nova referência `references/como-os-motores-leem.md`, com a origem do texto motor a motor, o caminho da recolha à citação, a latência medida e como a encurtar em cada motor, o que os registos provam e não provam (agentes falsificados, verificação por IP, a cache da CDN) e um protocolo de experiência canário. Cada afirmação leva a marca documentado, medido, inferido ou desconhecido.
+- **Correções noutros ficheiros:** `frameworks.md` §2 (a inclusão nas respostas com pesquisa é decidida pelos robôs de indexação, `OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`, e o `Googlebot` também para a Brave e, por ela, para o Claude; o `ChatGPT-User` serve ações pedidas pela pessoa; secção nova sobre a Brave) e §5 (o texto da resposta do ChatGPT vem do índice próprio da OpenAI e não do índice Bing; a frase "o Web IQ alimenta o Copilot e o ChatGPT" sai, por não ter fonte primária). `engine_playbooks.md`, PT e EN: `chatgpt` (o passo do Bing passa a ser permitir o `OAI-SearchBot` e servir HTML legível; o Bing Webmaster Tools fica para o Copilot e a descoberta), `claude` (índice da Brave, e não bloquear o `Googlebot`), `perplexity` (índice próprio em vez de "web viva") e `grok` (origem por documentar). `models.md`: OpenAI, Anthropic, Microsoft, Perplexity e xAI. `SKILL.md`: a referência nova na lista de ficheiros e uma nota no passo de robots do §7.
+- **O que não muda:** nenhum cabeçalho, chave ou tabela que o Tracker ou o Deck Builder leem. O conselho de permitir os agentes de utilizador continua; o que muda é a razão dada e a ordem do que se verifica primeiro.
+
+---
+
 ## 2026-11-08: A pesquisa na web tem preço, e o custo de uma chamada passa a incluí-lo
 
 - **Trigger:** o founder recusou o custo médio de uma resposta do ChatGPT com pesquisa (0,0023 dólares) e do Gemini (0,0083): "não é verdade". O `cost_usd` do Tracker era só fichas vezes preço, e a pesquisa paga-se à parte em todos os fornecedores que o Tracker chama com pesquisa.

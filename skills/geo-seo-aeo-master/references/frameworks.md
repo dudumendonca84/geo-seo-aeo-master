@@ -37,17 +37,19 @@ Practical posture for destaque.ai clients: **publish it, do not promise inferenc
 
 ## 2. AI crawlers: `robots.txt` matrix (May 2026)
 
-Each vendor distinguishes **training crawls** (asynchronous, bulk, blockable without removing the brand from the answer engine) from **real-time user-triggered fetches** (synchronous, tied to a user query; blocking these removes the brand from the answer engine).
+Each vendor distinguishes three kinds of agent. **Training crawls** are asynchronous and bulk, and can be blocked without removing the brand from the answer engine. **Search-index crawls** (`OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`) build the stored copy that answers with search actually read; blocking these is what removes the brand from the answer engine. **User-triggered fetches** (`ChatGPT-User`, `Claude-User`, `Perplexity-User`) are documented for actions a person asks for, such as pasting a URL or an agent browsing, and do not decide whether the site appears in search answers.
+
+Correction, 8 Nov 2026: earlier versions of this section said the opposite, that blocking the real-time agents removes the brand. The vendors' own pages say otherwise (OpenAI: `ChatGPT-User` is "not used to determine whether content may appear in Search"), and a canary-token experiment over 20 sites (Seiden et al., CCS 2026, queries Mar-Apr 2026, mostly by API) found none of the three user agents feeding an answer. Claude adds a twist: its search reads Brave's index, and Brave does not crawl what `Googlebot` may not crawl, so **blocking `Googlebot` also removes a site from Claude's search answers**. Full evidence, per engine, in `como-os-motores-leem.md`.
 
 ### OpenAI ([platform.openai.com/docs/bots](https://platform.openai.com/docs/bots))
 
 | User-agent | Purpose | Block effect |
 |---|---|---|
 | `GPTBot` | Training corpus collection | Excludes content from future foundation-model training |
-| `OAI-SearchBot` | Indexing for ChatGPT Search | Removes from ChatGPT Search citation pool |
-| `ChatGPT-User` | User-triggered fetch (browse / Custom GPT) | Removes site from real-time ChatGPT browsing |
+| `OAI-SearchBot` | Indexing for ChatGPT Search: builds the OpenAI copy that search answers read | Removes from ChatGPT Search citation pool |
+| `ChatGPT-User` | User-triggered fetch (a person asks ChatGPT to open a page, Custom GPT actions); per OpenAI, "not used for automatic crawling" and "not used to determine whether content may appear in Search" | Stops those user-requested visits; does not by itself remove the site from search answers |
 
-Common B2B pattern: allow `OAI-SearchBot` + `ChatGPT-User`, decide separately on `GPTBot`.
+If `OAI-SearchBot` and `GPTBot` are both allowed, OpenAI may use one crawl for both purposes (OpenAI bots page). Common B2B pattern: allow `OAI-SearchBot` (the one that decides inclusion) and `ChatGPT-User`, decide separately on `GPTBot`.
 
 ### Anthropic ([docs.anthropic.com](https://docs.anthropic.com); see [Search Engine Land](https://searchengineland.com/anthropic-claude-bots-470171))
 
@@ -59,6 +61,12 @@ Common B2B pattern: allow `OAI-SearchBot` + `ChatGPT-User`, decide separately on
 | `claude-code` | Claude Code CLI / SDK web-fetch tool (developer-driven) |
 
 Legacy `anthropic-ai` and `Claude-Web` appear in older guides but have been superseded. All four current agents honour `robots.txt`.
+
+What the agent list does not show: Claude's search answers are read from **Brave's index**, not from an Anthropic crawl. Brave has been on Anthropic's subprocessor list since 19 Mar 2025 (TechCrunch, 21 Mar 2025), and in the canary experiment (Seiden et al., CCS 2026) Claude's answers carried values served to Brave's crawler and to no Anthropic agent. `Claude-SearchBot` is documented but nearly absent from logs: on destaque.ai, Jun-Nov 2026, 1 `Claude-SearchBot` visit and 0 `Claude-User` against 126 measured Claude answers citing the site.
+
+### Brave (the index behind Claude's search)
+
+Brave says it does not announce a user agent of its own; the canary identified it by ASN 24940 and saw `Bravebot/1.0`. Brave **does not crawl what `Googlebot` is not allowed to crawl** ([Brave Search crawler](https://search.brave.com/help/brave-search-crawler)), so a `Disallow` for `Googlebot` also takes the page out of Brave and, through it, out of Claude. Brave offers a submission form to request a fresh read of changed pages.
 
 ### Google ([developers.google.com/crawling/docs/crawlers-fetchers](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers))
 
@@ -76,6 +84,8 @@ Critical implication: there is no separate AI-Overviews crawler. **Blocking `Goo
 |---|---|---|
 | `PerplexityBot` | Indexing crawler | Yes |
 | `Perplexity-User` | Real-time user-triggered fetch | Perplexity docs state this agent **does not follow robots.txt** because it is tied to a live user action |
+
+Answers read Perplexity's own index (200 billion+ URLs), where a machine-learning model decides whether and when to re-index each URL and documents are split into passages at indexing time ([Perplexity Research](https://www.perplexity.ai/hub/blog/architecting-and-evaluating-an-ai-first-search-api), 25 Sep 2025). `PerplexityBot` is the agent that matters for inclusion; `Perplexity-User` was not observed feeding any answer in the canary experiment, which did see content served to `Googlebot` reaching Perplexity answers (Seiden et al., CCS 2026).
 
 Cloudflare published a report (4 Aug 2025) alleging Perplexity used undeclared/rotating crawlers to bypass no-crawl directives ([Cloudflare](https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/)). Perplexity disputed the framing. Compliance posture is contested.
 
@@ -113,19 +123,22 @@ This is a real technical block at the CDN layer, in front of any site's own `rob
 
 ### Practical pattern for B2B SaaS
 
-Allow **real-time / answer-engine** bots:
+Allow the **search-index** crawlers (they decide whether the site can appear in answers with search) and the **user-triggered** agents (they serve requests a person makes):
 ```
 User-agent: Googlebot
+User-agent: Bingbot
 User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: Claude-SearchBot
 User-agent: ChatGPT-User
 User-agent: Claude-User
-User-agent: Claude-SearchBot
-User-agent: PerplexityBot
 User-agent: Perplexity-User
 Allow: /
 ```
 
-Decide deliberately on **training** crawlers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Bytespider`, `CCBot`). The training/answer distinction is the GEO-relevant decision. A B2B SaaS that wants discovery should normally allow both; a publisher that wants payment for training data should block training while allowing answer-engine real-time agents.
+`Googlebot` carries three engines here (AI Overviews and AI Mode, Gemini grounding, and Claude through Brave), and `Bingbot` carries Copilot. Check the firewall and CDN as well as `robots.txt`: a WAF rule that challenges `OAI-SearchBot` removes the site from ChatGPT answers just as a `Disallow` does.
+
+Decide deliberately on **training** crawlers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Bytespider`, `CCBot`). The training/answer distinction is the GEO-relevant decision. A B2B SaaS that wants discovery should normally allow both; a publisher that wants payment for training data should block training while allowing the search-index crawlers.
 
 The Congruent case (in-house audit, 22 May 2026) is illustrative: explicit `Allow: /` for `GPTBot`, `Claude-Web`, `anthropic-ai`, `PerplexityBot`, but missing the modern `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `CCBot` and `Bytespider` - leaving silent gaps.
 
@@ -199,22 +212,24 @@ For Perplexity, ChatGPT Search and Copilot, "E-E-A-T" is not their stated rubric
 
 ## 5. Retrieval and citation mechanics by engine
 
-All five systems below use a variant of **retrieve → rank → generate → cite**. Differences are in retrieval backend, citation density, and how aggressively the model is allowed to synthesise without attribution.
+All five systems below use a variant of **retrieve → rank → generate → cite**, and almost none of them visits the site at answer time: they read a stored copy, built earlier by an index crawler and split into passages. Differences are in retrieval backend, citation density, and how aggressively the model is allowed to synthesise without attribution. Per-engine evidence (documented, measured, inferred, unknown), recrawl latency and how to accelerate it: `como-os-motores-leem.md`.
 
 | Engine | Retrieval backend | Citation density | Notable bias |
 |---|---|---|---|
-| **ChatGPT Search** | Bing index + OpenAI crawl | ~7.9 cit/answer (Profound, 118k answers) | Wikipedia ~47.9% of top citations; Reddit prominent. Web search enabled on only ~34.5% of queries (Semrush clickstream, Feb 2026, [link](https://www.semrush.com/blog/chatgpt-search-insights/)) |
-| **Perplexity** | Own crawl (`PerplexityBot`) + real-time (`Perplexity-User`) + index partners | ~21.9 cit/answer | Reddit ~46.7% of top citations; ~14% YouTube; G2/review platforms |
+| **ChatGPT Search** | OpenAI's own index and cache, fed by `OAI-SearchBot` (internal name "Labrador", Peec AI, Sep 2026); third-party results (Bing, Google via intermediaries) mainly to discover and rank URLs, weight unmeasured. In the canary experiment the answer text came only from `OAI-SearchBot` (Seiden et al., CCS 2026) | ~7.9 cit/answer (Profound, 118k answers) | Wikipedia ~47.9% of top citations; Reddit prominent. Web search enabled on only ~34.5% of queries (Semrush clickstream, Feb 2026, [link](https://www.semrush.com/blog/chatgpt-search-insights/)) |
+| **Perplexity** | Own index (`PerplexityBot`), re-indexing scheduled by an ML model, passages ranked hybrid lexical + semantic; content served to `Googlebot` also observed in answers (canary). `Perplexity-User` is for user-requested visits | ~21.9 cit/answer | Reddit ~46.7% of top citations; ~14% YouTube; G2/review platforms |
 | **Google AI Overviews / AI Mode** | Google index | Median cited page ~14 months old (recency not strongly predictive) | YouTube now most-cited domain; **query fan-out**: a single AIO is decomposed into sub-queries, so pages outside top-3 of any one query can still cite |
-| **Claude (web search)** | Brave Search | Lower citation count; conservative: claims sourced when uncertain, others left uncited | API requires citations to be shown to end users when surfacing search results ([Anthropic web-search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)) |
+| **Claude (web search)** | Brave Search index (subprocessor since Mar 2025; confirmed by canary, Mar-Apr 2026); Brave follows `Googlebot` permissions | Lower citation count; conservative: claims sourced when uncertain, others left uncited | API requires citations to be shown to end users when surfacing search results ([Anthropic web-search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)) |
 | **Bing Copilot** | Bing index | Format similar to ChatGPT Search | First-party citation telemetry now exposed via Bing Webmaster Tools "AI Performance" dashboard (public preview 9 Feb 2026, [Bing blog](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)) |
 | **Gemini (Gemini Advanced + AI Mode)** | Google index, Gemini reasoning | Verbose; cites less densely than Perplexity | Strong YouTube/Reddit pull |
 
-### Bing Copilot / ChatGPT Search share a retrieval backend: Web IQ (Jun 2026)
+### Web IQ (Jun 2026): Bing grounding for agents, and what it does not prove about ChatGPT
 
-Microsoft's **Web IQ**, launched 2 Jun 2026, is a grounding-API suite built on the Bing index but designed for AI agents rather than human searchers: it prioritises fast information extraction over classic result ranking ([Search Engine Land](https://searchengineland.com/microsoft-releases-web-iq-powered-by-bing-but-designed-for-how-ai-agents-search-479194)). It currently powers both Microsoft Copilot and OpenAI's ChatGPT Search, with expansion to other platforms announced. Practical implication: Bing-index optimisation (the standard already in the table above) is not just a Copilot lever: it is shared retrieval infrastructure for ChatGPT Search too, reinforcing Bing indexing hygiene as a cross-engine, not single-engine, investment.
+Microsoft's **Web IQ**, launched 2 Jun 2026, is a grounding-API suite built on the Bing index but designed for AI agents rather than human searchers: it returns "passages and structured evidence objects" and prioritises fast information extraction over classic result ranking ([Bing Search Blog](https://blogs.bing.com/search/June-2026/Announcing-Microsoft-Web-IQ), Knut Risvik, 2 Jun 2026; [Search Engine Land](https://searchengineland.com/microsoft-releases-web-iq-powered-by-bing-but-designed-for-how-ai-agents-search-479194)).
 
-**Update, 07 Sep 2026: ChatGPT also grounds against Google, not only Bing/Web IQ.** A controlled test (Malte Landwehr, via [Peec.ai](https://peec.ai/blog/chatgpt-built-its-own-search-index), 4 Sep 2026) found a zero-traffic site received a Google Search Console referral spike specifically on days ChatGPT queried it: direct behavioral evidence that ChatGPT still queries Google to ground some answers, alongside the Bing/Web IQ path above. The same post reports Bing turning up inside ChatGPT Deep Research's SSE event stream. Single-source, informal methodology (one site, not peer-reviewed): treat as a lead, not a settled fact, but it changes the practical advice: Bing indexing hygiene is necessary but this suggests it is not sufficient on its own for ChatGPT visibility: classic Google indexing health is worth checking too, not assuming it's irrelevant because ChatGPT "uses Bing."
+**Correction, 8 Nov 2026.** This section used to say Web IQ "currently powers both Microsoft Copilot and OpenAI's ChatGPT Search". Neither Microsoft's blog post nor the product page ([webiq.microsoft.ai](https://webiq.microsoft.ai/)) names ChatGPT, or any other customer product; the claim came from secondary coverage and has no primary source. What is documented about ChatGPT points elsewhere: OpenAI's own index fed by `OAI-SearchBot` holds the text that enters the answer, and in the canary experiment (Seiden et al., CCS 2026) sites that were in Bing returned Bing-served values through Copilot but only `OAI-SearchBot`-served values through ChatGPT. Practical implication: Bing indexing hygiene stays a Copilot lever and a plausible discovery path for ChatGPT, but it is not the lever that puts a page's text into a ChatGPT answer; that is `OAI-SearchBot` access plus server-rendered HTML. See `como-os-motores-leem.md` §2.
+
+**Update, 07 Sep 2026: ChatGPT also grounds against Google, not only Bing.** (Read with the 8 Nov 2026 correction above: Google and Bing results most likely decide *which URL* ChatGPT considers, while the text comes from OpenAI's stored copy.) A controlled test (Malte Landwehr, via [Peec.ai](https://peec.ai/blog/chatgpt-built-its-own-search-index), 4 Sep 2026) found a zero-traffic site received a Google Search Console referral spike specifically on days ChatGPT queried it: direct behavioral evidence that ChatGPT still queries Google to ground some answers, alongside the Bing/Web IQ path above. The same post reports Bing turning up inside ChatGPT Deep Research's SSE event stream. Single-source, informal methodology (one site, not peer-reviewed): treat as a lead, not a settled fact, but it changes the practical advice: Bing indexing hygiene is necessary but this suggests it is not sufficient on its own for ChatGPT visibility: classic Google indexing health is worth checking too, not assuming it's irrelevant because ChatGPT "uses Bing."
 
 **Deeper read, 11 Sep 2026 (same Peec.ai post, not a new source): the internal index has a name and fan-out grew under GPT-5.6.** A second pass over the same 4 Sep Peec.ai article (this time via `WebSearch` summary only, direct fetch still blocked, so treat the specific numbers below as approximate, not verified against the original text) names the internal retrieval system "Labrador": a family of vertical indexes (web, PDF, YouTube, news across three recency tiers, arXiv, Wikipedia, local, finance, legal, medical, shopping, images) that runs alongside the Bing/Google paths above, with live production experiments (e.g. `prefer-index-over-serp-v3`) testing own-index results against SERP-sourced ones for shopping queries. The same reading reports that fan-out behaviour shifted materially when GPT-5.6 became the default model: single-query (no fan-out) share reportedly dropped from ~94% to ~43%, average sources retrieved roughly doubled, and multi-round fan-out (a second round of sub-queries) rose from ~5% to ~33%. Amplified on X by Lily Ray (~4-5 Sep). Practical implication, held provisionally given the sourcing: a page's odds of being read now depend less on ranking for one query and more on surviving a wider net of sub-queries and internal-index candidates; do not rewrite the "Faz:" guidance in `engine_playbooks.md` on this alone, revisit once the article itself has been read directly.
 
@@ -272,7 +287,7 @@ A controlled reproduction of citation faithfulness in RAG pipelines, run against
 
 From Aggarwal et al. plus vendor follow-ups (Profound, Ahrefs, Semrush, Qwairy):
 
-1. **Strong organic ranking on the underlying index**: Bing for ChatGPT/Copilot; Google for AIO/AI Mode. BrightEdge: **54%** of AIO citations come from URLs ranking in organic top-10 for the same query ([BrightEdge](https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio)).
+1. **Strong organic ranking on the underlying index**: Bing for Copilot; Google for AIO/AI Mode and Gemini; Brave for Claude (Brave crawls only what `Googlebot` may crawl); OpenAI's own index for ChatGPT, where Bing and Google results most likely help discovery (see `como-os-motores-leem.md`). BrightEdge: **54%** of AIO citations come from URLs ranking in organic top-10 for the same query ([BrightEdge](https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio)).
 2. **Original statistics**: replace qualitative claims with numbers. Largest single intervention in Aggarwal et al.
 3. **Named-source quotations**: direct quotes attributed to recognized authorities.
 4. **Dense entity coverage**: pages mentioning 15+ recognized entities are cited ~4.8× more often (Profound; vendor data, directional).
@@ -428,4 +443,4 @@ Google confirmed its existing spam policies (link schemes, cloaking, scaled cont
 
 This file is updated on substantive change to the field, not on a schedule. The `daily-agent/news-feed.md` carries the running record of changes: consult both when answering "what's new?" questions. When the news-feed accumulates a material shift (e.g. a new crawler family from a major vendor, a Google announcement on AIO mechanics, a peer-reviewed paper that overturns Aggarwal), this file is updated in a single commit with the source citation.
 
-Maintained for: destaque.ai. Last refresh: 28 Sep 2026 (§5: added Google's "AI Contribution" pilot, gap-recovery from the 17 Sep 2026 news cycle, never captured by a previous session; pays publishers when content shapes an AI Overviews/AI Mode/Gemini answer, distinct from citation/click, invite-only pilot). Previous: 16 Sep 2026 (§2: added TechnologyChecker.io's Sep 2026 crawl-to-refer ratio update, single secondary source via `WebSearch`, directional not confirmed). Previous: 15 Sep 2026 (§2: effective-date confirmation added, cutover happened as scheduled today, no measured impact found yet, clarified as distinct from an older separate "Block AI bots" Cloudflare default some secondary sources conflate with it). Previous: 14 Sep 2026 (§2: Cloudflare default-block section rewritten, upgraded from watch to confirmed-by-cross-corroboration on volume/quality of independent sources; methodology trigger applied, see `methodology-changelog.md`). Previous: 13 Sep 2026 (§2: Cloudflare default-block watch unchanged, still not primary-source-verified, 2 days to the 15 Sep 2026 effective date; §9: added arXiv:2609.02316 "Counter-GEO-Bench" as a second, distinct GEO-defense preprint alongside the already-absorbed "GEO Defender", awareness not a methodology trigger). Previous: 12 Sep 2026 (§2: Cloudflare default-block watch upgraded from single-source to 5+ independent secondary outlets corroborating, still not primary-source-verified; actionable check-date 15 Sep 2026 flagged; §9: added arXiv:2609.02964 "GEO Defender" preprint as awareness, not a methodology trigger). Previous: 11 Sep 2026 (§2: flagged, unconfirmed watch on Cloudflare default-blocking AI crawlers on ad-supported pages from 15 Sep 2026; §5: deeper read of the 4 Sep Peec.ai "Labrador" post, same source, more mechanism detail, still WebSearch-summary only). Previous: 11 Aug 2026.
+Maintained for: destaque.ai. Last refresh: 8 Nov 2026 (§2 and §5: corrected which agents decide inclusion in answers with search, the index crawlers and not the user-triggered fetchers; ChatGPT's text comes from OpenAI's own index, not the Bing index; the "Web IQ powers ChatGPT" claim withdrawn for lack of a primary source; Brave section added; evidence in the new `como-os-motores-leem.md`). Previous: 28 Sep 2026 (§5: added Google's "AI Contribution" pilot, gap-recovery from the 17 Sep 2026 news cycle, never captured by a previous session; pays publishers when content shapes an AI Overviews/AI Mode/Gemini answer, distinct from citation/click, invite-only pilot). Previous: 16 Sep 2026 (§2: added TechnologyChecker.io's Sep 2026 crawl-to-refer ratio update, single secondary source via `WebSearch`, directional not confirmed). Previous: 15 Sep 2026 (§2: effective-date confirmation added, cutover happened as scheduled today, no measured impact found yet, clarified as distinct from an older separate "Block AI bots" Cloudflare default some secondary sources conflate with it). Previous: 14 Sep 2026 (§2: Cloudflare default-block section rewritten, upgraded from watch to confirmed-by-cross-corroboration on volume/quality of independent sources; methodology trigger applied, see `methodology-changelog.md`). Previous: 13 Sep 2026 (§2: Cloudflare default-block watch unchanged, still not primary-source-verified, 2 days to the 15 Sep 2026 effective date; §9: added arXiv:2609.02316 "Counter-GEO-Bench" as a second, distinct GEO-defense preprint alongside the already-absorbed "GEO Defender", awareness not a methodology trigger). Previous: 12 Sep 2026 (§2: Cloudflare default-block watch upgraded from single-source to 5+ independent secondary outlets corroborating, still not primary-source-verified; actionable check-date 15 Sep 2026 flagged; §9: added arXiv:2609.02964 "GEO Defender" preprint as awareness, not a methodology trigger). Previous: 11 Sep 2026 (§2: flagged, unconfirmed watch on Cloudflare default-blocking AI crawlers on ad-supported pages from 15 Sep 2026; §5: deeper read of the 4 Sep Peec.ai "Labrador" post, same source, more mechanism detail, still WebSearch-summary only). Previous: 11 Aug 2026.
