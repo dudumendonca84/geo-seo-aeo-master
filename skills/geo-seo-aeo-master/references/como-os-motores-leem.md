@@ -147,8 +147,14 @@ Cada fornecedor publica uma forma de verificar [D]:
 | Perplexity | `perplexity.ai/perplexitybot.json`, `perplexity.ai/perplexity-user.json` |
 | Google | DNS inverso para `googlebot.com` ou `google.com` e confirmação direta; listas `googlebot.json`, `user-triggered-fetchers.json`, `user-triggered-fetchers-google.json`, `user-triggered-agents.json` |
 | Microsoft | DNS inverso para `search.msn.com`; ferramenta "Verify Bingbot" no Bing Webmaster Tools |
+| Apple | `search.developer.apple.com/applebot.json` |
+| Meta | Sem lista em JSON. A documentação (Meta Web Crawlers) manda verificar contra as rotas anunciadas pelo AS32934; o RIPEstat devolve-as em JSON (`stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934`, 564 prefixos a 8 Nov 2026) |
+| Amazon | DNS inverso: o nome do IP acaba em `crawl.amazonbot.amazon` e volta ao mesmo IP pelo DNS direto (developer.amazon.com/amazonbot) |
+| Common Crawl | `index.commoncrawl.org/ccbot.json` |
 | Brave | Sem agente próprio anunciado, segundo a Brave; o canário identificou-o pelo ASN 24940 |
-| xAI | Nada publicado |
+| xAI, Mistral, DeepSeek, ByteDance | Nada publicado |
+
+Três regras para quem implementa a verificação [M]: "não consegui verificar" (sem IP, lista em baixo, DNS sem resposta) nunca conta como falso; um IP privado, de loopback ou partilhado é o de um proxy e não o do robô, e fica por verificar; e quase todas as visitas de um fornecedor a darem falso não é uma vaga de impostores, é o IP errado (uma CDN à frente do site) ou a lista mudada.
 
 Uma linha de registo só conta como visita de um fornecedor se o IP estiver na lista dele, ou passar o DNS inverso. Sem o IP guardado, a contagem por nome de agente é um teto e não uma medição.
 
@@ -156,7 +162,7 @@ Uma linha de registo só conta como visita de um fornecedor se o IP estiver na l
 
 Um site alojado numa plataforma com CDN (Vercel, Netlify, Cloudflare) costuma ler os registos por um *log drain*. Ao rever o do destaque.ai (Vercel), a 8 Nov 2026, encontrámos três limites que valem para qualquer auditoria a registos e que limitam o que se pode afirmar com eles:
 
-1. **O registo pode não ver os pedidos servidos pela cache da CDN.** O `Googlebot` aparece 19 vezes em quatro meses e meio, a maioria falsificadas, num site que o AI Overviews e o AI Mode citam. O `Googlebot` verdadeiro passa de certeza, e o registo não o está a apanhar. A hipótese principal é que o *drain* não inclui os pedidos servidos a partir da cache [I]. A Vercel separa as origens (`static`, `lambda`, `edge` e outras) e marca o estado da cache em `proxy.vercelCache` (`HIT`, `MISS`, `STALE`, `PRERENDER`). Porque é que o `OAI-SearchBot` e o `GoogleOther` aparecem e o `Googlebot` não continua por explicar. Até isto estar explicado, nenhuma ausência no registo prova ausência de visita.
+1. **Um coletor pode recusar em silêncio precisamente as visitas verdadeiras.** O `Googlebot` aparecia 19 vezes em quatro meses e meio, a maioria falsificadas, num site que o AI Overviews e o AI Mode citam. A hipótese inicial era a cache da CDN [I]; a causa medida foi outra [M]. O registo do destaque.ai não vinha do *log drain* mas de um aviso enviado pelo próprio site, e o recetor recusava (400) todo o aviso com o campo `referer` a `null`. Os robôs verdadeiros não mandam `Referer`; os varrimentos forjam-no. Resultado: só entravam os impostores, e quase nenhum robô verdadeiro. Corrigido a 8 Nov 2026. A regra que fica: antes de ler uma ausência no registo, mandar um pedido de teste com o agente de um robô e sem `Referer`, e ver se chega à base. A cache da CDN continua a ser um ponto cego possível num *log drain* (a Vercel separa as origens `static`, `lambda`, `edge` e marca `proxy.vercelCache`), por isso convém guardar a origem e o estado da cache.
 2. **Sem o IP não há verificação.** Um coletor que grave caminho, método, estado, agente e referência e descarte o IP do cliente não consegue cruzar nada com as listas de 5.3. Convém guardar também a origem e o estado da cache, que respondem à pergunta do ponto 1.
 3. **O agente pode vir como lista.** A Vercel documenta `proxy.userAgent` como lista (`["Mozilla/5.0..."]`). Um coletor que o trate como texto perde a linha ou cai para outros campos.
 

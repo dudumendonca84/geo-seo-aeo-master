@@ -8,6 +8,10 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-08: Os robôs e as listas de IPs passam a ser vigiados todos os dias
+
+O founder pediu que a skill monitorize a verificação dos robôs de IA. O agente diário ganha uma passagem obrigatória por cada lista de IPs e cada página de robôs dos fornecedores (`daily-prompt.md`): endereço, formato, agente novo, fornecedor que passou a publicar. Quando muda, atualiza `como-os-motores-leem.md` §5.3 e avisa o founder do que o tracker tem de mudar. O §5.3 ganha a Meta (rotas do AS32934) e a Amazon (DNS inverso), e o §5.4 corrige a causa da ausência do `Googlebot`: não era a cache da CDN, era o recetor a recusar os pedidos sem `Referer`, que são precisamente os dos robôs verdadeiros.
+
 ## 2026-11-08: Os motores leem uma cópia guardada, e quem decide a inclusão é o robô de indexação
 
 - **Trigger:** a pergunta "quanto tempo demora uma alteração no site a aparecer numa resposta, e porquê" não tinha resposta na skill, e a resposta implícita estava errada em dois pontos. A skill dizia que a pesquisa do ChatGPT corre sobre o índice Bing e que bloquear os agentes em tempo real (`ChatGPT-User`, `Claude-User`, `Perplexity-User`) tira a marca do assistente.
