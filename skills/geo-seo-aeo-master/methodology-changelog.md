@@ -8,6 +8,15 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-08: A pesquisa na web tem preço, e o custo de uma chamada passa a incluí-lo
+
+- **Trigger:** o founder recusou o custo médio de uma resposta do ChatGPT com pesquisa (0,0023 dólares) e do Gemini (0,0083): "não é verdade". O `cost_usd` do Tracker era só fichas vezes preço, e a pesquisa paga-se à parte em todos os fornecedores que o Tracker chama com pesquisa.
+- **O que muda:** `references/models.md` ganha `## Search prices`: 10 dólares por mil pesquisas no OpenAI e na Anthropic, 14 por mil consultas nos Gemini 3 e seguintes (com 5000 grátis por mês, partilhadas), 5 por mil no Grok e 2,50 por mil na Meta, cada linha com a página do fornecedor e a data em que foi lida. Diz também o que conta como pesquisa em cada um. `## Token prices` ganha duas ressalvas: o `gemini-3.5-flash` é reencaminhado para o `gemini-3.6-flash` (preço da fatura por confirmar) e as fichas de raciocínio do Gemini faturam-se como saída e não entram no `tokens_out` gravado. `INTERFACES.md` contrato 10 e o validador acompanham.
+- **A quota grátis do Gemini conta:** 5000 consultas por mês, partilhadas por todos os Gemini 3+ (colunas `free per month` e `free pool`), descontam-se no mês civil. O volume pela API foi 2.319 consultas em setembro e 1.076 em outubro: o preço de lista fazia o Gemini parecer várias vezes mais caro do que a fatura. O tecto de 1500 pedidos por dia é limite de ritmo e fica fora da conta.
+- **O que não muda:** o custo declarado pelo fornecedor (Perplexity) continua a ganhar às tabelas.
+
+---
+
 ## 2026-11-06: O produto trata o cliente por "você", como o site
 
 - **Trigger:** o relatório do Pingo Doce saiu com "tu" vindo dos porquês e dos playbooks, e o founder decidiu "produto todo em você" (6 Nov 2026).

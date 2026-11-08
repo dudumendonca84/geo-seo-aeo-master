@@ -341,6 +341,45 @@ let allOk = true;
 // --- Contrato editorial: nada do que a skill escreve leva travessões nem "canónico"
 // (Tracker CLAUDE.md, regras 8 e 11; pedido do founder a 25 Ago e 9 Set 2026).
 // Alargado à skill inteira a 10 Set 2026. Ficam de fora só os registos diários
+// --- Contrato 10: preços (consumido por src/lib/skill/precos.ts no Tracker)
+// As fichas e a taxa de pesquisa vivem em models.md. Uma tabela que deixe de
+// se ler deixa o custo de cada chamada desconhecido, ou pior, só a fichas.
+{
+  const name = "Contrato 10 · preços (fichas e pesquisa)";
+  const body = read(`${SKILL}/references/models.md`);
+  const lerTabela = (section, header) => {
+    const i = section.indexOf(header);
+    if (i < 0) return null;
+    // Só a primeira tabela depois do cabeçalho: acaba na primeira linha
+    // que não é tabela (a secção de pesquisa tem uma segunda, em prosa).
+    const linhas = [];
+    for (const l of section.slice(i + header.length).split("\n").slice(1)) {
+      const s = l.trim();
+      if (!s.startsWith("|")) break;
+      if (!/^\|[\s\-:|]+\|$/.test(s)) linhas.push(s);
+    }
+    return linhas;
+  };
+  if (!body) { check(name, false, "models.md não encontrado"); }
+  else {
+    const fichas = /^## Token prices\s*$/m.test(body) ? sectionContent(body.slice(body.search(/^## Token prices\s*$/m)), "## Token prices") : null;
+    const pesquisa = /^## Search prices\s*$/m.test(body) ? sectionContent(body.slice(body.search(/^## Search prices\s*$/m)), "## Search prices") : null;
+    const linhasFichas = fichas && lerTabela(fichas, "| API model ID | input USD/1M | output USD/1M | since | source |");
+    const linhasPesquisa = pesquisa && lerTabela(pesquisa, "| API model ID | unit | USD per 1000 | free per month | free pool | since | source |");
+    if (!linhasFichas) check(name, false, "'## Token prices' ausente ou cabeçalho da tabela mudou");
+    else if (!linhasPesquisa) check(name, false, "'## Search prices' ausente ou cabeçalho da tabela mudou");
+    else {
+      const celulas = linhasPesquisa.map((l) => l.split("|").slice(1, -1).map((c) => c.trim()));
+      const mas = celulas.map((c) => c[1]).filter((u) => u !== "search" && u !== "request");
+      // A quota e o grupo vão juntos: um sem o outro não se consegue contar.
+      const quotaSolta = celulas.filter((c) => (c[3] !== "") !== (c[4] !== "")).map((c) => c[0]);
+      if (mas.length > 0) check(name, false, `unidade desconhecida em '## Search prices': ${mas.join(", ")} (só search ou request)`);
+      else if (quotaSolta.length > 0) check(name, false, `'free per month' e 'free pool' vão juntos: ${quotaSolta.join(", ")}`);
+      else check(name, true, `${linhasFichas.length} preços de fichas e ${linhasPesquisa.length} taxas de pesquisa`);
+    }
+  }
+}
+
 // --- Contrato 13: alert thresholds (consumido por parseAlertThresholds no Tracker)
 {
   const name = "Contrato 13 · alert thresholds";
