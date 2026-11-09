@@ -48,7 +48,26 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 2 novembro 2026: décima quinta execução, oitava consecutiva sem hiato. Nenhum item para DONE. Anthropic (P0) sem erro de saldo na janela de 26 out a 2 nov: por confirmar, não DONE. DataForSEO/SerpApi persistem (2.ª semana). Três itens novos: Bluesoft/revaliQ/AppLabx no peer set, dependência de Clutch e Sortlist, Supabase Auth 429. Visibilidade em respostas de IA sobe para 9/32 (era 3/32), via Clutch; confirmar na semana seguinte.)_
+_(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hiato. Um item para DONE: Anthropic sem saldo (sem erro em 14 dias de lotes diários). Dois itens novos: integração Microsoft Advertising no Tracker (OAuth, 5 nov) e regressão em GD4. `/radar` fora do sitemap, 4.ª semana. Visibilidade em respostas de IA estável: 8/22 nos prompts fixos, como a 2 nov (proxy).)_
+
+### 2026-11-09 added: MEASUREMENT: Tracker: integração Microsoft Advertising falha no OAuth (IdentityTypeMismatch, 5 nov)
+- **Prioridade:** P3
+- **Esforço:** 2h
+- **Origem:** auditoria semanal 2026-11-09 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
+- **Estado:** TODO
+- **Descrição:** `/api/integrations/msads/callback`, 5 nov 19:53-20:38 UTC, 1 utilizador, ~10 ocorrências: `GetUser failed: 126 IdentityTypeMismatch` (o e-mail já existe com outro tipo de identidade no Bing Ads), `Invalid client data` e `SearchAccounts failed: 1310 user id not found`. Parece uma sessão de teste da ligação, não uma falha de produção; não verificável daqui.
+- **Acção:** Confirmar com o fundador se a ligação ficou a funcionar; se não, tratar `126` com mensagem clara ao utilizador (entrar com a conta Microsoft pessoal ou de trabalho certa).
+- **Verificação:** callback sem erros numa janela de 7 dias após novo teste.
+- **Notes:** Liga-se ao item BING_OAUTH_CLIENT_ID de 3 ago.
+
+### 2026-11-09 added: STRATEGIC: GD4 ("que agências ajudam a otimizar a presença de uma marca no ChatGPT em Portugal?") deixou de incluir destaque.ai
+- **Prioridade:** P2
+- **Esforço:** 1 dia
+- **Origem:** auditoria semanal 2026-11-09 (GD4: 0; era 1.º a 2 nov via Clutch). Fontes agora: marketeer.sapo.pt (Buzzvel/Semantika), teamlewis.com, ranktracker.com, llmpulse.ai
+- **Estado:** TODO
+- **Descrição:** A única perda face a 2 nov entre os prompts fixos; V1 ganhou. Confirma que as menções dependem de directórios e variam com o proxy. Nenhum resultado `.pt` de empresa é a fonte, excepto Marketeer.
+- **Acção:** Peça PT-PT com dados próprios e autor nomeado sobre "aparecer no ChatGPT" (alinha com GP1/GP5); pedir avaliações no Clutch/Sortlist (item de 2 nov).
+- **Verificação:** GD4 e GP1 re-testados duas semanas depois.
 
 ### 2026-11-02 added: STRATEGIC: Bluesoft, revaliQ e AppLabx: nomes frequentes nas respostas, fora do peer set
 - **Prioridade:** P1
@@ -101,6 +120,7 @@ _(Atualizado 2 novembro 2026: décima quinta execução, oitava consecutiva sem 
 - **Verificação:** zero ocorrências de "run out of searches" e `402` numa janela de 7 dias.
 - **Notes:** Complementa o item de 3 ago (SerpApi/DataForSEO), que continua aberto.
 - **Atualização 2026-11-02:** 2.ª semana. DataForSEO `Internal SE Server Error` 172, `google_aio` 139 e `google_ai_mode` 30 sem fallback, última 2 nov 07:07 UTC; DeepSeek `402` última a 29 out; Mistral `429` 71.
+- **Atualização 2026-11-09:** 3.ª semana. DataForSEO `Internal SE Server Error` 187 ocorrências (10 utilizadores), última 9 nov 07:07 UTC; SerpApi `run out of searches` (`copilot` 30, última 3 nov). **DeepSeek e Gemini `402` ausentes da janela** (últimas leituras 29 out): candidatos a DONE na próxima semana. Mistral `503`/`429` 85; Grok `429` de capacidade 1; timeouts de 300 s 66.
 
 ### 2026-10-26 added: MEASUREMENT: Stripe webhook com assinatura recusada (1 ocorrência, 23 out)
 - **Prioridade:** P3
@@ -132,20 +152,6 @@ _(Atualizado 2 novembro 2026: décima quinta execução, oitava consecutiva sem 
 - **Ação:** Priorizar as peças H2 do plano (Schema.org, llms.txt, queda de tráfego, AI Overviews e CTR, preço de GEO para SaaS, como avaliar uma agência), cada uma com autor nomeado e número próprio; acrescentar definição de "GEO (Generative Engine Optimization)" na primeira linha.
 - **Verificação:** repetir os prompts na mesma composição; destaque.ai como fonte (não só Sortlist) em pelo menos um.
 - **Notes:** Extende o item de 12 out (FS2/FS3/GE4/GP7-9); mantém-se um item de conteúdo contínuo, não bloqueante.
-
-### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lotes de 5 e 12 out
-- **Prioridade:** P0 (REPETIDO a 26 out: quarta semana com registo)
-- **Esforço:** 15-30min
-- **Origem:** auditoria semanal 2026-10-05 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
-- **Estado:** TODO
-- **Atualização 2026-10-26:** quarta semana com registo: lote de 26 out, 07:03–07:14 UTC, `claude-sonnet-5` knowledge e augmented. No mesmo lote falham Gemini (402), DeepSeek (402/429 por saldo) e SerpApi/DataForSEO (sem pesquisas): o problema é de gestão de saldo em quatro fornecedores, não do Claude. Acção proposta: um único alerta de saldo (cron `ops-health`) e recarga automática em todos; até lá, suspender o motor em falta em vez de gerar dezenas de falhas por lote. Notificação enviada.
-- **Atualização 2026-10-19:** terceira repetição: lotes de 16 out (10:58 UTC) e 19 out (07:00–07:11 UTC), ~35 grupos `claude-sonnet-5 (knowledge)`. Três avisos sem efeito; a recarga automática continua sem estar activa. Notificação enviada. Escalar: bloquear o lote do motor Claude enquanto não houver saldo (evita 35 falhas diárias ruidosas), ou repor saldo hoje.
-- **Atualização 2026-10-12:** o erro repetiu-se hoje, ~35 grupos, 07:02–07:11 UTC, `/api/audit/run-batch`. Notificação enviada ao fundador. A recarga automática não está activa ou o top-up de 5 out não foi feito.
-- **Descrição:** `claude/claude-sonnet-5 (knowledge) failed: 400 ... Your credit balance is too low to access the Anthropic API`: mais de 30 grupos de erro de 1 ocorrência cada, todos entre 07:01 e 07:10 UTC de 5 out, rota `/api/audit/run-batch`. O motor Claude do Periscopy fica sem medição no lote diário.
-- **Ação:** Repor crédito em Plans & Billing e activar recarga automática. Considerar migrar de `claude-sonnet-5` para `claude-sonnet-5-5` (`models.md`).
-- **Verificação:** zero ocorrências numa janela de 7 dias.
-- **Notes:** Mesmo padrão dos esgotamentos OpenAI (set) e Gemini (set): três fornecedores, três esgotamentos manuais. Sugere alerta de saldo, não só top-up.
-- **Atualização 2026-11-02:** Sem `credit balance is too low` na janela de 26 out a 2 nov (última 26 out 07:14 UTC, antes da janela). Por confirmar recarga: ausência não é prova. Passa a P1 se confirmado; manter P0 até lá. Sete timeouts de 180 s em `claude-sonnet-5` (augmented).
 
 ### 2026-10-12 added: MEASUREMENT: Tracker: Perplexity sonar-pro com 402 (crédito) além dos 429
 - **Prioridade:** P1
@@ -608,6 +614,21 @@ _(Atualizado 2 novembro 2026: décima quinta execução, oitava consecutiva sem 
 - **Notes:** Expectável para empresa fundada em 2025: horizonte 3-4, não urgente. **Atualização 2026-09-14: primeira citação de imprensa PT verificável em 9 semanas de tentativas, ainda que não Tier-1.** A Marketeer construiu pelo menos dois artigos à volta do estudo próprio "mapa das empresas de Portugal" (marketeer.sapo.pt/as-marcas-portuguesas-que-a-ia-nomeia-e-as-que-realmente-recomenda/ e um segundo artigo relacionado), citando a distinção "nomeada" vs. "escolhida" (share of recommendation) por nome. Marketeer não é uma das seis publicações Tier-1 desta metodologia (essas continuam em zero), mas é prova real de que os estudos próprios geram cobertura de terceiros verificável. Data exata não confirmada de forma independente (a "3 de setembro" citada num commit interno não bate com o texto do artigo, que só situa o estudo subjacente em "final de agosto"). Ação recomendada: identificar 2-3 publicações adicionais de marketing/negócios para pitch direto usando os estudos como gancho, e confirmar a data exata da Marketeer.
 
 ## Items DONE (últimas 4 semanas, por rastreabilidade)
+
+### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lotes de 5 e 12 out
+- **Prioridade:** P0 (REPETIDO a 26 out: quarta semana com registo)
+- **Esforço:** 15-30min
+- **Origem:** auditoria semanal 2026-10-05 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
+- **Estado:** DONE (2026-11-09)
+- **Atualização 2026-10-26:** quarta semana com registo: lote de 26 out, 07:03–07:14 UTC, `claude-sonnet-5` knowledge e augmented. No mesmo lote falham Gemini (402), DeepSeek (402/429 por saldo) e SerpApi/DataForSEO (sem pesquisas): o problema é de gestão de saldo em quatro fornecedores, não do Claude. Acção proposta: um único alerta de saldo (cron `ops-health`) e recarga automática em todos; até lá, suspender o motor em falta em vez de gerar dezenas de falhas por lote. Notificação enviada.
+- **Atualização 2026-10-19:** terceira repetição: lotes de 16 out (10:58 UTC) e 19 out (07:00–07:11 UTC), ~35 grupos `claude-sonnet-5 (knowledge)`. Três avisos sem efeito; a recarga automática continua sem estar activa. Notificação enviada. Escalar: bloquear o lote do motor Claude enquanto não houver saldo (evita 35 falhas diárias ruidosas), ou repor saldo hoje.
+- **Atualização 2026-10-12:** o erro repetiu-se hoje, ~35 grupos, 07:02–07:11 UTC, `/api/audit/run-batch`. Notificação enviada ao fundador. A recarga automática não está activa ou o top-up de 5 out não foi feito.
+- **Descrição:** `claude/claude-sonnet-5 (knowledge) failed: 400 ... Your credit balance is too low to access the Anthropic API`: mais de 30 grupos de erro de 1 ocorrência cada, todos entre 07:01 e 07:10 UTC de 5 out, rota `/api/audit/run-batch`. O motor Claude do Periscopy fica sem medição no lote diário.
+- **Ação:** Repor crédito em Plans & Billing e activar recarga automática. Considerar migrar de `claude-sonnet-5` para `claude-sonnet-5-5` (`models.md`).
+- **Verificação:** zero ocorrências numa janela de 7 dias.
+- **Notes:** Mesmo padrão dos esgotamentos OpenAI (set) e Gemini (set): três fornecedores, três esgotamentos manuais. Sugere alerta de saldo, não só top-up.
+- **Atualização 2026-11-02:** Sem `credit balance is too low` na janela de 26 out a 2 nov (última 26 out 07:14 UTC, antes da janela). Por confirmar recarga: ausência não é prova. Passa a P1 se confirmado; manter P0 até lá. Sete timeouts de 180 s em `claude-sonnet-5` (augmented).
+- **Atualização 2026-11-09:** sem `credit balance is too low` em 14 dias (última 26 out 07:14 UTC), com lotes diários a correr (timeouts de 180 s em `claude-sonnet-5` a 9 nov 07:00 UTC mostram pedidos a chegar à API). Fechado por evidência indirecta; reabrir se o erro regressar. Alerta de saldo nos restantes fornecedores continua no item de 26 out.
 
 ### 2026-07-27 added: CONTENT: Cadência de publicação parada desde 17 jul
 - **Estado:** DONE (2026-08-24)
