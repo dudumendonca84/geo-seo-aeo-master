@@ -8,6 +8,14 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-09
+
+Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central só tem o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Cortes reconfirmados sem alteração (segunda). Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real, ver o ecrã de lances (novas opções max bid/max CPC em vigor a 9 Nov) e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
+
+## 2026-11-09
+
+Sem novidades significativas hoje. Segunda: passagem de cortes feita (gpt-5.6-luna: Feb 16, 2026; claude-sonnet-5: Jan 2026, lidos diretamente; grok-4.3 continua sem corte publicado, a xAI só publica o do grok-4.7). Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance). Pesquisas por modelos e AI Mode só devolveram agregadores sem fonte primária.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-08
 
 Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central só acrescenta o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real, ver o ecrã de lances e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
