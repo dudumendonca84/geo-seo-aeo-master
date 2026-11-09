@@ -143,9 +143,9 @@ Cada fornecedor publica uma forma de verificar [D]:
 | Fornecedor | Lista ou método |
 |---|---|
 | OpenAI | `openai.com/searchbot.json`, `openai.com/chatgpt-user.json`, `openai.com/gptbot.json`, `openai.com/adsbot.json`. O ChatGPT agent assina os pedidos com HTTP Message Signatures (RFC 9421), `Signature-Agent: "https://chatgpt.com"`, com as chaves em `chatgpt.com/.well-known/http-message-signatures-directory` |
-| Anthropic | `claude.com/crawling/bots.json` |
+| Anthropic | `claude.com/crawling/bots.json`. Só cobre os robôs de recolha: o `Claude-User` verdadeiro foi visto a 9 Nov 2026 a partir de `160.79.106.0/24` (Google Cloud), fora da lista, portanto fora da lista não prova impostor neste agente |
 | Perplexity | `perplexity.ai/perplexitybot.json`, `perplexity.ai/perplexity-user.json` |
-| Google | DNS inverso para `googlebot.com` ou `google.com` e confirmação direta; listas `googlebot.json`, `user-triggered-fetchers.json`, `user-triggered-fetchers-google.json`, `user-triggered-agents.json` |
+| Google | DNS inverso para `googlebot.com` ou `google.com` e confirmação direta; listas `common-crawlers.json` (era `googlebot.json` até Nov 2026), `special-crawlers.json`, `user-triggered-fetchers.json`, `user-triggered-fetchers-google.json`, `user-triggered-agents.json` |
 | Microsoft | DNS inverso para `search.msn.com`; ferramenta "Verify Bingbot" no Bing Webmaster Tools |
 | Apple | `search.developer.apple.com/applebot.json` |
 | Meta | Sem lista em JSON. A documentação (Meta Web Crawlers) manda verificar contra as rotas anunciadas pelo AS32934; o RIPEstat devolve-as em JSON (`stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934`, 564 prefixos a 8 Nov 2026) |
