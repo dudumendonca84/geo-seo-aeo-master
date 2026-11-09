@@ -179,6 +179,81 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-11-02 (todas as auditorias da semana: 18 marcas e radares setoriais)
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
+mock e sem sentinela, de todas as auditorias das semanas de 26 Out e 2
+Nov. Entre 235 e 275 respostas por motor (Copilot: 154 e 250). Os números
+de 26 Out foram recontados hoje sobre a base atual e não batem ao dígito
+com a entrada anterior: entraram respostas e marcas depois de ela ser
+escrita. Contagens por resposta (um domínio conta uma vez por resposta).
+Os domínios do aviso de cookies (`onetrust.com`, `cookiepedia.co.uk`)
+ficam fora de todas as contagens.
+
+### Densidade de fontes por resposta
+
+| Motor | 26 Out | 2 Nov | Sem fonte nenhuma, 2 Nov |
+|---|---|---|---|
+| Grok (aplicação) | 45,6 | 51,6 | 2 de 265 |
+| ChatGPT (aplicação) | 20,1 | 21,2 | 25 de 275 |
+| Meta AI | 18,2 | 20,7 | 65 de 265 |
+| Claude (aplicação) | 11,1 | 14,1 | 54 de 275 |
+| Perplexity (aplicação) | 11,6 | 12,3 | 12 de 265 |
+| Copilot | 5,4 | 7,5 | 43 de 250 |
+| AI Overviews | 6,9 | 7,3 | 29 de 235 |
+| AI Mode | 4,1 | 4,6 | 11 de 263 |
+| Gemini (aplicação) | 1,1 | 0,7 | 243 de 275 |
+
+**Gemini na aplicação: quarta semana a cair, agora 32 de 275 respostas com
+fontes.** Era 84 de 134 a 12 Out. Continua a ser lido como extrator cego e
+não como comportamento do motor; o executor passou a acusar este padrão
+por sinal próprio (quota de respostas com fontes contra a melhor das oito
+semanas anteriores). Nenhuma conclusão sobre as fontes do Gemini sai desta
+semana.
+
+**Perplexity passa a ter respostas sem fonte (12 de 265)**, depois de zero
+nas semanas anteriores. Doze é pouco para tirar conclusões; fica anotado
+para ver se se repete.
+
+### Que tipo de fonte domina, por motor
+
+| Motor | Tipo dominante, 2 Nov | Exemplos (respostas) |
+|---|---|---|
+| AI Overviews | UGC e vídeo | youtube.com 69, reddit.com 49, instagram.com 45, facebook.com 30 (de 235) |
+| Perplexity | fórum e comparadores de consumo | reddit.com 71, deco.proteste.pt 39, comparaja.pt 19, nit.pt 19 (de 265) |
+| Grok | perfis profissionais e imprensa económica | pt.linkedin.com 90, eco.sapo.pt 74, marketeer.sapo.pt 49, jornaleconomico.sapo.pt 47 (de 265) |
+| Claude | imprensa local, imobiliário e defesa do consumidor | postal.pt 37, deco.proteste.pt 36, idealista.pt 34, portaldaqueixa.com 29, eco.sapo.pt 28 (de 275) |
+| ChatGPT | defesa do consumidor, selos e sites de fornecedores | deco.proteste.pt 49, site próprio do cliente 41, flowup.agency 34, marcarecomendada.pt 26 (de 275) |
+| Copilot | sites de fornecedores e agências | site próprio do cliente 36, portugalseo.pt 28, deco.proteste.pt 21, flowup.agency 17 (de 250) |
+| Meta AI | diretórios de prestadores e blogues | medium.com 32, youtube.com 25, sortlist.com 20, upwork.com 20 (de 265) |
+| AI Mode | comparadores e fórum | deco.proteste.pt 24, reddit.com 17, eco.sapo.pt 16, youtube.com 13 (de 263) |
+
+**O `google.com` do AI Mode (47) e do AI Overviews (35) não é uma fonte.**
+São ligações do redireccionador do Google com o destino opaco; subiram de
+16 e 17 na semana anterior. Ler como "a Google cita a Google" seria errado.
+
+**Confirmações dos playbooks, terceira semana seguida (19 e 26 Out, e
+agora 2 Nov):** o AI Overviews é o motor mais UGC (YouTube e Reddit no
+topo); o Perplexity tem o `reddit.com` como domínio mais citado (82 e 71
+na recontagem); o Grok tem o LinkedIn e a imprensa económica portuguesa no
+topo depois de excluído o aviso de cookies. A semana de 2 Nov repete os
+três sem mudança de via, que era a condição posta na entrada anterior:
+ficam prontos a propor como edição ao `engine_playbooks.md` no próximo
+self-audit.
+
+**A `deco.proteste.pt` está no top de sete dos oito motores com fontes
+visíveis**, de 17 respostas (AI Overviews) a 58 (Grok). É a fonte de
+consumo mais transversal da amostra portuguesa: só falta no topo da Meta
+AI.
+
+**Observação de uma semana só:** a Meta AI desce o `youtube.com` de 103
+para 25 respostas e o `github.com` sai do topo, com a densidade a subir;
+entram diretórios de prestadores (`sortlist.com`, `upwork.com`). A subida
+de plataformas de vídeo registada a 26 Out não se repetiu, e não deve ser
+promovida. O Claude na aplicação passa a ter imprensa regional
+(`postal.pt`) e o portal imobiliário no topo, à frente do site próprio do
+cliente, que cai do primeiro lugar para fora do top-7.
+
 ## 2026-10-26 (todas as auditorias da semana: 16 marcas e radares setoriais)
 
 Base: só respostas com pesquisa (`augmented`), analisadas, sem erro e sem
