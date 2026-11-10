@@ -179,6 +179,82 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-11-09 (todas as auditorias da semana: marcas, radares setoriais e um estudo de consumo)
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
+mock e sem sentinela, das semanas de 2 e 9 Nov. Entre 222 e 290 respostas
+por motor na semana de 9 Nov. **A medida da densidade mudou nesta
+entrada:** conta domínios DISTINTOS por resposta (um domínio vale uma vez
+por resposta), e a semana de 2 Nov foi recontada pela mesma regra, por
+isso os números de 2 Nov aqui não são os da entrada anterior (que contava
+citações). As respostas sem fonte batem ao dígito com a entrada anterior.
+Os domínios do aviso de cookies (`onetrust.com`, `cookiepedia.co.uk`)
+ficam fora.
+
+**A composição da amostra mudou, e isso explica a maior parte do que se
+move.** Entrou um estudo de consumo sobre a Black Friday (perguntas de
+eletrónica, preços e direitos do consumidor). Os domínios que sobem em
+quase todos os motores (`4gnews.pt`, `worten.pt`, `kuantokusta.pt`,
+`fnac.pt`) vêm dessas perguntas, não de uma mudança de via dos motores.
+Não se lêem como tendência.
+
+### Densidade de fontes por resposta (domínios distintos)
+
+| Motor | 2 Nov | 9 Nov | Sem fonte nenhuma, 9 Nov |
+|---|---|---|---|
+| Grok (aplicação) | 34,4 | 34,4 | 2 de 280 |
+| Meta AI | 17,1 | 11,6 | 62 de 240 |
+| Perplexity (aplicação) | 10,1 | 10,1 | 1 de 240 |
+| Claude (aplicação) | 9,1 | 9,7 | 72 de 283 |
+| ChatGPT (aplicação) | 10,6 | 8,8 | 35 de 290 |
+| Copilot | 7,5 | 8,5 | 19 de 240 |
+| AI Overviews | 5,8 | 4,5 | 37 de 222 |
+| AI Mode | 3,8 | 3,9 | 2 de 240 |
+| Gemini (aplicação) | 0,6 | 0,6 | 217 de 238 |
+
+**Gemini na aplicação: quinta semana sem fontes legíveis** (21 de 238
+respostas com fontes). Continua a ser extrator cego e não comportamento
+do motor; nada sobre as fontes do Gemini sai desta semana.
+
+**Meta AI desce de 17,1 para 11,6 domínios por resposta**, com as
+respostas sem fonte estáveis (65 e 62). Uma semana só, e com a amostra a
+mudar de composição: fica anotado.
+
+### Que tipo de fonte domina, por motor
+
+| Motor | Tipo dominante, 9 Nov | Exemplos (respostas) |
+|---|---|---|
+| Grok | perfis profissionais, imprensa económica e de tecnologia | pt.linkedin.com 87, 4gnews.pt 81, deco.proteste.pt 68, eco.sapo.pt 56, portaldaqueixa.com 53 (de 280) |
+| ChatGPT | defesa do consumidor e retalho | deco.proteste.pt 62, worten.pt 31, flowup.agency 29, reddit.com 28, fnac.pt 27, kuantokusta.pt 27 (de 290) |
+| Claude | imprensa de tecnologia, consumo e imobiliário | 4gnews.pt 40, deco.proteste.pt 40, portaldaqueixa.com 37, idealista.pt 33, e-konomista.pt 31 (de 283) |
+| Perplexity | fórum e comparadores de consumo | reddit.com 51, deco.proteste.pt 32, comparaja.pt 21, dev.to 17, site próprio do cliente 17 (de 240) |
+| Copilot | imprensa de tecnologia, agências e retalho | 4gnews.pt 22, portugalseo.pt 21, site próprio do cliente 20, worten.pt 20, fnac.pt 17 (de 240) |
+| AI Overviews | UGC e vídeo | youtube.com 50, instagram.com 37, reddit.com 36, facebook.com 23, pt.linkedin.com 20 (de 222) |
+| AI Mode | defesa do consumidor, fórum e retalho | deco.proteste.pt 26, reddit.com 18, worten.pt 18, 4gnews.pt 16 (de 240) |
+| Meta AI | blogues, imprensa de nicho e diretórios | medium.com 19, enso.pt 18, leak.pt 17, youtube.com 16, goodfirms.co 15 (de 240) |
+
+**O `google.com` do AI Overviews sobe para 90 respostas (35 a 2 Nov) e o
+do AI Mode desce para 15 (47).** Continua a ser o redireccionador do
+Google com destino opaco, não uma fonte.
+
+**Confirmações dos playbooks, quarta semana seguida:** o AI Overviews
+continua o motor mais UGC (YouTube, Instagram e Reddit no topo); o
+Perplexity mantém o `reddit.com` como domínio mais citado (51); o Grok
+mantém o LinkedIn e a imprensa económica portuguesa no topo. Já estavam
+prontos a propor ao `engine_playbooks.md` na entrada anterior; esta semana
+confirma-os com uma amostra de outra composição, o que reforça que são do
+motor e não da categoria.
+
+**A `deco.proteste.pt` está agora no topo de seis dos oito motores com
+fontes visíveis**, de 15 respostas (Copilot) a 68 (Grok). Com as perguntas
+de consumo, passa a ser o domínio mais citado do ChatGPT e do AI Mode.
+
+**Observação de uma semana só:** o site próprio do cliente sai do topo do
+Grok, do ChatGPT e do AI Mode (estava em 61, 41 e 21 respostas a 2 Nov).
+É provável que seja a diluição pela amostra nova (mais perguntas onde
+nenhuma marca medida tem site a citar) e não perda de citações; confirma-se
+quando a semana de 16 Nov tiver a mesma composição.
+
 ## 2026-11-02 (todas as auditorias da semana: 18 marcas e radares setoriais)
 
 Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
