@@ -54,6 +54,7 @@ below forbids.
 |---|---|---|---|---|
 | `gpt-5.6-luna` | 2026-02-16 | 2026-11-09 | developers.openai.com/api/docs/models/gpt-5.6-luna | The model page states it verbatim: "Feb 16, 2026 knowledge cutoff" |
 | `claude-sonnet-5` | 2026-01 | 2026-11-09 | platform.claude.com/docs/en/models/sonnet-5/overview | Training data cutoff row of the model comparison table, read directly |
+| `claude-fable-5-2` | 2026-06 | 2026-11-10 | platform.claude.com/docs/en/models/fable-5-2/overview | Reliable and training data cutoff both "Jun 2026" on the model page. Not a model the Tracker calls (buyer defaults use Opus 5.5/Sonnet 5/Haiku 5.5): um snapshot novo é um corpus novo |
 | `claude-sonnet-5-5` | 2026-06 | 2026-10-12 | platform.claude.com/docs/en/models/sonnet-5-5/overview | Reliable and training data cutoff both "Jun 2026" on the model page. Not a model the Tracker calls yet (buyer default is `claude-sonnet-5`): a snapshot novo é um corpus novo |
 | `claude-haiku-5-5` | 2026-06 | 2026-10-12 | platform.claude.com/docs/en/models/haiku-5-5/overview | Reliable and training data cutoff both "Jun 2026" on the model page. Not a model the Tracker calls yet (cost_optimized `claude` ainda `claude-haiku-4-5` no buyer default): um snapshot novo é um corpus novo |
 | `gpt-6.1-sol` | 2026-04-30 | 2026-09-30 | developers.openai.com/api/docs/models/gpt-6.1-sol | Model page states "April 30, 2026" directly. Not a model the Tracker calls yet (buyer default is `gpt-5.6-sol`): a snapshot novo é um corpus novo |

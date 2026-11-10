@@ -8,6 +8,23 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-10
+
+Radar LLM/IA: a Anthropic lançou a 9 Nov o Claude Fable 5.2 (geral) e o Mythos 5.2 (só organizações verificadas), a 8/40 dólares por milhão de tokens contra 10/50 do Fable 5.1 (-20%), com corte de conhecimento Jun 2026 ([Anthropic](https://www.anthropic.com/claude-fable-and-mythos-5-2), [docs](https://platform.claude.com/docs/en/models/fable-5-2/overview)). Sem mudança de modelo por defeito nem de mecânica de pesquisa; a Anthropic continua a recomendar o Opus 5.5. SEO/Google: Search Central só com o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Robôs: 14 listas lidas, sem mudanças de formato; a lista `common-crawlers.json` da Google responde no caminho `/static/crawling/ipranges/` (o antigo `/static/search/apis/ipranges/` dá 404, já refletido no §5.3 desde Nov); `index.commoncrawl.org/ccbot.json` sem resposta (connection reset), por confirmar. Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real (lances max bid/max CPC em vigor desde 9 Nov) e registar a mensagem exata para Portugal [verificar de primeira mão]; para o Tracker, nada muda (não chama o Fable). Passagem por motor feita (26 blocos).
+
+## 2026-11-10
+
+### 🔵 Anúncios oficiais
+- **Introducing Claude Fable 5.2 and Claude Mythos 5.2**: [Anthropic, 9 Nov](https://www.anthropic.com/claude-fable-and-mythos-5-2). Fable 5.2 (`claude-fable-5-2`, 1M de contexto, 128K de saída) está disponível em todas as plataformas; o Mythos 5.2 é o mesmo modelo sem certas salvaguardas de cibersegurança e biologia, limitado ao Cyber Verification Program e ao Life Sciences Verification Program. Anthropic reporta FrontierSWE v2 69,9% contra 62,3% do Opus 5.5 (números da própria Anthropic).
+
+### ⚙️ Mudanças nas plataformas
+- **Anthropic API: preço do Fable 5.2**: [platform.claude.com](https://platform.claude.com/docs/en/models/fable-5-2/overview). 8 dólares de entrada e 40 de saída por milhão de tokens, contra 10/50 do Fable 5.1 (antes/depois, -20%); cache read 0,20; fast mode 16/80. Corte de conhecimento Jun 2026; retirada não antes de 9 Nov 2027; exige retenção de dados de 30 dias.
+
+### 💡 Implicações para destaque.ai
+- Só awareness: o Fable não é modelo por defeito de nenhum produto de pesquisa e o Tracker não o chama, por isso nem os preços nem os cortes do Tracker mudam. Jogada: nenhuma ação esta semana; reavaliar só se a Anthropic o tornar default no claude.ai.
+- Segue a jogada de ontem: hoje, Ads Manager do ChatGPT com conta real, ecrã de lances e mensagem de bloqueio para PT, com data [verificar de primeira mão].
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-09
 
 Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central só tem o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Cortes reconfirmados sem alteração (segunda). Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real, ver o ecrã de lances (novas opções max bid/max CPC em vigor a 9 Nov) e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
