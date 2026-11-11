@@ -8,6 +8,16 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-11: A auditoria passa a ler as preferências de IA da Bing (ai-training, ai-grounding)
+
+- **Trigger:** novo sinal oficial de um fornecedor que muda o que se verifica numa página. A Bing publicou a 30 Out 2026 preferências separadas de treino e de grounding, e o agente diário só o apanhou a 11 Nov.
+- **Fonte:** [blogs.bing.com, 30 Out 2026](https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/), lido diretamente.
+- **O que muda:** `references/frameworks.md` §2 ganha a secção da Bing (tokens, valores, calendário: honradas a 1 Fev 2027, `NoArchive`/`NoCache` deixam de valer para IA a 1 Mar 2027, preferência temporária no BWT desde 15 Dez 2026). `engine_playbooks.md`, PT e EN: `copilot` ganha o passo 5 (rever `NoArchive`/`NoCache` e usar `disallowextended` em vez de `disallow` quando o objetivo é só sair dos serviços de terceiros).
+- **Por fazer por um humano:** o passo de robots do `SKILL.md` §7 deve passar a procurar `ai-grounding`/`ai-training` (meta `Bingbot` e `X-Robots-Tag`) e `NoArchive`/`NoCache`. Não foi tocado aqui porque o `SKILL.md` está fora dos caminhos que o automerge da routine aceita.
+- **O que não muda:** nenhum cabeçalho, chave ou tabela lidos pelo Tracker ou pelo Deck Builder; nenhum agente novo, portanto `como-os-motores-leem.md` §5.3 fica igual.
+
+---
+
 ## 2026-11-08: Os robôs e as listas de IPs passam a ser vigiados todos os dias
 
 O founder pediu que a skill monitorize a verificação dos robôs de IA. O agente diário ganha uma passagem obrigatória por cada lista de IPs e cada página de robôs dos fornecedores (`daily-prompt.md`): endereço, formato, agente novo, fornecedor que passou a publicar. Quando muda, atualiza `como-os-motores-leem.md` §5.3 e avisa o founder do que o tracker tem de mudar. O §5.3 ganha a Meta (rotas do AS32934) e a Amazon (DNS inverso), e o §5.4 corrige a causa da ausência do `Googlebot`: não era a cache da CDN, era o recetor a recusar os pedidos sem `Referer`, que são precisamente os dos robôs verdadeiros.
