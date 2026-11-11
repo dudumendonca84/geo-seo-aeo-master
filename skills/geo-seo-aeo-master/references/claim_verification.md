@@ -63,6 +63,18 @@ Per divergence: `fact_key` (the truth-file entry relied on), `claimed`
 says), `severity`, `engine`, `response_id`, and an optional `note` naming
 the likely cause and the fix.
 
+**A count in `expected` or `note` is the measurement's count, with its
+denominator, and it is checked before it is written.** "None of the 15
+answers to this question name the Hospital da Luz Ribatejo", never "none
+of the 7" when the question has 15 answers. Count every answer of the
+question in the week (both modes, every engine), not the subset you
+happened to read, and look for the fact under every spelling the answers
+use before saying it is absent: in the Hospital da Luz report (11 Nov
+2026) the note said "none of the 7 answers mention it" while the question
+had 15 answers and three of them named a "Hospital da Luz Santarém".
+Absent by exact name and absent altogether are different findings; say
+which one it is.
+
 Cause is what makes this actionable. The three that recur:
 
 1. **Stale index**: the engine read an old page of the brand's. Fix: the
