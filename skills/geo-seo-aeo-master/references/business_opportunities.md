@@ -26,6 +26,26 @@ O que falha uma das três fica de fora. Seis boas valem mais do que doze
 fracas, mas quando há material, procura entre 8 e 12: uma lista curta por
 falta de procura deixa de fora o que o prospect mais precisa de ouvir.
 
+### Num refazer, parte da lista anterior
+
+Quando o pedido traz `anteriores` (as oportunidades da execução anterior),
+não se recomeça do zero. Reabre cada fonte: a oportunidade que continua
+válida fica, com o número atualizado se mudou; a que caiu ou deixou de ser
+verdade sai ou troca de fonte. Depois acrescentam-se as novas, até 12, e
+reordena-se tudo pelo impacto. Devolve-se sempre a lista inteira.
+
+### A primeira oportunidade é sempre a IA no caminho do cliente
+
+É o argumento de partida da destaque.ai e vale para qualquer setor: quanta
+gente deste setor já começa a pesquisa (ou decide) numa IA. O pedido traz
+`ia_no_setor` (a tabela `## Estatísticas do setor` de `benchmarks.md`,
+filtrada pelas perguntas medidas); usa esse número e procura, quando há, um
+número mais específico do setor e do país (por exemplo, quantos usam IA para
+perguntas de saúde, e não só quantos usam IA). Se o número é de um estudo de
+empresa, diz-se na `fonte`; se há um oficial, prefere-se o oficial. Liga-a à
+taxa de citação e às perguntas sem dono do relatório: é aqui que se mostra
+que a resposta da IA já decide clientes.
+
 ### Antes de fechar a lista, cobre sempre estes três ângulos
 
 1. **O mercado:** procura que cresce, falhas do serviço público ou do líder,
