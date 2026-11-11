@@ -119,12 +119,46 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
   começar este mês.
 - `ia`: uma frase sobre o que a resposta da IA precisa de encontrar (o
   número com data, o autor com nome, a página que responde à pergunta
-  inteira, a ficha completa) e, quando faz sentido, que perguntas medir no
-  Periscopy.
+  inteira, a ficha completa). É conselho e só conselho: não vende o
+  Periscopy nem a destaque.ai (a oferta está no fim do relatório, e um
+  conselho que acaba em venda deixa de ser lido como conselho).
 - `ligacao`: só quando a ligação é real. É um pedaço curto do texto de uma
   pergunta que vem em `medicao.sem_dono` ou nas frentes do `lider` (por
   exemplo «atendimento em inglês»). O código casa-o e mostra o número
   medido. Se não há pergunta que lhe corresponda, `null`.
+
+### Antes de devolver, relê cada cartão contra estas cinco perguntas
+
+Nasceram do relatório do Hospital da Luz de 11 Nov 2026, onde os onze
+cartões tinham estes erros e o founder os apanhou a ler.
+
+1. **O título diz o que a fonte diz?** Com as palavras dela. «Ponderam
+   recorrer à IA em vez de consultar um médico» não é «admitem perguntar à
+   IA antes de ir ao médico»: um verbo ou uma preposição trocados mudam o
+   facto, e quem abre a fonte vê a diferença. O mesmo para o mês, a
+   população («dos 16 aos 74 anos») e o universo («nas consultas
+   realizadas», que não é «nos doentes em espera»).
+2. **O título e o `porque` dizem a mesma coisa?** Se o `porque` diz que a
+   IA não escolhe ninguém, o título não pode dizer que ela já escolhe. Lê-se
+   o título sozinho e depois o `porque`: se um desmente o outro, o título
+   está errado.
+3. **Cada contagem da medição é a do pedido, com o denominador e na mesma
+   pergunta?** «Citado em 13 de 15 respostas», nunca «até 15 vezes em 15».
+   «Ninguém é escolhido» só quando nenhuma resposta escolhe ninguém; se uma
+   escolhe outra marca, diz-se qual («uma só resposta escolhe alguém, a
+   Affidea»). Um facto errado da IA sobre a marca diz em que motor e em
+   que pergunta aparece.
+4. **O tema está na medição e o cartão não o diz?** Procura nas perguntas
+   medidas todas, e não só em `sem_dono`: se há uma pergunta do mesmo tema
+   onde a marca é citada e um concorrente é escolhido, esse é o número do
+   `porque`, e é quase sempre o mais forte do cartão. Escrever «o tema não
+   aparece esta semana» exige ter procurado.
+5. **Uma ação repete a de outro cartão?** Cada ação vive num cartão só, o
+   do tema a que pertence. A página do parto em inglês é do cartão do
+   parto, não do dos estrangeiros.
+
+Os números escrevem-se como no guia da casa: espaço nos milhares
+(1 666 823), vírgula decimal (70,6%).
 
 ## 4. Ordem
 
