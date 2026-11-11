@@ -23,7 +23,25 @@ Passa no teste quem responde às três perguntas:
    que o prospect pode começar já.
 
 O que falha uma das três fica de fora. Seis boas valem mais do que doze
-fracas.
+fracas, mas quando há material, procura entre 8 e 12: uma lista curta por
+falta de procura deixa de fora o que o prospect mais precisa de ouvir.
+
+### Antes de fechar a lista, cobre sempre estes três ângulos
+
+1. **O mercado:** procura que cresce, falhas do serviço público ou do líder,
+   regras que mudam, comportamento novo (os da tabela abaixo).
+2. **A própria marca:** o que ela abriu, comprou, lançou ou anunciou nos
+   últimos 12 meses (unidade nova, região nova, serviço novo). Uma abertura
+   recente é quase sempre uma oportunidade: há uma população nova a servir e
+   a IA ainda não sabe que a marca lá está. Procura na imprensa regional da
+   zona.
+3. **Os concorrentes:** aberturas, investimentos, resultados e saídas dos
+   concorrentes do pedido nos últimos 12 meses (imprensa económica). Onde um
+   concorrente investe, a procura existe; onde sai ou falha, fica espaço.
+
+Um destes ângulos sem nenhuma oportunidade só é aceitável se a pesquisa não
+encontrou nada com número e fonte; diz-se isso no `porque` de outra
+oportunidade, nunca se inventa.
 
 ## 2. Onde procurar, por tipo de fonte
 
@@ -45,6 +63,14 @@ regulador e a associação do setor do país).
 O que se aproveita da medição do próprio relatório (perguntas sem dono, onde
 o líder é fraco, factos errados) entra pela `ligacao`, não como número de
 mercado.
+
+**Sempre que o pedido traz medição sobre o tema da oportunidade, usa-a.** Se
+há uma pergunta do mesmo tema em `medicao.sem_dono` ou nas frentes do
+`lider`, a `ligacao` é obrigatória. Se o tema aparece na medição de outra
+forma (por exemplo, uma especialidade onde a marca é citada e quase nunca
+escolhida, ou um facto errado sobre ela), o `porque` diz o número medido, com
+a mesma contagem que vem no pedido. Uma oportunidade sobre um tema que o
+relatório mede, sem dizer o que a medição mostra, está incompleta.
 
 ## 3. A forma de cada oportunidade
 
