@@ -16,6 +16,13 @@ evidence that explains the choice, the `why` says exactly that. This is
 what separates an explanation from a horoscope: and it is the honest
 version of the "ask the AI why" features the market sells.
 
+**When the `why` gives a number of sources, it counts distinct sites, not
+links** («o seu site está entre os 10 sites citados», never «entre as 19
+fontes» when those 19 links come from 10 sites). The report shows the
+same row with the count of distinct sites next to it, so a links count
+reads as a contradiction (Hospital da Luz report, 11 Nov 2026: «19
+fontes» beside «1 de 10»). Subdomains of one brand are one site.
+
 ## 1. Citation rate / share of citations
 
 **Definition.** Percentage of LLM responses, for a defined prompt set, that include a citation (clickable source link or footnote) pointing to the target domain. Distinct from "mention": a citation requires an explicit source reference.
