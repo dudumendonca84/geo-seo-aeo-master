@@ -14,7 +14,7 @@ vive aqui.
 
 ## Tendências
 
-_Sem entradas ainda. Corrida de 2026-11-01 não encontrou facto datado com fonte primária (ver `execucoes.md`)._
+_Sem entradas ainda. As corridas de 2026-11-01 e 2026-11-08 não encontraram facto datado com fonte primária (ver `execucoes.md`)._
 
 ## Calendário
 

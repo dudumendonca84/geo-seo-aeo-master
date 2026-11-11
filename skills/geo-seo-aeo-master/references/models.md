@@ -12,7 +12,7 @@ Tracks current LLM model versions, capabilities and defaults across the major ve
 
 This file evolves fast. The `daily-agent/news-feed.md` carries day-to-day announcements; this file is the **canonical "what is current"** synthesis, refreshed when material changes accumulate.
 
-**Last refresh: 02 Nov 2026 (attempted, no confirmed default-model change)**: weekly self-audit routine; 14 days since the previous attempt, so a refresh was due. 3 targeted `WebSearch` queries (ChatGPT default, Google AI Mode default, Perplexity changelog); Tier 1 pages not read directly. Results secondary and partly contradictory, so **no row changed**. ChatGPT: GPT-5.5 retirement on 14 Oct 2026 is the most consistently reported item; andrew.ooo (GPT-6 default since 7 Oct) and SessionWatcher (GPT-6.1 Sol default in Codex CLI 0.161.0, a CLI catalog, not ChatGPT) still unconfirmed by an OpenAI post. Google AI Mode: sources agree on Gemini 3.5 Flash from 19 May 2026; Gemini 3.6 Flash (21 Jul) and Gemini 3.7 Flash (Pro/Ultra selectable, Aug) are single-source, no official Google page found; no October AI Mode model change found. Perplexity: Sonar chat-completions API retirement on 27 Sep 2026 (TrueFoundry, secondary); `sonar-pro` still reported as default search model (secondary). News-feed 27 Oct to 2 Nov: no new models or list-price changes. Verify at openai.com/news, blog.google, docs.perplexity.ai when primary access exists. Prior refresh below. **Last refresh: 19 Oct 2026 (attempted, no confirmed default-model change)**: weekly self-audit routine; 4 targeted `WebSearch` queries (OpenAI/ChatGPT, Google AI Mode, Anthropic, Perplexity). Tier 1 sources not reachable from this execution; results secondary and in part contradictory, so **no row changed**. Flagged, not incorporated: andrew.ooo claims GPT-6 became the ChatGPT default on 7 Oct (conflicts with this file; no official OpenAI note found); findskill.ai claims Gemini 3.6 Flash is the AI Mode default since July (single source); TrueFoundry says Perplexity retired the Sonar chat-completions API on 27 Sep in favour of its Agent API (secondary). Verify at openai.com/news, blog.google, docs.perplexity.ai in the next run with primary access. Prior refresh: **08 Oct 2026 (partial)**: daily-agent absorption: **Claude Haiku 5.5** (`claude-haiku-5-5`, 07 Oct 2026), $0.10/$0.50 per MTok, 1M context, cutoff Jun 2026, read directly on platform.claude.com. Deck Builder `claude` `cost_optimized` moved from `claude-haiku-4-5` (retirement not sooner than 15 Oct 2026) to `claude-haiku-5-5`; `production` unchanged. New tokenizer (~30% more tokens for the same text). Prior refresh: **05 Oct 2026 (partial)**: daily-agent: the DeepSeek routing recorded on 14 Sep is now confirmed by direct fetch of `api-docs.deepseek.com` (first primary read): `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` are "retired" and requests are served by DeepSeek-V4.1-Flash at Flash price; current IDs `deepseek-flash` (V4.1-Flash, 1M context, 384K max output) and `deepseek-v4-pro` (V4-Pro-0813). Pricing page: flash $0.15-$0.30 input (cache miss), $0.60-$1.20 output per MTok (off-peak/peak); no cutoff published. Also read directly: Claude models overview lists Haiku 4.5 retirement "not sooner than October 15, 2026". No Deck Builder mapping change. Prior refresh: **30 Sep 2026 (partial)**: daily-agent absorption: **GPT-6.1 Sol** (`gpt-6.1-sol`, DevDay 29 Sep 2026), $2/$10 per MTok, cutoff 30 Apr 2026, read directly on developers.openai.com; not a default anywhere yet, Deck Builder `chatgpt` mapping unchanged. Also announced (secondary: The Next Web, Neowin): Ultrafast speed tier, ChatGPT Pro 500 ($500/month), Pro 200 usage halved from 30 Oct. No disclosed change to ChatGPT Search mechanics. Prior refresh: **29 Sep 2026 (partial)**: daily-agent absorption: **Claude Sonnet 5.5** (28 Sep 2026), `claude-sonnet-5-5`, $2/$10 per MTok, cutoff Jun 2026, confirmed by direct fetch of platform.claude.com; Anthropic table and token prices updated, Deck Builder mapping unchanged (see news-feed 2026-09-29). Prior refresh: **23 Sep 2026 (partial)**: daily-agent absorption: **Anthropic launched Claude Opus 5.5** (22 Sep 2026), confirmed by direct fetch to `platform.claude.com/docs/en/models/opus-5-5/overview` (primary): API ID `claude-opus-5-5` (Bedrock `anthropic.claude-opus-5-5`, same string on Vertex AI/Microsoft Foundry), status "Active (latest)", **reliable knowledge cutoff: June 2026**. Pricing $4/$20 per million input/output tokens (vs. Opus 5's $5/$25: -20% on both, plus cache reads ~60% cheaper, which Anthropic frames as up to ~40% cheaper for typical agentic workloads). Neither `platform.claude.com/docs` nor `anthropic.com/claude-opus-5-5` (also fetched directly) states whether it becomes the new default anywhere (e.g. replacing Opus 5 as the Claude Max default): two low-authority secondary blogs (beevaults.com, juliangoldie.com) claim it is already default in Claude Code and the Claude app/Cowork, but this is not corroborated by Anthropic's own docs or by any Tier-1/Tier-2 press found: **treated as unconfirmed, not incorporated**. Anthropic table and Token prices table below updated; Deck Builder `claude` mapping (`claude-sonnet-5` production, tied to the claude.ai Free/Pro default, not to Max) left unchanged regardless of how the default question resolves. Also absorbed: **OpenAI launched GPT-6 Sol and GPT-6 Luna** same day (22 Sep 2026), the GPT-6-generation successors to the GPT-5.6 Sol/Luna tier (distinct from GPT-6 Astra, the frontier/cybersecurity-gated model from 3 Sep 2026): API IDs `gpt-6-sol`/`gpt-6-luna` (secondary confirmation only: `WebFetch` to openai.com blocked by this session's proxy; corroborated by TechCrunch, VentureBeat, MacRumors, 9to5Mac converging on the same launch and IDs; primary URL identified as `openai.com/index/introducing-gpt-6-sol-and-luna/` but not directly fetched). Rolled out to ChatGPT Work and Codex (Plus/Pro/Business/Enterprise/Edu); Free/Go gets Luna only in the desktop app; **not yet available in the main ChatGPT Chat surface**, where GPT-5.6 Sol remains default. Pricing: Sol $2/$10 per million tokens (vs. GPT-5.6 Sol's $4/$20, -50%), Luna $0.10/$0.50 (vs. GPT-5.6 Luna's $0.20/$1.20, -50%+): a price cut landing simultaneously with a generation bump. Not yet confirmed as a default anywhere → Deck Builder `chatgpt` mapping left unchanged (`gpt-5.6-sol`/`gpt-5.6-luna`). Separately: OpenAI announced **GPT-5.5 retirement effective 14 Oct 2026** (help.openai.com, secondary/help-center source): leaves ChatGPT/Work/Codex surfaces that date; API access unaffected. See `daily-agent/news-feed.md` 2026-09-23.
+**Last refresh: 10 Nov 2026 (partial)**: daily-agent absorption: **Claude Fable 5.2** (`claude-fable-5-2`) and **Claude Mythos 5.2** (restricted), released 09 Nov 2026, read directly on platform.claude.com and anthropic.com. $8/$40 per MTok (Fable 5.1: $10/$50, -20%), cutoff Jun 2026. Anthropic table and Token prices updated; not a default in any AI-search product and not a model the Tracker calls: no Deck Builder mapping change (`claude` stays `claude-sonnet-5`/`claude-haiku-5-5`). See `daily-agent/news-feed.md` 2026-11-10. Prior refresh below. **Last refresh: 02 Nov 2026 (attempted, no confirmed default-model change)**: weekly self-audit routine; 14 days since the previous attempt, so a refresh was due. 3 targeted `WebSearch` queries (ChatGPT default, Google AI Mode default, Perplexity changelog); Tier 1 pages not read directly. Results secondary and partly contradictory, so **no row changed**. ChatGPT: GPT-5.5 retirement on 14 Oct 2026 is the most consistently reported item; andrew.ooo (GPT-6 default since 7 Oct) and SessionWatcher (GPT-6.1 Sol default in Codex CLI 0.161.0, a CLI catalog, not ChatGPT) still unconfirmed by an OpenAI post. Google AI Mode: sources agree on Gemini 3.5 Flash from 19 May 2026; Gemini 3.6 Flash (21 Jul) and Gemini 3.7 Flash (Pro/Ultra selectable, Aug) are single-source, no official Google page found; no October AI Mode model change found. Perplexity: Sonar chat-completions API retirement on 27 Sep 2026 (TrueFoundry, secondary); `sonar-pro` still reported as default search model (secondary). News-feed 27 Oct to 2 Nov: no new models or list-price changes. Verify at openai.com/news, blog.google, docs.perplexity.ai when primary access exists. Prior refresh below. **Last refresh: 19 Oct 2026 (attempted, no confirmed default-model change)**: weekly self-audit routine; 4 targeted `WebSearch` queries (OpenAI/ChatGPT, Google AI Mode, Anthropic, Perplexity). Tier 1 sources not reachable from this execution; results secondary and in part contradictory, so **no row changed**. Flagged, not incorporated: andrew.ooo claims GPT-6 became the ChatGPT default on 7 Oct (conflicts with this file; no official OpenAI note found); findskill.ai claims Gemini 3.6 Flash is the AI Mode default since July (single source); TrueFoundry says Perplexity retired the Sonar chat-completions API on 27 Sep in favour of its Agent API (secondary). Verify at openai.com/news, blog.google, docs.perplexity.ai in the next run with primary access. Prior refresh: **08 Oct 2026 (partial)**: daily-agent absorption: **Claude Haiku 5.5** (`claude-haiku-5-5`, 07 Oct 2026), $0.10/$0.50 per MTok, 1M context, cutoff Jun 2026, read directly on platform.claude.com. Deck Builder `claude` `cost_optimized` moved from `claude-haiku-4-5` (retirement not sooner than 15 Oct 2026) to `claude-haiku-5-5`; `production` unchanged. New tokenizer (~30% more tokens for the same text). Prior refresh: **05 Oct 2026 (partial)**: daily-agent: the DeepSeek routing recorded on 14 Sep is now confirmed by direct fetch of `api-docs.deepseek.com` (first primary read): `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` are "retired" and requests are served by DeepSeek-V4.1-Flash at Flash price; current IDs `deepseek-flash` (V4.1-Flash, 1M context, 384K max output) and `deepseek-v4-pro` (V4-Pro-0813). Pricing page: flash $0.15-$0.30 input (cache miss), $0.60-$1.20 output per MTok (off-peak/peak); no cutoff published. Also read directly: Claude models overview lists Haiku 4.5 retirement "not sooner than October 15, 2026". No Deck Builder mapping change. Prior refresh: **30 Sep 2026 (partial)**: daily-agent absorption: **GPT-6.1 Sol** (`gpt-6.1-sol`, DevDay 29 Sep 2026), $2/$10 per MTok, cutoff 30 Apr 2026, read directly on developers.openai.com; not a default anywhere yet, Deck Builder `chatgpt` mapping unchanged. Also announced (secondary: The Next Web, Neowin): Ultrafast speed tier, ChatGPT Pro 500 ($500/month), Pro 200 usage halved from 30 Oct. No disclosed change to ChatGPT Search mechanics. Prior refresh: **29 Sep 2026 (partial)**: daily-agent absorption: **Claude Sonnet 5.5** (28 Sep 2026), `claude-sonnet-5-5`, $2/$10 per MTok, cutoff Jun 2026, confirmed by direct fetch of platform.claude.com; Anthropic table and token prices updated, Deck Builder mapping unchanged (see news-feed 2026-09-29). Prior refresh: **23 Sep 2026 (partial)**: daily-agent absorption: **Anthropic launched Claude Opus 5.5** (22 Sep 2026), confirmed by direct fetch to `platform.claude.com/docs/en/models/opus-5-5/overview` (primary): API ID `claude-opus-5-5` (Bedrock `anthropic.claude-opus-5-5`, same string on Vertex AI/Microsoft Foundry), status "Active (latest)", **reliable knowledge cutoff: June 2026**. Pricing $4/$20 per million input/output tokens (vs. Opus 5's $5/$25: -20% on both, plus cache reads ~60% cheaper, which Anthropic frames as up to ~40% cheaper for typical agentic workloads). Neither `platform.claude.com/docs` nor `anthropic.com/claude-opus-5-5` (also fetched directly) states whether it becomes the new default anywhere (e.g. replacing Opus 5 as the Claude Max default): two low-authority secondary blogs (beevaults.com, juliangoldie.com) claim it is already default in Claude Code and the Claude app/Cowork, but this is not corroborated by Anthropic's own docs or by any Tier-1/Tier-2 press found: **treated as unconfirmed, not incorporated**. Anthropic table and Token prices table below updated; Deck Builder `claude` mapping (`claude-sonnet-5` production, tied to the claude.ai Free/Pro default, not to Max) left unchanged regardless of how the default question resolves. Also absorbed: **OpenAI launched GPT-6 Sol and GPT-6 Luna** same day (22 Sep 2026), the GPT-6-generation successors to the GPT-5.6 Sol/Luna tier (distinct from GPT-6 Astra, the frontier/cybersecurity-gated model from 3 Sep 2026): API IDs `gpt-6-sol`/`gpt-6-luna` (secondary confirmation only: `WebFetch` to openai.com blocked by this session's proxy; corroborated by TechCrunch, VentureBeat, MacRumors, 9to5Mac converging on the same launch and IDs; primary URL identified as `openai.com/index/introducing-gpt-6-sol-and-luna/` but not directly fetched). Rolled out to ChatGPT Work and Codex (Plus/Pro/Business/Enterprise/Edu); Free/Go gets Luna only in the desktop app; **not yet available in the main ChatGPT Chat surface**, where GPT-5.6 Sol remains default. Pricing: Sol $2/$10 per million tokens (vs. GPT-5.6 Sol's $4/$20, -50%), Luna $0.10/$0.50 (vs. GPT-5.6 Luna's $0.20/$1.20, -50%+): a price cut landing simultaneously with a generation bump. Not yet confirmed as a default anywhere → Deck Builder `chatgpt` mapping left unchanged (`gpt-5.6-sol`/`gpt-5.6-luna`). Separately: OpenAI announced **GPT-5.5 retirement effective 14 Oct 2026** (help.openai.com, secondary/help-center source): leaves ChatGPT/Work/Codex surfaces that date; API access unaffected. See `daily-agent/news-feed.md` 2026-09-23.
 
 **Last refresh: 14 Sep 2026 (partial)**: daily-agent absorption: the DeepSeek migration flagged as a watch since 12 Sep executed on schedule. From 04:00 UTC 14 Sep 2026, `deepseek-v4-pro` requests route to DeepSeek-V4.1-Flash (`deepseek-flash`) at the Flash rate, "until V4.1-Pro launches" (DeepSeek's own wording, per aggregators quoting the changelog). Separately, and not previously flagged in this file: the older `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` IDs were already retired on 10 Sep 2026, temporarily routed to V4.1-Flash for compatibility. Net effect: three legacy IDs (`v4-pro`, `v4-flash`, `v4-flash-vision-exp`) now all serve V4.1-Flash under the hood; the canonical forward-facing ID is `deepseek-flash`. Not verified by direct fetch (`api-docs.deepseek.com/updates/` identified but `WebFetch` blocked this session); corroborated by 5+ independent secondary sources (developer changelogs/trackers on GitHub, apidog, benchlm.ai, shattered.io) converging on the same routing chain and dates. DeepSeek section and Deck Builder mapping below updated accordingly. See `daily-agent/news-feed.md` 2026-09-14.
 
@@ -55,7 +55,7 @@ When citing capabilities, **always include the model version and the date observ
 
 ### Products and which model
 
-- **ChatGPT Search / SearchGPT**: since 9 Jul 2026, default is tier-dependent: GPT-5.6 Sol for Plus/Pro/Business/Enterprise, GPT-5.5 Instant unchanged for Free/Go (gradual rollout, not confirmed complete as of 11 Jul). Web search via Bing index + OpenAI crawl for both. Source: [openai.com/index/gpt-5-6](https://openai.com/index/gpt-5-6/) (9 Jul 2026); publish-date and detail cross-confirmed via OpenAI Help Center, TechCrunch, CNBC (direct fetch of openai.com blocked by bot-protection at verification time).
+- **ChatGPT Search / SearchGPT**: since 9 Jul 2026, default is tier-dependent: GPT-5.6 Sol for Plus/Pro/Business/Enterprise, GPT-5.5 Instant unchanged for Free/Go (gradual rollout, not confirmed complete as of 11 Jul). Web search reads OpenAI's own index and cache, fed by `OAI-SearchBot`; third-party results (Bing, Google via intermediaries) mainly help discover and rank URLs (corrected 8 Nov 2026, was "Bing index + OpenAI crawl"; evidence in `como-os-motores-leem.md`). Source: [openai.com/index/gpt-5-6](https://openai.com/index/gpt-5-6/) (9 Jul 2026); publish-date and detail cross-confirmed via OpenAI Help Center, TechCrunch, CNBC (direct fetch of openai.com blocked by bot-protection at verification time).
 - **ChatGPT Atlas browser**: GPT-5.5 Instant with browsing tools enabled by default (not yet confirmed migrated to GPT-5.6).
 - **Custom GPTs**: pinned to model owner chose (often GPT-4o legacy still).
 - **ChatGPT Voice (GPT-Live)**: since 8 Jul 2026, full-duplex voice models (GPT-Live-1 flagship for paid tiers, GPT-Live-1 mini default for free users) replace Advanced Voice Mode. Voice layer only: delegates web search/reasoning to the GPT-5.5 backend when a query needs it; underlying search/citation model unchanged. Source: [openai.com/index/introducing-gpt-live](https://openai.com/index/introducing-gpt-live/).
@@ -65,7 +65,7 @@ When citing capabilities, **always include the model version and the date observ
 
 - ChatGPT Search enables web search on only **~34.5% of queries** (Semrush clickstream Feb 2026). 65% of answers come from training-data recall: no live citation possible.
 - UTM tagging in citation links since June 2025: `?utm_source=chatgpt.com`.
-- Bot user-agents: `GPTBot` (training), `OAI-SearchBot` (search index), `ChatGPT-User` (real-time fetch). See `frameworks.md` §2.
+- Bot user-agents: `GPTBot` (training), `OAI-SearchBot` (search index: the agent that decides whether a page can appear in answers with search), `ChatGPT-User` (user-triggered fetch only; per OpenAI "not used to determine whether content may appear in Search"). See `frameworks.md` §2 and `como-os-motores-leem.md`.
 
 ---
 
@@ -77,8 +77,10 @@ When citing capabilities, **always include the model version and the date observ
 |---|---|---|---|---|
 | **Claude Sonnet 5.5** (`claude-sonnet-5-5`) | 28 Sep 2026 | 1M tokens, 128k max output | Yes | Not confirmed as a default anywhere (claude.ai Free/Pro default remains Sonnet 5 as far as Anthropic's docs say); API/Bedrock/Vertex/Foundry/Claude Platform on AWS |
 | **Claude Opus 5.5** (`claude-opus-5-5`) | 22 Sep 2026 | 1M tokens | Yes | Not confirmed as a default anywhere in Anthropic's own docs; unconfirmed low-authority claims say it already replaced Opus 5 as default in Claude Code/Cowork (not incorporated, see prose below) |
-| **Claude Fable 5.1** | 01 Sep 2026 (GA) | 1M tokens, 128k max output | Yes | Anthropic's most capable widely-released model, superseding Fable 5; not a default anywhere yet: opt-in for demanding agentic/reasoning work |
-| **Claude Mythos 5.1** | 01 Sep 2026 (restricted: trusted-access programs only) | 1M tokens, 128k max output | Yes | Superseding Mythos 5; same capability profile as Fable 5.1 but access-gated, not a general product default |
+| **Claude Fable 5.2** (`claude-fable-5-2`) | 09 Nov 2026 (GA) | 1M tokens, 128k max output | Yes | Anthropic's most capable widely-released model, superseding Fable 5.1; not a default anywhere (Anthropic recommends Opus 5.5 as the daily driver, Fable for the most demanding work); $8/$40 per MTok |
+| **Claude Mythos 5.2** | 09 Nov 2026 (restricted: Cyber and Life Sciences Verification Programs) | 1M tokens, 128k max output | Yes | Same model as Fable 5.2 without certain cyber and biology safeguards; same specs and price; Claude Enterprise customers reach it through Claude Security |
+| **Claude Fable 5.1** | 01 Sep 2026 (GA) | 1M tokens, 128k max output | Yes | Superseded by Fable 5.2 (09 Nov 2026); still available (legacy) |
+| **Claude Mythos 5.1** | 01 Sep 2026 (restricted: trusted-access programs only) | 1M tokens, 128k max output | Yes | Superseded by Mythos 5.2 (09 Nov 2026); superseding Mythos 5; same capability profile as Fable 5.1 but access-gated, not a general product default |
 | **Claude Fable 5** | Jun 2026 (export-restricted); access restored 01 Jul 2026 | 1M tokens, 128k max output | Yes | Superseded by Fable 5.1 (01 Sep 2026); was Anthropic's most capable widely-released model, opt-in for demanding agentic/reasoning work |
 | **Claude Mythos 5** | Jun 2026 (limited release) | 1M tokens, 128k max output | Yes | Superseded by Mythos 5.1 (01 Sep 2026); limited release via "Project Glasswing", routed cyber/bio-chem/distillation-flagged requests to Opus 4.8 instead |
 | **Claude Opus 5** | 24 Jul 2026 | 1M tokens | Yes | **New default on Claude Max** (superseding Opus 4.8); strongest selectable model on Claude Pro. Approaches Fable 5 on many benchmarks at half the price ($5/$25 per million input/output tokens, same as Opus 4.8) |
@@ -91,6 +93,8 @@ When citing capabilities, **always include the model version and the date observ
 | **Claude Sonnet 4.5** | Sept 2025 | 1M tokens | Yes | Still available in API for compat |
 
 Claude Sonnet 5 pricing: $2/$10 per million input/output tokens, now the **permanent standard rate**, not introductory. Originally framed at launch (30 Jun 2026) as intro pricing through 31 Aug 2026 with a scheduled increase to $3/$15 on 1 Sept 2026: Anthropic cancelled that increase on **10 Aug 2026**, locking in $2/$10 indefinitely. **Correction (29 Aug 2026, daily-agent):** this file still showed the cancelled $3/$15 increase as pending until today: a 19-day gap (10-29 Aug) between the pricing announcement and this file being corrected; caught via the Tier 1b "any price change is always a news-feed item" rule, not via the weekly self-audit refresh above. Anthropic positions Sonnet 5 as close to Opus 4.8 performance at lower cost; safety card reports lower hallucination/sycophancy and improved agentic-safety (prompt-injection resistance) vs. Sonnet 4.6. Uses an updated tokenizer (same input maps to ~1.0–1.35x tokens vs. prior tokenizer). Sources: [anthropic.com/news/claude-sonnet-5](https://www.anthropic.com/news/claude-sonnet-5); pricing permanence per [platform.claude.com/docs/en/about-claude/pricing](https://platform.claude.com/docs/en/about-claude/pricing) (verified via WebSearch cross-corroboration, direct WebFetch to both domains blocked by this session's network proxy).
+
+Claude Fable 5.2 / Mythos 5.2 (09 Nov 2026): pricing $8/$40 per million input/output tokens (Fable 5.1 was $10/$50: -20% on both legs); cache read $0.20 (2.5% of input), 5m cache write $10, 1h cache write $16, Batch -50%; fast mode $16/$80 (up to 2.5x faster generation). Context 1M, max output 128K, adaptive thinking always on (default effort `high`), reliable and training knowledge cutoff Jun 2026, retirement not sooner than 9 Nov 2027. Forced tool use returns 400; 30-day data retention required (no zero data retention unless authorised). Mythos 5.2 is limited to organisations verified through the Cyber and Life Sciences Verification Programs. Anthropic's headline numbers (own, Fable 5.2 vs Opus 5.5): FrontierSWE v2 69.9% vs 62.3%; Humanity's Last Exam with tools 74.2% vs 67.7%. The announcement names no default-model change in the Claude apps and no change to web-search/citation mechanics; Opus 5.5 is still the recommended daily driver. Sources: [platform.claude.com/docs/en/models/fable-5-2/overview](https://platform.claude.com/docs/en/models/fable-5-2/overview) and [anthropic.com/claude-fable-and-mythos-5-2](https://www.anthropic.com/claude-fable-and-mythos-5-2) (both read directly, 10 Nov 2026).
 
 Claude Fable 5.1 / Mythos 5.1 pricing: $10/$50 per million input/output tokens: same nominal rate as Fable 5/Mythos 5: but cache reads are ~75% cheaper, making typical agentic workloads ~25% cheaper in practice (Anthropic's own framing). Fable 5.1 scores 52.6% on Terminal-Bench-Science; Mythos 5.1 access remains restricted to trusted-access programs (successor to "Project Glasswing"). Neither is a default in any AI-search product as of this refresh. Source: [anthropic.com/claude-fable-and-mythos-5-1](https://www.anthropic.com/claude-fable-and-mythos-5-1) (verified via WebSearch cross-corroboration: MarkTechPost, 9to5Mac, both 01 Sep 2026: direct WebFetch blocked by this session's proxy).
 
@@ -114,8 +118,8 @@ Claude Opus 5.5 (22 Sep 2026): pricing $4/$20 per million input/output tokens (-
 
 ### GEO-relevant notes
 
-- Web search backend: **Brave Search**. Conservative citation behavior: cites only when grounding specific claims.
-- Bot user-agents: `ClaudeBot` (training), `Claude-User` (real-time fetch), `Claude-SearchBot` (search index), `claude-code` (Claude Code CLI/SDK tool). Legacy `anthropic-ai` and `Claude-Web` superseded. See `frameworks.md` §2.
+- Web search backend: **Brave Search**. Evidence: Brave on Anthropic's subprocessor list since 19 Mar 2025 (read via TechCrunch, 21 Mar 2025); in a canary-token experiment, Mar-Apr 2026, Claude's answers carried content served to Brave's crawler and to no Anthropic agent (Seiden et al., CCS 2026). Two further search subprocessors appeared in 2026 (TurboPuffer, Parallel Web Systems; secondary source, unconfirmed). Brave does not crawl what `Googlebot` may not crawl, so blocking `Googlebot` also removes a site from Claude's search answers. Conservative citation behavior: cites only when grounding specific claims.
+- Bot user-agents: `ClaudeBot` (training), `Claude-User` (user-triggered fetch, e.g. the `web_fetch` tool, which caches by default and does not run JavaScript), `Claude-SearchBot` (search index, documented but nearly absent from logs and from the canary), `claude-code` (Claude Code CLI/SDK tool). Legacy `anthropic-ai` and `Claude-Web` superseded. See `frameworks.md` §2.
 - API requires citations to be **shown to end users** when surfacing search results ([web search docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)).
 
 ---
@@ -132,6 +136,7 @@ Claude Opus 5.5 (22 Sep 2026): pricing $4/$20 per million input/output tokens (-
 | **Gemini 3.8 Flash** | 02 Sep 2026 | not confirmed | Yes | Just released; not yet confirmed as default anywhere: AI Mode/AI Overviews remain on 3.5 Flash/Flash-Lite as of this refresh. Intro pricing $0.75/$3.75 per million input/output tokens through 31 Dec 2026 (same band as 3.7 Flash), rising to $1.50/$7.50 from 01 Jan 2027 |
 | **Gemini 3.8 Flash Cyber** | 02 Sep 2026 | not confirmed | Yes | Companion release to 3.8 Flash; not yet confirmed as default anywhere. Same pricing schedule as 3.8 Flash |
 | **Gemini 4 Argon** | 30 Sep 2026 (fonte secundária) | 1M output tokens (reportado) | Yes | Acesso faseado: parceiros de cibersegurança, depois clientes pagos/AI Ultra. Selecionável no AI Mode para AI Pro/Ultra a nível global desde 13 Out 2026 (SE Roundtable, secundária); opt-in, não é o default. Preço de lançamento reportado $2/$10 por milhão de tokens; por confirmar em blog.google/ai.google.dev |
+| **Gemini 4 Carbon** | 28 Oct 2026 (anúncio); 10 Nov 2026 (acesso pago) | not confirmed | Yes | API paga (`gemini-4-carbon`, AI Studio, Gemini for business) e Gemini app/AI Mode só para Google AI Ultra desde 10 Nov 2026; opt-in no seletor, não é o default. Preço introdutório $2/$10 por milhão de tokens até 30 Nov 2026, depois $4/$20; cache input -95%. Corte de conhecimento não publicado no post. Fonte: [blog.google, 10 Nov 2026](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/), leitura direta |
 | **Gemini 3.5 Pro** | May 2026 (I/O) | 2M tokens | Yes | Gemini Advanced ($), Workspace integrations |
 | **Gemini 2.5 Pro** | Dec 2025 | 1M tokens | Yes | Still available in Vertex AI, AI Studio |
 | **Gemini 2.5 Flash** | Dec 2025 | 1M tokens | Yes | API default before I/O 2026 |
@@ -173,7 +178,7 @@ Claude Opus 5.5 (22 Sep 2026): pricing $4/$20 per million input/output tokens (-
 
 ### GEO-relevant notes
 
-- Bing is the underlying index for both Copilot AND ChatGPT Search: improving Bing ranking lifts citation probability in both.
+- Bing is the underlying index for Copilot: Copilot sends a short generated query to the Bing service and composes the answer from what Bing returns (Microsoft Learn, 29 Oct 2026). Corrected 8 Nov 2026: this line used to say Bing is also the index for ChatGPT Search. ChatGPT's answer text comes from OpenAI's own index (`OAI-SearchBot`); Bing results may help ChatGPT discover URLs, weight unmeasured. Microsoft Web IQ (2 Jun 2026) has no primary source saying it powers ChatGPT. See `como-os-motores-leem.md`.
 - Microsoft (Fabrice Canel, Mar 2025) publicly stated schema helps Copilot understand content. See `frameworks.md` §3.
 
 ---
@@ -196,7 +201,8 @@ Perplexity uses a multi-model architecture: user can select per-query.
 
 - Citation density: **~21.9 citations/answer** vs ChatGPT's ~7.9 (Profound). Highest in industry.
 - Heavy Reddit (~46.7% of top citations) and YouTube (~14%) bias.
-- Bot user-agents: `PerplexityBot` (indexing), `Perplexity-User` (real-time, **does not respect robots.txt** per Perplexity's own docs). Cloudflare alleged undeclared crawlers Aug 2025 (disputed). See `frameworks.md` §2.
+- Retrieval: own index of 200 billion+ URLs; an ML model decides whether and when to re-index each URL; documents are split into self-contained passages at indexing time and ranked hybrid (lexical + semantic, then cross-encoder) at query time ([Perplexity Research](https://www.perplexity.ai/hub/blog/architecting-and-evaluating-an-ai-first-search-api), 25 Sep 2025). The canary experiment (Seiden et al., CCS 2026) also saw content served to `Googlebot` in Perplexity answers.
+- Bot user-agents: `PerplexityBot` (indexing: the agent that matters for inclusion), `Perplexity-User` (user-requested visits, **does not respect robots.txt** per Perplexity's own docs; not observed feeding answers in the canary). Cloudflare alleged undeclared crawlers Aug 2025 (disputed). See `frameworks.md` §2.
 
 ---
 
@@ -230,7 +236,7 @@ Perplexity uses a multi-model architecture: user can select per-query.
 ### GEO-relevant notes
 
 - Grok citation behavior poorly documented publicly. Some tracking via Profound and Goodie (which monitor Grok among 9+ engines).
-- Web search via X (Twitter) data + standard web crawl.
+- Web search: xAI documents only that Grok searches and browses "in real time", with no crawler, IP list or search provider published. In the canary experiment (Seiden et al., CCS 2026) Grok used content served to `Googlebot` (Google results via an intermediary) and to generic Chrome/Safari agents, still served a week after the site went offline. X (Twitter) data is a separate source. See `como-os-motores-leem.md`.
 - Grok 4.6's addition to third-party agent products (Perplexity Agent API, Cursor, OpenRouter) is a distribution/reach signal, not a citation-surface change: it does not alter how Grok itself sources or cites content in grok.com/X answers.
 - **Naming caveat (22 Sep 2026):** several secondary sources covering the Grok 4.7 launch refer to the vendor as "SpaceXAI" rather than "xAI". No primary source (x.ai) was reached this session to confirm or deny a rebrand; treated as unconfirmed and not adopted in this file.
 - **Correction (22 Sep 2026):** the 15 Sep 2026 entry in this file/news-feed recorded that Musk had "dropped" Grok 4.7 in favor of jumping straight to a 2.5T-parameter Grok 4.8 (X posts, 13-14 Sep, no Tier 1 source). Today's release shows that reading was wrong, or the plan changed again without announcement: a real Grok 4.7 shipped, documented by multiple independent tech outlets, and Grok 4.8 still has no dedicated page.
@@ -553,6 +559,7 @@ news-feed": passa a registá-la também aqui.
 | `claude-opus-5` | 5.00 | 25.00 | 2026-07-24 | anthropic.com/news/claude-opus-5 |
 | `claude-opus-5-5` | 4.00 | 20.00 | 2026-09-22 | platform.claude.com/docs/en/models/opus-5-5/overview e anthropic.com/claude-opus-5-5 (leitura directa). Cache reads ~60% mais baratos |
 | `claude-sonnet-5-5` | 2.00 | 10.00 | 2026-09-28 | platform.claude.com/docs/en/models/sonnet-5-5/overview (leitura direta). Cache read 0,20; Batch -50% |
+| `claude-fable-5-2` | 8.00 | 40.00 | 2026-11-09 | platform.claude.com/docs/en/models/fable-5-2/overview (leitura direta). Cache read 0,20; Batch -50%; fast mode 16/80 |
 | `claude-fable-5-1` | 10.00 | 50.00 | 2026-09-01 | anthropic.com/claude-fable-and-mythos-5-1 |
 | `gpt-6-sol` | 2.00 | 10.00 | 2026-09-22 | TechCrunch/VentureBeat/MacRumors/9to5Mac a 22 Set 2026 (`WebFetch` a openai.com bloqueado); ainda não é o default no Chat principal, só Work/Codex |
 | `gpt-6-luna` | 0.10 | 0.50 | 2026-09-22 | mesmas fontes que `gpt-6-sol`; Free/Go só na app desktop, não no Chat |
@@ -573,7 +580,7 @@ news-feed": passa a registá-la também aqui.
 | `mistral-small-latest` | 0.15 | 0.60 | 2026-06 | Mistral Small 4. A MENOS FIRME DA TABELA: sem acesso à página do fornecedor, os agregadores dividem-se entre 0.15/0.60 (OpenRouter, tokencost, gate.ai) e 0.10/0.30 (outros). Fica o par mais citado, e a divergência é de 50% |
 | `sonar-pro` | 3.00 | 15.00 | | pricepertoken, cloudzero e burnwise a 7 Set 2026. INCOMPLETO DE PROPÓSITO: há ainda uma taxa por pedido de 6 a 14 dólares por mil pedidos, consoante o tamanho do contexto de pesquisa, que estas duas colunas não sabem exprimir. Ver a nota sobre custo declarado abaixo |
 | `sonar` | 1.00 | 1.00 | | mesmas fontes. A mesma taxa por pedido, aqui de 5 a 12 dólares por mil |
-| `muse-spark-1.3` | 1.25 | 4.25 | 2026-10-21 | Meta Model API (`api.meta.ai`), página de preços lida a 21 Out 2026. É o modelo que responde no Meta AI. INCOMPLETO DE PROPÓSITO, como o `sonar`: a ferramenta `web_search` custa mais 2,50 dólares por mil pesquisas, que estas duas colunas não exprimem. O Tracker só o chama na primeira semana de um cliente e nos prospects |
+| `muse-spark-1.3` | 1.25 | 4.25 | 2026-10-21 | Meta Model API (`api.meta.ai`), página de preços lida a 21 Out 2026. É o modelo que responde no Meta AI. INCOMPLETO DE PROPÓSITO, como o `sonar`: a ferramenta `web_search` custa mais 2,50 dólares por mil pesquisas, que estas duas colunas não exprimem (está em `## Search prices`). O Tracker só o chama na primeira semana de um cliente e nos prospects |
 
 ### Contrato de leitura
 
@@ -591,6 +598,9 @@ news-feed": passa a registá-la também aqui.
    onde a multiplicação falharia: as duas colunas de preço não conhecem
    a taxa por pedido de 6 a 14 dólares por mil, que na nossa utilização
    pesa mais do que os tokens. Medido vence calculado.
+7. **A pesquisa na web paga-se à parte**, e a taxa vive na secção
+   `## Search prices`, logo abaixo. Uma chamada com pesquisa custa as
+   fichas desta tabela mais as pesquisas daquela.
 
 ### O que estas duas colunas não conseguem dizer
 
@@ -608,7 +618,22 @@ número que lá está é uma escolha declarada, não a verdade inteira:
   mediu, e era uma afirmação sobre dinheiro (lição 2 do Tracker).
 - **`sonar-pro` e `sonar` dependem do NÚMERO DE PEDIDOS.** Ver o ponto 6.
 
-Um consumidor que queira ser rigoroso mostra estes três como piso e não
+- **`gemini-3.5-flash` já não é o modelo que responde.** A página de
+  descontinuações da Google (`aistudio.google.com/docs/deprecations`, lida
+  a 8 Nov 2026) diz que o endpoint `gemini-3.5-flash` "automatically routes
+  API requests to `gemini-3.6-flash`", que custa 0.75/3.75 até 31 Dez 2026
+  (1.50/7.50 a partir de 1 Jan 2027). A página não diz a que tabela se
+  fatura o pedido reencaminhado (para o `gemini-2.5-flash` diz-o por
+  escrito; para este não), por isso a linha de cima fica como está e fica
+  POR CONFIRMAR na fatura da Google. Se se faturar ao preço do 3.6, a linha
+  de cima sobrestima as fichas do Gemini para o dobro.
+- **O Gemini fatura as fichas de raciocínio como saída** ("Output price
+  (including thinking tokens)", mesma página de preços). O que o Tracker
+  grava como `tokens_out` do Gemini é o `candidatesTokenCount`, que não as
+  inclui: o custo das fichas do Gemini fica por baixo na mesma proporção.
+  Não está medido quanto.
+
+Um consumidor que queira ser rigoroso mostra os três primeiros como piso e não
 como custo. Nenhum deles deve aparecer a um cliente sem essa ressalva.
 
 ### Contrato de manutenção
@@ -617,6 +642,111 @@ Atualiza-se quando um fornecedor muda um preço, quando uma promoção
 começa ou acaba, e quando um modelo novo entra na tabela de mappings. A
 coluna `since` é a data a partir da qual o preço vale, e a `source` diz
 onde foi lido: sem as duas, a linha não entra.
+
+---
+
+## Search prices
+
+**O que uma chamada COM PESQUISA paga além das fichas.** Mesmo espírito da
+tabela de cima: a prosa é para pessoas, esta tabela é para código.
+
+PORQUÊ (8 Nov 2026). Até hoje o custo de uma chamada era fichas vezes o
+preço de `## Token prices`, e nada mais. Mas a pesquisa na web paga-se à
+parte, por pesquisa, em todos os fornecedores que o Tracker chama com
+pesquisa, e a tabela de fichas não o sabe. Resultado: todo o
+`audit_responses.cost_usd` da metade `augmented` estava por baixo, e no
+ChatGPT e no Gemini a taxa de pesquisa pesa mais do que as fichas. O
+founder recusou um custo por resposta do ChatGPT com pesquisa de 0,0023
+dólares ("não é verdade"), e tinha razão: com a taxa, a mesma resposta
+custa perto de dez vezes isso.
+
+**Uma linha por ID de modelo da API**, o mesmo ID de `## Token prices`.
+Os preços estão em dólares por mil unidades, e a unidade diz o que se
+conta.
+
+| API model ID | unit | USD per 1000 | free per month | free pool | since | source |
+|---|---|---|---|---|---|---|
+| `gpt-5.6-luna` | search | 10.00 | | | | developers.openai.com/api/docs/pricing, "Built-in tools", "Web search (all models): $10.00 / 1k calls + Search content tokens billed at model rates" (lido a 2026-11-08). O conteúdo da pesquisa já vem no `input_tokens` e paga-se pela tabela de cima |
+| `gpt-5.6-sol` | search | 10.00 | | | | idem |
+| `gpt-6-sol` | search | 10.00 | | | | idem |
+| `gpt-6-luna` | search | 10.00 | | | | idem |
+| `gpt-6.1-sol` | search | 10.00 | | | | idem |
+| `claude-sonnet-5` | search | 10.00 | | | | platform.claude.com/docs/en/about-claude/pricing, "Web search tool": "$10 USD per 1,000 searches, plus standard token costs"; "A web search that fails with an error is not billed" (lido a 2026-11-08). A web fetch não tem taxa |
+| `claude-sonnet-5-5` | search | 10.00 | | | | idem |
+| `claude-opus-5` | search | 10.00 | | | | idem |
+| `claude-opus-5-5` | search | 10.00 | | | | idem |
+| `claude-haiku-5-5` | search | 10.00 | | | | idem |
+| `claude-haiku-4-5` | search | 10.00 | | | | idem |
+| `claude-fable-5-2` | search | 10.00 | | | | platform.claude.com/docs/en/about-claude/pricing, taxa de pesquisa igual à dos outros modelos Claude (não relida para o 5.2 a 10 Nov 2026: por confirmar) |
+| `claude-fable-5-1` | search | 10.00 | | | | idem |
+| `gemini-3.5-flash` | search | 14.00 | 5000 | `gemini-3` | | aistudio.google.com/docs/pricing ("Pricing for tools" e a linha de cada modelo Gemini 3): "5,000 free search requests per month (shared across all Gemini 3 and newer models), then $14 per 1,000 requests"; "You will be charged for each individual search query performed" (lido a 2026-11-08). O tecto de 1500 pedidos por dia por projeto é limite de ritmo e não quota: não entra na conta. O endpoint reencaminha para o `gemini-3.6-flash`, que tem a mesma taxa |
+| `gemini-3.8-flash` | search | 14.00 | 5000 | `gemini-3` | | idem |
+| `gemini-3.5-flash-lite` | search | 14.00 | 5000 | `gemini-3` | | idem |
+| `grok-4.3` | search | 5.00 | | | | docs.x.ai/docs/pricing, "Server-side tool pricing": "Web Search (`web_search`): $5" por mil chamadas (lido a 2026-11-08) |
+| `grok-4.7` | search | 5.00 | | | | idem |
+| `grok-4.1-fast` | search | 5.00 | | | | idem |
+| `muse-spark-1.3` | search | 2.50 | | | | dev.meta.ai/docs/pricing-rate-limits.md: "$2.50 per 1,000 search queries, in addition to the request's token cost" (lido a 2026-11-08) |
+
+**Sem linha de propósito:**
+
+- **`sonar` e `sonar-pro`** (Perplexity): a resposta da API traz o custo
+  da chamada com a taxa por pedido incluída (`usage.cost.total_cost`), e
+  esse ganha às duas tabelas (ponto 6 do contrato de `## Token prices`).
+  A taxa por pedido depende do tamanho do contexto de pesquisa e de o
+  pedido ser classificado como Pro Search (6 a 22 dólares por mil), e não
+  cabe numa linha. Sem custo declarado, a chamada conta como um pedido com
+  pesquisa e sem taxa, e fica com custo desconhecido (ponto 5).
+- **Mistral e DeepSeek**: o Tracker não os chama com pesquisa (só a metade
+  `knowledge`). Se isso mudar, a taxa entra aqui antes da primeira
+  corrida, senão o custo dessa chamada fica desconhecido (ponto 5 abaixo).
+
+### Contrato de leitura
+
+1. Localizar a secção `## Search prices` no início de uma linha.
+2. Ler a tabela com o cabeçalho `| API model ID | unit | USD per 1000 | free allowance | since | source |`.
+3. Tirar as crases do ID.
+4. `unit` é `search` (paga-se cada pesquisa que a chamada fez, contada
+   pela resposta do fornecedor) ou `request` (paga-se uma vez por chamada
+   que pesquisou, como os Gemini 2.5 cobravam). Outro valor, ou `?` no
+   preço: a linha não tem preço.
+5. **Uma chamada que pesquisou sem preço de pesquisa tem custo
+   desconhecido**, e não o custo das fichas sozinho. É a regra do `?` de
+   cima aplicada à taxa: o custo das fichas sozinho era o número errado
+   que esta tabela veio corrigir. Uma chamada sem pesquisa (ou com zero
+   pesquisas) paga só as fichas.
+6. O custo declarado pelo fornecedor continua a ganhar a esta tabela.
+7. **A quota grátis desconta-se no mês civil, por grupo.** `free per month`
+   é quantas unidades por mês não se pagam e `free pool` diz que modelos a
+   partilham (no Gemini, `gemini-3`: todos os Gemini 3 e seguintes). As
+   duas colunas vão juntas: uma quota sem grupo não se consegue contar e
+   fica sem efeito. O consumidor soma o que as chamadas do mês (UTC) dos
+   modelos do grupo já gastaram e só cobra a parte que já não cabe. Se não
+   conseguir contar o mês, cobra o preço de lista. Um tecto de pedidos por
+   dia é limite de ritmo, não quota, e não vai nestas colunas.
+8. **O cabeçalho é contrato e lê-se por posição.** Mudar a ordem ou o nome
+   de uma coluna deixa o consumidor sem taxas (com aviso), e então toda a
+   chamada com pesquisa fica com custo desconhecido.
+
+### O que conta como uma pesquisa (em cada fornecedor)
+
+O preço é por pesquisa, e cada fornecedor diz quantas fez de maneira
+diferente. O Tracker conta assim, e o número é o que a resposta da API
+declara, nunca uma estimativa:
+
+| Fornecedor | O que se conta | Nota |
+|---|---|---|
+| OpenAI (Responses API) | itens `web_search_call` com ação `search` | o guia da ferramenta diz "Search actions incur a tool call cost"; `open_page` e `find_in_page` não são pesquisas e não se contam |
+| xAI (Responses API) | `usage.server_side_tool_usage_details.web_search_calls`, que é o número da xAI; só quando não vier, a mesma regra do OpenAI | a contagem pelos itens é um piso se a xAI cobrar também a abertura de páginas |
+| Anthropic | `usage.server_tool_use.web_search_requests`, somado por todas as voltas | uma pesquisa que falha não se paga, e o contador da API já não a conta |
+| Google (Gemini 3 e seguintes) | `groundingMetadata.webSearchQueries`, todas, sem tirar repetidas | "charged for each individual search query performed" |
+| Meta Model API | itens `web_search_call` | a página diz "por consulta" e não separa ações |
+
+### Contrato de manutenção
+
+Igual ao de `## Token prices`: uma mudança de taxa, uma quota grátis nova
+ou um modelo novo chamado com pesquisa entram aqui, com a fonte e a data
+em que foi lida. O daily-agent já trata uma mudança de preço como item de
+news-feed; uma taxa de pesquisa é um preço.
 
 ---
 

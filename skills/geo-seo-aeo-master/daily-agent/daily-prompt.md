@@ -302,6 +302,44 @@ relance, que motores estão a ser alimentados e quais estão parados.
 parecer fresco é pior do que a data honesta: destrói a única coisa que
 esta passagem serve para dizer.
 
+## Passagem diária pelos robôs e pelas listas de IPs (OBRIGATÓRIA)
+
+Pedido do founder, 8 Nov 2026: *"e a skill tem que monitorizar isso"*.
+
+O produto confirma cada visita de robô de IA contra as listas de IPs que
+os fornecedores publicam (`references/como-os-motores-leem.md` §5.3). Uma
+lista que muda de endereço ou de formato, um robô novo, ou um fornecedor
+que passa a publicar lista, mudam o que se consegue medir, e nada disso dá
+erro: a verificação passa a dizer "não se sabe" e ninguém dá por isso. As
+listas do Google mudaram de caminho em Novembro de 2026 e foi assim.
+
+**Todos os dias, para cada linha da tabela do §5.3:**
+
+1. **A lista responde?** Pede cada URL. Tem de devolver 200, JSON, e
+   prefixos (`prefixes[].ipv4Prefix`/`ipv6Prefix`, ou `data.prefixes[].prefix`
+   no RIPEstat). Um redirecionamento permanente conta como mudança de
+   endereço: atualiza o §5.3 com o endereço novo. Um 404, um formato
+   diferente ou zero prefixos é alerta ao founder no digest do dia, com a
+   URL e o que veio.
+2. **A documentação mudou?** Lê as páginas de robôs dos fornecedores
+   (OpenAI, Anthropic, Perplexity, Google Search Central, Bing, Apple, Meta
+   Web Crawlers, Amazonbot, Brave, xAI, Mistral, DeepSeek). Procura: um
+   agente novo (nome de `User-Agent`), um agente que mudou de papel
+   (índice, treino, pedido de utilizador), uma lista de IPs nova, ou um
+   fornecedor da linha "Nada publicado" que passou a publicar.
+3. **Se mudou**, atualiza o §5.3 (e o §2 se mudar de onde um motor tira o
+   texto), regista no news-feed, e escreve no digest a linha para o
+   tracker, porque o código não lê esta tabela: *"robôs: o tracker tem de
+   mudar `lib/crawl/faixas.ts` (ou `bots.ts`, ou `dns-inverso.ts`): ..."*,
+   com o que muda.
+4. **Se nada mudou**, escreve no digest uma linha só:
+   `robôs: N listas lidas, sem mudanças`. O silêncio fica registado como
+   silêncio, como na passagem por motor.
+
+Não inventes mudanças: um prefixo a mais ou a menos numa lista é rotina
+dos fornecedores e não é notícia. Notícia é endereço, formato, agente ou
+fornecedor novo.
+
 ## Aprendizagem interna (o que o nosso trabalho mediu)
 
 A skill dizia o que fazer quase toda a partir de estudos de terceiros. Os

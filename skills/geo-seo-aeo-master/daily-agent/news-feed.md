@@ -8,6 +8,78 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 🚨 ALERTA FUNDADOR · 2026-11-11
+
+- **O que aconteceu:** a Google lançou o November 2026 core update a 10 Nov às 10:06 PT, global e em todas as línguas, com rollout até 2 semanas ([Search Status Dashboard](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc)). É o primeiro core update desde Maio.
+- **Porque nos importa:** os clientes vão ver posições e tráfego orgânico a mexer até ~24 Nov, e qualquer leitura de efeito de ações nossas nessas duas semanas fica contaminada (o AIO e o AI Mode também se alimentam do ranking).
+- **Jogada:** hoje, nota curta aos clientes ativos a dizer que há core update em curso e que não se mexe em nada por causa dele antes de terminar; no Tracker, marcar 10 a 24 Nov como janela de core update nas leituras de antes/depois.
+- **Prazo:** nota aos clientes até amanhã, 12 Nov; leitura de impacto só depois do fim do rollout no dashboard.
+- **Segundo item, com data:** a Bing separou as preferências de treino e de grounding (30 Out; [blogs.bing.com](https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/)). `NoArchive`/`NoCache` deixam de valer para IA a 1 Mar 2027 e a preferência temporária no Bing Webmaster Tools abre a 15 Dez 2026. Jogada: acrescentar a verificação à auditoria (passo de robots do `SKILL.md` §7, por fazer à mão: está fora dos caminhos da routine) até 15 Dez.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-11
+
+🚨 Alerta: November 2026 core update em curso desde 10 Nov, até 2 semanas ([Google](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc)); ver bloco de alerta acima. Radar LLM/IA: Gemini 4 Carbon passa a acesso pago a 10 Nov (`gemini-4-carbon`, $2/$10 por milhão de tokens até 30 Nov, depois $4/$20) e entra no Gemini app e no AI Mode só para AI Ultra, opt-in ([Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/)); anthropic.com/news só com o roadshow do IPO (10 Nov). GEO/AEO: a OpenAI abriu o ChatGPT Business Hub (beta, só EUA): fichas de empresa reclamáveis com menções, cliques e tópicos de descoberta, primeira telemetria first-party da OpenAI ([Search Engine Roundtable](https://www.seroundtable.com/chatgpt-business-hub-42505.html), secundária; post da OpenAI com 403). A Bing separou treino e grounding a 30 Out, que a routine não tinha apanhado ([Bing](https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/)). Anúncios multiturn vistos ao vivo no AI Mode e anúncios no topo do Bing AI Mode ([Search Engine Roundtable](https://www.seroundtable.com/google-ai-mode-multiturn-ads-42478.html), secundária). Robôs: 14 listas lidas, sem mudanças de endereço nem formato; `index.commoncrawl.org/ccbot.json` sem resposta pelo segundo dia (connection reset), por confirmar fora desta rede; nenhum agente novo, o tracker não muda `faixas.ts`/`bots.ts`. Implicações: nota aos clientes sobre o core update até 12 Nov; Business Hub só awareness até abrir na UE; passo novo na auditoria da Bing até 15 Dez. Passagem por motor feita (26 blocos).
+
+## 2026-11-11
+
+### 🔵 Anúncios oficiais
+- **Released the November 2026 core update**: [Google Search Status Dashboard](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc). Início a 10 Nov, 10:06 PT; "applies globally and to all languages"; rollout "may take up to 2 weeks". Primeiro core update desde o de Maio (21 Mai a 2 Jun).
+- **Gemini 4 Carbon now available**: [blog.google, 10 Nov](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/). Sai do acesso restrito (anunciado a 28 Out) para a API paga (`gemini-4-carbon`), Gemini for business e Antigravity; no Gemini app e no AI Mode só para AI Ultra. Corte de conhecimento não publicado.
+- **Your content, your choice: clearer preferences for training and grounding**: [Bing, 30 Out](https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/) (não apanhado na altura). `__usage_ai-training` no robots.txt; `ai-training:disallow` e `ai-grounding:disallow`/`disallowextended` em meta `Bingbot` ou `X-Robots-Tag`. Honrado a partir de 1 Fev 2027; `NoArchive`/`NoCache` deixam de valer para IA a 1 Mar 2027.
+
+### ⚙️ Mudanças nas plataformas
+- **Gemini API: preço do Gemini 4 Carbon**: $2 de entrada e $10 de saída por milhão de tokens até 30 Nov 2026 (igual ao Argon), $4/$20 depois; cache input -95%. [blog.google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/).
+- **ChatGPT: Business Hub (Businesses in ChatGPT)**: beta só EUA, para e-commerce e serviços online; reclamação da ficha por SMS, chamada ou DNS; métricas de menções, cliques no site, vistas de perfil e tópicos de descoberta, mais Business Agents. A OpenAI avisa que um clique não confirma visita. [Search Engine Roundtable](https://www.seroundtable.com/chatgpt-business-hub-42505.html) (secundária; [openai.com](https://openai.com/index/introducing-businesses-chatgpt/) com 403). [verificar de primeira mão]
+- **Google AI Mode: anúncios multiturn ao vivo**: anúncios "Sponsored" em respostas a perguntas de seguimento, mercados não indicados. [Search Engine Roundtable](https://www.seroundtable.com/google-ai-mode-multiturn-ads-42478.html) (secundária).
+- **Bing AI Mode: anúncios no topo**: anúncios de pesquisa e de shopping acima da resposta do Bing AI Mode (ex-Copilot Search). [Search Engine Roundtable](https://www.seroundtable.com/bing-ads-top-ai-mode-results-42479.html) (secundária).
+
+### 💡 Implicações para destaque.ai
+- Core update: mudança de pitch nenhuma, mas é altura de mostrar método. Jogada: nota aos clientes até 12 Nov, congelar conclusões sobre ações até o dashboard dar o rollout por terminado, e marcar a janela no Tracker.
+- Business Hub: é a primeira telemetria first-party de presença no ChatGPT e mede o que hoje o Tracker estima. Só awareness enquanto for EUA; jogada: verificar de primeira mão se o fluxo aceita uma empresa portuguesa e citar a mensagem de bloqueio, esta semana.
+- Bing: novo item de auditoria. Jogada: incluir a verificação de `NoArchive`/`NoCache` e `ai-grounding` nas auditorias a partir de agora; atualizar o passo de robots do `SKILL.md` §7 até 15 Dez.
+- Watches: checkout in-chat UE sem gatilho; anúncios ChatGPT PT sem caso novo; API do Bing AI Performance continua sem acesso programático.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-10
+
+Radar LLM/IA: a Anthropic lançou a 9 Nov o Claude Fable 5.2 (geral) e o Mythos 5.2 (só organizações verificadas), a 8/40 dólares por milhão de tokens contra 10/50 do Fable 5.1 (-20%), com corte de conhecimento Jun 2026 ([Anthropic](https://www.anthropic.com/claude-fable-and-mythos-5-2), [docs](https://platform.claude.com/docs/en/models/fable-5-2/overview)). Sem mudança de modelo por defeito nem de mecânica de pesquisa; a Anthropic continua a recomendar o Opus 5.5. SEO/Google: Search Central só com o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Robôs: 14 listas lidas, sem mudanças de formato; a lista `common-crawlers.json` da Google responde no caminho `/static/crawling/ipranges/` (o antigo `/static/search/apis/ipranges/` dá 404, já refletido no §5.3 desde Nov); `index.commoncrawl.org/ccbot.json` sem resposta (connection reset), por confirmar. Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real (lances max bid/max CPC em vigor desde 9 Nov) e registar a mensagem exata para Portugal [verificar de primeira mão]; para o Tracker, nada muda (não chama o Fable). Passagem por motor feita (26 blocos).
+
+## 2026-11-10
+
+### 🔵 Anúncios oficiais
+- **Introducing Claude Fable 5.2 and Claude Mythos 5.2**: [Anthropic, 9 Nov](https://www.anthropic.com/claude-fable-and-mythos-5-2). Fable 5.2 (`claude-fable-5-2`, 1M de contexto, 128K de saída) está disponível em todas as plataformas; o Mythos 5.2 é o mesmo modelo sem certas salvaguardas de cibersegurança e biologia, limitado ao Cyber Verification Program e ao Life Sciences Verification Program. Anthropic reporta FrontierSWE v2 69,9% contra 62,3% do Opus 5.5 (números da própria Anthropic).
+
+### ⚙️ Mudanças nas plataformas
+- **Anthropic API: preço do Fable 5.2**: [platform.claude.com](https://platform.claude.com/docs/en/models/fable-5-2/overview). 8 dólares de entrada e 40 de saída por milhão de tokens, contra 10/50 do Fable 5.1 (antes/depois, -20%); cache read 0,20; fast mode 16/80. Corte de conhecimento Jun 2026; retirada não antes de 9 Nov 2027; exige retenção de dados de 30 dias.
+
+### 💡 Implicações para destaque.ai
+- Só awareness: o Fable não é modelo por defeito de nenhum produto de pesquisa e o Tracker não o chama, por isso nem os preços nem os cortes do Tracker mudam. Jogada: nenhuma ação esta semana; reavaliar só se a Anthropic o tornar default no claude.ai.
+- Segue a jogada de ontem: hoje, Ads Manager do ChatGPT com conta real, ecrã de lances e mensagem de bloqueio para PT, com data [verificar de primeira mão].
+- Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance).
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-09
+
+Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central só tem o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Cortes reconfirmados sem alteração (segunda). Jogada: hoje, percorrer o Ads Manager do ChatGPT com conta real, ver o ecrã de lances (novas opções max bid/max CPC em vigor a 9 Nov) e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
+
+## 2026-11-09
+
+Sem novidades significativas hoje. Segunda: passagem de cortes feita (gpt-5.6-luna: Feb 16, 2026; claude-sonnet-5: Jan 2026, lidos diretamente; grok-4.3 continua sem corte publicado, a xAI só publica o do grok-4.7). Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance). Pesquisas por modelos e AI Mode só devolveram agregadores sem fonte primária.
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-08
+
+Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); o Search Central só acrescenta o aviso do Search Central Live em Zurique ([Google](https://developers.google.com/search/blog)). Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real, ver o ecrã de lances e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
+
+## 2026-11-08
+
+Sem novidades significativas hoje. Domingo: sem passagem de cortes (só segundas) nem drafts (só sextas). Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance).
+
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-07
+
+Sem novidades significativas hoje; corrida completa. anthropic.com/news continua sem posts depois de 28 Out ([Anthropic](https://www.anthropic.com/news)); a pesquisa por novidades de Nov em AI Mode, anúncios do ChatGPT e GEO só devolveu cobertura anterior. Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real, ver o ecrã de lances e registar a mensagem exata para Portugal [verificar de primeira mão]. Passagem por motor feita (26 blocos).
+
+## 2026-11-07
+
+Sem novidades significativas hoje. Sábado: sem passagem de cortes (só segundas) nem drafts (só sextas). Watches: nenhum gatilho confirmado (checkout in-chat UE, Ads Manager PT por verificar de primeira mão, API Bing AI Performance).
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-06
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço de tabela; anthropic.com/news sem posts após 28 Out ([Anthropic](https://www.anthropic.com/news)). AI ads: a OpenAI avisou anunciantes do ChatGPT Ads de mudanças nas opções de lance (max bid ou max CPC) a partir de segunda, 9 Nov ([Search Engine Roundtable](https://www.seroundtable.com/), 5 Nov; secundária, mercados não especificados). SEO/Google: AI Mode ganha botões de reserva para serviços domésticos via parceiros (EUA, secundária) e a Google lembra que as ações manuais de reputação de site deixaram de afetar o EEE desde 30 Ago ([Search Engine Roundtable](https://seroundtable.com/google-site-reputation-policy-eea-41968.html)). Jogada: segunda de manhã, percorrer o Ads Manager do ChatGPT com conta real e registar a mensagem exata para Portugal [verificar de primeira mão]; já nessa sessão ver o ecrã de lances. Passagem por motor feita (26 blocos). Sexta: drafts gerados.

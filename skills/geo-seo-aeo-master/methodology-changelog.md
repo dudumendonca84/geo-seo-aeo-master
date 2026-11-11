@@ -8,6 +8,39 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-11: A auditoria passa a ler as preferências de IA da Bing (ai-training, ai-grounding)
+
+- **Trigger:** novo sinal oficial de um fornecedor que muda o que se verifica numa página. A Bing publicou a 30 Out 2026 preferências separadas de treino e de grounding, e o agente diário só o apanhou a 11 Nov.
+- **Fonte:** [blogs.bing.com, 30 Out 2026](https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/), lido diretamente.
+- **O que muda:** `references/frameworks.md` §2 ganha a secção da Bing (tokens, valores, calendário: honradas a 1 Fev 2027, `NoArchive`/`NoCache` deixam de valer para IA a 1 Mar 2027, preferência temporária no BWT desde 15 Dez 2026). `engine_playbooks.md`, PT e EN: `copilot` ganha o passo 5 (rever `NoArchive`/`NoCache` e usar `disallowextended` em vez de `disallow` quando o objetivo é só sair dos serviços de terceiros).
+- **Por fazer por um humano:** o passo de robots do `SKILL.md` §7 deve passar a procurar `ai-grounding`/`ai-training` (meta `Bingbot` e `X-Robots-Tag`) e `NoArchive`/`NoCache`. Não foi tocado aqui porque o `SKILL.md` está fora dos caminhos que o automerge da routine aceita.
+- **O que não muda:** nenhum cabeçalho, chave ou tabela lidos pelo Tracker ou pelo Deck Builder; nenhum agente novo, portanto `como-os-motores-leem.md` §5.3 fica igual.
+
+---
+
+## 2026-11-08: Os robôs e as listas de IPs passam a ser vigiados todos os dias
+
+O founder pediu que a skill monitorize a verificação dos robôs de IA. O agente diário ganha uma passagem obrigatória por cada lista de IPs e cada página de robôs dos fornecedores (`daily-prompt.md`): endereço, formato, agente novo, fornecedor que passou a publicar. Quando muda, atualiza `como-os-motores-leem.md` §5.3 e avisa o founder do que o tracker tem de mudar. O §5.3 ganha a Meta (rotas do AS32934) e a Amazon (DNS inverso), e o §5.4 corrige a causa da ausência do `Googlebot`: não era a cache da CDN, era o recetor a recusar os pedidos sem `Referer`, que são precisamente os dos robôs verdadeiros.
+
+## 2026-11-08: Os motores leem uma cópia guardada, e quem decide a inclusão é o robô de indexação
+
+- **Trigger:** a pergunta "quanto tempo demora uma alteração no site a aparecer numa resposta, e porquê" não tinha resposta na skill, e a resposta implícita estava errada em dois pontos. A skill dizia que a pesquisa do ChatGPT corre sobre o índice Bing e que bloquear os agentes em tempo real (`ChatGPT-User`, `Claude-User`, `Perplexity-User`) tira a marca do assistente.
+- **Fonte:** documentação dos robôs da OpenAI, da Anthropic, da Perplexity, da Google e da Microsoft, lida a 8 Nov 2026; a experiência com 20 sites e valores por visitante de Seiden et al. (arXiv 2605.13706, CCS 2026, consultas de março a abril de 2026, sobretudo por API); Perplexity Research (25 Set 2025); Botify (23 Abr 2026); Peec AI (4 Set 2026, fonte única e vendedora); e os registos e as respostas medidas do próprio destaque.ai, de junho a novembro de 2026.
+- **O que muda:** nova referência `references/como-os-motores-leem.md`, com a origem do texto motor a motor, o caminho da recolha à citação, a latência medida e como a encurtar em cada motor, o que os registos provam e não provam (agentes falsificados, verificação por IP, a cache da CDN) e um protocolo de experiência canário. Cada afirmação leva a marca documentado, medido, inferido ou desconhecido.
+- **Correções noutros ficheiros:** `frameworks.md` §2 (a inclusão nas respostas com pesquisa é decidida pelos robôs de indexação, `OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`, e o `Googlebot` também para a Brave e, por ela, para o Claude; o `ChatGPT-User` serve ações pedidas pela pessoa; secção nova sobre a Brave) e §5 (o texto da resposta do ChatGPT vem do índice próprio da OpenAI e não do índice Bing; a frase "o Web IQ alimenta o Copilot e o ChatGPT" sai, por não ter fonte primária). `engine_playbooks.md`, PT e EN: `chatgpt` (o passo do Bing passa a ser permitir o `OAI-SearchBot` e servir HTML legível; o Bing Webmaster Tools fica para o Copilot e a descoberta), `claude` (índice da Brave, e não bloquear o `Googlebot`), `perplexity` (índice próprio em vez de "web viva") e `grok` (origem por documentar). `models.md`: OpenAI, Anthropic, Microsoft, Perplexity e xAI. `SKILL.md`: a referência nova na lista de ficheiros e uma nota no passo de robots do §7.
+- **O que não muda:** nenhum cabeçalho, chave ou tabela que o Tracker ou o Deck Builder leem. O conselho de permitir os agentes de utilizador continua; o que muda é a razão dada e a ordem do que se verifica primeiro.
+
+---
+
+## 2026-11-08: A pesquisa na web tem preço, e o custo de uma chamada passa a incluí-lo
+
+- **Trigger:** o founder recusou o custo médio de uma resposta do ChatGPT com pesquisa (0,0023 dólares) e do Gemini (0,0083): "não é verdade". O `cost_usd` do Tracker era só fichas vezes preço, e a pesquisa paga-se à parte em todos os fornecedores que o Tracker chama com pesquisa.
+- **O que muda:** `references/models.md` ganha `## Search prices`: 10 dólares por mil pesquisas no OpenAI e na Anthropic, 14 por mil consultas nos Gemini 3 e seguintes (com 5000 grátis por mês, partilhadas), 5 por mil no Grok e 2,50 por mil na Meta, cada linha com a página do fornecedor e a data em que foi lida. Diz também o que conta como pesquisa em cada um. `## Token prices` ganha duas ressalvas: o `gemini-3.5-flash` é reencaminhado para o `gemini-3.6-flash` (preço da fatura por confirmar) e as fichas de raciocínio do Gemini faturam-se como saída e não entram no `tokens_out` gravado. `INTERFACES.md` contrato 10 e o validador acompanham.
+- **A quota grátis do Gemini conta:** 5000 consultas por mês, partilhadas por todos os Gemini 3+ (colunas `free per month` e `free pool`), descontam-se no mês civil. O volume pela API foi 2.319 consultas em setembro e 1.076 em outubro: o preço de lista fazia o Gemini parecer várias vezes mais caro do que a fatura. O tecto de 1500 pedidos por dia é limite de ritmo e fica fora da conta.
+- **O que não muda:** o custo declarado pelo fornecedor (Perplexity) continua a ganhar às tabelas.
+
+---
+
 ## 2026-11-06: O produto trata o cliente por "você", como o site
 
 - **Trigger:** o relatório do Pingo Doce saiu com "tu" vindo dos porquês e dos playbooks, e o founder decidiu "produto todo em você" (6 Nov 2026).

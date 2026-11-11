@@ -15,6 +15,8 @@ As tendências deste setor já são acompanhadas todos os dias pelo `daily-agent
 
 ## Tendências
 
+- **2026-11-05** · A OpenAI avisou anunciantes do ChatGPT Ads de novas opções de lance (max bid ou max CPC) em vigor a 9 de novembro; fonte secundária, sem mercados especificados nem confirmação para Portugal ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-06)
+- **2026-10-30** · A Google, a Bing, a OpenAI e a Anthropic anunciaram a intenção de suportar um sinal partilhado de preferência de treino de IA no robots.txt (rascunho do IETF, só treino, sem efeito no acesso de pesquisa); a Google aponta o início de 2027 ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-02)
 - **2026-10-27** · Uma fonte secundária (FullPress) diz que o Ads Manager do ChatGPT já lista Portugal para self-service; a OpenAI devolveu 403 e não houve verificação de primeira mão, pelo que não se deve vender como aberto sem a mensagem exata do Ads Manager ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-28)
 - **2026-10-24** · O SE Roundtable relata volatilidade de rankings na Google, sem declaração da Google nem números; antes de atribuir quedas de clientes a GEO, rever no Search Console em 3 a 5 dias ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-26)
 - **2026-10-23** · Foi visto um teste em que os cartões de citação dos AI Overviews mostram um resumo escrito por IA em vez do texto da página, sem confirmação da Google ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-24)

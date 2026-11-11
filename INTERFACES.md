@@ -323,6 +323,8 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 **Consumer:** `destaque-ai-tracker/src/lib/skill/precos.ts` (`parseTokenPrices`, `custoDaChamada`) → `weekly_audits.total_cost_usd`.
 **Contrato:** `?` num preço = custo desconhecido (nunca zero); o custo declarado pelo fornecedor na resposta (Perplexity) ganha à tabela. **Os cabeçalhos procuram-se no início de linha** (`indiceDaSeccao`): citar `## Token prices` em prosa antes da secção já deixou a tabela vazia (9 Set 2026).
 
+**Taxa de pesquisa (8 Nov 2026).** `references/models.md` ganha a secção `## Search prices`, tabela `| API model ID | unit | USD per 1000 | free per month | free pool | since | source |`, lida pelo mesmo `precos.ts` (`parseSearchPrices`) no mesmo fetch. `unit` é `search` (cada pesquisa que a resposta declara) ou `request` (uma vez por chamada que pesquisou); outro valor ou `?` = sem preço. Uma chamada que pesquisou e cujo modelo não tem taxa tem custo **desconhecido** (`null`), nunca o das fichas sozinho. A quota grátis (`free per month` + `free pool`, as duas juntas) desconta-se no mês civil UTC por grupo: o Tracker soma o que o mês já gastou na base e só cobra o excesso; sem conseguir contar, preço de lista. O cabeçalho confere-se: colunas trocadas deixam o Tracker sem taxas, com aviso. Só a primeira tabela da secção é lida: a segunda (o que conta como pesquisa em cada fornecedor) é prosa para pessoas. O Tracker conta as pesquisas pela resposta da API em cada adaptador (`pesquisas_pagas` em `EngineCallOutput`).
+
 ### Contrato 11: catálogo §4 (as perguntas da destaque.ai)
 
 **Producer:** `references/prompts.md` § 4. **Consumer:** `destaque-ai-tracker/scripts/seed-destaque-prompts.mts` via `parsePromptsCatalogue`. Subsecção `### 4.X \`categoria\`` dá a categoria a todas as linhas; subsecção sem crase (§4.6, cross-category) leva a categoria por linha na coluna "Categoria principal". O antigo "só self-audit, não exportado" deixou de ser verdade quando o seed nasceu.
@@ -392,6 +394,30 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 - A tabela `| plataforma | conta | para quem |` é lida por cabeçalho. `plataforma` é o identificador que o Tracker conhece (`src/lib/entity/perfis.ts`); um identificador que ele não conheça é ignorado sem erro. `conta` é `sempre` ou `concorrentes`; outro valor ignora a linha.
 - Sem a secção, ou sem linhas válidas, vale a lista de recurso do Tracker (as seis redes como `sempre`), e o registo da recolha diz que correu com a lista de recurso.
 
+
+### Contrato 21: as oportunidades de negócio (capítulo 07 do relatório do prospect)
+
+**Path no repo:** `skills/geo-seo-aeo-master/references/business_opportunities.md`
+
+**Consumo:** a Routine do cérebro do Tracker (`routines/tracker-brain.md`,
+task `business_opportunities`) lê-o como instrução, como faz com
+`claim_verification.md`. Não há parsing estrutural no código TS.
+
+| Task do Tracker | Ficheiro carregado | O que a Routine devolve |
+|---|---|---|
+| `business_opportunities` | `business_opportunities.md` | `items[]` com `{tema?, titulo, numero, nota, porque, numeros[{texto, fonte, url, data}], fazer[], ia, ligacao?}` |
+
+**Regra dura:** um número só entra com texto, fonte, data e endereço
+http(s). A validação está em `lib/reports/oportunidades-negocio.ts`
+(`oportunidadesDoCerebro`): uma oportunidade sem números válidos sai com o
+motivo, e um pedido sem nenhuma aceite fecha em erro sem mudar o relatório.
+
+Vale para qualquer setor: o ficheiro nunca nomeia um cliente. Os números de
+cada prospect vivem no registo do relatório dele
+(`prospect_reports.business_opportunities`), nunca na skill. Acrescentar
+fontes ou exemplos é seguro; renomear campos da forma parte a validação:
+coordenar com PR no Tracker.
+
 ---
 
 ## Frequência de atualização
@@ -447,6 +473,7 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 
 | Data | Mudança | Impacto |
 |---|---|---|
+| 2026-11-08 | **Contrato 10 estendido: taxa de pesquisa.** `models.md` ganha `## Search prices` (OpenAI, Anthropic, Google, xAI e Meta, lidos nas páginas de preços de cada fornecedor a 8 Nov 2026). O validador passa a verificar as duas tabelas de preços. | Tracker: o `cost_usd` de uma chamada com pesquisa passa a somar as pesquisas; sem taxa para o modelo, o custo fica desconhecido em vez de ficar por baixo. Deck Builder não lê preços. |
 | 2026-11-05 | **Contrato 20 (perfis da marca) criado.** `gap_action_mapping.md` ganha § "Onde a marca tem perfil (o ecrã Entidade)": que plataformas contam, e os diretórios de setor que contam pelos concorrentes. | Tracker lê a tabela na recolha dos perfis; acrescentar um diretório é uma linha, sem deploy, quando o Tracker já reconhece o endereço. |
 | 2026-05-23 | Inicialização: prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |
 | 2026-09-10 | **Contrato 3: `aio_top10_share` passa a 38% (Ahrefs, Mar 2026)**, era 54% (BrightEdge 2025); o Slide 05 do deck muda no fetch seguinte. `benchmarks.md` ganha §45 (carrossel do ChatGPT, 83% do top-40 do Google Shopping). `models.md`: cabeçalho sem "May 2026" e os sete "Prior entry" movidos para `## Refresh history` no fim (os cabeçalhos parseados não mexeram). Validador passa a correr em todos os pushes e PRs (`.github/workflows/validate.yml`). | Deck Builder: um número público muda sem deploy; a data e a fonte vão na linha. |
@@ -462,5 +489,6 @@ paga. **Mudar o header da tabela** manda o consumidor para o fallback, que
 | 2026-10-18 | **Contrato 18 (as perguntas que medem) criado.** `prompts.md` ganha o §8.7 (o que o Tracker recusa e avisa, com a tabela `#### Limites que se verificam`) e o §8.8 (o que volta ao gerador). Fora da fatia §1-§3, por isso o Deck Builder não muda. | Tracker: o `generate_prompts` deixa de gravar palavras-chave, perguntas com a marca não marcadas como branded, comparações sem a marca, quase duplicados e vocabulário do Brasil; a categoria `transactional` deixa de se perder ao gravar. |
 | 2026-10-18 | **Contrato 18 estendido: a voz do cliente.** `prompts.md` §8.9: as primeiras perguntas de um cliente novo nascem do autocompletar do Google (o Portal da Queixa recusa robôs de IA no `robots.txt` e não se recolhe), e cada uma diz de onde veio (`voice_source`). | Tracker: `context.voz_do_cliente` nos pedidos de onboarding; coluna `prompts.voice_source`. |
 | 2026-10-18 | **Contrato 18 estendido: as primeiras perguntas escritas na hora, e a voz da categoria.** `prompts.md` §8.9 ganha `autocompletar_categoria`, `categoria` e `site`; §8.4 ganha `persona_context` e `persona_followup` no contrato (estavam só na spec da Routine). `models.md` ganha o papel `perguntas` (contrato 17). | Tracker: o pedido de um cliente novo é escrito logo a seguir à recolha, pela mesma verificação; a Routine só o recebe se a escrita falhar. |
+| 2026-11-11 | **Contrato 21 (as oportunidades de negócio) criado.** `references/business_opportunities.md`: o que conta como oportunidade de negócio, onde procurar por tipo de fonte, a forma e o que é proibido. | Tracker: task `business_opportunities` da Routine, coluna `prospect_reports.business_opportunities`, capítulo 07 do relatório do prospect. |
 
 Adicionar entry sempre que algum contrato mudar.

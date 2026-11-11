@@ -11,6 +11,40 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-11-09: Décima sexta execução (vs. 2 nov; nona semana consecutiva sem hiato)
+
+**Score global:** 73,8/100 (74 arredondado). **Δ vs. 2 nov: +0,3.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 89 | 0 |
+| Performance / CWV | 65 | 0 |
+| SEO On-Page | 95 | 0 |
+| Schema | 92 | 0 |
+| Imagens | 76 | 0 |
+| GEO técnica | 93 | 0 |
+| Conteúdo & topical authority | 97 | 0 |
+| Entidade | 79 | 0 |
+| Autoridade & PR | 52 | 0 |
+| Social | 37 | 0 |
+| E-E-A-T | 71 | 0 |
+| Medição | 40 | +4 |
+
+**Items movidos para DONE:** 1: MEASUREMENT Anthropic sem saldo (14 dias sem erro, com lotes diários a correr; evidência indirecta). **Candidatos por confirmar:** Gemini e DeepSeek (sem `402` desde 29 out); Stripe webhook (ausente).
+
+**Items novos:** 2: MEASUREMENT P3 (integração Microsoft Advertising, erros OAuth de 5 nov), STRATEGIC P2 (GD4 perdeu destaque.ai). **Reconfirmado:** DataForSEO/SerpApi (3.ª semana, P1), `/radar` fora do sitemap e do `llms.txt` (4.ª semana), verificação das peças de imprensa, dependência de Clutch/Sortlist.
+
+**Mudanças materiais:**
+- Prompt-test (32 prompts + LR1, LR2 + entidade + imprensa, proxy `WebSearch`): 8/32 (25%); fixos 8/22 (36%), igual a 2 nov. GD 5/8 (era 6/8; GD4 sai), V 3/5 (V1 passa de ligação a síntese), GP 0/9, LR 0/2, rotativos 0/10 (conjunto diferente do de 2 nov). Fonte sempre Clutch/Sortlist. Sem menção negativa ou alucinada; reserva "operação recente". Protocolo de crise não accionado.
+- Site: TTFB mediana 353 → 215 ms; HTML 153.235 → 153.349 B; sitemap 135 → 136 (`/laboratorio/marcador-quorvintela`); `llms.txt` inalterado; 5 deploys `READY` (#228–#232); `/relatorio` raiz 404 (relatórios vivem em `/relatorio/…`).
+- Medição: DataForSEO 187 erros, última 9 nov 07:07 UTC; Mistral 503/429 85; msads callback com erros de 5 nov.
+- models.md: sem refresh (7 dias, não acima do limiar); news-feed sem modelos novos.
+- Não verificável: PSI, Wikidata, Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-11-02: Décima quinta execução (vs. 26 out; oitava semana consecutiva sem hiato)
 
 **Score global:** 73,5/100 (74 arredondado). **Δ vs. 26 out: +0,8.**

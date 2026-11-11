@@ -179,3 +179,11 @@ Uma linha por execução semanal: data, dimensões cobertas, candidatos descober
 - Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Quarta semana de ruído de recolha nos Prompts 1, 3 e 5 (sem entidades PT). (3) Mercado mantém 24 concorrentes; D2 sem movimentos verificáveis; pricing sem alterações (não reverificado).
 - Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
 - Report: competitor-monitor/reports/2026-10-27.md
+
+## 2026-11-10
+- Dimensões cobertas: D0 (descoberta), D1 (5 prompts fixos, Claude augmented /5), D2, D3, D4.
+- Candidatos descobertos: revaliQ (adjacent_consultancy) e Buzzvel/Semantika (adjacent_vendor) adicionados. Rejeitados/em observação: DevCommX (sem operação PT verificada), Claneo (equipa local não confirmada), AppLabx (ranking promocional próprio, entidade PT não verificada), LLMpulse (localização não confirmada), Republica45 (não avaliado). Mercado passa a 26 concorrentes rastreados.
+- SoV history: 5 linhas adicionadas (destaque.ai 5/5, Bluesoft 3/5, AISO Hub 1/5, Marketing Gabriel 2/5, revaliQ 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Salto de destaque.ai de 1/5 para 5/5 coincide com recolha bem menos ruidosa (Prompts 1, 3 e 5 devolveram entidades PT, ao contrário das 4 semanas anteriores); não é prova de ganho real, ler com cuidado. (3) Pricing não reverificado; sem alterações novas além de DevCommX/revaliQ vistos nos resultados.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-11-10.md

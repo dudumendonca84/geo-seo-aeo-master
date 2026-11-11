@@ -184,6 +184,11 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-10-20 | AISO Hub | 1/5 | 1.0 | = | 1/5 (só Claude) | P4 pos1 |
 | 2026-10-27 | destaque.ai | 1/5 | 1.0 | = | 1/5 (só Claude) | P2 pos1 (via Sortlist); P1/P3/P5 sem entidades PT (ruído de recolha) |
 | 2026-10-27 | AISO Hub | 1/5 | 1.0 | = | 1/5 (só Claude) | P4 pos1 |
+| 2026-11-10 | destaque.ai | 5/5 | 1.8 | +4 | 1/5 (só Claude) | P1 pos3, P2 pos2, P3 pos1, P4 pos2, P5 pos1; recolha menos ruidosa esta semana (resultados PT em todos os prompts) |
+| 2026-11-10 | Bluesoft | 3/5 | 2.0 | +3 | 1/5 (só Claude) | P1 pos2, P2 pos1, P4 pos3 |
+| 2026-11-10 | AISO Hub | 1/5 | 1.0 | = | 1/5 (só Claude) | P4 pos1 |
+| 2026-11-10 | Marketing Gabriel | 2/5 | 4.0 | +2 | 1/5 (só Claude) | P2 pos3, P4 pos5 |
+| 2026-11-10 | revaliQ | 1/5 | 4.0 | novo | 1/5 (só Claude) | P1 pos4; entrada nova na lista esta semana |
 
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 
