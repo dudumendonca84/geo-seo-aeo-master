@@ -406,6 +406,8 @@ task `business_opportunities`) lê-o como instrução, como faz com
 | Task do Tracker | Ficheiro carregado | O que a Routine devolve |
 |---|---|---|
 | `business_opportunities` | `business_opportunities.md` | `items[]` com `{tema?, titulo, numero, nota, porque, numeros[{texto, fonte, url, data}], fazer[], ia, ligacao?}` |
+| `business_opportunities` com `destino: "cliente"` | `business_opportunities.md` § 7 | os mesmos `items[]`, cada um com `id?` (de uma anterior), `perguntas[]` (`prompt_id` do pedido), `proposta_de_valor` (id do pedido ou `null`) e os textos em `{pt, en, fr}` |
+| `plan_business_opportunity` | `gap_action_mapping.md` § "De uma oportunidade de negócio a ações" | `items[]` com a forma do `plan_value_prop` (as mesmas `opportunities`) |
 
 **Regra dura:** um número só entra com texto, fonte, data e endereço
 http(s). A validação está em `lib/reports/oportunidades-negocio.ts`
@@ -414,7 +416,10 @@ motivo, e um pedido sem nenhuma aceite fecha em erro sem mudar o relatório.
 
 Vale para qualquer setor: o ficheiro nunca nomeia um cliente. Os números de
 cada prospect vivem no registo do relatório dele
-(`prospect_reports.business_opportunities`), nunca na skill. Acrescentar
+(`prospect_reports.business_opportunities`), e os de cada cliente na tabela
+`tracker.business_opportunities`, nunca na skill. No destino `cliente`, os
+ids que a Routine devolve (anterior, perguntas, proposta) só se gravam se
+forem do cliente do pedido. Acrescentar
 fontes ou exemplos é seguro; renomear campos da forma parte a validação:
 coordenar com PR no Tracker.
 
@@ -489,6 +494,7 @@ coordenar com PR no Tracker.
 | 2026-10-18 | **Contrato 18 (as perguntas que medem) criado.** `prompts.md` ganha o §8.7 (o que o Tracker recusa e avisa, com a tabela `#### Limites que se verificam`) e o §8.8 (o que volta ao gerador). Fora da fatia §1-§3, por isso o Deck Builder não muda. | Tracker: o `generate_prompts` deixa de gravar palavras-chave, perguntas com a marca não marcadas como branded, comparações sem a marca, quase duplicados e vocabulário do Brasil; a categoria `transactional` deixa de se perder ao gravar. |
 | 2026-10-18 | **Contrato 18 estendido: a voz do cliente.** `prompts.md` §8.9: as primeiras perguntas de um cliente novo nascem do autocompletar do Google (o Portal da Queixa recusa robôs de IA no `robots.txt` e não se recolhe), e cada uma diz de onde veio (`voice_source`). | Tracker: `context.voz_do_cliente` nos pedidos de onboarding; coluna `prompts.voice_source`. |
 | 2026-10-18 | **Contrato 18 estendido: as primeiras perguntas escritas na hora, e a voz da categoria.** `prompts.md` §8.9 ganha `autocompletar_categoria`, `categoria` e `site`; §8.4 ganha `persona_context` e `persona_followup` no contrato (estavam só na spec da Routine). `models.md` ganha o papel `perguntas` (contrato 17). | Tracker: o pedido de um cliente novo é escrito logo a seguir à recolha, pela mesma verificação; a Routine só o recebe se a escrita falhar. |
+| 2026-11-12 | **Contrato 21 estendido: o destino `cliente`.** `business_opportunities.md` § 7 (o ecrã «Oportunidades de negócio» do cliente, atualizado todas as semanas: ids das perguntas e da proposta de valor, identidade entre semanas, três línguas) e `gap_action_mapping.md` § "De uma oportunidade de negócio a ações" (task `plan_business_opportunity`; proposta por publicar dá a primeira ação, decisão do founder). | Tracker: tabela `business_opportunities` por cliente, task nova, ecrã novo. Entra no mesmo dia que o código do Tracker: antes disso, o Tracker não manda `destino: "cliente"` e nada muda. |
 | 2026-11-11 | **Contrato 21 (as oportunidades de negócio) criado.** `references/business_opportunities.md`: o que conta como oportunidade de negócio, onde procurar por tipo de fonte, a forma e o que é proibido. | Tracker: task `business_opportunities` da Routine, coluna `prospect_reports.business_opportunities`, capítulo 07 do relatório do prospect. |
 
 Adicionar entry sempre que algum contrato mudar.

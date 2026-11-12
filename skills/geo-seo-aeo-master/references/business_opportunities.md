@@ -1,9 +1,15 @@
-# Oportunidades de negócio (capítulo 07 do relatório do prospect)
+# Oportunidades de negócio (capítulo 07 do relatório do prospect e ecrã do cliente)
 
 Consumido pela task `business_opportunities` da Routine do cérebro do
 Periscopy (`destaque-ai-tracker/routines/tracker-brain.md`). Vale para
 qualquer setor: hospitais, retalho, banca, seguros, imobiliário, B2B SaaS,
 turismo. Nada aqui é específico de um cliente.
+
+Há dois destinos, e o pedido diz qual em `destino`: `relatorio` (o
+capítulo 07 do relatório de um prospect, escrito uma vez) e `cliente` (o
+ecrã «Oportunidades de negócio» de um cliente do Periscopy, atualizado
+todas as semanas). As secções 1 a 6 valem para os dois; a secção 7 junta o
+que muda no destino `cliente`. Um pedido sem `destino` é `relatorio`.
 
 ## 1. O que é uma oportunidade de negócio
 
@@ -217,3 +223,68 @@ A do guia da casa (`references/escrita.md`): português de Portugal com o
 Acordo de 1990, "você", sem travessões, números antes de adjetivos, frases
 curtas. A língua é a do cliente (`lingua` no contexto); quando o relatório
 se lê em várias, cada texto pode vir em `{pt, en, fr}`.
+
+## 7. Destino `cliente`: o ecrã «Oportunidades de negócio»
+
+Pedido do founder a 11 Nov 2026: o que se fazia à mão para os prospects
+passa a ser feito pelo Periscopy para cada cliente, todas as semanas, a
+cruzar com a medição e com as propostas de valor, e a virar ações no
+«Plano». Especificação: `destaque-ai-tracker/docs/produto/OPORTUNIDADES-DE-NEGOCIO.md`.
+
+### O que o pedido traz a mais
+
+- `medicao.perguntas_medidas[]`, `medicao.sem_dono[]` e as frentes de
+  `medicao.lider` trazem `prompt_id` em cada pergunta.
+- `propostas_de_valor[]`: as propostas de valor que a marca declarou no
+  Inception, cada uma com `id`, `titulo`, `afirmacao`, `prova` (o endereço
+  onde está publicada, ou `null`) e `perguntas` (os `prompt_id` que cobre).
+  Até doze; `propostas_fora` conta as que ficaram de fora.
+- `anteriores[]`: as oportunidades que o cliente já tem, cada uma com `id`,
+  `estado` (`new`, `accepted`, `dismissed`, `expired`), `motivo` (quando foi
+  descartada) e `cartao` (o que foi escrito).
+
+### O que se devolve a mais, em cada item
+
+```json
+{
+  "id": "o id de uma anterior, quando é a mesma oportunidade; sem ele é nova",
+  "perguntas": ["prompt_id", "prompt_id"],
+  "proposta_de_valor": "o id de uma proposta do pedido, ou null"
+}
+```
+
+- **`perguntas`**: os `prompt_id` das perguntas medidas que a oportunidade
+  toca, tirados só do pedido. Substitui a `ligacao` por texto: a pergunta
+  reescreve-se, o identificador não. Vale a mesma regra da `ligacao`: a
+  mesma pergunta, nunca semelhança vaga. Sem pergunta que lhe corresponda,
+  lista vazia (o ecrã sugere medir uma pergunta nova).
+- **`proposta_de_valor`**: o `id` da proposta que esta oportunidade serve,
+  quando serve uma de verdade (a afirmação é o que a oportunidade pede que a
+  IA diga). Quando nenhuma serve, `null`, e o ecrã oferece criar uma a
+  partir do cartão.
+- **Três línguas sempre.** Cada texto vem em `{pt, en, fr}`: o ecrã lê-se
+  nas três. Uma cadeia simples só no destino `relatorio`.
+
+### A lista é a mesma de uma semana para a outra
+
+O cliente decide sobre cada cartão (aceita ou descarta), e uma lista que se
+reescreve todas as semanas apaga essas decisões. Por isso:
+
+1. **Uma anterior que continua válida volta com o seu `id`**, com o número
+   atualizado se mudou (reabre a fonte, como no refazer da secção 1).
+2. **Uma descartada nunca volta**, nem com outro título nem por outras
+   palavras. O `motivo` diz porquê, e vale para oportunidades parecidas.
+3. **Uma aceite que continua válida volta com o seu `id`.** Uma que deixou
+   de ser verdade não se devolve: o Periscopy mostra-a como aceite "por
+   confirmar" e o cliente decide.
+4. **O tecto de 12 conta as novas e as `new` mantidas.** As aceites
+   devolvidas não ocupam lugar.
+5. Evitar duplicados com outro texto é trabalho teu: o código só compara
+   por `id`.
+
+### Proposta de valor que ainda não está publicada
+
+Quando a oportunidade serve uma proposta com `prova: null`, o `porque` diz,
+numa frase simples, que aquilo ainda não está escrito em lado nenhum que a
+IA leia. O trabalho de a publicar sai no plano, quando o cliente aceitar
+(`gap_action_mapping.md` § "De uma oportunidade de negócio a ações").
