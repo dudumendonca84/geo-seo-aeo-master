@@ -44,7 +44,10 @@ número mais específico do setor e do país (por exemplo, quantos usam IA para
 perguntas de saúde, e não só quantos usam IA). Se o número é de um estudo de
 empresa, diz-se na `fonte`; se há um oficial, prefere-se o oficial. Liga-a à
 taxa de citação e às perguntas sem dono do relatório: é aqui que se mostra
-que a resposta da IA já decide clientes.
+que a resposta da IA já decide clientes. O `fazer` deste cartão responde ao
+número: nomeia as perguntas de compra medidas em que a marca ainda não é
+recomendada (com a contagem de cada uma) e diz que página, ou que site que
+a IA lê, a põe na resposta. Nada de ações genéricas de acompanhamento.
 
 **O número é sobre quem compra a ESTE cliente** (12 Nov 2026, founder, sobre
 o relatório de um supermercado: «não tem nada a ver com jovens isso»). Uma
@@ -136,7 +139,7 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
   exemplo «atendimento em inglês»). O código casa-o e mostra o número
   medido. Se não há pergunta que lhe corresponda, `null`.
 
-### Antes de devolver, relê cada cartão contra estas sete perguntas
+### Antes de devolver, relê cada cartão contra estas oito perguntas
 
 Nasceram do relatório do Hospital da Luz de 11 Nov 2026, onde os onze
 cartões tinham estes erros e o founder os apanhou a ler.
@@ -176,6 +179,14 @@ cartões tinham estes erros e o founder os apanhou a ler.
    um concorrente», «a IA não recomenda nenhum supermercado», «os sites que a
    IA lê para responder». Uma ação diz o que fazer, onde e para quê, sem
    pedir ao leitor que saiba como medimos.
+8. **Cada ação sai dos números deste cartão?** Lê-se o número e logo a
+   seguir a ação: se a ação serviria em qualquer outro cartão, ou não
+   responde ao que o número mostra, está errada (12 Nov 2026: um cartão com
+   o uso de IA em Portugal e, como ação, «escolher as cinco perguntas…» e
+   «rever cada trimestre», que não saem dali). A ação escolhe já, no
+   cartão, e nomeia: que perguntas medidas, que página, que site terceiro.
+   Nunca «escolher as perguntas» nem «acompanhar»: isso é o trabalho de
+   quem escreve o cartão, não do leitor.
 
 Os números escrevem-se como no guia da casa: espaço nos milhares
 (1 666 823), vírgula decimal (70,6%).
