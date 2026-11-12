@@ -46,6 +46,15 @@ empresa, diz-se na `fonte`; se há um oficial, prefere-se o oficial. Liga-a à
 taxa de citação e às perguntas sem dono do relatório: é aqui que se mostra
 que a resposta da IA já decide clientes.
 
+**O número é sobre quem compra a ESTE cliente** (12 Nov 2026, founder, sobre
+o relatório de um supermercado: «não tem nada a ver com jovens isso»). Uma
+fatia da população (uma faixa etária, os estudantes, uma profissão) só entra
+se for o comprador do cliente: num supermercado o comprador é quem faz as
+compras da casa, e «76,5% dos 16 aos 24 anos» não diz nada sobre ele. Se o
+número geral não chega, procura-se o do uso de IA para a decisão do setor
+(compras, saúde, viagens) e no país; se não existe, fica o número geral,
+sozinho, e diz-se que é geral.
+
 ### Antes de fechar a lista, cobre sempre estes três ângulos
 
 1. **O mercado:** procura que cresce, falhas do serviço público ou do líder,
@@ -127,7 +136,7 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
   exemplo «atendimento em inglês»). O código casa-o e mostra o número
   medido. Se não há pergunta que lhe corresponda, `null`.
 
-### Antes de devolver, relê cada cartão contra estas cinco perguntas
+### Antes de devolver, relê cada cartão contra estas sete perguntas
 
 Nasceram do relatório do Hospital da Luz de 11 Nov 2026, onde os onze
 cartões tinham estes erros e o founder os apanhou a ler.
@@ -156,6 +165,17 @@ cartões tinham estes erros e o founder os apanhou a ler.
 5. **Uma ação repete a de outro cartão?** Cada ação vive num cartão só, o
    do tema a que pertence. A página do parto em inglês é do cartão do
    parto, não do dos estrangeiros.
+6. **Cada número é sobre quem compra a este cliente?** Lê-se cada linha de
+   `numeros` e pergunta-se: um diretor desta empresa reconhece aqui os seus
+   clientes? Uma faixa etária, os estudantes ou outro setor que não são o
+   comprador saem do cartão (12 Nov 2026, um supermercado com o uso de IA
+   pelos jovens).
+7. **Um diretor da empresa entende cada frase à primeira?** Sem palavras
+   nossas: nunca «citado», «escolhido», «sem dono», «fonte» ou «medição»
+   soltos. Diz-se o que a IA faz: «a IA nomeia a marca mas recomenda
+   um concorrente», «a IA não recomenda nenhum supermercado», «os sites que a
+   IA lê para responder». Uma ação diz o que fazer, onde e para quê, sem
+   pedir ao leitor que saiba como medimos.
 
 Os números escrevem-se como no guia da casa: espaço nos milhares
 (1 666 823), vírgula decimal (70,6%).
