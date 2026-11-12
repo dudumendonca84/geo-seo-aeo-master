@@ -156,6 +156,8 @@ Cada fornecedor publica uma forma de verificar [D]:
 
 Três regras para quem implementa a verificação [M]: "não consegui verificar" (sem IP, lista em baixo, DNS sem resposta) nunca conta como falso; um IP privado, de loopback ou partilhado é o de um proxy e não o do robô, e fica por verificar; e quase todas as visitas de um fornecedor a darem falso não é uma vaga de impostores, é o IP errado (uma CDN à frente do site) ou a lista mudada.
 
+Do lado de quem serve o site, a Google descreve o erro inverso [D]: a proteção contra robôs de uma CDN ou firewall que desafia todo o tráfego automático trava também os robôs verdadeiros. A recomendação é permitir os robôs verificados (pelas mesmas listas de IPs), e, numa mudança para CDN, contar com a cache fria: o primeiro pedido de cada URL vai à origem, por isso pré-aquece-se e, se a origem não aguentar, responde-se `429` ou `503` só por algumas horas e nunca mais de 1 a 2 dias ([Search Central, 11 Nov 2026](https://developers.google.com/search/blog/2026/11/crawling-cdn)).
+
 Uma linha de registo só conta como visita de um fornecedor se o IP estiver na lista dele, ou passar o DNS inverso. Sem o IP guardado, a contagem por nome de agente é um teto e não uma medição.
 
 ### 5.4 Os limites de um registo por *log drain*
