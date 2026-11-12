@@ -49,14 +49,15 @@ número: nomeia as perguntas de compra medidas em que a marca ainda não é
 recomendada (com a contagem de cada uma) e diz que página, ou que site que
 a IA lê, a põe na resposta. Nada de ações genéricas de acompanhamento.
 
-**O número é sobre quem compra a ESTE cliente** (12 Nov 2026, founder, sobre
-o relatório de um supermercado: «não tem nada a ver com jovens isso»). Uma
-fatia da população (uma faixa etária, os estudantes, uma profissão) só entra
-se for o comprador do cliente: num supermercado o comprador é quem faz as
-compras da casa, e «76,5% dos 16 aos 24 anos» não diz nada sobre ele. Se o
-número geral não chega, procura-se o do uso de IA para a decisão do setor
-(compras, saúde, viagens) e no país; se não existe, fica o número geral,
-sozinho, e diz-se que é geral.
+**Um número sobre uma fatia da população traz ações para essa fatia** (12
+Nov 2026, founder, sobre o relatório de um supermercado com o uso de IA dos
+16 aos 24 anos e dos estudantes: «pode ficar, mas tem que ter ações para
+isso»). Uma faixa etária, os estudantes ou uma profissão podem entrar,
+porque dizem onde a mudança chega primeiro, mas só se o `fazer` disser o que
+a marca faz por esse público: que perguntas esse público faz à IA sobre o
+setor, em que delas a marca ainda não é recomendada, e que página ou site o
+põe na resposta (por exemplo, as compras de quem vive sozinho ou estuda
+fora, num supermercado). Sem essas ações, o número sai do cartão.
 
 ### Antes de fechar a lista, cobre sempre estes três ângulos
 
@@ -168,11 +169,11 @@ cartões tinham estes erros e o founder os apanhou a ler.
 5. **Uma ação repete a de outro cartão?** Cada ação vive num cartão só, o
    do tema a que pertence. A página do parto em inglês é do cartão do
    parto, não do dos estrangeiros.
-6. **Cada número é sobre quem compra a este cliente?** Lê-se cada linha de
-   `numeros` e pergunta-se: um diretor desta empresa reconhece aqui os seus
-   clientes? Uma faixa etária, os estudantes ou outro setor que não são o
-   comprador saem do cartão (12 Nov 2026, um supermercado com o uso de IA
-   pelos jovens).
+6. **Cada número tem uma ação que lhe responde?** Lê-se cada linha de
+   `numeros` e procura-se, no `fazer`, a ação que trata dela. Um número
+   sobre um público (os jovens, os estudantes) pede uma ação para esse
+   público; um número sem ação que lhe responda sai do cartão (12 Nov 2026,
+   um supermercado com o uso de IA pelos jovens e nenhuma ação para eles).
 7. **Um diretor da empresa entende cada frase à primeira?** Sem palavras
    nossas: nunca «citado», «escolhido», «sem dono», «fonte» ou «medição»
    soltos. Diz-se o que a IA faz: «a IA nomeia a marca mas recomenda
