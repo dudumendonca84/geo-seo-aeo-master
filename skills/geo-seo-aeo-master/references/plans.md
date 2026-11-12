@@ -100,16 +100,24 @@ surface, and that is a deliberate state rather than an open action: buying
 headroom for a tier nobody has bought yet is spending against a sale that
 has not happened.
 
-| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial | agent | studio | studio_texts |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no | no | no | 0 |
-| lite | brand | 100 | no | no | 1 | weekly | no | yes | 149 | yes | yes | no | no | 0 |
-| pro | brand | 100 | yes | no | 1 | weekly | yes | no | 299 | yes | yes | no | no | 0 |
-| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes | yes | yes | 20 |
-| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no | yes | yes | 50 |
-| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no | yes | yes | 20 |
-| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no | yes | yes | 40 |
-| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no | yes | yes | 60 |
+| plan | audience | prompt_limit | personas | grok | repeat_runs | cadence | inception | copilot | price_eur | public | trial | agent | studio | studio_texts | business_opportunities |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| starter | brand | 25 | no | no | 1 | weekly | no | no | | no | no | no | no | 0 | no |
+| lite | brand | 100 | no | no | 1 | weekly | no | yes | 149 | yes | yes | no | no | 0 | no |
+| pro | brand | 100 | yes | no | 1 | weekly | yes | no | 299 | yes | yes | no | no | 0 | yes |
+| business | brand | 200 | yes | yes | 2 | weekly | yes | yes | 599 | yes | yes | yes | yes | 20 | yes |
+| enterprise | brand | 400 | yes | yes | 10 | weekly | yes | yes | | yes | no | yes | yes | 50 | yes |
+| agency-starter | agency | 50 | no | no | 1 | weekly | yes | yes | 1190 | yes | no | yes | yes | 20 | yes |
+| growth | agency | 100 | no | yes | 1 | weekly | yes | yes | 2490 | yes | no | yes | yes | 40 | yes |
+| agency | agency | 100 | no | yes | 1 | weekly | yes | yes | 4490 | yes | no | yes | yes | 60 | yes |
+
+**As Oportunidades de negócio entram a 12 Nov 2026** (founder: *"planos
+ok"*, os mesmos do Inception). Coluna `business_opportunities`, escrita no
+`modules` do cliente como o `inception`: o ecrã com as oportunidades de
+mercado da marca, atualizado todas as semanas, em que cada oportunidade
+aceite vira ações no «Plano» (`business_opportunities.md` § 7). Entra no
+fim pela regra das opcionais, abaixo. Esta tabela é cópia: o que vale é o
+back-office (`/admin/plans`).
 
 **O Estúdio entra a 18 Out 2026** (founder: *"é uma funcionalidade que
 ele pode ir gerar textos"*, *"só nos planos de cima"*). Coluna `studio`,
