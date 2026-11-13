@@ -618,6 +618,79 @@ sozinha. Por isso:
 - **Não ser prioritária hoje não é motivo**: a ordem muda com a medição,
   e uma ação tirada perde-se, que é o contrário do que se quer.
 
+### O plano lê-se de fio a pavio: oito regras de coerência
+
+Founder, 13 Nov 2026, depois de ler o plano da própria destaque.ai (31
+ações) ao lado de uma auditoria de SEO feita no mesmo dia. Cada ação, lida
+sozinha, estava certa. Lido inteiro, o plano contradizia-se, e é inteiro
+que o cliente o lê.
+
+1. **Um número, uma semana.** O título e o porquê de uma ação são
+   revalidados todas as semanas; a peça preparada fica com os números do
+   dia em que foi escrita. O plano de 13 Nov dizia «0 de 14» no título e
+   «0 de 13» na peça, «escolhida em 5» no título e «em 1» na peça, «seis
+   motores» no texto e cinco na lista. Num `rewrite` que mude um número,
+   **reescreve a peça no mesmo veredicto** (`deliverable`), ou tira da peça
+   os números que já não valem. A peça abre com a semana da medição, e é a
+   mesma semana do título.
+
+2. **Uma base pequena diz-se, e não se lê como tendência.** Com menos de
+   dez respostas no denominador, o número vai com a palavra «direcional» e
+   a ação não nasce só dele. Uma diferença de uma ou duas respostas entre
+   duas semanas, com uma recolha por semana, é acaso: não se escreve
+   «subiu» nem «desceu» (de 7 para 8 citações em 25 respostas não é
+   subida). É a regra do efeito («amostra pequena é amostra pequena»)
+   aplicada ao título.
+
+3. **O posicionamento é da marca, não se deduz.** A frase que diz o que a
+   marca é («agência de SEO e de visibilidade em IA», «software de…») vem
+   dos factos declarados da marca e é a mesma em todas as peças: perfis,
+   emails, páginas. Se a marca não a declarou, a primeira ação do plano é
+   decidi-la («falta decidir»), e nenhuma peça inventa uma. Uma ação que
+   pede o contrário do posicionamento (inscrever num diretório de agências
+   de SEO uma marca cuja frase diz que não faz SEO) não entra como ação:
+   entra como a decisão que falta, uma vez, com as ações que dependem dela
+   listadas.
+
+4. **Duas ações não se desfazem uma à outra.** Antes de fechar o plano,
+   lê as ações duas a duas dentro do mesmo assunto. «Para quem não somos a
+   escolha certa» não pode excluir o serviço que outra ação manda vender.
+   Onde chocam, fica a que a medição sustenta e a outra é reescrita ou sai
+   com `motivo: coberta`.
+
+5. **Um defeito da nossa recolha não é uma ação do cliente.** Fontes
+   gravadas com o endereço de um aviso de cookies, um motor medido sem
+   país, uma semana incompleta: é trabalho nosso, vai para a operação e
+   nunca para o plano que o cliente lê. Se o defeito mexe num número do
+   plano, a ação diz que motor ficou de fora e porquê, numa frase.
+
+6. **Não se nega uma ligação na página da marca.** Escrever «a marca X não
+   tem ligação a Y» põe os dois nomes na mesma frase, e é essa co-ocorrência
+   que o motor aprende. Quando um motor confunde a marca com outra
+   entidade, corrige-se pelo que a marca É (a mesma frase de identidade em
+   todo o lado, `sameAs`, o título certo), nunca nomeando a outra.
+
+7. **Numa comparação, entram os nomes da pergunta medida.** A página que
+   responde a «qual a diferença entre A, B e C» compara A, B e C com a
+   marca. Acrescentar concorrentes diretos do mesmo mercado que a pergunta
+   não nomeia é dar-lhes presença numa página nossa: só entram quando há
+   uma pergunta medida que os nomeia, e a ação diz qual.
+
+8. **Uma ação só refere outra que existe, e uma ação sem medição diz que
+   não a tem.** Uma peça que manda ver «a ação já aberta sobre…» usa o
+   título de uma ação aberta no `existing_plan`; se ela fechou ou saiu, a
+   referência sai. E uma ação que chegou sem medição (pedida ao agente, por
+   exemplo) leva a medição da pergunta de onde nasceu, ou a frase «sem
+   medição própria», em vez de um título solto.
+
+**O Google também é evidência.** O plano mede o que os motores de IA
+respondem. Quando a marca tem o Search Console ligado, as pesquisas com
+impressões, os cliques e a posição entram no porquê das ações de conteúdo
+e de posicionamento ao lado das respostas de IA: uma página que os motores
+leem e que no Google tem impressões e zero cliques pede título e descrição
+antes de pedir texto novo. Sem esses dados no pedido, a ação diz «sem dados
+do Google», e não conclui nada sobre a procura.
+
 ### Como se vê que a ação está feita: `verifica`
 
 O efeito só se mede numa ação feita, e os clientes não marcam nada (7 Out
