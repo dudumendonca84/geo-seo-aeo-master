@@ -1879,6 +1879,41 @@ ninguém executa, e o plano da semana já existe ao lado.
   faz ocupa um lugar na campanha e desaparece quando alguém a marca como
   feita, sem nada ter acontecido.
 
+## De uma oportunidade de negócio a ações
+
+Consumido pela task `plan_business_opportunity` do Tracker (12 Nov 2026).
+O cliente aceitou uma oportunidade de negócio no ecrã «Oportunidades de
+negócio» (`business_opportunities.md` § 7), e a task pede as ações que a
+fazem acontecer. Escrevem-se nas mesmas `opportunities` do plano, com a
+mesma forma do `plan_value_prop`, e vale tudo o que está na secção da
+campanha acima (regras 1 a 6 e o que NÃO é uma ação).
+
+O contexto traz o cartão aceite (o porquê, os números, o que fazer, a caixa
+da IA), a medição das perguntas que ele toca (os domínios que cada motor
+citou e o que foi procurar), a proposta de valor que serve quando serve
+uma, e o plano que já existe.
+
+**1. Parte do "o que fazer" do cartão.** Cada passo do cartão é o rascunho
+de uma ação; a ação acrescenta-lhe o sítio, as palavras do comprador e o
+número que a medição dá. Um passo que o plano já tem não se repete: diz-se
+no `why` da ação que o completa.
+
+**2. Proposta de valor ainda não publicada: a primeira ação é publicá-la**
+(decisão do founder a 12 Nov 2026, opção A: *"quero o mais simples ao
+cliente"*). Quando o contexto traz a proposta com `prova: null`, a ação
+mais alta do plano é escrever a página onde a afirmação fica publicada,
+e as que dependem dela levam no `blocked_on` a frase do que falta. É a
+regra 1 da campanha aplicada aqui. Nunca se propõe pedir a um motor que
+afirme o que não está publicado.
+
+**3. Entre duas e seis ações.** Uma oportunidade é mais estreita do que uma
+campanha; mais do que seis é o plano inteiro outra vez.
+
+**4. Cada ação diz o que muda na medição**, com o número de uma das
+perguntas ligadas, para a semana seguinte saber se serviu. Sem pergunta
+ligada, a primeira ação pode ser medir uma pergunta sobre o tema, com o
+texto proposto.
+
 ## A proposta foi dita?
 
 Consumido pelo juízo por resposta do Tracker (migração 0132, 21 Set 2026).
@@ -1942,4 +1977,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
+Last refresh: 12 Nov 2026 (secção nova: de uma oportunidade de negócio a ações, consumida pela task `plan_business_opportunity`). Anterior: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
