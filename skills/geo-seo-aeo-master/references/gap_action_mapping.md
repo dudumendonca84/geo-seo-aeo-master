@@ -631,7 +631,8 @@ que o cliente o lê.
    «0 de 13» na peça, «escolhida em 5» no título e «em 1» na peça, «seis
    motores» no texto e cinco na lista. Num `rewrite` que mude um número,
    **reescreve a peça no mesmo veredicto** (`deliverable`), ou tira da peça
-   os números que já não valem. A peça abre com a semana da medição, e é a
+   os números que já não valem. O servidor recusa o `rewrite` que muda os
+   pares «N de M» do título e deixa o porquê ou a peça com os antigos. A peça abre com a semana da medição, e é a
    mesma semana do título.
 
 2. **Uma base pequena diz-se, e não se lê como tendência.** Com menos de
@@ -651,6 +652,13 @@ que o cliente o lê.
    de SEO uma marca cuja frase diz que não faz SEO) não entra como ação:
    entra como a decisão que falta, uma vez, com as ações que dependem dela
    listadas.
+
+   No pedido do plano, a frase chega em
+   `context.o_que_a_marca_declara.descricao_oficial` (a descrição da ficha
+   da marca, escrita pela marca nas Definições). Quando existe, usa-se tal
+   como está, sem a resumir nem trocar por outra. Quando é `null`, as peças
+   usam só o nome da marca e o plano traz a ação de a declarar.
+   `factos` é o resto da ficha, e nenhuma peça os contradiz.
 
 4. **Duas ações não se desfazem uma à outra.** Antes de fechar o plano,
    lê as ações duas a duas dentro do mesmo assunto. «Para quem não somos a
@@ -683,7 +691,10 @@ que o cliente o lê.
    exemplo) leva a medição da pergunta de onde nasceu, ou a frase «sem
    medição própria», em vez de um título solto.
 
-**O Google também é evidência.** O plano mede o que os motores de IA
+**O Google também é evidência.** No pedido do plano chega em
+`context.google`: a janela, as impressões, os cliques e as pesquisas mais
+vistas com a posição (`null` quer dizer que o Search Console não está
+ligado, e ligá-lo é uma ação de medição). O plano mede o que os motores de IA
 respondem. Quando a marca tem o Search Console ligado, as pesquisas com
 impressões, os cliques e a posição entram no porquê das ações de conteúdo
 e de posicionamento ao lado das respostas de IA: uma página que os motores
