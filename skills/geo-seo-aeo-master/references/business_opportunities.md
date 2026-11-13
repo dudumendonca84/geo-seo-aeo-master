@@ -249,7 +249,9 @@ cruzar com a medição e com as propostas de valor, e a virar ações no
 {
   "id": "o id de uma anterior, quando é a mesma oportunidade; sem ele é nova",
   "perguntas": ["prompt_id", "prompt_id"],
-  "proposta_de_valor": "o id de uma proposta do pedido, ou null"
+  "proposta_de_valor": "o id de uma proposta do pedido, ou null",
+  "titulo_curto": {"pt": "…", "en": "…", "fr": "…"},
+  "legenda": {"pt": "…", "en": "…", "fr": "…"}
 }
 ```
 
@@ -261,9 +263,23 @@ cruzar com a medição e com as propostas de valor, e a virar ações no
 - **`proposta_de_valor`**: o `id` da proposta que esta oportunidade serve,
   quando serve uma de verdade (a afirmação é o que a oportunidade pede que a
   IA diga). Quando nenhuma serve, `null`, e o ecrã oferece criar uma a
-  partir do cartão.
-- **Três línguas sempre.** Cada texto vem em `{pt, en, fr}`: o ecrã lê-se
-  nas três. Uma cadeia simples só no destino `relatorio`.
+  partir da oportunidade.
+- **`titulo_curto`**: o título de uma linha da lista, até 70 caracteres
+  (o servidor aceita até 80 e, acima disso, deita fora o campo e corta o
+  longo com reticências). Diz a oportunidade em palavras de quem compra,
+  sem números: o número já está ao lado, na mesma linha. Não repete o
+  `titulo` encurtado; o `titulo` continua a ir, e lê-se no detalhe. Ex.:
+  "Quem compara o cabaz pergunta à IA onde fica mais barato", com o
+  `titulo` "O cabaz de 63 bens essenciais da DECO custa 256,73 euros, mais
+  14,91 euros do que no início do ano, e quem pede um simulador de preços
+  não recebe nenhum supermercado na resposta da IA".
+- **`legenda`**: o que o `numero` mede, em duas linhas no máximo, até 60
+  caracteres (o servidor aceita até 70). Começa onde o número acaba
+  ("27,6% contra 22,3%" → "Continente contra Pingo Doce, 1.º semestre de
+  2026"). A `nota` continua a existir, para o relatório.
+- **Três línguas sempre.** Cada texto vem em `{pt, en, fr}`, incluindo o
+  `titulo_curto` e a `legenda`: o ecrã lê-se nas três. Uma cadeia simples só
+  no destino `relatorio`.
 
 ### A lista é a mesma de uma semana para a outra
 
