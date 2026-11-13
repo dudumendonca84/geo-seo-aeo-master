@@ -8,6 +8,15 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-13: O modelo do AI Mode muda para o Gemini 4 Hydrogen, e o Deck Builder acompanha
+
+- **Trigger:** novo modelo passa a default num produto de pesquisa com IA (gatilho de `SKILL.md` § Methodology evolution). A Google tornou o Gemini 4 Hydrogen o modelo por defeito do AI Mode a 12 Nov 2026, global e em todas as línguas do AI Mode, e usa-o nas perguntas mais difíceis do AI Overviews.
+- **Fonte:** [blog.google, Search, 12 Nov 2026](https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/) e [blog.google, modelo](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/), lidos diretamente; "new default model in AI Mode & being used for your hardest questions in AI Overviews" (Robby Stein no X, via [SE Roundtable](https://www.seroundtable.com/google-search-gemini-4-hydrogen-42526.html), secundária); notas de migração e preços no AI Studio, lidos diretamente.
+- **O que muda:** `references/models.md`: linha do Hydrogen na tabela Google, produtos AI Mode e AIO, `## Token prices` e `## Search prices` com `gemini-4-hydrogen`, e `## Deck Builder API mappings` `gemini` `production` de `gemini-3.5-flash` para `gemini-4-hydrogen`, com caveat. `references/model_cutoffs.md`: linha `gemini-4-hydrogen` a `unknown`. `engine_playbooks.md`, PT e EN: `google_ai_mode` ganha o passo 5 (cobrir subtemas, pelo fan-out alargado). `frameworks.md` §5: nota sobre o fan-out.
+- **O que não muda (de propósito):** `## Tracker buyer defaults` continua no `gemini-3.5-flash`. Mudar o modelo que o Tracker mede a meio do core update de Novembro parte a série semanal, e o Hydrogen conta o pensamento no `max_output_tokens` (um teto baixo devolve respostas cortadas). Decisão do founder, depois de conferir o teto de saída no código do Tracker e do Deck Builder.
+
+---
+
 ## 2026-11-11: A auditoria passa a ler as preferências de IA da Bing (ai-training, ai-grounding)
 
 - **Trigger:** novo sinal oficial de um fornecedor que muda o que se verifica numa página. A Bing publicou a 30 Out 2026 preferências separadas de treino e de grounding, e o agente diário só o apanhou a 11 Nov.
