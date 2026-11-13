@@ -691,16 +691,16 @@ que o cliente o lê.
    exemplo) leva a medição da pergunta de onde nasceu, ou a frase «sem
    medição própria», em vez de um título solto.
 
-**O Google também é evidência.** No pedido do plano chega em
-`context.google`: a janela, as impressões, os cliques e as pesquisas mais
-vistas com a posição (`null` quer dizer que o Search Console não está
-ligado, e ligá-lo é uma ação de medição). O plano mede o que os motores de IA
+**O Google também é evidência.** O plano mede o que os motores de IA
 respondem. Quando a marca tem o Search Console ligado, as pesquisas com
 impressões, os cliques e a posição entram no porquê das ações de conteúdo
 e de posicionamento ao lado das respostas de IA: uma página que os motores
 leem e que no Google tem impressões e zero cliques pede título e descrição
 antes de pedir texto novo. Sem esses dados no pedido, a ação diz «sem dados
-do Google», e não conclui nada sobre a procura.
+do Google», e não conclui nada sobre a procura. No pedido do plano chegam em
+`context.google`: a janela, as impressões, os cliques e as pesquisas mais
+vistas, com a posição. `null` quer dizer que o Search Console não está
+ligado, e ligá-lo é uma ação de medição.
 
 ### Como se vê que a ação está feita: `verifica`
 
