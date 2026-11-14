@@ -540,8 +540,10 @@ em duas partes, e a página inicial da marca):
   interesse médio de doze meses, de 0 a 100, relativo ao pico do próprio
   tema; `em_alta`, as pesquisas
   que mais sobem dentro do tema, com a subida ou "Breakout"; `principais`,
-  as mais frequentes), `noticias` (por tema: artigos dos meios do país nos
-  últimos 30 dias e nos 30 anteriores) e `em_alta_agora` (o que disparou
+  as mais frequentes), `noticias` (por tema: `variacao_3m` e
+  `interesse_medio`, as mesmas medidas, mas nas pesquisas do Google
+  Notícias do país; é quanto as pessoas procuram notícias do tema, não uma
+  contagem de artigos) e `em_alta_agora` (o que disparou
   hoje nas pesquisas do país, com a notícia ligada, só o que toca um tema).
   `null` é "sem número";
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
@@ -658,9 +660,10 @@ Como se usa:
      100% ou "Breakout") e ligada ao que a marca vende é candidata a
      pergunta, escrita como pergunta completa e não como palavra-chave;
    - o racional pode citar a subida: "o interesse por X nas pesquisas subiu
-     Y% nos últimos três meses", ou "as notícias dos meios do país sobre X
-     passaram de A para B artigos num mês", sempre nos motores de busca ou
-     nas notícias, nunca com o nome do fornecedor nem da ferramenta;
+     Y% nos últimos três meses", ou "a procura de notícias sobre X subiu Y%
+     nos últimos três meses", sempre nos motores de busca ou nas notícias,
+     nunca com o nome do fornecedor nem da ferramenta, e nunca como número
+     de artigos publicados, que não é o que se mede [2026-11-14];
    - `em_alta_agora` é atualidade do país: só entra quando é sobre um tema
      da marca, e uma pergunta não se escreve sobre um acontecimento de um
      dia (envelhece na semana seguinte);
