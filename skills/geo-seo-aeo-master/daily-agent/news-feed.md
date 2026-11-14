@@ -8,6 +8,26 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-14
+
+Radar LLM/IA: sem modelos novos nem mudanças de preço; anthropic.com/news sem posts após 10 Nov ([Anthropic](https://www.anthropic.com/news)). A decisão sobre o `gemini-4-hydrogen` no Tracker (alerta de 13 Nov) continua pendente, prazo segunda 16 Nov. GEO/AEO: a Internet Licensing Collective (ex-RSL Collective, mais de 3.000 editores) lançou-se a 12 Nov com o Yahoo Scout como primeiro licenciado pago por conteúdo usado em respostas de IA; termos e mercados não divulgados ([ILC](https://internetcollective.org/press/ilc-launch-2026)). SEO/Google: core update ainda em curso, sem atualização desde 10 Nov ([Google](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc)); teste a retirar o separador AI Mode e a caixa "Ask anything" do AIO, e imagens geradas por IA de volta ao AIO para alguns ([SE Roundtable](https://www.seroundtable.com/google-dropping-ai-mode-again-42534.html), [SE Roundtable](https://www.seroundtable.com/google-ai-overviews-ai-generated-images-back-42532.html); secundárias, testes). Robôs: 16 listas lidas, sem mudanças; `index.commoncrawl.org/ccbot.json` volta a responder (200, JSON, 5 prefixos) depois de quatro dias sem resposta; a página dos robôs da OpenAI passou de `platform.openai.com/docs/bots` para `developers.openai.com/api/docs/bots` (301), mesmos quatro agentes e mesmas listas; o tracker não muda `faixas.ts`/`bots.ts`. Implicações: nenhuma jogada nova; manter a janela do core update e a decisão do Hydrogen. Passagem por motor feita (26 blocos).
+
+## 2026-11-14
+
+### 🔵 Anúncios oficiais
+- **Internet Licensing Collective launches with Yahoo Scout as first licensee**: [internetcollective.org, 12 Nov](https://internetcollective.org/press/ilc-launch-2026). Coletivo sem fins lucrativos (ex-RSL Collective, mais de 3.000 marcas e editores) que vende uma licença única a empresas de IA; o Yahoo Scout paga pelo uso de conteúdo nas respostas. Distribuição pelas "Allocation Rules", em função de uso, valor do produto e frequência com que o conteúdo é usado, não do tamanho do catálogo; custos até 10%. Termos financeiros e mercados não divulgados.
+
+### ⚙️ Mudanças nas plataformas
+- **Google: teste sem separador AI Mode e sem "Ask anything" no AIO**: visto por Glenn Gabe; a SE Roundtable reproduziu a falta da caixa no AIO mas não a do separador; sem declaração da Google. [SE Roundtable](https://www.seroundtable.com/google-dropping-ai-mode-again-42534.html).
+- **Google AIO: imagens geradas por IA de volta para alguns utilizadores**, depois da pausa de Agosto. [SE Roundtable](https://www.seroundtable.com/google-ai-overviews-ai-generated-images-back-42532.html).
+- **OpenAI: página dos robôs mudou de endereço** para [developers.openai.com/api/docs/bots](https://developers.openai.com/api/docs/bots) (301 do antigo); OAI-SearchBot, OAI-AdsBot, GPTBot e ChatGPT-User sem mudança de papel. Link atualizado em frameworks.md.
+- **Google November 2026 core update**: em curso, sem atualização desde 10 Nov. [Google](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc).
+
+### 💡 Implicações para destaque.ai
+- ILC: o primeiro coletivo de licenciamento para IA com comprador pago. Para SaaS B2B em Portugal não muda a visibilidade (o Yahoo Scout não é motor nosso), mas é o modelo que os editores portugueses vão citar quando se discutir bloquear robôs de IA. Só awareness; rever quando houver licenciado entre os dez motores.
+- Testes de interface no Google (separador AI Mode, caixa de seguimento) não mudam o que se faz; se o separador desaparecer de vez, o acesso ao AI Mode passa a depender da caixa principal, o que reforça a medição por pergunta e não por superfície. Sem jogada nova.
+- Watches: checkout in-chat UE sem gatilho; anúncios ChatGPT em PT sem caso novo; API do Bing AI Performance continua sem acesso programático.
+
 ## 🚨 ALERTA FUNDADOR · 2026-11-13
 
 - **O que aconteceu:** a 12 Nov a Google tornou o Gemini 4 Hydrogen o modelo por defeito do AI Mode, global e "across all supported AI Mode languages" (português incluído), e passou a usá-lo nas perguntas mais difíceis do AI Overviews; o fan-out de consultas foi melhorado para "a broader range of helpful links than before" ([blog.google](https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/); Robby Stein no X, via [SE Roundtable](https://www.seroundtable.com/google-search-gemini-4-hydrogen-42526.html)).

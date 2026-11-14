@@ -41,7 +41,7 @@ Each vendor distinguishes three kinds of agent. **Training crawls** are asynchro
 
 Correction, 8 Nov 2026: earlier versions of this section said the opposite, that blocking the real-time agents removes the brand. The vendors' own pages say otherwise (OpenAI: `ChatGPT-User` is "not used to determine whether content may appear in Search"), and a canary-token experiment over 20 sites (Seiden et al., CCS 2026, queries Mar-Apr 2026, mostly by API) found none of the three user agents feeding an answer. Claude adds a twist: its search reads Brave's index, and Brave does not crawl what `Googlebot` may not crawl, so **blocking `Googlebot` also removes a site from Claude's search answers**. Full evidence, per engine, in `como-os-motores-leem.md`.
 
-### OpenAI ([platform.openai.com/docs/bots](https://platform.openai.com/docs/bots))
+### OpenAI ([developers.openai.com/api/docs/bots](https://developers.openai.com/api/docs/bots))
 
 | User-agent | Purpose | Block effect |
 |---|---|---|
