@@ -659,6 +659,17 @@ Fonte de agregação: [SE Roundtable, 22 Out 2026](https://www.seroundtable.com/
 
 Caveats: o GPT-6 abre links sem UTM nem referrer (ver metrics.md), pelo que o referral de IA está subestimado em GA4; a conclusão dos autores ("não investir") não decorre dos dados, que só dizem que o volume direto é pequeno.
 
+## Conversão por setor (relatório)
+
+> **Contrato com o Tracker** (`src/lib/skill/conversao.ts`, desde 14 Nov 2026). O capítulo 09 do relatório do prospect usa estas taxas no cenário «Quanto pode valer» e na linha de cenário do «Começar»: o intervalo vai da taxa do setor do prospect (o mesmo `setor` da tabela «Estatísticas do setor (relatório)») à linha `ia`. Sem a linha do setor não há cenário. Mudar o cabeçalho parte o leitor; acrescentar setores é seguro.
+
+| setor | taxa | texto | fonte | data |
+|---|---|---|---|---|
+| ia | 5,8% | média das visitas vindas de assistentes de IA, em todos os setores | Ruler Analytics, Conversion Rate Benchmarks 2026 (110 milhões de sessões) | 2026 |
+| saude | 2,3% | média do setor da saúde | Ruler Analytics, Conversion Rate Benchmarks 2026 (Health & Social Care) | 2026 |
+
+Fonte conferida a 14 Nov 2026 em ruleranalytics.com/blog/insight/conversion-rate-by-industry: 110 milhões de sessões, 5 milhões de conversões, 13 setores; uma conversão é um formulário ou uma chamada qualificada. Ressalva: dados de um fornecedor de atribuição, maioritariamente do Reino Unido, e a taxa da IA é a média de todos os setores (o estudo diz que o volume ainda é pequeno). Trata-se como direcional.
+
 ## Deck Builder core stats
 
 > **Cross-repo contract.** Consumido por `destaque-ai-deck-builder` (`src/lib/skill/benchmarks.ts` → `loadCoreBenchmarks`) pelos slides do deck público: o Slide 03 usa os 3 primeiros como headline; os Slides 05 (`aio_top10_share`) e 10b (`b2b_ai_answer`) procuram a linha por `key`. Mesma lógica do `## Deck Builder API mappings` em `models.md`: tabela parseável, fonte única. Princípio SINAL: nenhuma estatística sem fonte. Atualizar uma linha aqui propaga ao deck em ≤1h (cache TTL do loader), sem deploy. As `caption` são client-facing → PT-PT. Se a tabela faltar ou tiver menos de 3 linhas válidas, o deck-builder cai para o fallback hardcoded. Adicionar uma linha aqui é seguro; mudar o cabeçalho da tabela parte o parser: ver INTERFACES.md.

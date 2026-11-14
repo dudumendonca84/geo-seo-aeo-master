@@ -541,11 +541,12 @@ em duas partes, e a página inicial da marca):
   tema; `em_alta`, as pesquisas
   que mais sobem dentro do tema, com a subida ou "Breakout"; `principais`,
   as mais frequentes), `noticias` [2026-11-14] (por tema: `artigos_30d`,
-  quantos artigos sobre o tema saíram no Google Notícias do país nos
-  últimos 30 dias; `artigos_30d_antes`, os mesmos nos 30 anteriores;
-  `variacao_30d`, a variação em percentagem, `null` quando a base tem menos
-  de 5 artigos; `no_teto`, verdadeiro quando a janela recente encheu o teto
-  do pedido e o número é um mínimo) e `em_alta_agora` (o que disparou
+  quantos artigos da imprensa do país sobre o tema saíram nos últimos 30
+  dias, contados dia a dia no Google Notícias e sem os de outros países;
+  `artigos_30d_antes`, os mesmos nos 30 anteriores; `variacao_30d`, a
+  variação em percentagem, `null` quando a base tem menos de 5 artigos;
+  `no_teto`, verdadeiro quando um dia encheu o teto do feed e o número é
+  um mínimo) e `em_alta_agora` (o que disparou
   hoje nas pesquisas do país, com a notícia ligada, só o que toca um tema).
   `null` é "sem número";
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
