@@ -536,11 +536,14 @@ em duas partes, e a página inicial da marca):
 - `tendencias` [2026-11-14]: o que está a subir no mercado do cliente, por
   tema (os temas pedidos pela marca, ou os termos da `categoria`):
   `google_trends` (por tema: `variacao_3m`, o interesse dos últimos três
-  meses face aos três anteriores, em percentagem; `em_alta`, as pesquisas
+  meses face aos três anteriores, em percentagem; `interesse_medio`, o
+  interesse médio de doze meses, de 0 a 100, relativo ao pico do próprio
+  tema; `em_alta`, as pesquisas
   que mais sobem dentro do tema, com a subida ou "Breakout"; `principais`,
   as mais frequentes), `noticias` (por tema: artigos dos meios do país nos
   últimos 30 dias e nos 30 anteriores) e `em_alta_agora` (o que disparou
-  hoje nas pesquisas do país, com a notícia ligada). `null` é "sem número";
+  hoje nas pesquisas do país, com a notícia ligada, só o que toca um tema).
+  `null` é "sem número";
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
   de propósito. Não ler não é o mesmo que ninguém perguntar.
 
@@ -654,8 +657,8 @@ Como se usa:
    - uma pesquisa em `google_trends[].em_alta` com subida grande (acima de
      100% ou "Breakout") e ligada ao que a marca vende é candidata a
      pergunta, escrita como pergunta completa e não como palavra-chave;
-   - o racional pode citar a subida: "o interesse por X no Google subiu Y%
-     nos últimos três meses", ou "as notícias dos meios portugueses sobre X
+   - o racional pode citar a subida: "o interesse por X nas pesquisas subiu
+     Y% nos últimos três meses", ou "as notícias dos meios do país sobre X
      passaram de A para B artigos num mês", sempre nos motores de busca ou
      nas notícias, nunca com o nome do fornecedor nem da ferramenta;
    - `em_alta_agora` é atualidade do país: só entra quando é sobre um tema
