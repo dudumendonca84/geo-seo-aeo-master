@@ -359,7 +359,16 @@ não é `1`, e um com dezenas não é `5`.
   nome de um fornecedor, de uma ferramenta ou de um motor em particular. Os
   concorrentes que se nomeiam são os da lista do cliente, e nenhum outro.
   Específico à marca, à categoria e à fase: uma frase que serviria a
-  qualquer pergunta não é um racional e volta para trás. Nunca um número
+  qualquer pergunta não é um racional e volta para trás.
+  **O racional não afirma o que a marca oferece sem o ter nos dados
+  recebidos** [2026-11-14]: uma unidade, um serviço, um programa, um preço
+  ou uma morada só se dão como certos quando vêm em `voz_do_cliente.site`,
+  no autocompletar da marca ou nas fichas do pedido. Sem isso, o racional
+  fala do que a resposta vai mostrar ("se o assistente associa a marca a
+  uma consulta de menopausa"), nunca de que ela existe ("a Unidade de
+  Menopausa da marca"). Na Lusíadas, a 14 Nov 2026, um racional deu como
+  certa uma unidade que nenhum dado do pedido mostrava; o cliente lê isto
+  na gaveta, e um facto inventado sobre a casa dele é o pior erro possível. Nunca um número
   que não esteja nos dados recebidos, nunca uma promessa de resultado, sem
   travessões, sem nomear modelos nem a maquinaria interna. Até 600
   caracteres. Exemplo (oficina, comparação direta, branded): "Quem já
