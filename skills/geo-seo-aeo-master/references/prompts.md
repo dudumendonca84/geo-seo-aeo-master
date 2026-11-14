@@ -533,6 +533,14 @@ em duas partes, e a página inicial da marca):
   três anteriores, em percentagem) de cada termo da marca, dos
   concorrentes e das sugestões das duas listas acima, da maior procura
   para a menor. `null` é "sem número", não zero;
+- `tendencias` [2026-11-14]: o que está a subir no mercado do cliente, por
+  tema (os temas pedidos pela marca, ou os termos da `categoria`):
+  `google_trends` (por tema: `variacao_3m`, o interesse dos últimos três
+  meses face aos três anteriores, em percentagem; `em_alta`, as pesquisas
+  que mais sobem dentro do tema, com a subida ou "Breakout"; `principais`,
+  as mais frequentes), `noticias` (por tema: artigos dos meios do país nos
+  últimos 30 dias e nos 30 anteriores) e `em_alta_agora` (o que disparou
+  hoje nas pesquisas do país, com a notícia ligada). `null` é "sem número";
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
   de propósito. Não ler não é o mesmo que ninguém perguntar.
 
@@ -640,6 +648,24 @@ Como se usa:
      do ano;
    - sem `procura` (não se conseguiu medir, está em `nao_lidos`), escolhe
      como antes e o racional não fala de procura.
+9. **Usa as tendências para o que a procura não diz** [2026-11-14]. A
+   procura diz quanto se pesquisa um termo; `tendencias` diz o que está a
+   nascer dentro de cada tema. Regras:
+   - uma pesquisa em `google_trends[].em_alta` com subida grande (acima de
+     100% ou "Breakout") e ligada ao que a marca vende é candidata a
+     pergunta, escrita como pergunta completa e não como palavra-chave;
+   - o racional pode citar a subida: "o interesse por X no Google subiu Y%
+     nos últimos três meses", ou "as notícias dos meios portugueses sobre X
+     passaram de A para B artigos num mês", sempre nos motores de busca ou
+     nas notícias, nunca com o nome do fornecedor nem da ferramenta;
+   - `em_alta_agora` é atualidade do país: só entra quando é sobre um tema
+     da marca, e uma pergunta não se escreve sobre um acontecimento de um
+     dia (envelhece na semana seguinte);
+   - o interesse do Google Trends é relativo ao pico do próprio tema (0 a
+     100), não é volume: não se compara entre temas nem se apresenta como
+     número de pesquisas;
+   - sem `tendencias` para o tema (está em `nao_lidos`), o racional não fala
+     de subida.
 
 O que isto não é, e não se diz ao cliente que é: não são as perguntas
 feitas à IA. É o que se pesquisa nos motores de busca e quanto, que é a
