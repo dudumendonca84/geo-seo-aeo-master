@@ -548,6 +548,30 @@ cliente (`audience_type`, `is_local`) e o que o site diz (`categoria`)
 divergem, ganha o site. Se a escrita falhar, o pedido segue para a Routine
 como seguia antes.
 
+**Temas pedidos pela marca** [2026-11-14]. Quando o pedido traz `temas`
+(a marca disse em que assuntos quer ser medida, por exemplo um grupo
+hospitalar com prevenção, longevidade, menopausa, saúde mental, saúde oral
+e medicina desportiva), as regras mudam em três pontos:
+
+1. **Cada pergunta pertence a um tema, e só a um.** O `topic` leva o nome
+   do tema tal como veio no pedido, para o ecrã e o relatório agruparem por
+   ele. Uma pergunta que não cabe em nenhum tema não entra.
+2. **Os temas repartem as perguntas.** Cada tema leva pelo menos
+   `target_count` a dividir pelo número de temas (arredondado para baixo),
+   e o que sobra vai para os temas com mais procura. Dentro de cada tema
+   misturam-se as categorias de §2 e as fases de §8.2, como no catálogo
+   todo: um tema só com perguntas genéricas mede metade do tema.
+3. **O racional diz porque é que a pergunta mede o tema** (§8.4): quem a faz
+   dentro daquele tema, o que o assistente decide ali, e a procura do tema
+   nos motores de busca quando vem em `voz_do_cliente.procura` (os temas
+   são medidos à frente dos outros termos, e o que se pesquisa sobre cada
+   um vem em `voz_do_cliente.autocompletar_temas`). Sem procura para o tema,
+   o racional não inventa número nenhum e diz o que se sabe da pergunta.
+
+As perguntas continuam a nunca nomear a marca, salvo as branded (§8.9,
+ponto 3), e um tema que é um produto da marca ("Lusíadas Sport") pergunta-se
+pelo que ele é ("medicina desportiva", "reabilitação depois de uma lesão").
+
 **O Portal da Queixa não se recolhe.** No piloto do Continente foi a fonte
 que mostrou o que corre mal (138 de 300 reclamações sobre encomendas), mas
 o `robots.txt` dele recusa os robôs de IA (GPTBot, ClaudeBot,
