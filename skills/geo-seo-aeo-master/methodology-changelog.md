@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-15: Sai a tabela «Conversão por setor (relatório)»
+
+- **Trigger:** decisão do founder. O capítulo 09 do relatório do prospect deixou de mostrar euros (tracker #1080), e a tabela ficou sem leitor. Founder, 15 Nov 2026: *"tira"*.
+- **O que muda:** `references/benchmarks.md` perde a secção `## Conversão por setor (relatório)` (taxas da Ruler Analytics para a IA e para a saúde, contrato com `src/lib/skill/conversao.ts`, ficheiro apagado no tracker #1080).
+- **O que não muda:** a secção 54 (tráfego e conversão de IA contra o Google orgânico) e o `## Deck Builder core stats` ficam iguais. Nenhum outro leitor no Tracker nem no Deck Builder.
+
+---
+
 ## 2026-11-13: O modelo do AI Mode muda para o Gemini 4 Hydrogen, e o Deck Builder acompanha
 
 - **Trigger:** novo modelo passa a default num produto de pesquisa com IA (gatilho de `SKILL.md` § Methodology evolution). A Google tornou o Gemini 4 Hydrogen o modelo por defeito do AI Mode a 12 Nov 2026, global e em todas as línguas do AI Mode, e usa-o nas perguntas mais difíceis do AI Overviews.
