@@ -127,8 +127,10 @@ December 2025: GSC added natural-language report configuration ([Google blog](ht
 2. Mobile app referrals strip Referer.
 3. ChatGPT Atlas and some agentic browsers mask origin.
 4. UTM tagging in ChatGPT only began June 2025 and only on cited links.
-5. From ~Oct 9 2026 (GPT-6), ChatGPT links reportedly open without `utm_source=chatgpt.com` and without a referrer: Adobe's Cedric Huesler measured ~500 pages (ChatGPT ≥5% of visits, Oct 9–13 vs prior week): ChatGPT visits -31k/day, direct +26k/day; unclear if intentional ([SE Roundtable, 14 Oct 2026](https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html), secondary). Treat a ChatGPT drop with a direct rise as misattribution before concluding lost visibility.
-5. Edge's Copilot sidebar navigates without producing a conventional Referer (handled inside browser chrome).
+5. From ~Oct 9 2026 (GPT-6), ChatGPT links reportedly open without `utm_source=chatgpt.com` and without a referrer: Adobe's Cedric Huesler measured ~500 pages (ChatGPT ≥5% of visits, Oct 9–13 vs prior week): ChatGPT visits -31k/day, direct +26k/day; unclear if intentional ([SE Roundtable, 14 Oct 2026](https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html), secondary). Treat a ChatGPT drop with a direct rise as misattribution before concluding lost visibility. **Resolved (checked 15 Nov 2026):** it was a bug; links carry `utm_source=chatgpt.com` again since ~16 Oct 2026 ([Search Engine Land](https://searchengineland.com/chatgpt-appears-to-drop-utm-tracking-making-ai-referral-traffic-harder-to-measure-496552), secondary). The 9 to 16 Oct window stays misattributed in GA4: annotate it, and read ChatGPT and Direct together for those days.
+6. Edge's Copilot sidebar navigates without producing a conventional Referer (handled inside browser chrome).
+7. Google AI Overviews and AI Mode clicks land in GA4 as `google / organic` and in Search Console under the "Web" search type, mixed with classic results; the Search Console AI report (Jun 2026) shows impressions, not clicks. They cannot be separated from organic search today.
+8. A mention without a link (the answer names the brand but does not cite its site) can only convert through a later branded search or a typed URL, which GA4 files as organic branded or direct, never as AI.
 
 **Net effect.** GA4 AI-referral counts are a **lower bound**. Expect 30-60% under-reporting relative to true AI-driven visits (no rigorous public measurement of the gap; this is order-of-magnitude vendor consensus, treat with appropriate scepticism).
 
