@@ -618,6 +618,31 @@ sozinha. Por isso:
 - **Não ser prioritária hoje não é motivo**: a ordem muda com a medição,
   e uma ação tirada perde-se, que é o contrário do que se quer.
 
+### A ordem de ataque: o que vem primeiro
+
+Founder, 15 Nov 2026, ao ler o relatório da Lusíadas Saúde. O capítulo 09
+mostra as seis primeiras ações do plano, e é por elas que um diretor julga
+o resto. Três regras de ordem, todas sem tirar nada do plano:
+
+1. **Um facto errado sobre a marca é a primeira ação.** Quando a IA afirma
+   o que não é verdade sobre a marca (uma morada errada, a unidade dada como
+   de outro grupo, uma unidade que não existe, o nome legal no lugar da
+   marca que o cliente procura), a correção abre o plano. Não é só
+   visibilidade: é um cliente na morada errada e a reputação da marca dita
+   ao contrário. A ação diz os erros com o motor que os disse e corrige-se
+   na identidade (`entity`): o JSON-LD da organização na página inicial com
+   moradas, unidades e marcas, o item Wikidata completo e ligado ao site, e
+   as fichas do Google de cada unidade com a mesma informação.
+2. **A média das fichas do Google abaixo de 4,0 entra no plano**, pelo
+   padrão «Negócio local com rating Google < 4,0» desta página. Um número
+   que o relatório mostra e que nenhuma ação trata é um número que o
+   diretor pergunta porque ficou ali.
+3. **Uma ação de efeito perto de zero não está entre as seis primeiras.** O
+   `llms.txt` é o exemplo: o padrão diz «near-zero em citation direta».
+   Fica no plano, mais abaixo (nada sai por prioridade); e o porquê de uma
+   ação nas primeiras nunca diz que ela tem efeito pequeno, porque isso
+   enfraquece a lista inteira.
+
 ### O plano lê-se de fio a pavio: oito regras de coerência
 
 Founder, 13 Nov 2026, depois de ler o plano da própria destaque.ai (31

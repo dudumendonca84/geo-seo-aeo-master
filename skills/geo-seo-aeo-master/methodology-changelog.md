@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-15: A ordem de ataque do plano e um só denominador na leitura
+
+- **Trigger:** revisão do founder ao relatório da Lusíadas Saúde (versão 2 do capítulo 09 do relatório do prospect).
+- **O que muda:** `references/gap_action_mapping.md` ganha «A ordem de ataque: o que vem primeiro»: um facto errado da IA sobre a marca é a primeira ação, a média das fichas do Google abaixo de 4,0 entra no plano, e uma ação de efeito perto de zero (o `llms.txt`) não está entre as seis primeiras. `references/narrative_templates.md` §2b': o denominador da semana não conta as respostas-sentinela (`[sem AI Overview]`), a mesma base da capa do relatório.
+- **O que não muda:** nada sai do plano por prioridade; nenhum cabeçalho, chave ou tabela lidos pelo Tracker ou pelo Deck Builder.
+
+---
+
 ## 2026-11-15: Sai a tabela «Conversão por setor (relatório)»
 
 - **Trigger:** decisão do founder. O capítulo 09 do relatório do prospect deixou de mostrar euros (tracker #1080), e a tabela ficou sem leitor. Founder, 15 Nov 2026: *"tira"*.

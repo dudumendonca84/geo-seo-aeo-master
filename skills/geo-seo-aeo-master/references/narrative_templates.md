@@ -127,6 +127,15 @@ fraction with a bar, the rest opening on demand. The narrative carries:
   `fonte` (the one domain that explains the finding, omitted when there is
   none).
 - Write `numero` as a fraction whenever possible ("19 de 57", "0 em 324").
+- **One denominator for the week.** When the fraction is over the whole
+  week, the denominator is the measured base: answers to non-branded
+  questions, first turn only, and **without the sentinel rows** (text that
+  starts with `[sem `, such as `[sem AI Overview]`: the surface showed no
+  answer, so there is nothing to count). It is the same base the report
+  cover uses. On 15 Nov 2026 the Lusíadas reading wrote «144 de 390» while
+  the cover said «144 de 387»: the three extra rows were `[sem AI
+  Overview]`. Two denominators for the same week are a mistake the client
+  catches.
 
 The exact contract, with what the card does when a field is missing, is in
 the Tracker routine spec (`routines/tracker-brain.md`, section on
