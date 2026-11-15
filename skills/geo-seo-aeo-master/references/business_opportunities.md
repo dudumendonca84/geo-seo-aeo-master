@@ -65,6 +65,34 @@ setor, em que delas a marca ainda não é recomendada, e que página ou site o
 põe na resposta (por exemplo, as compras de quem vive sozinho ou estuda
 fora, num supermercado). Sem essas ações, o número sai do cartão.
 
+### Em saúde: quem pergunta à IA por uma doença está a caminho de uma consulta
+
+Founder, 15 Nov 2026, sobre o relatório de um grupo hospitalar: *"em
+oportunidade vamos colocar converter pessoas que perguntam ao LLM sobre
+doenças pra irem à [marca]"*. No setor da saúde a lista tem sempre esta
+oportunidade, logo a seguir à da IA no caminho do cliente.
+
+- **O que é:** a pessoa que descreve um sintoma ou pergunta por uma doença
+  a um assistente de IA ainda não escolheu onde vai ser vista. A resposta
+  que explica a doença é o sítio onde a IA pode nomear a especialidade e a
+  unidade da marca, e é aí que a marca ganha ou perde a consulta.
+- **O número:** o uso de IA para perguntas de saúde, de `ia_no_setor` ou de
+  um estudo com fonte (país e ano), e a procura dos temas de saúde das
+  perguntas medidas quando o pedido a traz. Sem número com fonte, o cartão
+  não entra.
+- **O `porque`:** as perguntas medidas sobre sintomas e doenças (a
+  contagem de cada uma) em que a IA explica o tema e não nomeia a marca, ou
+  nomeia outra para ser vista.
+- **O `fazer`:** por doença ou sintoma com procura, uma página da marca que
+  responda à pergunta que as pessoas fazem e diga onde e com que
+  especialidade a marca a trata, com o caminho para a marcação; e os sites
+  de saúde que a IA lê nessas respostas, onde a marca deve aparecer. Todo o
+  conteúdo clínico passa pela aprovação da direção clínica da marca antes de
+  publicar.
+- **Proibido aqui:** prometer diagnóstico, cura ou resultado clínico,
+  escrever conselho médico em nome da marca, ou usar o medo como argumento.
+  O cartão fala do caminho até à consulta, nunca do tratamento.
+
 ### Antes de fechar a lista, cobre sempre estes três ângulos
 
 1. **O mercado:** procura que cresce, falhas do serviço público ou do líder,
