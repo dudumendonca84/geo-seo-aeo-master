@@ -87,6 +87,8 @@ Critical implication: there is no separate AI-Overviews crawler. **Blocking `Goo
 
 Answers read Perplexity's own index (200 billion+ URLs), where a machine-learning model decides whether and when to re-index each URL and documents are split into passages at indexing time ([Perplexity Research](https://www.perplexity.ai/hub/blog/architecting-and-evaluating-an-ai-first-search-api), 25 Sep 2025). `PerplexityBot` is the agent that matters for inclusion; `Perplexity-User` was not observed feeding any answer in the canary experiment, which did see content served to `Googlebot` reaching Perplexity answers (Seiden et al., CCS 2026).
 
+Two further pieces of the pipeline were described by Perplexity on 12 Nov 2026 ([Perplexity Decider](https://www.perplexity.ai/hub/blog/perplexity-decider)): every user query passes a multi-head classifier, and one head decides whether the query triggers web search at all; and Perplexity says it uses its Decider model to judge page quality as pages are crawled. What this explains: a page can be excluded before any answer is generated (a query that does not trigger search cites nothing; a page judged low quality at crawl time may never be retrievable). Perplexity does not say Decider runs the production query classifier (it is benchmarked against it), nor what counts as quality. Caveat: vendor blog, no published criteria.
+
 Cloudflare published a report (4 Aug 2025) alleging Perplexity used undeclared/rotating crawlers to bypass no-crawl directives ([Cloudflare](https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/)). Perplexity disputed the framing. Compliance posture is contested.
 
 ### Other AI crawlers
