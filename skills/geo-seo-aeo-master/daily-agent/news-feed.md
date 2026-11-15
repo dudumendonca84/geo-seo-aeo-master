@@ -8,6 +8,23 @@ editorial_voice: sober, primary-source-anchored, no hype
 <!-- Mais recente em cima. Agente adiciona ## YYYY-MM-DD após este cabeçalho. -->
 <!-- Truncar para últimos 60 dias quando passar de 60 entradas ## -->
 
+## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-15
+
+Radar LLM/IA: sem modelos novos de OpenAI, Anthropic, Google, xAI, Mistral, DeepSeek ou Meta, nem mudanças de preço; anthropic.com/news sem posts após 10 Nov ([Anthropic](https://www.anthropic.com/news)); openai.com com 403. A Perplexity lançou a 12 Nov o Decider v1.3 e Decider Flash v1.3 (classificadores abertos, Apache, 27B e 4B) e descreveu que cada pergunta passa por um classificador multi-cabeça em que uma cabeça decide se há pesquisa web, e que o Decider julga a qualidade das páginas no crawl ([Perplexity](https://www.perplexity.ai/hub/blog/perplexity-decider)). GEO/AEO: nada mais com dados. SEO/Google: core update em curso, sem atualização desde 10 Nov; a janela de duas semanas acaba por volta de 24 Nov ([Google](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc)). Robôs: 16 listas lidas, sem mudanças (página da OpenAI com os mesmos quatro agentes). Implicações: a decisão sobre o `gemini-4-hydrogen` no Tracker (alerta de 13 Nov) vence amanhã, segunda 16 Nov. Passagem por motor feita (26 blocos).
+
+## 2026-11-15
+
+### 🔵 Anúncios oficiais
+- **Perplexity Decider (v1.3 e Flash v1.3)**: [perplexity.ai, 12 Nov](https://www.perplexity.ai/hub/blog/perplexity-decider). Modelos de decisão (classificadores que devolvem probabilidades), 27B e 4B destilado, em Hugging Face (Apache), OpenRouter e Decisions API; nDCG@10 médio de 83,99 em 72 tarefas de recuperação. O post descreve o pipeline da casa: "we use a multi-head classification system to process each user query", com uma cabeça a decidir se a pergunta dispara pesquisa web, e diz que o Decider já é usado para "judge the quality of pages as we crawl them". Não afirma que o Decider seja o classificador de produção. Absorvido em frameworks.md §2 (Perplexity).
+
+### ⚙️ Mudanças nas plataformas
+- **Google November 2026 core update**: em curso, sem atualização desde 10 Nov. [Google](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc).
+
+### 💡 Implicações para destaque.ai
+- Perplexity: confirma por fonte primária que há dois filtros antes da resposta (a pergunta tem de disparar pesquisa; a página tem de passar a avaliação de qualidade no crawl). Para clientes SaaS B2B, reforça perguntas de intenção comercial clara no Tracker e páginas densas em factos. Só awareness, sem mudança de pitch.
+- Decisão do Tracker sobre o `gemini-4-hydrogen`: prazo amanhã, segunda 16 Nov, como no alerta de 13 Nov.
+- Watches: checkout in-chat UE sem gatilho; anúncios ChatGPT em PT sem caso novo; API do Bing AI Performance continua sem acesso programático.
+
 ## 📬 DIGEST (não enviado: Gmail indisponível) · 2026-11-14
 
 Radar LLM/IA: sem modelos novos nem mudanças de preço; anthropic.com/news sem posts após 10 Nov ([Anthropic](https://www.anthropic.com/news)). A decisão sobre o `gemini-4-hydrogen` no Tracker (alerta de 13 Nov) continua pendente, prazo segunda 16 Nov. GEO/AEO: a Internet Licensing Collective (ex-RSL Collective, mais de 3.000 editores) lançou-se a 12 Nov com o Yahoo Scout como primeiro licenciado pago por conteúdo usado em respostas de IA; termos e mercados não divulgados ([ILC](https://internetcollective.org/press/ilc-launch-2026)). SEO/Google: core update ainda em curso, sem atualização desde 10 Nov ([Google](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc)); teste a retirar o separador AI Mode e a caixa "Ask anything" do AIO, e imagens geradas por IA de volta ao AIO para alguns ([SE Roundtable](https://www.seroundtable.com/google-dropping-ai-mode-again-42534.html), [SE Roundtable](https://www.seroundtable.com/google-ai-overviews-ai-generated-images-back-42532.html); secundárias, testes). Robôs: 16 listas lidas, sem mudanças; `index.commoncrawl.org/ccbot.json` volta a responder (200, JSON, 5 prefixos) depois de quatro dias sem resposta; a página dos robôs da OpenAI passou de `platform.openai.com/docs/bots` para `developers.openai.com/api/docs/bots` (301), mesmos quatro agentes e mesmas listas; o tracker não muda `faixas.ts`/`bots.ts`. Implicações: nenhuma jogada nova; manter a janela do core update e a decisão do Hydrogen. Passagem por motor feita (26 blocos).
