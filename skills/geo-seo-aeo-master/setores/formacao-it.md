@@ -14,10 +14,13 @@ vive aqui.
 - A Rumos apresenta-se como formadora e certificadora de profissionais de IT portugueses desde 1992 (fundada a 30 de janeiro de 1992), com selo DGERT e centros de exame ([Rumos](https://rumos.pt/en/training/about-training), lido a 2026-11-01)
 - Do lado da procura de competências, o estudo Portugal ICT Study 2026-2030 conta cerca de 245.000 profissionais de TIC em Portugal, mais 17.000 previstos em 2026, e cerca de 28.000 licenciados STEM por ano ([AICEP, 2026-05-06](https://portugalglobal.pt/pt/noticias/2026/maio/novas-oportunidades-para-o-setor-das-tic-em-portugal/))
 - O IEFP tem no menu de formação digital o Cheque-Formação + Digital, a Formação Emprego + Digital e o Líder + Digital ([IEFP](https://www.iefp.pt/noticias), lido a 2026-11-01); calendário de candidaturas de 2026 não confirmado em fonte primária
+- O Código do Trabalho continua a obrigar o empregador a garantir 40 horas de formação por ano a cada trabalhador, qualquer que seja a dimensão da empresa: a proposta de reforma laboral que baixava a obrigação das microempresas foi chumbada no Parlamento a 19 de junho de 2026 ([ECO, 2026-06-23](https://eco.sapo.pt/2026/06/23/banco-de-horas-individual-e-contratos-mais-longos-as-medidas-que-ficam-pelo-caminho-com-chumbo-laboral/), lido a 2026-11-15)
+- A Formação Emprego + Digital é financiada pelo PRR (Programa Emprego + Digital 2025); o aviso de 2024 está encerrado e as ações apoiadas tinham de estar concluídas até 30 de junho de 2026 ([IEFP](https://www.iefp.pt/en/formacao-emprego-digital), lido a 2026-11-15)
 - Vocabulário do comprador: exame de certificação, entidade formadora certificada (DGERT), formação financiada (IEFP), cheque-formação, retirada de exame ("retirement")
 
 ## Tendências
 
+- **2026-11-13** · A Microsoft juntou o MB-330 (Dynamics 365 Supply Chain Management Functional Consultant Associate) à lista de exames a retirar, com saída a 1 de fevereiro de 2027; o MS-102 continua a sair a 30 de novembro ([Microsoft Learn](https://learn.microsoft.com/en-us/credentials/support/retired-certification-exams))
 - **2026-10-30** · O exame PL-400 (Power Platform Developer) deixou de poder ser feito; o MS-102 (Microsoft 365 Administrator Expert) sai a 30 de novembro ([Microsoft Learn](https://learn.microsoft.com/en-us/credentials/support/retired-certification-exams))
 - **2026-09-30** · Saíram os exames AZ-800 e AZ-801 (Windows Server Hybrid Administrator Associate) ([Microsoft Learn](https://learn.microsoft.com/en-us/credentials/support/retired-certification-exams))
 - **2026-08-31** · Saíram os exames AZ-500 (Azure Security Engineer Associate) e PL-200 (Power Platform Functional Consultant Associate) ([Microsoft Learn](https://learn.microsoft.com/en-us/credentials/support/retired-certification-exams))

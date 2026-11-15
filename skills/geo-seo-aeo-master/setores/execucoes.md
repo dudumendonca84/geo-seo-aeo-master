@@ -1,5 +1,21 @@
 # Registo das corridas do agente semanal de setores
 
+## 2026-11-15
+| Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
+|---|---|---|---|---|
+| formacao-it | 6 (Microsoft Learn, IEFP notícias, IEFP Formação Emprego + Digital, página "coming soon" da AWS; DGERT devolveu 503 e digital.gov.pt devolveu página de erro) | 4 | 1 tendência, 2 factos | IEFP sem notícias depois de 21 Out; datas de retirada de exames AWS (ANS-C01, SAP-C02, DVA-C02) só em blogues de terceiros, a página oficial da AWS está desatualizada; Rumos sem notícia desde a campanha de maio |
+| outsourcing-it | 5 (AICEP notícias, artigo do Jornal de Negócios, artigo do ECO, Consultancy.eu, Web Summit) | 6 | 2 tendências (janela de 90 dias, setor sem tendências), 1 facto, 1 linha de calendário | Compras da Bechtle/RIS 2048 (jan), Claranet/Ten Twenty One (fev) e Vinci/AMT-Consulting (abr) têm mais de 90 dias; compra da Keepler pela Accenture só em fonte secundária; entrevista da Inetum sem data; lista da AICEP devolvida com datas posteriores a hoje, não usada |
+| software-rh | 5 (Cegid comunicados, artigo do ECO sobre a reforma laboral, Código do Trabalho no pgdlisboa (só o índice carregou), guia de férias da OCC; ACT devolveu 503) | 6 | 1 tendência, 1 facto, 1 linha de calendário | Assinatura qualificada em faturas PDF a partir de 2027 só em blogues de fornecedores; prazos do Relatório Único contraditórios e só em fonte de fornecedor; subsídio de Natal até 15 de dezembro sem o texto legal aberto; parceria Cegid e Católica Porto SBE sem efeito para o comprador |
+| geo | news-feed de 9 a 15 Nov | 0 (por regra) | 7 tendências, 2 factos, 1 linha de calendário | Operador `-ai` do Bing, testes de interface do AI Mode e Internet Licensing Collective ficaram fora por não mudarem o que compra quem compra GEO em Portugal |
+
+Pesquisas por extenso:
+- formacao-it: "formação certificação IT Portugal novembro 2026"; "exames certificação AWS OR Google Cloud OR SAP retirados alterações dezembro 2026"; "IEFP formação digital Emprego + Digital 2026 candidaturas novembro"; "Rumos formação IT notícia 2026" (marca).
+- outsourcing-it: "outsourcing IT Portugal novembro 2026 consultora contratações aquisição"; "nearshore Portugal centro tecnológico abre empregos novembro 2026"; "serviços de tecnologia IT Portugal ECO Jornal de Negócios novembro 2026 consultoras inteligência artificial"; "Accenture Portugal OR Capgemini Portugal novembro 2026" (marca); "Audensiel LCG Lisbonne acquisition communiqué"; "Web Summit 2026 Lisboa datas novembro".
+- software-rh: "software recursos humanos Portugal novembro 2026 lançamento"; "reforma laboral Código do Trabalho 2026 aprovada registo tempos trabalho alterações empresas"; "faturação eletrónica obrigatória Portugal 2027 PDF fatura adiamento"; "Factorial OR Sage OR Primavera Portugal RH software notícia outubro novembro 2026" (marca); "Relatório Único 2026 prazo entrega GEP"; "Código do Trabalho artigo 241 mapa de férias 15 de abril artigo 263 subsídio de Natal 15 de dezembro".
+- geo: sem pesquisa, resumo do `daily-agent/news-feed.md`.
+
+Limitações desta corrida: DGERT e ACT voltaram a devolver 503; o texto do artigo 202.º do Código do Trabalho (prazo de conservação do registo de tempos) continua por confirmar na fonte legal; o Observador, o Público e o Expresso não foram lidos diretamente, só através da pesquisa.
+
 ## 2026-11-08
 | Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
 |---|---|---|---|---|

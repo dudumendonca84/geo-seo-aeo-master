@@ -12,9 +12,18 @@ As tendências deste setor já são acompanhadas todos os dias pelo `daily-agent
 - Os links do ChatGPT passaram a abrir sem `utm_source` nem referrer com o GPT-6, pelo que o tráfego do ChatGPT aparece como direto e o referral subestima a visibilidade ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-15)
 - A Google não publica dados de cliques por superfície do AI Mode e dos AI Overviews ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-16)
 - O Bing Webmaster Tools tem o relatório AI Performance, com o Topics Portfolio, ainda sem API ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-14)
+- O Referer das visitas vindas da Google traz só o esquema e o domínio e não separa o AI Mode nem os AI Overviews, segundo a documentação da Search Central ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-13)
+- Desde 12 de novembro de 2026 o modelo por defeito do AI Mode é o Gemini 4 Hydrogen, em todas as línguas, português incluído ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-13)
 
 ## Tendências
 
+- **2026-11-12** · A Google tornou o Gemini 4 Hydrogen o modelo por defeito do AI Mode em todas as línguas, português incluído, e passou a usá-lo nas perguntas mais difíceis dos AI Overviews, com um fan-out de consultas mais largo; as fontes citadas pelo AI Mode em Portugal vão mexer, e o fan-out favorece quem cobre subtemas concretos (preço, integração, comparação) ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-13)
+- **2026-11-12** · A Perplexity publicou o Decider e descreveu de primeira mão dois filtros antes da resposta: um classificador decide se a pergunta dispara pesquisa web, e a qualidade das páginas é avaliada no crawl ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-15)
+- **2026-11-12** · O ChatGPT Ads troca o Max Bid e o Max CPC por Target CPA e Target CPC (os antigos saem a 1 de janeiro de 2027) e abre segmentação por região dentro de um país; fonte secundária, mercados não indicados ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-13)
+- **2026-11-10** · A Google lançou o November 2026 core update, global e em todas as línguas, com rollout até 2 semanas (fim por volta de 24 de novembro); leituras de antes e depois feitas entre 10 e 24 de novembro ficam contaminadas ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-11)
+- **2026-11-10** · A OpenAI abriu o ChatGPT Business Hub, fichas de empresa reclamáveis com menções, cliques e tópicos de descoberta, em beta só nos EUA; fonte secundária, sem disponibilidade em Portugal ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-11)
+- **2026-11-09** · O relatório de IA generativa do Search Console registou impressões abaixo do real de 9 a 11 de novembro (erro só de registo, segundo a Google); estes dias saem de qualquer leitura enviada a clientes ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-13)
+- **2026-10-30** · A Bing separou as preferências de treino e de grounding (`__usage_ai-training` no robots.txt, `ai-training` e `ai-grounding` em meta ou `X-Robots-Tag`), honradas a partir de 1 de fevereiro de 2027; a preferência temporária no Bing Webmaster Tools abre a 15 de dezembro de 2026 e `NoArchive`/`NoCache` deixam de valer para IA a 1 de março de 2027 ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-11)
 - **2026-11-05** · A OpenAI avisou anunciantes do ChatGPT Ads de novas opções de lance (max bid ou max CPC) em vigor a 9 de novembro; fonte secundária, sem mercados especificados nem confirmação para Portugal ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-06)
 - **2026-10-30** · A Google, a Bing, a OpenAI e a Anthropic anunciaram a intenção de suportar um sinal partilhado de preferência de treino de IA no robots.txt (rascunho do IETF, só treino, sem efeito no acesso de pesquisa); a Google aponta o início de 2027 ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-02)
 - **2026-10-27** · Uma fonte secundária (FullPress) diz que o Ads Manager do ChatGPT já lista Portugal para self-service; a OpenAI devolveu 403 e não houve verificação de primeira mão, pelo que não se deve vender como aberto sem a mensagem exata do Ads Manager ([news-feed](../daily-agent/news-feed.md), entrada de 2026-10-28)
@@ -29,7 +38,7 @@ As tendências deste setor já são acompanhadas todos os dias pelo `daily-agent
 
 ## Calendário
 
-_Por preencher._
+- A Google lança core updates mais de uma vez por ano, com rollout de cerca de duas semanas; em 2026 houve o de maio (21 de maio a 2 de junho) e o de novembro (desde 10 de novembro), e qualquer leitura de efeito de trabalho de GEO nessas janelas fica contaminada ([news-feed](../daily-agent/news-feed.md), entrada de 2026-11-11)
 
 ## Fontes a vigiar
 
