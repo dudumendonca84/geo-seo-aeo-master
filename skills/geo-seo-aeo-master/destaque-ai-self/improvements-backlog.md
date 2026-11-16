@@ -48,7 +48,43 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hiato. Um item para DONE: Anthropic sem saldo (sem erro em 14 dias de lotes diários). Dois itens novos: integração Microsoft Advertising no Tracker (OAuth, 5 nov) e regressão em GD4. `/radar` fora do sitemap, 4.ª semana. Visibilidade em respostas de IA estável: 8/22 nos prompts fixos, como a 2 nov (proxy).)_
+_(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva sem hiato. Dois itens para DONE por decisão de posicionamento (convergência de entidade de 24 ago; meta de /sobre de 7 set). Quatro itens novos: fan-out da auditoria semanal do Tracker (P1), linha `gemini` do Tracker vs. Gemini 4 Hydrogen no AI Mode (P1), NAP Lisboa/Porto (P2), builds de produção em `ERROR` (P3). Gemini e DeepSeek voltaram a falhar por saldo. Visibilidade no proxy: 7/22 fixos (8/22 a 9 nov), sempre via Clutch/Sortlist.)_
+
+### 2026-11-16 added: MEASUREMENT: Tracker: fan-out da auditoria semanal falha ("9 de 9 lotes, Invalid body" e timeouts de 240 s)
+- **Prioridade:** P1
+- **Esforço:** 2h
+- **Origem:** auditoria semanal 2026-11-16 (`get_runtime_errors`, `destaque-ai-tracker`, 7 dias)
+- **Estado:** TODO
+- **Descrição:** `[weekly-audit] fan-out` em `/api/inngest`, 6 ocorrências de 11 nov 07:56 a 16 nov 07:15 UTC, 1 utilizador. Três assinaturas: "9 de 9 lotes sem sucesso" com `Invalid body` em todos (falha de contrato, não de tempo), "2 de 4 lotes" e "1 de 8 lotes" sem resposta em 240 s ("o lote continua a correr e grava por si"). Se o `Invalid body` se repetir, uma auditoria semanal inteira fica sem dados.
+- **Acção:** Ver o payload que o fan-out envia a cada lote depois do último deploy do Tracker; separar no estado da auditoria "lote a correr" de "lote falhado" para que os timeouts de 240 s não contem como falha.
+- **Verificação:** zero `Invalid body` e nenhuma auditoria semanal com 100% de lotes falhados numa janela de 7 dias.
+
+### 2026-11-16 added: MEASUREMENT: Tracker mede `gemini-3.5-flash`; o AI Mode corre Gemini 4 Hydrogen desde 12 nov
+- **Prioridade:** P1
+- **Esforço:** 1h (decisão e alteração) + verificação de `max_output_tokens`
+- **Origem:** news-feed 2026-11-13 (alerta fundador) e 2026-11-16; auditoria semanal 2026-11-16 (erros Gemini ainda em `gemini-3.5-flash`)
+- **Estado:** TODO
+- **Descrição:** A linha `gemini` de `## Tracker buyer defaults` (`models.md`) ficou igual de propósito; o Deck Builder já passou a `gemini-4-hydrogen`. O comprador português vê no AI Mode um modelo com corte de março de 2026; o Tracker mede um com corte herdado de janeiro de 2025. O prazo de decisão indicado pelo daily-agent era hoje, 16 nov.
+- **Acção:** Decisão do fundador. Se mudar: conferir `max_output_tokens` (o Hydrogen conta o pensamento na saída), repor saldo Gemini antes, e marcar a data da troca na série, que deve começar depois do fim do core update (~24 nov).
+- **Verificação:** erros e leituras do Tracker com `gemini-4-hydrogen` a partir da data decidida; nota de troca visível na série.
+
+### 2026-11-16 added: ENTITY: NAP: o texto diz "sedes em Lisboa e no Porto"; o JSON-LD só declara Lisboa
+- **Prioridade:** P2
+- **Esforço:** 30min
+- **Origem:** auditoria semanal 2026-11-16 (`llms.txt` e corpo da homepage vs. `addressLocality` no JSON-LD)
+- **Estado:** TODO
+- **Descrição:** Desde o reposicionamento (#237), o `llms.txt` e a homepage dizem "tem sedes em Lisboa e no Porto". O JSON-LD tem `addressLocality: Lisboa` duas vezes e nenhum `Place` no Porto. Clutch e Sortlist, a única fonte das menções, dizem Lisboa. Duas versões do mesmo facto enfraquecem a entidade, e V1 já fala em "agências em Lisboa e no Porto" sem nomear ninguém.
+- **Acção:** Se há escritório no Porto, acrescentar `Place`/`PostalAddress` ao `Organization` e actualizar os directórios; se não há, trocar "sedes" por "clientes em Lisboa e no Porto" ou equivalente.
+- **Verificação:** texto, JSON-LD e perfis de directório com a mesma lista de moradas.
+
+### 2026-11-16 added: TECH: 4 builds de produção em ERROR em 20 (9 a 16 nov), todos repetidos com sucesso
+- **Prioridade:** P3
+- **Esforço:** 30min
+- **Origem:** auditoria semanal 2026-11-16 (`list_deployments`, `destaque-ai`, produção)
+- **Estado:** TODO
+- **Descrição:** #236, #237, #243 e #247 falharam o primeiro build e passaram na segunda tentativa, com o mesmo commit. Sem impacto em produção (o deploy anterior manteve-se), mas a taxa de 20% sugere um passo de build instável.
+- **Acção:** Ler o log de um dos builds falhados; se for timeout ou rede, ignorar; se for erro de código intermitente, corrigir.
+- **Verificação:** zero builds `ERROR` com o mesmo commit a passar na repetição, numa semana com 5+ deploys.
 
 ### 2026-11-09 added: MEASUREMENT: Tracker: integração Microsoft Advertising falha no OAuth (IdentityTypeMismatch, 5 nov)
 - **Prioridade:** P3
@@ -89,6 +125,7 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Verificação:** avaliações visíveis; destaque.ai ou o site próprio como fonte em pelo menos um prompt GD.
 - **Notes:** A subida de 3 para 9 pode ser em parte ruído do proxy; reavaliar a 9 nov. Alinha com o item de convergência de entidade de 24 ago.
 
+- **Atualização 2026-11-16:** 7/32 na síntese, todas via Clutch (GD3, V3, V5, GD8) ou Sortlist (GD4, GD5, V2, GD8); 0 páginas próprias em 36 pesquisas, incluindo as 6 páginas novas de 13 nov. O perfil Sortlist, fonte de 4 menções, não está no `Organization.sameAs`: acrescentar.
 ### 2026-11-02 added: MEASUREMENT: Tracker: Supabase Auth com 429 em /middleware (6 ocorrências, 2 nov)
 - **Prioridade:** P3
 - **Esforço:** 30min
@@ -122,6 +159,7 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Atualização 2026-11-02:** 2.ª semana. DataForSEO `Internal SE Server Error` 172, `google_aio` 139 e `google_ai_mode` 30 sem fallback, última 2 nov 07:07 UTC; DeepSeek `402` última a 29 out; Mistral `429` 71.
 - **Atualização 2026-11-09:** 3.ª semana. DataForSEO `Internal SE Server Error` 187 ocorrências (10 utilizadores), última 9 nov 07:07 UTC; SerpApi `run out of searches` (`copilot` 30, última 3 nov). **DeepSeek e Gemini `402` ausentes da janela** (últimas leituras 29 out): candidatos a DONE na próxima semana. Mistral `503`/`429` 85; Grok `429` de capacidade 1; timeouts de 300 s 66.
 
+- **Atualização 2026-11-16:** 4.ª semana. Os dois candidatos a DONE caíram: Gemini `402 prepayment credits are depleted` 12+12 (última 10 nov 17:30 UTC); DeepSeek `429` de concorrência "based on your remaining balance. Please top up" em ~30 grupos (14 nov 15:07 e 15:25 UTC). DataForSEO `Internal SE Server Error` 248 (15 utilizadores), última hoje 07:15 UTC; `google_aio/dataforseo` abortado 52; `copilot/serpapi` abortado 4. Mistral 0 (85 a 9 nov). Mantém P1; o alerta de saldo único continua por fazer.
 ### 2026-10-26 added: MEASUREMENT: Stripe webhook com assinatura recusada (1 ocorrência, 23 out)
 - **Prioridade:** P3
 - **Esforço:** 30min
@@ -143,6 +181,7 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Notes:** O número de URLs só subiu de 132 para 133 desde 12 out.
 - **Atualização 2026-11-02:** 3.ª semana: `/radar` 200 (466.320 B, 2 blocos JSON-LD), ainda fora do sitemap e do `llms.txt`; `/en/radar` 404.
 
+- **Atualização 2026-11-16:** 5.ª semana. Sitemap 148 URLs (lastmod 13 nov) e `llms.txt` 43.236 B, ambos refeitos esta semana, ambos sem `/radar`; `/en/radar` 404. O `/radar` pesa agora 1.072.517 B.
 ### 2026-10-19 added: CONTENT: Lacunas PT-PT sem fonte com dados próprios (GP2, GP3, GP5, GP7-9, FS4, FS7, DC5, LR3, PC4)
 - **Prioridade:** P2
 - **Esforço:** 1 semana (por peça: 1-2 dias)
@@ -153,6 +192,7 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Verificação:** repetir os prompts na mesma composição; destaque.ai como fonte (não só Sortlist) em pelo menos um.
 - **Notes:** Extende o item de 12 out (FS2/FS3/GE4/GP7-9); mantém-se um item de conteúdo contínuo, não bloqueante.
 
+- **Atualização 2026-11-16:** `/geo-fintech-portugal` (V4, LR3) e `/porque-a-empresa-nao-aparece-no-google` publicadas a 13 nov, com `Article` e autor nomeado. V4 continua sem destaque.ai no proxy (3 dias depois; o motor lê "GEO" como geotecnia). GP1-9 0/9 e 0 domínios `.pt` pela sexta semana. Re-testar depois de ~24 nov (fim do core update).
 ### 2026-10-12 added: MEASUREMENT: Tracker: Perplexity sonar-pro com 402 (crédito) além dos 429
 - **Prioridade:** P1
 - **Esforço:** 30min
@@ -180,6 +220,7 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Ação:** artigos curtos com autor nomeado e dados do Periscopy sobre robots.txt de crawlers de IA, relatório AI Performance do Bing e perguntas a fazer a um consultor GEO.
 - **Verificação:** repetir FS2, FS3, GE4, GP7-9 e contar citações do domínio próprio.
 
+- **Atualização 2026-11-16:** FS3 coberto por `/blog/relatorio-ai-performance-bing` (#248, 13 nov); por medir (FS3 não estava na rotação desta semana). FS2, GE4 e GP7-9 continuam sem peça.
 ### 2026-10-05 added: STRATEGIC/ENTITY: única pegada em respostas de IA é o perfil Sortlist
 - **Prioridade:** P1
 - **Esforço:** 1 dia
@@ -378,26 +419,6 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Ação:** Confirmar se destaque.ia.br é uma marca registada ou apenas um domínio ativo; avaliar se vale a pena reforçar a distinção (ex. mencionar explicitamente "Lisboa, Portugal" logo no primeiro parágrafo EN, já presente parcialmente).
 - **Verificação:** Vigiar se a confusão persiste ou se agrava nas próximas execuções do teste de entidade.
 - **Notes:** Baixa urgência por agora: vigilância, não crise. **Atualização 2026-09-14:** destaque.ia.br continua ativo (posicionamento agora explicitamente automatizado: "sem trabalho manual", 8-20+ páginas/mês, reescrita automática se não estiver top-20 ao fim de 3 semanas). Superfície alargada: mais dois nomes no mesmo espaço semântico encontrados esta semana: "Destaque IA: Soluções Inteligentes" (`destaqueia.com.br`) e uma página do Facebook "Destaque. IA | Porto". Sem evidência de confusão real já ocorrida; continua vigilância, não crise.
-
-### 2026-08-24 added: ENTITY/STRATEGIC: Convergência da descrição de entidade por motor: baseline dia 1, "consultoria" não "software"
-- **Prioridade:** P1
-- **Esforço:** variável: depende se o título/schema já corrigido hoje for suficiente ou se precisa de reforço
-- **Origem:** auditoria semanal 2026-08-24 (novo teste per `routines/destaque-ai-self-audit-weekly.md`, métrica introduzida esta semana)
-- **Estado:** TODO
-- **Descrição:** Horas depois de o founder corrigir o título por omissão do site (de "com método" para "software de visibilidade em IA", em resposta a uma AI Overview da Google que descrevia destaque.ai como "consultoria"), o primeiro teste desta métrica nova confirma o mesmo problema em Claude augmented: PT e EN classificam destaque.ai como "consultoria"/"consultancy", não como empresa de software; a versão EN nem sequer menciona o Visibility Tracker.
-- **Ação:** Acompanhar semana a semana (a correção de hoje ainda não tinha tido tempo de propagar no momento deste teste: esperado no dia 1). Se "consultoria" persistir para além de 2-3 semanas, investigar se é preciso reforçar além do título (`Organization.@type`, descrição do schema, primeiro parágrafo visível de cada página).
-- **Verificação:** Próximas 2-3 execuções mostram convergência crescente para "empresa de software" nas respostas testadas.
-- **Notes:** Ponto de partida da série, não uma falha: mas cross-valida de forma independente o problema que o founder já tinha visto em produção no mesmo dia.
-
-### 2026-09-07 added: CONTENT: Meta description de /sobre não reforça "empresa de software"
-- **Prioridade:** P3
-- **Esforço:** 15-30min
-- **Origem:** auditoria semanal 2026-09-07 (fetch direto a `/sobre`)
-- **Estado:** TODO
-- **Descrição:** A meta description de `/sobre` diz "Operação especializada em Generative Engine Optimization": não está errada, mas também não usa "empresa de software", a formulação já consistente na homepage, no `llms.txt` PT e no JSON-LD da própria página `/sobre` (`Organization.description`, `WebPage.description`). Inconsistência menor, mas no mesmo eixo do achado maior desta semana (finding 2, `llms.txt` `/en/about`).
-- **Ação:** Atualizar a meta description de `/sobre` para reflectir "empresa de software" ou formulação equivalente, alinhada com o resto do site.
-- **Verificação:** Meta description de `/sobre` consistente com a homepage e o JSON-LD da mesma página.
-- **Notes:** Baixo risco, baixa urgência: item de higiene, não de correção de erro. **Atualização 2026-09-14:** 2ª semana em aberto, confirmado sem alteração por fetch direto.
 
 ### 2026-08-03 added: MEASUREMENT: Tracker: quota SerpApi esgotada + erro de campo DataForSEO, 3 motores degradados agora
 - **Prioridade:** P1 (subida de P2, ver actualização 2026-09-21: volume triplicou e apareceu uma segunda assinatura relacionada)
@@ -614,6 +635,28 @@ _(Atualizado 9 novembro 2026: décima sexta execução, nona consecutiva sem hia
 - **Notes:** Expectável para empresa fundada em 2025: horizonte 3-4, não urgente. **Atualização 2026-09-14: primeira citação de imprensa PT verificável em 9 semanas de tentativas, ainda que não Tier-1.** A Marketeer construiu pelo menos dois artigos à volta do estudo próprio "mapa das empresas de Portugal" (marketeer.sapo.pt/as-marcas-portuguesas-que-a-ia-nomeia-e-as-que-realmente-recomenda/ e um segundo artigo relacionado), citando a distinção "nomeada" vs. "escolhida" (share of recommendation) por nome. Marketeer não é uma das seis publicações Tier-1 desta metodologia (essas continuam em zero), mas é prova real de que os estudos próprios geram cobertura de terceiros verificável. Data exata não confirmada de forma independente (a "3 de setembro" citada num commit interno não bate com o texto do artigo, que só situa o estudo subjacente em "final de agosto"). Ação recomendada: identificar 2-3 publicações adicionais de marketing/negócios para pitch direto usando os estudos como gancho, e confirmar a data exata da Marketeer.
 
 ## Items DONE (últimas 4 semanas, por rastreabilidade)
+
+### 2026-08-24 added: ENTITY/STRATEGIC: Convergência da descrição de entidade por motor: baseline dia 1, "consultoria" não "software"
+- **Prioridade:** P1
+- **Esforço:** variável: depende se o título/schema já corrigido hoje for suficiente ou se precisa de reforço
+- **Origem:** auditoria semanal 2026-08-24 (novo teste per `routines/destaque-ai-self-audit-weekly.md`, métrica introduzida esta semana)
+- **Estado:** DONE (2026-11-16), por decisão
+- **Descrição:** Horas depois de o founder corrigir o título por omissão do site (de "com método" para "software de visibilidade em IA", em resposta a uma AI Overview da Google que descrevia destaque.ai como "consultoria"), o primeiro teste desta métrica nova confirma o mesmo problema em Claude augmented: PT e EN classificam destaque.ai como "consultoria"/"consultancy", não como empresa de software; a versão EN nem sequer menciona o Visibility Tracker.
+- **Ação:** Acompanhar semana a semana (a correção de hoje ainda não tinha tido tempo de propagar no momento deste teste: esperado no dia 1). Se "consultoria" persistir para além de 2-3 semanas, investigar se é preciso reforçar além do título (`Organization.@type`, descrição do schema, primeiro parágrafo visível de cada página).
+- **Verificação:** Próximas 2-3 execuções mostram convergência crescente para "empresa de software" nas respostas testadas.
+- **Notes:** Ponto de partida da série, não uma falha: mas cross-valida de forma independente o problema que o founder já tinha visto em produção no mesmo dia.
+- **Atualização 2026-11-16: DONE por decisão.** A 10 nov o fundador decidiu que a destaque.ai é a agência e o Periscopy o software (#237, #238). Título da homepage "Agência SEO e de visibilidade no ChatGPT · destaque.ai"; `llms.txt` "Tech Marketing Agency portuguesa, de consultoria e software". A descrição dos motores ("consultoria de GEO em Lisboa") deixa de contradizer o site. A métrica de convergência deixa de ter objecto.
+
+### 2026-09-07 added: CONTENT: Meta description de /sobre não reforça "empresa de software"
+- **Prioridade:** P3
+- **Esforço:** 15-30min
+- **Origem:** auditoria semanal 2026-09-07 (fetch direto a `/sobre`)
+- **Estado:** DONE (2026-11-16), obsoleto
+- **Descrição:** A meta description de `/sobre` diz "Operação especializada em Generative Engine Optimization": não está errada, mas também não usa "empresa de software", a formulação já consistente na homepage, no `llms.txt` PT e no JSON-LD da própria página `/sobre` (`Organization.description`, `WebPage.description`). Inconsistência menor, mas no mesmo eixo do achado maior desta semana (finding 2, `llms.txt` `/en/about`).
+- **Ação:** Atualizar a meta description de `/sobre` para reflectir "empresa de software" ou formulação equivalente, alinhada com o resto do site.
+- **Verificação:** Meta description de `/sobre` consistente com a homepage e o JSON-LD da mesma página.
+- **Notes:** Baixo risco, baixa urgência: item de higiene, não de correção de erro. **Atualização 2026-09-14:** 2ª semana em aberto, confirmado sem alteração por fetch direto.
+- **Atualização 2026-11-16:** obsoleto. O alvo "empresa de software" foi abandonado pela decisão de posicionamento de 10 nov (#238 reescreveu o Sobre em PT e EN).
 
 ### 2026-10-05 added: MEASUREMENT: Tracker: crédito da API Anthropic esgotado (Claude), lotes de 5 e 12 out
 - **Prioridade:** P0 (REPETIDO a 26 out: quarta semana com registo)

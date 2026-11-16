@@ -11,6 +11,41 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-11-16: Décima sétima execução (vs. 9 nov; décima semana consecutiva sem hiato)
+
+**Score global:** 74,2/100 (74 arredondado). **Δ vs. 9 nov: +0,4.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 90 | +1 |
+| Performance / CWV | 65 | 0 |
+| SEO On-Page | 95 | 0 |
+| Schema | 94 | +2 |
+| Imagens | 76 | 0 |
+| GEO técnica | 94 | +1 |
+| Conteúdo & topical authority | 98 | +1 |
+| Entidade | 80 | +1 |
+| Autoridade & PR | 52 | 0 |
+| Social | 37 | 0 |
+| E-E-A-T | 73 | +2 |
+| Medição | 36 | −4 |
+
+**Items movidos para DONE:** 2, ambos fechados por decisão do fundador de 10 nov (destaque.ai é a agência, o Periscopy é o software; #237, #238): ENTITY/STRATEGIC "convergência da descrição de entidade: consultoria, não software" (24 ago) e CONTENT "meta description de /sobre não reforça empresa de software" (7 set). **Candidatos que caíram:** Gemini (`402` a 10 nov) e DeepSeek (`429` por saldo a 14 nov) voltam a falhar; o item de 26 out continua aberto.
+
+**Items novos:** 4: MEASUREMENT P1 (fan-out da auditoria semanal do Tracker falha: "9 de 9 lotes, Invalid body" e timeouts de 240 s, 11 a 16 nov), MEASUREMENT P1 (o Tracker mede `gemini-3.5-flash`; o AI Mode corre Gemini 4 Hydrogen desde 12 nov; decisão do fundador com prazo hoje), ENTITY P2 (NAP: "sedes em Lisboa e no Porto" no texto e no `llms.txt`, só Lisboa no JSON-LD), TECH P3 (4 builds de produção em `ERROR` em 20, todos repetidos com sucesso). **Actualizados:** conteúdo fintech (V4/LR3) e Bing AI Performance (FS3) publicados, por medir; `/radar` fora do sitemap (5.ª semana); DataForSEO/SerpApi (4.ª semana).
+
+**Mudanças materiais:**
+- Site: 16 deploys `READY` (#233–#248) e 4 `ERROR` repetidos. Reposicionamento "Tech Marketing Agency"; título "Agência SEO e de visibilidade no ChatGPT · destaque.ai"; `/agencia-geo` `301` → `/consultoria-geo-portugal`; 5 páginas novas com `Article` e autor `#fundador`; estudo Black Friday com `Dataset`. Sitemap 136 → 148 (`lastmod` 13 nov); `llms.txt` 38.023 → 43.236 B; TTFB mediana 215 → 395 ms (duas corridas frias, edge `iad1`); HTML 153.349 → 159.294 B.
+- Prompt-test (32 prompts + LR1, LR2 + entidade + imprensa, proxy `WebSearch`, 08:11 UTC): 7/32 (22%); fixos 7/22 (32%) contra 8/22. GD 4/8 (GD4 volta; GD6 e GD7 saem), V 3/5 (V3 entra; V1 passa a só ligação), GP 0/9, LR 0/2, rotativos 0/10 (GE1, GE3, GE5, DC3, DC5, FS1, FS4, FS7, PC2, PC4). Fonte sempre Clutch/Sortlist; nenhuma página própria em 36 pesquisas. Sem menção negativa ou alucinada; reservas "é recente" e "consultoria pequena". Protocolo de crise não accionado. Desambiguação: "GEO" lido como geografia (GD6, V4, LR1) e "AEO" como alfândega (LR2).
+- Medição: Gemini `402` 24, DeepSeek `429` por saldo ~30 grupos, DataForSEO 248 (última hoje 07:15 UTC), fan-out semanal 6; Mistral 0 (85 a 9 nov).
+- Mercado: Gemini 4 Hydrogen default do AI Mode (12 nov); core update de novembro em curso (10 a ~24 nov), o que contamina qualquer leitura de efeito esta semana e a próxima.
+- models.md: sem refresh (entradas de 13 e 16 nov).
+- Não verificável: PSI (429), Wikidata para destaque.ai (limite de pedidos; Periscopy sem item), Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-11-09: Décima sexta execução (vs. 2 nov; nona semana consecutiva sem hiato)
 
 **Score global:** 73,8/100 (74 arredondado). **Δ vs. 2 nov: +0,3.**
