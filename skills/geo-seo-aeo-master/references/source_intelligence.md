@@ -179,6 +179,93 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-11-16 (todas as auditorias analisadas da semana: marcas e radares setoriais)
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
+mock e sem sentinela, das semanas de 9 e 16 Nov. Entre 347 e 394 respostas
+por motor na semana de 16 Nov. Densidade em domínios DISTINTOS por
+resposta, como na entrada anterior. **A semana de 9 Nov foi recontada**:
+depois da entrada anterior fecharam mais auditorias dessa semana,
+por isso as bases aqui (300 a 370) são maiores do que as de lá (222 a
+290). Os dois estudos de consumo ainda por analisar (Black Friday e
+comércio local) ficam de fora. Os domínios do aviso de cookies
+(`onetrust.com`, `cookiepedia.co.uk`) ficam fora.
+
+**A composição mudou outra vez.** Pesam mais as perguntas de saúde privada
+e de finanças pessoais, e é daí que vêm os domínios que sobem em quase
+todos os motores (`literaciafinanceira.pt`, `clientebancario.bportugal.pt`,
+`bportugal.pt`, sites de grupos hospitalares). Não se lêem como mudança de
+via dos motores.
+
+### Densidade de fontes por resposta (domínios distintos)
+
+| Motor | 9 Nov | 16 Nov | Sem fonte nenhuma, 16 Nov |
+|---|---|---|---|
+| Grok (aplicação) | 34,3 | 35,6 | 1 de 394 |
+| Meta AI | 13,6 | 15,5 | 57 de 394 |
+| Claude (aplicação) | 10,1 | 12,4 | 85 de 394 |
+| Copilot | 8,5 | 8,1 | 32 de 394 |
+| ChatGPT (aplicação) | 8,9 | 7,7 | 35 de 394 |
+| Perplexity (aplicação) | 9,5 | 6,5 | 0 de 394 |
+| AI Overviews | 4,7 | 4,1 | 50 de 347 |
+| AI Mode | 3,8 | 3,7 | 8 de 362 |
+| Gemini (aplicação) | 1,1 | 3,5 | 108 de 394 |
+
+**Gemini na aplicação volta a ter fontes legíveis.** Respostas sem fonte
+na recolha da aplicação: 226 de 265 a 9 Nov, 108 de 394 a 16 Nov. É a
+primeira semana em mais de um mês em que a maioria das respostas traz
+fontes. Uma semana só, e o mais provável é ser o extrator a recuperar e
+não o motor a mudar: os números do Gemini desta semana não se comparam
+com as anteriores. No que se vê, o `reddit.com` é o domínio mais citado
+(48 de 394), seguido de fontes institucionais de finanças.
+
+**Perplexity desce de 9,5 para 6,5 domínios por resposta**, sem respostas
+sem fonte (0 de 394). Uma semana só e com a amostra a mudar: fica anotado.
+
+**Artefacto da interface: `mapbox.com`.** A página inicial do Mapbox
+(atribuição do mapa nas respostas locais) entra como fonte no ChatGPT (75
+de 394 respostas analisadas) e no Perplexity (28). Cresce com as perguntas
+locais: em todas as respostas gravadas, incluindo as por analisar, passou
+de 23 e 7 respostas a 19 Out para 302 e 196 a 16 Nov. Não é uma fonte que
+o motor escolheu e fica fora das tabelas abaixo, como o aviso de cookies.
+
+### Que tipo de fonte domina, por motor
+
+| Motor | Tipo dominante, 16 Nov | Exemplos (respostas) |
+|---|---|---|
+| Grok | perfis profissionais, imprensa económica e defesa do consumidor | pt.linkedin.com 153, deco.proteste.pt 114, jornaleconomico.sapo.pt 92, eco.sapo.pt 86, sapo.pt 80 (de 394) |
+| Claude | imprensa económica e generalista, reclamações | eco.sapo.pt 109, portaldaqueixa.com 95, deco.proteste.pt 77, observador.pt 69, jornaleconomico.sapo.pt 63 (de 394) |
+| ChatGPT | defesa do consumidor e fontes oficiais | deco.proteste.pt 64, clientebancario.bportugal.pt 53, diariodarepublica.pt 47, flowup.agency 27, marcarecomendada.pt 20 (de 394) |
+| Perplexity | defesa do consumidor e fontes oficiais de finanças | deco.proteste.pt 50, clientebancario.bportugal.pt 23, literaciafinanceira.pt 22, site próprio do cliente 21, santander.pt 19 (de 394) |
+| Copilot | fontes oficiais de finanças, consumo e agências | clientebancario.bportugal.pt 45, deco.proteste.pt 31, portugalseo.pt 22, site próprio do cliente 22, youtube.com 20 (de 394) |
+| Meta AI | literacia financeira, comparadores e diretórios | literaciafinanceira.pt 49, site próprio do cliente 34, clientebancario.bportugal.pt 31, goodfirms.co 26, comparaja.pt 26 (de 394) |
+| AI Overviews | UGC e vídeo | facebook.com 52, instagram.com 52, reddit.com 44, youtube.com 39, deco.proteste.pt 22 (de 347) |
+| AI Mode | fórum, consumo e fontes oficiais | reddit.com 38, deco.proteste.pt 30, bportugal.pt 29, site próprio do cliente 26 (de 362) |
+| Gemini | fórum e literacia financeira | reddit.com 48, literaciafinanceira.pt 26, site próprio do cliente 23, bportugal.pt 15 (de 394) |
+
+**O `google.com` do AI Overviews está em 217 de 347 respostas** (90 a 9
+Nov) e o do AI Mode em 40. Continua a ser o redireccionador do Google com
+destino opaco, não uma fonte; o salto acompanha a semana e não se lê como
+mudança do motor.
+
+**Confirmações dos playbooks, quinta semana seguida:** o AI Overviews
+continua o motor mais UGC (Facebook, Instagram, Reddit e YouTube no
+topo); o Grok mantém o LinkedIn e a imprensa económica portuguesa no
+topo; o `reddit.com` continua entre os mais citados do Perplexity, mas
+desce para 15 respostas e sai do primeiro lugar, que passa para a
+`deco.proteste.pt`. Com a amostra de finanças, as fontes oficiais
+(Banco de Portugal, Diário da República) entram no topo de sete dos nove
+motores: os motores vão à fonte reguladora quando a pergunta é sobre regras.
+
+**A `deco.proteste.pt` continua no topo de sete dos nove motores**, de 22
+respostas (AI Overviews) a 114 (Grok), agora com uma amostra sem as
+perguntas de Black Friday. Isso reforça que a escolha é do tipo de
+pergunta (consumo, direitos) e não de um estudo só.
+
+**Fecho da observação de 9 Nov:** o site próprio do cliente volta ao topo
+do Perplexity, do Copilot, do Meta AI, do AI Mode e do Gemini. A saída do
+topo na semana anterior era diluição pela amostra, como se previa.
+
 ## 2026-11-09 (todas as auditorias da semana: marcas, radares setoriais e um estudo de consumo)
 
 Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
