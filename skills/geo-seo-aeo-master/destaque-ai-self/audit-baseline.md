@@ -154,9 +154,9 @@ Sem urgência nova inventada: nenhum gatilho de watch disparou para o mercado po
 | Repor saldo Gemini e DeepSeek e activar recarga automática; um só alerta de saldo para os cinco fornecedores | Medição | 1 h | Fundador |
 | Diagnosticar o fan-out da auditoria semanal (`Invalid body`, 240 s) | Medição | 2 h | Fundador |
 | Decidir a linha `gemini` do Tracker (`gemini-4-hydrogen`), conferir `max_output_tokens`, começar a série depois de ~24 nov | Medição | 1 h | Fundador |
-| `/radar` no sitemap e no `llms.txt`; decidir `/en/radar` | Técnico | 1 h | — |
+| `/radar` no sitemap e no `llms.txt`; decidir `/en/radar` | Técnico | 1 h | Não precisa |
 | Alinhar o NAP: `Place` do Porto no JSON-LD, ou retirar "Porto" do texto | Entidade | 30 min | Fundador |
-| Acrescentar o perfil Sortlist ao `Organization.sameAs` | Entidade | 15 min | — |
+| Acrescentar o perfil Sortlist ao `Organization.sameAs` | Entidade | 15 min | Não precisa |
 
 **H2 (semana 3-6)**
 - Peças PT-PT com dados próprios e autor nomeado para GP1, GP2, GP3 e GP5 (ChatGPT, AI Overviews e tráfego, AI Mode, concorrente citado), e "como avaliar uma agência de GEO" (GE1, GE5). Primeira linha com a definição "GEO (Generative Engine Optimization)", para desfazer a leitura geográfica.
