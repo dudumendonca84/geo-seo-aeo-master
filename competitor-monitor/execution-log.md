@@ -187,3 +187,11 @@ Uma linha por execução semanal: data, dimensões cobertas, candidatos descober
 - Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Salto de destaque.ai de 1/5 para 5/5 coincide com recolha bem menos ruidosa (Prompts 1, 3 e 5 devolveram entidades PT, ao contrário das 4 semanas anteriores); não é prova de ganho real, ler com cuidado. (3) Pricing não reverificado; sem alterações novas além de DevCommX/revaliQ vistos nos resultados.
 - Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
 - Report: competitor-monitor/reports/2026-11-10.md
+
+## 2026-11-17
+- Dimensões cobertas: D0 (descoberta), D1 (5 prompts fixos, Claude augmented /5), D2, D3, D4.
+- Candidatos descobertos: TEAM LEWIS Portugal (adjacent_consultancy) adicionado. Rejeitados: Percepto Digital (sediada em Telavive, sem operação PT), Republica45 (só artigo de mercado, sem serviço GEO encontrado — fecha o "não avaliado" de 11-10), LLM Pulse (ferramenta, localização PT não confirmada). Mantêm-se fora: Claneo, DevCommX, AppLabx. Mercado passa a 27 concorrentes rastreados.
+- SoV history: 4 linhas adicionadas (destaque.ai 4/5, AISO Hub 2/5, Marketing Gabriel 2/5, Bluesoft 2/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Prompt 1 voltou a ruído de homónimos (geologia, informação geográfica); só Claneo citada. (3) Pesquisa por LLMscope (Helder Mesquita) sem resultados — não confirma nem desmente o produto registado em 09-22. (4) Preço 3HASH €150–€900 lido num artigo de blog via resultado de pesquisa; data do artigo não confirmada, registado como primeira observação do tecto, não como mudança de preço.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-11-17.md
