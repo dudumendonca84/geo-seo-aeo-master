@@ -392,7 +392,7 @@ modelos na mão, tem que ser automático"*):
 |---|---|---|---|---|
 | `chatgpt` | `gpt-5.6-luna` | ChatGPT Free/Go default | `gpt-5.6-luna` |: (see the note below: this row said `gpt-5.5-instant` until 11 Sep 2026, and OpenAI no longer serves it) |
 | `claude` | `claude-sonnet-5` | Claude Free/Pro default | `claude-sonnet-5` |: |
-| `gemini` | `gemini-3.5-flash` | AI Overviews / AI Mode routing | `gemini-3.5-flash` |: |
+| `gemini` | `gemini-4-hydrogen` | AI Mode default (desde 12 Nov 2026) | `gemini-4-hydrogen` |: (era `gemini-3.5-flash` até 17 Nov 2026; o founder mandou trocar: é o que a aplicação Gemini e o AI Mode mostram esta semana. O Tracker sobe o tecto de saída para 16384 e o prazo para 240 s antes de ler esta linha) |
 | `grok` | `grok-4.3` | grok.com default | `grok-4.3` |: |
 | `deepseek` | `deepseek-v4-flash` | chat.deepseek.com default | `deepseek-v4-flash` |: |
 | `perplexity` | `sonar-pro` | Perplexity default answer engine | `sonar-pro` |: |
