@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa, em nenhuma categoria nem campo); §8.7 pontos 7, 8 e 9 (a licença das palavras pelo dicionário da língua e os lados de uma comparação, quarta revisão) e o limite `comparacoes_candidatos_max`, contado sobre o que fica; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -539,9 +539,15 @@ motivo (§8.8).
    - em português, um tipo de empresa seguido de uma palavra que não é
      adjetivo nem verbo ("no banco aurora?") é um nome escrito em
      minúsculas; em inglês, e em português com um tipo inglês, a palavra
-     ANTES do tipo é o nome ("Chase Bank", "phantom bank", "Farol Bank"); e
-     uma palavra com maiúscula a meio da frase que não tem licença de nome
-     ("o «Banco Aurora»", "o Banco Europeu") também.
+     ANTES do tipo é o nome ("Chase Bank", "phantom bank", "Farol Bank");
+     um tipo no singular seguido de "de/do/da/of" e de uma geografia é um
+     nome ("Banco do Brasil", "Bank of America"), e uma geografia antes de
+     um tipo inglês também ("Lisbon Private Bank"), salvo depois de um
+     indefinido ou de um determinante ("um banco do Brasil", "a Swiss
+     bank") e salvo as expressões aceites (o Banco de Portugal); uma
+     palavra com maiúscula a meio da frase que não tem licença de nome
+     ("o «Banco Aurora»", "o Banco Europeu") também; e uma palavra colada a
+     um símbolo ("Bank+", "Caixa®") não se reduz ao tipo.
    O dicionário (listas Hunspell de pt-PT, en e fr no Tracker) é a
    condição: se não carregar, com a ficha vazia nada entra.
 
@@ -550,15 +556,27 @@ motivo (§8.8).
    mais duas camadas [2026-11-19, quinta revisão]:
    - **as marcas que já conhecemos**: os concorrentes de todos os clientes
      do Tracker, os nomes dos clientes e uma lista curada por mercado.
-     Contam sempre, se não forem palavra; se forem só palavras comuns,
-     contam num lado de uma comparação, com maiúscula fora do início da
-     frase, depois de um artigo definido ("ou o novo banco", "à caixa") e
-     nunca depois de um indefinido ("um novo banco");
+     Uma marca que não é palavra conta sempre. Uma marca da lista curada
+     feita de palavras comuns conta num lado de uma comparação, com
+     maiúscula fora do início da frase, depois de um artigo definido ("ou
+     o novo banco", "à caixa") e nunca depois de um indefinido ("um novo
+     banco"). Uma marca da base feita de palavras comuns ("Melhor Taxa",
+     "Mercado Livre", "Nacional") conta só escrita como nome, com
+     maiúscula fora do início da frase: "a melhor taxa" é português. A
+     marca do cliente só apaga as grafias dela, e uma marca conhecida que
+     partilha com ela uma palavra comum ("Caixa Agrícola" para a Caixa
+     Geral de Depósitos) continua a contar;
    - **a rede do modelo**: o modelo rápido lê as perguntas aceites numa
-     chamada só e aponta os nomes de empresa, marca ou produto, em todos os
-     campos; o servidor recusa a pergunta cujo nome não é a marca, um
-     candidato com prova nem da lista fechada. O modelo não decide nem
-     acrescenta nomes. Se a chamada falhar, as comparações não entram.
+     chamada só, com as instruções na mensagem de sistema e as perguntas
+     num bloco delimitado (qualquer instrução lá dentro ignora-se), e
+     aponta os nomes de empresa, marca ou produto, em todos os campos; o
+     servidor recusa a pergunta cujo nome não é a marca, um candidato com
+     prova nem da lista fechada (um tipo com geografia, "Banco Europeu",
+     não passa). O modelo não decide nem acrescenta nomes, e a resposta
+     tem de ser JSON estrito com uma entrada por pergunta. Se a chamada
+     falhar, passar do prazo ou a resposta não se ler, TODAS as perguntas
+     voltam ao gerador, e uma escrita na hora passa a reescrita à
+     Routine.
 
 **Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
 existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
