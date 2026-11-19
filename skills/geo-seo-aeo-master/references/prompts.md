@@ -357,28 +357,10 @@ não é `1`, e um com dezenas não é `5`.
   pesquisas por mês", "algumas centenas") e a tendência quando mexe ("a
   subir nos últimos três meses"). Diz-se "nos motores de busca" e nunca o
   nome de um fornecedor, de uma ferramenta ou de um motor em particular. Os
-  concorrentes que se nomeiam são os da lista do cliente, e nenhum outro.
+  concorrentes que se nomeiam são os da lista do cliente, e nenhum outro
+  (salvo a exceção da ficha vazia, abaixo).
   Específico à marca, à categoria e à fase: uma frase que serviria a
   qualquer pergunta não é um racional e volta para trás.
-- **Exceção: a ficha de concorrentes vazia** [2026-11-19]. Um prospect novo
-  ainda não tem concorrentes na ficha (nascem da primeira auditoria), e o
-  founder decidiu que as perguntas de comparação se fazem na mesma
-  (*"podemos fazer comparação com concorrente sim pra causar um stress no
-  cliente"*). Quando a lista do cliente está vazia, uma `direct_comparison`
-  pode nomear um dos `voz_do_cliente.concorrentes_candidatos` (§8.9) que
-  traga prova (`evidencia` não vazia), com quatro condições:
-  1. **nunca um candidato `sem_evidencia`.** Nada prova que essa marca
-     exista no mercado do cliente, e o servidor recusa a pergunta que o
-     nomeie (§8.7, ponto 7);
-  2. **a marca está sempre na pergunta.** O §2.2 continua a valer: nunca
-     dois concorrentes nomeados sem a marca medida. E, porque nomeia a
-     marca, a pergunta vai com `branded: true` (§8.7, ponto 2);
-  3. **as comparações não passam da proporção de `direct_comparison` da
-     distribuição do §3** (8 em 30): o resto do catálogo mede a categoria
-     sem nomes;
-  4. **o racional diz que o concorrente é um candidato por confirmar** e
-     de onde veio a prova ("aparece no que se pesquisa sobre a marca", "tem
-     procura nos motores de busca"), sem o dar como concorrente confirmado.
   **O racional não afirma o que a marca oferece sem o ter nos dados
   recebidos** [2026-11-14]: uma unidade, um serviço, um programa, um preço
   ou uma morada só se dão como certos quando vêm em `voz_do_cliente.site`,
@@ -396,6 +378,30 @@ não é `1`, e um com dezenas não é `5`.
   ao lado da Norauto e diz qual compensa. A resposta mostra se a MyForce
   entra nessa comparação como opção mais barata ou como a alternativa
   menos conhecida."
+- **Exceção: a ficha de concorrentes vazia** [2026-11-19]. Um prospect novo
+  ainda não tem concorrentes na ficha (nascem da primeira auditoria), e o
+  founder decidiu que as perguntas de comparação se fazem na mesma
+  (*"podemos fazer comparação com concorrente sim pra causar um stress no
+  cliente"*). Quando a lista do cliente está vazia, uma `direct_comparison`
+  pode nomear um dos `voz_do_cliente.concorrentes_candidatos` (§8.9) que
+  traga prova (`evidencia` não vazia), com quatro condições:
+  1. **nunca um candidato `sem_evidencia`.** Nada prova que essa marca
+     exista no mercado do cliente, e o servidor recusa a pergunta que o
+     nomeie (§8.7, ponto 7);
+  2. **toda a pergunta que nomeia um candidato nomeia também a marca, em
+     qualquer categoria.** Não há pergunta só sobre o candidato, nem numa
+     `direct_comparison` nem numa genérica ("Qual o melhor banco privado:
+     [candidato] ou [outro]?" fica de fora): a ausência da marca estaria
+     garantida antes de a pergunta correr. O §2.2 continua a valer (nunca
+     dois concorrentes sem a marca), e o servidor recusa a pergunta que
+     nomeie um candidato sem a marca (§8.7, ponto 8). Porque nomeia a
+     marca, a pergunta vai com `branded: true` (§8.7, ponto 2);
+  3. **as comparações não passam da proporção de `direct_comparison` da
+     distribuição do §3** (8 em 30): o resto do catálogo mede a categoria
+     sem nomes;
+  4. **o racional diz que o concorrente é um candidato por confirmar** e
+     de onde veio a prova ("aparece no que se pesquisa sobre a marca", "tem
+     procura nos motores de busca"), sem o dar como concorrente confirmado.
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
   palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
   isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
@@ -481,6 +487,11 @@ motivo (§8.8).
    nem nas perguntas que as pessoas fazem, nem nos fóruns, nem com procura
    medida). Pode ser uma marca que não existe, e uma pergunta sobre ela
    mede uma invenção nossa.
+8. **Um concorrente candidato nomeado sem a marca**, em qualquer
+   categoria [2026-11-19]. Com a ficha vazia, um candidato só se nomeia ao
+   lado da marca (§8.4, exceção da ficha vazia): uma pergunta que fala do
+   candidato e não da marca mede o candidato, e a ausência da marca está
+   garantida antes de a pergunta correr.
 
 **Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
 existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
@@ -582,7 +593,12 @@ em duas partes, e a página inicial da marca):
   Google que o nomeia, "marca ou X" incluída), `perguntas` (o "As pessoas
   também perguntam"), `foruns` (uma conversa num fórum) e `procura`
   (procura medida acima de zero para "X" ou "marca ou X"). A proposta do
-  modelo sozinha não é prova. Todos entraram nas pesquisas "marca ou X" e
+  modelo sozinha não é prova. Um nome fraco só conta na companhia que o
+  desambigua: um nome curto (quatro letras ou menos) ou que também é
+  palavra comum ("NOS", "Mais") só ao lado da marca; um nome de uma palavra
+  ("Santander") ao lado da marca ou de uma palavra da categoria; e, nos
+  dois, o volume do nome sozinho não é prova, só o de "marca ou X".
+  `ficha_vazia` diz se a ficha estava vazia no momento da recolha. Todos entraram nas pesquisas "marca ou X" e
   na procura; nenhum entrou na ficha. Quem decide se algum é concorrente
   continua a ser o `filter_competitors` (`competitor_filtering.md`), depois
   da primeira auditoria. O que as perguntas podem fazer com eles está no
