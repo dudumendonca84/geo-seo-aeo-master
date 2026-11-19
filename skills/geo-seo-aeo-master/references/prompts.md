@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (comparações com candidatos com prova, nunca os `sem_evidencia`); §8.7 ponto 7; §8.9 documenta `temas_origem: "menu"` e `concorrentes_candidatos`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa); §8.7 pontos 7, 8 e 9 e o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -382,24 +382,32 @@ não é `1`, e um com dezenas não é `5`.
   ainda não tem concorrentes na ficha (nascem da primeira auditoria), e o
   founder decidiu que as perguntas de comparação se fazem na mesma
   (*"podemos fazer comparação com concorrente sim pra causar um stress no
-  cliente"*). Quando a lista do cliente está vazia, uma `direct_comparison`
-  pode nomear um dos `voz_do_cliente.concorrentes_candidatos` (§8.9) que
-  traga prova (`evidencia` não vazia), com quatro condições:
-  1. **nunca um candidato `sem_evidencia`.** Nada prova que essa marca
-     exista no mercado do cliente, e o servidor recusa a pergunta que o
-     nomeie (§8.7, ponto 7);
-  2. **toda a pergunta que nomeia um candidato nomeia também a marca, em
-     qualquer categoria.** Não há pergunta só sobre o candidato, nem numa
-     `direct_comparison` nem numa genérica ("Qual o melhor banco privado:
-     [candidato] ou [outro]?" fica de fora): a ausência da marca estaria
-     garantida antes de a pergunta correr. O §2.2 continua a valer (nunca
-     dois concorrentes sem a marca), e o servidor recusa a pergunta que
-     nomeie um candidato sem a marca (§8.7, ponto 8). Porque nomeia a
-     marca, a pergunta vai com `branded: true` (§8.7, ponto 2);
-  3. **as comparações não passam da proporção de `direct_comparison` da
-     distribuição do §3** (8 em 30): o resto do catálogo mede a categoria
-     sem nomes;
-  4. **o racional diz que o concorrente é um candidato por confirmar** e
+  cliente"*). Quando a lista do cliente está vazia, **só uma
+  `direct_comparison`** pode nomear um dos
+  `voz_do_cliente.concorrentes_candidatos` (§8.9), que são os que trazem
+  prova, com cinco condições:
+  1. **nunca um candidato sem prova.** Esses nem chegam a quem escreve
+     (ficam em `candidatos_sem_evidencia`, só para a verificação): nada
+     prova que a marca exista no mercado do cliente, e o servidor recusa a
+     pergunta que a nomeie, pelo nome inteiro ou pela forma curta, em
+     qualquer caixa (§8.7, ponto 7);
+  2. **um candidato só se nomeia numa `direct_comparison`, e sempre com a
+     marca.** Noutra categoria não se nomeia, nem com a marca ao lado; e não
+     há comparação só sobre candidatos ("Qual o melhor banco privado:
+     [candidato] ou [outro]?" fica de fora), porque a ausência da marca
+     estaria garantida antes de a pergunta correr. O §2.2 continua a valer.
+     Porque nomeia a marca, a pergunta vai com `branded: true` (§8.7, pontos
+     2 e 8);
+  3. **nenhum outro nome de empresa.** Com a ficha vazia, uma
+     `direct_comparison` nomeia a marca e candidatos com prova, ou descreve
+     os lados pelo tipo ("um banco tradicional", "uma exchange"), que é a
+     forma 2 do §2.2. Uma empresa que não é nenhuma das duas pode não
+     existir, e o servidor recusa-a (§8.7, ponto 9);
+  4. **as perguntas com candidatos não passam da proporção de
+     `direct_comparison` da distribuição do §3** (8 em 30), contada sobre o
+     catálogo inteiro. O servidor aplica-a pelo limite
+     `comparacoes_candidatos_max` do §8.7 (ponto 8);
+  5. **o racional diz que o concorrente é um candidato por confirmar** e
      de onde veio a prova ("aparece no que se pesquisa sobre a marca", "tem
      procura nos motores de busca"), sem o dar como concorrente confirmado.
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
@@ -486,12 +494,20 @@ motivo (§8.8).
    apareceu em nenhum sítio da voz real do cliente (nem no autocompletar,
    nem nas perguntas que as pessoas fazem, nem nos fóruns, nem com procura
    medida). Pode ser uma marca que não existe, e uma pergunta sobre ela
-   mede uma invenção nossa.
-8. **Um concorrente candidato nomeado sem a marca**, em qualquer
-   categoria [2026-11-19]. Com a ficha vazia, um candidato só se nomeia ao
-   lado da marca (§8.4, exceção da ficha vazia): uma pergunta que fala do
-   candidato e não da marca mede o candidato, e a ausência da marca está
-   garantida antes de a pergunta correr.
+   mede uma invenção nossa. Reconhece-se pelo nome inteiro e pela forma
+   sem o tipo de empresa à frente ("o Carregosa" é o "Banco Carregosa"),
+   em qualquer caixa.
+8. **Um concorrente candidato fora do sítio dele** [2026-11-19]: numa
+   pergunta que não é `direct_comparison`; numa `direct_comparison` sem a
+   marca; ou para lá da proporção `comparacoes_candidatos_max` do catálogo.
+   Com a ficha vazia, um candidato só se nomeia numa comparação direta, ao
+   lado da marca (§8.4, exceção da ficha vazia).
+9. **Com a ficha vazia, uma empresa que não é a marca nem um candidato com
+   prova, numa `direct_comparison`** [2026-11-19]. Lê-se como nome próprio
+   uma palavra com maiúscula a meio da frase que não é a marca, um
+   candidato, a categoria, um tema ou uma palavra comum (geografia, meses,
+   siglas, o Banco de Portugal). Noutra categoria é aviso, porque o nome
+   pode ser um canal ou um sítio.
 
 **Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
 existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
@@ -523,6 +539,7 @@ como branded.
 | `semelhanca_max` | 0,8 | proporção de palavras em comum (Jaccard, palavras de três letras ou mais) a partir da qual duas perguntas são a mesma |
 | `concorrentes_sem_marca` | 2 | concorrentes nomeados, sem a marca, a partir dos quais a pergunta mede o duelo dos outros |
 | `fundo_de_funil_min` | 0,2 | fração mínima de fundo de funil num pedido de dez perguntas ou mais |
+| `comparacoes_candidatos_max` | 0,27 | com a ficha vazia, fração máxima do catálogo (as perguntas que existem mais as do pedido) que nomeia um concorrente candidato; é a proporção de `direct_comparison` do §3, 8 em 30, e nunca menos de uma pergunta [2026-11-19] |
 
 Mudar um limite é editar esta tabela, sem deploy. Os números são juízo
 nosso sobre a evidência acima, e não valores publicados: nenhum estudo
@@ -587,8 +604,11 @@ em duas partes, e a página inicial da marca):
   tema tal como veio;
 - `concorrentes_candidatos` [2026-11-19]: só quando a ficha de concorrentes
   do cliente está vazia. As marcas que o modelo rápido propôs a partir do
-  site, cada uma como `{ "nome", "evidencia", "por_confirmar": true }`, e
-  com `"sem_evidencia": true` quando a voz real não deu prova nenhuma.
+  site e que a voz real confirma, cada uma como `{ "nome", "evidencia",
+  "por_confirmar": true }`. As que não têm prova nenhuma ficam numa chave à
+  parte, `candidatos_sem_evidencia`, que quem escreve as perguntas não
+  recebe (nem a escrita na hora nem a Routine) e que a verificação usa para
+  recusar a pergunta que as nomeie.
   `evidencia` diz onde o nome apareceu: `autocompletar` (uma sugestão do
   Google que o nomeia, "marca ou X" incluída), `perguntas` (o "As pessoas
   também perguntam"), `foruns` (uma conversa num fórum) e `procura`
@@ -597,12 +617,19 @@ em duas partes, e a página inicial da marca):
   desambigua: um nome curto (quatro letras ou menos) ou que também é
   palavra comum ("NOS", "Mais") só ao lado da marca; um nome de uma palavra
   ("Santander") ao lado da marca ou de uma palavra da categoria; e, nos
-  dois, o volume do nome sozinho não é prova, só o de "marca ou X".
-  `ficha_vazia` diz se a ficha estava vazia no momento da recolha. Todos entraram nas pesquisas "marca ou X" e
-  na procura; nenhum entrou na ficha. Quem decide se algum é concorrente
+  dois, o volume do nome sozinho não é prova, só o de "marca ou X". A
+  própria marca, uma linha dela ("Bison Digital Assets") e um nome feito
+  só de palavras da categoria ("Banco Privado", "Private Banking") nunca
+  são candidatos nem prova. Todos os candidatos entraram nas pesquisas
+  "marca ou X" e na procura; nenhum entrou na ficha. Quem decide se algum é concorrente
   continua a ser o `filter_competitors` (`competitor_filtering.md`), depois
   da primeira auditoria. O que as perguntas podem fazer com eles está no
   §8.4, exceção da ficha vazia;
+- `ficha_vazia` [2026-11-19]: escreve-se sempre, `true` ou `false`, e diz
+  se a ficha de concorrentes estava vazia no momento da recolha. É esta
+  fotografia, e não o estado da ficha quando as perguntas chegam, que liga
+  as regras da exceção da ficha vazia (§8.4) e as verificações 8 e 9 do
+  §8.7;
 - `tendencias` [2026-11-14]: o que está a subir no mercado do cliente, por
   tema (os temas pedidos pela marca ou propostos pelo site, ou os termos da
   `categoria`):
