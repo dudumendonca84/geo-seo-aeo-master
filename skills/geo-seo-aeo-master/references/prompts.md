@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (comparações com candidatos com prova, nunca os `sem_evidencia`); §8.7 ponto 7; §8.9 documenta `temas_origem: "menu"` e `concorrentes_candidatos`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -360,6 +360,25 @@ não é `1`, e um com dezenas não é `5`.
   concorrentes que se nomeiam são os da lista do cliente, e nenhum outro.
   Específico à marca, à categoria e à fase: uma frase que serviria a
   qualquer pergunta não é um racional e volta para trás.
+- **Exceção: a ficha de concorrentes vazia** [2026-11-19]. Um prospect novo
+  ainda não tem concorrentes na ficha (nascem da primeira auditoria), e o
+  founder decidiu que as perguntas de comparação se fazem na mesma
+  (*"podemos fazer comparação com concorrente sim pra causar um stress no
+  cliente"*). Quando a lista do cliente está vazia, uma `direct_comparison`
+  pode nomear um dos `voz_do_cliente.concorrentes_candidatos` (§8.9) que
+  traga prova (`evidencia` não vazia), com quatro condições:
+  1. **nunca um candidato `sem_evidencia`.** Nada prova que essa marca
+     exista no mercado do cliente, e o servidor recusa a pergunta que o
+     nomeie (§8.7, ponto 7);
+  2. **a marca está sempre na pergunta.** O §2.2 continua a valer: nunca
+     dois concorrentes nomeados sem a marca medida. E, porque nomeia a
+     marca, a pergunta vai com `branded: true` (§8.7, ponto 2);
+  3. **as comparações não passam da proporção de `direct_comparison` da
+     distribuição do §3** (8 em 30): o resto do catálogo mede a categoria
+     sem nomes;
+  4. **o racional diz que o concorrente é um candidato por confirmar** e
+     de onde veio a prova ("aparece no que se pesquisa sobre a marca", "tem
+     procura nos motores de busca"), sem o dar como concorrente confirmado.
   **O racional não afirma o que a marca oferece sem o ter nos dados
   recebidos** [2026-11-14]: uma unidade, um serviço, um programa, um preço
   ou uma morada só se dão como certos quando vêm em `voz_do_cliente.site`,
@@ -440,7 +459,9 @@ motivo (§8.8).
    dura do §2.2: a ausência da marca está garantida antes de a pergunta
    correr. Noutra categoria é aviso, porque o nome pode ser um canal e não
    o lado de um duelo ("que empresas de arrendamento no Porto são mais
-   baratas do que o Airbnb?" deixa lugar para a marca).
+   baratas do que o Airbnb?" deixa lugar para a marca). Com a ficha vazia,
+   os candidatos com prova (§8.4, exceção) contam como concorrentes para
+   esta regra [2026-11-19].
 4. **Uma pergunta quase igual a outra da mesma persona**, já no catálogo ou
    no mesmo pedido: proporção de palavras em comum igual ou acima de
    `semelhanca_max`. A unidade que se mede é a intenção, e a variância
@@ -454,6 +475,12 @@ motivo (§8.8).
 6. **O enquadramento da persona (`persona_context`, `persona_followup`)
    que nomeia a marca ou um concorrente.** Vai à frente da pergunta, e
    nomear lá uma marca é sermos nós a pô-la na resposta.
+7. **Um concorrente candidato `sem_evidencia` nomeado na pergunta**
+   [2026-11-19]. É um nome que o modelo propôs a partir do site e que não
+   apareceu em nenhum sítio da voz real do cliente (nem no autocompletar,
+   nem nas perguntas que as pessoas fazem, nem nos fóruns, nem com procura
+   medida). Pode ser uma marca que não existe, e uma pergunta sobre ela
+   mede uma invenção nossa.
 
 **Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
 existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
@@ -539,7 +566,27 @@ em duas partes, e a página inicial da marca):
   linha de negócio (até 12). Os temas do site cobrem as linhas que a marca
   mostra, não as que ela quer vender mais: o catálogo reparte-se por todas,
   com mais peso nas que têm mais procura (`procura`) ou estão a subir
-  (`tendencias`), e diz no racional de onde veio o tema;
+  (`tendencias`), e diz no racional de onde veio o tema. `menu`
+  [2026-11-19] quando o modelo não propôs temas (a categoria falhou) e são
+  as entradas do menu do site que a página inicial repete num subtítulo ou
+  na meta description: vêm **na língua do site**, que pode não ser a das
+  perguntas (o Bison Bank: site em inglês, perguntas em pt-PT). Servem para
+  repartir o catálogo; a pergunta escreve-se na língua das perguntas, com o
+  tema traduzido como o cliente o pesquisa, e o `topic` fica com o nome do
+  tema tal como veio;
+- `concorrentes_candidatos` [2026-11-19]: só quando a ficha de concorrentes
+  do cliente está vazia. As marcas que o modelo rápido propôs a partir do
+  site, cada uma como `{ "nome", "evidencia", "por_confirmar": true }`, e
+  com `"sem_evidencia": true` quando a voz real não deu prova nenhuma.
+  `evidencia` diz onde o nome apareceu: `autocompletar` (uma sugestão do
+  Google que o nomeia, "marca ou X" incluída), `perguntas` (o "As pessoas
+  também perguntam"), `foruns` (uma conversa num fórum) e `procura`
+  (procura medida acima de zero para "X" ou "marca ou X"). A proposta do
+  modelo sozinha não é prova. Todos entraram nas pesquisas "marca ou X" e
+  na procura; nenhum entrou na ficha. Quem decide se algum é concorrente
+  continua a ser o `filter_competitors` (`competitor_filtering.md`), depois
+  da primeira auditoria. O que as perguntas podem fazer com eles está no
+  §8.4, exceção da ficha vazia;
 - `tendencias` [2026-11-14]: o que está a subir no mercado do cliente, por
   tema (os temas pedidos pela marca ou propostos pelo site, ou os termos da
   `categoria`):
