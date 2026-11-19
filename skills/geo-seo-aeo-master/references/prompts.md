@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa); §8.7 pontos 7, 8 e 9 e o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026**: §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa, em nenhuma categoria nem campo); §8.7 pontos 7, 8 e 9 (a licença das palavras pelo dicionário da língua e os lados de uma comparação, quarta revisão) e o limite `comparacoes_candidatos_max`, contado sobre o que fica; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -398,14 +398,18 @@ não é `1`, e um com dezenas não é `5`.
      estaria garantida antes de a pergunta correr. O §2.2 continua a valer.
      Porque nomeia a marca, a pergunta vai com `branded: true` (§8.7, pontos
      2 e 8);
-  3. **nenhum outro nome de empresa.** Com a ficha vazia, uma
-     `direct_comparison` nomeia a marca e candidatos com prova, ou descreve
-     os lados pelo tipo ("um banco tradicional", "uma exchange"), que é a
-     forma 2 do §2.2. Uma empresa que não é nenhuma das duas pode não
-     existir, e o servidor recusa-a (§8.7, ponto 9);
+  3. **nenhum outro nome de empresa, em nenhuma categoria e em nenhum
+     campo.** Com a ficha vazia, uma pergunta nomeia a marca e candidatos
+     com prova, e descreve tudo o resto pelo tipo ("um banco tradicional",
+     "uma exchange"), que é a forma 2 do §2.2. Vale para o texto da
+     pergunta, o `persona_context`, o `persona_followup` e o `rationale`, e
+     para um nome escrito em minúsculas ("activobank") como para um com
+     maiúscula. Uma empresa que não é nenhuma das duas pode não existir, e
+     o servidor recusa-a (§8.7, ponto 9);
   4. **as perguntas com candidatos não passam da proporção de
      `direct_comparison` da distribuição do §3** (8 em 30), contada sobre o
-     catálogo inteiro. O servidor aplica-a pelo limite
+     catálogo que FICA (as perguntas que existem mais as aceites, não as
+     propostas). O servidor aplica-a pelo limite
      `comparacoes_candidatos_max` do §8.7 (ponto 8);
   5. **o racional diz que o concorrente é um candidato por confirmar** e
      de onde veio a prova ("aparece no que se pesquisa sobre a marca", "tem
@@ -494,20 +498,47 @@ motivo (§8.8).
    apareceu em nenhum sítio da voz real do cliente (nem no autocompletar,
    nem nas perguntas que as pessoas fazem, nem nos fóruns, nem com procura
    medida). Pode ser uma marca que não existe, e uma pergunta sobre ela
-   mede uma invenção nossa. Reconhece-se pelo nome inteiro e pela forma
-   sem o tipo de empresa à frente ("o Carregosa" é o "Banco Carregosa"),
-   em qualquer caixa.
+   mede uma invenção nossa. Reconhece-se, sem acentos e em qualquer
+   caixa, pelo nome inteiro e pelas formas curtas:
+   - uma sigla de duas ou três letras em maiúsculas que está no nome ("BPI"
+     no "Banco BPI", "BCP" no "Millennium BCP");
+   - as iniciais de um nome com três palavras com maiúscula ou mais ("CGD"
+     da "Caixa Geral de Depósitos"), se nenhuma for palavra da categoria;
+   - a primeira palavra distintiva (sem o tipo de empresa, a forma
+     jurídica, a categoria e a geografia), se tiver seis letras ou mais e
+     não for palavra do dicionário da língua: "o Carregosa" é o "Banco
+     Carregosa" e "o Millennium" é o "Millennium BCP", mas "popular" nunca
+     é o "Banco Popular".
 8. **Um concorrente candidato fora do sítio dele** [2026-11-19]: numa
    pergunta que não é `direct_comparison`; numa `direct_comparison` sem a
-   marca; ou para lá da proporção `comparacoes_candidatos_max` do catálogo.
-   Com a ficha vazia, um candidato só se nomeia numa comparação direta, ao
-   lado da marca (§8.4, exceção da ficha vazia).
-9. **Com a ficha vazia, uma empresa que não é a marca nem um candidato com
-   prova, numa `direct_comparison`** [2026-11-19]. Lê-se como nome próprio
-   uma palavra com maiúscula a meio da frase que não é a marca, um
-   candidato, a categoria, um tema ou uma palavra comum (geografia, meses,
-   siglas, o Banco de Portugal). Noutra categoria é aviso, porque o nome
-   pode ser um canal ou um sítio.
+   marca; ou para lá da proporção `comparacoes_candidatos_max` do
+   catálogo que fica. Com a ficha vazia, um candidato só se nomeia numa
+   comparação direta, ao lado da marca (§8.4, exceção da ficha vazia).
+9. **Com a ficha vazia, uma palavra sem licença ou um lado de comparação
+   sem licença, em qualquer categoria** [2026-11-19, quarta revisão]. No
+   texto, no `persona_context`, no `persona_followup` e no `rationale`, uma
+   palavra só passa se for: a marca (numa das grafias dela); um candidato
+   com prova (pelo nome ou pela forma curta do ponto 7); uma palavra da
+   categoria ou dos temas que seja palavra de dicionário (uma marca escrita
+   nos termos da categoria não se protege a si própria); uma palavra do
+   dicionário da língua da pergunta; ou um nome da lista fechada do
+   Tracker (geografia, meses, reguladores como a CMVM, ativos genéricos
+   como a Bitcoin, siglas do setor como ETF e PPR). Tudo o resto é
+   recusado, em minúsculas ou não, no início da frase ou depois de dois
+   pontos, de «, de aspas ou de parêntesis: "activobank", "eToro",
+   "21shares". E porque "banco fantasma" passa palavra a palavra, lê-se
+   também a forma:
+   - em "X ou Y", "X vs Y", "entre X e Y" e "do que Y" (quando a frase
+     nomeia a marca), cada lado é a marca, um candidato com prova ou um
+     tipo ("um banco tradicional", "os bancos privados"); ao lado da marca,
+     uma palavra solta que não é tipo nem sigla ("Bison Bank ou fantasma?")
+     é recusada;
+   - em português, um tipo de empresa seguido de uma palavra que não é
+     adjetivo nem verbo ("no banco aurora?") é um nome escrito em
+     minúsculas; e uma palavra com maiúscula a meio da frase que não tem
+     licença de nome ("o «Banco Aurora»") também.
+   O dicionário (listas Hunspell de pt-PT, en e fr no Tracker) é a
+   condição: se não carregar, com a ficha vazia nada entra.
 
 **Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
 existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
@@ -620,16 +651,24 @@ em duas partes, e a página inicial da marca):
   dois, o volume do nome sozinho não é prova, só o de "marca ou X". A
   própria marca, uma linha dela ("Bison Digital Assets") e um nome feito
   só de palavras da categoria ("Banco Privado", "Private Banking") nunca
-  são candidatos nem prova. Todos os candidatos entraram nas pesquisas
-  "marca ou X" e na procura; nenhum entrou na ficha. Quem decide se algum é concorrente
-  continua a ser o `filter_competitors` (`competitor_filtering.md`), depois
-  da primeira auditoria. O que as perguntas podem fazer com eles está no
-  §8.4, exceção da ficha vazia;
+  são candidatos nem prova, nem um nome feito de geografia e plurais
+  ("Private Banking Portugal", "Bancos Privados em Portugal"). Uma
+  sugestão do autocompletar da categoria ou dos temas só é prova se
+  nomear também a marca: "santander private banking portugal" diz que o
+  Santander tem private banking, não que um cliente da marca o compara.
+  Todos os candidatos entraram nas pesquisas "marca ou X" e na procura;
+  nenhum entrou na ficha. Quem decide se algum é concorrente continua a
+  ser o `filter_competitors` (`competitor_filtering.md`), depois da
+  primeira auditoria. O que as perguntas podem fazer com eles está no
+  §8.4, exceção da ficha vazia. Os sem prova também não chegam por outro
+  caminho: saem das listas da voz (autocompletar, perguntas, fóruns,
+  procura) os itens que os nomeiam, e nas recusadas que voltam para
+  reescrever o nome é tapado no texto e nos motivos;
 - `ficha_vazia` [2026-11-19]: escreve-se sempre, `true` ou `false`, e diz
   se a ficha de concorrentes estava vazia no momento da recolha. É esta
   fotografia, e não o estado da ficha quando as perguntas chegam, que liga
-  as regras da exceção da ficha vazia (§8.4) e as verificações 8 e 9 do
-  §8.7;
+  as regras da exceção da ficha vazia (§8.4) e as verificações 7, 8 e 9
+  do §8.7;
 - `tendencias` [2026-11-14]: o que está a subir no mercado do cliente, por
   tema (os temas pedidos pela marca ou propostos pelo site, ou os termos da
   `categoria`):
