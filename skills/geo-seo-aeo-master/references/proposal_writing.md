@@ -30,7 +30,8 @@ marca, e não só que a escolhe.
   "11 of 15", "11 sur 15"). Até 24 caracteres. Os dois números vêm do
   contexto, tal como lá estão.
 - **`nota`**: o que o número conta, numa expressão ("respostas sobre o
-  preço citam a CUF"). Até 80 caracteres.
+  preço citam a Clínica Exemplo", onde a Clínica Exemplo é o concorrente).
+  Até 80 caracteres.
 - **`texto`**: duas frases, no máximo três. A primeira diz a causa, com o
   sujeito certo (a fonte que a IA lê, a página que falta, o concorrente que
   publica o que a marca não publica). A segunda diz o que isso tem de
@@ -49,12 +50,18 @@ descreve. A frase é o exemplo dessa comparação na semana medida, e aparece
 com o rótulo «Hoje».
 
 - Uma ou duas frases, até 320 caracteres.
-- A primeira metade diz como a marca se apresenta (o site, o domínio, o
-  que a `percecao` mostra que ela afirma). A segunda diz o que a IA repete
-  sobre ela, a partir dos `tracos` da `percecao` e dos `silencios`.
-- Quando a IA já repete o posicionamento da marca, diz-se isso. Não se
-  inventa uma distância para o cartão ter conflito.
-- Sem `percecao` no contexto, o bloco vai a `null`.
+- **Como a marca se apresenta vem do `site`** do contexto: o título, a
+  descrição e os subtítulos da página inicial dela. A `percecao` é o que a
+  IA diz, e nunca serve para dizer como a marca se apresenta.
+- **O que a IA repete vem da `percecao`**: os `tracos` (com a contagem) e
+  os `silencios` (o que a IA não diz).
+- Com as duas metades, a frase compara-as. Quando a IA já repete o
+  posicionamento da marca, diz-se isso. Não se inventa uma distância para o
+  cartão ter conflito.
+- Sem `site` (o contexto diz porquê em `site_nao_lido`), a frase diz só o
+  que a IA repete e o que deixa por dizer, sem afirmar como a marca se
+  apresenta.
+- Sem `percecao`, o bloco vai a `null`.
 
 ### 1.3 O estacionamento coberto (página «Como começar»)
 
@@ -74,13 +81,17 @@ marca**: os factos de um prospect nunca se usam no relatório de outro.
   caracteres. Aparece como citação.
 - **`texto`**: opcional, uma ou duas frases até 400 caracteres, quando a
   frase precisa de contexto. Na dúvida, `null`.
-- **`exemplos`**: dois ou três, nunca mais. Cada um liga-se a uma pergunta
-  medida do relatório (`prompt_id`, só do contexto):
+- **`exemplos`**: até três, nunca mais. O desenho pede três; um ou dois
+  chegam quando são os únicos que a medição sustenta, e um exemplo sem base
+  nunca entra para fazer número. Cada um liga-se a uma pergunta medida do
+  relatório (`prompt_id`, só do contexto):
   - `titulo`: o assunto, curto, sem número ("O preço da primeira consulta").
     Até 70 caracteres.
   - `pergunta`: o que o cliente pergunta, nas palavras dele. Em português,
     é o texto da pergunta medida, encurtado se for preciso, sem mudar o
-    sentido. Em inglês e francês, a tradução. Até 200 caracteres.
+    sentido e com as mesmas palavras (o Tracker confere que pelo menos 70%
+    das palavras com quatro letras ou mais estão na pergunta medida). Em
+    inglês e francês, a tradução. Até 200 caracteres.
   - `decide`: o que decide a resposta, em concreto: a fonte que a IA cita
     nessa pergunta, a página que falta no site da marca, o facto que um
     concorrente publica. Até 240 caracteres.
@@ -100,7 +111,9 @@ prático. Nunca se força a mistura com um exemplo sem base.
 - **Só os do contexto.** Cada número escrito existe no contexto do pedido,
   tal como lá está. O Tracker confere-o e tira o campo que tiver um número
   que o contexto não tem (percentagens com um ponto de folga; números de um
-  dígito não contam).
+  dígito não contam). Os números fixos do capítulo (o arranque de 90 dias,
+  as 13 semanas, os horizontes do plano) vêm em `capitulo`, e podem
+  dizer-se.
 - **Contagens antes de percentagens**, e sempre com o denominador: "11 de
   15", e não "73%".
 - **Percentagens arredondadas à unidade**, como o contexto as dá
@@ -108,7 +121,8 @@ prático. Nunca se força a mistura com um exemplo sem base.
 - **Sem somas nem diferenças** entre números do contexto. Um número
   derivado é um número que ninguém mediu, e a verificação recusa-o.
 - **Milhares** com espaço em português e francês (1 240), com vírgula em
-  inglês (1,240).
+  inglês (1,240). Dois números seguidos nunca ficam separados só por um
+  espaço ("das 120, 30 citam"): sem a vírgula, leem-se como um milhar.
 
 ---
 
@@ -122,8 +136,9 @@ O mesmo relatório abre em português, inglês e francês, pelo endereço
   "você" (`escrita.md` § 7). O Tracker passa o português pelo "você" e pelo
   artigo certo da marca antes de o conferir, mas não corrige o resto.
 - **Inglês britânico** (`escrita.md` § 8).
-- **Francês de França**, com o espaço antes de `?`, `!`, `:` e `;`, e as
-  aspas « ».
+- **Francês de França**, com o espaço inseparável antes de `?`, `!`, `:`
+  e `;` e por dentro das aspas « ». O Tracker não o troca por um espaço
+  normal.
 - **Nomes de marcas, de motores e de domínios** ficam iguais nas três.
 - **Sem travessões** em nenhuma língua, nem o longo nem o médio.
 - As três versões dizem o mesmo. Não se acrescenta numa língua o que a
@@ -192,13 +207,17 @@ resto fica:
    ao Acordo) e os limites que se medem (palavras por frase, dois-pontos
    por parágrafo, frases por parágrafo, exclamações);
 5. nenhum número fora do contexto;
-6. cada exemplo com `prompt_id` de uma pergunta do contexto, sem repetir
+6. nenhuma nota nossa (o que o sinal `nota_interna_no_cliente` acusa:
+   nomes de tabelas, «founder», marcas de rascunho);
+7. cada exemplo com `prompt_id` de uma pergunta do contexto, com a
+   `pergunta` em português a bater com a pergunta medida, sem repetir
    pergunta, no máximo três;
-7. `funciona: true` só numa pergunta com `escolhida` maior do que zero.
+8. `funciona: true` só numa pergunta com `escolhida` maior do que zero.
 
 O estacionamento sem frase ou sem nenhum exemplo aceite sai inteiro. Sem
 nenhum bloco aceite, o pedido fecha em erro e o relatório fica como estava.
 
 O texto grava-se com a auditoria do contexto (`weekly_audit_id`) e só
-aparece no relatório montado dessa auditoria. Uma semana nova pede texto
-novo.
+aparece no relatório montado dessa auditoria. O pedido só nasce com a
+semana fechada; uma semana nova pede texto novo, e mudar as linhas do
+arranque também.

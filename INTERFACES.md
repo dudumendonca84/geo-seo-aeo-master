@@ -439,14 +439,18 @@ aplica-as ao texto devolvido.
 
 **Regra dura:** cada texto nas três línguas, sem travessões, dentro das
 tabelas e dos limites de `escrita.md`, e sem números que o contexto do
-pedido não tenha. Os exemplos só de perguntas do contexto, no máximo três, e
-`funciona: true` só onde a IA já escolhe a marca. A validação está em
+pedido não tenha (os fixos do capítulo vêm em `capitulo`), e sem notas
+nossas. Os exemplos só de perguntas do contexto, com a `pergunta` em
+português a bater com a pergunta medida, no máximo três, e `funciona: true`
+só onde a IA já escolhe a marca. O contexto traz o resumo da página inicial
+(`site`) para o posicionamento dizer como a marca se apresenta. A validação está em
 `lib/reports/escrito-da-proposta.ts` (`escritoDoCerebro`): um campo que
 falha sai com o motivo, e um pedido sem nenhum bloco aceite fecha em erro
 sem mudar o relatório.
 
 O texto de cada prospect vive no registo do relatório dele
-(`prospect_reports.proposal_writing`, por auditoria), nunca na skill.
+(`prospect_reports.proposal_writing`, um mapa por auditoria, pedido só com a
+semana fechada), nunca na skill.
 Acrescentar regras de escrita ou exemplos é seguro; renomear campos da
 forma, ou mudar um teto de caracteres para cima, parte a validação:
 coordenar com PR no Tracker.
