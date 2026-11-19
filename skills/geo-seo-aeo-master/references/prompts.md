@@ -514,8 +514,10 @@ AI"*). Ninguém publica as perguntas feitas aos assistentes, por isso a
 aproximação é a voz pública do cliente.
 
 O pedido `generate_prompts` de um cliente novo traz `voz_do_cliente`
-(nesta versão, duas fontes: o autocompletar do Google no mercado do cliente,
-em duas partes, e a página inicial da marca):
+(o autocompletar do Google no mercado do cliente, em duas partes, a página
+inicial da marca e, desde 19 Nov 2026, as perguntas inteiras que as pessoas
+fazem: o «As pessoas também perguntam» do Google e as conversas no Reddit e
+nos fóruns do mercado):
 
 - `autocompletar`: o que se completa para a MARCA (`semente`, `sugestao`),
   da marca sozinha, com cada letra, com as palavras de pergunta e contra
@@ -557,6 +559,17 @@ em duas partes, e a página inicial da marca):
   um mínimo) e `em_alta_agora` (o que disparou
   hoje nas pesquisas do país, com a notícia ligada, só o que toca um tema).
   `null` é "sem número";
+- `pessoas_tambem_perguntam` [2026-11-19]: as perguntas do bloco «As
+  pessoas também perguntam» do Google no mercado do cliente, para a marca e
+  para até três termos da `categoria` (`semente`, a pesquisa que a trouxe;
+  `pergunta`, tal como o Google a mostra; `resposta`, o princípio da
+  resposta que o Google mostra, ou `null`; `fonte`, o domínio dessa
+  resposta quando se conhece, ou `null`). Até 40, sem repetidas;
+- `conversas_nos_foruns` [2026-11-19]: títulos e excertos com forma de
+  pergunta no Reddit e, em Portugal, no Fórum Zwame, sobre até três termos
+  da `categoria` (`termo`, `titulo`, `excerto`, `url`, `sitio`, que é o
+  subreddit, `r/portugal`, ou o domínio do fórum). Até 30. Só entram os
+  resultados que são mesmo do sítio pedido;
 - `nao_lidos` e `fora`: o que não se conseguiu ler e o que ficou de fora
   de propósito. Não ler não é o mesmo que ninguém perguntar.
 
@@ -630,8 +643,11 @@ Como se usa:
    cliente dá muitas das primeiras: equilibra com as segundas pelo §8.1 a
    §8.6, porque sem elas não há taxa de citação.
 4. **Cada pergunta diz de onde veio**, em `voice_source`, com a fonte e as
-   palavras: `Google: saldo cartão continente expira`. Uma pergunta que não
-   veio da voz do cliente fica sem `voice_source`.
+   palavras: `Google: saldo cartão continente expira`,
+   `As pessoas também perguntam: Quanto custa um seguro de saúde por mês?`,
+   `Reddit r/portugal: Seguro de saúde: qual recomendam?`,
+   `Fórum Zwame: Alguém sabe se a Multicare cobre partos?`. Uma pergunta que
+   não veio da voz do cliente fica sem `voice_source`.
 5. **Uma marca nova e pouco conhecida devolve pouco**, e às vezes devolve
    outra empresa com o mesmo nome (medido: as duas sugestões da goCrew
    eram de empresas homónimas noutro país). Isso é um dado sobre a marca,
@@ -685,10 +701,44 @@ Como se usa:
    - sem `tendencias` para o tema (está em `nao_lidos`), o racional não fala
      de subida.
 
+10. **As perguntas que as pessoas fazem de facto são a fonte da redação**
+    [2026-11-19]. O autocompletar dá o princípio de uma pesquisa, três ou
+    quatro palavras sem verbo; `pessoas_tambem_perguntam` e
+    `conversas_nos_foruns` dão a pergunta inteira, com a ordem das palavras,
+    o registo e a dúvida de quem a escreve. Regras:
+    - quando um tema tem pergunta real, a pergunta do catálogo parte dela e
+      fica o mais perto possível dela: as mesmas palavras, a mesma ordem, a
+      mesma dúvida. Muda-se só o que §8.7 recusa ou o que a torna ambígua
+      fora da página (o nome da categoria que estava implícito no fórum, a
+      cidade que estava no título do subreddit);
+    - uma pergunta real que já nomeia a marca é branded (ponto 3); uma que
+      nomeia só concorrentes segue §2.2 e entra com a marca ao lado, ou não
+      entra;
+    - o «As pessoas também perguntam» diz o que a categoria quer saber, e é
+      bom para as perguntas genéricas e de preço; os fóruns dizem como o
+      comprador fala quando pede opinião ("alguém recomenda", "vale a
+      pena", "qual escolheram"), e são bons para as de comparação e de
+      recomendação;
+    - um título de fórum vem cortado ou com o nome do sítio, e o excerto é
+      muitas vezes o princípio do tópico: lê os dois e escreve a pergunta
+      que o tópico faz, nunca o título tal como está;
+    - a `resposta` e a `fonte` do «As pessoas também perguntam» não entram
+      na pergunta (seria pôr a resposta na pergunta); servem para saber que
+      sítios já respondem a isto;
+    - uma pergunta de fórum sobre um caso de uma pessoa ("o meu seguro
+      recusou a minha cirurgia") não se copia: escreve-se a dúvida geral que
+      está por trás ("Um seguro de saúde pode recusar uma cirurgia?");
+    - a procura (ponto 8) continua a decidir quantos temas e quantas
+      perguntas por tema; a pergunta real decide como se escreve. Uma
+      pergunta real sem procura medida pode entrar, e o racional diz que é
+      uma pergunta que as pessoas fazem, sem inventar volume;
+    - sem nenhuma das duas (estão em `nao_lidos`), escreve-se como antes, a
+      partir do autocompletar.
+
 O que isto não é, e não se diz ao cliente que é: não são as perguntas
-feitas à IA. É o que se pesquisa nos motores de busca e quanto, que é a
-melhor aproximação pública ao que se pergunta a um assistente, e o
-racional di-lo assim.
+feitas à IA. É o que se pesquisa nos motores de busca e quanto, e o que as pessoas
+perguntam no Google e nos fóruns, que é a melhor aproximação pública ao que
+se pergunta a um assistente, e o racional di-lo assim.
 
 ## Personas sintéticas (em implementação, decisão do founder 23 Ago 2026)
 
