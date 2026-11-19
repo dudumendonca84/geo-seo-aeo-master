@@ -87,11 +87,13 @@ marca**: os factos de um prospect nunca se usam no relatório de outro.
   relatório (`prompt_id`, só do contexto):
   - `titulo`: o assunto, curto, sem número ("O preço da primeira consulta").
     Até 70 caracteres.
-  - `pergunta`: o que o cliente pergunta, nas palavras dele. Em português,
-    é o texto da pergunta medida, encurtado se for preciso, sem mudar o
-    sentido e com as mesmas palavras (o Tracker confere que pelo menos 70%
-    das palavras com quatro letras ou mais estão na pergunta medida). Em
-    inglês e francês, a tradução. Até 200 caracteres.
+  - `pergunta`: o que o cliente pergunta, nas palavras dele. Na língua das
+    perguntas medidas (a do cliente, `lingua` no contexto), é o texto da
+    pergunta medida, encurtado se for preciso, sem mudar o sentido e com as
+    mesmas palavras. O Tracker confere-o: cada palavra que conta (quatro
+    letras ou mais, tirando as de função como «qual», «mais» ou «melhor»)
+    tem de estar na pergunta medida, e só o plural e a vogal final de género
+    mudam. Nas outras duas línguas, a tradução. Até 200 caracteres.
   - `decide`: o que decide a resposta, em concreto: a fonte que a IA cita
     nessa pergunta, a página que falta no site da marca, o facto que um
     concorrente publica. Até 240 caracteres.
@@ -210,8 +212,8 @@ resto fica:
 6. nenhuma nota nossa (o que o sinal `nota_interna_no_cliente` acusa:
    nomes de tabelas, «founder», marcas de rascunho);
 7. cada exemplo com `prompt_id` de uma pergunta do contexto, com a
-   `pergunta` em português a bater com a pergunta medida, sem repetir
-   pergunta, no máximo três;
+   `pergunta` na língua do cliente a bater com a pergunta medida, sem
+   repetir pergunta, no máximo três;
 8. `funciona: true` só numa pergunta com `escolhida` maior do que zero.
 
 O estacionamento sem frase ou sem nenhum exemplo aceite sai inteiro. Sem
@@ -219,5 +221,5 @@ nenhum bloco aceite, o pedido fecha em erro e o relatório fica como estava.
 
 O texto grava-se com a auditoria do contexto (`weekly_audit_id`) e só
 aparece no relatório montado dessa auditoria. O pedido só nasce com a
-semana fechada; uma semana nova pede texto novo, e mudar as linhas do
-arranque também.
+semana fechada. Pede-se texto novo numa semana nova, numa semana que reabre
+e volta a fechar, e quando as linhas do arranque mudam.

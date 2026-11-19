@@ -437,12 +437,12 @@ aplica-as ao texto devolvido.
 |---|---|---|
 | `proposal_writing` | `proposal_writing.md`, `escrita.md` | `result` com `porque_acontece {numero, nota, texto}`, `posicionamento` e `estacionamento {frase, texto?, exemplos[{prompt_id, titulo, pergunta, decide, funciona}]}`; cada texto em `{pt, en, fr}`; qualquer bloco pode ser `null` |
 
-**Regra dura:** cada texto nas três línguas, sem travessões, dentro das
-tabelas e dos limites de `escrita.md`, e sem números que o contexto do
-pedido não tenha (os fixos do capítulo vêm em `capitulo`), e sem notas
-nossas. Os exemplos só de perguntas do contexto, com a `pergunta` em
-português a bater com a pergunta medida, no máximo três, e `funciona: true`
-só onde a IA já escolhe a marca. O contexto traz o resumo da página inicial
+**Regra dura:** cada texto vem nas três línguas e fica dentro das tabelas e
+dos limites de `escrita.md`. Não leva travessões, notas nossas nem números
+que o contexto do pedido não tenha (os fixos do capítulo vêm em
+`capitulo`). Os exemplos só saem de perguntas do contexto, com a `pergunta`
+na língua do cliente a bater com a pergunta medida, no máximo três, e
+`funciona: true` só onde a IA já escolhe a marca. O contexto traz o resumo da página inicial
 (`site`) para o posicionamento dizer como a marca se apresenta. A validação está em
 `lib/reports/escrito-da-proposta.ts` (`escritoDoCerebro`): um campo que
 falha sai com o motivo, e um pedido sem nenhum bloco aceite fecha em erro
