@@ -423,6 +423,42 @@ forem do cliente do pedido. Acrescentar
 fontes ou exemplos é seguro; renomear campos da forma parte a validação:
 coordenar com PR no Tracker.
 
+### Contrato 22: o texto do capítulo 09 (relatório do prospect)
+
+**Path no repo:** `skills/geo-seo-aeo-master/references/proposal_writing.md`
+
+**Consumo:** a Routine do cérebro do Tracker (`routines/tracker-brain.md`,
+task `proposal_writing`) lê-o como instrução, junto com
+`references/escrita.md`. Não há parsing estrutural no código TS: o Tracker
+lê de `escrita.md` as tabelas que já lia para o Estúdio (contrato 17) e
+aplica-as ao texto devolvido.
+
+| Task do Tracker | Ficheiros carregados | O que a Routine devolve |
+|---|---|---|
+| `proposal_writing` | `proposal_writing.md`, `escrita.md` | `result` com `porque_acontece {numero, nota, texto}`, `posicionamento` e `estacionamento {frase, texto?, exemplos[{prompt_id, titulo, pergunta, decide, funciona}]}`; cada texto em `{pt, en, fr}`; qualquer bloco pode ser `null` |
+
+**Regra dura:** cada texto vem nas três línguas e fica dentro das tabelas e
+dos limites de `escrita.md`, salvo a versão da `pergunta` dos exemplos na
+língua das perguntas medidas, que é citação (português do Brasil incluído). Nenhum campo leva
+travessões, notas nossas nem números que o contexto do pedido não tenha (os
+fixos do capítulo vêm em `capitulo`). Os exemplos só saem de perguntas do
+contexto, no máximo três, com a versão da `pergunta` na língua das perguntas
+medidas (`lingua_das_perguntas`) a bater com a pergunta medida; numa língua
+que o texto não tem, confere-se só o `prompt_id`. `funciona: true` só onde
+a IA já escolhe a marca. Um pedido substituído fecha como `done`, e o
+resultado entregue para ele volta como `ja_fechado` com o motivo. O contexto traz o resumo da página inicial
+(`site`) para o posicionamento dizer como a marca se apresenta. A validação está em
+`lib/reports/escrito-da-proposta.ts` (`escritoDoCerebro`): um campo que
+falha sai com o motivo, e um pedido sem nenhum bloco aceite fecha em erro
+sem mudar o relatório.
+
+O texto de cada prospect vive no registo do relatório dele
+(`prospect_reports.proposal_writing`, um mapa por auditoria, pedido só com a
+semana fechada), nunca na skill.
+Acrescentar regras de escrita ou exemplos é seguro; renomear campos da
+forma, ou mudar um teto de caracteres para cima, parte a validação:
+coordenar com PR no Tracker.
+
 ---
 
 ## Frequência de atualização
@@ -494,6 +530,7 @@ coordenar com PR no Tracker.
 | 2026-10-18 | **Contrato 18 (as perguntas que medem) criado.** `prompts.md` ganha o §8.7 (o que o Tracker recusa e avisa, com a tabela `#### Limites que se verificam`) e o §8.8 (o que volta ao gerador). Fora da fatia §1-§3, por isso o Deck Builder não muda. | Tracker: o `generate_prompts` deixa de gravar palavras-chave, perguntas com a marca não marcadas como branded, comparações sem a marca, quase duplicados e vocabulário do Brasil; a categoria `transactional` deixa de se perder ao gravar. |
 | 2026-10-18 | **Contrato 18 estendido: a voz do cliente.** `prompts.md` §8.9: as primeiras perguntas de um cliente novo nascem do autocompletar do Google (o Portal da Queixa recusa robôs de IA no `robots.txt` e não se recolhe), e cada uma diz de onde veio (`voice_source`). | Tracker: `context.voz_do_cliente` nos pedidos de onboarding; coluna `prompts.voice_source`. |
 | 2026-10-18 | **Contrato 18 estendido: as primeiras perguntas escritas na hora, e a voz da categoria.** `prompts.md` §8.9 ganha `autocompletar_categoria`, `categoria` e `site`; §8.4 ganha `persona_context` e `persona_followup` no contrato (estavam só na spec da Routine). `models.md` ganha o papel `perguntas` (contrato 17). | Tracker: o pedido de um cliente novo é escrito logo a seguir à recolha, pela mesma verificação; a Routine só o recebe se a escrita falhar. |
+| 2026-11-19 | **Contrato 22 (o texto do capítulo 09) criado.** `references/proposal_writing.md`: o «Porque acontece», a frase de posicionamento e o estacionamento coberto do capítulo 09 do relatório do prospect (fase 3 do desenho de 14 Nov 2026), de onde vem cada número, as três línguas e o que é proibido. | Tracker: task `proposal_writing` da Routine, coluna `prospect_reports.proposal_writing` (0192), porta `escritoDoCerebro`. Compatível nos dois sentidos: sem texto gravado, o capítulo 09 sai como na fase 2 (os blocos só aparecem com texto). |
 | 2026-11-13 | **Contrato 21: `titulo_curto` e `legenda` no destino `cliente`.** `business_opportunities.md` § 7: o título de uma linha (até 70 caracteres, sem números) e a legenda curta do número (até 60), nas três línguas, para a lista do ecrã redesenhado. | Tracker: a lista mostra os curtos e o detalhe o `titulo` longo. Compatível nos dois sentidos: sem os curtos, o ecrã usa o `titulo` cortado e a `nota`; acima do tecto, o servidor deita fora só esse campo. |
 | 2026-11-12 | **Contrato 21 estendido: o destino `cliente`.** `business_opportunities.md` § 7 (o ecrã «Oportunidades de negócio» do cliente, atualizado todas as semanas: ids das perguntas e da proposta de valor, identidade entre semanas, três línguas) e `gap_action_mapping.md` § "De uma oportunidade de negócio a ações" (task `plan_business_opportunity`; proposta por publicar dá a primeira ação, decisão do founder). | Tracker: tabela `business_opportunities` por cliente, task nova, ecrã novo. Compatível nos dois sentidos: sem `destino`, é o relatório de sempre. O Tracker só manda `destino: "cliente"` a clientes com o módulo ligado, e o módulo só liga quando o founder publicar a chave no back-office; esta skill tem de estar no `main` antes disso. |
 | 2026-11-11 | **Contrato 21 (as oportunidades de negócio) criado.** `references/business_opportunities.md`: o que conta como oportunidade de negócio, onde procurar por tipo de fonte, a forma e o que é proibido. | Tracker: task `business_opportunities` da Routine, coluna `prospect_reports.business_opportunities`, capítulo 07 do relatório do prospect. |
