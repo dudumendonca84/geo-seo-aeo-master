@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 19 Nov 2026** (oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026** (nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -550,16 +550,20 @@ motivo (§8.8).
      America", "Hospital de Braga") [oitava revisão: a sétima tinha
      alargado isto a "tipo + adjetivos + gentílico" e recusava a categoria
      do próprio cliente, "o melhor banco privado português"]; num lado de
-     uma comparação conta em qualquer caixa e só o indefinido isenta; fora
-     de comparação, com um tipo de instituição conta salvo quando a frase
-     o DESCREVE: um superlativo, um demonstrativo, um possessivo ou uma
-     pergunta ("qual", "que") até três palavras antes, ou "para", "com",
-     "mais", "menos", "que" ou "onde" logo a seguir ("Qual o melhor banco
-     de Lisboa para empresas?", "Que banco do Porto tem melhor
-     atendimento?"); com um tipo genérico (clínica, hospital, empresa,
-     loja) conta só com o tipo em maiúscula a meio da frase e sem
-     descrição antes, porque "a melhor clínica de Lisboa" é português. As
-     expressões aceites ficam (o Banco de Portugal, o Bank of Portugal).
+     uma comparação conta em qualquer caixa e só o indefinido isenta;
+     com o tipo em maiúscula a meio da frase está escrito como nome e nada
+     o isenta ("o meu Banco do Brasil", "this Bank of America branch");
+     fora de comparação e em minúsculas, com um tipo de instituição conta
+     salvo quando a frase o DESCREVE: um superlativo, um demonstrativo, um
+     possessivo ou uma pergunta que governa o próprio tipo (logo antes
+     dele, ou antes do artigo: "Qual o melhor banco de Lisboa para
+     empresas?", "Que banco do Porto tem melhor atendimento?"), ou "para",
+     "com", "mais", "menos", "que" ou "onde" logo a seguir; um descritor de
+     outro substantivo não isenta ("o melhor médico do hospital de Braga",
+     "uma consulta no hospital de Braga"); com um tipo genérico (clínica,
+     hospital, empresa, loja) conta só com o tipo em maiúscula a meio da
+     frase, porque "a melhor clínica de Lisboa" é português. As expressões
+     aceites ficam (o Banco de Portugal, o Bank of Portugal).
      Os nomes por extenso que não têm esta forma ("Banco Comercial
      Português", "Banco Nacional de Angola", "Banco Central do Brasil")
      estão na lista curada, como sequências fixas;
@@ -567,7 +571,9 @@ motivo (§8.8).
      Private Bank", "the Lisbon Private Bank"), e só o indefinido, a
      pergunta e o superlativo isentam; um país ou gentílico antes do tipo é
      uma descrição, também depois de "the" ("the Portuguese bank", "the UK
-     bank", "the Swiss private bank model"); uma palavra com
+     bank", "the Swiss private bank model"), salvo com o tipo em maiúscula
+     a meio da frase ("the Portuguese Private Bank", "the Brazil Bank"),
+     que é um nome; uma palavra com
      maiúscula a meio da frase que não tem licença de nome ("o «Banco
      Aurora»", "o Banco Europeu") também; "o banco mais?" é um nome e "o
      banco mais barato" não; e uma palavra colada a um símbolo ("Bank+",
@@ -583,30 +589,44 @@ motivo (§8.8).
      Uma marca que não é palavra conta sempre. Uma marca da lista curada
      de várias palavras conta em qualquer posição e caixa, também sem
      artigo, no início da frase e no `rationale` ("doutor finanças vale a
-     pena?", «real vida seguros opiniões», «caixa económica do porto»),
-     salvo depois de um indefinido, possessivo, demonstrativo, superlativo
-     ou de uma pergunta no início da oração ("um novo banco", "o meu novo
-     banco", "o melhor banco comercial português", "que banco português de
-     investimento"; "do que doutor finanças" conta); uma de uma só palavra
+     pena?", «real vida seguros opiniões», «caixa económica do porto»); só
+     a que tem um tipo dentro, e por isso também se lê como descrição,
+     fica isenta depois de um indefinido, possessivo, demonstrativo,
+     superlativo ou de uma pergunta no início da oração ("um novo banco",
+     "o meu novo banco", "o melhor banco comercial português", "que banco
+     português de investimento"), e nem essa com o tipo em maiúscula a
+     meio da frase ("o meu Novo Banco"); "este doutor finanças", "a minha
+     caixa geral de depósitos" e "do que doutor finanças" contam; uma de uma só palavra
      conta num lado de uma comparação, com maiúscula, ou depois de um
      artigo definido ("à caixa"); a lista curada tem os bancos por extenso
      de Portugal, Angola, Moçambique e Brasil e os intermediários de
      crédito e seguradoras portugueses feitos de palavras comuns. As
      marcas curadas que são expressões comuns do português ("Crédito
      Fácil", "Acordo Certo", "Balcão do Crédito", "Conta Azul", "Poupança
-     no Minuto", "Banco Económico", "Universo Crédito", "Credível",
-     "Crédito Agrícola") são ambíguas e contam só com maiúscula fora do
-     início da frase, ou num lado de comparação, sem indefinido, numa frase
-     que nomeia a marca do cliente; o resto decide a rede do modelo. Uma marca da base feita de
+     no Minuto", "Banco Económico", "Credível") são ambíguas e contam só
+     com maiúscula fora do início da frase, ou num lado de comparação, sem
+     indefinido, numa frase que nomeia a marca do cliente; o resto decide a
+     rede do modelo. Só entra nesta lista uma expressão cujo uso genérico é
+     comum na categoria: "Crédito Agrícola" e "Universo Crédito" são marcas
+     de primeira linha e contam como as outras curadas, porque uma recusa
+     falsa custa uma volta ao gerador e uma marca que escapa contamina a
+     medição. Uma marca da base feita de
      palavras comuns conta escrita como nome, com maiúscula fora do início
      da frase; se tiver várias palavras, conta também num lado de
      comparação ("o Bison Bank ou o acordo certo?") e depois de um artigo
      definido, salvo quando começa por um comparativo ("a melhor taxa") ou
      acaba num adjetivo ("a estratégia digital", "o mercado livre"); uma
      só palavra da base ("nacional ou internacional") conta só com
-     maiúscula; um nome da base de várias palavras feito de tipo, "de" e
-     lugar ("Hospital de Braga") conta num lado de comparação em qualquer
-     caixa, e no `rationale` ou depois de artigo sem descrição à volta. A
+     maiúscula; um nome da base de várias palavras que começa por um tipo
+     é uma sequência fixa e conta sempre, em qualquer caixa e posição,
+     também no `rationale` ("o hospital da luz", "uma consulta no hospital
+     de jesus", "clínica dentária do porto", «hospital de braga
+     urgência»); as duas exceções são o tipo seguido só de adjetivos
+     ("clínica dentária", que é a descrição da categoria e conta só escrito
+     como nome ou num lado) e o nome que é SÓ tipo + preposição + cidade ou
+     país ("Hospital de Braga"), em minúsculas e com um descritor que
+     governa o próprio tipo ("qual o melhor hospital de Braga para
+     partos?"). A
      marca do cliente apaga as marcas contidas no NOME dela, as que são
      iguais a uma das grafias, e as que partilham com ela uma palavra
      distintiva que não é do dicionário ("Bison Digital Assets" para o
