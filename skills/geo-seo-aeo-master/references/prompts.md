@@ -528,17 +528,37 @@ motivo (§8.8).
    pontos, de «, de aspas ou de parêntesis: "activobank", "eToro",
    "21shares". E porque "banco fantasma" passa palavra a palavra, lê-se
    também a forma:
-   - em "X ou Y", "X vs Y", "entre X e Y" e "do que Y" (quando a frase
-     nomeia a marca), cada lado é a marca, um candidato com prova ou um
-     tipo ("um banco tradicional", "os bancos privados"); ao lado da marca,
-     uma palavra solta que não é tipo nem sigla ("Bison Bank ou fantasma?")
-     é recusada;
+   - em "X ou Y", "X vs Y", "entre X e Y", "X e Y" (quando um lado é a
+     marca), "do que Y" e "que Y" depois de um comparativo, "à/ao Y" depois
+     de "alternativa", "prefere" ou "comparado", "trocar X pelo Y", e em
+     inglês "than Y", "beat Y", "instead of Y", cada lado é a marca, um
+     candidato com prova ou um tipo ("um banco tradicional", "os bancos
+     privados"); ao lado da marca, ou à direita de "do que" numa frase que
+     a nomeia, uma palavra solta que não é tipo nem sigla ("do que com o
+     farol?") é recusada;
    - em português, um tipo de empresa seguido de uma palavra que não é
      adjetivo nem verbo ("no banco aurora?") é um nome escrito em
-     minúsculas; e uma palavra com maiúscula a meio da frase que não tem
-     licença de nome ("o «Banco Aurora»") também.
+     minúsculas; em inglês, e em português com um tipo inglês, a palavra
+     ANTES do tipo é o nome ("Chase Bank", "phantom bank", "Farol Bank"); e
+     uma palavra com maiúscula a meio da frase que não tem licença de nome
+     ("o «Banco Aurora»", "o Banco Europeu") também.
    O dicionário (listas Hunspell de pt-PT, en e fr no Tracker) é a
    condição: se não carregar, com a ficha vazia nada entra.
+
+   Uma marca que É palavras do dicionário ("Novo Banco", "Caixa", "Crédito
+   Agrícola", "Popular", "Sol") passa a licença das palavras, e por isso há
+   mais duas camadas [2026-11-19, quinta revisão]:
+   - **as marcas que já conhecemos**: os concorrentes de todos os clientes
+     do Tracker, os nomes dos clientes e uma lista curada por mercado.
+     Contam sempre, se não forem palavra; se forem só palavras comuns,
+     contam num lado de uma comparação, com maiúscula fora do início da
+     frase, depois de um artigo definido ("ou o novo banco", "à caixa") e
+     nunca depois de um indefinido ("um novo banco");
+   - **a rede do modelo**: o modelo rápido lê as perguntas aceites numa
+     chamada só e aponta os nomes de empresa, marca ou produto, em todos os
+     campos; o servidor recusa a pergunta cujo nome não é a marca, um
+     candidato com prova nem da lista fechada. O modelo não decide nem
+     acrescenta nomes. Se a chamada falhar, as comparações não entram.
 
 **Salta-se sem voltar:** uma pergunta igual, letra a letra, a outra que já
 existe ou a outra do mesmo pedido, e um item sem texto. Não há nada para
