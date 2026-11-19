@@ -88,12 +88,19 @@ marca**: os factos de um prospect nunca se usam no relatório de outro.
   - `titulo`: o assunto, curto, sem número ("O preço da primeira consulta").
     Até 70 caracteres.
   - `pergunta`: o que o cliente pergunta, nas palavras dele. Na língua das
-    perguntas medidas (a do cliente, `lingua` no contexto), é o texto da
-    pergunta medida, encurtado se for preciso, sem mudar o sentido e com as
-    mesmas palavras. O Tracker confere-o: cada palavra que conta (quatro
-    letras ou mais, tirando as de função como «qual», «mais» ou «melhor»)
-    tem de estar na pergunta medida, e só o plural e a vogal final de género
-    mudam. Nas outras duas línguas, a tradução. Até 200 caracteres.
+    perguntas medidas (`lingua_das_perguntas` no contexto, que pode não ser
+    a do cliente: uma marca com a interface em inglês pode medir perguntas
+    em português do Brasil), é o texto da pergunta medida, encurtado se for
+    preciso, sem mudar o sentido e com as mesmas palavras. Nas outras
+    línguas, a tradução. Até 200 caracteres. O Tracker confere que, numa
+    das três versões, cada palavra que conta (quatro letras ou mais, tirando
+    as de função como «qual», «mais» ou «melhor») está na pergunta medida e
+    que as negações («não», «sem», «not», «pas») são as mesmas. Juntam-se o
+    plural e a vogal final de género; as formas verbais não («implementam»
+    não é «implementar»), por isso copia-se o verbo como está. Com as
+    perguntas numa língua que o texto não tem (espanhol, alemão), confere-se
+    só o `prompt_id`. A `pergunta` é uma citação e o Tracker não a passa
+    pelo «você».
   - `decide`: o que decide a resposta, em concreto: a fonte que a IA cita
     nessa pergunta, a página que falta no site da marca, o facto que um
     concorrente publica. Até 240 caracteres.
@@ -212,14 +219,17 @@ resto fica:
 6. nenhuma nota nossa (o que o sinal `nota_interna_no_cliente` acusa:
    nomes de tabelas, «founder», marcas de rascunho);
 7. cada exemplo com `prompt_id` de uma pergunta do contexto, com a
-   `pergunta` na língua do cliente a bater com a pergunta medida, sem
-   repetir pergunta, no máximo três;
+   `pergunta` a bater com a pergunta medida numa das três versões (salvo
+   perguntas numa língua que o texto não tem), sem repetir pergunta, no
+   máximo três;
 8. `funciona: true` só numa pergunta com `escolhida` maior do que zero.
 
 O estacionamento sem frase ou sem nenhum exemplo aceite sai inteiro. Sem
 nenhum bloco aceite, o pedido fecha em erro e o relatório fica como estava.
 
 O texto grava-se com a auditoria do contexto (`weekly_audit_id`) e só
-aparece no relatório montado dessa auditoria. O pedido só nasce com a
-semana fechada. Pede-se texto novo numa semana nova, numa semana que reabre
-e volta a fechar, e quando as linhas do arranque mudam.
+aparece no relatório montado dessa auditoria, com a semana fechada e escrito
+depois do último fecho dela. O pedido só nasce com a semana fechada.
+Pede-se texto novo numa semana nova, numa semana que reabre e volta a
+fechar, e quando as linhas do arranque mudam; o pedido anterior fecha como
+substituído, e um resultado entregue para ele é recusado.
