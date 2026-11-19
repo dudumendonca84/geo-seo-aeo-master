@@ -95,14 +95,18 @@ marca**: os factos de um prospect nunca se usam no relatório de outro.
     português do Brasil («aplicativo», «equipe», «cadastro» ficam). Nas
     outras línguas, a tradução. Até 200 caracteres. O Tracker confere a
     versão na língua das perguntas medidas, e só essa: cada palavra que
-    conta (quatro letras ou mais, tirando as de função como «qual», «mais»
-    ou «melhor») está na pergunta medida, e as negações dessa língua
-    («não», «sem»; «not», «no»; «ne», «pas») são as mesmas. Juntam-se o
-    plural e a vogal final de género; as formas verbais não («implementam»
-    não é «implementar»), por isso copia-se o verbo como está. Com as
-    perguntas numa língua que o texto não tem (espanhol, alemão), confere-se
-    só o `prompt_id`. A `pergunta` é uma citação: não passa pelo «você» nem
-    pelas tabelas de `escrita.md` (§ 3, § 4 e § 6 dizem o mesmo).
+    conta (quatro letras ou mais, tirando as de função como «qual», «onde»
+    ou «como») está na pergunta medida, e as negações dessa língua («não»,
+    «sem»; «not», «no»; «ne», «pas») são as mesmas. As palavras de
+    polaridade («melhor» e «pior», «mais» e «menos»; «best» e «worst»;
+    «plus» e «moins») podem sair ao encurtar, mas não trocar pela oposta:
+    cada uma que fique tem de estar na pergunta medida. Juntam-se o plural
+    e a vogal final de género; as formas verbais não («implementam» não é
+    «implementar»), por isso copia-se o verbo como está. Com as perguntas
+    numa língua que o texto não tem (espanhol, alemão), confere-se só o
+    `prompt_id`. A versão na língua das perguntas medidas é uma citação:
+    não passa pelo «você» nem pelas tabelas de `escrita.md`. As outras duas
+    são traduções e passam por tudo (§ 3, § 4 e § 6 dizem o mesmo).
   - `decide`: o que decide a resposta, em concreto: a fonte que a IA cita
     nessa pergunta, a página que falta no site da marca, o facto que um
     concorrente publica. Até 240 caracteres.
@@ -146,8 +150,10 @@ O mesmo relatório abre em português, inglês e francês, pelo endereço
 - **Português de Portugal**, com o Acordo de 1990, a tratar o leitor por
   "você" (`escrita.md` § 7). O Tracker passa o português pelo "você" e pelo
   artigo certo da marca antes de o conferir, mas não corrige o resto. A
-  exceção é a `pergunta` dos exemplos, que é citação: vai como foi medida,
-  em português do Brasil quando a pergunta medida o é.
+  exceção é a versão da `pergunta` dos exemplos na língua das perguntas
+  medidas, que é citação: vai como foi medida, em português do Brasil
+  quando a pergunta medida o é. Quando as perguntas medidas estão noutra
+  língua, a `pergunta` em português é tradução e segue esta regra.
 - **Inglês britânico** (`escrita.md` § 8).
 - **Francês de França**, com o espaço inseparável antes de `?`, `!`, `:`
   e `;` e por dentro das aspas « ». O Tracker não o troca por um espaço
@@ -172,8 +178,8 @@ O mesmo relatório abre em português, inglês e francês, pelo endereço
 - **Escrever para o prospect fazer o que só a destaque.ai faz.** O bloco
   mostra onde está o esforço certo; o plano já está no resto do capítulo.
 - **Os tiques e as palavras do Brasil** das tabelas de `escrita.md`, em
-  todos os campos menos a `pergunta` dos exemplos, que cita a pergunta
-  medida. O Tracker mede-os e recusa o campo.
+  todos os campos menos a versão da `pergunta` dos exemplos na língua das
+  perguntas medidas, que a cita. O Tracker mede-os e recusa o campo.
 
 ---
 
@@ -220,7 +226,9 @@ resto fica:
 4. as tabelas de `escrita.md` (tiques, Brasil → Portugal, grafia anterior
    ao Acordo) e os limites que se medem (palavras por frase, dois-pontos
    por parágrafo, frases por parágrafo, exclamações), em todos os campos
-   menos a `pergunta` dos exemplos, que é citação;
+   menos a versão da `pergunta` dos exemplos na língua das perguntas
+   medidas, que é citação (com as perguntas numa língua que o texto não
+   tem, nenhuma versão é citação);
 5. nenhum número fora do contexto;
 6. nenhuma nota nossa (o que o sinal `nota_interna_no_cliente` acusa:
    nomes de tabelas, «founder», marcas de rascunho);

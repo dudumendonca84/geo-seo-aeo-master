@@ -438,8 +438,8 @@ aplica-as ao texto devolvido.
 | `proposal_writing` | `proposal_writing.md`, `escrita.md` | `result` com `porque_acontece {numero, nota, texto}`, `posicionamento` e `estacionamento {frase, texto?, exemplos[{prompt_id, titulo, pergunta, decide, funciona}]}`; cada texto em `{pt, en, fr}`; qualquer bloco pode ser `null` |
 
 **Regra dura:** cada texto vem nas três línguas e fica dentro das tabelas e
-dos limites de `escrita.md`, salvo a `pergunta` dos exemplos, que é citação
-da pergunta medida (português do Brasil incluído). Nenhum campo leva
+dos limites de `escrita.md`, salvo a versão da `pergunta` dos exemplos na
+língua das perguntas medidas, que é citação (português do Brasil incluído). Nenhum campo leva
 travessões, notas nossas nem números que o contexto do pedido não tenha (os
 fixos do capítulo vêm em `capitulo`). Os exemplos só saem de perguntas do
 contexto, no máximo três, com a versão da `pergunta` na língua das perguntas
