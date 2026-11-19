@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 19 Nov 2026** (nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026** (décima revisão: os nomes da base compilam-se com o tokenizador do texto; um nome da base todo genérico também é descrição, e uma palavra que não é adjetivo, lugar nem especialidade faz dele um nome próprio; só o indefinido verdadeiro isenta tipo + de + lugar; uma curada só é descrição com todas as palavras genéricas; o descritor governa o tipo com adjetivos pelo meio. Nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -555,9 +555,10 @@ motivo (§8.8).
      o isenta ("o meu Banco do Brasil", "this Bank of America branch");
      fora de comparação e em minúsculas, com um tipo de instituição conta
      salvo quando a frase o DESCREVE: um superlativo, um demonstrativo, um
-     possessivo ou uma pergunta que governa o próprio tipo (logo antes
-     dele, ou antes do artigo: "Qual o melhor banco de Lisboa para
-     empresas?", "Que banco do Porto tem melhor atendimento?"), ou "para",
+     possessivo ou uma pergunta que governa o próprio tipo (antes dele,
+     com artigos e adjetivos pelo meio: "Qual o melhor banco de Lisboa
+     para empresas?", "Que grande banco de Lisboa…", "Qual o melhor
+     pequeno banco de Lisboa?"), ou "para",
      "com", "mais", "menos", "que" ou "onde" logo a seguir; um descritor de
      outro substantivo não isenta ("o melhor médico do hospital de Braga",
      "uma consulta no hospital de Braga"); com um tipo genérico (clínica,
@@ -595,13 +596,20 @@ motivo (§8.8).
      superlativo ou de uma pergunta no início da oração ("um novo banco",
      "o meu novo banco", "o melhor banco comercial português", "que banco
      português de investimento"), e nem essa com o tipo em maiúscula a
-     meio da frase ("o meu Novo Banco"); "este doutor finanças", "a minha
-     caixa geral de depósitos" e "do que doutor finanças" contam; uma
-     curada com tipo + de/of + lugar ("Bank of America", "Banco do Brasil",
-     "Banco de Moçambique") nunca se lê como descrição, em nenhuma caixa
-     nem língua, e só o indefinido a isenta ("abrir conta num banco do
-     Brasil"): "my bank of america account" e "o meu banco do brasil"
-     contam; uma de uma só palavra
+     meio da frase ("o meu Novo Banco"); ter um tipo dentro não chega:
+     todas as outras palavras têm de ser genéricas (adjetivo, gentílico,
+     especialidade do serviço), e por isso "o meu banco safra", "o meu
+     banco sol", "o meu banco de fomento angola" e "o meu banco angolano
+     de investimentos" contam; "este doutor finanças", "a minha caixa
+     geral de depósitos" e "do que doutor finanças" também; uma curada com
+     tipo + de/of + lugar ("Bank of America", "Banco do Brasil", "Banco de
+     Moçambique") nunca se lê como descrição, em nenhuma caixa nem língua,
+     e só o indefinido verdadeiro (um, uma, num, numa, a, an) a isenta
+     ("abrir conta num banco do Brasil"): "my bank of america account", "o
+     meu banco do brasil", "qualquer banco do brasil", "outro banco do
+     brasil" e "any bank of america branch" contam; num lado de uma
+     comparação com a marca do cliente, "um banco do brasil" em minúsculas
+     passa a camada e fica para a rede do modelo; uma de uma só palavra
      conta num lado de uma comparação, com maiúscula, ou depois de um
      artigo definido ("à caixa"); a lista curada tem os bancos por extenso
      de Portugal, Angola, Moçambique e Brasil e os intermediários de
@@ -623,15 +631,30 @@ motivo (§8.8).
      acaba num adjetivo ("a estratégia digital", "o mercado livre"); uma
      só palavra da base ("nacional ou internacional") conta só com
      maiúscula; um nome da base de várias palavras que começa por um tipo
-     é uma sequência fixa e conta sempre, em qualquer caixa e posição,
-     também no `rationale` ("o hospital da luz", "uma consulta no hospital
-     de jesus", "clínica dentária do porto", «hospital de braga
-     urgência»); as duas exceções são o tipo seguido só de adjetivos
-     ("clínica dentária", que é a descrição da categoria e conta só escrito
-     como nome ou num lado) e o nome que é SÓ tipo + preposição + cidade ou
-     país ("Hospital de Braga"), em minúsculas e com um descritor que
-     governa o próprio tipo ("qual o melhor hospital de Braga para
-     partos?"). A
+     lê-se assim [décima revisão]: se todas as palavras depois do tipo são
+     genéricas (um adjetivo, um gentílico, uma cidade ou país, ou uma
+     especialidade do serviço, ou seja, o que um negócio daquele tipo
+     oferece: "da mão", "do coração", "de ortopedia", "de imagem médica",
+     "do automóvel", "de investimento"), o nome também se lê como
+     descrição ("Clínica Dentária do Porto", "Hospital Privado de Braga",
+     "Clínica de Imagem Médica") e conta escrito como nome (o tipo, ou uma
+     palavra que não é lugar, em maiúscula a meio da frase), num lado de
+     uma comparação, e depois do artigo definido ou sem determinante (em
+     português, que é como o autocompletar o escreve: «hospital de braga
+     urgência») sem um descritor que governe o tipo; o indefinido
+     verdadeiro e o descritor que governa o tipo isentam-no, em qualquer
+     comprimento ("Qual a melhor clínica dentária do Porto?", "numa
+     clínica de imagem médica"), e "o melhor médico do hospital de braga"
+     conta, porque o descritor é do médico; se tem uma palavra que não é
+     nenhuma destas ("Luz", "Lapa", "Dragão", "Jesus", "São João", mesmo
+     estando no dicionário), é um nome próprio e conta sempre, em qualquer
+     caixa e posição, também no `rationale` ("o hospital da luz", "uma
+     consulta no hospital de jesus"). Falhar uma especialidade recusa uma
+     pergunta legítima, que volta ao gerador; é o lado seguro. Os nomes
+     comparam-se com o mesmo tokenizador do texto: o hífen e o apóstrofo
+     casam escritos com ou sem eles, o "Dr." casa com o ponto, e um nome
+     com um acrónimo entre parênteses conta também sem ele e pelo acrónimo
+     ("Hospital Particular de Paredes (HPP)"). A
      marca do cliente apaga as marcas contidas no NOME dela, as que são
      iguais a uma das grafias, e as que partilham com ela uma palavra
      distintiva que não é do dicionário ("Bison Digital Assets" para o
