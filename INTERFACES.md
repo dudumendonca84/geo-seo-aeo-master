@@ -438,14 +438,15 @@ aplica-as ao texto devolvido.
 | `proposal_writing` | `proposal_writing.md`, `escrita.md` | `result` com `porque_acontece {numero, nota, texto}`, `posicionamento` e `estacionamento {frase, texto?, exemplos[{prompt_id, titulo, pergunta, decide, funciona}]}`; cada texto em `{pt, en, fr}`; qualquer bloco pode ser `null` |
 
 **Regra dura:** cada texto vem nas três línguas e fica dentro das tabelas e
-dos limites de `escrita.md`. Não leva travessões, notas nossas nem números
-que o contexto do pedido não tenha (os fixos do capítulo vêm em
-`capitulo`). Os exemplos só saem de perguntas do contexto, no máximo três,
-com a `pergunta` a bater com a pergunta medida numa das três versões
-(`lingua_das_perguntas` diz em que língua estão; numa língua que o texto não
-tem, confere-se só o `prompt_id`), e `funciona: true` só onde a IA já
-escolhe a marca. Um pedido substituído fecha como `done`, e o resultado
-entregue para ele é recusado. O contexto traz o resumo da página inicial
+dos limites de `escrita.md`, salvo a `pergunta` dos exemplos, que é citação
+da pergunta medida (português do Brasil incluído). Nenhum campo leva
+travessões, notas nossas nem números que o contexto do pedido não tenha (os
+fixos do capítulo vêm em `capitulo`). Os exemplos só saem de perguntas do
+contexto, no máximo três, com a versão da `pergunta` na língua das perguntas
+medidas (`lingua_das_perguntas`) a bater com a pergunta medida; numa língua
+que o texto não tem, confere-se só o `prompt_id`. `funciona: true` só onde
+a IA já escolhe a marca. Um pedido substituído fecha como `done`, e o
+resultado entregue para ele volta como `ja_fechado` com o motivo. O contexto traz o resumo da página inicial
 (`site`) para o posicionamento dizer como a marca se apresenta. A validação está em
 `lib/reports/escrito-da-proposta.ts` (`escritoDoCerebro`): um campo que
 falha sai com o motivo, e um pedido sem nenhum bloco aceite fecha em erro
