@@ -562,11 +562,13 @@ nos fóruns do mercado):
 - `pessoas_tambem_perguntam` [2026-11-19]: as perguntas do bloco «As
   pessoas também perguntam» do Google no mercado do cliente, para a marca e
   para até três termos da `categoria` (`semente`, a pesquisa que a trouxe;
-  `pergunta`, tal como o Google a mostra; `resposta`, o princípio da
-  resposta que o Google mostra, ou `null`; `fonte`, o domínio dessa
-  resposta quando se conhece, ou `null`). Até 40, sem repetidas;
+  `pergunta`, tal como o Google a mostra; `fonte`, o domínio de onde vem a
+  resposta que o Google mostra, quando se conhece, ou `null`). Até 40, sem
+  repetidas. Uma marca cujo nome é também palavra comum ("Continente")
+  pesquisa-se com o nome da categoria à frente ("supermercado
+  Continente"), senão o Google responde sobre a palavra e não sobre a marca;
 - `conversas_nos_foruns` [2026-11-19]: títulos e excertos com forma de
-  pergunta no Reddit e, em Portugal, no Fórum Zwame, sobre até três termos
+  pergunta no Reddit e, em Portugal, no Fórum Zwame, sobre até dois termos
   da `categoria` (`termo`, `titulo`, `excerto`, `url`, `sitio`, que é o
   subreddit, `r/portugal`, ou o domínio do fórum). Até 30. Só entram os
   resultados que são mesmo do sítio pedido;
@@ -646,8 +648,12 @@ Como se usa:
    palavras: `Google: saldo cartão continente expira`,
    `As pessoas também perguntam: Quanto custa um seguro de saúde por mês?`,
    `Reddit r/portugal: Seguro de saúde: qual recomendam?`,
-   `Fórum Zwame: Alguém sabe se a Multicare cobre partos?`. Uma pergunta que
-   não veio da voz do cliente fica sem `voice_source`.
+   `Fórum Zwame: Alguém sabe se a Multicare cobre partos?`. O nome da fonte
+   escreve-se exatamente numa destas formas (`Google`, `As pessoas também
+   perguntam`, `Reddit` ou `Reddit r/<subreddit>`, `Fórum <nome>`), porque
+   o produto o tira antes de mostrar a frase ao cliente e só reconhece
+   estas. Uma pergunta que não veio da voz do cliente fica sem
+   `voice_source`.
 5. **Uma marca nova e pouco conhecida devolve pouco**, e às vezes devolve
    outra empresa com o mesmo nome (medido: as duas sugestões da goCrew
    eram de empresas homónimas noutro país). Isso é um dado sobre a marca,
@@ -722,9 +728,8 @@ Como se usa:
     - um título de fórum vem cortado ou com o nome do sítio, e o excerto é
       muitas vezes o princípio do tópico: lê os dois e escreve a pergunta
       que o tópico faz, nunca o título tal como está;
-    - a `resposta` e a `fonte` do «As pessoas também perguntam» não entram
-      na pergunta (seria pôr a resposta na pergunta); servem para saber que
-      sítios já respondem a isto;
+    - a `fonte` do «As pessoas também perguntam» não entra na pergunta;
+      serve para saber que sítios já respondem a isto;
     - uma pergunta de fórum sobre um caso de uma pessoa ("o meu seguro
       recusou a minha cirurgia") não se copia: escreve-se a dúvida geral que
       está por trás ("Um seguro de saúde pode recusar uma cirurgia?");
