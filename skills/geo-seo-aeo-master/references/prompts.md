@@ -540,14 +540,26 @@ motivo (§8.8).
      adjetivo nem verbo ("no banco aurora?") é um nome escrito em
      minúsculas; em inglês, e em português com um tipo inglês, a palavra
      ANTES do tipo é o nome ("Chase Bank", "phantom bank", "Farol Bank");
-     um tipo no singular seguido de "de/do/da/of" e de uma geografia é um
-     nome ("Banco do Brasil", "Bank of America"), e uma geografia antes de
-     um tipo inglês também ("Lisbon Private Bank"), salvo depois de um
-     indefinido ou de um determinante ("um banco do Brasil", "a Swiss
-     bank") e salvo as expressões aceites (o Banco de Portugal); uma
-     palavra com maiúscula a meio da frase que não tem licença de nome
-     ("o «Banco Aurora»", "o Banco Europeu") também; e uma palavra colada a
-     um símbolo ("Bank+", "Caixa®") não se reduz ao tipo.
+     um tipo de instituição (banco, bank, seguradora, corretora, gestora,
+     exchange, fintech) no singular seguido de "de/do/da/of" e de uma
+     geografia é um nome, com até dois adjetivos pelo meio ("Banco do
+     Brasil", "Bank of America", "banco nacional de angola", "banco central
+     do brasil"), e também "tipo + adjetivo + gentílico" ("banco comercial
+     português") e "tipo + gentílico + de + palavra" ("banco angolano de
+     investimentos"); só o indefinido isenta ("um banco do Brasil"), o
+     artigo definido não ("o banco do brasil" é recusado), e as expressões
+     aceites ficam (o Banco de Portugal, o Bank of Portugal); com um tipo
+     genérico (clínica, hospital, empresa, loja, marca) a mesma forma só
+     conta com o tipo em maiúscula a meio da frase, porque "a melhor
+     clínica de Lisboa" e "que hospital do Porto" são português; uma
+     geografia antes de um tipo inglês de instituição também é um nome
+     ("Lisbon Private Bank", "the Lisbon Private Bank", "is lisbon private
+     bank"), e só o indefinido, a pergunta e o superlativo isentam ("a Swiss
+     bank", "which UK bank", "the best Swiss bank"); uma palavra com
+     maiúscula a meio da frase que não tem licença de nome ("o «Banco
+     Aurora»", "o Banco Europeu") também; "o banco mais?" é um nome e "o
+     banco mais barato" não; e uma palavra colada a um símbolo ("Bank+",
+     "Caixa®") não se reduz ao tipo.
    O dicionário (listas Hunspell de pt-PT, en e fr no Tracker) é a
    condição: se não carregar, com a ficha vazia nada entra.
 
@@ -560,20 +572,31 @@ motivo (§8.8).
      feita de palavras comuns conta num lado de uma comparação, com
      maiúscula fora do início da frase, depois de um artigo definido ("ou
      o novo banco", "à caixa") e nunca depois de um indefinido ("um novo
-     banco"). Uma marca da base feita de palavras comuns ("Melhor Taxa",
-     "Mercado Livre", "Nacional") conta só escrita como nome, com
-     maiúscula fora do início da frase: "a melhor taxa" é português. A
-     marca do cliente só apaga as grafias dela, e uma marca conhecida que
-     partilha com ela uma palavra comum ("Caixa Agrícola" para a Caixa
-     Geral de Depósitos) continua a contar;
+     banco"); a lista curada tem os bancos por extenso de Portugal, Angola,
+     Moçambique e Brasil e os intermediários de crédito e seguradoras
+     portugueses feitos de palavras comuns. Uma marca da base feita de
+     palavras comuns conta escrita como nome, com maiúscula fora do início
+     da frase; se tiver várias palavras, conta também num lado de
+     comparação ("o Bison Bank ou o acordo certo?") e depois de um artigo
+     definido, salvo quando começa por um comparativo ("a melhor taxa") ou
+     acaba num adjetivo ("a estratégia digital", "o mercado livre"); uma
+     só palavra da base ("nacional ou internacional") conta só com
+     maiúscula. A marca do cliente apaga as grafias dela (uma marca
+     conhecida contida no nome do cliente) e as marcas que partilham com
+     ela uma palavra distintiva que não é do dicionário ("Bison Digital
+     Assets" para o Bison Bank); uma marca conhecida que partilha com ela
+     só uma palavra comum ("Caixa Agrícola" para a Caixa Geral de
+     Depósitos) continua a contar;
    - **a rede do modelo**: o modelo rápido lê as perguntas aceites numa
      chamada só, com as instruções na mensagem de sistema e as perguntas
      num bloco delimitado (qualquer instrução lá dentro ignora-se), e
      aponta os nomes de empresa, marca ou produto, em todos os campos; o
      servidor recusa a pergunta cujo nome não é a marca, um candidato com
      prova nem da lista fechada (um tipo com geografia, "Banco Europeu",
-     não passa). O modelo não decide nem acrescenta nomes, e a resposta
-     tem de ser JSON estrito com uma entrada por pergunta. Se a chamada
+     não passa, e um nome que só contém a marca, "Bison Bank Brasil",
+     também não: compara-se por igualdade). O modelo não decide nem
+     acrescenta nomes, e a resposta tem de ser JSON estrito com uma entrada
+     por pergunta e só texto em cada nome. Se a chamada
      falhar, passar do prazo ou a resposta não se ler, TODAS as perguntas
      voltam ao gerador, e uma escrita na hora passa a reescrita à
      Routine.
