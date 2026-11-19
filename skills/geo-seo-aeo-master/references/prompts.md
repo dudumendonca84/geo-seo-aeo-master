@@ -596,7 +596,12 @@ motivo (§8.8).
      "o meu novo banco", "o melhor banco comercial português", "que banco
      português de investimento"), e nem essa com o tipo em maiúscula a
      meio da frase ("o meu Novo Banco"); "este doutor finanças", "a minha
-     caixa geral de depósitos" e "do que doutor finanças" contam; uma de uma só palavra
+     caixa geral de depósitos" e "do que doutor finanças" contam; uma
+     curada com tipo + de/of + lugar ("Bank of America", "Banco do Brasil",
+     "Banco de Moçambique") nunca se lê como descrição, em nenhuma caixa
+     nem língua, e só o indefinido a isenta ("abrir conta num banco do
+     Brasil"): "my bank of america account" e "o meu banco do brasil"
+     contam; uma de uma só palavra
      conta num lado de uma comparação, com maiúscula, ou depois de um
      artigo definido ("à caixa"); a lista curada tem os bancos por extenso
      de Portugal, Angola, Moçambique e Brasil e os intermediários de
