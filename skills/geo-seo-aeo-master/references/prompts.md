@@ -533,8 +533,16 @@ em duas partes, e a página inicial da marca):
   três anteriores, em percentagem) de cada termo da marca, dos
   concorrentes e das sugestões das duas listas acima, da maior procura
   para a menor. `null` é "sem número", não zero;
+- `temas` e `temas_origem` [2026-11-19]: os temas medidos. `pedido` quando
+  a marca os escreveu; `site` quando o pedido não trazia nenhum e foram
+  propostos a partir do menu e dos subtítulos da página inicial, um por
+  linha de negócio (até 12). Os temas do site cobrem as linhas que a marca
+  mostra, não as que ela quer vender mais: o catálogo reparte-se por todas,
+  com mais peso nas que têm mais procura (`procura`) ou estão a subir
+  (`tendencias`), e diz no racional de onde veio o tema;
 - `tendencias` [2026-11-14]: o que está a subir no mercado do cliente, por
-  tema (os temas pedidos pela marca, ou os termos da `categoria`):
+  tema (os temas pedidos pela marca ou propostos pelo site, ou os termos da
+  `categoria`):
   `google_trends` (por tema: `variacao_3m`, o interesse dos últimos três
   meses face aos três anteriores, em percentagem; `interesse_medio`, o
   interesse médio de doze meses, de 0 a 100, relativo ao pico do próprio
