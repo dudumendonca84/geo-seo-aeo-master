@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 19 Nov 2026** (décima primeira revisão: os 308 concelhos são nomes de lugar; a terminação deixa de decidir que um nome da base é descrição, e depois de "de" só contam lugar e especialidade; uma parte de nome que é só descritor não é marca; o descritor não salta um "e" com artigo nem um "que" relativo; em inglês, "a"/"an" num lado não isentam a curada tipo + of + lugar. Décima revisão: os nomes da base compilam-se com o tokenizador do texto; um nome da base todo genérico também é descrição, e uma palavra que não é adjetivo, lugar nem especialidade faz dele um nome próprio; só o indefinido verdadeiro isenta tipo + de + lugar; uma curada só é descrição com todas as palavras genéricas; o descritor governa o tipo com adjetivos pelo meio. Nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 19 Nov 2026** (décima segunda revisão: a cabeça de um nome nunca cai; um concelho não é palavra comum dentro de um nome da base; uma palavra sem género que se leia não concorda com o tipo. Décima primeira revisão: os 308 concelhos são nomes de lugar; a terminação deixa de decidir que um nome da base é descrição, e depois de "de" só contam lugar e especialidade; uma parte de nome que é só descritor não é marca; o descritor não salta um "e" com artigo nem um "que" relativo; em inglês, "a"/"an" num lado não isentam a curada tipo + of + lugar. Décima revisão: os nomes da base compilam-se com o tokenizador do texto; um nome da base todo genérico também é descrição, e uma palavra que não é adjetivo, lugar nem especialidade faz dele um nome próprio; só o indefinido verdadeiro isenta tipo + de + lugar; uma curada só é descrição com todas as palavras genéricas; o descritor governa o tipo com adjetivos pelo meio. Nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -638,15 +638,23 @@ motivo (§8.8).
      acaba num adjetivo ("a estratégia digital", "o mercado livre"); uma
      só palavra da base ("nacional ou internacional") conta só com
      maiúscula; um nome da base de várias palavras que começa por um tipo
-     lê-se assim [décima e décima primeira revisões]: se é todo genérico,
+     lê-se assim [décima à décima segunda revisões]: se é todo genérico,
      também se lê como descrição. Todo genérico quer dizer que, depois do
      tipo, só vêm adjetivos e gentílicos de lista, ou palavras do
-     dicionário que concordam com o tipo em género e número ("clínica
-     dentária", "hospital privado"); "de/da/do/em" seguido SÓ de um lugar
-     (um concelho ou outra geografia da lista) ou de uma especialidade do
-     serviço, que é o que um negócio daquele tipo oferece ("da mão", "do
-     coração", "de ortopedia", "de imagem médica", "do automóvel"), em lista;
-     e um lugar no fim ("App Portugal"). A terminação de uma palavra não
+     dicionário em -o ou -a que concordam com o tipo em género e número
+     ("clínica dentária", "hospital privado"; uma palavra sem género que
+     se leia, como "Tear", "Central" ou "Real", não concorda, e um lugar
+     ou uma especialidade também não fazem de adjetivo); "de/da/do/em"
+     seguido SÓ de um lugar (um concelho ou outra geografia da lista, que
+     não tenha nome de santo: "Hospital de Santa Cruz" é um nome próprio)
+     ou de uma especialidade do serviço, que é o que um negócio daquele
+     tipo oferece ("da mão", "do coração", "de ortopedia", "de imagem
+     médica", "do automóvel"), em lista; e um país ou região no fim ("App
+     Portugal"), mas nunca um concelho sem preposição ("Clínica Dentária
+     Maia", "Trofa Saúde"). O limite que fica: a lista do dicionário não
+     traz a classe gramatical, e um substantivo em -o ou -a que concorda
+     com o tipo ("Hospital Ribeiro") ainda se lê como adjetivo. A
+     terminação de uma palavra não
      prova que é adjetivo, porque os nomes próprios portugueses têm as
      mesmas ("Hospital da Arrábida", "Hospital da Prelada", "Clínica do
      Choupal", "Hospital Privado da Boa Nova", "Clínica Dentária Morgado",
@@ -672,15 +680,26 @@ motivo (§8.8).
      casam escritos com ou sem eles, o "Dr." casa com o ponto, e um nome
      com um acrónimo entre parênteses conta também sem ele e pelo acrónimo
      ("Hospital Particular de Paredes (HPP)"). Um nome com um parêntese
-     final ou dividido ("/", " – ", "|", " · ") dá as partes distintivas, e
-     não as que são só descritor: uma parte curta, de até duas palavras do
-     dicionário ou de geografia, que não começa por um tipo, não é marca
-     ("Staff Augmentation (staffaugmentation.pt)" dá só o domínio, "SNS /
-     setor público" dá só "SNS"); a vírgula acaba o nome ("Bison Bank,
+     final ou dividido ("/", " – ", "|", " · ") dá a cabeça (a primeira
+     parte), que NUNCA cai, e as outras partes distintivas; das outras, uma
+     parte curta, de até duas palavras do dicionário ou de geografia, que
+     não começa por um tipo, não é marca ("SNS / setor público" dá só
+     "SNS"; "Delta Cafés (Grupo Nabeiro)" dá as duas). A cabeça só cai
+     quando o parêntese é o domínio dela sem espaços ("Staff Augmentation
+     (staffaugmentation.pt)" dá só o domínio); a vírgula acaba o nome ("Bison Bank,
      S.A.") sem o partir, e o "!" fica na ficha ("OK! Seguros" é a
      seguradora, "ok" não é). Os setores do Radar, os estudos e os testes
      não são marcas: lêem-se pelo prefixo "Radar ·", "Estudo ·" e "Teste ·",
-     porque a base não tem um campo que os separe. A
+     porque a base não tem um campo que os separe. Um concelho é aceite na
+     camada do dicionário, para as perguntas locais entrarem, mas NÃO é
+     palavra comum dentro de um nome da base: "Trofa Saúde", "Marco
+     Gouveia", "Bruno Abrantes" e "União de Santarém" contam como os outros
+     nomes próprios. Uma marca da base com o nome de um concelho ("Paços de
+     Ferreira", o clube) conta sempre, salvo num complemento de lugar ("em
+     Paços de Ferreira"), e um lado de comparação que é só um concelho sem
+     preposição ("o Bison Bank ou o Óbidos?") é um nome. Só um lugar inteiro
+     deixa de contar como nome escrito como nome: "Nova", "Real" ou "Santa"
+     soltos em maiúscula continuam a ser um nome. A
      marca do cliente apaga as marcas contidas no NOME dela, as que são
      iguais a uma das grafias, e as que partilham com ela uma palavra
      distintiva que não é do dicionário ("Bison Digital Assets" para o
