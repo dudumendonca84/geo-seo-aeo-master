@@ -446,14 +446,14 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - `alt` coverage % (with 5 distinct missing examples).
 - Bilingual copy hygiene (PT/EN mixing in body when `hreflang` declares one language).
 - Subtítulos partidos por um elemento visual: um H2 ou H3 que começa por minúscula numa página onde os outros começam por maiúscula (um número grande num bloco à parte e o resto da frase no H2). Quem extrai o subtítulo sozinho lê meia frase.
-- Endereço na língua de outra versão: o último segmento de uma página `/en/` igual ao da versão `pt-PT` declarada no `hreflang` (compara-se com o que o site declara, não se adivinha a língua; segmentos de três palavras ou mais).
+- Endereço na língua de outra versão: o último segmento de uma página `/en/` igual ao da versão `pt-PT` declarada no `hreflang`, com palavras portuguesas e nenhuma inglesa. Acusa-se só a versão cujo endereço está na língua da outra, nunca o original nem o alvo do `x-default`; um termo técnico igual nas duas línguas (`llms-txt-vs-robots-txt`) fica de fora.
 - Perguntas do `FAQPage` que não aparecem no texto da página, e um `Article`/`BlogPosting` sem `headline`, `author`, `datePublished`, `dateModified` ou `image`.
 - Open Graph completo, com `og:image:alt`, e `twitter:image:alt` quando há uma `twitter:image` própria.
 
 ### 6. SEO technical
 - `sitemap.xml` (index? bilingual? URL count and breakdown by template).
 - `robots.txt` (which AI crawlers explicitly allowed/disallowed; flag missing ClaudeBot, Google-Extended, Applebot-Extended, CCBot, Bytespider).
-- `hreflang` (correct? `x-default` present? recíproco: abrir as versões noutras línguas e confirmar que apontam de volta, porque a Google ignora um par sem volta).
+- `hreflang` (correct? `x-default` recomendado, não obrigatório; recíproco: abrir as versões noutras línguas e confirmar que apontam de volta, porque a Google ignora um par sem volta).
 - `sitemap.xml` por dentro: `lastmod` em falta e `lastmod` no futuro; as linhas `Sitemap:` do `robots.txt` respondem 200 com XML; os endereços do sitemap, o `rel=canonical` e o `og:url` usam o mesmo protocolo e o mesmo `www` onde a página inicial acaba.
 - Endereços internos que respondem 404: as pastas acima de páginas do sitemap que o sitemap não lista (`/radar/setor` quando só existe `/radar/setor/banca`) e as ligações da página inicial fora do sitemap. Uma ligação partida não é uma página que falte no sitemap.
 - JSON-LD schema (current types injected, with concrete missing-types list referencing the templates that need them).
@@ -461,7 +461,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Compression and cache headers.
 
 ### 7. AI / LLM visibility (technical GEO)
-- `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap? Por dentro: responde com texto e não com a página de erro do site servida com 200, abre com um título `#`, e as ligações para o próprio site que o sitemap não lista não respondem 404.
+- `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap? Um `/llms.txt` que responde 200 com uma página HTML (a página de erro do site, um falso 404) conta como ausente, e isso pesa na nota técnica; decide o corpo (`<!doctype`, `<html`, `<head`) e não o content-type, porque um Markdown servido por engano como `text/html` continua a ser um llms.txt. Por dentro: abre com um título `#`, e as ligações para o próprio site que o sitemap não lista não respondem 404.
 - Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent. Inclusion in answers with search is decided by the **index crawlers** (`OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`, and `Googlebot` again for Brave and therefore Claude), not by the user-triggered agents; check robots.txt and the firewall/CDN for those first. See `references/como-os-motores-leem.md`.
 - Is HTML server-rendered (LLMs read it without JS)?
 - **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images: image SEO is now a citation surface.
