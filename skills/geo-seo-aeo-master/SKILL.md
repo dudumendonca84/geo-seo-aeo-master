@@ -437,6 +437,7 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - DNS lookup, TCP connect, total download for a 1.x MB document.
 - LCP / INP / CLS if PageSpeed Insights API is reachable (state if rate-limited, do not fabricate).
 - Quick-wins (Brotli, resource hints, CDN PT-side, GTM as defer, image optimization).
+- Peso dos recursos da página inicial, lido e não estimado: bytes de JavaScript sem compressão (ficheiros dos `<script src>` mais o embutido), e peso e dimensões do logótipo do `Organization.logo`, da `og:image` e da imagem principal (a primeira pré-carregada). Um logótipo desenhado com algumas dezenas de píxeis de altura não precisa de 4000 px nem de 200 KB.
 
 ### 5. SEO on-page
 - Title (length, keyword coverage, brand position).
@@ -444,17 +445,23 @@ When asked to audit a site, produce a document with the structure below. Tone is
 - Heading hierarchy (H1 / H2 / H3 counts, anomalies).
 - `alt` coverage % (with 5 distinct missing examples).
 - Bilingual copy hygiene (PT/EN mixing in body when `hreflang` declares one language).
+- Subtítulos partidos por um elemento visual: um H2 ou H3 que começa por minúscula numa página onde os outros começam por maiúscula (um número grande num bloco à parte e o resto da frase no H2). Quem extrai o subtítulo sozinho lê meia frase.
+- Endereço na língua de outra versão: o último segmento de uma página `/en/` igual ao da versão `pt-PT` declarada no `hreflang` (compara-se com o que o site declara, não se adivinha a língua; segmentos de três palavras ou mais).
+- Perguntas do `FAQPage` que não aparecem no texto da página, e um `Article`/`BlogPosting` sem `headline`, `author`, `datePublished`, `dateModified` ou `image`.
+- Open Graph completo, com `og:image:alt`, e `twitter:image:alt` quando há uma `twitter:image` própria.
 
 ### 6. SEO technical
 - `sitemap.xml` (index? bilingual? URL count and breakdown by template).
 - `robots.txt` (which AI crawlers explicitly allowed/disallowed; flag missing ClaudeBot, Google-Extended, Applebot-Extended, CCBot, Bytespider).
-- `hreflang` (correct? `x-default` present?).
+- `hreflang` (correct? `x-default` present? recíproco: abrir as versões noutras línguas e confirmar que apontam de volta, porque a Google ignora um par sem volta).
+- `sitemap.xml` por dentro: `lastmod` em falta e `lastmod` no futuro; as linhas `Sitemap:` do `robots.txt` respondem 200 com XML; os endereços do sitemap, o `rel=canonical` e o `og:url` usam o mesmo protocolo e o mesmo `www` onde a página inicial acaba.
+- Endereços internos que respondem 404: as pastas acima de páginas do sitemap que o sitemap não lista (`/radar/setor` quando só existe `/radar/setor/banca`) e as ligações da página inicial fora do sitemap. Uma ligação partida não é uma página que falte no sitemap.
 - JSON-LD schema (current types injected, with concrete missing-types list referencing the templates that need them).
 - Security headers (HSTS, X-Content-Type-Options, CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy).
 - Compression and cache headers.
 
 ### 7. AI / LLM visibility (technical GEO)
-- `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap?
+- `llms.txt` and `llms-full.txt` present? URLs declared vs. URLs in sitemap? Por dentro: responde com texto e não com a página de erro do site servida com 200, abre com um título `#`, e as ligações para o próprio site que o sitemap não lista não respondem 404.
 - Robots permission posture for OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, GPTBot, Google-Extended, Meta-ExternalAgent. Inclusion in answers with search is decided by the **index crawlers** (`OAI-SearchBot`, `PerplexityBot`, `Googlebot`, `Bingbot`, and `Googlebot` again for Brave and therefore Claude), not by the user-triggered agents; check robots.txt and the firewall/CDN for those first. See `references/como-os-motores-leem.md`.
 - Is HTML server-rendered (LLMs read it without JS)?
 - **Multimodal grounding**: image `alt` quality + image schema (`ImageObject`), video schema (`VideoObject`) with transcripts, image CDN cache headers. Gemini 3.5 and GPT-5 cite images: image SEO is now a citation surface.
