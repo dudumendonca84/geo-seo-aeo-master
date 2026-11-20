@@ -665,7 +665,9 @@ classificados como plano (as startups, os estudos na imprensa, os
 compradores B2B) tinham boa prova e boas ações; só estavam no ecrã errado.
 Por isso, o que esta task recusa como plano não se deita fora: devolve-se,
 ao lado de `items`, numa lista `para_o_plano`, e o próximo
-`generate_opportunities` do mesmo cliente recebe-a
+`generate_opportunities` do mesmo cliente recebe-a e diz o destino de
+cada entrada: `acao`, `coberta` (com `accao`, o id da ação aberta) ou
+`descartada` (com `motivo`)
 (`gap_action_mapping.md` § "O que chega das oportunidades de negócio").
 
 ```json

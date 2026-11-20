@@ -133,12 +133,21 @@ entrada sai deste plano numa de três formas, e o plano diz qual em
 `do_negocio` (uma linha por `id`):
 
 - `acao`: vira uma ou mais ações novas, com a prova e o ativo que trazia
-  (passando pela regra da prova acima), e cada ação leva o `id` em
+  (passando pela regra da prova acima), e cada ação nova leva o `id` em
   `de_negocio`;
-- `coberta`: uma ação aberta já faz o mesmo; diz-se qual, e acrescenta-se
-  ao `why` dela a prova que chegou, se for nova;
+- `coberta`: uma ação aberta já faz o mesmo; o campo `accao` leva o id
+  dessa ação do plano, e acrescenta-se ao `why` dela a prova que chegou, se
+  for nova;
 - `descartada`: já não se aplica (a medição mudou, o ativo já existe), com
-  o motivo numa frase.
+  o motivo numa frase em `motivo`.
+
+```json
+"do_negocio": [
+  { "id": "id da passagem", "destino": "acao" },
+  { "id": "id da passagem", "destino": "coberta", "accao": "id da ação aberta" },
+  { "id": "id da passagem", "destino": "descartada", "motivo": "a frase" }
+]
+```
 
 ---
 
