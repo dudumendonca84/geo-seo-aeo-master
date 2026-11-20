@@ -82,6 +82,24 @@ com a prova certa e a peça vaga, e uma da destaque.ai que junta dois
 resultados e marcações online» e «Gerir as avaliações Google por unidade»,
 ambas da CUF, sem número nem peça).
 
+### Uma nota baixa na Saúde do site é prova
+
+Founder, 20 Nov 2026: *"se o SEO for baixo no estudo do site, deveria
+[entrar], não?"*. Deve. Uma nota técnica ou AEO baixa na Saúde do site é
+prova para ações de SEO técnico e de AEO, e essas ações entram no plano.
+A nota, sozinha, não é a ação: a ação nomeia as correções concretas que o
+scan encontrou (que verificações falham, em quantas páginas, com exemplos),
+uma correção por ação, por ordem de impacto (as verificações de impacto
+alto primeiro, e dentro delas as que tocam mais páginas que respondem a
+perguntas medidas).
+
+- Não é ação: «melhorar o SEO do site», «subir a nota técnica».
+- É ação: «Corrigir as 120 meta descriptions em falta (scan de [data]), a
+  começar por /servicos», com a verificação (`check_key`), o número de
+  páginas e as três primeiras a corrigir.
+
+Um defeito do modelo de página é uma ação só, não uma por página (§ 1c).
+
 ### Três ações que cumprem a regra
 
 Saíram dos cartões da destaque.ai de 16 Nov 2026 que o ecrã das
