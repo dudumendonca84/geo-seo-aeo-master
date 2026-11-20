@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-20: O que conta como oportunidade de negócio (rascunho, à espera do founder)
+
+- **Trigger:** o ecrã «Oportunidades de negócio» da destaque.ai mostrava «Quem compra serviços B2B já pergunta primeiro à IA», com avaliações no Clutch e páginas novas como ações. Founder: é tese de mercado e trabalho do plano; *"não só isso, mas também segmento não explorado, etc, tem que ser mais profundo"*.
+- **O que muda:** `references/business_opportunities.md` § 1 reescrita. Uma oportunidade é um grupo de clientes com procura medida que a marca pode ganhar e ainda não ganha. Nove tipos (`procura_sem_dono`, `segmento_novo`, `geografia_ou_lingua`, `novo_uso`, `adjacente`, `fraqueza_de_quem_serve`, `janela`, `canal`, `modelo_de_compra`), seis portas obrigatórias, dois testes (troca de nome, sem IA) e as exclusões. O uso de IA no setor deixa de ser a primeira oportunidade (revoga a regra de 11 Nov 2026) e passa a contexto. `gap_action_mapping.md` § "De uma oportunidade de negócio a ações" ganha a regra 5.
+- **O que não muda:** os campos que o Tracker valida. Entram dois opcionais, `tipo` e `refutacao`; ver Contrato 21 em `INTERFACES.md`.
+
+---
+
 ## 2026-11-19: A auditoria técnica passa a ler o peso dos recursos, o hreflang recíproco e o sitemap por dentro
 
 - **Trigger:** o Grok leu o destaque.ai a 17 Nov 2026 e apontou o que a Saúde do site do Periscopy não via: o logótipo PNG de 195 KB com 4119×960 px no JSON-LD, 838 KB de JavaScript na página inicial, o H2 partido à volta do «20%», 4 de 165 endereços do sitemap sem `lastmod`, a `og:image` sem `og:image:alt`, uma rota que respondia 404 e 35 artigos `/en/` com o endereço em português. Founder: *"nós vendemos SEO, vem um bot e faz coisas que você não achou?"*.

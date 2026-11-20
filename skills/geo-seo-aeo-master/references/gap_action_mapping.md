@@ -2023,6 +2023,15 @@ perguntas ligadas, para a semana seguinte saber se serviu. Sem pergunta
 ligada, a primeira ação pode ser medir uma pergunta sobre o tema, com o
 texto proposto.
 
+**5. A decisão de negócio do cartão não é uma ação do plano** (20 Nov 2026,
+com a revisão de `business_opportunities.md`). Desde essa data, cada cartão
+traz pelo menos uma decisão de negócio no "o que fazer" (a oferta, o preço,
+a língua de atendimento, a parceria, o canal onde vender). Essa decisão é
+do cliente e não se escreve como ação. As ações do plano levam a decisão à
+resposta da IA, para o grupo de clientes que o cartão nomeia; quando a
+decisão ainda não foi tomada (um serviço `adjacente` por lançar), as que
+dependem dela levam no `blocked_on` a decisão que falta.
+
 ## A proposta foi dita?
 
 Consumido pelo juízo por resposta do Tracker (migração 0132, 21 Set 2026).
@@ -2086,4 +2095,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 12 Nov 2026 (secção nova: de uma oportunidade de negócio a ações, consumida pela task `plan_business_opportunity`). Anterior: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
+Last refresh: 20 Nov 2026 (rascunho: regra 5 de "De uma oportunidade de negócio a ações", a decisão de negócio do cartão não é uma ação do plano). Anterior: 12 Nov 2026 (secção nova: de uma oportunidade de negócio a ações, consumida pela task `plan_business_opportunity`). Anterior: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
