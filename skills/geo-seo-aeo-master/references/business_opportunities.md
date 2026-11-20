@@ -69,7 +69,8 @@ continua a ter oportunidades; o que não pode é ter um cartão sem grupo,
 sem procura, sem mudança ou sem direito a ganhar.
 
 1. **Muda a quem, o quê, onde ou quando a marca vende** (fecha). A
-   oportunidade muda pelo menos uma destas quatro coisas: o grupo a quem a
+   oportunidade muda pelo menos uma destas quatro coisas, e «onde» inclui
+   o canal e a ferramenta por onde o grupo compra: o grupo a quem a
    marca vende, o que ela vende (um uso, um serviço, um modelo de compra),
    onde ou em que língua vende, ou quando (uma janela com data). Aparecer
    ou não aparecer numa pergunta que a marca já disputa não muda nenhuma
@@ -86,7 +87,7 @@ sem procura, sem mudança ou sem direito a ganhar.
    público, com endereço que se abre. A `nota` diz o que ele é e de onde
    vem («pesquisas por mês no Google por "dentista para crianças" e
    variantes, média de 12 meses, nov 2026»). Os números públicos vão em
-   `numeros`. Nos tipos `fraqueza_de_quem_serve` e `janela`, o número da
+   `numeros`. Nas famílias `concorrencia` e `tempo`, o número da
    falha ou da data (as denúncias ao regulador, o prazo do aviso) conta
    como prova da procura quando há pelo menos uma pergunta medida sobre o
    tema: a medição de 20 Nov 2026 mostrou que exigir aí um volume de
@@ -124,6 +125,10 @@ sem procura, sem mudança ou sem direito a ganhar.
   pergunta primeiro à IA» (ecrã da destaque.ai, 20 Nov 2026), «o comércio
   eletrónico cresce todos os anos», «os portugueses confiam nas avaliações
   online». Falham o teste da troca de nome.
+- **Um técnico que só melhora a leitura do site.** Schema, `llms.txt`,
+  velocidade, meta descriptions: é plano. É negócio quando dá ao grupo uma
+  coisa nova para usar ou comprar (simulador, API, fluxo de marcação, feed
+  que abre uma montra nova), família `produto_tecnico` ou `canal`.
 - **Trabalho de visibilidade sem grupo novo.** Pedir avaliações no Clutch
   ou no Google, criar páginas de comparação, acrescentar schema, publicar
   um `llms.txt`, criar a ficha no Wikidata, «aparecer nas respostas sobre
@@ -142,8 +147,8 @@ sem procura, sem mudança ou sem direito a ganhar.
   pediatria e a procura de urgência pediátrica).
 - **Uma pergunta sem dono, sozinha.** Uma pergunta medida em que a IA não
   escolhe ninguém já está no relatório e no plano. Só vira oportunidade
-  quando há um grupo e procura medida por trás dela (tipo
-  `procura_sem_dono`, abaixo).
+  quando há um grupo e procura medida por trás dela (a procura sem dono, na
+  família `mercado`, abaixo).
 
 ### Os sete cartões da destaque.ai, lidos com estas regras
 
@@ -164,8 +169,8 @@ marca vende) e **recusa** (não há oportunidade).
 | «Os estudos próprios chegam à imprensa que a IA lê» | plano | é uma tática, não um grupo de clientes |
 | «Quem compra serviços B2B já pergunta primeiro à IA» | plano | tese de mercado; a estatística é de outro grupo e global |
 
-**Real: as empresas estrangeiras em Lisboa** (`geografia_ou_lingua`, com
-`procura_sem_dono`). O grupo tem nome e tamanho: 186 projetos de
+**Real: as empresas estrangeiras em Lisboa** (`mercado`: uma língua
+e uma procura sem dono). O grupo tem nome e tamanho: 186 projetos de
 investimento estrangeiro em 2025, 44% deles centros de serviços (AICEP).
 Muda a língua e o grupo a quem a marca vende. Em «Who does AEO consulting
 in Lisbon?» a IA nomeia a destaque.ai em 4 de 14 respostas e não recomenda
@@ -189,7 +194,7 @@ a ver com o grupo. A versão real é um serviço empacotado para este grupo
 e a prospeção às empresas que perderam tráfego, com o tamanho do grupo
 medido em Portugal.
 
-**Metade: as fintechs novas** (`segmento_novo`). Especializar num setor
+**Metade: as fintechs novas** (`mercado`). Especializar num setor
 vertical pode ser uma oportunidade real. A IA recomenda a destaque.ai em 3
 de 15 respostas sobre consultores de GEO para fintechs em Lisboa, tantas
 como um consultor independente. Mas o número do cartão (1,1 mil milhões de
@@ -226,248 +231,299 @@ amostra global, e não compradores de serviços em Portugal. As ações
 
 ### Os tipos de oportunidade
 
-Cada cartão é de um tipo, e diz qual em `tipo`. Os tipos servem duas
-coisas: obrigam a procurar em todos os sítios onde pode haver uma
-oportunidade antes de fechar a lista, e dizem que prova cada uma precisa.
-Os exemplos mostram a forma; os números vêm sempre do pedido e das fontes,
-nunca daqui, e por isso estão entre parênteses retos.
+Founder, 20 Nov 2026: *"não só canal, tudo"* e *"não seja simplista, seja
+amplo"*. Uma oportunidade de negócio pode ser qualquer movimento de negócio
+que os dados sustentem, técnico incluído. As famílias abaixo organizam esse
+espaço e dizem que prova cada uma pede; os exemplos dentro delas são
+ilustrativos, não uma lista fechada. O que não cabe em nenhuma entra como
+`outro`. Todas passam as quatro portas que fecham.
 
-| `tipo` | O que é | A prova mínima |
+Cada cartão diz a família em `tipo`. Os números dos exemplos vêm sempre do
+pedido e das fontes, nunca daqui, e por isso estão entre parênteses retos.
+Os exemplos com cliente ficam anónimos; os da destaque.ai são da nossa
+marca.
+
+**Uma lista é uma mistura.** Quando os dados sustentam várias famílias, a
+lista mistura-as: um grupo novo, uma oferta, um canal, uma ferramenta, uma
+data. Sete cartões de «um grupo pergunta e ninguém o ganha» são a mesma
+oportunidade contada sete vezes, e deixam por ver as outras famílias.
+
+| `tipo` | A família | O que cabe aqui |
 |---|---|---|
-| `procura_sem_dono` | um grupo pergunta e ninguém o ganha | procura do grupo + perguntas medidas em que a IA não escolhe ninguém |
-| `segmento_novo` | um grupo que a marca não serve hoje, com procura medida | procura do grupo + quem a IA escolhe para ele + o que a marca já tem |
-| `geografia_ou_lingua` | uma região ou uma língua onde a marca pode servir e não aparece | procura local ou na língua + quem ganha lá |
-| `novo_uso` | um uso novo do que a marca já vende | a voz do cliente com o uso dito + o produto que já o faz |
-| `adjacente` | um serviço ou produto ao lado do que a marca vende | procura do serviço + os ativos que a marca já tem para ele |
-| `fraqueza_de_quem_serve` | um concorrente ou um serviço público que falha a um grupo | a falha com número + a IA a escolher quem falha, ou ninguém |
-| `janela` | uma mudança com data que abre procura agora | a data com fonte + a procura a subir |
-| `canal` | um sítio onde o grupo compra e a marca não está | o volume do canal + quem lá ganha |
-| `modelo_de_compra` | uma forma de pagar ou de comprar que o grupo procura e quase ninguém oferece | a voz do cliente a pedi-la + quem a oferece |
-| `parceria` | uma organização que já reúne o grupo e lhe dá acesso | quantos membros tem o grupo + o que a marca leva que a organização quer |
+| `mercado` | a quem a marca vende | segmento novo, geografia, língua, perfil de comprador, público institucional, procura sem dono |
+| `oferta` | o que a marca vende | produto ou serviço novo, adjacente, pacote, versão de entrada ou premium, modelo de compra, garantia ou condição que ninguém dá |
+| `canal` | por onde o grupo compra | marketplace, retalho, revenda e white label, parceiros comerciais, contratação pública, afiliados, agentes de IA |
+| `produto_tecnico` | o que a marca constrói para o grupo usar | simulador, calculadora, API pública, dataset aberto, integração, fluxo de marcação, aplicação, catálogo estruturado que abre uma montra nova |
+| `concorrencia` | o que os concorrentes fazem ou deixam de fazer | fraqueza de quem atende hoje, movimento de um concorrente a igualar, espaço abandonado |
+| `tempo` | quando | lei ou regulação, prazo, programa de financiamento, sazonalidade, evento, tendência a subir |
+| `parcerias` | com quem | associações setoriais, co-marketing, estudos conjuntos, integrações com plataformas do setor |
+| `reputacao` | a confiança que vende | padrão de queixas que vira oferta ou garantia, certificação ou selo, prova pública que falta |
+| `dados_e_conteudo` | dados com valor comercial | estudo próprio, índice ou barómetro que a imprensa e a IA citam e que abre conversas comerciais |
+| `outro` | qualquer outro movimento de negócio | o que os dados sustentam e não cabe acima |
 
-#### `procura_sem_dono`: um grupo pergunta e ninguém o ganha
+#### `mercado`: a quem a marca vende
 
-- **O que é:** um grupo faz uma pergunta de compra com volume, e a IA
-  responde sem escolher ninguém, ou escolhe marcas que não servem bem o
-  grupo.
-- **A prova:** a procura dos termos do grupo (volume e tendência, quando o
-  pedido traz `procura`), e as perguntas medidas sobre o mesmo tema, com a
-  contagem (`medicao.sem_dono`, ou `perguntas_medidas` com
-  `escolhidos_em_vez` vazio). A ligação às perguntas é obrigatória.
-- **A barra:** um volume com fonte, uma pergunta medida do mesmo tema e uma
-  página da marca que serve o grupo.
-- **Exemplo:** uma clínica dentária do Porto. «Dentista para crianças no
-  Porto» e variantes somam [N] pesquisas por mês; nas três perguntas
-  medidas sobre o tema, a IA não escolhe nenhuma clínica em [n] de [m]
-  respostas; a clínica tem odontopediatra com página própria. O grupo são
-  os pais de crianças no Porto.
-- **Não confundir com** uma pergunta sem dono sozinha, que é plano.
-
-#### `segmento_novo`: um grupo que a marca não serve hoje
-
-- **O que é:** um grupo com procura medida a que a marca não se dirige
-  (nem no site, nem nas perguntas medidas), mas que o que ela vende já
-  serve.
+- **O que cabe:** um segmento que a marca não serve hoje; uma região ou
+  uma língua onde pode servir e não aparece (uma abertura recente da
+  própria marca entra aqui); um perfil de comprador diferente (PME em vez
+  de grande empresa, particulares em vez de empresas, ou o contrário); o
+  público institucional (escolas, autarquias, hospitais públicos); e a
+  procura sem dono, um grupo que pergunta e que ninguém ganha.
 - **A prova:** a procura do grupo, a voz do cliente que o nomeia (o
   autocompletar, «As pessoas também perguntam», os fóruns, com a frase tal
-  e qual), quem a IA escolhe para esse grupo, e a página da marca que
-  prova que o produto lhe serve.
-- **A barra:** o grupo aparece com nome na voz do cliente ou num número
-  público, e a marca tem a oferta, mesmo que não fale para ele.
-- **Exemplo:** uma seguradora que só fala para famílias. O autocompletar e
-  «As pessoas também perguntam» trazem «seguro de saúde para trabalhadores
-  independentes», com [N] pesquisas por mês e a subir [x]% em três meses;
-  a IA escolhe [concorrente] em [n] de [m] respostas sobre independentes;
-  o site da seguradora já tem um plano individual sem período de carência.
-- **Uma faixa da população** (os jovens dos 16 aos 24 anos, os estudantes,
-  uma profissão) entra aqui quando passa as sete portas, com as perguntas
-  que esse grupo faz e o que a marca faz por ele (decisão de 12 Nov 2026,
-  num supermercado: «pode ficar, mas tem que ter ações para isso»). Um
-  número sobre uma faixa, sem ações para ela, sai.
+  e qual), quem a IA escolhe para ele, e a página da marca que prova que
+  pode servi-lo. Uma língua que a marca não fala, ou uma região onde não
+  está, não é oportunidade dela.
+- **Exemplos:**
+  - B2B, da destaque.ai: as empresas estrangeiras que se instalam em
+    Lisboa, que perguntam em inglês e a quem a IA não recomenda ninguém
+    (ver os sete cartões acima).
+  - Saúde: os beneficiários de um subsistema de saúde numa cidade onde o
+    grupo tem duas clínicas convencionadas e a IA recomenda outras; ou os
+    residentes estrangeiros de uma região, em inglês, com o atendimento na
+    língua declarado no site.
+  - Retalho: quem vive sozinho ou estuda fora, num supermercado. Uma faixa
+    da população entra quando passa as portas, com as perguntas que esse
+    grupo faz e o que a marca faz por ele (decisão de 12 Nov 2026: «pode
+    ficar, mas tem que ter ações para isso»).
+  - Qualquer setor: uma seguradora que só fala para famílias e os
+    trabalhadores independentes ([N] pesquisas por mês, a subir), com um
+    plano individual que já serve.
+  - Procura sem dono: «dentista para crianças no Porto» e variantes somam
+    [N] pesquisas por mês, a IA não escolhe nenhuma clínica em [n] de [m]
+    respostas, e a clínica tem odontopediatra com página própria.
+- **Não confundir com** uma pergunta sem dono sozinha, que é plano.
 
-#### `geografia_ou_lingua`: uma região ou uma língua onde a marca não aparece
+#### `oferta`: o que a marca vende
 
-- **O que é:** a marca pode servir uma região ou uma língua (tem lá uma
-  unidade, entrega lá, atende nessa língua) e a IA não a nomeia quando se
-  pergunta a partir de lá ou nessa língua. Uma abertura recente da própria
-  marca (unidade nova, região nova) entra aqui: há uma população nova a
-  servir e a IA ainda não sabe que a marca lá está.
-- **A prova:** a procura local ou na língua, a população (INE, AIMA,
-  Turismo de Portugal, com o ano), quem a IA escolhe nas perguntas dessa
-  região ou língua, e a prova de que a marca lá está (a página da unidade,
-  o atendimento declarado na língua, a notícia da abertura).
-- **A barra:** a capacidade da marca nessa região ou língua está escrita no
-  site ou numa notícia. Uma língua que a marca não fala não é oportunidade
-  dela.
-- **Exemplo:** um grupo hospitalar com unidade no Algarve. Pesquisas em
-  inglês por «English speaking doctor Algarve» somam [N] por mês; o
-  distrito tem [N] residentes estrangeiros ([fonte], [ano]); em inglês, a
-  IA recomenda [concorrente]; o grupo declara atendimento em inglês na
-  página da unidade, mas não tem nenhuma página em inglês.
+- **O que cabe:** um produto ou serviço novo; um adjacente, montado com o
+  que a marca já tem; um pacote; uma versão de entrada ou premium; um
+  modelo de compra (assinatura, a prestações, por uso, orçamento online,
+  marcação no próprio dia); uma garantia ou condição que o grupo pede e
+  ninguém dá.
+- **A prova:** a procura do serviço ou da condição, quem a IA escolhe para
+  ele, e os ativos da marca que o tornam possível, cada um com a página.
+- **A barra:** o cartão nunca diz que a marca já oferece o que não
+  oferece; diz que o pode lançar, com o que já tem, e a primeira ação do
+  `fazer` é a decisão de o lançar.
+- **Exemplos:**
+  - B2B, da destaque.ai (aprovado pelo founder, 20 Nov 2026): o diagnóstico
+    do tráfego perdido para a IA, para as empresas cujo tráfego orgânico
+    caiu desde que os resumos de IA chegaram a Portugal. Em «AI Overview
+    tirou tráfego o que fazer?» e «Tráfego orgânico caiu 50% culpa do AI?»
+    a IA não nomeia a destaque.ai em nenhuma das 15 respostas e não
+    recomenda ninguém (16 Nov 2026). O direito de ganhar está no Periscopy,
+    que mede as respostas e lê o Search Console. O `fazer`: âmbito, prazo e
+    preço do diagnóstico; a página da oferta; a prospeção às empresas com a
+    queda medida. O tamanho do grupo mede-se em Portugal; o número da Pew é
+    dos EUA e fica como apoio.
+  - Saúde: implantes a prestações para quem adiou o tratamento por
+    dinheiro, numa rede que já tem o financiamento com um parceiro.
+  - Retalho: uma versão de entrada (o cabaz semanal fechado) para quem
+    compara preços e não encontra nenhum supermercado na resposta da IA.
+  - Qualquer setor: uma escola de línguas com professores certificados e a
+    procura por «preparação IELTS Lisboa» a subir; uma clínica de estética
+    com pagamento fracionado que a IA não cita quando se pergunta o preço.
 
-#### `novo_uso`: um uso novo do que a marca já vende
+#### `canal`: por onde o grupo compra
 
-- **O que é:** o produto ou serviço da marca resolve uma necessidade que o
-  site não diz, e a voz do cliente mostra que um grupo procura essa
-  necessidade.
-- **A prova:** a voz do cliente com o uso dito (autocompletar, fóruns,
-  «As pessoas também perguntam»), o volume dos termos, e a funcionalidade
-  ou o produto que já o faz (página, ficha técnica, documentação).
-- **A barra:** a marca já faz o uso hoje, sem nada novo a desenvolver.
-- **Exemplo:** um software de faturação que só fala para lojas. Os fóruns e
-  o autocompletar trazem «faturação para alojamento local», com [N]
-  pesquisas por mês; o produto já emite séries por estabelecimento, e o
-  site não o diz. O grupo são os proprietários de alojamento local.
-
-#### `adjacente`: um serviço ou produto ao lado do que a marca vende
-
-- **O que é:** uma oferta que a marca ainda não tem, mas que monta com o
-  que já tem (a equipa, as instalações, os clientes, a certificação), e
-  pela qual um grupo procura.
-- **A prova:** a procura do serviço, quem a IA escolhe para ele, e os
-  ativos da marca que o tornam possível, cada um com a página.
-- **A barra:** os ativos estão no site. O cartão nunca diz que a marca já
-  oferece o serviço: diz que o pode lançar, e a primeira ação do `fazer` é
-  a decisão de o lançar.
-- **Exemplo:** uma escola de línguas com cursos de inglês para adultos. A
-  procura por «preparação IELTS Lisboa» soma [N] pesquisas por mês e sobe;
-  a IA escolhe [concorrente] em [n] de [m] respostas; a escola já tem
-  professores com certificação Cambridge e turmas ao fim da tarde.
-- **Exemplo aprovado pelo founder (20 Nov 2026), a nova oferta:** a
-  destaque.ai e o diagnóstico do tráfego perdido para a IA. O grupo são as
-  empresas portuguesas cujo tráfego orgânico caiu desde que os resumos de
-  IA e o Modo IA chegaram a Portugal. Em «AI Overview tirou tráfego o que
-  fazer?» e «Tráfego orgânico caiu 50% culpa do AI?» a IA não nomeia a
-  destaque.ai em nenhuma das 15 respostas e não recomenda ninguém (medição
-  de 16 Nov 2026). O direito de ganhar está no que ela já tem: o Periscopy
-  mede as respostas da IA e lê o Search Console da marca. O `fazer` é
-  comercial: decidir o âmbito, o prazo e o preço do diagnóstico; publicar a
-  página dessa oferta, escrita para quem perdeu tráfego; e contactar
-  empresas com a queda medida. O tamanho do grupo tem de ser medido em
-  Portugal (por exemplo, a procura por «tráfego orgânico caiu» e variantes,
-  [N] por mês): o número da Pew é dos EUA e só entra como linha de apoio.
-
-#### `fraqueza_de_quem_serve`: um concorrente ou um serviço público que falha
-
-- **O que é:** quem serve hoje o grupo falha-lhe numa coisa medida (tempo
-  de espera, queixas, preço, falta de stock, saída do mercado), e a marca
-  faz essa coisa bem.
-- **A prova:** a falha com número e fonte (o Portal da Transparência do
-  SNS, o Portal da Queixa, as avaliações, um regulador, a imprensa), as
-  queixas da comunidade quando o pedido as traz, e as perguntas medidas
-  onde a IA escolhe quem falha, ou ninguém.
-- **A barra:** a falha é de um grupo concreto, e a marca prova no site que
-  não tem essa falha.
-- **Exemplo:** um hospital privado. O tempo de espera do SNS para primeira
-  consulta de [especialidade] na região passa o tempo máximo em [x]% dos
-  casos ([fonte], [data]); quando se pergunta pela espera, a IA explica-a e
-  não nomeia nenhuma alternativa; o hospital tem a especialidade na unidade
-  da região, com marcação online.
-- **Regra:** o `fazer` serve o grupo que o concorrente falha; nunca ataca o
-  concorrente pelo nome.
-
-#### `janela`: uma mudança com data que abre procura agora
-
-- **O que é:** uma regra, um prazo, um apoio público, uma época ou uma onda
-  de imprensa que cria procura num período, e que fecha.
-- **A prova:** a data com fonte (Diário da República, regulador, imprensa),
-  a procura a subir (tendência de três meses, quando o pedido traz
-  `procura`, ou o Google Trends com endereço), e quem a IA escolhe nas
-  perguntas sobre o tema.
-- **A barra:** o cartão diz quando a janela fecha, ou quando a procura
-  atinge o pico.
-- **Exemplo:** uma empresa de software de faturação. Uma nova obrigação
-  fiscal entra em vigor a [data] ([fonte]); as pesquisas pelo tema subiram
-  [x]% em três meses; a IA responde com a lei e nomeia [concorrente A] e
-  [concorrente B]; o produto da marca já cumpre a obrigação, e a página
-  diz desde quando.
-- **Exemplo aprovado pelo founder (20 Nov 2026), uma época:** a Black
-  Friday num retalhista. Em 2026 é a 27 de novembro. A procura por «black
-  friday [categoria]» multiplica-se por [x] nas semanas antes ([fonte],
-  [ano anterior]); perguntada por onde há desconto em [categoria], a IA
-  nomeia [concorrentes] em [n] de [m] respostas. O retalhista tem a
-  campanha e a página dela. A janela fecha no próprio dia: o cartão diz até
-  quando a página tem de estar publicada para a IA a poder ler, e depois
-  da data o cartão não volta.
-- **Exemplo aprovado pelo founder (20 Nov 2026), um apoio público:** os
-  fundos do PRR para a digitalização das empresas. Um aviso de apoio à
-  digitalização das PME, com prazo de candidatura a [data] ([aviso,
-  endereço]), abre procura por fornecedores elegíveis. O grupo são as PME
-  do setor da marca que se candidatam; a marca tem direito a ganhar quando
-  o que vende é despesa elegível no aviso (diz-se a alínea). O PRR tem
-  prazos de execução: confirma-se que o aviso está aberto no dia do pedido,
-  e um aviso fechado não entra.
-
-#### `canal`: um sítio onde o grupo compra e a marca não está
-
-- **O que é:** um canal de compra que um grupo usa (contratação pública, um
-  marketplace, um comparador, a rede convencionada de uma seguradora, uma
-  plataforma de marcações) onde os concorrentes ganham e a marca está
-  ausente ou mal colocada.
+- **O que cabe:** marketplaces, retalho, revenda e white label, parceiros
+  comerciais, a rede convencionada de uma seguradora, contratação pública,
+  afiliados, plataformas de marcação, e os agentes de IA (abaixo).
 - **A prova:** o volume do canal (contratos e euros no BASE, número de
-  médicos ou de lojas numa plataforma, quota de um comparador), quem lá
-  ganha, e o que a marca precisa para entrar (certificação, convenção,
-  ficha).
+  lojas ou de profissionais numa plataforma, quota de um comparador), quem
+  lá ganha, e o que a marca precisa para entrar (certificação, convenção,
+  ficha, integração).
 - **A barra:** é onde a compra se faz, e não só onde se lê. Uma plataforma
   de avaliações onde ninguém compra é plano; a IA em geral nunca é um
   canal, porque é verdade para todos.
-- **Exemplo:** uma empresa de formação. Os contratos públicos de formação
-  em [área] somaram [N] contratos e [valor] euros em [ano] (BASE), e três
-  concorrentes ganham a maior parte; a empresa nunca concorreu, e já tem a
-  certificação DGERT que esses procedimentos pedem.
-- **Exemplo aprovado pelo founder (20 Nov 2026), revenda:** as agências de
-  marketing digital que revendem o Periscopy em white label. O grupo são
-  as agências em Portugal (quantas, com fonte: o INE pela atividade
-  económica, ou a associação do setor), e o canal é a carteira de clientes
-  delas. O direito de ganhar está na página de preços do Periscopy, que já
-  tem o plano das agências com white label. Quem ganha hoje mede-se nas
-  perguntas sobre ferramentas de visibilidade em IA para agências. O
-  `fazer`: a lista das agências a contactar, a página para agências e a
-  condição de revenda. Desmente-o, por exemplo, nenhuma de [N] agências
-  contactadas pedir uma demonstração em 12 semanas.
-- **Exemplo aprovado pelo founder (20 Nov 2026), contratação pública:** os
-  concursos públicos de marketing digital para a destaque.ai. O volume
-  conta-se no BASE (contratos e euros nos últimos 12 meses, pelos códigos
-  CPV de serviços de marketing e de presença digital), com quem ganhou
-  cada um. O `fazer`: os documentos que um procedimento pede (certidões,
-  experiência anterior), a lista das entidades que contratam todos os
-  anos, e o alerta dos procedimentos novos.
+- **Exemplos:**
+  - B2B, da destaque.ai (aprovado pelo founder): as agências de marketing
+    digital que revendem o Periscopy em white label. Quantas agências há em
+    Portugal (com fonte), o plano das agências já na página de preços, a
+    lista a contactar e a condição de revenda. Desmente-o nenhuma de [N]
+    agências contactadas pedir uma demonstração em 12 semanas.
+  - B2B, da destaque.ai (aprovado pelo founder): os concursos públicos de
+    marketing digital. O volume conta-se no BASE (contratos e euros nos
+    últimos 12 meses, pelos códigos CPV de serviços de marketing), com quem
+    ganhou cada um; o `fazer` são os documentos que um procedimento pede, a
+    lista das entidades que contratam todos os anos e o alerta dos novos.
+  - Qualquer setor: uma empresa de formação que nunca concorreu aos
+    contratos públicos de formação na sua área e já tem a certificação que
+    esses procedimentos pedem.
+  - Saúde: entrar na rede convencionada de uma seguradora cujos segurados
+    perguntam por prestadores na região.
 
-#### `modelo_de_compra`: uma forma de comprar que o grupo procura e quase ninguém oferece
+**Agentes de IA, um canal com regras próprias.** Um assistente que marca a
+consulta, enche o carrinho ou compra pelo cliente é um canal de compra:
+servidores MCP, aplicações no ChatGPT, conectores do Gemini e do Claude,
+feeds de produtos para as compras dentro dos assistentes, checkout feito
+pelo agente.
 
-- **O que é:** o grupo quer comprar de outra maneira (a prestações, por
-  subscrição, em pacote, com orçamento online, com marcação no próprio
-  dia), e poucos concorrentes o oferecem.
-- **A prova:** a voz do cliente a pedi-lo («[serviço] a prestações»,
-  «quanto custa [serviço] por mês»), o volume, e o que a IA responde quando
-  se pergunta pelo preço ou pela forma de pagar.
-- **A barra:** a marca já oferece esse modelo, ou tem o parceiro que o
-  torna possível (a página diz qual).
-- **Exemplo:** uma clínica de estética. «[Tratamento] a prestações» soma
-  [N] pesquisas por mês; perguntada pelo preço, a IA dá intervalos e não
-  nomeia nenhuma clínica com pagamento fracionado; a clínica tem o
-  pagamento em prestações com um parceiro de crédito, numa página que a IA
-  não cita.
+- **A prova:** o lançamento de um concorrente com fonte pública e data, ou
+  a documentação oficial da plataforma a dizer que o suporta (e que está
+  aberto no mercado da marca); mais a procura no setor, dos nossos dados:
+  perguntas em que se pede ao assistente que faça a tarefa («marca-me uma
+  consulta de dermatologia», «encomenda as compras da semana»).
+- **O direito de ganhar:** a marca tem o sistema para expor (marcação
+  online, catálogo com preço e stock, API).
+- **O `fazer`:** decisões de produto (construir o servidor MCP, publicar o
+  feed, registar a aplicação), nunca conteúdo.
+- **Exemplo, retalho:** um supermercado e o concorrente direto. Verificado
+  a 20 Nov 2026: não se encontrou nenhum lançamento oficial de um servidor
+  MCP pelo concorrente, mas existem dois servidores MCP não oficiais, de
+  código aberto, para o site dele (pesquisam produtos, comparam preço por
+  quilo e enchem o carrinho, sem pagar). É sinal de procura, não um
+  lançamento do concorrente: o cartão diz isso, e só fala em «o
+  concorrente lançou» com fonte pública e data. Verificar sempre no dia do
+  pedido.
+- **Exemplo, saúde:** um grupo hospitalar com marcação online por
+  especialidade, e perguntas medidas em que se pede ao assistente que
+  marque a consulta: um servidor MCP de marcação, com o que expõe
+  (especialidades, unidades, vagas) e o que não expõe (dados clínicos).
+- **O feed de produtos da OpenAI** ainda não tem a especificação confirmada
+  por nós nem data de abertura em Portugal
+  (`destaque-ai-tracker/docs/feed-produtos-openai.md`). Um cartão sobre ele
+  diz isso e começa pela confirmação.
 
-#### `parceria`: uma organização que já reúne o grupo
+#### `produto_tecnico`: o que a marca constrói para o grupo usar
 
-- **O que é:** uma associação setorial, uma ordem profissional, uma câmara
-  de comércio ou uma incubadora já fala com o grupo todos os dias, e aceita
-  levar-lhe uma coisa que a marca tem e que a organização quer dar aos
-  membros (um estudo, um desconto, uma formação).
-- **A prova:** quantos membros tem a organização (com a fonte, quase
-  sempre o site dela), que parte deles é o grupo do cartão, e o que a
-  marca leva (a página do estudo, da oferta ou da formação).
-- **A barra:** a organização é nomeada e o que a marca leva já existe ou
-  sai de dados que ela já tem.
-- **Exemplo aprovado pelo founder (20 Nov 2026):** uma associação setorial
-  que leva aos associados um estudo da destaque.ai sobre o que a IA
-  responde no setor deles. O grupo são as empresas associadas ([N], site
-  da associação); o direito de ganhar são os estudos que a destaque.ai já
-  publica com dados próprios. O `fazer`: o estudo do setor, a proposta à
-  associação, e a oferta de diagnóstico para os associados que o lerem.
-  Não confundir com mandar um estudo à imprensa, que é tática do plano: aqui
-  o destinatário é um grupo de clientes e a ação é comercial.
+- **O que cabe:** uma ferramenta, simulador ou calculadora que o grupo
+  pesquisa; uma API pública; um dataset aberto; uma integração com o
+  software que o grupo já usa; um fluxo de marcação ou de compra que um
+  agente consegue completar; uma aplicação; dados estruturados de catálogo
+  que abrem uma montra nova (um comparador, as compras dentro dos
+  assistentes).
+- **A prova:** a procura da ferramenta (o volume de «simulador crédito
+  habitação», «calculadora de IRS», «calculadora de portes»), quem a IA
+  aponta hoje quando se pede essa ferramenta, e o que a marca já tem para a
+  construir (os dados, o motor de preços, o sistema de marcação).
+- **A barra:** dá ao grupo uma coisa nova para usar ou comprar. Schema,
+  `llms.txt`, velocidade ou SEO técnico genérico só melhoram a leitura do
+  site pelos motores, e são plano.
+- **Exemplos:**
+  - Banca e seguros: um simulador de crédito habitação ou de prémio, com a
+    procura medida e a IA a apontar o simulador de um concorrente.
+  - Saúde: a marcação online por especialidade completável sem telefone,
+    que um agente consegue usar.
+  - Retalho: a lista de compras partilhável com o preço do cabaz, ou o
+    catálogo com preço, stock e identificadores publicado para uma montra
+    de compras nova.
+  - B2B: uma calculadora do retorno do serviço, ou uma API pública com os
+    dados que os clientes já pedem por email.
+
+#### `concorrencia`: o que os concorrentes fazem ou deixam de fazer
+
+- **O que cabe:** a fraqueza de quem atende hoje (queixas, falhas, preço,
+  tempo de espera, falta de stock); o movimento de um concorrente que a
+  marca tem de igualar ou ultrapassar; o espaço que um concorrente
+  abandonou (uma loja fechada, um segmento deixado, uma saída do mercado).
+- **A prova:** a falha ou o movimento com número, fonte e data (o Portal
+  da Transparência do SNS, o Portal da Queixa, as avaliações, um regulador,
+  a imprensa, o anúncio do concorrente), as queixas da comunidade quando o
+  pedido as traz, e as perguntas medidas onde a IA escolhe quem falha, ou
+  ninguém.
+- **A barra:** o `fazer` serve o grupo; nunca ataca o concorrente pelo
+  nome.
+- **Exemplos:**
+  - Saúde: o tempo de espera do serviço público para uma especialidade na
+    região passa o máximo em [x]% dos casos ([fonte], [data]), a IA explica
+    a espera e não nomeia alternativa, e o hospital tem a especialidade na
+    unidade da região.
+  - Retalho: o concorrente expõe o catálogo aos assistentes e a marca não
+    (só com fonte pública e data; ver os agentes de IA, acima).
+  - B2B: um concorrente que deixou de servir PME, com a notícia e a data, e
+    a marca com uma oferta para elas.
+
+#### `tempo`: quando
+
+- **O que cabe:** uma lei ou regulação, um prazo, um programa de
+  financiamento (PRR, Portugal 2030), uma época (Black Friday, regresso às
+  aulas, IRS), um evento (uma feira, um congresso do setor), uma tendência
+  a subir na imprensa ou no Google.
+- **A prova:** a data com fonte (Diário da República, regulador, o aviso,
+  a imprensa), a procura a subir (tendência de três meses, quando o pedido
+  traz `procura`, ou o Google Trends com endereço), e quem a IA escolhe nas
+  perguntas sobre o tema.
+- **A barra:** o cartão diz quando a janela fecha, ou quando a procura
+  atinge o pico; depois da data, não volta.
+- **Exemplos:**
+  - Retalho (aprovado pelo founder): a Black Friday, a 27 de novembro em
+    2026. A procura por «black friday [categoria]» multiplica-se por [x]
+    nas semanas antes, a IA nomeia [concorrentes] quando se pergunta onde
+    há desconto, e o cartão diz até quando a página da campanha tem de
+    estar publicada para a IA a poder ler.
+  - Qualquer setor (aprovado pelo founder): um aviso de apoio à
+    digitalização das PME (PRR, Portugal 2030), com o prazo de candidatura
+    e a alínea que torna elegível o que a marca vende. Só entra com o aviso
+    aberto no dia do pedido.
+  - Software: uma nova obrigação fiscal com data de entrada em vigor, que
+    o produto já cumpre.
+  - Contabilidade e finanças pessoais: a época do IRS, de abril a junho.
+
+#### `parcerias`: com quem
+
+- **O que cabe:** uma associação setorial, uma ordem profissional, uma
+  câmara de comércio ou uma incubadora que já fala com o grupo;
+  co-marketing com uma marca complementar; um estudo conjunto; uma
+  integração com uma plataforma do setor (o software de gestão das
+  clínicas, o ERP das PME).
+- **A prova:** quantos membros ou clientes tem o parceiro (com fonte, quase
+  sempre o site dele), que parte deles é o grupo, e o que a marca leva que
+  o parceiro quer dar aos seus.
+- **Exemplos:**
+  - B2B, da destaque.ai (aprovado pelo founder): uma associação setorial
+    que leva aos associados um estudo sobre o que a IA responde no setor
+    deles, com a oferta de diagnóstico para quem o ler. Não confundir com
+    mandar um estudo à imprensa, que é tática do plano: aqui o destinatário
+    é um grupo de clientes e a ação é comercial.
+  - Saúde: uma seguradora ou uma empresa de benefícios que oferece a rede
+    da marca aos seus segurados ou colaboradores.
+  - Retalho: co-marketing com uma marca de entregas ou de refeições que
+    serve o mesmo grupo.
+
+#### `reputacao`: a confiança que vende
+
+- **O que cabe:** um padrão de queixas que vira oferta ou garantia; uma
+  certificação ou selo que o grupo valoriza; uma prova pública que falta
+  para vender a um segmento (casos com nome, resultados auditados).
+- **A prova:** o padrão com número e fonte (as queixas da comunidade, o
+  Portal da Queixa, as avaliações), a pergunta medida em que a IA o repete,
+  e o que a marca já tem para o resolver.
+- **A barra:** responder a avaliações e pedir avaliações é plano. Isto é
+  quando a confiança muda o que se vende ou a quem.
+- **Exemplos:**
+  - Saúde: queixas repetidas sobre faturação passam a orçamento fechado
+    antes do ato, como condição da oferta.
+  - B2B: a certificação de segurança da informação que a banca exige a um
+    fornecedor, quando a marca já cumpre os requisitos.
+  - Retalho: a garantia de frescura ou de devolução que as queixas pedem e
+    nenhum concorrente dá.
+
+#### `dados_e_conteudo`: dados com valor comercial
+
+- **O que cabe:** um estudo, índice ou barómetro próprio, recorrente, que a
+  imprensa e a IA citam e que abre conversas comerciais (uma lista de
+  empresas a contactar, uma parceria, um convite para falar ao setor).
+- **A prova:** o grupo a quem os dados servem, a procura do tema, e o que a
+  marca já tem para os produzir (dados próprios, método publicado).
+- **A barra:** um artigo para aparecer nas respostas é plano. Isto é um
+  produto de dados com uso comercial: quem o lê é o grupo a quem a marca
+  vende, e o `fazer` diz como o estudo vira conversas.
+- **Exemplos:**
+  - B2B, da destaque.ai: um barómetro trimestral do que a IA responde num
+    setor, enviado às empresas desse setor com o diagnóstico de cada uma.
+  - Saúde: um índice anual de tempos de espera por especialidade, que a
+    imprensa cita e que leva a marcações.
+  - Retalho: o preço do cabaz semanal, publicado com método, que
+    comparadores e imprensa citam.
+
+#### `outro`: qualquer outro movimento de negócio
+
+- **O que cabe:** o que os dados sustentam e não cabe nas famílias acima.
+- **A barra:** as quatro portas que fecham, como as outras, e uma frase a
+  mais no `porque` a dizer que movimento de negócio é e porque não é
+  trabalho do plano.
 
 ### Quantas, e como se procura
 
@@ -477,23 +533,23 @@ oportunidades que passam valem mais do que dez que um diretor descarta à
 primeira leitura. O tecto
 continua a ser 12.
 
-Antes de fechar, cobrem-se sempre quatro ângulos, porque é onde os tipos
-aparecem:
+Antes de fechar, passa-se por todas as famílias da tabela, e por estes
+quatro ângulos, que é onde elas aparecem:
 
 1. **O mercado:** procura que cresce, regras e prazos que mudam, falhas do
-   serviço público (tipos `procura_sem_dono`, `janela`,
-   `fraqueza_de_quem_serve`, `modelo_de_compra`).
+   serviço público (`mercado`, `tempo`, `concorrencia`).
 2. **A própria marca:** o que ela abriu, comprou, lançou ou anunciou nos
    últimos 12 meses (unidade nova, região nova, serviço novo), e o que o
-   site mostra que ela já sabe fazer (tipos `geografia_ou_lingua`,
-   `novo_uso`, `adjacente`, `segmento_novo`). Procura na imprensa regional
-   da zona.
-3. **Os concorrentes:** aberturas, investimentos, resultados, queixas e
-   saídas nos últimos 12 meses (imprensa económica, comunidade). Onde um
-   concorrente investe, a procura existe; onde sai ou falha, fica espaço
-   (tipos `fraqueza_de_quem_serve`, `canal`).
-4. **Quem já reúne o grupo:** associações, ordens, câmaras de comércio,
-   incubadoras e revendedores (tipos `parceria`, `canal`).
+   site e os sistemas mostram que ela já sabe fazer (`mercado`, `oferta`,
+   `produto_tecnico`, `reputacao`, `dados_e_conteudo`). Procura na imprensa
+   regional da zona.
+3. **Os concorrentes:** aberturas, lançamentos, investimentos, resultados,
+   queixas e saídas nos últimos 12 meses (imprensa económica, comunidade).
+   Onde um concorrente investe, a procura existe; onde sai ou falha, fica
+   espaço (`concorrencia`, `canal`).
+4. **Quem já reúne ou serve o grupo:** associações, ordens, câmaras de
+   comércio, incubadoras, revendedores, plataformas e assistentes de IA
+   (`parcerias`, `canal`).
 
 Um destes ângulos sem nenhuma oportunidade só é aceitável se a pesquisa não
 encontrou nada que passasse as portas; diz-se isso no `porque` de outra
@@ -519,7 +575,7 @@ Founder, 15 Nov 2026, sobre o relatório de um grupo hospitalar: *"em
 oportunidade vamos colocar converter pessoas que perguntam ao LLM sobre
 doenças pra irem à [marca]"*. No setor da saúde procura-se sempre esta
 oportunidade, e ela entra quando passa as sete portas, com as doenças
-nomeadas. É do tipo `procura_sem_dono`.
+nomeadas. É da família `mercado` (uma procura sem dono).
 
 - **O grupo:** quem procura informação sobre [doenças ou sintomas
   nomeados] na região da marca, e não «quem pergunta à IA por saúde».
@@ -600,7 +656,7 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
 
 ```json
 {
-  "tipo": "segmento_novo",
+  "tipo": "mercado",
   "tema": "Trabalhadores independentes",
   "titulo": "Uma frase de negócio que nomeia o grupo, com o número dentro quando cabe",
   "numero": "[N]/mês",
@@ -617,8 +673,9 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
 }
 ```
 
-- `tipo`: um dos dez da tabela da secção 1. Um cartão que não cabe em
-  nenhum é quase sempre uma tese de mercado ou trabalho do plano.
+- `tipo`: a família, uma das chaves da tabela da secção 1. `outro` quando
+  nenhuma serve, com a frase a mais no `porque`. Um cartão que só cabe em
+  `outro` por não mudar nada do que a marca vende é plano, não `outro`.
 - `titulo` e `titulo_curto` nomeiam o grupo de clientes (porta 2).
 - `numero` e `nota` são o que aparece grande no cartão: a medida do tamanho
   do grupo (porta 6), tal como está na fonte.
@@ -757,10 +814,10 @@ ordem de peso:
 
 1. **O tamanho do grupo** (o `numero`: pessoas, pesquisas por mês, euros,
    contratos).
-2. **A tendência**: a crescer pesa mais; uma `janela` que fecha em breve
+2. **A tendência**: a crescer pesa mais; um cartão de `tempo` que fecha em breve
    sobe.
 3. **O direito de ganhar**: a marca já tem tudo o que é preciso pesa mais
-   do que a marca que tem de lançar uma oferta (`adjacente`).
+   do que a marca que tem de lançar uma oferta nova (`oferta`).
 4. **Quem ganha hoje**: ninguém pesa mais do que um líder fraco, e um líder
    fraco mais do que um líder forte.
 
@@ -772,9 +829,9 @@ ordem de peso:
 - Um número em `numeros` sem fonte, sem data ou sem endereço.
 - Apresentar dados de outro país como se fossem do mercado do prospect sem
   o dizer («amostra dos EUA», «dados de fornecedor de SEO, indicativos»).
-- **Dizer que a marca oferece o que não oferece.** Um cartão `adjacente`
-  diz que a marca pode lançar o serviço, com os ativos que já tem; nunca
-  que já o tem. Um cartão de outro tipo que depende de uma oferta que não
+- **Dizer que a marca oferece o que não oferece.** Um cartão de
+  `oferta` nova diz que a marca pode lançar o serviço, com os ativos que já
+  tem; nunca que já o tem. Um cartão de outra família que depende de uma oferta que não
   se confirmou no site fica de fora (diz-se na `nota` do job).
 - Uma tese de mercado, uma estatística sem grupo ou um cartão só de
   visibilidade (ver «O que nunca é uma oportunidade de negócio»).

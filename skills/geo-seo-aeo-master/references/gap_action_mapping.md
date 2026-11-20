@@ -2145,7 +2145,7 @@ cartão são comerciais (a oferta para o grupo, o preço, a língua de
 atendimento, a parceria, a prospeção). A decisão de lançar a oferta é do
 cliente e não se escreve como ação. As ações do plano levam a decisão à
 resposta da IA, para o grupo de clientes que o cartão nomeia; quando a
-decisão ainda não foi tomada (um serviço `adjacente` por lançar), as que
+decisão ainda não foi tomada (uma `oferta` nova por lançar), as que
 dependem dela levam no `blocked_on` a decisão que falta.
 
 ## A proposta foi dita?
