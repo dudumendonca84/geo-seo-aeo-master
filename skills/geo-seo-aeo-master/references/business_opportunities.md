@@ -58,51 +58,65 @@ cada cartão antes das portas:
   ser uma razão de negócio (há um grupo, há procura, a marca pode servi-lo),
   é uma oportunidade. Se não sobra nada, era uma ação de visibilidade.
 
-### As sete portas
+### As sete portas: quatro que fecham, três que se dizem sempre
 
-Cada oportunidade passa as sete. Uma que falhe uma fica de fora, mesmo que
-a lista fique curta.
+As portas 1, 2, 3 e 5 fecham: uma oportunidade que falhe uma delas fica de
+fora, mesmo que a lista fique curta. As portas 4, 6 e 7 dizem-se sempre,
+mas aceitam «não medido ainda», desde que se diga o que o mediria
+(«quem ganha: não medido ainda; mede-o uma pergunta sobre [tema] em
+inglês»). Um cliente com poucas perguntas medidas ou sem procura no pedido
+continua a ter oportunidades; o que não pode é ter um cartão sem grupo,
+sem procura, sem mudança ou sem direito a ganhar.
 
-1. **Muda a quem, o quê, onde ou quando a marca vende.** A oportunidade
-   muda pelo menos uma destas quatro coisas: o grupo a quem a marca vende,
-   o que ela vende (um uso, um serviço, um modelo de compra), onde ou em
-   que língua vende, ou quando (uma janela com data). Aparecer ou não
-   aparecer numa pergunta que a marca já disputa não muda nenhuma delas: é
-   análise de lacunas, e vive no plano.
-2. **Nomeia o grupo de clientes.** Quem compra, dito de forma que a marca o
-   possa reconhecer ao balcão ou numa chamada de vendas: «pais de crianças
-   até aos 12 anos no Porto», «trabalhadores independentes sem seguro de
-   saúde», «residentes estrangeiros no Algarve». «Os consumidores», «as
-   empresas» ou «quem pesquisa online» não são um grupo. O grupo está no
-   `titulo` e no `titulo_curto`.
-3. **Mede a procura desse grupo, com a fonte.** Pelo menos um número sobre
-   o grupo, e não sobre o setor inteiro, e pelo menos uma prova que venha
-   dos nossos dados (a lista está na secção 2). O número que mede o
-   tamanho vai no `numero`, e a `nota` diz o que ele é e de onde vem
-   («pesquisas por mês no Google por "dentista para crianças" e variantes,
-   média de 12 meses, nov 2026»). Os números públicos vão em `numeros`, com
-   endereço que se abre.
-4. **Diz quem ganha hoje, ou que ninguém ganha.** Quem a IA escolhe nas
+1. **Muda a quem, o quê, onde ou quando a marca vende** (fecha). A
+   oportunidade muda pelo menos uma destas quatro coisas: o grupo a quem a
+   marca vende, o que ela vende (um uso, um serviço, um modelo de compra),
+   onde ou em que língua vende, ou quando (uma janela com data). Aparecer
+   ou não aparecer numa pergunta que a marca já disputa não muda nenhuma
+   delas: é análise de lacunas, e vive no plano.
+2. **Nomeia o grupo de clientes** (fecha). Quem compra, dito de forma que a
+   marca o possa reconhecer ao balcão ou numa chamada de vendas: «pais de
+   crianças até aos 12 anos no Porto», «trabalhadores independentes sem
+   seguro de saúde», «residentes estrangeiros no Algarve». «Os
+   consumidores», «as empresas» ou «quem pesquisa online» não são um
+   grupo. O grupo está no `titulo` e no `titulo_curto`.
+3. **Mede a procura desse grupo, com a fonte** (fecha). Pelo menos um
+   número sobre o grupo, e não sobre o setor inteiro, com a fonte e a data:
+   dos nossos dados quando o pedido os traz (a lista está na secção 2), ou
+   público, com endereço que se abre. A `nota` diz o que ele é e de onde
+   vem («pesquisas por mês no Google por "dentista para crianças" e
+   variantes, média de 12 meses, nov 2026»). Os números públicos vão em
+   `numeros`. Nos tipos `fraqueza_de_quem_serve` e `janela`, o número da
+   falha ou da data (as denúncias ao regulador, o prazo do aviso) conta
+   como prova da procura quando há pelo menos uma pergunta medida sobre o
+   tema: a medição de 20 Nov 2026 mostrou que exigir aí um volume de
+   pesquisa deixava cair cartões bons em clientes cujo pedido ainda não
+   traz `procura`.
+4. **Diz quem ganha hoje** (diz-se sempre). Quem a IA escolhe nas
    perguntas medidas sobre este grupo (com a contagem do pedido), e quem o
    serve no mercado quando se sabe. «Ninguém» é uma resposta válida, e é
-   muitas vezes a melhor oportunidade. É a primeira frase do `porque`.
-5. **Diz porque é que esta marca tem direito a ganhar.** O que a marca já
-   tem e que está no site dela: a especialidade, a unidade na região, o
-   produto, a língua de atendimento, a certificação, o preço. Cita-se a
-   página. Uma marca sem nada no site que a ligue ao grupo não tem direito
-   a ganhar, por maior que seja a procura. É a segunda frase do `porque`.
-6. **Tem um critério de tamanho que a ordena.** O `numero` é a medida de
-   tamanho (pessoas, pesquisas por mês, euros, contratos), e a ordem da
-   lista segue a secção 4. Um número de contexto (a percentagem de
-   portugueses que usa IA) não é medida de tamanho de nenhum grupo.
-7. **Diz o que a desmentia.** Uma observação concreta que, se acontecer,
-   mostra que a oportunidade não existe ou não é desta marca, e que nós ou
-   a marca podemos fazer em até 12 semanas. «Se a procura por "seguro para
-   independentes" cair para metade em três meses, era a época do IRS e não
-   um grupo.» «Se as marcações de crianças não subirem nas 8 semanas a
-   seguir à página, a procura não era para uma clínica privada.» Vai no
-   campo `refutacao` (secção 3). Uma oportunidade que nada pode desmentir é
-   uma opinião.
+   muitas vezes a melhor oportunidade. Sem pergunta medida sobre o grupo,
+   escreve-se «não medido ainda» e a pergunta que o mediria, e essa
+   pergunta é uma das ações. É a primeira frase do `porque`.
+5. **Diz porque é que esta marca tem direito a ganhar** (fecha). O que a
+   marca já tem e que está no site dela: a especialidade, a unidade na
+   região, o produto, a língua de atendimento, a certificação, o preço.
+   Cita-se a página. Uma marca sem nada no site que a ligue ao grupo não
+   tem direito a ganhar, por maior que seja a procura. É a segunda frase do
+   `porque`.
+6. **Diz o tamanho** (diz-se sempre). O `numero` é a medida de tamanho
+   (pessoas, pesquisas por mês, euros, contratos), e a ordem da lista
+   segue a secção 4. Quando o número da porta 3 mede a procura mas não o
+   tamanho do grupo, diz-se «tamanho não medido ainda» e a fonte que o
+   daria. Um número de contexto (a percentagem de portugueses que usa IA)
+   nunca é medida de tamanho de nenhum grupo.
+7. **Diz o que a desmentia** (diz-se sempre). Uma observação concreta que,
+   se acontecer, mostra que a oportunidade não existe ou não é desta
+   marca, e que nós ou a marca podemos fazer em até 12 semanas. «Se a
+   procura por "seguro para independentes" cair para metade em três meses,
+   era a época do IRS e não um grupo.» «Se as marcações de crianças não
+   subirem nas 8 semanas a seguir à página, a procura não era para uma
+   clínica privada.» Vai no campo `refutacao` (secção 3).
 
 ### O que nunca é uma oportunidade de negócio
 
@@ -159,9 +173,9 @@ ninguém. O que o cartão fazia mal foi a segunda ação, um guia em inglês,
 que é conteúdo genérico. As ações certas são comerciais: a oferta em
 inglês para os centros de serviços que se instalam (âmbito, prazo, quem
 fala com eles), a página dessa oferta em inglês, e a prospeção aos
-projetos que a AICEP anuncia. Faltava-lhe ainda a porta 7: por exemplo,
-se em 12 semanas nenhum centro de serviços contactado aceitar uma
-conversa, o grupo existe mas não compra isto.
+projetos que a AICEP anuncia. Faltava-lhe ainda a `refutacao` (porta 7):
+por exemplo, se em 12 semanas nenhum centro de serviços contactado aceitar
+uma conversa, o grupo existe mas não compra isto.
 
 **Metade: quem perde cliques para o resumo de IA.** O grupo é real
 (empresas cujo tráfego orgânico caiu com os resumos de IA) e a dor também:
@@ -180,10 +194,13 @@ vertical pode ser uma oportunidade real. A IA recomenda a destaque.ai em 3
 de 15 respostas sobre consultores de GEO para fintechs em Lisboa, tantas
 como um consultor independente. Mas o número do cartão (1,1 mil milhões de
 euros captados) é investimento e não diz quantas fintechs existem nem
-quantas compram este serviço: falha a porta 6. As ações eram ligações
-internas e uma secção nova numa página, que são plano. A versão real diz
-quantas fintechs há em Portugal (com fonte), o que a oferta para fintechs
-tem que a genérica não tem, e a quem se faz a prospeção.
+quantas compram este serviço. A porta 6 aceita «não medido ainda», mas
+então diz-se, com a fonte que o daria (o número de fintechs do próprio
+relatório do setor), em vez de pôr no lugar um número que mede outra
+coisa. E as ações eram ligações internas e uma secção nova numa página,
+que são plano. A versão real diz quantas fintechs há em Portugal, o que a
+oferta para fintechs tem que a genérica não tem, e a quem se faz a
+prospeção.
 
 **Plano: as startups jovens.** As 5 091 startups ativas existem, mas o
 SaaS B2B português já é o mercado principal da destaque.ai. O cartão não
@@ -226,6 +243,7 @@ nunca daqui, e por isso estão entre parênteses retos.
 | `janela` | uma mudança com data que abre procura agora | a data com fonte + a procura a subir |
 | `canal` | um sítio onde o grupo compra e a marca não está | o volume do canal + quem lá ganha |
 | `modelo_de_compra` | uma forma de pagar ou de comprar que o grupo procura e quase ninguém oferece | a voz do cliente a pedi-la + quem a oferece |
+| `parceria` | uma organização que já reúne o grupo e lhe dá acesso | quantos membros tem o grupo + o que a marca leva que a organização quer |
 
 #### `procura_sem_dono`: um grupo pergunta e ninguém o ganha
 
@@ -315,6 +333,19 @@ nunca daqui, e por isso estão entre parênteses retos.
   procura por «preparação IELTS Lisboa» soma [N] pesquisas por mês e sobe;
   a IA escolhe [concorrente] em [n] de [m] respostas; a escola já tem
   professores com certificação Cambridge e turmas ao fim da tarde.
+- **Exemplo aprovado pelo founder (20 Nov 2026), a nova oferta:** a
+  destaque.ai e o diagnóstico do tráfego perdido para a IA. O grupo são as
+  empresas portuguesas cujo tráfego orgânico caiu desde que os resumos de
+  IA e o Modo IA chegaram a Portugal. Em «AI Overview tirou tráfego o que
+  fazer?» e «Tráfego orgânico caiu 50% culpa do AI?» a IA não nomeia a
+  destaque.ai em nenhuma das 15 respostas e não recomenda ninguém (medição
+  de 16 Nov 2026). O direito de ganhar está no que ela já tem: o Periscopy
+  mede as respostas da IA e lê o Search Console da marca. O `fazer` é
+  comercial: decidir o âmbito, o prazo e o preço do diagnóstico; publicar a
+  página dessa oferta, escrita para quem perdeu tráfego; e contactar
+  empresas com a queda medida. O tamanho do grupo tem de ser medido em
+  Portugal (por exemplo, a procura por «tráfego orgânico caiu» e variantes,
+  [N] por mês): o número da Pew é dos EUA e só entra como linha de apoio.
 
 #### `fraqueza_de_quem_serve`: um concorrente ou um serviço público que falha
 
@@ -350,6 +381,22 @@ nunca daqui, e por isso estão entre parênteses retos.
   [x]% em três meses; a IA responde com a lei e nomeia [concorrente A] e
   [concorrente B]; o produto da marca já cumpre a obrigação, e a página
   diz desde quando.
+- **Exemplo aprovado pelo founder (20 Nov 2026), uma época:** a Black
+  Friday num retalhista. Em 2026 é a 27 de novembro. A procura por «black
+  friday [categoria]» multiplica-se por [x] nas semanas antes ([fonte],
+  [ano anterior]); perguntada por onde há desconto em [categoria], a IA
+  nomeia [concorrentes] em [n] de [m] respostas. O retalhista tem a
+  campanha e a página dela. A janela fecha no próprio dia: o cartão diz até
+  quando a página tem de estar publicada para a IA a poder ler, e depois
+  da data o cartão não volta.
+- **Exemplo aprovado pelo founder (20 Nov 2026), um apoio público:** os
+  fundos do PRR para a digitalização das empresas. Um aviso de apoio à
+  digitalização das PME, com prazo de candidatura a [data] ([aviso,
+  endereço]), abre procura por fornecedores elegíveis. O grupo são as PME
+  do setor da marca que se candidatam; a marca tem direito a ganhar quando
+  o que vende é despesa elegível no aviso (diz-se a alínea). O PRR tem
+  prazos de execução: confirma-se que o aviso está aberto no dia do pedido,
+  e um aviso fechado não entra.
 
 #### `canal`: um sítio onde o grupo compra e a marca não está
 
@@ -368,6 +415,23 @@ nunca daqui, e por isso estão entre parênteses retos.
   em [área] somaram [N] contratos e [valor] euros em [ano] (BASE), e três
   concorrentes ganham a maior parte; a empresa nunca concorreu, e já tem a
   certificação DGERT que esses procedimentos pedem.
+- **Exemplo aprovado pelo founder (20 Nov 2026), revenda:** as agências de
+  marketing digital que revendem o Periscopy em white label. O grupo são
+  as agências em Portugal (quantas, com fonte: o INE pela atividade
+  económica, ou a associação do setor), e o canal é a carteira de clientes
+  delas. O direito de ganhar está na página de preços do Periscopy, que já
+  tem o plano das agências com white label. Quem ganha hoje mede-se nas
+  perguntas sobre ferramentas de visibilidade em IA para agências. O
+  `fazer`: a lista das agências a contactar, a página para agências e a
+  condição de revenda. Desmente-o, por exemplo, nenhuma de [N] agências
+  contactadas pedir uma demonstração em 12 semanas.
+- **Exemplo aprovado pelo founder (20 Nov 2026), contratação pública:** os
+  concursos públicos de marketing digital para a destaque.ai. O volume
+  conta-se no BASE (contratos e euros nos últimos 12 meses, pelos códigos
+  CPV de serviços de marketing e de presença digital), com quem ganhou
+  cada um. O `fazer`: os documentos que um procedimento pede (certidões,
+  experiência anterior), a lista das entidades que contratam todos os
+  anos, e o alerta dos procedimentos novos.
 
 #### `modelo_de_compra`: uma forma de comprar que o grupo procura e quase ninguém oferece
 
@@ -385,14 +449,35 @@ nunca daqui, e por isso estão entre parênteses retos.
   pagamento em prestações com um parceiro de crédito, numa página que a IA
   não cita.
 
+#### `parceria`: uma organização que já reúne o grupo
+
+- **O que é:** uma associação setorial, uma ordem profissional, uma câmara
+  de comércio ou uma incubadora já fala com o grupo todos os dias, e aceita
+  levar-lhe uma coisa que a marca tem e que a organização quer dar aos
+  membros (um estudo, um desconto, uma formação).
+- **A prova:** quantos membros tem a organização (com a fonte, quase
+  sempre o site dela), que parte deles é o grupo do cartão, e o que a
+  marca leva (a página do estudo, da oferta ou da formação).
+- **A barra:** a organização é nomeada e o que a marca leva já existe ou
+  sai de dados que ela já tem.
+- **Exemplo aprovado pelo founder (20 Nov 2026):** uma associação setorial
+  que leva aos associados um estudo da destaque.ai sobre o que a IA
+  responde no setor deles. O grupo são as empresas associadas ([N], site
+  da associação); o direito de ganhar são os estudos que a destaque.ai já
+  publica com dados próprios. O `fazer`: o estudo do setor, a proposta à
+  associação, e a oferta de diagnóstico para os associados que o lerem.
+  Não confundir com mandar um estudo à imprensa, que é tática do plano: aqui
+  o destinatário é um grupo de clientes e a ação é comercial.
+
 ### Quantas, e como se procura
 
 Procura-se em todos os tipos antes de fechar a lista, e devolve-se só o que
-passa as sete portas. Não há mínimo: três oportunidades que passam valem
-mais do que dez que um diretor descarta à primeira leitura. O tecto
+passa as sete portas. Não há mínimo (decisão do founder, 20 Nov 2026): três
+oportunidades que passam valem mais do que dez que um diretor descarta à
+primeira leitura. O tecto
 continua a ser 12.
 
-Antes de fechar, cobrem-se sempre três ângulos, porque é onde os tipos
+Antes de fechar, cobrem-se sempre quatro ângulos, porque é onde os tipos
 aparecem:
 
 1. **O mercado:** procura que cresce, regras e prazos que mudam, falhas do
@@ -407,8 +492,10 @@ aparecem:
    saídas nos últimos 12 meses (imprensa económica, comunidade). Onde um
    concorrente investe, a procura existe; onde sai ou falha, fica espaço
    (tipos `fraqueza_de_quem_serve`, `canal`).
+4. **Quem já reúne o grupo:** associações, ordens, câmaras de comércio,
+   incubadoras e revendedores (tipos `parceria`, `canal`).
 
-Um ângulo sem nenhuma oportunidade só é aceitável se a pesquisa não
+Um destes ângulos sem nenhuma oportunidade só é aceitável se a pesquisa não
 encontrou nada que passasse as portas; diz-se isso no `porque` de outra
 oportunidade, nunca se inventa.
 
@@ -417,7 +504,8 @@ oportunidade, nunca se inventa.
 Até 20 Nov 2026, a primeira oportunidade era sempre «a IA no caminho do
 cliente»: quanta gente do setor já começa a pesquisa numa IA (decisão de 11
 Nov 2026). Falha o teste da troca de nome e as portas 1 e 2, e é exatamente o
-cartão que o founder recusou. **Deixa de ser uma oportunidade.**
+cartão que o founder recusou. **Deixa de ser uma oportunidade** (decisão do
+founder, 20 Nov 2026).
 
 O número continua a ser útil, como contexto. O pedido traz-o em
 `ia_no_setor`, e o relatório mostra-o fora da lista das oportunidades.
@@ -529,7 +617,7 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
 }
 ```
 
-- `tipo`: um dos nove da tabela da secção 1. Um cartão que não cabe em
+- `tipo`: um dos dez da tabela da secção 1. Um cartão que não cabe em
   nenhum é quase sempre uma tese de mercado ou trabalho do plano.
 - `titulo` e `titulo_curto` nomeiam o grupo de clientes (porta 2).
 - `numero` e `nota` são o que aparece grande no cartão: a medida do tamanho
@@ -566,8 +654,37 @@ relatório mede, sem dizer o que a medição mostra, está incompleta.
 
 O `tipo` e a `refutacao` são campos novos (20 Nov 2026) e opcionais para o
 código: até o Tracker os ler, ficam gravados no relatório do prospect e não
-aparecem no ecrã do cliente. A porta 7 vale na mesma: um cartão sem
-`refutacao` não passou as portas.
+aparecem no ecrã do cliente. A porta 7 vale na mesma: a `refutacao` vai
+sempre, nem que seja «não medido ainda» com o que o mediria.
+
+### O que não é oportunidade vai para o plano: `para_o_plano`
+
+Founder, 20 Nov 2026: *"garanta que está no plano, não pode sumir,
+precisamos de coisas assim no plano"*. Os cartões da destaque.ai
+classificados como plano (as startups, os estudos na imprensa, os
+compradores B2B) tinham boa prova e boas ações; só estavam no ecrã errado.
+Por isso, o que esta task recusa como plano não se deita fora: devolve-se,
+ao lado de `items`, numa lista `para_o_plano`, e o próximo
+`generate_opportunities` do mesmo cliente recebe-a
+(`gap_action_mapping.md` § "O que chega das oportunidades de negócio").
+
+```json
+"para_o_plano": [
+  { "de_oportunidade": "o id de uma anterior que sai do ecrã, ou null",
+    "titulo": "o que o cartão dizia, numa frase",
+    "porque_plano": "a porta que falha (por exemplo, não muda a quem a marca vende)",
+    "perguntas": ["prompt_id"],
+    "medicao": "«pergunta» com a contagem do pedido (x de N) e quem ganha",
+    "numeros": [ { "texto": "...", "fonte": "...", "url": "https://...", "data": "..." } ],
+    "acoes": ["uma ação com o ativo exato (página, órgão, perfil)"] }
+]
+```
+
+Vai para aqui o que tem prova e ações concretas e falha só por não ser
+oportunidade de negócio (porta 1 ou porta 2, ou é uma tática). Uma tese de
+mercado sem medição da marca não vai: não há ação de plano que saia dela.
+A língua é a do cliente; não precisa das três, porque quem a lê é o
+cérebro.
 
 ### Antes de devolver, relê cada cartão contra estas nove perguntas
 
@@ -620,11 +737,12 @@ nona nasceu do ecrã da destaque.ai de 20 Nov 2026.
    quem escreve o cartão, não do leitor.
 9. **O cartão passa as sete portas e os dois testes?** Troca-se o nome da
    marca pelo de um concorrente: se o cartão continua verdadeiro, sai.
-   Tira-se a IA: se não sobra uma razão de negócio, sai. Depois, uma a uma:
-   muda a quem, o quê, onde ou quando a marca vende, o grupo tem nome, a
-   procura tem número e fonte, há quem ganhe hoje (ou ninguém), o direito
-   de ganhar tem página, o `numero` mede o tamanho, e a `refutacao` diz o
-   que a desmentia. Por fim, as ações: se tirar a única ação comercial
+   Tira-se a IA: se não sobra uma razão de negócio, sai. As quatro que
+   fecham: muda a quem, o quê, onde ou quando a marca vende; o grupo tem
+   nome; a procura tem número e fonte; o direito de ganhar tem página. As
+   três que se dizem sempre (quem ganha hoje, o tamanho, a `refutacao`)
+   estão escritas, com o número ou com «não medido ainda» e o que o
+   mediria. Por fim, as ações: se tirar a única ação comercial
    deixa o cartão igual a uma ação do plano, o cartão é do plano.
 
 Os números escrevem-se como no guia da casa: espaço nos milhares
@@ -747,7 +865,9 @@ reescreve todas as semanas apaga essas decisões. Por isso:
    Vale para as que nasceram antes desta revisão: uma `new` que não volta
    caduca, e uma aceite que não volta fica "por confirmar". É assim que
    cartões como «Quem compra serviços B2B já pergunta primeiro à IA» saem
-   do ecrã sem ninguém os apagar à mão.
+   do ecrã sem ninguém os apagar à mão. Quando sai por ser plano, vai em
+   `para_o_plano` com o seu `id` em `de_oportunidade`, e a prova e as ações
+   passam para o plano.
 
 ### Proposta de valor que ainda não está publicada
 

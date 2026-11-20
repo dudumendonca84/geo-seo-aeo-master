@@ -33,6 +33,96 @@ Princípio SINAL: **não inventar `+X% em Y semanas` sem fonte.** Se a relação
 
 Formato da ação: sítio nomeado + evidência de porquê esse sítio (quantas respostas da malha ele alimentou, em que motores) + o que publicar lá. Ação off-site sem sítio nomeado é rascunho, não entra em narrativa nem em relatório.
 
+## Regra da prova: cada ação traz a sua prova e o seu ativo
+
+Founder, 20 Nov 2026, sobre três cartões que saíram do ecrã das
+oportunidades de negócio por serem plano: *"precisamos de coisas assim no
+plano, evolua a skill do plano também"*. O que os fazia bons era a prova
+medida e o sítio exato. E, no mesmo dia, o aviso: *"cuidado com essas
+regras muito restritas"*. Por isso a regra pede prova a todas as ações,
+mas a prova depende do tipo de ação, porque o SINAL tem oito dimensões e
+só algumas se medem numa pergunta.
+
+Cada ação do plano que é trabalho do cliente (`audience: client`) traz duas
+coisas:
+
+1. **A prova, do tipo que lhe corresponde**, no `rationale`:
+
+| Dimensão da ação | A prova |
+|---|---|
+| Ancorada numa pergunta (conteúdo, posicionamento, qualquer ação com `prompt`) | a pergunta medida, a contagem do pedido («nomeia a marca em 3 de 15 respostas, recomenda-a em 1») e quem ganha em vez dela, ou que ninguém ganha |
+| Técnica (site) | o achado do scan: a página, a verificação e a data (as do scan levam `check_key`) |
+| Entidade | a lacuna verificada, com a data: sem QID no Wikidata, `sameAs` com N perfis, sem Knowledge Panel |
+| Autoridade e PR | os órgãos, podcasts ou listas que a IA cita nesta categoria (em quantas respostas) ou que já cobriram os concorrentes, e o que já publicaram sobre a marca (`press_coverage`) |
+| Social e comunidade | o canal ou o fórum citado nas respostas, com a contagem |
+| Autoridade no site | a página verificada sem autor, sem credenciais ou sem caso com resultados |
+| Medição | a integração em falta (Search Console não ligado, GA4 sem canal de IA, Bing Webmaster Tools) |
+
+   Um número de fora do Tracker leva a fonte e a data, em qualquer dimensão.
+
+2. **Um ativo exato, um por ação**: o endereço da página a escrever ou a
+   mudar (`/blog/visibilidade-ia-startup-series-a`), o órgão ou o programa
+   com nome (a Lusa, o ECO), o perfil com a plataforma (a Clutch, a
+   Sortlist), o item do Wikidata, a integração. Duas peças são duas ações.
+
+**O que fica proibido é só a ação sem prova e sem ativo**: «publicar
+conteúdo», «melhorar o SEO», «apostar em PR», «reforçar as redes sociais»,
+«otimizar o site», «criar autoridade». Essa não entra, e uma aberta assim
+sai na revalidação (`drop` com `ja_nao_se_aplica` e o motivo). Uma ação
+com uma das duas coisas e sem a outra não sai: reescreve-se na revalidação
+seguinte (`rewrite`) com o que falta, e uma que junta duas peças
+independentes divide-se em duas. Uma ação técnica não precisa de pergunta
+medida, e uma ação de entidade também não; precisam do achado que as
+justifica.
+
+Medido a 20 Nov 2026 nas 48 ações abertas da destaque.ai, da CUF e da
+Heydoc: 37 cumprem a regra, 9 ficam para reescrever (8 da CUF, de julho,
+com a prova certa e a peça vaga, e uma da destaque.ai que junta dois
+órgãos de imprensa), e 2 saem («Reclamar o ângulo da rede nacional com
+resultados e marcações online» e «Gerir as avaliações Google por unidade»,
+ambas da CUF, sem número nem peça).
+
+### Três ações que cumprem a regra
+
+Saíram dos cartões da destaque.ai de 16 Nov 2026 que o ecrã das
+oportunidades de negócio devolveu ao plano. Cada cartão tinha várias
+ações juntas; no plano, cada ativo é uma ação.
+
+- **Conteúdo, ancorada numa pergunta.** Escrever
+  `/blog/visibilidade-ia-startup-series-a` com a resposta direta e o nome
+  da marca na primeira frase. Prova: em «Como melhoro a visibilidade em IA
+  de uma startup Series A em Portugal?» a IA nomeia a destaque.ai em 1 de
+  15 respostas e não recomenda ninguém.
+- **Autoridade e PR.** Mandar o próximo estudo à Lusa com uma semana de
+  antecedência. Prova: a peça da Lusa sobre o estudo anterior saiu em seis
+  meios a 22 e 23 de outubro de 2026, e em «Que consultora de GEO em
+  Portugal tem casos de sucesso comprovados?» a IA nomeia a destaque.ai em
+  7 de 15 respostas e recomenda-a em 3.
+- **Social e terceiros.** Pedir a clientes reais avaliações escritas no
+  perfil da destaque.ai na Clutch. Prova: em «Qual a melhor agência GEO em
+  Portugal?» a IA nomeia-a em 3 de 15 respostas e recomenda-a em 1; 45%
+  dos compradores dizem que a citação de um site de avaliações é o sinal
+  que mais confiança lhes dá numa resposta de IA (G2, março de 2026,
+  amostra global: direcional). A Sortlist é outra ação.
+
+## O que chega das oportunidades de negócio (`context.do_negocio`)
+
+A task `business_opportunities` devolve em `para_o_plano` o que tem prova
+e ações concretas mas não é oportunidade de negócio
+(`business_opportunities.md` § 3). O Tracker entrega-o ao
+`generate_opportunities` seguinte do mesmo cliente, em `context.do_negocio`,
+cada entrada com um `id`. **Nada do que chega se perde em silêncio.** Cada
+entrada sai deste plano numa de três formas, e o plano diz qual em
+`do_negocio` (uma linha por `id`):
+
+- `acao`: vira uma ou mais ações novas, com a prova e o ativo que trazia
+  (passando pela regra da prova acima), e cada ação leva o `id` em
+  `de_negocio`;
+- `coberta`: uma ação aberta já faz o mesmo; diz-se qual, e acrescenta-se
+  ao `why` dela a prova que chegou, se for nova;
+- `descartada`: já não se aplica (a medição mudou, o ativo já existe), com
+  o motivo numa frase.
+
 ---
 
 ## Regra de verificação: o endereço que serve, e o que já lá está
@@ -2095,4 +2185,4 @@ Cada update adiciona entry em `methodology-changelog.md` se mudar padrões exist
 
 ---
 
-Last refresh: 20 Nov 2026 (rascunho: regra 5 de "De uma oportunidade de negócio a ações", a decisão de negócio do cartão não é uma ação do plano). Anterior: 12 Nov 2026 (secção nova: de uma oportunidade de negócio a ações, consumida pela task `plan_business_opportunity`). Anterior: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
+Last refresh: 20 Nov 2026 (rascunho: regra da prova, por tipo de ação, com um ativo por ação; o que chega das oportunidades de negócio em `context.do_negocio`; regra 5 de "De uma oportunidade de negócio a ações", a decisão de negócio do cartão não é uma ação do plano). Anterior: 12 Nov 2026 (secção nova: de uma oportunidade de negócio a ações, consumida pela task `plan_business_opportunity`). Anterior: 21 Set 2026 (duas secções novas: a campanha de uma proposta de valor, consumida pela task `plan_value_prop`, e o critério do que conta como a proposta DITA, consumido pelo juízo por resposta). Anterior: 7 Set 2026 (a jornada de pesquisa).
