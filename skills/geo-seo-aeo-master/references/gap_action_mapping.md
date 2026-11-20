@@ -75,12 +75,11 @@ independentes divide-se em duas. Uma ação técnica não precisa de pergunta
 medida, e uma ação de entidade também não; precisam do achado que as
 justifica.
 
-Medido a 20 Nov 2026 nas 48 ações abertas da destaque.ai, da CUF e da
-Heydoc: 37 cumprem a regra, 9 ficam para reescrever (8 da CUF, de julho,
-com a prova certa e a peça vaga, e uma da destaque.ai que junta dois
-órgãos de imprensa), e 2 saem («Reclamar o ângulo da rede nacional com
-resultados e marcações online» e «Gerir as avaliações Google por unidade»,
-ambas da CUF, sem número nem peça).
+Medido a 20 Nov 2026 nas 48 ações abertas de três clientes: 37 cumprem a
+regra, 9 ficam para reescrever (8 de um cliente de saúde, escritas em
+julho, com a prova certa e a peça vaga, e uma que junta dois órgãos de
+imprensa), e 2 saem, ambas do mesmo cliente de saúde, por não terem número
+nem peça.
 
 ### Uma nota baixa na Saúde do site é prova
 
