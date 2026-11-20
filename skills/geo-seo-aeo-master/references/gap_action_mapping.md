@@ -2024,10 +2024,10 @@ ligada, a primeira ação pode ser medir uma pergunta sobre o tema, com o
 texto proposto.
 
 **5. A decisão de negócio do cartão não é uma ação do plano** (20 Nov 2026,
-com a revisão de `business_opportunities.md`). Desde essa data, cada cartão
-traz pelo menos uma decisão de negócio no "o que fazer" (a oferta, o preço,
-a língua de atendimento, a parceria, o canal onde vender). Essa decisão é
-do cliente e não se escreve como ação. As ações do plano levam a decisão à
+com a revisão de `business_opportunities.md`). Desde essa data, as ações de um
+cartão são comerciais (a oferta para o grupo, o preço, a língua de
+atendimento, a parceria, a prospeção). A decisão de lançar a oferta é do
+cliente e não se escreve como ação. As ações do plano levam a decisão à
 resposta da IA, para o grupo de clientes que o cartão nomeia; quando a
 decisão ainda não foi tomada (um serviço `adjacente` por lançar), as que
 dependem dela levam no `blocked_on` a decisão que falta.
