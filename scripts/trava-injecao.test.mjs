@@ -399,3 +399,12 @@ test("saída: controlo e \\r fora, nome do ficheiro e trecho entre crases na tab
   assert.match(md, /\| `curl -X \\\| ʼyʼ` \|/);
   assert.match(md, /x&lt;y/);
 });
+
+test("dominio-novo: um URL que o parser recusa é achado (URL inválido), não se salta", () => {
+  for (const t of ["https://evil.example:65536/x", "https://evil.example:abc/x", "https://ev%il.example/x", "https://www.reddit.com:99999/r/SEO"]) {
+    const a = analisar(t);
+    assert.ok(a.some((x) => x.regra === "dominio-novo" && /URL inválido/.test(x.detalhe)), t);
+  }
+  assert.ok(analisar("https://tracker.destaque.ai:99999/api/brain/jobs").some((x) => /rota \/api\/ nossa/.test(x.detalhe)));
+  assert.deepEqual(analisar("https://www.reddit.com:443/r/SEO"), []);
+});

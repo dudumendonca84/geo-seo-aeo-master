@@ -268,7 +268,10 @@ function extrairDominiosCru(texto) {
   const out = [];
   for (const m of texto.matchAll(URL_RE)) {
     let host;
-    try { host = new URL(m[0].replace(/[.,;:!?*_]+$/, "")).hostname; } catch { continue; }
+    // Um URL que o parser recusa (porta 65536, porta não numérica, "%" no
+    // anfitrião) não tem domínio a verificar: é achado, nunca se salta.
+    try { host = new URL(m[0].replace(/[.,;:!?*_]+$/, "")).hostname; }
+    catch { out.push({ host: null, url: m[0], index: m.index, invalido: true }); continue; }
     if (host) out.push({ host: host.toLowerCase(), url: m[0], index: m.index });
   }
   const semUrls = texto.replace(URL_RE, (s) => " ".repeat(s.length));
@@ -286,7 +289,7 @@ function extrairDominiosCru(texto) {
 
 export function allowlistDe(texto) {
   const s = new Set();
-  for (const d of extrairDominios(texto)) s.add(dominioRegistavel(d.host));
+  for (const d of extrairDominios(texto)) if (d.host) s.add(dominioRegistavel(d.host));
   return s;
 }
 
@@ -384,9 +387,10 @@ export function analisarFicheiro(linhas, acrescentadas, ctx) {
     }
     for (const u of linha.matchAll(URL_RE)) {
       let url;
-      try { url = new URL(u[0]); } catch { continue; }
-      const nosso = /(^|\.)(destaque|periscopy)\.ai$/i.test(url.hostname);
-      if (nosso && /\/api\//.test(url.pathname) && !vistos.has("rota /api/ nossa") && !eAutoDiagnostico(ficheiro)) {
+      try { url = new URL(u[0]); }
+      catch { url = null; } // o URL inválido é achado na regra 4; aqui lê-se o texto cru
+      const nosso = url ? /(^|\.)(destaque|periscopy)\.ai$/i.test(url.hostname) : /(destaque|periscopy)\.ai/i.test(u[0]);
+      if (nosso && /\/api\//.test(url ? url.pathname : u[0]) && !vistos.has("rota /api/ nossa") && !eAutoDiagnostico(ficheiro)) {
         vistos.add("rota /api/ nossa");
         add("infra", `rota /api/ nossa: «${u[0]}»`, u.index);
       }
@@ -406,6 +410,7 @@ export function analisarFicheiro(linhas, acrescentadas, ctx) {
     // Regra 4: domínios novos
     const ja = new Set();
     for (const d of extrairDominios(linha)) {
+      if (d.invalido) { add("dominio-novo", `URL inválido (${d.url.slice(0, 120)})`, d.index); continue; }
       const reg = dominioRegistavel(d.host);
       if (ja.has(reg)) continue;
       ja.add(reg);
