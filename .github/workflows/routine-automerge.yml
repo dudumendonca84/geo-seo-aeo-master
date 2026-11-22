@@ -7,10 +7,27 @@
 # Este workflow leva ao main automaticamente, com três guardas:
 #   1. só commits com a assinatura das routines ("daily:" ou "audit:");
 #   2. só quando o diff toca exclusivamente caminhos de routine — se um
-#      humano estiver a trabalhar num branch claude/*, nada acontece;
+#      humano estiver a trabalhar num branch claude/*, nada acontece; as
+#      instruções das próprias routines (daily-prompt.md, routines/,
+#      SKILL.md) ficam de fora mesmo dentro desses caminhos;
 #   3. os contratos parseáveis validam antes do push (o Tracker consome
 #      estes ficheiros em runtime; um header partido apaga secções em
-#      silêncio).
+#      silêncio);
+#   4. a trava de injeção (22 Nov 2026) lê as linhas acrescentadas ANTES
+#      do merge: o daily-agent lê Reddit e a web, o Tracker cola
+#      `references/` no prompt da Routine do cérebro, que tem o segredo de
+#      operador. Por este caminho, uma frase plantada não chega lá sem
+#      uma pessoa a ler (ver o limite no fim deste cabeçalho). Com achados (ou se a trava der erro: falha fechada), este
+#      workflow não faz o merge: abre-se (ou comenta-se) um PR em rascunho com a etiqueta
+#      `trava-injecao` e a lista dos achados, e a corrida fica vermelha.
+#      Nada se apaga. Ver `scripts/trava-injecao.mjs`.
+#
+# Limite conhecido (fora deste workflow): num `on: push` corre o YAML do
+# próprio ramo enviado, e o main não tem proteção nem rulesets. Um ramo
+# comprometido pode editar este ficheiro, ou acrescentar outro workflow, e
+# saltar as guardas. A correção é um ruleset no main que exija PR, e o
+# merge passar para um job workflow_run/schedule com token de GitHub App
+# num environment. Ver INTERFACES.md § trava de injeção.
 name: routine-automerge
 
 on:
@@ -20,6 +37,8 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
+  issues: write
 
 jobs:
   automerge:
@@ -31,17 +50,26 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Merge para o main se o diff for só de routine
         env:
           BRANCH: ${{ github.ref_name }}
           HEAD_MSG: ${{ github.event.head_commit.message }}
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
           git config user.name "routine-automerge"
           git config user.email "actions@users.noreply.github.com"
           git fetch origin "$BRANCH"
 
-          CHANGED=$(git diff --name-only "main...origin/$BRANCH")
+          # --no-renames: um `git mv scripts/x.mjs references/x.md` mostra os
+          # dois nomes, e o antigo falha a lista. quotePath=true: um nome com
+          # caracteres estranhos sai entre aspas e também falha a lista.
+          CHANGED=$(git -c core.quotePath=true diff --name-only --no-renames "main...origin/$BRANCH")
           if [ -z "$CHANGED" ]; then
             echo "Nada para merge: o branch já está contido no main."
             exit 0
@@ -50,7 +78,11 @@ jobs:
           echo "$CHANGED"
 
           ALLOWED='^(destaque-ai-self/|skills/geo-seo-aeo-master/(daily-agent/|destaque-ai-self/|references/|methodology-changelog\.md))'
-          OUTSIDE=$(echo "$CHANGED" | grep -vE "$ALLOWED" || true)
+          # As instruções das routines nunca entram por aqui: uma routine
+          # envenenada não reescreve as próprias ordens (daily-prompt.md, as
+          # specs em routines/, SKILL.md). Mudá-las é PR humano.
+          DENIED='(^|/)(daily-prompt\.md|routines/|SKILL\.md)'
+          OUTSIDE=$( { echo "$CHANGED" | grep -vE "$ALLOWED"; echo "$CHANGED" | grep -E "$DENIED"; } || true)
           if [ -n "$OUTSIDE" ]; then
             echo "Caminhos fora da lista de routine — sem automerge:"
             echo "$OUTSIDE"
@@ -58,6 +90,36 @@ jobs:
           fi
 
           FIRST_LINE=$(printf '%s' "$HEAD_MSG" | head -n 1)
+
+          # Trava de injeção: corre sobre o mesmo diff (main...ramo) que o
+          # merge vai levar, e só sobre linhas acrescentadas. O script vem
+          # do main (checkout acima), não do ramo que está a ser avaliado.
+          # 0 = limpo; 2 = achados; outro = erro. Tudo o que não é 0 retém.
+          TRAVA_MD="$RUNNER_TEMP/trava.md"
+          set +e
+          node scripts/trava-injecao.mjs --base main --head "origin/$BRANCH" --markdown "$TRAVA_MD"
+          TRAVA=$?
+          set -e
+          if [ "$TRAVA" -ne 0 ]; then
+            if [ "$TRAVA" -ne 2 ]; then
+              printf '## Trava de injeção: ERRO, merge automático retido\n\nA trava não conseguiu correr (código %s). Falha fechada: este workflow não fez o merge. Ver o log da corrida.\n' "$TRAVA" > "$TRAVA_MD"
+            fi
+            printf '\n\nCorrida: %s/%s/actions/runs/%s\n' "$GITHUB_SERVER_URL" "$REPO" "$GITHUB_RUN_ID" >> "$TRAVA_MD"
+            gh label create trava-injecao --repo "$REPO" --color B60205 \
+              --description "Merge automático retido pela trava de injeção: revisão humana" --force || true
+            PR=$(gh pr list --repo "$REPO" --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')
+            if [ -z "$PR" ]; then
+              gh pr create --repo "$REPO" --base main --head "$BRANCH" --draft \
+                --title "Revisão humana (trava de injeção): $FIRST_LINE" --body-file "$TRAVA_MD"
+              PR=$(gh pr list --repo "$REPO" --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')
+            else
+              gh pr comment "$PR" --repo "$REPO" --body-file "$TRAVA_MD"
+            fi
+            gh pr edit "$PR" --repo "$REPO" --add-label trava-injecao || true
+            echo "::error::Trava de injeção: merge automático retido; revisão humana no PR #$PR."
+            exit 1
+          fi
+
           git merge --no-ff "origin/$BRANCH" -m "automerge(routine): $FIRST_LINE" -m "branch: $BRANCH"
 
           node scripts/validate-skill-tables.mjs
