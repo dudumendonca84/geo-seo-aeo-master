@@ -1,5 +1,21 @@
 # Registo das corridas do agente semanal de setores
 
+## 2026-11-22
+| Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
+|---|---|---|---|---|
+| formacao-it | 5 (Microsoft Learn, IEFP notícias, página "coming soon" da AWS, Microsoft Tech Community, site da Rumos; DGERT voltou a devolver 503) | 5 | 1 tendência, 2 factos, 2 fontes novas | IEFP só com duas notícias locais em novembro, sem formação digital; retirada do SAP-C02 e datas do MLA-C02 e ANS-C01 da AWS só em blogues de terceiros (a página oficial da AWS continua desatualizada); site da Rumos sem notícias nem campanhas datadas |
+| outsourcing-it | 6 (AICEP notícias, Consultancy.eu devolveu 404, ECO sobre a INOVA+, Executive Digest, Dinheiro Vivo, RTP, DN Madeira/Lusa) | 5 | 2 tendências, 1 facto, 1 fonte nova | Compra da INOVA+ pela Sun European Partners (19 Nov) ficou fora por ser consultora de inovação e fundos europeus, não de IT; 22 mil empregos tecnológicos (PlayersTime, julho) sem fonte primária; anúncios de vagas no Web Summit 2026 sem número confirmado; AICEP voltou a listar notícias com datas posteriores a hoje, não usadas |
+| software-rh | 4 (Cegid comunicados, ECO sobre transparência salarial, ECO sobre salário mínimo; ACT devolveu 503) | 6 | 2 tendências, 3 factos, 1 linha de calendário | Cegid sem comunicados depois de 12 Nov; concurso público da APSS para software de RH (fevereiro) fora da janela; páginas de produto da Sage, Factorial e Bizneo sem facto datado; data de entrada em vigor da lei de transparência salarial por confirmar (projeto ainda não aprovado em Conselho de Ministros) |
+| geo | news-feed de 16 a 22 Nov | 0 (por regra) | 6 tendências, 2 factos | GPT-6.2 e Gemini 4 Neon ficaram fora por não serem o modelo por defeito do ChatGPT nem do AI Mode; Connected Apps, ChatGPT Wallet e reserva de hotel no AI Mode só nos EUA; embeddings da Perplexity e caminho antigo das listas de IPs da Google sem efeito para quem compra GEO |
+
+Pesquisas por extenso:
+- formacao-it: "formação certificação IT Portugal novembro 2026"; "AWS certification exam retirement 2027 announcement"; "IEFP formação competências digitais candidaturas novembro 2026"; "Rumos formação IT novembro 2026" (marca); "\"AZ-400\" retirement February 2027 DevOps Engineer Expert".
+- outsourcing-it: "consultora tecnológica Portugal novembro 2026 aquisição OR compra OR centro tecnológico"; "nearshore Portugal novos postos de trabalho tecnologia Web Summit 2026 anúncio"; "Accenture Portugal OR Capgemini Portugal OR Inetum Portugal novembro 2026" (marca); "Accenture 950 postos de trabalho Portugal Meta rescisões voluntárias"; "serviços de TI outsourcing Portugal novembro 2026 estudo IDC APDC mercado".
+- software-rh: "software recursos humanos Portugal novembro 2026"; "transparência salarial diretiva transposição Portugal novembro 2026"; "salário mínimo 2027 Portugal valor aprovado concertação social"; "Factorial OR Sage OR Primavera OR Cegid Portugal RH novembro 2026 notícia" (marca); "transparência salarial proposta de lei Governo Parlamento 2026" (ECO, Observador, Público, Negócios); "salário mínimo 2027 970 euros decisão novembro" (mesmos sites).
+- geo: sem pesquisa, resumo do `daily-agent/news-feed.md`.
+
+Limitações desta corrida: DGERT e ACT devolveram 503 pela terceira semana seguida; o Expresso não é acessível à ferramenta de pesquisa; a Consultancy.eu mudou o endereço da secção Portugal (404); a compra da Critério Virtual (2 Out) entrou com atraso, porque as corridas anteriores não a apanharam; o artigo 202.º do Código do Trabalho continua por confirmar na fonte legal.
+
 ## 2026-11-15
 | Setor | Fontes abertas | Pesquisas feitas | Entradas novas | Porque não entrou mais |
 |---|---|---|---|---|
