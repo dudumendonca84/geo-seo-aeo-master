@@ -462,6 +462,33 @@ coordenar com PR no Tracker.
 
 ---
 
+## Antes de chegar ao main: a trava de injeção
+
+Os contratos acima são lidos em runtime e, no Tracker, colados no prompt da
+Routine do cérebro, que tem o segredo de operador. Os commits das routines
+(`daily:`, `audit:`) chegam ao main pelo `routine-automerge.yml` sem humano.
+Desde 22 Nov 2026, `scripts/trava-injecao.mjs` corre nesse workflow ANTES do
+merge, sobre as linhas acrescentadas do diff `main...ramo`:
+
+| Regra | O que retém |
+|---|---|
+| `instrucao-ia` | frase imperativa para uma IA: "ignore previous instructions", "you are now", "system prompt", "as an AI," e equivalentes PT e ES |
+| `infra` | caminho `/api/` solto, `x-operator-secret`, segredo de operador, `curl`/`fetch(`, verbo HTTP com destino, Supabase e service role, nomes `*_KEY`/`*_SECRET`/`*_TOKEN`, `tracker.destaque.ai` (em `destaque-ai-self/` nomear rotas e o Supabase é o assunto e não retém) |
+| `segredo` | `sk-`, `AKIA`, `ghp_`, JWT, chave privada, hex ou base64 com mais de 40 caracteres fora de URLs |
+| `dominio-novo` | URL (ou domínio com caminho) cujo domínio registável não aparece em nenhum ficheiro de texto do main |
+| `invisivel` | largura zero, bidi, etiquetas Unicode, `<!-- -->` novo, `<details>`, atributos que escondem texto, ficheiro binário |
+
+Um achado dentro de bloco de código, citação `>`, crases ou aspas é marcado
+como citação e vai à mesma a revisão. Com achados, ou se a trava der erro
+(falha fechada), o merge não acontece: abre-se um PR em rascunho com a
+etiqueta `trava-injecao` e a lista (ficheiro:linha, regra), e a corrida fica
+vermelha. Nenhum consumidor muda: o que chega ao main continua igual, só
+chega depois de uma pessoa ler quando a trava retém. Limite conhecido: um
+domínio já presente (reddit.com, github.com) continua a passar com qualquer
+caminho; a trava lê texto, não segue ligações.
+
+---
+
 ## Frequência de atualização
 
 | Ficheiro | Cadência | Trigger |
@@ -515,6 +542,7 @@ coordenar com PR no Tracker.
 
 | Data | Mudança | Impacto |
 |---|---|---|
+| 2026-11-22 | **Trava de injeção antes do automerge.** `scripts/trava-injecao.mjs` (com testes) corre no `routine-automerge.yml` antes do merge, sobre as linhas acrescentadas; com achados ou erro, retém o merge e abre um PR em rascunho com a etiqueta `trava-injecao`. Sem chaves, cabeçalhos ou tabelas novos. | Nenhum no formato. Tracker e Deck Builder podem receber uma atualização da routine mais tarde, quando a trava a retém para revisão. |
 | 2026-11-08 | **Contrato 10 estendido: taxa de pesquisa.** `models.md` ganha `## Search prices` (OpenAI, Anthropic, Google, xAI e Meta, lidos nas páginas de preços de cada fornecedor a 8 Nov 2026). O validador passa a verificar as duas tabelas de preços. | Tracker: o `cost_usd` de uma chamada com pesquisa passa a somar as pesquisas; sem taxa para o modelo, o custo fica desconhecido em vez de ficar por baixo. Deck Builder não lê preços. |
 | 2026-11-05 | **Contrato 20 (perfis da marca) criado.** `gap_action_mapping.md` ganha § "Onde a marca tem perfil (o ecrã Entidade)": que plataformas contam, e os diretórios de setor que contam pelos concorrentes. | Tracker lê a tabela na recolha dos perfis; acrescentar um diretório é uma linha, sem deploy, quando o Tracker já reconhece o endereço. |
 | 2026-05-23 | Inicialização: prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |

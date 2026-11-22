@@ -124,6 +124,10 @@ A **Claude Code Web Routine** named `geo-seo-news-daily` runs every day at **08:
 6. **Only on Fridays:** generates three drafts in `skills/geo-seo-aeo-master/daily-agent/drafts/YYYY-MM-DD-weekly.md` — LinkedIn (~200 words), blog (~1500 words), Twitter thread (~10 tweets).
 7. Commits and pushes the changes directly to `main`. The next time Claude Code starts (with auto-update on), the marketplace pulls the new news entry into installed skill.
 
+### Trava de injeção antes do main
+
+O que o daily-agent escreve chega ao main sem humano (`.github/workflows/routine-automerge.yml`) e o Tracker cola `references/` no prompt de um agente com segredo de operador. Por isso, antes do merge, `scripts/trava-injecao.mjs` lê as linhas acrescentadas do diff e procura cinco coisas: instruções dirigidas a uma IA (EN/PT/ES), chamadas à nossa infraestrutura (rotas `/api/`, segredos, `curl`, verbos HTTP, nomes de variáveis), padrões de chaves e blocos base64/hex longos, URLs para domínios que o repositório ainda não tem, e texto invisível ou escondido (largura zero, bidi, comentários HTML, `<details>`). Com um achado, ou com um erro da própria trava, o merge não acontece: o ramo fica, abre-se um PR em rascunho com a etiqueta `trava-injecao` e a lista dos achados (ficheiro:linha, regra), e uma pessoa decide. Nada se apaga. Testes: `node --test scripts/*.test.mjs` (correm também no `validate-skill`).
+
 ### Routine setup
 
 In Claude Code Web → Routines → New routine:

@@ -8,6 +8,15 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-22: O que as routines escrevem passa por uma trava antes do main
+
+- **Trigger:** revisão de segurança do caminho de absorção. O daily-agent lê Reddit e a web e escreve em `references/` e `daily-agent/`; o `routine-automerge.yml` leva isso ao main sem humano; o Tracker lê `references/` com cache de 1 h e cola o texto no prompt da Routine do cérebro, que tem o segredo de operador. Uma frase plantada numa página lida pelo agente podia virar instrução a um agente com poderes de operador.
+- **O que muda:** `scripts/trava-injecao.mjs` corre no workflow antes do merge, sobre as linhas acrescentadas, com cinco regras (`instrucao-ia`, `infra`, `segredo`, `dominio-novo`, `invisivel`). Com achados, ou com erro da trava, o merge não acontece: o ramo fica, abre-se um PR em rascunho com a etiqueta `trava-injecao` e a lista dos achados. Nada se apaga. `daily-agent/daily-prompt.md` passa a dizê-lo ao agente.
+- **Medido antes de ligar:** nos 35 merges automáticos de 23 Out a 22 Nov 2026, a trava teria retido 5, todos pela regra `dominio-novo` e todos legítimos (`internetcollective.org`, `rohitai.com`, `fullpress.it`, `agent.bot.goog` citado da documentação da Google, e três domínios citados pelos motores no auto-diagnóstico de 16 Nov). As outras quatro regras: zero achados. Nesse auto-diagnóstico havia também rotas `/api/` do Tracker e o Supabase, que são o assunto do ficheiro: em `destaque-ai-self/` a regra `infra` deixa passar esses nomes e continua a reter segredos, comandos e verbos HTTP.
+- **O que não muda:** nenhum ficheiro, cabeçalho ou tabela lidos pelo Tracker ou pelo Deck Builder.
+
+---
+
 ## 2026-11-20: O que conta como oportunidade de negócio, e a prova de cada ação do plano
 
 - **Trigger:** o ecrã «Oportunidades de negócio» da destaque.ai mostrava «Quem compra serviços B2B já pergunta primeiro à IA», com avaliações no Clutch e páginas novas como ações. Founder: é tese de mercado e trabalho do plano; *"não só isso, mas também segmento não explorado, etc, tem que ser mais profundo"*.
