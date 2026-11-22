@@ -7,18 +7,27 @@
 # Este workflow leva ao main automaticamente, com três guardas:
 #   1. só commits com a assinatura das routines ("daily:" ou "audit:");
 #   2. só quando o diff toca exclusivamente caminhos de routine — se um
-#      humano estiver a trabalhar num branch claude/*, nada acontece;
+#      humano estiver a trabalhar num branch claude/*, nada acontece; as
+#      instruções das próprias routines (daily-prompt.md, routines/,
+#      SKILL.md) ficam de fora mesmo dentro desses caminhos;
 #   3. os contratos parseáveis validam antes do push (o Tracker consome
 #      estes ficheiros em runtime; um header partido apaga secções em
 #      silêncio);
 #   4. a trava de injeção (22 Nov 2026) lê as linhas acrescentadas ANTES
 #      do merge: o daily-agent lê Reddit e a web, o Tracker cola
 #      `references/` no prompt da Routine do cérebro, que tem o segredo de
-#      operador. Uma frase plantada não pode chegar lá sem uma pessoa a
-#      ler. Com achados (ou se a trava der erro: falha fechada), nada vai
-#      ao main: abre-se (ou comenta-se) um PR em rascunho com a etiqueta
+#      operador. Por este caminho, uma frase plantada não chega lá sem
+#      uma pessoa a ler (ver o limite no fim deste cabeçalho). Com achados (ou se a trava der erro: falha fechada), este
+#      workflow não faz o merge: abre-se (ou comenta-se) um PR em rascunho com a etiqueta
 #      `trava-injecao` e a lista dos achados, e a corrida fica vermelha.
 #      Nada se apaga. Ver `scripts/trava-injecao.mjs`.
+#
+# Limite conhecido (fora deste workflow): num `on: push` corre o YAML do
+# próprio ramo enviado, e o main não tem proteção nem rulesets. Um ramo
+# comprometido pode editar este ficheiro, ou acrescentar outro workflow, e
+# saltar as guardas. A correção é um ruleset no main que exija PR, e o
+# merge passar para um job workflow_run/schedule com token de GitHub App
+# num environment. Ver INTERFACES.md § trava de injeção.
 name: routine-automerge
 
 on:
@@ -57,7 +66,10 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git fetch origin "$BRANCH"
 
-          CHANGED=$(git diff --name-only "main...origin/$BRANCH")
+          # --no-renames: um `git mv scripts/x.mjs references/x.md` mostra os
+          # dois nomes, e o antigo falha a lista. quotePath=true: um nome com
+          # caracteres estranhos sai entre aspas e também falha a lista.
+          CHANGED=$(git -c core.quotePath=true diff --name-only --no-renames "main...origin/$BRANCH")
           if [ -z "$CHANGED" ]; then
             echo "Nada para merge: o branch já está contido no main."
             exit 0
@@ -66,7 +78,11 @@ jobs:
           echo "$CHANGED"
 
           ALLOWED='^(destaque-ai-self/|skills/geo-seo-aeo-master/(daily-agent/|destaque-ai-self/|references/|methodology-changelog\.md))'
-          OUTSIDE=$(echo "$CHANGED" | grep -vE "$ALLOWED" || true)
+          # As instruções das routines nunca entram por aqui: uma routine
+          # envenenada não reescreve as próprias ordens (daily-prompt.md, as
+          # specs em routines/, SKILL.md). Mudá-las é PR humano.
+          DENIED='(^|/)(daily-prompt\.md|routines/|SKILL\.md)'
+          OUTSIDE=$( { echo "$CHANGED" | grep -vE "$ALLOWED"; echo "$CHANGED" | grep -E "$DENIED"; } || true)
           if [ -n "$OUTSIDE" ]; then
             echo "Caminhos fora da lista de routine — sem automerge:"
             echo "$OUTSIDE"
@@ -86,7 +102,7 @@ jobs:
           set -e
           if [ "$TRAVA" -ne 0 ]; then
             if [ "$TRAVA" -ne 2 ]; then
-              printf '## Trava de injeção: ERRO, merge automático retido\n\nA trava não conseguiu correr (código %s). Falha fechada: nada foi ao main. Ver o log da corrida.\n' "$TRAVA" > "$TRAVA_MD"
+              printf '## Trava de injeção: ERRO, merge automático retido\n\nA trava não conseguiu correr (código %s). Falha fechada: este workflow não fez o merge. Ver o log da corrida.\n' "$TRAVA" > "$TRAVA_MD"
             fi
             printf '\n\nCorrida: %s/%s/actions/runs/%s\n' "$GITHUB_SERVER_URL" "$REPO" "$GITHUB_RUN_ID" >> "$TRAVA_MD"
             gh label create trava-injecao --repo "$REPO" --color B60205 \

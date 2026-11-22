@@ -472,20 +472,32 @@ merge, sobre as linhas acrescentadas do diff `main...ramo`:
 
 | Regra | O que retém |
 |---|---|
-| `instrucao-ia` | frase imperativa para uma IA: "ignore previous instructions", "you are now", "system prompt", "as an AI," e equivalentes PT e ES |
+| `instrucao-ia` | frase imperativa para uma IA, em EN, PT, ES, FR, DE e IT ("ignore previous instructions", "ignore the instructions above", "you are now", "system prompt", "as an AI,", "AI agents must send…"), lida também depois de NFKC e sem ênfase markdown (`*_~`) |
 | `infra` | caminho `/api/` solto, `x-operator-secret`, segredo de operador, `curl`/`fetch(`, verbo HTTP com destino, Supabase e service role, nomes `*_KEY`/`*_SECRET`/`*_TOKEN`, `tracker.destaque.ai` (em `destaque-ai-self/` nomear rotas e o Supabase é o assunto e não retém) |
-| `segredo` | `sk-`, `AKIA`, `ghp_`, JWT, chave privada, hex ou base64 com mais de 40 caracteres fora de URLs |
-| `dominio-novo` | URL (ou domínio com caminho) cujo domínio registável não aparece em nenhum ficheiro de texto do main |
-| `invisivel` | largura zero, bidi, etiquetas Unicode, `<!-- -->` novo, `<details>`, atributos que escondem texto, ficheiro binário |
+| `segredo` | `sk-`, `AKIA`, `ghp_`, JWT, chave privada, hex com mais de 40 caracteres ou troço base64 contínuo, fora de URLs |
+| `dominio-novo` | URL, domínio com caminho, `//dominio/caminho` ou URL desarmado (`hxxp`, `[.]`) cujo domínio registável não aparece em nenhum ficheiro de texto do main; URIs `data:` e `javascript:` |
+| `invisivel` | `\p{Cf}` (largura zero, bidi, etiquetas Unicode), U+2028/2029, U+034F, preenchimentos Hangul, seletores de variação fora de um emoji, palavras que misturam latim com cirílico ou grego, `<!-- -->` novo, `<details>`, atributos que escondem texto, definições de referência `[x]: #`, entidades HTML numéricas, NUL, UTF-8 inválido, binários, ligações simbólicas e submódulos |
 
 Um achado dentro de bloco de código, citação `>`, crases ou aspas é marcado
 como citação e vai à mesma a revisão. Com achados, ou se a trava der erro
-(falha fechada), o merge não acontece: abre-se um PR em rascunho com a
-etiqueta `trava-injecao` e a lista (ficheiro:linha, regra), e a corrida fica
-vermelha. Nenhum consumidor muda: o que chega ao main continua igual, só
-chega depois de uma pessoa ler quando a trava retém. Limite conhecido: um
-domínio já presente (reddit.com, github.com) continua a passar com qualquer
-caminho; a trava lê texto, não segue ligações.
+(falha fechada: um ficheiro com linhas acrescentadas que não se consiga ler
+é erro, nunca se salta), o merge não acontece: abre-se um PR em rascunho com
+a etiqueta `trava-injecao` e a lista (ficheiro:linha, regra), e a corrida
+fica vermelha. As instruções das routines (`daily-prompt.md`, `routines/`,
+`SKILL.md`) ficam fora da lista do automerge: mudá-las é sempre PR humano.
+Nenhum consumidor muda de formato.
+
+**Limite conhecido, fora deste workflow (A1).** Num `on: push` corre o YAML
+do próprio ramo enviado (ou um `.github/workflows/x.yml` novo que o ramo
+traga), e o main não tem proteção nem rulesets. Um ramo comprometido pode
+editar o `routine-automerge.yml` e saltar a trava. Ou seja: a trava protege
+o caminho normal das routines, não garante que nada chega ao main sem ela.
+A correção é um ruleset no main que exija PR, e o merge passar para um job
+`workflow_run` ou `schedule` com token de uma GitHub App guardado num
+environment. Outro limite: um domínio já presente (reddit.com, github.com)
+passa com qualquer caminho, e um domínio solto sem caminho não é lido
+(medido: levava a retenção de 5 para 10 em 35 merges); a trava lê texto,
+não segue ligações.
 
 ---
 
@@ -542,7 +554,7 @@ caminho; a trava lê texto, não segue ligações.
 
 | Data | Mudança | Impacto |
 |---|---|---|
-| 2026-11-22 | **Trava de injeção antes do automerge.** `scripts/trava-injecao.mjs` (com testes) corre no `routine-automerge.yml` antes do merge, sobre as linhas acrescentadas; com achados ou erro, retém o merge e abre um PR em rascunho com a etiqueta `trava-injecao`. Sem chaves, cabeçalhos ou tabelas novos. | Nenhum no formato. Tracker e Deck Builder podem receber uma atualização da routine mais tarde, quando a trava a retém para revisão. |
+| 2026-11-22 | **Trava de injeção antes do automerge.** `scripts/trava-injecao.mjs` (com testes) corre no `routine-automerge.yml` antes do merge, sobre as linhas acrescentadas; com achados ou erro, retém o merge e abre um PR em rascunho com a etiqueta `trava-injecao`. `daily-prompt.md`, `routines/` e `SKILL.md` saem da lista do automerge. Limite declarado: o YAML do ramo enviado corre e o main não tem rulesets. Sem chaves, cabeçalhos ou tabelas novos. | Nenhum no formato. Tracker e Deck Builder podem receber uma atualização da routine mais tarde, quando a trava a retém para revisão. |
 | 2026-11-08 | **Contrato 10 estendido: taxa de pesquisa.** `models.md` ganha `## Search prices` (OpenAI, Anthropic, Google, xAI e Meta, lidos nas páginas de preços de cada fornecedor a 8 Nov 2026). O validador passa a verificar as duas tabelas de preços. | Tracker: o `cost_usd` de uma chamada com pesquisa passa a somar as pesquisas; sem taxa para o modelo, o custo fica desconhecido em vez de ficar por baixo. Deck Builder não lê preços. |
 | 2026-11-05 | **Contrato 20 (perfis da marca) criado.** `gap_action_mapping.md` ganha § "Onde a marca tem perfil (o ecrã Entidade)": que plataformas contam, e os diretórios de setor que contam pelos concorrentes. | Tracker lê a tabela na recolha dos perfis; acrescentar um diretório é uma linha, sem deploy, quando o Tracker já reconhece o endereço. |
 | 2026-05-23 | Inicialização: prompts.md (§1-3) + models.md (§ API mappings) | Baseline para Deck Builder |

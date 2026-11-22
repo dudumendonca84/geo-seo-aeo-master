@@ -45,6 +45,7 @@ const INSTRUCAO_IA = [
   // EN
   /\b(ignore|forget|override|bypass)\s+(all\s+|any\s+|the\s+|your\s+|of\s+)*(previous|prior|above|earlier|preceding|former|existing|system|original)\s+(instructions?|prompts?|rules|directions|guidelines|messages|context)\b/i,
   /\b(ignore|forget)\s+(all|everything)\b[^.\n]{0,30}\b(instructions?|rules|told|above|prompts?)\b/i,
+  /\b(ignore|forget|disregard)\s+(all\s+)?(the|these|those|your|any|my)\s+(instructions?|prompts?|rules|directions|guidelines)\s+(above|before|below|given|so\s+far|you\s+(were|have\s+been)\s+given)\b/i,
   /\bdisregard\b[^.\n]{0,40}\b(instructions?|prompts?|rules|guidelines|directions|messages|context|the\s+above)\b/i,
   /\byou\s+are\s+now\s+(a|an|the|my|in|acting|operating|free|no\s+longer|DAN|jailbroken)\b/i,
   /\bsystem\s+prompts?\b/i,
@@ -72,7 +73,38 @@ const INSTRUCAO_IA = [
   /\bprompt\s+del\s+sistema\b/i,
   /\bno\s+(le\s+)?(digas|diga|cuentes|cuente|informes|reveles|avises)\b[^.\n]{0,20}\b(usuario|humano|operador|cliente)/i,
   /\bnuevas\s+instrucciones\s*:/i,
+  // FR
+  /\b(ignor|oubli)\w*\s+(toutes\s+)?(les|tes|vos)\s+(instructions|consignes|r[èe]gles)\s+(pr[ée]c[ée]dentes|ci-dessus|ant[ée]rieures|du\s+syst[èe]me)\b/i,
+  /\b(ignor|oubli)\w*\s+toutes\s+(les\s+)?(instructions|consignes)\b/i,
+  /\b(tu\s+es|vous\s+[êe]tes)\s+(maintenant|d[ée]sormais)\b/i,
+  /\b(d[ée]sormais|[àa]\s+partir\s+de\s+maintenant)\s*,?\s+(tu\s+es|vous\s+[êe]tes)\b/i,
+  /\b(prompt|invite)\s+(du\s+)?syst[èe]me\b/i,
+  /\ben\s+tant\s+qu['’]\s*(IA|assistant|mod[èe]le\s+de\s+langage)\s*,/i,
+  /\bne\s+(le\s+|lui\s+)?(dis|dites|r[ée]v[èe]le|r[ée]v[ée]lez)\s+(pas|rien)\b[^.\n]{0,20}\b(utilisateur|humain|op[ée]rateur)/i,
+  // DE
+  /\b(ignorier|vergiss|vergessen)\w*\s+(alle\s+|die\s+)?(vorherigen|bisherigen|obigen|vorigen|fr[üu]heren)\s+(Anweisungen|Instruktionen|Befehle|Regeln)\b/i,
+  /\b(ignorier|vergiss)\w*\s+alle\s+(Anweisungen|Instruktionen)\b/i,
+  /\b(du\s+bist\s+(jetzt|nun|ab\s+sofort)|ab\s+(jetzt|sofort)\s+bist\s+du)\b/i,
+  /\bSystem-?\s?Prompt\b/i,
+  /\bals\s+(eine\s+)?KI\s*,/i,
+  /\b(sag|sage|erz[äa]hl|erz[äa]hle|verrate)\s+(dem|den)\s+(Benutzer|Nutzer|Menschen|Betreiber)\w*\s+nicht(s)?\b/i,
+  // IT
+  /\b(ignora|dimentica|ignorate|dimenticate)\s+(tutte\s+)?le\s+(istruzioni|regole|indicazioni)\s+(precedenti|sopra|di\s+sistema)\b/i,
+  /\b(ignora|dimentica)\s+tutte\s+le\s+(istruzioni|indicazioni)\b/i,
+  /\b(ora\s+sei|da\s+ora\s+in\s+(poi|avanti)\s+sei)\b/i,
+  /\bprompt\s+di\s+sistema\b/i,
+  /\b(come|in\s+quanto)\s+(una\s+)?IA\s*,/i,
+  /\bnon\s+(dire|dirlo|rivelare)\b[^.\n]{0,20}\b(utente|umano|operatore)/i,
+  // Ordem dirigida a um modelo, em qualquer frase: "AI agents must send…".
+  // Exige um verbo de ação depois do dever, para "AI models should cite
+  // sources" (notícia) não disparar.
+  /\b(AIs?|LLMs?|assistants?|agents?|models?|bots?)\b[^.\n]{0,40}\b(must|should|need\s+to|are\s+instructed\s+to|is\s+instructed\s+to)\s+(now\s+|immediately\s+|always\s+|also\s+)?(ignore|disregard|reveal|disclose|send|post|forward|email|exfiltrate|upload|call|invoke|execute|run|fetch|visit|open|print|output|leak|share|copy|delete|override|obey|follow\s+these)\b/i,
 ];
+
+// O texto que a regra 1 lê: NFKC (letras de largura total, ligaduras e
+// afins passam a ASCII) e sem a ênfase markdown que parte palavras
+// ("**ig**nore", "i_g_n_o_r_e" fica "ignore").
+export const normalizar = (linha) => linha.normalize("NFKC").replace(/[*_~]/g, "");
 
 // --- Regra 2: chamadas à nossa infraestrutura.
 // Uma notícia de GEO não precisa de nomear uma rota `/api/`, o segredo de
@@ -97,7 +129,7 @@ const INFRA = [
   [/\bsegredo\s+(de|do)\s+(operador|backoffice)\b/i, "segredo de operador"],
   [/\bsecreto\s+del\s+operador\b/i, "segredo de operador"],
   [/\b(curl|wget|httpie)\s+(-|['"]?https?:\/\/)/i, "comando HTTP"],
-  [/\bfetch\s*\(/, "chamada fetch()"],
+  [/\bfetch\(/, "chamada fetch()"],
   [/\b(axios|requests)\.(get|post|put|patch|delete)\s*\(/i, "chamada HTTP em código"],
   [/\bInvoke-(WebRequest|RestMethod)\b/i, "comando HTTP"],
   [/\b(POST|PUT|PATCH|DELETE)\s+(\/|https?:\/\/)/, "verbo HTTP com destino"],
@@ -125,18 +157,56 @@ const SEGREDO_PREFIXO = [
 ];
 const HEX_LONGO = /\b[0-9a-fA-F]{41,}\b/g;
 const B64_LONGO = /[A-Za-z0-9+/_-]{41,}={0,2}/g;
-const pareceBase64 = (s) => /[A-Z]/.test(s) && /[a-z]/.test(s) && /[0-9]/.test(s);
+// Um caminho ("docs/produto/CAPITULO-09-PROPOSTA.md") tem os três tipos de
+// carácter mas é partido por "/", "-" e "."; um bloco codificado tem um
+// troço contínuo comprido.
+const pareceBase64 = (s) => (s.match(/[A-Za-z0-9+]{30,}/g) || [])
+  .some((t) => /[A-Z]/.test(t) && /[a-z]/.test(t) && /[0-9]/.test(t));
 
 // --- Regra 5: invisível. Caracteres de largura zero, controlos bidi
 // (Trojan Source), etiquetas Unicode (texto que o leitor não vê e o modelo
 // lê), e markdown/HTML que esconde texto do leitor humano.
+// \p{Cf} cobre largura zero, bidi, U+061C, U+00AD, U+FEFF e as etiquetas
+// Unicode. Junta-se o que não é Cf e também não se vê: separadores de
+// linha e parágrafo, o combining grapheme joiner, os preenchimentos Hangul
+// e os seletores de variação. Um seletor FE0E/FE0F logo a seguir a um
+// símbolo é o emoji normal ("⚙️" do news-feed) e passa; seletores em fila,
+// os suplementares (E0100-E01EF) ou depois de uma letra servem para
+// esconder bytes num emoji e retêm.
 const INVISIVEL_CHAR =
-  /[\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u2069\uFEFF\u00AD\u180E]|[\u{E0000}-\u{E007F}]/u;
+  /[\p{Cf}\u2028\u2029\u034F\u3164\u115F\u1160\uFFA0\uFE00-\uFE0F\u{E0100}-\u{E01EF}]/gu;
+const SIMBOLO_ANTES = /[\p{Extended_Pictographic}\p{So}\p{Sk}#*0-9\u20E3]$/u;
+export function invisivelNaLinha(linha) {
+  for (const m of linha.matchAll(INVISIVEL_CHAR)) {
+    const cp = m[0].codePointAt(0);
+    if (cp === 0xfe0e || cp === 0xfe0f) {
+      const antes = linha.slice(0, m.index);
+      const anterior = antes.slice(-2).match(/[\uFE00-\uFE0F]$/u);
+      if (!anterior && SIMBOLO_ANTES.test(antes)) continue;
+    }
+    // ZWJ (U+200D) dentro de um emoji composto ("👩‍💻") é normal.
+    if (cp === 0x200d) {
+      const antes = linha.slice(0, m.index), depois = linha.slice(m.index + 1);
+      if (/\p{Extended_Pictographic}[\uFE0F]?$/u.test(antes) && /^\p{Extended_Pictographic}/u.test(depois)) continue;
+    }
+    return { cp: cp.toString(16).toUpperCase().padStart(4, "0"), index: m.index };
+  }
+  return null;
+}
+// Uma palavra com letras latinas e cirílicas ou gregas ao mesmo tempo é um
+// homóglifo ("іgnore" com i cirílico): passa por todos os padrões da regra 1.
+export function alfabetosMisturados(linha) {
+  for (const m of linha.matchAll(/[\p{L}\p{M}]+/gu)) {
+    if (/\p{Script=Latin}/u.test(m[0]) && /[\p{Script=Cyrillic}\p{Script=Greek}]/u.test(m[0])) return m;
+  }
+  return null;
+}
 const ESCONDIDO = [
   [/<(details|summary)\b/i, "<details>/<summary> (texto fechado por omissão)"],
   [/<(script|iframe|object|embed|style|noscript|template)\b/i, "elemento HTML ativo ou escondido"],
   [/<[a-z][^>]*\s(hidden\b|aria-hidden\s*=\s*["']?true|style\s*=\s*["'][^"']*(display\s*:\s*none|visibility\s*:\s*hidden|font-size\s*:\s*0|opacity\s*:\s*0))/i, "atributo que esconde texto"],
-  [/^\s*\[(\/\/|comment|_)\]\s*:\s*[#<]/i, "comentário markdown escondido"],
+  [/^\s{0,3}\[[^\]]+\]:\s*(#|<>)/, "definição de referência markdown escondida"],
+  [/&#x?[0-9a-f]+;/i, "entidade HTML numérica (texto codificado)"],
 ];
 
 // Extensões de ficheiro que parecem TLD num caminho (`faixas.ts/`).
@@ -171,9 +241,30 @@ export function dominioRegistavel(host) {
 
 const URL_RE = /\bhttps?:\/\/[^\s<>()[\]"'`|{}\\^]+/gi;
 // Domínio sem esquema seguido de caminho: `docs.x.ai/docs/release-notes`.
-const DOMINIO_NU_RE = /(?<![\w@./-])((?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+([a-z]{2,24}))\/[^\s<>()[\]"'`|]*/gi;
+const DOMINIO_NU_RE = /(?<![\w@.-])((?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+([a-z]{2,24}))\/[^\s<>()[\]"'`|]*/gi;
+// O domínio solto SEM caminho ("visita evil.example") ficou de fora de
+// propósito: medido a 22 Nov 2026, levava a retenção de 5 para 10 em 35
+// merges, quase toda no source-intel semanal, que lista por desenho os
+// domínios que os motores citaram.
+// URI que traz o conteúdo dentro de si, sem domínio nenhum a verificar.
+const URI_EMBUTIDO_RE = /\bdata:[a-z-]+\/[a-z0-9.+-]+[;,]|\b(javascript|vbscript):(?!\s)/gi;
+// URL desarmado ("hxxps://evil[.]example"): retém como qualquer outro.
+const desarmar = (t) => t.replace(/hxxp/gi, "http").replace(/\[\.\]|\(\.\)|\[dot\]|\(dot\)|\{\.\}/gi, ".");
+
+// "com.google.android.app/…" (android-app://) é um nome de pacote, não um domínio.
+const eNomeDePacote = (host) => /^(com|org|net|io|android|java|javax)\./i.test(host);
 
 export function extrairDominios(texto) {
+  const out = extrairDominiosCru(texto);
+  const d = desarmar(texto);
+  if (d !== texto) {
+    const k = texto.search(/hxxp|\[\.\]|\(\.\)|\[dot\]|\(dot\)|\{\.\}/i);
+    for (const x of extrairDominiosCru(d)) out.push({ ...x, index: k, desarmado: true });
+  }
+  return out;
+}
+
+function extrairDominiosCru(texto) {
   const out = [];
   for (const m of texto.matchAll(URL_RE)) {
     let host;
@@ -183,7 +274,11 @@ export function extrairDominios(texto) {
   const semUrls = texto.replace(URL_RE, (s) => " ".repeat(s.length));
   for (const m of semUrls.matchAll(DOMINIO_NU_RE)) {
     const tld = m[2].toLowerCase();
-    if (NAO_TLD.has(tld)) continue;
+    if (NAO_TLD.has(tld) || eNomeDePacote(m[1])) continue;
+    out.push({ host: m[1].toLowerCase(), url: m[0], index: m.index });
+  }
+  for (const m of semUrls.matchAll(/(?<![:\w/])\/\/((?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+([a-z]{2,24}))(?![\w-])/gi)) {
+    if (NAO_TLD.has(m[2].toLowerCase()) || eNomeDePacote(m[1])) continue;
     out.push({ host: m[1].toLowerCase(), url: m[0], index: m.index });
   }
   return out;
@@ -248,17 +343,16 @@ export function analisarFicheiro(linhas, acrescentadas, ctx) {
 
     const citacaoLinha = emBloco || !!f || /^\s{0,3}>/.test(linha);
     const ivs = intervalosCitados(linha);
-    const add = (regra, detalhe, index) => {
-      const citado = regra === "invisivel" ? false : citacaoLinha || (index != null && dentro(index, ivs));
+    const add = (regra, detalhe, index, ivsProprios = ivs) => {
+      const citado = regra === "invisivel" ? false : citacaoLinha || (index != null && dentro(index, ivsProprios));
       achados.push({ ficheiro, linha: n, regra, detalhe, citado, trecho: trecho(linha, index) });
     };
 
     // Regra 5: invisível
-    const inv = linha.match(INVISIVEL_CHAR);
-    if (inv) {
-      const cp = inv[0].codePointAt(0).toString(16).toUpperCase().padStart(4, "0");
-      add("invisivel", `caractere invisível U+${cp}`, inv.index);
-    }
+    const inv = invisivelNaLinha(linha);
+    if (inv) add("invisivel", `caractere invisível U+${inv.cp}`, inv.index);
+    const mist = alfabetosMisturados(linha);
+    if (mist) add("invisivel", `palavra com alfabetos misturados (homóglifo): «${mist[0]}»`, mist.index);
     const jaExistia = linhasBase.has(linha.trim());
     if (!jaExistia) {
       if (comentarioAntes && linha.trim()) add("invisivel", "linha dentro de um comentário HTML", 0);
@@ -270,9 +364,14 @@ export function analisarFicheiro(linhas, acrescentadas, ctx) {
     }
 
     // Regra 1: instrução dirigida a uma IA
+    const norm = normalizar(linha);
+    const ivsNorm = norm === linha ? ivs : intervalosCitados(norm);
+    // Lê-se o texto cru e o normalizado: "<|im_start|>" precisa do "_".
     for (const re of INSTRUCAO_IA) {
       const m = linha.match(re);
+      const mn = m ? null : norm.match(re);
       if (m) { add("instrucao-ia", `«${m[0].trim()}»`, m.index); break; }
+      if (mn) { add("instrucao-ia", `«${mn[0].trim()}» (depois de normalizar)`, mn.index, ivsNorm); break; }
     }
 
     // Regra 2: infraestrutura (o caminho /api/ avalia-se sem os URLs)
@@ -310,9 +409,11 @@ export function analisarFicheiro(linhas, acrescentadas, ctx) {
       const reg = dominioRegistavel(d.host);
       if (ja.has(reg)) continue;
       ja.add(reg);
-      if (/^\d{1,3}(\.\d{1,3}){3}$/.test(reg)) add("dominio-novo", `IP literal ${reg}`, d.index);
-      else if (!allowlist.has(reg)) add("dominio-novo", `${reg} (${d.url.slice(0, 120)})`, d.index);
+      const des = d.desarmado ? ", desarmado" : "";
+      if (/^\d{1,3}(\.\d{1,3}){3}$/.test(reg)) add("dominio-novo", `IP literal ${reg}${des}`, d.index);
+      else if (!allowlist.has(reg)) add("dominio-novo", `${reg} (${d.url.slice(0, 120)}${des})`, d.index);
     }
+    for (const m of linha.matchAll(URI_EMBUTIDO_RE)) add("dominio-novo", `URI com conteúdo embutido: «${m[0]}»`, m.index);
   }
   return achados;
 }
@@ -321,28 +422,44 @@ function trecho(linha, index) {
   const i = Math.max(0, (index ?? 0) - 40);
   const s = linha.slice(i, i + 160).replace(/[\u0000-\u001F]/g, " ");
   // Mostra o invisível em vez de o copiar para o PR.
-  return (i > 0 ? "…" : "") + s.replace(new RegExp(INVISIVEL_CHAR.source, "gu"), (c) =>
+  return (i > 0 ? "…" : "") + s.replace(INVISIVEL_CHAR, (c) =>
     `<U+${c.codePointAt(0).toString(16).toUpperCase()}>`);
 }
 
-// Lê um diff unificado (--unified=0) e devolve Map ficheiro -> Set(linhas novas).
+// Lê o diff unificado (--unified=0) de UM ficheiro e devolve o Set dos
+// números de linha acrescentados na versão nova. Os hunks leem-se pelas
+// contagens do cabeçalho `@@`: uma linha de conteúdo "+++ x" (o texto
+// "++ x" acrescentado) é conteúdo e nunca cabeçalho. O que não bater certo
+// lança erro, e o erro retém o merge (falha fechada).
 export function linhasAcrescentadas(diff) {
-  const out = new Map();
-  let atual = null;
-  let n = 0;
-  for (const l of diff.split("\n")) {
-    if (l.startsWith("+++ ")) {
-      const p = l.slice(4);
-      atual = p === "/dev/null" ? null : p.replace(/^b\//, "");
-      if (atual && !out.has(atual)) out.set(atual, new Set());
+  const linhas = diff.split("\n");
+  if (linhas[linhas.length - 1] === "") linhas.pop();
+  const out = new Set();
+  let i = 0;
+  let viuHunk = false;
+  while (i < linhas.length) {
+    const h = linhas[i].match(/^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@/);
+    if (!h) {
+      if (viuHunk) throw new Error(`linha fora de um hunk: ${JSON.stringify(linhas[i].slice(0, 80))}`);
+      i++; // cabeçalho do ficheiro (diff --git, index, ---, +++)
       continue;
     }
-    if (l.startsWith("--- ") || l.startsWith("diff --git")) continue;
-    const h = l.match(/^@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@/);
-    if (h) { n = Number(h[1]); continue; }
-    if (!atual) continue;
-    if (l.startsWith("+")) { out.get(atual).add(n); n++; }
-    else if (l.startsWith(" ")) n++;
+    viuHunk = true;
+    let velhas = h[2] === undefined ? 1 : Number(h[2]);
+    let novas = h[4] === undefined ? 1 : Number(h[4]);
+    let n = Number(h[3]);
+    i++;
+    while (velhas > 0 || novas > 0) {
+      if (i >= linhas.length) throw new Error("hunk truncado");
+      const l = linhas[i++];
+      const c = l[0];
+      if (c === "\\") continue; // "\ No newline at end of file"
+      if (c === "+" && novas > 0) { out.add(n++); novas--; }
+      else if (c === "-" && velhas > 0) velhas--;
+      else if (c === " " && velhas > 0 && novas > 0) { velhas--; novas--; n++; }
+      else throw new Error(`linha inesperada num hunk: ${JSON.stringify(l.slice(0, 80))}`);
+    }
+    while (i < linhas.length && linhas[i].startsWith("\\")) i++;
   }
   return out;
 }
@@ -352,31 +469,69 @@ const git = (args, opts = {}) =>
     encoding: "utf8", maxBuffer: 512 * 1024 * 1024, ...opts,
   });
 
+// `git diff --raw -z`: ":modo modo sha sha estado\0caminho\0", sem renomeações.
+export function lerRaw(raw) {
+  const p = raw.split("\0");
+  const out = [];
+  for (let i = 0; i + 1 < p.length; i += 2) {
+    const m = p[i].match(/^:(\d{6}) (\d{6}) [0-9a-f]+ [0-9a-f]+ ([A-Z])\d*$/);
+    if (!m) throw new Error(`linha --raw inesperada: ${JSON.stringify(p[i].slice(0, 80))}`);
+    out.push({ modoAntigo: m[1], modoNovo: m[2], estado: m[3], caminho: p[i + 1] });
+  }
+  return out;
+}
+
+// `git diff --numstat -z`: "acrescentadas\tapagadas\tcaminho\0" ("-" em binários).
+export function lerNumstat(raw) {
+  const out = new Map();
+  for (const r of raw.split("\0")) {
+    if (!r) continue;
+    const m = r.match(/^(-|\d+)\t(-|\d+)\t([\s\S]+)$/);
+    if (!m) throw new Error(`linha --numstat inesperada: ${JSON.stringify(r.slice(0, 80))}`);
+    out.set(m[3], { binario: m[1] === "-", acrescentadas: m[1] === "-" ? 0 : Number(m[1]) });
+  }
+  return out;
+}
+
 export function correr({ base, head }) {
   const mb = git(["merge-base", base, head]).trim();
-  const diff = git(["diff", "--unified=0", "--no-color", "--no-ext-diff", "--find-renames", mb, head]);
-  const porFicheiro = linhasAcrescentadas(diff);
-  // Binários ficam de fora do texto, mas um binário novo num caminho de
-  // routine também é estranho: reporta-se.
-  const numstat = git(["diff", "--numstat", "--find-renames", mb, head]);
-  const achados = [];
-  for (const l of numstat.split("\n")) {
-    const m = l.match(/^-\t-\t(.+)$/);
-    if (m) achados.push({ ficheiro: m[1], linha: 0, regra: "invisivel", detalhe: "ficheiro binário no diff", citado: false, trecho: "" });
-  }
+  // Caminhos por -z (um nome com espaço, TAB ou quebra de linha chega
+  // inteiro) e sem renomeações (um `git mv` mostra o nome antigo e o novo).
+  const entradas = lerRaw(git(["diff", "--raw", "-z", "--no-renames", "--no-abbrev", mb, head]));
+  const numstat = lerNumstat(git(["diff", "--numstat", "-z", "--no-renames", mb, head]));
   // Allowlist e linhas já aprovadas: tudo o que o repositório tinha em `base`.
   const textoBase = git(["grep", "-I", "-h", "-e", "", base, "--"], { stdio: ["ignore", "pipe", "ignore"] });
   const allowlist = allowlistDe(textoBase);
   const linhasBase = new Set(textoBase.split("\n").map((s) => s.trim()).filter(Boolean));
-  for (const [ficheiro, acrescentadas] of porFicheiro) {
-    if (!acrescentadas.size) continue;
+  const achados = [];
+  const marca = (ficheiro, detalhe) =>
+    achados.push({ ficheiro, linha: 0, regra: "invisivel", detalhe, citado: false, trecho: "" });
+  for (const e of entradas) {
+    if (e.estado === "D") continue;
+    const { caminho } = e;
+    if (e.modoNovo === "120000") { marca(caminho, "ligação simbólica no diff"); continue; }
+    if (e.modoNovo === "160000") { marca(caminho, "submódulo no diff"); continue; }
+    if (e.modoNovo !== e.modoAntigo && e.modoAntigo !== "000000") marca(caminho, `modo mudou de ${e.modoAntigo} para ${e.modoNovo}`);
+    const ns = numstat.get(caminho);
+    if (!ns) throw new Error(`sem numstat para ${JSON.stringify(caminho)}`);
+    if (ns.binario) { marca(caminho, "ficheiro binário no diff"); continue; }
+    if (ns.acrescentadas === 0) continue;
+    // Daqui para baixo, um ficheiro com linhas acrescentadas que não se
+    // consiga ler lança erro: nunca se salta em silêncio.
+    const diff = git(["diff", "--unified=0", "--no-color", "--no-ext-diff", "--no-renames", "--text",
+      mb, head, "--", `:(literal)${caminho}`]);
+    const acrescentadas = linhasAcrescentadas(diff);
+    if (acrescentadas.size !== ns.acrescentadas) {
+      throw new Error(`${JSON.stringify(caminho)}: ${acrescentadas.size} linhas lidas no diff, numstat diz ${ns.acrescentadas}`);
+    }
+    const bytes = execFileSync("git", ["cat-file", "blob", `${head}:${caminho}`], { maxBuffer: 512 * 1024 * 1024 });
+    if (bytes.includes(0)) marca(caminho, "byte NUL num ficheiro de texto");
     let conteudo;
-    try { conteudo = git(["show", `${head}:${ficheiro}`]); }
-    catch { continue; } // binário ou apagado
-    if (conteudo.includes("\u0000")) continue;
-    achados.push(...analisarFicheiro(conteudo.split("\n"), acrescentadas, { allowlist, linhasBase, ficheiro }));
+    try { conteudo = new TextDecoder("utf-8", { fatal: true }).decode(bytes); }
+    catch { marca(caminho, "UTF-8 inválido"); conteudo = new TextDecoder("utf-8").decode(bytes); }
+    achados.push(...analisarFicheiro(conteudo.split("\n"), acrescentadas, { allowlist, linhasBase, ficheiro: caminho }));
   }
-  return { mergeBase: mb, ficheiros: [...porFicheiro.keys()], achados, dominiosConhecidos: allowlist.size };
+  return { mergeBase: mb, ficheiros: entradas.map((e) => e.caminho), achados, dominiosConhecidos: allowlist.size };
 }
 
 export function emMarkdown(r, { max = 100 } = {}) {
@@ -387,7 +542,7 @@ export function emMarkdown(r, { max = 100 } = {}) {
     "## Trava de injeção: merge automático retido",
     "",
     `O diff deste ramo tem **${r.achados.length}** achado(s) nas linhas acrescentadas. ` +
-      "Nada foi apagado: o conteúdo está no ramo e só entra no main com revisão humana.",
+      "Nada foi apagado: o conteúdo está no ramo, e o merge automático não foi feito. Decide uma pessoa.",
     "",
     "| Regra | Achados | O que procura |",
     "|---|---|---|",
@@ -396,14 +551,22 @@ export function emMarkdown(r, { max = 100 } = {}) {
     "| Ficheiro:linha | Regra | Detalhe | Citação? | Trecho |",
     "|---|---|---|---|---|",
   ];
-  const esc = (s) => String(s).replace(/\|/g, "\\|").replace(/`/g, "ʼ").replace(/</g, "&lt;");
+  const esc = (s) => limparControlo(String(s)).replace(/\|/g, "\\|").replace(/`/g, "ʼ").replace(/</g, "&lt;");
+  // Dentro de crases o markdown não interpreta nada; só o | (tabela) e a
+  // própria crase precisam de tratamento.
+  const cod = (s) => "`" + limparControlo(String(s)).replace(/`/g, "ʼ").replace(/\|/g, "\\|") + "`";
   for (const a of r.achados.slice(0, max)) {
-    linhas.push(`| \`${a.ficheiro}:${a.linha}\` | \`${a.regra}\` | ${esc(a.detalhe)} | ${a.citado ? "sim (reportado, vai a revisão)" : "não"} | ${esc(a.trecho)} |`);
+    linhas.push(`| ${cod(`${a.ficheiro}:${a.linha}`)} | \`${a.regra}\` | ${esc(a.detalhe)} | ${a.citado ? "sim (reportado, vai a revisão)" : "não"} | ${a.trecho ? cod(a.trecho) : ""} |`);
   }
   if (r.achados.length > max) linhas.push("", `… e mais ${r.achados.length - max} achado(s). Ver o log da corrida.`);
   linhas.push("", "Revisão: ler cada linha. Se for legítima, fazer merge deste PR à mão; se não, fechar o PR e apagar o ramo.");
   return linhas.join("\n");
 }
+
+// Tira \r e caracteres de controlo do que vai para a consola ou para o PR:
+// uma linha que comece por "::" no log é um comando do GitHub Actions.
+export const limparControlo = (s) => String(s).replace(/[\u0000-\u001F\u007F-\u009F\u2028\u2029]/g, " ");
+const paraConsola = (s) => limparControlo(s).replace(/::/g, ": :");
 
 function args(argv) {
   const o = {};
@@ -424,13 +587,13 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
     if (a.markdown) writeFileSync(a.markdown, md + "\n");
     if (r.achados.length) {
       console.log(`Trava de injeção: ${r.achados.length} achado(s) em ${r.ficheiros.length} ficheiro(s).`);
-      for (const x of r.achados) console.log(`  ${x.ficheiro}:${x.linha}  [${x.regra}]${x.citado ? " (citação)" : ""}  ${x.detalhe}`);
+      for (const x of r.achados) console.log(paraConsola(`  ${x.ficheiro}:${x.linha}  [${x.regra}]${x.citado ? " (citação)" : ""}  ${x.detalhe}`));
       process.exit(2);
     }
     console.log(`Trava de injeção: sem achados (${r.ficheiros.length} ficheiro(s), ${r.dominiosConhecidos} domínios conhecidos).`);
     process.exit(0);
   } catch (e) {
-    console.error(`Trava de injeção: ERRO, tratado como achado (falha fechada): ${e?.stack || e}`);
+    console.error(paraConsola(`Trava de injeção: ERRO, tratado como achado (falha fechada): ${e?.stack || e}`));
     process.exit(1);
   }
 }
