@@ -98,6 +98,12 @@ Cloudflare published a report (4 Aug 2025) alleging Perplexity used undeclared/r
 | User-agent | Operator | Purpose | Notes |
 |---|---|---|---|
 | `Meta-ExternalAgent` | Meta | Training (Llama, Meta AI across FB/IG/WA/Threads) | |
+| `Meta-WebIndexer` | Meta | Crawls to improve Meta AI search results; Meta: allowing it "helps us cite and link to your content in Meta AI's responses" | Answer-side crawler, independent of `Meta-ExternalAgent` ([Meta Web Crawlers](https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/), updated 21 May 2026, read 23 Nov 2026) |
+| `Meta-ExternalFetcher` | Meta | Fetches individual links at a user's request, including agentic tasks | Meta says it "may bypass robots.txt rules" |
+| `Meta-ExternalAds` | Meta | Advertising and other business products | |
+| `Amazonbot` | Amazon | Product improvement; "may be used to train Amazon AI models" | IP list at developer.amazon.com/amazonbot/ip-addresses/ ([Amazon](https://developer.amazon.com/amazonbot), read 23 Nov 2026) |
+| `Amzn-SearchBot` | Amazon | Search experiences such as Alexa; "does not crawl content for generative AI model training" | Follows the rules given to other search bots when not named in robots.txt |
+| `Amzn-User` | Amazon | Live fetch for user actions (e.g. Alexa questions); not used for training | May not follow all robots.txt directives |
 | `FacebookBot` | Meta | Historically link previews; per Meta docs also training | |
 | `Bytespider` | ByteDance | Training for TikTok / ByteDance AI products | History of ignoring `robots.txt` in past reports; current posture uncertain |
 | `Applebot-Extended` | Apple | Control token: opt-out of Apple Intelligence training | Apple's equivalent of Google-Extended |
