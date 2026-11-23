@@ -179,6 +179,114 @@ sempre com dois números no mesmo ecrã.
      tipos de fonte dominantes, mudanças vs semana anterior, e
      confirmações/contradições dos playbooks. -->
 
+## 2026-11-23 (todas as auditorias analisadas da semana: marcas e radares setoriais)
+
+Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
+mock e sem sentinela, das semanas de 16 e 23 Nov. Entre 234 e 264
+respostas por motor na semana de 23 Nov. Densidade em domínios DISTINTOS
+por resposta, como nas entradas anteriores. A semana de 16 Nov foi
+recontada com as auditorias que fecharam depois da entrada anterior, e
+por isso alguns números de lá mexem uma casa decimal. Os dois estudos de
+consumo por analisar ficam de fora. Os domínios do aviso de cookies
+(`onetrust.com`, `cookiepedia.co.uk`) e a atribuição do mapa
+(`mapbox.com`) ficam fora.
+
+**A amostra encolheu e mudou de composição.** Menos marcas medidas nesta
+semana, e sem as de saúde privada, retalho alimentar e finanças pessoais
+que pesavam na anterior; ficam os radares setoriais e mais peso de
+perguntas de serviços B2B e marketing digital. É daí que vêm os domínios
+de agências, diretórios de agências e documentação técnica que sobem em
+quase todos os motores (`developers.google.com`, `learn.microsoft.com`,
+`sortlist.com`, `clutch.co`). Não se lêem como mudança de via dos motores.
+
+**A via de recolha mudou em quatro motores, e isso pesa mais do que
+qualquer movimento.** O AI Mode e o AI Overviews passaram a ser lidos
+na página do Google, no browser, em 234 das 264 respostas (na semana
+anterior eram 22 de 384, o resto pelo fornecedor de SERP). O DeepSeek, o
+Mistral e o Copilot no Bing entram pela primeira vez nesta tabela, também
+recolhidos na aplicação. Os números destes motores não se comparam com
+as semanas anteriores.
+
+### Densidade de fontes por resposta (domínios distintos)
+
+| Motor | 16 Nov | 23 Nov | Sem fonte nenhuma, 23 Nov |
+|---|---|---|---|
+| Grok (aplicação) | 35,6 | 36,9 | 0 de 264 |
+| Mistral (aplicação) | (sem dado) | 24,8 | 12 de 234 |
+| Meta AI | 15,5 | 15,9 | 33 de 264 |
+| Claude (aplicação) | 12,4 | 12,3 | 64 de 264 |
+| ChatGPT (aplicação) | 7,5 | 7,7 | 32 de 264 |
+| DeepSeek (aplicação) | (sem dado) | 7,7 | 1 de 234 |
+| AI Mode | 3,9 | 7,7 | 32 de 264 |
+| AI Overviews | 4,4 | 6,9 | 28 de 260 |
+| Perplexity (aplicação) | 6,4 | 6,4 | 0 de 264 |
+| Copilot | 8,1 | 5,8 | 41 de 264 |
+| Gemini (aplicação) | 3,5 | 4,0 | 60 de 264 |
+| Copilot no Bing (aplicação) | (sem dado) | 3,8 | 1 de 234 |
+
+**O AI Mode e o AI Overviews quase duplicam a densidade (3,9 para 7,7 e
+4,4 para 6,9), e a causa é nossa.** Na leitura pelo fornecedor de SERP,
+parte das fontes chegava como o redireccionador do Google com destino
+opaco: o `google.com` estava em 219 de 362 respostas do AI Overviews e em
+45 de 362 do AI Mode a 16 Nov. Lidas na página, essas mesmas fontes
+aparecem com o domínio de destino: zero de 234 respostas com `google.com`
+nos dois motores. Mais domínios por resposta quer dizer que passámos a
+ver o que estava escondido, não que o motor passou a citar mais.
+
+**Gemini na aplicação confirma a recuperação da semana anterior.**
+Respostas sem fonte: 108 de 394 a 16 Nov, 60 de 264 a 23 Nov (23%). É a
+segunda semana seguida com a maioria das respostas a trazer fontes, o
+que reforça que o extrator recuperou.
+
+**Copilot desce de 8,1 para 5,8 domínios por resposta**, com mais
+respostas sem fonte (32 para 41). Uma semana só e com a amostra a mudar:
+fica anotado.
+
+### Que tipo de fonte domina, por motor
+
+| Motor | Tipo dominante, 23 Nov | Exemplos (respostas) |
+|---|---|---|
+| Grok | perfis profissionais e imprensa económica | pt.linkedin.com 86, jornaleconomico.sapo.pt 64, eco.sapo.pt 62, deco.proteste.pt 60, revenuebase.ai 59 (de 264) |
+| Claude | imprensa económica e generalista, reclamações | eco.sapo.pt 62, portaldaqueixa.com 56, deco.proteste.pt 43, observador.pt 32, jornaleconomico.sapo.pt 30 (de 264) |
+| ChatGPT | defesa do consumidor, site da marca e agências | deco.proteste.pt 35, site próprio do cliente 32, flowup.agency 29, marcarecomendada.pt 23, clientebancario.bportugal.pt 20 (de 264) |
+| Perplexity | site da marca, defesa do consumidor e documentação técnica | site próprio do cliente 30, deco.proteste.pt 23, developers.google.com 14, comparaja.pt 14, idealista.pt 13 (de 264) |
+| Copilot | site da marca, literacia financeira e documentação técnica | site próprio do cliente 24, literaciafinanceira.pt 16, learn.microsoft.com 16, developers.google.com 16, portugalseo.pt 14 (de 264) |
+| Copilot no Bing | site da marca e documentação técnica | site próprio do cliente 20, developers.google.com 19, learn.microsoft.com 15, flowup.agency 12, deco.proteste.pt 10 (de 234) |
+| Meta AI | literacia financeira, site da marca e diretórios | literaciafinanceira.pt 25, site próprio do cliente 24, flowup.agency 23, rankstar.io 22, sortlist.com 21 (de 264) |
+| DeepSeek | agências, perfis profissionais e imprensa de marketing | flowup.agency 32, linkedin.com 24, eco.sapo.pt 23, 3hash.pt 19, marketeer.sapo.pt 18 (de 234) |
+| Mistral | blogues e ferramentas da própria categoria, consumo | amicited.com 39, deco.proteste.pt 37, site próprio do cliente 36, airanklab.com 33, apnews.com 32 (de 234) |
+| AI Overviews | UGC e vídeo | youtube.com 59, reddit.com 58, instagram.com 40, facebook.com 33, deco.proteste.pt 23 (de 260) |
+| AI Mode | fórum, UGC e consumo | reddit.com 45, instagram.com 32, deco.proteste.pt 29, youtube.com 25, doutorfinancas.pt 25 (de 264) |
+| Gemini | fórum e literacia financeira | reddit.com 32, literaciafinanceira.pt 18, site próprio do cliente 18, marcogouveia.pt 16 (de 264) |
+
+**O `google.com` do AI Overviews cai para 30 respostas**, todas da parte
+ainda lida pelo fornecedor de SERP (30 de 30 nessa via, 0 de 234 na
+página). Confirma que era o redireccionador e não uma fonte.
+
+**Mistral na aplicação é o segundo motor mais denso (24,8 domínios por
+resposta) e o que mais cita sites de ferramentas e blogues da própria
+categoria perguntada**, à frente da imprensa. Uma semana só e a
+primeira medição por esta via: fica como observação.
+
+**Confirmações dos playbooks, sexta semana seguida:** o AI Overviews
+continua o motor mais UGC (YouTube, Reddit, Instagram e Facebook no
+topo), e na leitura pela página o AI Mode junta-se a ele (Reddit,
+Instagram, YouTube e Facebook entre os seis primeiros); o Grok mantém o
+LinkedIn e a imprensa económica portuguesa no topo; o `reddit.com`
+continua entre os mais citados do Perplexity (12 respostas) e do Gemini
+(primeiro lugar).
+
+**A `deco.proteste.pt` está entre os oito primeiros em nove dos doze motores**, de 10
+respostas (Copilot no Bing) a 60 (Grok), agora numa amostra com menos
+perguntas de consumo. A escolha continua a ser do tipo de pergunta
+(consumo, direitos, comparação) e já aparece também nos três motores
+novos desta tabela.
+
+**O site próprio do cliente está entre os oito primeiros em nove dos doze motores**, e
+em primeiro lugar no Perplexity, no Copilot e no Copilot no Bing. Com
+menos marcas na amostra, cada site de marca pesa mais: lê-se como efeito
+da composição.
+
 ## 2026-11-16 (todas as auditorias analisadas da semana: marcas e radares setoriais)
 
 Base: só respostas com pesquisa (`augmented`), analisadas, sem erro, sem
