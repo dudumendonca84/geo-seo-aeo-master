@@ -48,7 +48,34 @@ Items completados ficam aqui (estado DONE) pelo menos 4 semanas para rastreabili
 
 ## Items atuais
 
-_(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva sem hiato. Dois itens para DONE por decisão de posicionamento (convergência de entidade de 24 ago; meta de /sobre de 7 set). Quatro itens novos: fan-out da auditoria semanal do Tracker (P1), linha `gemini` do Tracker vs. Gemini 4 Hydrogen no AI Mode (P1), NAP Lisboa/Porto (P2), builds de produção em `ERROR` (P3). Gemini e DeepSeek voltaram a falhar por saldo. Visibilidade no proxy: 7/22 fixos (8/22 a 9 nov), sempre via Clutch/Sortlist.)_
+_(Atualizado 23 novembro 2026: décima oitava execução, décima primeira consecutiva sem hiato. Dois itens para DONE: a linha `gemini` do Tracker já mede o Gemini 4 Hydrogen (17 nov) e o `/radar` entrou no sitemap e no `llms.txt` (19 nov). Três itens novos: descrição dos directórios desalinhada do posicionamento (P1), anúncios nos AI Overviews do Bing em PT (P2), `/en/radar` e peso do `/radar` (P3). Candidatos a DONE: fan-out semanal e DeepSeek, ambos sem erros na janela. O Gemini voltou a ficar sem saldo, agora no Hydrogen. Visibilidade no proxy: 8/22 fixos (7/22 a 16 nov), sempre via Clutch/Sortlist.)_
+
+### 2026-11-23 added: STRATEGIC: Clutch e Sortlist ainda descrevem a destaque.ai como "consultora de GEO", não como a agência de 10 nov
+- **Prioridade:** P1
+- **Esforço:** 1h
+- **Origem:** auditoria semanal 2026-11-23 (8 menções, todas com a formulação dos directórios)
+- **Estado:** TODO
+- **Descrição:** O site diz "Agência SEO e de visibilidade no ChatGPT" e "Tech Marketing Agency" desde 10 nov. As respostas citam "consultora de GEO sediada em Lisboa, focada em empresas B2B SaaS" (GD1, GD6, GD7, V1, V5), "fundada em 2025" e "empresa recente" (GD3). Nenhuma menciona SEO nem o Periscopy. Os directórios são a única fonte, por isso é o texto deles que chega ao comprador. Em GD6, um motor arruma a destaque.ai também entre "profissionais independentes".
+- **Acção:** Reescrever a descrição dos perfis Clutch e Sortlist (PT e EN) com a frase do `llms.txt`: agência, SEO e IA, Periscopy, Lisboa (e Porto, se o item NAP o confirmar); pedir 2-3 avaliações de clientes.
+- **Verificação:** em duas semanas, pelo menos uma resposta GD com "agência" ou "SEO" na descrição da destaque.ai.
+
+### 2026-11-23 added: CONTENT/STRATEGIC: Anúncios nos AI Overviews do Bing abertos em Portugal: artigo e verificação de primeira mão
+- **Prioridade:** P2
+- **Esforço:** 1 dia
+- **Origem:** news-feed 2026-11-20 (alerta fundador; Microsoft Advertising, 19 nov)
+- **Estado:** TODO
+- **Descrição:** A Microsoft declara anúncios nos AI Overviews do Bing "in all markets except China", pelas campanhas PMax e AI Max existentes. É o primeiro formato de anúncio em resposta de IA com disponibilidade declarada em Portugal e compra aberta. Nenhuma fonte PT-PT o explica; FS3 (relatório AI Performance do Bing) mostra o mesmo padrão: só fontes em inglês.
+- **Acção:** Confirmar um anúncio numa resposta do Bing em pt-PT (o daily-agent tinha prazo a 24 nov); publicar peça com autor nomeado e capturas; ligar a partir de `/blog/relatorio-ai-performance-bing`.
+- **Verificação:** página no sitemap e no `llms.txt`; re-testar FS3 e uma pergunta sobre anúncios no Bing quatro semanas depois.
+
+### 2026-11-23 added: TECH: /en/radar devolve 404 e o /radar cresceu para 1,31 MB de HTML
+- **Prioridade:** P3
+- **Esforço:** 2h
+- **Origem:** auditoria semanal 2026-11-23 (resto do item de 19 out, fechado hoje)
+- **Estado:** TODO
+- **Descrição:** `/en/radar` 404; `/radar` 1.309.400 B descodificados (1.072.517 B a 16 nov, +22%), oito vezes a homepage, apesar da paginação no servidor (#249).
+- **Acção:** Decidir se o Radar é só PT (e dizê-lo no `hreflang`, sem par EN) ou criar `/en/radar`; ver o que ocupa o HTML do `/radar` (dados embutidos para o desenho) e carregá-lo à parte.
+- **Verificação:** `/en/radar` conforme a decisão; `/radar` abaixo de 500 KB.
 
 ### 2026-11-16 added: MEASUREMENT: Tracker: fan-out da auditoria semanal falha ("9 de 9 lotes, Invalid body" e timeouts de 240 s)
 - **Prioridade:** P1
@@ -59,15 +86,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Acção:** Ver o payload que o fan-out envia a cada lote depois do último deploy do Tracker; separar no estado da auditoria "lote a correr" de "lote falhado" para que os timeouts de 240 s não contem como falha.
 - **Verificação:** zero `Invalid body` e nenhuma auditoria semanal com 100% de lotes falhados numa janela de 7 dias.
 
-### 2026-11-16 added: MEASUREMENT: Tracker mede `gemini-3.5-flash`; o AI Mode corre Gemini 4 Hydrogen desde 12 nov
-- **Prioridade:** P1
-- **Esforço:** 1h (decisão e alteração) + verificação de `max_output_tokens`
-- **Origem:** news-feed 2026-11-13 (alerta fundador) e 2026-11-16; auditoria semanal 2026-11-16 (erros Gemini ainda em `gemini-3.5-flash`)
-- **Estado:** TODO
-- **Descrição:** A linha `gemini` de `## Tracker buyer defaults` (`models.md`) ficou igual de propósito; o Deck Builder já passou a `gemini-4-hydrogen`. O comprador português vê no AI Mode um modelo com corte de março de 2026; o Tracker mede um com corte herdado de janeiro de 2025. O prazo de decisão indicado pelo daily-agent era hoje, 16 nov.
-- **Acção:** Decisão do fundador. Se mudar: conferir `max_output_tokens` (o Hydrogen conta o pensamento na saída), repor saldo Gemini antes, e marcar a data da troca na série, que deve começar depois do fim do core update (~24 nov).
-- **Verificação:** erros e leituras do Tracker com `gemini-4-hydrogen` a partir da data decidida; nota de troca visível na série.
-
+- **Atualização 2026-11-23:** `[weekly-audit] fan-out` ausente da janela de 7 dias (16 a 23 nov). **Candidato a DONE**; fecha se a próxima janela também vier limpa, com pelo menos uma auditoria semanal a correr nela.
 ### 2026-11-16 added: ENTITY: NAP: o texto diz "sedes em Lisboa e no Porto"; o JSON-LD só declara Lisboa
 - **Prioridade:** P2
 - **Esforço:** 30min
@@ -77,6 +96,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Acção:** Se há escritório no Porto, acrescentar `Place`/`PostalAddress` ao `Organization` e actualizar os directórios; se não há, trocar "sedes" por "clientes em Lisboa e no Porto" ou equivalente.
 - **Verificação:** texto, JSON-LD e perfis de directório com a mesma lista de moradas.
 
+- **Atualização 2026-11-23:** sem mudança. "Porto" aparece 12 vezes no HTML da homepage; o JSON-LD tem `addressLocality: Lisboa` uma vez e o Porto só como `City` em `areaServed`. O menu ganhou "Agência SEO no Porto" (#256), o que aumenta o peso da pergunta.
 ### 2026-11-16 added: TECH: 4 builds de produção em ERROR em 20 (9 a 16 nov), todos repetidos com sucesso
 - **Prioridade:** P3
 - **Esforço:** 30min
@@ -86,6 +106,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Acção:** Ler o log de um dos builds falhados; se for timeout ou rede, ignorar; se for erro de código intermitente, corrigir.
 - **Verificação:** zero builds `ERROR` com o mesmo commit a passar na repetição, numa semana com 5+ deploys.
 
+- **Atualização 2026-11-23:** mais 2 builds `ERROR` em 14 deploys (#251 e #253, 19 nov), ambos repetidos com sucesso no mesmo commit. Seis em 34 em duas semanas (18%).
 ### 2026-11-09 added: MEASUREMENT: Tracker: integração Microsoft Advertising falha no OAuth (IdentityTypeMismatch, 5 nov)
 - **Prioridade:** P3
 - **Esforço:** 2h
@@ -105,6 +126,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Acção:** Peça PT-PT com dados próprios e autor nomeado sobre "aparecer no ChatGPT" (alinha com GP1/GP5); pedir avaliações no Clutch/Sortlist (item de 2 nov).
 - **Verificação:** GD4 e GP1 re-testados duas semanas depois.
 
+- **Atualização 2026-11-23:** 3.ª semana sem destaque.ai em GD4. Nomes da síntese: Buzzvel (Semantika), Conversion, Minuttia, uma agência brasileira com escritório em Portugal.
 ### 2026-11-02 added: STRATEGIC: Bluesoft, revaliQ e AppLabx: nomes frequentes nas respostas, fora do peer set
 - **Prioridade:** P1
 - **Esforço:** 1h
@@ -126,6 +148,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Notes:** A subida de 3 para 9 pode ser em parte ruído do proxy; reavaliar a 9 nov. Alinha com o item de convergência de entidade de 24 ago.
 
 - **Atualização 2026-11-16:** 7/32 na síntese, todas via Clutch (GD3, V3, V5, GD8) ou Sortlist (GD4, GD5, V2, GD8); 0 páginas próprias em 36 pesquisas, incluindo as 6 páginas novas de 13 nov. O perfil Sortlist, fonte de 4 menções, não está no `Organization.sameAs`: acrescentar.
+- **Atualização 2026-11-23:** 8/32 na síntese (GD1, GD3, GD5, GD6, GD7, GD8, V1, V5), todas via Clutch e Sortlist; 0 páginas próprias em 36 pesquisas. As respostas dizem "consultora de GEO em Lisboa, focada em B2B SaaS": é o texto dos directórios, não o posicionamento de 10 nov (ver item STRATEGIC novo). Sortlist ainda fora do `sameAs`.
 ### 2026-11-02 added: MEASUREMENT: Tracker: Supabase Auth com 429 em /middleware (6 ocorrências, 2 nov)
 - **Prioridade:** P3
 - **Esforço:** 30min
@@ -147,6 +170,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Notes:** Não confundir distribuição Lusa com cinco menções independentes. Alimenta o pedido de item Wikidata (H3).
 - **Atualização 2026-11-02:** `/imprensa` ganhou Observador, Cidade FM, M80 e Smooth FM (#220), por verificar na origem; E2 do proxy continua 0 peças. Verificar 13 URLs em vez de nove.
 
+- **Atualização 2026-11-23:** verificadas na origem 3 peças: Rádio Comercial (eleição no Brasil, nomeia a destaque.ai 4 vezes) e duas da Marketeer (2 set e 24 set, `article:published_time`). Observador, Público, Lusa, M80, Smooth FM e DNoticias por abrir. E2 do proxy: 0 peças; o motor lê "destaque" como "Destaques" do Google Notícias.
 ### 2026-10-26 added: MEASUREMENT: Tracker: DeepSeek sem saldo e SerpApi/DataForSEO sem pesquisas em simultâneo
 - **Prioridade:** P1
 - **Esforço:** 1h
@@ -160,6 +184,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Atualização 2026-11-09:** 3.ª semana. DataForSEO `Internal SE Server Error` 187 ocorrências (10 utilizadores), última 9 nov 07:07 UTC; SerpApi `run out of searches` (`copilot` 30, última 3 nov). **DeepSeek e Gemini `402` ausentes da janela** (últimas leituras 29 out): candidatos a DONE na próxima semana. Mistral `503`/`429` 85; Grok `429` de capacidade 1; timeouts de 300 s 66.
 
 - **Atualização 2026-11-16:** 4.ª semana. Os dois candidatos a DONE caíram: Gemini `402 prepayment credits are depleted` 12+12 (última 10 nov 17:30 UTC); DeepSeek `429` de concorrência "based on your remaining balance. Please top up" em ~30 grupos (14 nov 15:07 e 15:25 UTC). DataForSEO `Internal SE Server Error` 248 (15 utilizadores), última hoje 07:15 UTC; `google_aio/dataforseo` abortado 52; `copilot/serpapi` abortado 4. Mistral 0 (85 a 9 nov). Mantém P1; o alerta de saldo único continua por fazer.
+- **Atualização 2026-11-23:** 5.ª semana, melhor. DeepSeek ausente da janela (candidato a DONE outra vez). DataForSEO `Internal SE Server Error` 46 ocorrências (248 a 16 nov), 4 utilizadores, última 20 nov 11:19 UTC; `google_aio/dataforseo` 3 (SerpApi sem `page_token`, abortado). Tracker: 7 grupos de erro (41 a 16 nov). Mantém P1 por causa do Gemini (item de 10 ago).
 ### 2026-10-26 added: MEASUREMENT: Stripe webhook com assinatura recusada (1 ocorrência, 23 out)
 - **Prioridade:** P3
 - **Esforço:** 30min
@@ -169,19 +194,6 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Acção:** Confirmar na dashboard do Stripe se o evento era de teste; se se repetir, verificar o segredo do endpoint e o corpo bruto.
 - **Verificação:** zero ocorrências em 14 dias.
 
-### 2026-10-19 added: TECH/GEO: /radar fora do sitemap e do llms.txt; /en/radar devolve 404
-- **Prioridade:** P2
-- **Esforço:** 1h
-- **Origem:** auditoria semanal 2026-10-19 (`curl`: `sitemap.xml` 133 `<loc>` sem URL com "radar"; `llms.txt` sem referência; `/radar` 200; `/en/radar` 404)
-- **Estado:** TODO
-- **Descrição:** O Radar destaque.ai × Periscopy (#196–#199) está no ar com canonical próprio, mas nenhum crawler o descobre pelo sitemap nem pelo `llms.txt`. A versão `/en` não existe.
-- **Ação:** Acrescentar `/radar` e as páginas por sector ao sitemap e ao `llms.txt`; decidir se haverá `/en/radar` (e então `hreflang` recíproco) ou se é só PT por decisão.
-- **Verificação:** `grep radar` no sitemap e no `llms.txt`; `curl -I /en/radar` conforme a decisão.
-- **Atualização 2026-10-26:** sem alteração: sitemap 135 URLs sem "radar", `llms.txt` (38.023 B) idêntico, `/en/radar` 404, apesar de sete deploys do Radar desde 19 out. Segunda semana aberta.
-- **Notes:** O número de URLs só subiu de 132 para 133 desde 12 out.
-- **Atualização 2026-11-02:** 3.ª semana: `/radar` 200 (466.320 B, 2 blocos JSON-LD), ainda fora do sitemap e do `llms.txt`; `/en/radar` 404.
-
-- **Atualização 2026-11-16:** 5.ª semana. Sitemap 148 URLs (lastmod 13 nov) e `llms.txt` 43.236 B, ambos refeitos esta semana, ambos sem `/radar`; `/en/radar` 404. O `/radar` pesa agora 1.072.517 B.
 ### 2026-10-19 added: CONTENT: Lacunas PT-PT sem fonte com dados próprios (GP2, GP3, GP5, GP7-9, FS4, FS7, DC5, LR3, PC4)
 - **Prioridade:** P2
 - **Esforço:** 1 semana (por peça: 1-2 dias)
@@ -441,6 +453,7 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Verificação:** `mcp__Vercel__get_runtime_errors` não mostra novas ocorrências de `RESOURCE_EXHAUSTED` para o Gemini num período de 7 dias: critério já cumprido nesta execução; falta a confirmação direta de billing ou uma segunda janela sem ocorrência antes de fechar o item.
 - **Notes:** O item mais antigo em aberto de toda a auditoria e também o mais barato de resolver: sinalizado como tal em pelo menos 3 execuções consecutivas sem ação confirmada. Distinto do item de DataForSEO acima (fornecedor de dados de busca, não de LLM) e do item novo de Mistral (rate-limit de pico, não esgotamento sustido). **Atualização 2026-09-14: 2ª janela consecutiva sem nenhuma ocorrência** (a lista de 13 grupos de erro desta semana não inclui Gemini de todo). Reforça a hipótese de crédito reposto, ainda sem confirmação direta de billing: mas nota-se que o motor mais grave desta semana passou a ser o ChatGPT (ver item MEASUREMENT P0 novo), não o Gemini. **Atualização 2026-09-21: DONE.** Terceira janela de 7 dias consecutiva sem nenhuma ocorrência de `RESOURCE_EXHAUSTED` (última: 2026-09-14T19:10:12Z). Mesma leitura de causa provável do item ChatGPT: deploy `#409` ("Conta sem saldo é porta fechada..."), produção 2026-09-16 06:52 UTC, plausível pela proximidade temporal e pela descrição do commit; sem confirmação directa de billing. Onze semanas em aberto, resolvido sem confirmação directa: o item mais lento a fechar-se de toda a série até agora. **Atualização 2026-09-28: REABERTO.** A mesma assinatura (`RESOURCE_EXHAUSTED`, `Your prepayment credits are depleted`) regressa: **60 ocorrências** (30 knowledge + 30 augmented, 1 utilizador), última em **2026-09-24T06:44:45Z**, três dias depois do fecho do item na semana passada. A reserva explícita registada a 21 set ("reabrir se reaparecer") aplica-se: a leitura por ausência de sintoma, sem confirmação directa de billing, revelou-se insuficiente desta vez. Recomenda-se, desta vez, confirmar por via directa (dashboard de billing do Google AI Studio) que o crédito está reposto de forma sustentável (ex. facturação automática ligada), não apenas um top-up manual pontual que volta a esgotar-se em dias.
 
+- **Atualização 2026-11-23:** activo, agora no modelo novo: `gemini/gemini-4-hydrogen (knowledge) failed: 402 … prepayment credits are depleted`, 42 ocorrências, 3 utilizadores, 20 nov 10:27 a 10:34 UTC, na primeira semana em que o Tracker mede o Hydrogen. A série nova do AI Mode começa com um buraco. Recarga automática na conta do AI Studio continua por ligar.
 ### 2026-09-14 added: CONTENT: /en com menos cobertura de imagem do que a homepage PT
 - **Prioridade:** P3
 - **Esforço:** 30min-1h
@@ -635,6 +648,32 @@ _(Atualizado 16 novembro 2026: décima sétima execução, décima consecutiva s
 - **Notes:** Expectável para empresa fundada em 2025: horizonte 3-4, não urgente. **Atualização 2026-09-14: primeira citação de imprensa PT verificável em 9 semanas de tentativas, ainda que não Tier-1.** A Marketeer construiu pelo menos dois artigos à volta do estudo próprio "mapa das empresas de Portugal" (marketeer.sapo.pt/as-marcas-portuguesas-que-a-ia-nomeia-e-as-que-realmente-recomenda/ e um segundo artigo relacionado), citando a distinção "nomeada" vs. "escolhida" (share of recommendation) por nome. Marketeer não é uma das seis publicações Tier-1 desta metodologia (essas continuam em zero), mas é prova real de que os estudos próprios geram cobertura de terceiros verificável. Data exata não confirmada de forma independente (a "3 de setembro" citada num commit interno não bate com o texto do artigo, que só situa o estudo subjacente em "final de agosto"). Ação recomendada: identificar 2-3 publicações adicionais de marketing/negócios para pitch direto usando os estudos como gancho, e confirmar a data exata da Marketeer.
 
 ## Items DONE (últimas 4 semanas, por rastreabilidade)
+
+- **Atualização 2026-11-23:** datas da Marketeer confirmadas na origem: 2 set ("estas-sao-as-marcas-portuguesas-que-a-ia-realmente-recomenda") e 24 set ("a-ia-fala-destas-13-marcas-portuguesas-mas-nunca-escolhe-nenhuma"). Observador (Mundo IA), ECO, Expresso e Negócios: sem peça confirmada.
+### 2026-11-16 added: MEASUREMENT: Tracker mede `gemini-3.5-flash`; o AI Mode corre Gemini 4 Hydrogen desde 12 nov
+- **Prioridade:** P1
+- **Esforço:** 1h (decisão e alteração) + verificação de `max_output_tokens`
+- **Origem:** news-feed 2026-11-13 (alerta fundador) e 2026-11-16; auditoria semanal 2026-11-16 (erros Gemini ainda em `gemini-3.5-flash`)
+- **Estado:** DONE (2026-11-23)
+- **Descrição:** A linha `gemini` de `## Tracker buyer defaults` (`models.md`) ficou igual de propósito; o Deck Builder já passou a `gemini-4-hydrogen`. O comprador português vê no AI Mode um modelo com corte de março de 2026; o Tracker mede um com corte herdado de janeiro de 2025. O prazo de decisão indicado pelo daily-agent era hoje, 16 nov.
+- **Acção:** Decisão do fundador. Se mudar: conferir `max_output_tokens` (o Hydrogen conta o pensamento na saída), repor saldo Gemini antes, e marcar a data da troca na série, que deve começar depois do fim do core update (~24 nov).
+- **Verificação:** erros e leituras do Tracker com `gemini-4-hydrogen` a partir da data decidida; nota de troca visível na série.
+- **Fecho 2026-11-23:** a linha `gemini` de `## Tracker buyer defaults` passou a `gemini-4-hydrogen` a 17 nov (repo do skill, #200), por decisão do fundador, com tecto de saída 16384 e prazo de 240 s. Os erros da semana já aparecem como `gemini/gemini-4-hydrogen`. O saldo é outro problema: ver o item Gemini de 10 ago.
+
+### 2026-10-19 added: TECH/GEO: /radar fora do sitemap e do llms.txt; /en/radar devolve 404
+- **Prioridade:** P2
+- **Esforço:** 1h
+- **Origem:** auditoria semanal 2026-10-19 (`curl`: `sitemap.xml` 133 `<loc>` sem URL com "radar"; `llms.txt` sem referência; `/radar` 200; `/en/radar` 404)
+- **Estado:** DONE (2026-11-23)
+- **Descrição:** O Radar destaque.ai × Periscopy (#196–#199) está no ar com canonical próprio, mas nenhum crawler o descobre pelo sitemap nem pelo `llms.txt`. A versão `/en` não existe.
+- **Ação:** Acrescentar `/radar` e as páginas por sector ao sitemap e ao `llms.txt`; decidir se haverá `/en/radar` (e então `hreflang` recíproco) ou se é só PT por decisão.
+- **Verificação:** `grep radar` no sitemap e no `llms.txt`; pedido HEAD a `/en/radar` conforme a decisão.
+- **Atualização 2026-10-26:** sem alteração: sitemap 135 URLs sem "radar", `llms.txt` (38.023 B) idêntico, `/en/radar` 404, apesar de sete deploys do Radar desde 19 out. Segunda semana aberta.
+- **Notes:** O número de URLs só subiu de 132 para 133 desde 12 out.
+- **Atualização 2026-11-02:** 3.ª semana: `/radar` 200 (466.320 B, 2 blocos JSON-LD), ainda fora do sitemap e do `llms.txt`; `/en/radar` 404.
+
+- **Atualização 2026-11-16:** 5.ª semana. Sitemap 148 URLs (lastmod 13 nov) e `llms.txt` 43.236 B, ambos refeitos esta semana, ambos sem `/radar`; `/en/radar` 404. O `/radar` pesa agora 1.072.517 B.
+- **Fecho 2026-11-23:** `sitemap.xml` com 165 `<loc>`, 17 deles do Radar (`/radar`, `/radar/metodologia` e 15 setores), `lastmod` 16 a 19 nov; `/radar` no `llms.txt`; `/radar/setor` responde 307 para `/radar` (#249, #257). Fica de fora `/en/radar` (404), que passa a item próprio P3.
 
 ### 2026-08-24 added: ENTITY/STRATEGIC: Convergência da descrição de entidade por motor: baseline dia 1, "consultoria" não "software"
 - **Prioridade:** P1

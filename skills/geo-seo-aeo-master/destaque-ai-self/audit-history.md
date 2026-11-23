@@ -11,6 +11,42 @@ Cada execução produz uma entrada datada com:
 
 ## Entradas
 
+### 2026-11-23: Décima oitava execução (vs. 16 nov; décima primeira semana consecutiva sem hiato)
+
+**Score global:** 74,7/100 (75 arredondado). **Δ vs. 16 nov: +0,5.**
+
+| Categoria | Score | Δ |
+|---|---|---|
+| SEO Técnico | 91 | +1 |
+| Performance / CWV | 65 | 0 |
+| SEO On-Page | 95 | 0 |
+| Schema | 95 | +1 |
+| Imagens | 76 | 0 |
+| GEO técnica | 95 | +1 |
+| Conteúdo & topical authority | 98 | 0 |
+| Entidade | 80 | 0 |
+| Autoridade & PR | 53 | +1 |
+| Social | 37 | 0 |
+| E-E-A-T | 73 | 0 |
+| Medição | 38 | +2 |
+
+**Items movidos para DONE:** 2: MEASUREMENT "Tracker mede `gemini-3.5-flash`" (16 nov; linha `gemini` passou a `gemini-4-hydrogen` a 17 nov, #200 do repo do skill) e TECH/GEO "/radar fora do sitemap e do llms.txt" (19 out; 17 URLs do Radar no sitemap e `/radar` no `llms.txt`, #249 e #257). **Candidatos a DONE:** fan-out da auditoria semanal e DeepSeek, ambos ausentes da janela.
+
+**Items novos:** 3: STRATEGIC P1 (Clutch e Sortlist ainda descrevem "consultora de GEO", não a agência de 10 nov), CONTENT/STRATEGIC P2 (anúncios nos AI Overviews do Bing abertos em Portugal: artigo e verificação), TECH P3 (`/en/radar` 404 e `/radar` com 1,31 MB). **Actualizados:** Gemini sem saldo (agora no Hydrogen, 42 a 20 nov), DataForSEO (248 → 46), builds `ERROR` (+2), imprensa (3 peças verificadas na origem), NAP, GD4 (3.ª semana).
+
+**Mudanças materiais:**
+- Site: 12 deploys `READY` (#249–#260) e 2 `ERROR` repetidos. Radar no sitemap e no `llms.txt`; `FAQPage` só com o visível; `og:image:alt`; `lastmod` em todo o sitemap; fontes próprias; menu "Por cidade"; blog EN com slugs ingleses e `308`; "doze motores"; `/index.md` no header `Link`. Sitemap 148 → 165 (`lastmod` 19 nov); `llms.txt` 43.236 → 46.753 B; TTFB mediana 395 → 551 ms (edge `iad1`, cache HIT); HTML 159.294 → 170.090 B; `/radar` 1.072.517 → 1.309.400 B.
+- Prompt-test (32 prompts + LR1, LR2 + entidade + imprensa, proxy `WebSearch`, 08:10–08:11 UTC): 8/32 (25%); fixos 8/22 (36%) contra 7/22. GD 6/8 (GD1 entra pela primeira vez, 3.º; GD6 e GD7 voltam), V 2/5 (V2 e V3 saem), GP 0/9, LR 0/2, rotativos 0/10 (GE2, GE4, GE6, DC2, DC4, DC6, FS2, FS3, PC1, PC3). Fonte sempre Clutch/Sortlist; nenhuma página própria em 36 pesquisas; FS3 não cita `/blog/relatorio-ai-performance-bing`. Sem menção negativa ou alucinada (os números do barómetro e do estudo SaaS citados em GD8 estão certos); reservas "empresa recente" (GD3) e "profissionais independentes" (GD6). Protocolo de crise não accionado. Desambiguação: LR1 (auditoria financeira), LR2 (AEO alfandegário), GD2 (consultoria de IA em geral), E2 ("Destaques" do Google Notícias).
+- Medição: Tracker 41 → 7 grupos; Gemini `402` no Hydrogen 42; DataForSEO 46; timeouts 300 s 24; DeepSeek, fan-out, Mistral, Perplexity e Claude 0.
+- Autoridade: Marketeer (2 set, 24 set) e Rádio Comercial verificadas na origem.
+- Mercado: anúncios nos AI Overviews do Bing em todos os mercados excepto a China (19 nov); `Meta-WebIndexer` e `Amzn-SearchBot` documentados (cobertos pelo `*` do `robots.txt`); core update a fechar ~24 nov.
+- models.md: sem refresh (última entrada 20 nov); nenhum default dos cinco motores obrigatórios mudou.
+- Não verificável: PSI (429), Wikidata (limite de pedidos), Knowledge Panel, GBP, Bing Places, GSC, GA4, BWT.
+
+**Reconciliação playbooks:** sem edições.
+
+---
+
 ### 2026-11-16: Décima sétima execução (vs. 9 nov; décima semana consecutiva sem hiato)
 
 **Score global:** 74,2/100 (74 arredondado). **Δ vs. 9 nov: +0,4.**
