@@ -223,7 +223,7 @@ Perplexity uses a multi-model architecture: user can select per-query.
 ### GEO-relevant notes
 
 - Meta AI is integrated into FB/IG/WA/Threads but does not return source citations the way Google AIO or Perplexity do: citation tracking on Meta surfaces is immature.
-- Bot user-agent: `Meta-ExternalAgent` for training; `FacebookBot` historically for link previews now also training.
+- Bot user-agent: `Meta-ExternalAgent` for training; `FacebookBot` historically for link previews now also training. `Meta-WebIndexer` is the crawler Meta names for citing and linking content in Meta AI answers (Meta Web Crawlers docs, updated 21 May 2026, read 23 Nov 2026).
 - **Radar note (07 Sep 2026, secondary-sourced, not primary-confirmed):** Meta's frontier model development appears to have moved to a new closed-weights line, "Muse Spark," under a new Meta Superintelligence Labs unit: reported flagships "Muse Spark 1.3" (2 Sep 2026) and "Muse Voice Transcribe" (1 Sep 2026), via VentureBeat/The New Stack; ai.meta.com not directly accessed this session. An open-weights Muse Spark release is reportedly promised but undated. Llama 5 remains the current open-weights flagship and the `llama` Deck Builder mapping is unaffected: this is awareness only until an open-weights successor ships.
 
 ---

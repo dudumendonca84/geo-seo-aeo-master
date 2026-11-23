@@ -8,6 +8,14 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-23: Meta AI ganha o robô das respostas, e a Amazon passa a ter listas de IPs
+
+- **Trigger:** passagem diária pelos robôs. A documentação Meta Web Crawlers (atualizada a 21 Mai 2026) nomeia o `Meta-WebIndexer` como o robô que lê a web para as respostas da Meta AI ("helps us cite and link to your content in Meta AI's responses"), mais o `Meta-ExternalFetcher` e o `Meta-ExternalAds`; a página Amazonbot documenta o `Amzn-SearchBot` e o `Amzn-User` e três listas de IPs. Nada disto estava na skill.
+- **O que muda:** `references/engine_playbooks.md` bloco `### meta_ai` (PT e EN): uma frase sobre o `Meta-WebIndexer` ser o robô das respostas, independente do de treino. `references/frameworks.md` (tabela "Other AI crawlers"), `references/models.md` (secção Meta) e `references/como-os-motores-leem.md` §5.3 (linhas Meta e Amazon). Na auditoria técnica, o robots.txt lê-se também para `Meta-WebIndexer` e `Amzn-SearchBot`.
+- **O que não muda:** nenhum cabeçalho, chave ou tabela lidos pelo Tracker ou pelo Deck Builder; a verificação por IP no código (`lib/crawl/`) não lê esta tabela e fica para o Tracker decidir.
+
+---
+
 ## 2026-11-22: O que as routines escrevem passa por uma trava antes do main
 
 - **Trigger:** revisão de segurança do caminho de absorção. O daily-agent lê Reddit e a web e escreve em `references/` e `daily-agent/`; o `routine-automerge.yml` leva isso ao main sem humano; o Tracker lê `references/` com cache de 1 h e cola o texto no prompt da Routine do cérebro, que tem o segredo de operador. Uma frase plantada numa página lida pelo agente podia virar instrução a um agente com poderes de operador.
