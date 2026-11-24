@@ -193,6 +193,13 @@ Série temporal das aparições de cada concorrente nos 5 prompts fixos da rotin
 | 2026-11-17 | AISO Hub | 2/5 | 1.5 | +1 | 1/5 (só Claude) | P4 pos1, P5 pos2 (via artigo próprio sobre agências em Lisboa) |
 | 2026-11-17 | Marketing Gabriel | 2/5 | 3.0 | = | 1/5 (só Claude) | P2 pos2, P4 pos4 |
 | 2026-11-17 | Bluesoft | 2/5 | 4.5 | -1 | 1/5 (só Claude) | P2 pos4, P4 pos5 |
+| 2026-11-24 | Marketing Gabriel | 3/5 | 1.67 | +1 | 1/5 (só Claude) | P2 pos3, P3 pos1, P4 pos1 (via comunicado PR.com de Fev 2026) |
+| 2026-11-24 | destaque.ai | 2/5 | 2.0 | -2 | 1/5 (só Claude) | P1 pos3, P2 pos1; ausente de P3, P4, P5 |
+| 2026-11-24 | Bluesoft | 2/5 | 3.5 | = | 1/5 (só Claude) | P1 pos5, P2 pos2 |
+| 2026-11-24 | Equinox Dynamics | 2/5 | 4.0 | novo | 1/5 (só Claude) | P2 pos5, P4 pos3; entrada nova na lista esta semana |
+| 2026-11-24 | AISO Hub | 1/5 | 2.0 | -1 | 1/5 (só Claude) | P4 pos2; artigo próprio usado em P5 mas marca não nomeada (não conta) |
+| 2026-11-24 | revaliQ | 1/5 | 4.0 | +1 | 1/5 (só Claude) | P1 pos4 |
+| 2026-11-24 | UniK SEO | 1/5 | 4.0 | +1 | 1/5 (só Claude) | P4 pos4 |
 
 *A primeira execução da rotina vai popular as primeiras linhas. Ler tendências a partir de ~4 semanas de dados.*
 

@@ -195,3 +195,11 @@ Uma linha por execução semanal: data, dimensões cobertas, candidatos descober
 - Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Prompt 1 voltou a ruído de homónimos (geologia, informação geográfica); só Claneo citada. (3) Pesquisa por LLMscope (Helder Mesquita) sem resultados — não confirma nem desmente o produto registado em 09-22. (4) Preço 3HASH €150–€900 lido num artigo de blog via resultado de pesquisa; data do artigo não confirmada, registado como primeira observação do tecto, não como mudança de preço.
 - Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
 - Report: competitor-monitor/reports/2026-11-17.md
+
+## 2026-11-24
+- Dimensões cobertas: D0 (descoberta), D1 (5 prompts fixos, Claude augmented /5), D2, D3, D4.
+- Candidatos descobertos: Equinox Dynamics (Aveiro, adjacent_consultancy) adicionado. Rejeitados: Codedesign, Dengun, Ninja Promo, Delante, WayNext (só no ranking promocional AppLabx, sem serviço GEO verificado), ALM Corp, Minuttia, RD Station (sem operação PT), AEO Content AI (ferramenta). Mantêm-se fora: Claneo, AppLabx, DevCommX, Percepto Digital. Mercado passa a 28 concorrentes rastreados.
+- SoV history: 7 linhas adicionadas (Marketing Gabriel 3/5, destaque.ai 2/5, Bluesoft 2/5, Equinox Dynamics 2/5, AISO Hub 1/5, revaliQ 1/5, UniK SEO 1/5)
+- Anomalias: (1) ChatGPT, Gemini, Grok não verificados — SoV apenas /5 (Claude). (2) Prompt 5 sem nenhuma entidade PT nomeada; artigo do AISO Hub usado sem atribuição, não contado. (3) destaque.ai desce de 4/5 para 2/5; Marketing Gabriel sobe para 1.º em P3 e P4 com o comunicado de Fevereiro. Snapshot de uma semana — confirmar em 11-30/12-07 antes de ler como tendência. (4) Pesquisas D2 por 3HASH e Marketing Gabriel devolveram só ruído (homónimos); sem movimentos verificáveis.
+- Engines (Dimensão 1): chatgpt ✗ (sem acesso) · claude ✓ (web search) · gemini ✗ (sem acesso) · grok ✗ (sem acesso)
+- Report: competitor-monitor/reports/2026-11-24.md
