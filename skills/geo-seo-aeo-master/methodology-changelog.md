@@ -8,6 +8,15 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
+## 2026-11-25: O Google-Extended deixa de ser alavanca do AI Overviews
+
+- **Trigger:** passagem diária por motor. A 24 Nov 2026 a Google atualizou duas páginas: [gen-ai-controls](https://developers.google.com/search/docs/fundamentals/gen-ai-controls) ("Google-Extended status is not used as a ranking signal in Search and doesn't affect a site's inclusion in Search"; na tabela, ficar no AI Overviews e no AI Mode e limitar treino noutros produtos faz-se com "Disallow Google-Extended") e [Google-Extended](https://developers.google.com/crawling/docs/google-extended) (o grounding coberto é "aside from Search and other Search services"; a presença no AI Overviews e no AI Mode é da opção de IA generativa do Search Console). Lidas diretamente a 25 Nov. No mesmo dia, [Attribution and factuality in Search generative AI features](https://developers.google.com/search/docs/fundamentals/gen-ai-attribution-factuality): só entram como links páginas indexadas e elegíveis para snippet.
+- **O que muda:** `references/engine_playbooks.md`, bloco `### google_aio` (PT e EN), item 3 do Faz. Dizia "Permita o Google-Extended no robots.txt: sites que o bloqueiam são significativamente menos recuperados pelo AI Overviews" com base em Grossman et al. (SIGIR 2026), uma associação. Passa a mandar manter ligada a opção de IA generativa do Search Console e não restringir o snippet nas páginas que se quer ver citadas, e diz que o Google-Extended governa o treino e os outros produtos de IA da Google. O `google_ai_mode` herda pelo item 1. `references/frameworks.md` §2 (nota a seguir ao parágrafo do Grossman) e §5 (secção nova sobre a atribuição), `references/benchmarks.md` §27 (caveat) e `references/models.md` (Google: core updates pré-anunciados e docs novas).
+- **Por rever por uma pessoa (fora dos caminhos de routine):** `SKILL.md` § Audit workflow continua a pedir para assinalar o `Google-Extended` em falta no robots.txt, o que está certo como higiene de treino, mas não deve ser lido como risco de visibilidade no AIO; e a auditoria devia perguntar ao cliente se a opção de IA generativa do Search Console está ligada e procurar `nosnippet`/`max-snippet` restritivos nas páginas-chave.
+- **O que não muda:** nenhum cabeçalho, chave ou tabela lidos pelo Tracker ou pelo Deck Builder.
+
+---
+
 ## 2026-11-23: Meta AI ganha o robô das respostas, e a Amazon passa a ter listas de IPs
 
 - **Trigger:** passagem diária pelos robôs. A documentação Meta Web Crawlers (atualizada a 21 Mai 2026) nomeia o `Meta-WebIndexer` como o robô que lê a web para as respostas da Meta AI ("helps us cite and link to your content in Meta AI's responses"), mais o `Meta-ExternalFetcher` e o `Meta-ExternalAds`; a página Amazonbot documenta o `Amzn-SearchBot` e o `Amzn-User` e três listas de IPs. Nada disto estava na skill.
