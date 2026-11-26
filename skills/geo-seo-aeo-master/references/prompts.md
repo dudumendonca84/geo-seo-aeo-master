@@ -417,6 +417,41 @@ não é `1`, e um com dezenas não é `5`.
      O volume do nome do candidato não é prova e não se dá como razão
      [2026-11-20]: diz que a marca existe, não que compete com o cliente
      (§8.9, `concorrentes_candidatos`).
+- **Toda pergunta tem de deixar a resposta nomear empresas** [2026-11-26].
+  O que o Tracker mede é se o assistente põe a marca na resposta; uma
+  pergunta cuja melhor resposta é uma taxa, uma tabela de custos, uma lista
+  de requisitos ou uma explicação sem fornecedor nenhum não mede a marca,
+  porque ela pode faltar sem que isso diga nada. O teste antes de escrever:
+  numa resposta boa a esta pergunta, cabe o nome de quem presta o serviço
+  ou vende o produto? Se não cabe, a pergunta não entra assim. A forma
+  problem-stated do §2.1 e o preço do §2.5 continuam a valer, mas no
+  Tracker levam a escolha dentro: "quanto custa manter uma empresa no
+  Centro Internacional de Negócios da Madeira e quem recomendam para tratar
+  disso?", e não só "quanto custa". Na NEWCO, a 25 Nov 2026, 10 das
+  15 perguntas só pediam informação (taxa de IRC, requisitos de
+  substância, obrigações declarativas, custo médio de uma avença): uma
+  citação em 120 respostas (leitura provisória de 26 Nov), que não diz
+  nada sobre a marca,
+  contra 7 em 12 motores na pergunta que pedia uma empresa para constituir
+  a sociedade.
+- **Uma pergunta por prompt** [2026-11-26]. "Compensa receber em salário ou
+  em dividendos, e quem me pode ajudar a fazer essa conta?" são duas: o
+  assistente responde à primeira e a segunda fica num parágrafo de fecho,
+  ou não fica. A segunda pergunta de quem pergunta vai no
+  `persona_followup`, que existe para isso.
+- **Quem pergunta é quem compraria da marca** [2026-11-26]. A persona e o
+  `persona_context` saem do que a marca vende (`voz_do_cliente.site`, as
+  fichas, os temas do pedido), e não de quem toca no assunto. Uma marca que
+  monta estruturas societárias na Madeira e em Malta é perguntada por quem
+  quer montar uma, e não pelo sócio de uma PME a decidir o próprio salário:
+  esse comprador existe, mas não compra a esta marca, e a resposta mede um
+  mercado que não é o dela.
+- **Uma pergunta escrita fora do gerador segue estas regras na mesma**
+  [2026-11-26]. Quando o gerador recusa um pedido (por exemplo, um tema
+  longo demais) e alguém escreve as perguntas à mão para não atrasar, elas
+  passam pelo §1, por este §8.4 e pela verificação do §8.7 como as outras.
+  O que se corrige é o gerador, não se contorna. As 9 perguntas à mão da
+  NEWCO (25 Nov 2026) saltaram tudo isto e foram para a recolha.
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
   palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
   isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
@@ -970,7 +1005,11 @@ e medicina desportiva), as regras mudam em três pontos:
 
 1. **Cada pergunta pertence a um tema, e só a um.** O `topic` leva o nome
    do tema tal como veio no pedido, para o ecrã e o relatório agruparem por
-   ele. Uma pergunta que não cabe em nenhum tema não entra.
+   ele. Uma pergunta que não cabe em nenhum tema não entra. Um tema é um
+   assunto a cobrir e não o texto de uma pergunta: um tema longo ("a
+   tributação de uma sociedade na Zona Franca da Madeira com sócios
+   estrangeiros") resume-se para o `topic` e escreve-se em perguntas que
+   seguem o §8.4, e nunca é razão para recusar o pedido [2026-11-26].
 2. **Os temas repartem as perguntas.** Cada tema leva pelo menos
    `target_count` a dividir pelo número de temas (arredondado para baixo),
    e o que sobra vai para os temas com mais procura. Dentro de cada tema
