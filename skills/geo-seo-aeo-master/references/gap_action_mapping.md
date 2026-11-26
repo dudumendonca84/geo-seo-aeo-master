@@ -874,12 +874,14 @@ responde e diz o texto.
 ### Pattern: Gemini citation 0% mas outros motores >5%
 
 #### Hipóteses
-1. **`robots.txt` bloqueia `Google-Extended`** (suspeita ~40% dos casos)
-2. **Schema.org Organization incompleto ou ausente** (~35% dos casos)
-3. **Conteúdo client-side rendered sem HTML útil** (~15% dos casos)
+Por ordem de verificação (não há estudo público com a frequência de cada uma; as percentagens que aqui estavam até 26 Nov 2026 eram estimativa sem fonte e saíram):
+1. **`robots.txt` recusa o `Google-Extended`.** Vale para o motor `gemini` (a app Gemini e a API com grounding): a página da Google de 24 Nov 2026 diz que o Google-Extended governa o treino dos modelos Gemini e o grounding "aside from Search and other Search services". **Não vale para `google_aio` nem `google_ai_mode`**: esses seguem o Googlebot, e o Google-Extended "doesn't affect a site's inclusion in Search". Se o 0% é no AI Overviews ou no AI Mode, a hipótese é a seguinte e não esta.
+2. **A página não pode ser citada pelo Search**: fora do índice (`noindex`, `none`), ou sem excerto (`nosnippet`, `max-snippet` baixo, `data-nosnippet` no texto que responde), na meta robots ou no `X-Robots-Tag`. A Google aplica as mesmas regras ao AI Overviews e ao AI Mode, e só entram como ligação páginas elegíveis para excerto.
+3. **Schema.org Organization incompleto ou ausente.**
+4. **Conteúdo client-side rendered sem HTML útil.**
 
 #### Ação
-Verifica robots.txt para `User-agent: Google-Extended`; adiciona `Organization` JSON-LD com `name`, `url`, `logo`, `sameAs` mínimo 3 entries; se SSR/SPA, configura prerender ou SSR para Googlebot.
+Verifica robots.txt para `User-agent: Google-Extended` (e, antes de mexer, confirma com o cliente que quer o conteúdo no treino e na app Gemini: é decisão de negócio). Verifica `noindex`, `nosnippet` e `max-snippet` nas páginas-chave e a opção de IA generativa do Search Console. Adiciona `Organization` JSON-LD com `name`, `url`, `logo`, `sameAs` mínimo 3 entries; se SSR/SPA, configura prerender ou SSR para Googlebot.
 
 #### Esforço
 30 min - 4h (depende da plataforma).
