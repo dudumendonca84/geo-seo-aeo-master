@@ -8,7 +8,7 @@
 > **Raw URL:**
 > `https://raw.githubusercontent.com/dudumendonca84/geo-seo-aeo-master/main/skills/geo-seo-aeo-master/references/prompts.md`
 
-**Last refresh: 20 Nov 2026** (primeira corrida em produção, o Bison Bank: §8.8 dá a reescrita a um prospect desligado e guarda o porquê das recusadas; §8.7 ponto 9 aceita as siglas da medição soltas, os motores medidos no porquê e os verbos do porquê depois de um tipo, lê o lado de uma comparação cortado a meio do nome da marca como a marca, e trata a oração depois de "ou se" como oração; §8.9 e §8.4 ponto 5: a prova de um candidato liga-o à marca ou ao segmento, nunca ao volume do próprio nome, e os candidatos propostos são pares diretos e não os maiores do setor). Previous: **19 Nov 2026** (décima terceira revisão: o apóstrofo casa como no texto e separa palavras, o hífen junta uma palavra composta; um concelho com ficha que é palavra comum só conta escrito como nome; o pedaço de um concelho composto é o lugar. Décima segunda revisão: a cabeça de um nome nunca cai; um concelho não é palavra comum dentro de um nome da base; uma palavra sem género que se leia não concorda com o tipo. Décima primeira revisão: os 308 concelhos são nomes de lugar; a terminação deixa de decidir que um nome da base é descrição, e depois de "de" só contam lugar e especialidade; uma parte de nome que é só descritor não é marca; o descritor não salta um "e" com artigo nem um "que" relativo; em inglês, "a"/"an" num lado não isentam a curada tipo + of + lugar. Décima revisão: os nomes da base compilam-se com o tokenizador do texto; um nome da base todo genérico também é descrição, e uma palavra que não é adjetivo, lugar nem especialidade faz dele um nome próprio; só o indefinido verdadeiro isenta tipo + de + lugar; uma curada só é descrição com todas as palavras genéricas; o descritor governa o tipo com adjetivos pelo meio. Nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
+**Last refresh: 26 Nov 2026** (§8.4: cada pergunta deixa a resposta nomear empresas, salvo as branded; uma pergunta por prompt, e a metade que fica é a que pede quem; quem pergunta é quem compraria da marca; as perguntas escritas à mão seguem as mesmas regras. §8.1 e §8.6: os exemplos passam a pedir quem. §8.9: um tema longo nunca é recusado). Previous: **20 Nov 2026** (primeira corrida em produção, o Bison Bank: §8.8 dá a reescrita a um prospect desligado e guarda o porquê das recusadas; §8.7 ponto 9 aceita as siglas da medição soltas, os motores medidos no porquê e os verbos do porquê depois de um tipo, lê o lado de uma comparação cortado a meio do nome da marca como a marca, e trata a oração depois de "ou se" como oração; §8.9 e §8.4 ponto 5: a prova de um candidato liga-o à marca ou ao segmento, nunca ao volume do próprio nome, e os candidatos propostos são pares diretos e não os maiores do setor). Previous: **19 Nov 2026** (décima terceira revisão: o apóstrofo casa como no texto e separa palavras, o hífen junta uma palavra composta; um concelho com ficha que é palavra comum só conta escrito como nome; o pedaço de um concelho composto é o lugar. Décima segunda revisão: a cabeça de um nome nunca cai; um concelho não é palavra comum dentro de um nome da base; uma palavra sem género que se leia não concorda com o tipo. Décima primeira revisão: os 308 concelhos são nomes de lugar; a terminação deixa de decidir que um nome da base é descrição, e depois de "de" só contam lugar e especialidade; uma parte de nome que é só descritor não é marca; o descritor não salta um "e" com artigo nem um "que" relativo; em inglês, "a"/"an" num lado não isentam a curada tipo + of + lugar. Décima revisão: os nomes da base compilam-se com o tokenizador do texto; um nome da base todo genérico também é descrição, e uma palavra que não é adjetivo, lugar nem especialidade faz dele um nome próprio; só o indefinido verdadeiro isenta tipo + de + lugar; uma curada só é descrição com todas as palavras genéricas; o descritor governa o tipo com adjetivos pelo meio. Nona revisão: um nome da base que começa por um tipo é uma sequência fixa; o descritor só isenta quando governa o próprio tipo; o tipo em maiúscula a meio da frase é um nome; Crédito Agrícola e Universo Crédito deixam de ser ambíguas. Oitava revisão: a forma "tipo + de + lugar" volta a ser só cidade ou país concreto e a frase que descreve passa; os nomes por extenso são sequências fixas da lista curada; marcas curadas ambíguas; a geografia e os sufixos não fazem de uma marca a do cliente): §8.4 ganha a exceção da ficha de concorrentes vazia (só em `direct_comparison`, sempre com a marca, só candidatos com prova, nenhum outro nome de empresa em nenhuma categoria nem campo; proporção contada sobre o catálogo que fica); §8.7 ponto 7 (formas curtas), ponto 8 (o candidato fora do sítio dele) e ponto 9, que descreve as três camadas do servidor com a ficha vazia: a licença das palavras pelo dicionário com a forma das comparações e dos nomes (incluindo "tipo + de/of + geografia" e "geografia + tipo"), as marcas que o Tracker já conhece, e a rede do modelo rápido, que só aponta nomes e, se falhar, devolve todas as perguntas; o limite `comparacoes_candidatos_max`; §8.9 documenta `temas_origem: "menu"`, `concorrentes_candidatos`, `candidatos_sem_evidencia` e `ficha_vazia`. Previous: **18 Oct 2026**: §8.7 e §8.8 (o que o Tracker verifica antes de uma pergunta existir, e o que volta ao gerador); §8.9 (a voz do cliente nas primeiras perguntas). Previous: **09 Sep 2026**: §4.6 keeps its cross-category table (consumers read the category per row); §2.6 `transactional` added 18 Aug; §8 personas Aug. Previous: **06 Jul 2026**: catálogo § 4 reescrito de fragmentos-keyword para **perguntas naturais** (como um utilizador escreve a um LLM); regra de formulação reforçada; § 8 personas expandido (ângulo por persona × funil).
 
 ---
 
@@ -283,10 +283,10 @@ Cada persona pergunta de um ângulo diferente. Gera prompts que **soem a essa pe
 
 | Persona | Quem é | O que o preocupa | Como pergunta (exemplo fundo-de-funil) |
 |---|---|---|---|
-| **CEO / fundador** | Decisor final; vê ROI e risco | crescer pipeline, não deitar dinheiro fora, reputação da marca | *"vale a pena investir em GEO para uma SaaS B2B portuguesa este ano, ou ainda é cedo?"* |
+| **CEO / fundador** | Decisor final; vê ROI e risco | crescer pipeline, não deitar dinheiro fora, reputação da marca | *"que agência de GEO em Portugal dá retorno a uma SaaS B2B que ainda está a começar?"* |
 | **CMO / marketing** | Dono do canal; responde por leads | perder tráfego para AI Overviews, share of voice vs concorrentes, atribuição | *"que agência em Portugal me ajuda a recuperar a visibilidade que perdi para o AI Overview?"* |
 | **Decisor técnico** (CTO/eng) | Avalia exequibilidade e esforço | schema, llms.txt, crawlers de IA, o que é preciso implementar | *"preciso de programadores ou uma agência trata do schema e do llms.txt para visibilidade em IA?"* |
-| **Comprador / procurement** | Compara, negoceia, valida âmbito | preço, o que está incluído, contrato, comparáveis | *"quanto custa uma auditoria de GEO em Portugal e o que deve incluir?"* |
+| **Comprador / procurement** | Compara, negoceia, valida âmbito | preço, o que está incluído, contrato, comparáveis | *"quanto cobram as agências de GEO em Portugal por uma auditoria?"* |
 
 **Local / b2c / físico:** `cliente local` - qualifica por **ocasião + zona/cidade**
 (ex: *"qual é o melhor [tipo de negócio] em [zona] para [ocasião]?"*, *"onde encontro
@@ -417,28 +417,38 @@ não é `1`, e um com dezenas não é `5`.
      O volume do nome do candidato não é prova e não se dá como razão
      [2026-11-20]: diz que a marca existe, não que compete com o cliente
      (§8.9, `concorrentes_candidatos`).
-- **Toda pergunta tem de deixar a resposta nomear empresas** [2026-11-26].
-  O que o Tracker mede é se o assistente põe a marca na resposta; uma
-  pergunta cuja melhor resposta é uma taxa, uma tabela de custos, uma lista
-  de requisitos ou uma explicação sem fornecedor nenhum não mede a marca,
-  porque ela pode faltar sem que isso diga nada. O teste antes de escrever:
-  numa resposta boa a esta pergunta, cabe o nome de quem presta o serviço
-  ou vende o produto? Se não cabe, a pergunta não entra assim. A forma
-  problem-stated do §2.1 e o preço do §2.5 continuam a valer, mas no
-  Tracker levam a escolha dentro: "quanto custa manter uma empresa no
-  Centro Internacional de Negócios da Madeira e quem recomendam para tratar
-  disso?", e não só "quanto custa". Na NEWCO, a 25 Nov 2026, 10 das
-  15 perguntas só pediam informação (taxa de IRC, requisitos de
-  substância, obrigações declarativas, custo médio de uma avença): uma
-  citação em 120 respostas (leitura provisória de 26 Nov), que não diz
-  nada sobre a marca,
+- **Cada pergunta tem de deixar a resposta nomear empresas** [2026-11-26].
+  A pergunta continua a não nomear ninguém (§1, §2.1); é a resposta que tem
+  de ter lugar para nomes. O que o Tracker mede é se o assistente põe a
+  marca na resposta, e uma pergunta cuja melhor resposta é uma taxa, uma
+  tabela de custos, uma lista de requisitos ou uma explicação sem
+  fornecedor nenhum não mede a marca: ela pode faltar sem que isso diga
+  nada. O teste antes de escrever: numa resposta boa a esta pergunta, cabe
+  o nome de quem presta o serviço ou vende o produto? Se não cabe, a
+  pergunta não entra assim. A forma problem-stated do §2.1 e o preço do
+  §2.5 continuam a valer, mas no Tracker pedem quem: o preço pergunta pelo
+  que cobram os fornecedores ("quanto cobram as empresas que tratam da
+  manutenção de uma sociedade no Centro Internacional de Negócios da
+  Madeira?"), e não pelo custo em abstrato ("quanto custa manter uma
+  empresa lá?"); a dor acaba em quem a resolve ("quem me pode ajudar a
+  resolver isto?"). Vale em todas as fases, `post_decision` incluída: "o
+  que esperar nos primeiros 90 dias" pergunta-se como "que [fornecedores]
+  entregam resultados nos primeiros 90 dias?". Os exemplos do §2 leem-se
+  com esta regra no Tracker. **As branded (§8.9, ponto 3) ficam de fora**:
+  medem a perceção, a marca já está na pergunta e saem dos rácios.
+  Na NEWCO, a 25 Nov 2026, 10 das 15 perguntas só pediam informação (taxa
+  de IRC, requisitos de substância, obrigações declarativas, custo médio de
+  uma avença): uma citação em 120 respostas (leitura provisória de 26 Nov),
   contra 7 em 12 motores na pergunta que pedia uma empresa para constituir
-  a sociedade.
+  e gerir uma sociedade na Zona Franca. A primeira não diz nada sobre a
+  marca.
 - **Uma pergunta por prompt** [2026-11-26]. "Compensa receber em salário ou
   em dividendos, e quem me pode ajudar a fazer essa conta?" são duas: o
   assistente responde à primeira e a segunda fica num parágrafo de fecho,
-  ou não fica. A segunda pergunta de quem pergunta vai no
-  `persona_followup`, que existe para isso.
+  ou não fica (na NEWCO, zero citações em 12). A metade que fica no
+  `prompt_text` é a que pede quem, porque é essa que mede a marca, pela
+  regra anterior; a outra, se interessar, vai no `persona_followup`, que é
+  a segunda pergunta daquela pessoa.
 - **Quem pergunta é quem compraria da marca** [2026-11-26]. A persona e o
   `persona_context` saem do que a marca vende (`voz_do_cliente.site`, as
   fichas, os temas do pedido), e não de quem toca no assunto. Uma marca que
@@ -449,9 +459,11 @@ não é `1`, e um com dezenas não é `5`.
 - **Uma pergunta escrita fora do gerador segue estas regras na mesma**
   [2026-11-26]. Quando o gerador recusa um pedido (por exemplo, um tema
   longo demais) e alguém escreve as perguntas à mão para não atrasar, elas
-  passam pelo §1, por este §8.4 e pela verificação do §8.7 como as outras.
-  O que se corrige é o gerador, não se contorna. As 9 perguntas à mão da
-  NEWCO (25 Nov 2026) saltaram tudo isto e foram para a recolha.
+  seguem o §1 e este §8.4 como as outras. O que se corrige é o gerador, não
+  se contorna: uma pergunta inserida à mão na base não passa pela
+  verificação do §8.7, e as regras novas deste ponto ainda não têm
+  verificação no servidor, só as aplica quem escreve. As 9 perguntas à mão
+  da NEWCO (25 Nov 2026) saltaram tudo isto e foram para a recolha.
 - **Antes de entregar, relê as branded uma a uma**: se o nome da marca é
   palavra comum, leva o substantivo à frente (§ 1). É a última paragem onde
   isso é grátis: depois de a pergunta correr, mudar o texto parte a série.
@@ -476,9 +488,9 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
   para o preencher**. Exemplos BOFU (sem nomear a marca do cliente):
   - *"Qual é a melhor [categoria] em [país] para contratar para [ICP]?"*
   - *"Que [fornecedor] tem casos de sucesso comprovados com resultados verificáveis?"*
-  - *"Vale mais a pena contratar ou desenvolver a capacidade internamente?"*
-  - *"Quanto devo orçamentar para contratar e o que está incluído?"*
-  - *"O que esperar nos primeiros 90 dias de trabalho com [fornecedor]?"* (`post_decision`)
+  - *"Que [fornecedor] recomendam a uma equipa que não quer desenvolver isto internamente?"*
+  - *"Quanto cobram os [fornecedores] de [categoria] em [país] por um projeto de [escala]?"*
+  - *"Que [fornecedores] entregam resultados visíveis nos primeiros 90 dias?"* (`post_decision`)
 - **Personas equilibradas por ângulo**: não concentres o catálogo num só perfil.
   Cada persona pergunta de forma diferente (§8.1): CEO/fundador = ROI e decisão de
   investir; CMO = tráfego e visibilidade; decisor técnico = exequibilidade;
