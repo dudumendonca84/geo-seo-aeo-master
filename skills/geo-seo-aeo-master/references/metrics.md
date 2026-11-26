@@ -58,7 +58,15 @@ SoV = brand_mentions / Σ(brand_mentions + competitor_mentions)
 ```
 across the prompt set. Some tools weight by response position (à la Princeton's PAWC, see §10).
 
-**Convenção destaque.ai (unificada 02 Ago 2026).** Nos produtos destaque.ai (Tracker e Deck Builder), o conjunto de marcas do denominador restringe-se ao **cliente + concorrentes diretos (peers)**: marcas adjacentes (seguradoras, plataformas, consultoras de outra categoria) ficam fora. Atribuição fraccionária intra-resposta (1/nº de marcas do conjunto presentes na resposta), média sobre as respostas que nomeiam pelo menos uma marca do conjunto; presença do cliente pela flag `cited` do analisador, presença dos peers por `competitors_mentioned` normalizado (sem acentos). Implementação oficial: `computeShareOfVoice(rows, clientName, peerNames)` no Tracker. Um SoV sobre todas as marcas extraídas é outra métrica e deve ser rotulado como tal.
+**Convenção destaque.ai (unificada 02 Ago 2026; contagem comum desde 23 Nov 2026).** Nos produtos destaque.ai, o conjunto de marcas do denominador restringe-se ao **cliente + concorrentes diretos (peers)**: marcas adjacentes (seguradoras, plataformas, consultoras de outra categoria) ficam fora. A conta é a **contagem comum**, a fórmula acima tal como está escrita:
+
+```
+SoV(marca) = menções da marca / Σ menções das marcas seguidas (cliente + peers)
+```
+
+sobre as respostas mensuráveis e não branded, com **cada marca contada no máximo uma vez por resposta**. Uma resposta que não nomeia nenhuma marca do conjunto não soma nada a nenhum dos lados. As partilhas de todas as marcas somam 100%. Presença do cliente pela flag `cited` do analisador, presença dos peers por `competitors_mentioned` normalizado (sem acentos). Implementação oficial: `contagemComum` e `computeShareOfVoice(rows, clientName, peerNames)` no Tracker; a partilha de cada concorrente sai de `sovPorMarca`, pela mesma contagem. Um SoV sobre todas as marcas extraídas é outra métrica e deve ser rotulado como tal.
+
+**Até 23 Nov 2026 a convenção era outra**: atribuição fraccionária intra-resposta (1/nº de marcas do conjunto presentes na resposta), média sobre as respostas que nomeiam pelo menos uma marca. Decisão do founder a 23 Nov 2026: *"Muda o comum, mais simples"*. As duas dão números próximos num mercado com muitas respostas e afastam-se quando o tamanho das listas varia muito: na semana de 23 Nov, o setor GEO do Radar dava à destaque.ai 32,7% pela média e 29,8% pela contagem comum, e no setor dos bancos o líder passava do ActivoBank para o Millennium BCP. As semanas gravadas antes da mudança ficam como estavam até o histórico ser recalculado (decisão em aberto, ver `methodology-changelog.md`). O Deck Builder tem a sua própria cópia da conta e não foi mudado.
 
 **Caveats.**
 - **Highly sensitive to prompt-list choice.** Two tools with different default prompts produce different SoV for the same brand.
@@ -73,7 +81,7 @@ across the prompt set. Some tools weight by response position (à la Princeton's
 
 **What counts as a choice** (fixed in writing before re-reading 616 answers in "Um mapa das empresas de Portugal"; full text in `destaque-ai-tracker/routines/tracker-brain.md`): a place in an order, a verdict on a single named criterion, or the closing sentence. Belonging to a set ("os três grandes") is not a choice; a niche superlative ("líder mundial em cortiça") is not either. In doubt, it is not.
 
-**Formula.** Same convention as SoV, on purpose: inside each answer the brand is worth `1 / n` of the brands chosen in that answer, then averaged. Denominator = answers that choose SOMEONE; an answer that chooses nobody has no pie to split and does not lower anyone's number. Judged answers with nobody chosen → `null`, not zero.
+**Formula.** Same convention as SoV, on purpose: the pooled count (since 23 Nov 2026). `SoR(brand) = choices of the brand / Σ choices of the tracked brands (client + peers)`, over judged, non-branded answers, each brand counted at most once per answer. An answer that chooses nobody adds nothing to either side and does not lower anyone's number. Judged answers with nobody chosen → `null`, not zero. Until 23 Nov 2026 the brand was worth `1 / n` of the brands chosen in each answer, then averaged; the switch follows the SoV one and **awaits the founder's explicit confirmation** (the decision of 23 Nov named the SoV).
 
 Companion metric, **recommendation rate** = brand's choices / answers that NAME the brand: "when I appear, am I the answer or the scenery". A brand can have a low SoR from being rarely named and convert very well; the action that asks for is a different one.
 
@@ -423,8 +431,8 @@ quando uma parcela fica de fora. Com o sentimento fora, a citação vale
 1. **`citation_rate`** (§1), metade do peso. Aparecer é a condição de
    tudo o resto: sem menção não há quota nem retrato.
 2. **`relative_sov`**, e não o SoV absoluto: a quota do cliente a dividir
-   pela quota do líder da categoria, com a mesma atribuição fraccionária
-   do §3. Lidera = parcela cheia.
+   pela quota do líder da categoria, com a mesma contagem do §3 (a
+   contagem comum, desde 23 Nov 2026). Lidera = parcela cheia.
 3. **`net_sentiment`** (§7, mesma convenção do eixo do mapa de perceção),
    mapeado de -1..1 para 0..1. Só o negativo desconta.
 
