@@ -431,21 +431,22 @@ não é `1`, e um com dezenas não é `5`.
   manutenção de uma sociedade no Centro Internacional de Negócios da
   Madeira?"), e não pelo custo em abstrato ("quanto custa manter uma
   empresa lá?"); a dor acaba em quem a resolve ("quem me pode ajudar a
-  resolver isto?"). Vale em todas as fases, `post_decision` incluída: "o
-  que esperar nos primeiros 90 dias" pergunta-se como "que [fornecedores]
-  entregam resultados nos primeiros 90 dias?". Os exemplos do §2 leem-se
-  com esta regra no Tracker. **As branded (§8.9, ponto 3) ficam de fora**:
+  resolver isto?"). Vale em todas as fases, `post_decision` incluída: quem
+  já comprou pergunta pelo que usa a seguir ("já contratei uma agência de
+  [categoria]: que ferramentas recomendam para confirmar se os resultados
+  aparecem?"), e não "o que esperar nos primeiros 90 dias". Os exemplos do
+  §2 leem-se com estas regras no Tracker. **As branded (§8.9, ponto 3) ficam de fora**:
   medem a perceção, a marca já está na pergunta e saem dos rácios.
   Na NEWCO, a 25 Nov 2026, 10 das 15 perguntas só pediam informação (taxa
   de IRC, requisitos de substância, obrigações declarativas, custo médio de
   uma avença): uma citação em 120 respostas (leitura provisória de 26 Nov),
   contra 7 em 12 motores na pergunta que pedia uma empresa para constituir
-  e gerir uma sociedade na Zona Franca. A primeira não diz nada sobre a
-  marca.
+  e gerir uma sociedade na Zona Franca. A primeira medição não diz nada
+  sobre a marca.
 - **Uma pergunta por prompt** [2026-11-26]. "Compensa receber em salário ou
   em dividendos, e quem me pode ajudar a fazer essa conta?" são duas: o
   assistente responde à primeira e a segunda fica num parágrafo de fecho,
-  ou não fica (na NEWCO, zero citações em 12). A metade que fica no
+  ou não fica (na NEWCO, zero citações em 12 respostas). A metade que fica no
   `prompt_text` é a que pede quem, porque é essa que mede a marca, pela
   regra anterior; a outra, se interessar, vai no `persona_followup`, que é
   a segunda pergunta daquela pessoa.
@@ -490,7 +491,7 @@ Ao gerar ou rever o catálogo de um cliente, **verifica e corrige**:
   - *"Que [fornecedor] tem casos de sucesso comprovados com resultados verificáveis?"*
   - *"Que [fornecedor] recomendam a uma equipa que não quer desenvolver isto internamente?"*
   - *"Quanto cobram os [fornecedores] de [categoria] em [país] por um projeto de [escala]?"*
-  - *"Que [fornecedores] entregam resultados visíveis nos primeiros 90 dias?"* (`post_decision`)
+  - *"Já contratei uma agência de [categoria]: que ferramentas recomendam para confirmar se os resultados aparecem?"* (`post_decision`)
 - **Personas equilibradas por ângulo**: não concentres o catálogo num só perfil.
   Cada persona pergunta de forma diferente (§8.1): CEO/fundador = ROI e decisão de
   investir; CMO = tráfego e visibilidade; decisor técnico = exequibilidade;
