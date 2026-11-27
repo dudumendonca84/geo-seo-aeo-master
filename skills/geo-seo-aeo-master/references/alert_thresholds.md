@@ -161,10 +161,12 @@ not stored anywhere, while its Google rating and review count are
 recordings that count for the closing week (the 7 days before `week_start`,
 the same rule as the bridge), the brand's card shows **no rating**, or a
 rating further from the Google one than a single new review could explain,
-while the Google listing has reviews. That margin is `4 / (reviews + 1)`
-(1.0 with 3 reviews, 0.36 with 10, 0.08 with 50): inside it, the difference
-may only be the Google reading being a few days old. "No rating" always
-counts. The message names the category the map showed, for the reader to
+while the Google listing has reviews. That margin is `4 / (reviews + 1)`,
+the most one new review can move the average, plus 0.1 because both ratings
+are shown to one decimal (1.1 with 3 reviews, 0.46 with 10, 0.18 with 50);
+the gap is compared rounded to one decimal. Inside the margin, the
+difference may simply reflect a Google reading a few days old. "No rating"
+always counts. The message names the category the map showed, for the reader to
 judge, and says "may" when only the rating differs.
 
 Guards:
@@ -273,7 +275,7 @@ Until 10 Sep 2026 nothing compared a number with another: the Tracker stored wha
 | §6 Suppression | **Tracker code** | The number of weeks is parsed from the sentence "for the next N weeks". |
 | §8 Override | **Tracker code** | Column `clients.alert_thresholds_override`, multiplicative. |
 | §3.2 Brand absent | **Tracker code**, at the close of every week (`src/lib/alerts/limiares.ts`) | Boolean, no threshold to parse. Types written: `brand_absent`, `brand_absent_engine`. Not suppressed by §6: an absence is an event. |
-| §3.3 Brand with another business's listing on the ChatGPT map | **Tracker code**, at the close of every week (`src/lib/alerts/ficha-no-mapa.ts`) | Read from the ChatGPT app recordings and `places_snapshots`; no threshold to parse (the rating margin `4 / (reviews + 1)` is in code). Type written: `brand_map_listing`. Not suppressed by §6. |
+| §3.3 Brand with another business's listing on the ChatGPT map | **Tracker code**, at the close of every week (`src/lib/alerts/ficha-no-mapa.ts`) | Read from the ChatGPT app recordings and `places_snapshots`; no threshold to parse (the rating margin `4 / (reviews + 1) + 0.1` is in code). Type written: `brand_map_listing`. Not suppressed by §6. |
 | §3 Event-based (the rest), §3.1 Negative mention, §4 Cumulative, §11 Território | **Routine** (`routines/tracker-brain.md`, step 5) | Judgement over text and history; not suppressed. |
 | §5 Per-engine escalation | Not implemented as such | The computed CR alert names the engine with the largest contribution in `details.engine`; per-engine alerts stay with the Routine. |
 | §7 Tone and copy | Both | The code uses the templates above, in the client's language (PT-PT or EN). |
