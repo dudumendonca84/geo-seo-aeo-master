@@ -17,17 +17,6 @@ Each entry: date, version, trigger, source, sections changed in `SKILL.md` or ot
 
 ---
 
-## 2026-11-23: O share of voice passa à contagem comum
-
-- **Trigger:** decisão do founder a 23 Nov 2026, perante os dois números lado a lado no Radar: *"Muda o comum, mais simples"*.
-- **O que muda:** `references/metrics.md` §3. A convenção destaque.ai deixa a média de 1/n por resposta e passa à fórmula que a secção já escrevia: menções da marca a dividir pela soma das menções das marcas seguidas (cliente mais concorrentes diretos), sobre as respostas mensuráveis e não branded, cada marca contada no máximo uma vez por resposta. As partilhas somam 100%. O §3b (share of recommendation) segue a mesma contagem sobre as escolhas, para os dois números ficarem na mesma escala; essa parte espera a confirmação explícita do founder. O `relative_sov` do Visibility Score usa a mesma contagem.
-- **Efeito medido (Radar público, 26 Nov 2026):** setor GEO, semana de 23 Nov, destaque.ai de 32,7% para 29,8%; mês de novembro, de 25,5% para 24,8%; setor dos bancos, o líder da semana passa do ActivoBank (15,3% pela média) para o Millennium BCP (10,8% pela contagem comum). A conta: no Radar a taxa de cada marca tem o mesmo denominador para todas, portanto a contagem comum é a taxa da marca a dividir pela soma das taxas do setor.
-- **Onde se implementa:** Tracker, `contagemComum` e `computeShareOfVoice` em `lib/metrics/compute.ts`, `sovPorMarca`; o Radar, os relatórios e o painel herdam. O artigo "Como medir GEO" do periscopy.ai volta a ensinar esta fórmula, que era a do original no destaque.ai.
-- **O que não muda:** `competitor_sov` guarda presenças (respostas que nomeiam cada concorrente sobre as respostas da semana), não fatias; nenhuma linha difere. Nenhum cabeçalho, chave ou tabela lidos pelo Tracker ou pelo Deck Builder.
-- **Em aberto:** recalcular o `share_of_voice` e o `share_of_recommendation` gravados no resumo das semanas anteriores (o Tracker tem uma passagem a seco, `scripts/metrics/sov-comum-a-seco.mts`, que não escreve); e o Deck Builder, que tem a sua própria cópia da conta antiga e não se mexe a partir destas sessões.
-
----
-
 ## 2026-11-23: Meta AI ganha o robô das respostas, e a Amazon passa a ter listas de IPs
 
 - **Trigger:** passagem diária pelos robôs. A documentação Meta Web Crawlers (atualizada a 21 Mai 2026) nomeia o `Meta-WebIndexer` como o robô que lê a web para as respostas da Meta AI ("helps us cite and link to your content in Meta AI's responses"), mais o `Meta-ExternalFetcher` e o `Meta-ExternalAds`; a página Amazonbot documenta o `Amzn-SearchBot` e o `Amzn-User` e três listas de IPs. Nada disto estava na skill.
