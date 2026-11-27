@@ -80,6 +80,7 @@ These fire on the boolean event itself, not on a metric delta.
 | **Negative mention that meets the crisis bar** (see §3.1) | `critical` - `type: negative_mention`, carries the crisis payload |
 | **The brand is named in not one measurable response of the week**, having been named last week | `critical` - `type: brand_absent`, computed in Tracker code (see §3.2) |
 | **The brand disappears from one engine** where it was named last week, while still named elsewhere | `notable` - `type: brand_absent_engine` (see §3.2) |
+| **The map ChatGPT shows has the brand with another business's listing** (no rating, or a different one, while the brand's Google listing has reviews) | `notable` - `type: brand_map_listing`, computed in Tracker code (see §3.3) |
 
 ### 3.1 Negative mention: crisis trigger and payload
 
@@ -144,6 +145,45 @@ Three guards, and they are what keeps this from becoming noise:
 The alert `details` carries `from` (last week's citation rate), `to` (zero),
 and, for the per-engine one, the engine key, so the report can name where it
 happened without recomputing anything.
+
+### 3.3 The brand with another business's listing on the ChatGPT map
+
+On local questions the ChatGPT app shows a map and a list of businesses, each
+with name, rating, category and opening hours. For the competitors checked,
+the ratings and the category names match the Google listings. On 17 Nov 2026
+destaque.ai appeared there as "Taxi service", with no rating, in 6 of 54
+answers: opening the card showed a taxi company registered at the same
+address (the accountant's). The brand's Google listing was correct.
+
+The signal is the **rating**, not the category: the brand's right category is
+not stored anywhere, while its Google rating and review count are
+(`places_snapshots`). Fire `brand_map_listing` when, in the ChatGPT app
+recordings that count for the closing week (the 7 days before `week_start`,
+the same rule as the bridge), the brand's card shows **no rating**, or a
+rating at least 0.2 away from the Google one when the Google listing has 10
+reviews or more, while the Google listing has reviews. With fewer reviews one
+new review moves the average by that much, so only "no rating" counts. The
+message names the category the map showed, for the reader to judge, and says
+"may" when only the rating differs.
+
+Guards:
+
+- **No reviews on Google, no alert.** A card with no rating is then exactly
+  what is expected.
+- **Single-listing brands only.** A chain has one listing per store, and a
+  "Continente" card can be any of them with its own rating.
+- **A fresh Google reading.** A `places_snapshots` reading older than 45 days
+  no longer says today's rating; skip and report it.
+- **Read from the page recording, not the answer text.** In the text the map
+  lines sometimes arrive shuffled; in the recording each card is a button
+  with the name in its `aria-label`.
+
+Not suppressed by §6: it is an event. `details` carries `from` (Google
+rating), `to` (map rating or null), `respostas`, `com_a_marca`,
+`categoria_no_mapa` and `avaliacoes_no_google`. The action that follows is in
+`engine_playbooks.md`, chatgpt item 9: check the Google listing first
+(additional categories, duplicates), then the address the site declares and
+the card itself in ChatGPT.
 
 ## 4. Cumulative / trend-based alerts
 
@@ -232,6 +272,7 @@ Until 10 Sep 2026 nothing compared a number with another: the Tracker stored wha
 | §6 Suppression | **Tracker code** | The number of weeks is parsed from the sentence "for the next N weeks". |
 | §8 Override | **Tracker code** | Column `clients.alert_thresholds_override`, multiplicative. |
 | §3.2 Brand absent | **Tracker code**, at the close of every week (`src/lib/alerts/limiares.ts`) | Boolean, no threshold to parse. Types written: `brand_absent`, `brand_absent_engine`. Not suppressed by §6: an absence is an event. |
+| §3.3 Brand with another business's listing on the ChatGPT map | **Tracker code**, at the close of every week (`src/lib/alerts/ficha-no-mapa.ts`) | Read from the ChatGPT app recordings and `places_snapshots`; no threshold to parse (the 0.2 rating gap is in code). Type written: `brand_map_listing`. Not suppressed by §6. |
 | §3 Event-based (the rest), §3.1 Negative mention, §4 Cumulative, §11 Território | **Routine** (`routines/tracker-brain.md`, step 5) | Judgement over text and history; not suppressed. |
 | §5 Per-engine escalation | Not implemented as such | The computed CR alert names the engine with the largest contribution in `details.engine`; per-engine alerts stay with the Routine. |
 | §7 Tone and copy | Both | The code uses the templates above, in the client's language (PT-PT or EN). |
