@@ -157,11 +157,14 @@ address (the accountant's). The brand's Google listing was correct.
 
 The signal is the **rating**, not the category: the brand's right category is
 not stored anywhere, while its Google rating and review count are
-(`places_snapshots`). Fire `brand_map_listing` when, in the closing week's
-ChatGPT app recordings (the 7 days before and after `week_start`), the brand's
-card shows **no rating, or one at least 0.2 away from the Google rating**,
-while the Google listing has reviews. The message names the category the map
-showed, for the reader to judge.
+(`places_snapshots`). Fire `brand_map_listing` when, in the ChatGPT app
+recordings that count for the closing week (the 7 days before `week_start`,
+the same rule as the bridge), the brand's card shows **no rating**, or a
+rating at least 0.2 away from the Google one when the Google listing has 10
+reviews or more, while the Google listing has reviews. With fewer reviews one
+new review moves the average by that much, so only "no rating" counts. The
+message names the category the map showed, for the reader to judge, and says
+"may" when only the rating differs.
 
 Guards:
 
@@ -169,6 +172,8 @@ Guards:
   what is expected.
 - **Single-listing brands only.** A chain has one listing per store, and a
   "Continente" card can be any of them with its own rating.
+- **A fresh Google reading.** A `places_snapshots` reading older than 45 days
+  no longer says today's rating; skip and report it.
 - **Read from the page recording, not the answer text.** In the text the map
   lines sometimes arrive shuffled; in the recording each card is a button
   with the name in its `aria-label`.
@@ -178,7 +183,7 @@ rating), `to` (map rating or null), `respostas`, `com_a_marca`,
 `categoria_no_mapa` and `avaliacoes_no_google`. The action that follows is in
 `engine_playbooks.md`, chatgpt item 9: check the Google listing first
 (additional categories, duplicates), then the address the site declares and
-the report or claim button on the card in ChatGPT.
+the card itself in ChatGPT.
 
 ## 4. Cumulative / trend-based alerts
 
