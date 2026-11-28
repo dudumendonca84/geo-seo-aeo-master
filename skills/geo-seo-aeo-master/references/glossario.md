@@ -20,7 +20,7 @@ empresa que não sabe escrever na língua de quem a lê.
 | Portugal, Angola, Moçambique, Cabo Verde, Guiné-Bissau, São Tomé e Príncipe, Timor-Leste, Macau | português de Portugal | `pt-PT` |
 | Brasil | português do Brasil | `pt-BR` |
 | Espanha, Guiné Equatorial e os países de língua espanhola da América Latina (México, Argentina, Colômbia, Chile, Peru, Venezuela, Equador, Guatemala, Cuba, Bolívia, República Dominicana, Honduras, Paraguai, El Salvador, Nicarágua, Costa Rica, Panamá, Uruguai, Porto Rico) | espanhol de Espanha | `es-ES` |
-| França, Mónaco, e os países de língua francesa de África (Senegal, Costa do Marfim, Mali, Burkina Faso, Níger, Guiné, Benim, Togo, Camarões, Gabão, Congo, República Democrática do Congo, Madagáscar, Djibuti, Chade, República Centro-Africana, Comores, Marrocos, Argélia, Tunísia), Haiti | francês de França | `fr-FR` |
+| França, Mónaco, e os países de língua francesa de África (Senegal, Costa do Marfim, Mali, Burkina Faso, Níger, Guiné, Benim, Togo, Camarões, Gabão, Congo, República Democrática do Congo, Madagáscar, Djibuti, Chade, República Centro-Africana, Comores, Marrocos, Argélia, Tunísia), Haiti, e os territórios ultramarinos franceses (Guadalupe, Martinica, Guiana Francesa, Reunião, Maiote, São Pedro e Miquelão, São Bartolomeu, São Martinho, Nova Caledónia, Polinésia Francesa, Wallis e Futuna), que a Vercel trata como países com código próprio | francês de França | `fr-FR` |
 | Resto do mundo | inglês britânico | `en-GB` |
 
 A regra é a língua nativa do país (founder, 28 Nov 2026: *"seguir a
