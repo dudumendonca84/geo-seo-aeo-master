@@ -39,13 +39,13 @@ o `escrita.md`, e as outras escrevem-se a partir dela.
 | `pt-BR` | você | Com o verbo e o pronome do Brasil: "você pode", "seu relatório", gerúndio onde o Brasil o usa ("está medindo", nunca "vamos estar enviando"). Sem ênclise nem "lhe" em frase declarativa: "o relatório mostra-lhe" vira "você vê"; "consigo" vira "com você". |
 | `es-ES` | tú | Decisão do founder, 28 Nov 2026. No plural, vosotros: ustedes na Espanha é o plural formal e choca com o tú, e como plural de tú é da América Latina. |
 | `fr-FR` | vous | Numa relação comercial o tu é um erro. |
-| `en-GB` | you | Grafia britânica: organisation, analyse, colour, programme, centre. |
+| `en-GB` | you | Grafia britânica: organisation, analyse, colour, centre, catalogue, -ise (optimise, prioritise), licence (substantivo), per cent por extenso na prosa; program para software, programme para iniciativa. Nomes próprios e termos estabelecidos ficam como o dono os escreve: Generative Engine Optimization, Answer Engine Optimization, Google Merchant Center, `Organization` do Schema.org. |
 
 ## 3. O que nunca se traduz
 
 - **Nomes da casa:** destaque.ai, Periscopy, Radar (o nome do índice:
   "o Radar da destaque.ai", "el Radar de destaque.ai", "le Radar de
-  destaque.ai"), SINAL, Inception.
+  destaque.ai", "the destaque.ai Radar"), SINAL, Inception.
 - **Nomes de terceiros:** marcas, empresas, motores e produtos (ChatGPT,
   Claude, Gemini, Google AI Overviews, Microsoft Copilot, Meta AI,
   Perplexity) escrevem-se como a dona os escreve **na língua do texto**: em
@@ -53,7 +53,8 @@ o `escrita.md`, e as outras escrevem-se a partir dela.
   escrevem ("les Aperçus IA (AI Overviews) de Google" na primeira menção).
 - **Siglas da área:** GEO, AEO, SEO, IA no português, no espanhol e no
   francês (em francês, IA), AI no inglês. Na primeira vez que aparecem num
-  texto, explicam-se por extenso na língua do texto.
+  texto, explicam-se por extenso na língua do texto (em inglês, AI não
+  precisa de se expandir; GEO, AEO e SEO sim).
 - **Identificadores técnicos:** `hreflang`, `sameAs`, Schema.org, nomes de
   ficheiros, chaves de dados, rotas do produto.
 
@@ -68,13 +69,13 @@ A tabela fixa os termos de método, que aparecem em todo o lado.
 | taxa de citação | taxa de citação | tasa de citación | taux de citation | citation rate |
 | partilha de voz (no site e no Radar); Share of voice (rótulo no produto) | share of voice | cuota de voz (Share of voice no rótulo do produto) | part de voix (Share of voice no rótulo do produto) | share of voice |
 | partilha de recomendação; Share of recommendation (rótulo no produto) | share of recommendation (na primeira menção, "participação nas recomendações") | cuota de recomendación (Share of recommendation no rótulo do produto) | part de recommandation | share of recommendation |
-| ser escolhido, a marca escolhida | ser escolhido, a marca escolhida | ser elegido, la marca elegida | être choisi, la marque choisie | to be chosen, the brand chosen |
+| ser escolhido, a marca escolhida | ser escolhido, a marca escolhida | ser elegido, la marca elegida | être choisi, la marque choisie | to be chosen, the chosen brand |
 | citada, ser citada | citada (preferir "la IA cita a la marca", "aparece en las respuestas" à passiva com ser) | citée, être citée | cited, to be cited |
-| motor de IA | plataforma de IA | motor de IA | moteur d'IA | AI engine |
+| motor de IA | plataforma de IA | motor de IA | moteur d'IA | AI engine (o conjunto medido; "assistant" para a experiência de quem pergunta; "answer engine" só na expansão de AEO) |
 | assistente de IA | assistente de IA | asistente de IA | assistant IA | AI assistant |
 | resposta (de um motor) | resposta | respuesta | réponse | answer |
 | pergunta | pergunta | pregunta | question | question |
-| pesquisa na web, com pesquisa | busca na web, com busca | búsqueda web, con búsqueda web, sin búsqueda web | recherche web, avec recherche web | web search, with search |
+| pesquisa na web, com pesquisa | busca na web, com busca | búsqueda web, con búsqueda web, sin búsqueda web | recherche web, avec recherche web | web search, with web search ("with search" só no rótulo do produto) |
 | fonte, fonte citada | fonte, fonte citada | fuente, fuente citada | source, source citée | source, cited source |
 | concorrente, concorrente direto | concorrente, concorrente direto | competidor, competidor directo | concurrent, concurrent direct | competitor, direct competitor |
 | setor | setor | sector | secteur | sector |
@@ -83,9 +84,14 @@ A tabela fixa os termos de método, que aparecem em todo o lado.
 | auditoria | auditoria | auditoría | audit | audit |
 | relatório | relatório | informe | rapport | report |
 | estudo | estudo | estudio | étude | study |
-| edição (do Radar), edição do mês | edição, edição do mês | edición, edición del mes | édition, édition du mois | edition, monthly edition |
+| edição (do Radar), edição do mês | edição, edição do mês | edición, edición del mes | édition, édition du mois | edition, this month's edition (the November edition) |
 | plano de ações | plano de ação | plan de acción | plan d'action | action plan |
 | ficha do Google | Perfil da Empresa no Google (na primeira menção, "antigo Google Meu Negócio") | Perfil de Empresa en Google na primeira menção, depois ficha de Google | fiche d'établissement Google (depois, fiche Google) | Google Business Profile |
+
+**"Citada" quer dizer nomeada na resposta.** A taxa de citação conta as
+respostas que nomeiam a marca, com ou sem link. Em inglês "cited" sugere
+"posto como fonte com link", por isso o termo define-se no primeiro uso e
+não se confunde com "cited source".
 
 ## 5. O que muda entre Portugal e o Brasil
 
@@ -188,7 +194,7 @@ só; nunca se escreve um número formatado à mão noutra língua.
 | data | 28 de novembro de 2026 | 28 de novembro de 2026 | 28 de noviembre de 2026 | 28 novembre 2026 | 28 November 2026 |
 | nome da interface entre aspas | «Plano» | “Plano” | «Plan» | « Plan » | “Plan” |
 | moeda | 49 € | € 49 | 49 € | 49 € | €49 |
-| pontos percentuais | 3,2 pp | 3,2 p.p. (por extenso na primeira menção) | 3,2 puntos porcentuales na primeira menção, depois 3,2 puntos (3,2 p. p. em tabelas) | 3,2 points (3,2 pts em tabelas) | 3.2 pp |
+| pontos percentuais | 3,2 pp | 3,2 p.p. (por extenso na primeira menção) | 3,2 puntos porcentuales na primeira menção, depois 3,2 puntos (3,2 p. p. em tabelas) | 3,2 points (3,2 pts em tabelas) | 3.2 percentage points na prosa, 3.2 pp em tabelas e rótulos |
 
 Em francês, além disso: espaço fino inseparável antes de ; ! ? e espaço
 inseparável antes de : (nenhum antes de . e ,); « » com espaço inseparável
@@ -207,6 +213,20 @@ escreve «1», trata-se à parte); ordinais «2e», «3e», nunca «2ème»; pre
    antes do PR.
 5. O founder vê no preview antes de entrar no ar.
 
+## 8b. Inconsistências que já existem, para corrigir no trabalho das línguas
+
+Encontradas pelo revisor de inglês a 28 Nov 2026:
+
+- O produto em inglês mistura "percentage points" e "pp"
+  (`copy.ts`, as linhas do bloco inglês com `${pp} pp`).
+- "contact center" no `enStudies.ts` do site: é "contact centre".
+- O produto chama à ficha do Google "Google Maps listing" (`repLocalLead`);
+  o site e o glossário dizem "Google Business Profile".
+- O produto usa "prompts" ao lado de "questions"; o glossário fixa
+  "question".
+- Aspas simples no produto em inglês ('knowledge', 'augmented') contra a
+  regra das “ ”.
+
 ## 9. Decisões por tomar
 
 Ficam aqui até o founder decidir, e saem quando decidir:
@@ -215,6 +235,10 @@ Ficam aqui até o founder decidir, e saem quando decidir:
   população é o espanhol. Lê em português de Portugal, como os outros
   lusófonos de África, ou em espanhol?
 
+- Os outros países francófonos (Bélgica, Suíça, Luxemburgo, Mónaco, a
+  África francófona) e hispanófonos (América Latina) leem em francês e em
+  espanhol, ou em inglês como o resto do mundo? O espanhol que se escreve é
+  o de Espanha; para a América Latina seria uma sexta versão.
 - Os endereços do destaque.ai em espanhol, francês e português do Brasil
   traduzem o caminho (`/es/estudios/...`) como o inglês já faz, ou ficam
   com o caminho português? A proposta é traduzir, pela mesma razão que o
