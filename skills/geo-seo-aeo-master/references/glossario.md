@@ -85,6 +85,7 @@ A tabela fixa os termos de método, que aparecem em todo o lado.
 | assistente de IA | assistente de IA | asistente de IA | assistant IA | AI assistant |
 | resposta (de um motor) | resposta | respuesta | réponse | answer |
 | pergunta | pergunta | pregunta | question | question |
+| engenharia de perguntas (o serviço) | engenharia de prompts | ingeniería de prompts | ingénierie de prompts | prompt engineering |
 | pesquisa na web, com pesquisa | busca na web, com busca | búsqueda web, con búsqueda web, sin búsqueda web | recherche web, avec recherche web | web search, with web search ("with search" só no rótulo do produto) |
 | fonte, fonte citada | fonte, fonte citada | fuente, fuente citada | source, source citée | source, cited source |
 | concorrente, concorrente direto | concorrente, concorrente direto | competidor, competidor directo | concurrent, concurrent direct | competitor, direct competitor |
@@ -236,6 +237,27 @@ Encontradas pelo revisor de inglês a 28 Nov 2026:
   "question".
 - Aspas simples no produto em inglês ('knowledge', 'augmented') contra a
   regra das “ ”.
+
+**Decididas pelo founder a 28 Nov 2026, depois da revisão da moldura do
+site nas três línguas novas:**
+
+- **O serviço de escrever as perguntas usa o termo do mercado** fora de
+  Portugal (founder: *"mercado"*): "engenharia de prompts", "ingeniería de
+  prompts", "ingénierie de prompts", "prompt engineering". O português de
+  Portugal fica "engenharia de perguntas". A pergunta em si continua
+  "pregunta", "question", "pergunta".
+- **O botão de entrar usa o que é habitual em cada país** (founder: *"usa o
+  usual em cada país, pt deixa login"*): "Login" em português de Portugal e
+  do Brasil, "Acceder" em espanhol, "Connexion" em francês, "Log in" em
+  inglês.
+- **"Cases" na versão brasileira**, como nas agências do Brasil.
+- **As páginas de agência por cidade (Lisboa, Porto) não entram nos menus**
+  das versões brasileira, espanhola e francesa.
+- **Cada versão tem as suas páginas legais** (founder: *"escreve uma legal
+  para cada idioma"*), traduções do original português, que prevalece em
+  caso de divergência; o espanhol leva também o "Aviso legal" e o francês
+  as "Mentions légales", sem NIPC nem capital social (founder: *"isso deixa
+  sem"*).
 
 ## 9. Decisões por tomar
 
