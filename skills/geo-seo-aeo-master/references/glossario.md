@@ -19,14 +19,24 @@ empresa que não sabe escrever na língua de quem a lê.
 |---|---|---|
 | Portugal, Angola, Moçambique, Cabo Verde, Guiné-Bissau, São Tomé e Príncipe, Timor-Leste, Macau | português de Portugal | `pt-PT` |
 | Brasil | português do Brasil | `pt-BR` |
-| Espanha | espanhol de Espanha | `es-ES` |
-| França | francês de França | `fr-FR` |
+| Espanha, Guiné Equatorial e os países de língua espanhola da América Latina (México, Argentina, Colômbia, Chile, Peru, Venezuela, Equador, Guatemala, Cuba, Bolívia, República Dominicana, Honduras, Paraguai, El Salvador, Nicarágua, Costa Rica, Panamá, Uruguai, Porto Rico) | espanhol de Espanha | `es-ES` |
+| França, Mónaco, e os países de língua francesa de África (Senegal, Costa do Marfim, Mali, Burkina Faso, Níger, Guiné, Benim, Togo, Camarões, Gabão, Congo, República Democrática do Congo, Madagáscar, Djibuti, Chade, República Centro-Africana, Comores, Marrocos, Argélia, Tunísia), Haiti | francês de França | `fr-FR` |
 | Resto do mundo | inglês britânico | `en-GB` |
 
-O país decide (founder, 28 Nov 2026), com duas exceções que mandam mais do
-que ele: a língua escolhida no seletor, guardada para as visitas seguintes,
-e a língua que já vem no endereço (um link `/es/...` abre em espanhol para
-quem quer que o abra).
+A regra é a língua nativa do país (founder, 28 Nov 2026: *"seguir a
+língua nativa"*). Nos países com mais de uma língua (Bélgica, Suíça,
+Luxemburgo, Canadá, Estados Unidos), o país não chega para decidir, e
+decide a língua do navegador entre as nossas cinco; sem nenhuma delas,
+inglês. A América Latina lê o espanhol de Espanha: não há uma sexta versão.
+
+Duas exceções mandam mais do que o país: a língua escolhida no seletor,
+guardada para as visitas seguintes, e a língua que já vem no endereço (um
+link `/es/...` abre em espanhol para quem quer que o abra).
+
+**Os endereços traduzem-se** (founder, 28 Nov 2026): no destaque.ai, cada
+versão tem o caminho na sua língua (`/es/estudios/...`, `/fr/etudes/...`,
+`/br/estudos/...`), como o inglês já tem. O Periscopy mantém a regra dele:
+segmentos em inglês em todas as línguas, com o prefixo da língua.
 
 O português de Portugal é a versão de origem: escreve-se primeiro nela, com
 o `escrita.md`, e as outras escrevem-se a partir dela.
@@ -229,17 +239,6 @@ Encontradas pelo revisor de inglês a 28 Nov 2026:
 
 ## 9. Decisões por tomar
 
-Ficam aqui até o founder decidir, e saem quando decidir:
-
-- A Guiné Equatorial é membro da CPLP, mas a língua de quase toda a
-  população é o espanhol. Lê em português de Portugal, como os outros
-  lusófonos de África, ou em espanhol?
-
-- Os outros países francófonos (Bélgica, Suíça, Luxemburgo, Mónaco, a
-  África francófona) e hispanófonos (América Latina) leem em francês e em
-  espanhol, ou em inglês como o resto do mundo? O espanhol que se escreve é
-  o de Espanha; para a América Latina seria uma sexta versão.
-- Os endereços do destaque.ai em espanhol, francês e português do Brasil
-  traduzem o caminho (`/es/estudios/...`) como o inglês já faz, ou ficam
-  com o caminho português? A proposta é traduzir, pela mesma razão que o
-  inglês: o endereço também se lê.
+Nenhuma, a 28 de novembro de 2026. As três que aqui estavam (a Guiné
+Equatorial, os outros países francófonos e hispanófonos, e os endereços)
+foram decididas pelo founder e estão na secção 1.
